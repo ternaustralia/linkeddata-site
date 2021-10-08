@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'TERN Linked Data Services',
+  tagline: 'TERN’s Data Services and Analytics platform manages datasets derived from its terrestrial ecosystem field observatory. TERN data infrastructure also enables the Australian community of ecosystem researchers to collect, contribute, store and share data.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -40,6 +40,7 @@ const config = {
   ],
 
   plugins: [
+    // '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -59,26 +60,41 @@ const config = {
         title: 'TERN Linked Data Services',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'https://w3id.org/tern/static/tern-web/img/logo@2x.png',
         },
         items: [
           {
-            to: '/standards',
-            label: 'Standards',
-            position: 'left'
-          },
-          {
-            type: 'doc',
-            docId: 'intro',
+            type: "dropdown",
+            label: "Standards",
             position: 'left',
-            label: 'Tutorial',
+            items: [
+              {
+                to: '/standards',
+                label: 'About'
+              },
+              {
+                to: '/tern-ontology',
+                label: 'TERN Ontology'
+              }
+              // {
+              //   type: 'doc',
+              //   docId: '/tern-ontology',
+              //   label: 'TERN Ontology'
+              // }
+            ]
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          // },
+          // {to: '/blog', label: 'Blog', position: 'left'},
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -88,43 +104,53 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'TERN Ontology',
+                to: '/tern-ontology',
               },
             ],
           },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Stack Overflow',
+          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     },
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //     {
+          //       label: 'Twitter',
+          //       href: 'https://twitter.com/docusaurus',
+          //     },
+          //   ],
+          // },
           {
             title: 'More',
             items: [
+              // {
+              //   label: 'Blog',
+              //   to: '/blog',
+              // },
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'TERN Ecosystem Research Infrastructure',
+                href: 'https://www.tern.org.au/'
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'TERN Australia GitHub',
+                href: 'https://github.com/ternaustralia',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `
+        <em style="font-size: 14px;">We at TERN acknowledge the Traditional Owners and Custodians throughout Australia, New Zealand and all nations.
+        We honour their profound connections to land, water, biodiversity and culture and pay our respects to their Elders past, present and emerging.</em>
+        
+        <br><br>
+        
+        © ${new Date().getFullYear()} TERN | TERN Data Services and Analytics`,
       },
       prism: {
         theme: lightCodeTheme,
