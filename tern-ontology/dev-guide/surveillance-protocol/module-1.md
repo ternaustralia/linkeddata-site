@@ -49,8 +49,8 @@ Module 1 provides instructions in how to collect data from the following observa
   "@id": "https://example.com/observation-1-landform-pattern",
   "@type": "https://w3id.org/tern/ontologies/tern/Observation",
   "featureType": "http://linked.data.gov.au/def/tern-cv/2cf3ed29-440e-4a50-9bbc-5aab30df9fcd",
-  "hasFeatureOfInterest": "apple tree",
-  "observedProperty": "colour of water",
+  "hasFeatureOfInterest": "",
+  "observedProperty": "http://linked.data.gov.au/def/tern-cv/78b617e9-cd18-40b7-ad38-efc30579e680",
   "usedProcedure": "",
   "hasResult": {
     "@id": "https://example.com/observation-1-result",
