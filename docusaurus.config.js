@@ -83,6 +83,17 @@ const config = {
               // }
             ]
           },
+          {
+            type: "dropdown",
+            label: "Viewers",
+            position: "left",
+            items: [
+              {
+                to: '/viewers/tern-ontology',
+                label: 'TERN Ontology viewer'
+              }
+            ]
+          }
           // {
           //   type: 'doc',
           //   docId: 'intro',
