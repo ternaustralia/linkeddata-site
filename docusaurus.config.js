@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'TERN Linked Data Services',
   tagline: 'TERN’s Data Services and Analytics platform uses Linked Data and the Semantic Web to manage datasets derived from its terrestrial ecosystem field observatory.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://linkeddata.tern.org.au',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  favicon: 'https://w3id.org/tern/static/tern-web/img/logo@2x.png',
+  organizationName: 'TERN', // Usually your GitHub org/user name.
+  projectName: 'linkeddata-site', // Usually your repo name.
 
   presets: [
     [
@@ -24,13 +24,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/ternaustralia/linkeddata-site/edit/master/tern-ontology/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+            'https://github.com/ternaustralia/linkeddata-site/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -65,12 +65,12 @@ const config = {
         items: [
           {
             type: "dropdown",
-            label: "Standards",
+            label: "Our work",
             position: 'left',
             items: [
               {
-                to: '/standards',
-                label: 'About'
+                to: '/our-work',
+                label: 'Overview'
               },
               {
                 to: '/tern-ontology',
@@ -83,6 +83,17 @@ const config = {
               // }
             ]
           },
+          {
+            type: 'dropdown',
+            label: 'About',
+            position: 'left',
+            items: [
+              {
+                to: '/about/acknowledgement-and-attribution',
+                label: 'Acknowledgement and attribution'
+              }
+            ]
+          }
           // {
           //   type: 'doc',
           //   docId: 'intro',
@@ -139,15 +150,19 @@ const config = {
               },
               {
                 label: 'TERN Australia GitHub',
-                href: 'https://github.com/ternaustralia',
+                href: 'https://github.com/ternaustralia'
               },
+              {
+                label: 'Terms of use',
+                href: 'https://www.tern.org.au/terms-of-use'
+              }
             ],
           },
         ],
         copyright: `
         <hr>
 
-        <p>TERN is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy, NCRIS.</p>
+        <p>TERN is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy, <a target="_blank" href="https://www.education.gov.au/national-collaborative-research-infrastructure-strategy-ncris">NCRIS<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a>.</p>
 
         <div style="text-align: center; margin-bottom: 1em;">
           <img style="background-color: rgba(255, 255, 255, 1); padding: 0.5em;" src="https://www.tern.org.au/wp-content/uploads/logo-ncris@2x.png" width="138">

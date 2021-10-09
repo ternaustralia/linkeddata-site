@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
-slug: /
+sidebar_position: 2
+slug: /conceptual-information-model
 ---
 
-# TERN Ontology
+# Conceptual Information Model
 
 ## Abstract
 
