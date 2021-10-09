@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'TERN Linked Data Services',
-  tagline: 'TERN’s Data Services and Analytics platform manages datasets derived from its terrestrial ecosystem field observatory. TERN data infrastructure also enables the Australian community of ecosystem researchers to collect, contribute, store and share data.',
+  tagline: 'TERN’s Data Services and Analytics platform uses Linked Data and the Semantic Web to manage datasets derived from its terrestrial ecosystem field observatory.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -59,7 +59,7 @@ const config = {
       navbar: {
         title: 'TERN Linked Data Services',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'TERN logo',
           src: 'https://w3id.org/tern/static/tern-web/img/logo@2x.png',
         },
         items: [
@@ -145,12 +145,29 @@ const config = {
           },
         ],
         copyright: `
-        <em style="font-size: 14px;">We at TERN acknowledge the Traditional Owners and Custodians throughout Australia, New Zealand and all nations.
-        We honour their profound connections to land, water, biodiversity and culture and pay our respects to their Elders past, present and emerging.</em>
+        <hr>
+
+        <p>TERN is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy, NCRIS.</p>
+
+        <div style="text-align: center; margin-bottom: 1em;">
+          <img style="background-color: rgba(255, 255, 255, 1); padding: 0.5em;" src="https://www.tern.org.au/wp-content/uploads/logo-ncris@2x.png" width="138">
+        </div>
         
-        <br><br>
+        <p>Key Operating Partners
+
+        <div style="text-align: center; margin-bottom: 1em;">
+          
+          <img style="background-color: rgba(255, 255, 255, 1); padding: 0.5em; margin-right: -5px;" src="https://www.tern.org.au/wp-content/uploads/uq-logo-purple.png" height="80">
+          <img style="background-color: rgba(255, 255, 255, 1); padding: 0.5em; margin-right: -5px;"src="https://www.tern.org.au/wp-content/uploads/james-cook-logo@2x.png" height="80">
+          <img style="background-color: rgba(255, 255, 255, 1); padding: 0.5em; margin-right: -4px;" src="https://www.tern.org.au/wp-content/uploads/csiro-logo@2x.png" height="80">
+          <img style="background-color: rgba(255, 255, 255, 1); padding: 0.5em; " src="https://www.tern.org.au/wp-content/uploads/ua-logo@2x.png" height="80">
+          
+        </div>
+
+        <p><em style="font-size: 14px;">We at TERN acknowledge the Traditional Owners and Custodians throughout Australia, New Zealand and all nations.
+        We honour their profound connections to land, water, biodiversity and culture and pay our respects to their Elders past, present and emerging.</em></p>
         
-        © ${new Date().getFullYear()} TERN | TERN Data Services and Analytics`,
+        © ${new Date().getFullYear()} TERN Ecosystem Research Infrastructure`,
       },
       prism: {
         theme: lightCodeTheme,
