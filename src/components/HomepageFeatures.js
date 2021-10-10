@@ -17,6 +17,27 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'TERN Organisations Ontology',
+    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    img: require('../../static/img/org.png').default,
+    to: '/our-work#tern-organisations-ontology',
+    description: (
+      <>
+        A small profile of schema.org and the W3C Organisations ontology containing several classes to describe people and organisations with additional properties.
+      </>
+    )
+  },
+  {
+    title: 'TERN Location Alignment Ontology',
+    img: 'https://www.tern.org.au/wp-content/uploads/2019/10/landscapes@2x.png',
+    to: '/our-work#tern-location-alignment-ontology',
+    description: (
+      <>
+        An alignment of a few widely used ontologies for describing locations, features and geometries.
+      </>
+    )
+  }
   // {
   //   title: 'Focus on What Matters',
   //   Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
