@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import {
   BrowserRouter as Router,
@@ -6,85 +6,107 @@ import {
   useLocation
 } from "react-router-dom";
 import useSWR from 'swr';
-// import { fetcher } from './_dataFetcher';
-// const fetcher = (...args) => fetch(...args).then(res=> res.json())
-const fetcher = async (...args) => {
-  const url = args[0]
-  const fetchOptions = JSON.parse(args[1])
-  const res = await fetch(url, fetchOptions)
+import {getNodeShapes} from './_queries'
 
-  if(!res.ok) {
-    const error = new Error('An error occurred while fetching the data.')
-    // Attach extra info to the error object.
-    error.info = await res.json()
-    error.status = res.status
-    throw error
-  }
-
-  return res.json()
-}
+import { fetcher } from './_dataFetcher';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-function getSparqlQuery(classUri) {
+function getNodeShape(classUri) {
   return `
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 select *
+from <http://www.ontotext.com/explicit>
+from <https://w3id.org/tern/ontologies/tern/>
 where {
     <${classUri}> ?p ?o .
 }
   `
 }
 
-function PageComponent() {
-  let query = useQuery();
-  const pageRoute = '/viewers/tern-ontology'
-  const uri = query.get('uri') || 'https://w3id.org/tern/ontologies/tern/Observation'
-  const endpoint = query.get('endpoint') || 'http://localhost:7200/repositories/ontologies'
-  
-  const sparqlQuery = getSparqlQuery(uri)
-  const fetchOptions = {
+function getFetchOptions(sparqlQuery) {
+  return {
     method: 'POST',
     headers: {
       accept: 'application/sparql-results+json',
       'content-type': 'application/x-www-form-urlencoded',
     },
     // https://stackoverflow.com/questions/35325370/how-do-i-post-a-x-www-form-urlencoded-request-using-fetch
-    body: [encodeURIComponent('query') + '=' + encodeURIComponent(getSparqlQuery(uri))]
+    body: [encodeURIComponent('query') + '=' + encodeURIComponent(sparqlQuery)]
   }
-  
-  // Reason we serialise fetchOptions is to avoid infinite loop.
-  // See https://github.com/vercel/swr/issues/345
-  const { data, error } = useSWR([endpoint, JSON.stringify(fetchOptions)], fetcher)
-  
-  const debug = true
+}
 
-  const debugView = debug ? <div>
-    <p>{`URI: ${uri}`}</p>
-    <p>{`SPARQL endpoint: ${endpoint}`}</p>
-    <p></p>
-    <pre>{sparqlQuery}</pre>
-    <p>Received: </p>
-    <pre>{JSON.stringify(data, null, 2)}</pre>
-  </div> : ''
+function ClassList({pageRoute, endpoint}) {
+  const sparqlQuery = getNodeShapes()
+  const fetchOptions = getFetchOptions(sparqlQuery)
+  const { data, error } = useSWR([endpoint, JSON.stringify(fetchOptions)], fetcher)
 
   if(error) return <div>Failed to load</div>
   if(!data) return <div>Loading...</div>
 
+  const items = data.results.bindings.map(item => {
+    return <li key={item.class.value}><Link to={`${pageRoute}?uri=${item.class.value}&endpoint=${endpoint}`}>{item.class.value}</Link></li>
+  })
+
+  return (
+    <ul>
+      {items}
+    </ul>
+  )
+}
+
+function ClassView({selectedClass, endpoint}) {
+  const sparqlQuery = getNodeShape(selectedClass)
+  const fetchOptions = getFetchOptions(sparqlQuery)
+  const { data, error } = useSWR(selectedClass ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
+
+  if(error) return <div>Failed to load</div>
+  if(!data && !selectedClass) return <div>No class selected</div>
+  if(!data) return <div>Loading...</div>
+
+  return (
+    <>
+      <p>{selectedClass}</p>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </>
+  )
+}
+
+function PageComponent() {
+  let query = useQuery();
+  const pageRoute = '/viewers/tern-ontology'
+  const uri = query.get('uri')
+  const endpoint = query.get('endpoint') || 'https://graphdb.tern.org.au/repositories/knowledge_graph_core'
+  
+  // const fetchOptions = getFetchOptions(getSparqlQuery(uri))
+  
+  // Reason we serialise fetchOptions is to avoid infinite loop.
+  // See https://github.com/vercel/swr/issues/345
+  // const { data, error } = useSWR([endpoint, JSON.stringify(fetchOptions)], fetcher)
+
+  const [selectedClass, setSelectedClass] = useState(null)
+
+  useEffect(() => {
+    if(uri) {
+      setSelectedClass(uri)
+    }
+  }, [uri])
+
   return (
     <main className="container container--fluid margin-vert--lg">
-      <ul>
-        <li>
-          <Link to={`${pageRoute}?uri=https://w3id.org/tern/ontologies/tern/Observation&endpoint=http://localhost:7200/repositories/ontologies`}>Ecological Site</Link>
-        </li>
-        <li>
-          <Link to={`${pageRoute}?uri=https://w3id.org/tern/ontologies/tern/Transect&endpoint=http://localhost:7200/repositories/ontologies`}>Transect</Link>
-        </li>
-      </ul>
-
-      {debugView}
+      <h2>Classes</h2>
+      <div className="row">
+        <div className="col col--6">
+          <ClassList pageRoute={pageRoute} endpoint={endpoint} />
+        </div>
+        <div className="col col--6">
+          <ClassView selectedClass={selectedClass} endpoint={endpoint} />
+        </div>
+      </div>
+      
+      {/* {debugView} */}
     </main>
   )
 }
