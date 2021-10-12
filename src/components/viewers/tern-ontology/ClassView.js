@@ -60,14 +60,40 @@ export default function ClassView({ selectedClass, endpoint }) {
 
   const label = getRdfsLabel(data)
 
+  // TODO: Refactor this property values into its own component.
+  // TODO: Render a different component based on the value.type. 
+  //   E.g., IRI, String (lang), Number, Bool, etc.
+  const propertyValues = {}
+  for(const row of data.results.bindings) {
+    const p = row.p.value
+    const o = row.o
+    if(propertyValues.hasOwnProperty(row.p.value)) {
+      propertyValues[p].push(o)
+    }
+    else {
+      propertyValues[p] = [o]
+    }
+  }
+
+  const properties = []
+  for(const property in propertyValues) {
+    properties.push({
+      property: property,
+      values: propertyValues[property]
+    })
+  }
+
   return (
     <>
       <ClassLabel>{label}</ClassLabel>
-      <ClassUri>{selectedClass}</ClassUri>
+      <pre>{selectedClass}</pre>
 
       <hr></hr>
       
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {properties.map(property => <p>{property.property} <ul>{property.values.map(value => <li>{value.value}</li>)}</ul></p>)}
+
+      <pre>{JSON.stringify(propertyValues, null, 2)}</pre>
+      
     </>
   )
 }

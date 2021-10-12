@@ -39,9 +39,9 @@ function PageComponent() {
 
   return (
     <main className="container container--fluid margin-vert--lg">
-      <h2>Classes</h2>
       <div className="row">
         <div className="col col--3">
+          <h2>Classes</h2>
           <ClassList pageRoute={pageRoute} endpoint={endpoint} />
         </div>
         <div className="col col--9">

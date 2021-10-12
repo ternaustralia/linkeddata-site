@@ -20,6 +20,9 @@ export function getNodeShape(classUri) {
   from <https://w3id.org/tern/ontologies/tern/>
   where {
       <${classUri}> ?p ?o .
+      filter(!isBlank(?p))
+      filter(!isBlank(?o))
   }
+  order by ?p
     `
 }
