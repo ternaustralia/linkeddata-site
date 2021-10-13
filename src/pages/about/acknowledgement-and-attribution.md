@@ -19,25 +19,25 @@ Creator (PublicationYear). Collection Name. Version (if available). Publisher. I
 
 ```
 Parameter Type:
-TERN Data Services and Analytics (2020). Parameter Type. TERN. http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e
+TERN Data Services and Analytics (2020). TERN Parameter Type. TERN. http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e
 ```
 
 ```
 Feature Type:
-TERN Data Services and Analytics (2020). Feature Type. TERN. http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d
+TERN Data Services and Analytics (2020). TERN Feature Type. TERN. http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d
 ```
 
 ```
 Instrument Type:
-TERN Data Services and Analytics (2020). Instrument Type. TERN. http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8
+TERN Data Services and Analytics (2020). TERN Instrument Type. TERN. http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8
 ```
 
 ```
 Method Type:
-TERN Data Services and Analytics (2020). Method Type. TERN. http://linked.data.gov.au/def/tern-cv/2fd44aca-168f-4177-b393-0688ce38102c
+TERN Data Services and Analytics (2020). TERN Method Type. TERN. http://linked.data.gov.au/def/tern-cv/2fd44aca-168f-4177-b393-0688ce38102c
 ```
 
 ```
 Attributes:
-TERN Data Services and Analytics (2020). Attribute. TERN. http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924
+TERN Data Services and Analytics (2020). TERN Attribute. TERN. http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924
 ```
