@@ -39,5 +39,5 @@ TERN Data Services and Analytics (2020). TERN Method Type. TERN. http://linked.d
 
 ```
 Attributes:
-TERN Data Services and Analytics (2020). TERN Attribute. TERN. http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924
+TERN Data Services and Analytics (2020). TERN Attributes. TERN. http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924
 ```
