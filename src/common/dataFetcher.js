@@ -1,7 +1,12 @@
 // const fetcher = (...args) => fetch(...args).then(res=> res.json())
 export const fetcher = async (...args) => {
   const url = args[0]
-  const fetchOptions = JSON.parse(args[1])
+
+  let fetchOptions = null
+  if(args.length > 1) {
+    fetchOptions = JSON.parse(args[1])
+  }
+  
   const res = await fetch(url, fetchOptions)
 
   if (!res.ok) {
