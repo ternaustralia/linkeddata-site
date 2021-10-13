@@ -4,12 +4,12 @@ In compliance with TERN's [Terms of Use](https://www.tern.org.au/terms-of-use) ,
 
 ## TERN Linked Data Services
 ```
-TERN Linked Data Services: TERN Data Services and Analytics (2019). TERN Linked Data Services. TERN. https://linkeddata.tern.org.au/
+TERN Data Services and Analytics (2019). TERN Linked Data Services. TERN. https://linkeddata.tern.org.au/
 ```
 
 ## TERN Vocabularies
 ```
-TERN Vocabularies: TERN Data Services and Analytics (2019). TERN Vocabularies. TERN. http://linked.data.gov.au/def/tern-cv/
+TERN Data Services and Analytics (2019). TERN Vocabularies. TERN. http://linked.data.gov.au/def/tern-cv/
 ```
 
 
