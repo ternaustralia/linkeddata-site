@@ -3,47 +3,9 @@ import { fetcher } from '../../../common/dataFetcher'
 import { getNodeShape } from './queries'
 import { getFetchOptions, getRdfsLabel } from './utils'
 import React from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import lightCodeTheme from 'prism-react-renderer/themes/github'
 import IRIField from '../../IRIField'
 import ClassConstraints from './ClassConstraints'
-
-function ClassUri({ children }) {
-  // const button = useRef(null);
-  // const [showCopied, setShowCopied] = useState(false);
-
-  // const handleCopyCode = () => {
-  //   copy(code);
-  //   setShowCopied(true);
-
-  //   setTimeout(() => setShowCopied(false), 2000);
-  // };
-
-  return (
-    <Highlight {...defaultProps} theme={lightCodeTheme} code={children} language="">
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <>
-          <pre className={className} style={{ ...style, padding: '20px' }}>
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-          {/* <button
-            ref={button}
-            type="button"
-            className='clean-btn'
-            onClick={handleCopyCode}>Copy</button> */}
-        </>
-      )}
-
-
-    </Highlight>
-  )
-}
+import CodeBlock from '@theme/CodeBlock'
 
 function ResourceLabel({ children }) {
   return (
@@ -93,7 +55,7 @@ export default function ResourceView({ resourceUri, endpoint }) {
   return (
     <div className="margin-left--md padding--sm">
       <ResourceLabel>{label}</ResourceLabel>
-      <p>IRI: <code>{resourceUri}</code></p>
+      <CodeBlock>{resourceUri}</CodeBlock>
       
       {properties.map(property => <div key={property.property}>
         <strong><IRIField value={property.property} /></strong>
