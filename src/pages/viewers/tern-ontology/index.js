@@ -6,12 +6,13 @@ import {
   useLocation
 } from "react-router-dom";
 import useSWR from 'swr';
-import {getNodeShapes} from '../../../components/viewers/tern-ontology/queries'
+import { getNodeShapes } from '../../../components/viewers/tern-ontology/queries'
 
 import { fetcher } from '../../../common/dataFetcher';
-import ClassView from '../../../components/viewers/tern-ontology/ClassView';
+import ResourceView from '../../../components/viewers/tern-ontology/ResourceView';
 import { getFetchOptions } from '../../../components/viewers/tern-ontology/utils';
 import ClassList from '../../../components/viewers/tern-ontology/ClassList'
+import settings from './_settings'
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -19,12 +20,12 @@ function useQuery() {
 
 function PageComponent() {
   let query = useQuery();
-  const pageRoute = '/viewers/tern-ontology'
+  const pageRoute = settings.pageRoute
   const uri = query.get('uri')
-  const endpoint = query.get('endpoint') || 'https://graphdb.tern.org.au/repositories/knowledge_graph_core'
-  
+  const endpoint = query.get('endpoint') || settings.endpoint
+
   // const fetchOptions = getFetchOptions(getSparqlQuery(uri))
-  
+
   // Reason we serialise fetchOptions is to avoid infinite loop.
   // See https://github.com/vercel/swr/issues/345
   // const { data, error } = useSWR([endpoint, JSON.stringify(fetchOptions)], fetcher)
@@ -32,7 +33,7 @@ function PageComponent() {
   const [selectedClass, setSelectedClass] = useState(null)
 
   useEffect(() => {
-    if(uri) {
+    if (uri) {
       setSelectedClass(uri)
     }
   }, [uri])
@@ -40,12 +41,15 @@ function PageComponent() {
   return (
     <main className="margin-vert--lg">
       <div className="row">
-        <ClassList pageRoute={pageRoute} endpoint={endpoint} />
-        <div className="container">
-        <ClassView selectedClass={selectedClass} endpoint={endpoint} />
+        <div className="col col--2">
+          <ClassList pageRoute={pageRoute} endpoint={endpoint} />
+        </div>
+        
+        <div className="col col--10">
+          <ResourceView resourceUri={selectedClass} endpoint={endpoint} />
         </div>
       </div>
-      
+
       {/* <div className="row">
         <div className="col col--3">
           
@@ -54,7 +58,7 @@ function PageComponent() {
           
         </div>
       </div> */}
-      
+
       {/* {debugView} */}
     </main>
   )

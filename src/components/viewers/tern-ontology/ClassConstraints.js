@@ -10,21 +10,22 @@ function Cardinality({max, min}) {
   if(max && min && max === min) {
     return <>Exactly {max}</>
   }
-
-  if(max && !min) {
+  else if(max && !min) {
     return <>Maximum {max}</>
   }
-
-  if(min && !max) {
+  else if(min && !max) {
     return <>Minimum {min}</>
   }
+  else if(max && min) {
+    return (
+      <>
+        <p>Maximum: {max}</p>
+        <p>Minimum: {min}</p>
+      </>
+    )
+  }
 
-  return (
-    <>
-      <p>Maximum: {max}</p>
-      <p>Minimum: {min}</p>
-    </>
-  )
+  return <></>
 }
 
 function ExpectedValueTypes({values}) {
@@ -59,12 +60,12 @@ function ExpectedValueClassTypes({classes, datatypes}) {
   }
   
   if(values.length === 1) {
-    return <>{values[0]}</>
+    return <IRIField value={values[0]} />
   }
-  
+
   return (
     <ul>
-      {values.map((value, idx) => <li key={idx}>{value ? value : ''}</li>)}
+      {values.map((value, idx) => <li key={idx}>{value ? <IRIField value={value} /> : ''}</li>)}
     </ul>
   )
 }
@@ -150,12 +151,12 @@ export default function ClassConstraints({ classUri, endpoint }) {
     </thead>
     <tbody>
       <tr>
-        <td colSpan="6"><strong>Properties from {classUri}</strong></td>
+        <td colSpan="6"><strong>Properties from <IRIField value={classUri} /></strong></td>
       </tr>
       {Object.keys(results).map(key => {
         return <tr key={key}>
           <td>
-            <IRIField value={results[key]['http://www.w3.org/ns/shacl#path'][0]} />
+            <strong><IRIField value={results[key]['http://www.w3.org/ns/shacl#path'][0]} /></strong>
           </td>
           <td>
             <Description values={results[key]?.['http://www.w3.org/ns/shacl#description']} />

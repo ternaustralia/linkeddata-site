@@ -1,11 +1,10 @@
 import useSWR from 'swr'
 import { fetcher } from '../../../common/dataFetcher'
-import { getClassConstraints, getNodeShape } from './queries'
+import { getNodeShape } from './queries'
 import { getFetchOptions, getRdfsLabel } from './utils'
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import lightCodeTheme from 'prism-react-renderer/themes/github'
-import ExternalLink from '../../ExternalLink'
 import IRIField from '../../IRIField'
 import ClassConstraints from './ClassConstraints'
 
@@ -46,19 +45,19 @@ function ClassUri({ children }) {
   )
 }
 
-function ClassLabel({ children }) {
+function ResourceLabel({ children }) {
   return (
     <h1>{children}</h1>
   )
 }
 
-export default function ClassView({ selectedClass, endpoint }) {
-  const sparqlQuery = getNodeShape(selectedClass)
+export default function ResourceView({ resourceUri, endpoint }) {
+  const sparqlQuery = getNodeShape(resourceUri)
   const fetchOptions = getFetchOptions(sparqlQuery)
-  const { data, error } = useSWR(selectedClass ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
+  const { data, error } = useSWR(resourceUri ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
 
   if (error) return <div>Failed to load</div>
-  if (!data && !selectedClass) return <div>No class selected</div>
+  if (!data && !resourceUri) return <div>No class selected</div>
   if (!data) return <div>Loading...</div>
 
   const label = getRdfsLabel(data)
@@ -78,23 +77,26 @@ export default function ClassView({ selectedClass, endpoint }) {
     }
   }
 
+  let rdfTypes = []
   const properties = []
   for(const property in propertyValues) {
     properties.push({
       property: property,
       values: propertyValues[property]
     })
+
+    if(property === 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type') {
+      rdfTypes = rdfTypes.concat(propertyValues[property])
+    }
   }
 
   return (
-    <>
-      <ClassLabel>{label}</ClassLabel>
-      <pre>{selectedClass}</pre>
-
-      <hr></hr>
+    <div className="margin-left--md padding--sm">
+      <ResourceLabel>{label}</ResourceLabel>
+      <p>IRI: <code>{resourceUri}</code></p>
       
       {properties.map(property => <div key={property.property}>
-        <IRIField value={property.property} /> 
+        <strong><IRIField value={property.property} /></strong>
         <ul>
           {property.values.map(value => {
             if(value.type === 'uri') {
@@ -107,8 +109,8 @@ export default function ClassView({ selectedClass, endpoint }) {
         </ul>
       </div>)}
 
-      <ClassConstraints classUri={selectedClass} endpoint={endpoint} />
-      
-    </>
+      {/* Only render ClassConstraints if it is a sh:NodeShape */}
+      {rdfTypes.some(c => c.value === 'http://www.w3.org/ns/shacl#NodeShape') ? <ClassConstraints classUri={resourceUri} endpoint={endpoint} /> : ''}
+    </div>
   )
 }

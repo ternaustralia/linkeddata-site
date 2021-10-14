@@ -3,31 +3,8 @@ import { fetcher } from '../../../common/dataFetcher';
 import { getNodeShapes } from './queries';
 import { getFetchOptions } from './utils';
 import React from 'react'
-import { Link } from 'react-router-dom';
-
-function ListItem({classUri, pageRoute, endpoint}) {
-  const sparqlQuery = `
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    select *
-    from <http://www.ontotext.com/explicit>
-    from <https://w3id.org/tern/ontologies/tern/>
-    where {
-        <${classUri}> rdfs:label ?label .
-    }
-    limit 1
-  `
-  const fetchOptions = getFetchOptions(sparqlQuery)
-  const { data, error } = useSWR([endpoint, JSON.stringify(fetchOptions)], fetcher)
-
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-  
-  return (
-    <li>
-      <Link to={`${pageRoute}?uri=${classUri}&endpoint=${endpoint}`}>{data.results.bindings[0].label.value}</Link>
-    </li>
-  )
-}
+import InternalLink from './InternalLink';
+import styles from './classlist.modules.css';
 
 export default function ClassList({ pageRoute, endpoint }) {
   const sparqlQuery = getNodeShapes()
@@ -38,15 +15,17 @@ export default function ClassList({ pageRoute, endpoint }) {
   if (!data) return <div>Loading...</div>
 
   const items = data.results.bindings.map(item => {
-    return <ListItem key={item.class.value} classUri={item.class.value} pageRoute={pageRoute} endpoint={endpoint} />
+    return (
+      <div className={styles.classItem} key={item.class.value}>
+        <InternalLink classUri={item.class.value} pageRoute={pageRoute} endpoint={endpoint} />
+      </div>
+    )
   })
 
   return (
-    <div className="margin-left--lg">
+    <div className={styles.classList + " margin-left--md padding--sm"}>
       <h2>Classes</h2>
-      <ul>
-        {items}
-      </ul>
+      {items}
     </div>
   )
 }
