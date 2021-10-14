@@ -36,18 +36,24 @@ function PageComponent() {
       setSelectedClass(uri)
     }
   }, [uri])
-
+  // sidebar_node_modules-@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module
   return (
-    <main className="container container--fluid margin-vert--lg">
+    <main className="margin-vert--lg">
       <div className="row">
-        <div className="col col--3">
-          <h2>Classes</h2>
-          <ClassList pageRoute={pageRoute} endpoint={endpoint} />
-        </div>
-        <div className="col col--9">
-          <ClassView selectedClass={selectedClass} endpoint={endpoint} />
+        <ClassList pageRoute={pageRoute} endpoint={endpoint} />
+        <div className="container">
+        <ClassView selectedClass={selectedClass} endpoint={endpoint} />
         </div>
       </div>
+      
+      {/* <div className="row">
+        <div className="col col--3">
+          
+        </div>
+        <div className="col col--9">
+          
+        </div>
+      </div> */}
       
       {/* {debugView} */}
     </main>

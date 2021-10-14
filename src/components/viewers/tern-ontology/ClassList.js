@@ -42,8 +42,11 @@ export default function ClassList({ pageRoute, endpoint }) {
   })
 
   return (
-    <ul>
-      {items}
-    </ul>
+    <div className="margin-left--lg">
+      <h2>Classes</h2>
+      <ul>
+        {items}
+      </ul>
+    </div>
   )
 }

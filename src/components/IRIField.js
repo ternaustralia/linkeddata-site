@@ -7,7 +7,13 @@ export default function IRIField({value}) {
     const searchParams = new URLSearchParams('')
     searchParams.set('q', value)
     const endpoint = 'https://prefix.zazuko.com/api/v1/shrink'
-    const { data, error } = useSWR(endpoint + '?' + searchParams, fetcher)
+
+    // Don't refetch on error - could be the curie does not exist in the prefix service.
+    const swrOptions = {
+      shouldRetryOnError: false,
+      revalidateOnFocus: false
+    }
+    const { data, error } = useSWR(endpoint + '?' + searchParams, fetcher, swrOptions)
   
     const errorView = <code>{value}</code>
 

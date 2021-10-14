@@ -1,12 +1,13 @@
 import useSWR from 'swr'
 import { fetcher } from '../../../common/dataFetcher'
-import { getNodeShape } from './queries'
+import { getClassConstraints, getNodeShape } from './queries'
 import { getFetchOptions, getRdfsLabel } from './utils'
 import React, { useRef, useState } from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import lightCodeTheme from 'prism-react-renderer/themes/github'
 import ExternalLink from '../../ExternalLink'
 import IRIField from '../../IRIField'
+import ClassConstraints from './ClassConstraints'
 
 function ClassUri({ children }) {
   // const button = useRef(null);
@@ -95,11 +96,18 @@ export default function ClassView({ selectedClass, endpoint }) {
       {properties.map(property => <div key={property.property}>
         <IRIField value={property.property} /> 
         <ul>
-          {property.values.map(value => value.type === 'uri' ? <li key={value.value}><IRIField key={value.value} value={value.value} /></li> : <li key={value.value}>{value.value}</li>)}
+          {property.values.map(value => {
+            if(value.type === 'uri') {
+              return <li key={value.value}><IRIField key={value.value} value={value.value} /></li>
+            }
+            else {
+              return <li key={value.value}>{value.value}</li>
+            }
+          })}
         </ul>
       </div>)}
 
-      <pre>{JSON.stringify(propertyValues, null, 2)}</pre>
+      <ClassConstraints classUri={selectedClass} endpoint={endpoint} />
       
     </>
   )
