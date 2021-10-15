@@ -84,6 +84,21 @@ const config = {
             ]
           },
           {
+            type: "dropdown",
+            label: "Viewers",
+            position: "left",
+            items: [
+              {
+                to: '/viewers/tern-ontology',
+                label: 'Browse TERN Ontology by class'
+              },
+              {
+                to: '/viewers/tern-loc-ontology',
+                label: 'Browse TERN Location Ontology by class'
+              }
+            ]
+          },
+          {
             type: 'dropdown',
             label: 'About',
             position: 'left',
@@ -94,17 +109,6 @@ const config = {
               }
             ]
           },
-          {
-            type: "dropdown",
-            label: "Viewers",
-            position: "left",
-            items: [
-              {
-                to: '/viewers/tern-ontology',
-                label: 'TERN Ontology viewer'
-              }
-            ]
-          }
           // {
           //   type: 'doc',
           //   docId: 'intro',

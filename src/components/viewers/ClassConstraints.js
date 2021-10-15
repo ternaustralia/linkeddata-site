@@ -1,10 +1,9 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
-import { getClassConstraints } from './queries';
 import { getFetchOptions } from './utils';
 import useSWR from 'swr';
-import { fetcher } from '../../../common/dataFetcher';
-import IRIField from '../../IRIField';
+import { fetcher } from '../../common/dataFetcher';
+import IRIField from '../IRIField';
 
 function Cardinality({max, min}) {
   if(max && min && max === min) {
@@ -28,23 +27,23 @@ function Cardinality({max, min}) {
   return <></>
 }
 
-function ExpectedValueTypes({values}) {
+function ExpectedValueTypes({values, settings}) {
   if(!values) {
     return <></>
   }
 
   if(values.length === 1) {
-    return <IRIField value={values[0]} />
+    return <IRIField value={values[0]} settings={settings} />
   }
 
   return (
     <ul>
-      {values.map((value, idx) => <li key={idx}>{value ? <IRIField value={value} /> : ''}</li>)}
+      {values.map((value, idx) => <li key={idx}>{value ? <IRIField value={value} settings={settings} /> : ''}</li>)}
     </ul>
   )
 }
 
-function ExpectedValueClassTypes({classes, datatypes}) {
+function ExpectedValueClassTypes({classes, datatypes, settings}) {
   let values = []
 
   if(classes) {
@@ -60,17 +59,17 @@ function ExpectedValueClassTypes({classes, datatypes}) {
   }
   
   if(values.length === 1) {
-    return <IRIField value={values[0]} />
+    return <IRIField value={values[0]} settings={settings} />
   }
 
   return (
     <ul>
-      {values.map((value, idx) => <li key={idx}>{value ? <IRIField value={value} /> : ''}</li>)}
+      {values.map((value, idx) => <li key={idx}>{value ? <IRIField value={value} settings={settings} /> : ''}</li>)}
     </ul>
   )
 }
 
-function ExpectedValues({values}) {
+function ExpectedValues({values, settings}) {
   if(!values) {
     return <></>
   }
@@ -86,7 +85,7 @@ function ExpectedValues({values}) {
   )
 }
 
-function Description({values}) {
+function Description({values, settings}) {
   if(!values) {
     return <></>
   }
@@ -102,13 +101,14 @@ function Description({values}) {
   )
 }
 
-export default function ClassConstraints({ classUri, endpoint }) {
-  const sparqlQuery = getClassConstraints(classUri)
+export default function ClassConstraints({resourceUri, settings}) {
+  const { endpoint, queries } = settings
+  const sparqlQuery = queries.getClassConstraints(resourceUri)
   const fetchOptions = getFetchOptions(sparqlQuery)
-  const { data, error } = useSWR(classUri ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
+  const { data, error } = useSWR(resourceUri ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
 
   if (error) return <div>Failed to load</div>
-  if (!data && !classUri) return <div>No class selected</div>
+  if (!data && !resourceUri) return <div>No class selected</div>
   if (!data) return <div>Loading...</div>
 
   const results = {}
@@ -151,27 +151,27 @@ export default function ClassConstraints({ classUri, endpoint }) {
     </thead>
     <tbody>
       <tr>
-        <td colSpan="6"><strong>Properties from <IRIField value={classUri} /></strong></td>
+        <td colSpan="6"><strong>Properties from <IRIField value={resourceUri} settings={settings} /></strong></td>
       </tr>
       {Object.keys(results).map(key => {
         return <tr key={key}>
           <td>
-            <strong><IRIField value={results[key]['http://www.w3.org/ns/shacl#path'][0]} /></strong>
+            <strong><IRIField value={results[key]['http://www.w3.org/ns/shacl#path'][0]} settings={settings} /></strong>
           </td>
           <td>
-            <Description values={results[key]?.['http://www.w3.org/ns/shacl#description']} />
+            <Description values={results[key]?.['http://www.w3.org/ns/shacl#description']} settings={settings} />
           </td>
           <td>
             <Cardinality max={results[key]?.['http://www.w3.org/ns/shacl#maxCount']?.[0]} min={results[key]?.['http://www.w3.org/ns/shacl#minCount']?.[0]} />
           </td>
           <td>
-            <ExpectedValueTypes values={results[key]?.['http://www.w3.org/ns/shacl#nodeKind']} />
+            <ExpectedValueTypes values={results[key]?.['http://www.w3.org/ns/shacl#nodeKind']} settings={settings} />
           </td>
           <td>
-            <ExpectedValueClassTypes classes={results[key]?.['http://www.w3.org/ns/shacl#class']} datatypes={results[key]?.['http://www.w3.org/ns/shacl#datatype']} />
+            <ExpectedValueClassTypes classes={results[key]?.['http://www.w3.org/ns/shacl#class']} datatypes={results[key]?.['http://www.w3.org/ns/shacl#datatype']} settings={settings} />
           </td>
           <td>
-            <ExpectedValues values={results[key]?.['http://www.w3.org/ns/shacl#hasValue']} />
+            <ExpectedValues values={results[key]?.['http://www.w3.org/ns/shacl#hasValue']} settings={settings} />
           </td>
         </tr>
       })}

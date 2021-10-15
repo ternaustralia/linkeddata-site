@@ -49,7 +49,7 @@ function PageComponent() {
 export default function Page() {
 
   return (
-    <Layout title="TERN Ontology viewer">
+    <Layout title="TERN Location Ontology viewer">
       <Router>
         <PageComponent />
       </Router>

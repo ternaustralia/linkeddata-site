@@ -1,9 +1,8 @@
 import useSWR from 'swr'
-import { fetcher } from '../../../common/dataFetcher'
-import { getNodeShape } from './queries'
+import { fetcher } from '../../common/dataFetcher'
 import { getFetchOptions, getRdfsLabel } from './utils'
 import React from 'react'
-import IRIField from '../../IRIField'
+import IRIField from '../IRIField'
 import ClassConstraints from './ClassConstraints'
 import CodeBlock from '@theme/CodeBlock'
 
@@ -13,8 +12,9 @@ function ResourceLabel({ children }) {
   )
 }
 
-export default function ResourceView({ resourceUri, endpoint }) {
-  const sparqlQuery = getNodeShape(resourceUri)
+export default function ResourceView({resourceUri, settings}) {
+  const { endpoint, queries } = settings
+  const sparqlQuery = queries.getResource(resourceUri)
   const fetchOptions = getFetchOptions(sparqlQuery)
   const { data, error } = useSWR(resourceUri ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
 
@@ -58,11 +58,11 @@ export default function ResourceView({ resourceUri, endpoint }) {
       <CodeBlock>{resourceUri}</CodeBlock>
       
       {properties.map(property => <div key={property.property}>
-        <strong><IRIField value={property.property} /></strong>
+        <strong><IRIField value={property.property} settings={settings} /></strong>
         <ul>
           {property.values.map(value => {
             if(value.type === 'uri') {
-              return <li key={value.value}><IRIField key={value.value} value={value.value} /></li>
+              return <li key={value.value}><IRIField key={value.value} value={value.value} settings={settings} /></li>
             }
             else {
               return <li key={value.value}>{value.value}</li>
@@ -72,7 +72,7 @@ export default function ResourceView({ resourceUri, endpoint }) {
       </div>)}
 
       {/* Only render ClassConstraints if it is a sh:NodeShape */}
-      {rdfTypes.some(c => c.value === 'http://www.w3.org/ns/shacl#NodeShape') ? <ClassConstraints classUri={resourceUri} endpoint={endpoint} /> : ''}
+      {rdfTypes.some(c => c.value === 'http://www.w3.org/ns/shacl#NodeShape') ? <ClassConstraints resourceUri={resourceUri} settings={settings} /> : ''}
     </div>
   )
 }

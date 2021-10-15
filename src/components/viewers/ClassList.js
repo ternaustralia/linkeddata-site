@@ -1,13 +1,13 @@
 import useSWR from 'swr';
-import { fetcher } from '../../../common/dataFetcher';
-import { getNodeShapes } from './queries';
+import { fetcher } from '../../common/dataFetcher';
 import { getFetchOptions } from './utils';
 import React from 'react'
 import InternalLink from './InternalLink';
 import styles from './classlist.modules.css';
 
-export default function ClassList({ pageRoute, endpoint }) {
-  const sparqlQuery = getNodeShapes()
+export default function ClassList({ settings }) {
+  const {endpoint, queries} = settings
+  const sparqlQuery = queries.getClasses()
   const fetchOptions = getFetchOptions(sparqlQuery)
   const { data, error } = useSWR([endpoint, JSON.stringify(fetchOptions)], fetcher)
 
@@ -17,7 +17,7 @@ export default function ClassList({ pageRoute, endpoint }) {
   const items = data.results.bindings.map(item => {
     return (
       <div className={styles.classItem} key={item.class.value}>
-        <InternalLink classUri={item.class.value} pageRoute={pageRoute} endpoint={endpoint} />
+        <InternalLink resourceUri={item.class.value} settings={settings} />
       </div>
     )
   })

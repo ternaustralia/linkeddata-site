@@ -1,16 +1,15 @@
 import React from 'react'
 import useSWR from 'swr'
 import { fetcher } from '../common/dataFetcher'
-import settings from '../pages/viewers/tern-ontology/_settings'
 import ExternalLink from './ExternalLink'
-import InternalLink from './viewers/tern-ontology/InternalLink'
+import InternalLink from './viewers/InternalLink'
 
-export default function IRIField({ value }) {
+export default function IRIField({ value, settings }) {
 
   // A little ugly but, check if the URI is from the TERN Ontology namespace
   // and if it is, then create it as an internal viewer link.
-  if (value.startsWith('https://w3id.org/tern/ontologies/tern/')) {
-    return <InternalLink classUri={value} pageRoute={settings.pageRoute} endpoint={settings.endpoint} />
+  if (value.startsWith(settings.queries.baseUri)) {
+    return <InternalLink resourceUri={value} settings={settings} />
   }
 
   const searchParams = new URLSearchParams('')

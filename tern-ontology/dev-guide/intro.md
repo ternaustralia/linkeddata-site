@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-This section will provide guidance on how to implement and use the TERN Ontology for ecological data exchange. 
+This section will provide guidance on how to implement and use the TERN Ontology for ecological data representation and exchange. 
 
 :::danger TODO
 Provide some background technical information required to implement and use the TERN Ontology.
