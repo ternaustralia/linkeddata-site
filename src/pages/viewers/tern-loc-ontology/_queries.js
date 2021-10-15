@@ -1,4 +1,5 @@
 export const baseUri = 'https://w3id.org/tern/ontologies/loc/'
+const namedGraph = baseUri
 
 export const getClasses = () => {
   return `
@@ -7,12 +8,12 @@ export const getClasses = () => {
   PREFIX sh: <http://www.w3.org/ns/shacl#>
   select distinct ?class
   from <http://www.ontotext.com/explicit>
-  from <https://w3id.org/tern/ontologies/loc/>
+  from <${namedGraph}>
   where {
     ?class a sh:NodeShape
   
     filter(!isBlank(?class))
-    filter(strstarts(str(?class), "https://w3id.org/tern/ontologies/loc/"))
+    filter(strstarts(str(?class), "${baseUri}"))
   }
   order by ?class
   `
@@ -23,7 +24,7 @@ export const getClasses = () => {
   PREFIX sh: <http://www.w3.org/ns/shacl#>
   select distinct ?class
   from <http://www.ontotext.com/explicit>
-  from <https://w3id.org/tern/ontologies/tern/>
+  from <${namedGraph}>
   where {
     {
       optional { ?class a rdfs:Class }        
@@ -36,7 +37,7 @@ export const getClasses = () => {
     }
   
     filter(!isBlank(?class))
-    filter(strstarts(str(?class), "https://w3id.org/tern/ontologies/loc/"))
+    filter(strstarts(str(?class), "${baseUri}"))
   }
   order by ?class
   `
@@ -47,7 +48,7 @@ export function getResource(classUri) {
   PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
   select *
   from <http://www.ontotext.com/explicit>
-  from <https://w3id.org/tern/ontologies/loc/>
+  from <${namedGraph}>
   where {
       <${classUri}> ?p ?o .
       filter(!isBlank(?p))
@@ -65,7 +66,7 @@ export function getClassConstraints(classUri) {
   
     SELECT ?id ?p ?o ?ppp ?ooo
     from <http://www.ontotext.com/explicit>
-    from <https://w3id.org/tern/ontologies/loc/>
+    from <${namedGraph}>
     WHERE { 
         <${classUri}> sh:property ?id .
         ?id ?p ?o .
@@ -83,7 +84,7 @@ export function getLabel(resourceUri) {
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   select *
   from <http://www.ontotext.com/explicit>
-  from <https://w3id.org/tern/ontologies/loc/>
+  from <${namedGraph}>
   where {
       <${resourceUri}> rdfs:label ?label .
   }
@@ -98,11 +99,11 @@ export function getSuperClasses(resourceUri) {
   PREFIX sh: <http://www.w3.org/ns/shacl#>
   select *
   from <http://www.ontotext.com/explicit>
-  from <https://w3id.org/tern/ontologies/loc/>
+  from <${namedGraph}>
   where {
       <${resourceUri}> rdfs:subClassOf+ ?superclass
       filter(!isBlank(?superclass))
-      filter(strstarts(str(?superclass), "https://w3id.org/tern/ontologies/loc/"))
+      filter(strstarts(str(?superclass), "${baseUri}"))
   }
   `
 }

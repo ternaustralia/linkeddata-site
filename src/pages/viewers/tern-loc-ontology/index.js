@@ -7,6 +7,7 @@ import {
 import ResourceView from '../../../components/viewers/ResourceView';
 import ClassList from '../../../components/viewers/ClassList'
 import settings from './_settings'
+import ScrollToTop from '../../../components/ScrollToTop';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
