@@ -1,6 +1,56 @@
 export const baseUri = 'https://w3id.org/tern/ontologies/loc/'
 const namedGraph = baseUri
 
+export function getDirectSubclasses(resourceUri) {
+  return `
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  SELECT DISTINCT ?direct_child_class ?has_subclass
+  from <http://www.ontotext.com/explicit>
+  from <${namedGraph}>
+  WHERE {
+    ?direct_child_class rdfs:subClassOf <${resourceUri}> .
+    
+    BIND(
+        EXISTS {
+            ?child_class rdfs:subClassOf ?direct_child_class
+        }
+        as ?has_subclass
+    )
+  }
+  `
+}
+
+export function getTopLevelClasses() {
+  return `
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  PREFIX sh: <http://www.w3.org/ns/shacl#>
+  select distinct ?class ?hasSubclass
+  from <http://www.ontotext.com/explicit>
+  from <${namedGraph}>
+  where {
+    ?class a sh:NodeShape .
+    optional {
+        ?class rdfs:subClassOf ?parentClass .
+        FILTER(isIRI(?parentClass))        
+    }
+
+    FILTER NOT EXISTS {
+        ?class rdfs:subClassOf ?other .
+        FILTER(STRSTARTS(STR(?other), "${baseUri}"))
+    }
+
+    BIND(
+        EXISTS {
+            ?childClass rdfs:subClassOf ?class
+        }
+        as ?hasSubclass
+    )
+  }
+  ORDER BY ?class
+  `
+}
+
 export const getClasses = () => {
   return `
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
