@@ -4,17 +4,19 @@ const namedGraph = baseUri
 export function getDirectSubclasses(resourceUri) {
   return `
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-  SELECT DISTINCT ?direct_child_class ?has_subclass
+  PREFIX sh: <http://www.w3.org/ns/shacl#>
+  SELECT DISTINCT ?directChildClass ?hasSubclass
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   WHERE {
-    ?direct_child_class rdfs:subClassOf <${resourceUri}> .
+    ?directChildClass rdfs:subClassOf <${resourceUri}> .
+    ?directChildClass a sh:NodeShape .
     
     BIND(
         EXISTS {
-            ?child_class rdfs:subClassOf ?direct_child_class
+            ?childClass rdfs:subClassOf ?directChildClass
         }
-        as ?has_subclass
+        as ?hasSubclass
     )
   }
   `

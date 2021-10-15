@@ -14,8 +14,23 @@ function HierarchyListItem({ resourceUri, hasSubclass, settings }) {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
+  if(hasSubclass === 'false') {
+    return (
+      <InternalLink resourceUri={resourceUri} settings={settings} />
+    )
+  }
+
   return (
-    <InternalLink resourceUri={resourceUri} settings={settings} />
+    <>
+      <InternalLink resourceUri={resourceUri} settings={settings} />
+      <ul>
+        {data.results.bindings.map(value => (
+          <li className={styles.classItem} key={value.directChildClass.value}>
+            <HierarchyListItem resourceUri={value.directChildClass.value} hasSubclass={value.hasSubclass.value} settings={settings} />
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }
 
