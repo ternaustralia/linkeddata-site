@@ -15,10 +15,7 @@ function useQuery() {
 
 function PageComponent() {
   let query = useQuery();
-  const pageRoute = settings.pageRoute
   const uri = query.get('uri')
-  const endpoint = query.get('endpoint') || settings.endpoint
-  const queries = settings.queries
 
   // Reason we serialise fetchOptions is to avoid infinite loop.
   // See https://github.com/vercel/swr/issues/345
