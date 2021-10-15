@@ -51,7 +51,9 @@ export default function Page() {
   return (
     <Layout title="TERN Location Ontology viewer">
       <Router>
-        <PageComponent />
+        <ScrollToTop>
+          <PageComponent />
+        </ScrollToTop>
       </Router>
     </Layout>
   );

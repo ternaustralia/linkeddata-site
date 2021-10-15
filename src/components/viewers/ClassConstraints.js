@@ -1,5 +1,4 @@
 import React from 'react'
-import { Table } from 'react-bootstrap'
 import { getFetchOptions } from './utils';
 import useSWR from 'swr';
 import { fetcher } from '../../common/dataFetcher';
@@ -107,9 +106,9 @@ export default function ClassConstraints({resourceUri, settings}) {
   const fetchOptions = getFetchOptions(sparqlQuery)
   const { data, error } = useSWR(resourceUri ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
 
-  if (error) return <div>Failed to load</div>
-  if (!data && !resourceUri) return <div>No class selected</div>
-  if (!data) return <div>Loading...</div>
+  if (error) return <tr><td>Failed to load</td></tr>
+  if (!data && !resourceUri) return <tr><td>No class selected</td></tr>
+  if (!data) return <tr><td>Loading...</td></tr>
 
   const results = {}
 
@@ -138,18 +137,8 @@ export default function ClassConstraints({resourceUri, settings}) {
     }
   }
 
-  const constraints = <Table bordered hover>
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Description</th>
-        <th>Cardinality</th>
-        <th>Expected value types</th>
-        <th>Expected value class types</th>
-        <th>Expected values</th>
-      </tr>
-    </thead>
-    <tbody>
+  return (
+    <>
       <tr>
         <td colSpan="6"><strong>Properties from <IRIField value={resourceUri} settings={settings} /></strong></td>
       </tr>
@@ -175,12 +164,6 @@ export default function ClassConstraints({resourceUri, settings}) {
           </td>
         </tr>
       })}
-    </tbody>
-  </Table>
-
-  return (
-    <>
-      {constraints}
     </>
   )
 }

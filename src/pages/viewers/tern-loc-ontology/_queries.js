@@ -90,3 +90,19 @@ export function getLabel(resourceUri) {
   limit 1
 `
 }
+
+export function getSuperClasses(resourceUri) {
+  return `
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  PREFIX sh: <http://www.w3.org/ns/shacl#>
+  select *
+  from <http://www.ontotext.com/explicit>
+  from <https://w3id.org/tern/ontologies/loc/>
+  where {
+      <${resourceUri}> rdfs:subClassOf+ ?superclass
+      filter(!isBlank(?superclass))
+      filter(strstarts(str(?superclass), "https://w3id.org/tern/ontologies/loc/"))
+  }
+  `
+}
