@@ -48,14 +48,15 @@ function PageComponent() {
 }
 
 export default function Page() {
+  if (typeof window === "undefined") {
+    return <></>
+  }
 
-  return (
-    <Layout title="TERN Ontology viewer">
-      <Router>
-        <ScrollToTop>
-          <PageComponent />
-        </ScrollToTop>
-      </Router>
-    </Layout>
-  );
+  return <Layout title="TERN Ontology viewer">
+    <Router>
+      <ScrollToTop>
+        <PageComponent />
+      </ScrollToTop>
+    </Router>
+  </Layout>
 }

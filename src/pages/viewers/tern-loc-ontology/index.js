@@ -38,7 +38,7 @@ function PageComponent() {
         <div className="col col--2">
           <ClassList settings={settings} />
         </div>
-        
+
         <div className="col col--10">
           <ResourceView resourceUri={selectedClass} settings={settings} />
         </div>
@@ -48,14 +48,15 @@ function PageComponent() {
 }
 
 export default function Page() {
+  if (typeof window === "undefined") {
+    return <></>
+  }
 
-  return (
-    <Layout title="TERN Location Ontology viewer">
-      <Router>
-        <ScrollToTop>
-          <PageComponent />
-        </ScrollToTop>
-      </Router>
-    </Layout>
-  );
+  return <Layout title="TERN Location Ontology viewer">
+    <Router>
+      <ScrollToTop>
+        <PageComponent />
+      </ScrollToTop>
+    </Router>
+  </Layout>
 }
