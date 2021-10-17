@@ -1,6 +1,58 @@
 export const baseUri = 'https://w3id.org/tern/ontologies/tern/'
 const namedGraph = baseUri
 
+export function getDirectSubclasses(resourceUri) {
+  return `
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX sh: <http://www.w3.org/ns/shacl#>
+  SELECT DISTINCT ?directChildClass ?hasSubclass
+  from <http://www.ontotext.com/explicit>
+  from <${namedGraph}>
+  WHERE {
+    ?directChildClass rdfs:subClassOf <${resourceUri}> .
+    ?directChildClass a sh:NodeShape .
+    
+    BIND(
+        EXISTS {
+            ?childClass rdfs:subClassOf ?directChildClass
+        }
+        as ?hasSubclass
+    )
+  }
+  `
+}
+
+export function getTopLevelClasses() {
+  return `
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  PREFIX sh: <http://www.w3.org/ns/shacl#>
+  select distinct ?class ?hasSubclass
+  from <http://www.ontotext.com/explicit>
+  from <${namedGraph}>
+  where {
+    ?class a sh:NodeShape .
+    optional {
+        ?class rdfs:subClassOf ?parentClass .
+        FILTER(isIRI(?parentClass))        
+    }
+
+    FILTER NOT EXISTS {
+        ?class rdfs:subClassOf ?other .
+        FILTER(STRSTARTS(STR(?other), "${baseUri}"))
+    }
+
+    BIND(
+        EXISTS {
+            ?childClass rdfs:subClassOf ?class
+        }
+        as ?hasSubclass
+    )
+  }
+  ORDER BY ?class
+  `
+}
+
 export const getClasses = () => {
   return `
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

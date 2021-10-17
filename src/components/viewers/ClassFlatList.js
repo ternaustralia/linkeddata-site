@@ -3,9 +3,9 @@ import { fetcher } from '../../common/dataFetcher';
 import { getFetchOptions } from './utils';
 import React from 'react'
 import InternalLink from './InternalLink';
-import styles from './classlist.modules.css';
+import styles from './viewer.modules.css';
 
-export default function ClassList({ settings }) {
+export default function ClassFlatList({ settings }) {
   const {endpoint, queries} = settings
   const sparqlQuery = queries.getClasses()
   const fetchOptions = getFetchOptions(sparqlQuery)
@@ -23,8 +23,7 @@ export default function ClassList({ settings }) {
   })
 
   return (
-    <div className={styles.classList + " margin-left--md padding--sm"}>
-      <h2>Classes</h2>
+    <div>
       {items}
     </div>
   )
