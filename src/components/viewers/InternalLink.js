@@ -14,6 +14,6 @@ export default function InternalLink({ resourceUri, settings }) {
   if (!data) return <div>Loading...</div>
 
   return (
-    <Link to={`${pageRoute}?uri=${resourceUri}&endpoint=${endpoint}`}><strong>{data.results.bindings[0].label.value}</strong></Link>
+    <Link to={`${pageRoute}?uri=${resourceUri}`}><strong>{data.results.bindings[0].label.value}</strong></Link>
   )
 }
