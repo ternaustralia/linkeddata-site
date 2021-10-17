@@ -6,6 +6,7 @@ import IRIField from '../IRIField'
 import ClassConstraints from './ClassConstraints'
 import CodeBlock from '@theme/CodeBlock'
 import { Table } from 'react-bootstrap'
+import styles from './viewer.modules.css'
 
 function ResourceLabel({ children }) {
   return (
@@ -75,6 +76,7 @@ export default function ResourceView({ resourceUri, settings }) {
   return (
     <>
       <div className="margin-left--md padding--sm">
+      <span className={styles.badge + " badge badge--primary"} onClick={() => window.open(`https://lodview-proxy.deta.dev/api/v1/lodview?IRI=${resourceUri}&sparql=${settings.endpoint}&output=text/turtle`, '_blank').focus()}>View as Turtle</span>
         <ResourceLabel>{label}</ResourceLabel>
         <CodeBlock>{resourceUri}</CodeBlock>
 
