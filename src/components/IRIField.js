@@ -23,7 +23,7 @@ export default function IRIField({ value, settings }) {
   }
   const { data, error } = useSWR(endpoint + '?' + searchParams, fetcher, swrOptions)
 
-  const errorView = <code>{value}</code>
+  const errorView = <ExternalLink href={value}>{value}</ExternalLink>
 
   if (error) return errorView
   if (!data) return <div>Loading...</div>

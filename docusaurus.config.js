@@ -95,7 +95,11 @@ const config = {
               {
                 to: '/viewers/tern-loc-ontology',
                 label: 'Browse TERN Location Ontology by class'
-              }
+              },
+              {
+                to: '/viewers/tern-org-ontology',
+                label: 'Browse TERN Organisation Ontology by class'
+              },
             ]
           },
           {
