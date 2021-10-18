@@ -37,6 +37,9 @@ export function getTopLevelClasses() {
         FILTER(isIRI(?parentClass))        
     }
 
+    FILTER(!isBlank(?class))
+    FILTER(STRSTARTS(STR(?class), "${baseUri}"))
+
     FILTER NOT EXISTS {
         ?class rdfs:subClassOf ?other .
         FILTER(STRSTARTS(STR(?other), "${baseUri}"))

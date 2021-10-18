@@ -1,4 +1,4 @@
-export const baseUri = 'https://w3id.org/tern/ontologies/loc/'
+export const baseUri = 'https://w3id.org/tern/ontologies/org/'
 const namedGraph = baseUri
 
 export function getDirectSubclasses(resourceUri) {
@@ -10,7 +10,7 @@ export function getDirectSubclasses(resourceUri) {
   from <${namedGraph}>
   WHERE {
     ?directChildClass rdfs:subClassOf <${resourceUri}> .
-    ?directChildClass a sh:NodeShape .
+    ?directChildClass a owl:Class .
     
     BIND(
         EXISTS {
@@ -31,7 +31,7 @@ export function getTopLevelClasses() {
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   where {
-    ?class a sh:NodeShape .
+    ?class a owl:Class .
     optional {
         ?class rdfs:subClassOf ?parentClass .
         FILTER(isIRI(?parentClass))        
