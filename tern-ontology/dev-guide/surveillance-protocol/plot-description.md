@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Module 1 - Plot Description
+# Plot Description
 
 :::caution
 This section is a work in progress.
@@ -11,12 +11,13 @@ This section is a work in progress.
 
 ## Observable properties
 
-Module 1 provides instructions in how to collect data from the following observable properties:
-- [landform pattern](http://linked.data.gov.au/def/tern-cv/78b617e9-cd18-40b7-ad38-efc30579e680)
-- [landform element](http://linked.data.gov.au/def/tern-cv/a40230bc-c1e9-4309-b883-c4ead1d143ce)
-- [growth form](http://linked.data.gov.au/def/tern-cv/f81aa91e-5f57-4e49-bc6e-4d821d1f9de2)
+Module 1 provides instructions on how to collect data from the following observable properties:
 
-### Example of an observation of the landform pattern
+import PlotDescriptionObservableProperties from '../../../src/components/vocabs/PlotDescriptionObservableProperties'
+
+<PlotDescriptionObservableProperties />
+
+## Landform pattern observation example
 
 :::danger TODO
 ... provide details and explanations here ...
