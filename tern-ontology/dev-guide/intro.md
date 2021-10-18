@@ -12,3 +12,7 @@ Provide some background technical information required to implement and use the 
 
 The Surveillance protocol designed by TERN Ecosystem Surveillance and funded by the Department of Agriculture, Water and the Environment (DAWE) will be used as an implementation example. 
 
+
+:::warning
+This section is incomplete and will be revised.
+:::
