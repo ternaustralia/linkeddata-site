@@ -19,6 +19,7 @@ export function getDirectSubclasses(resourceUri) {
         as ?hasSubclass
     )
   }
+  order by ?directChildClass
   `
 }
 
