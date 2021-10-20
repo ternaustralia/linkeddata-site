@@ -9,11 +9,11 @@ This section is a work in progress.
 :::
 
 
-## Observable properties
+## Observable properties, feature types and categorical values
 
-Module 1 provides instructions on how to collect data from the following observable properties:
+The Plot Description module provides instructions on how to collect data from the following observable properties:
 
-import PlotDescriptionObservableProperties from '../../../src/components/vocabs/PlotDescriptionObservableProperties'
+import PlotDescriptionObservableProperties from '../../../src/components/docs/tern-ontology/surveillance-protocol/PlotDescriptionObservableProperties'
 
 <PlotDescriptionObservableProperties />
 
