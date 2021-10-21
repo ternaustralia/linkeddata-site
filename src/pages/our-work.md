@@ -2,7 +2,7 @@
 title: Standards
 ---
 
-# TERN Standards
+# Our Work
 
 This page lists the data and information standards used and published by TERN Linked Data services.
 
