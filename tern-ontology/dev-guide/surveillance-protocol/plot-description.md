@@ -86,8 +86,8 @@ This context object will be used for all examples within the Plot Description mo
     "isResultOf": {
       "@id": "http://www.w3.org/ns/sosa/isResultOf"
     },
-    "FeatureOfInterest": {
-      "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
+    "inXSDDateTimeStamp": {
+      "@id": "http://www.w3.org/2006/time#inXSDDateTimeStamp"
     }
   }
 }
@@ -105,7 +105,7 @@ This context object will be used for all examples within the Plot Description mo
   "@type": "https://w3id.org/tern/ontologies/tern/Observation",
   "hasFeatureOfInterest": {
     "@id": "https://example.com/feature-instance/1",
-    "@type": "FeatureOfInterest",
+    "@type": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest",
     "featureType": "http://linked.data.gov.au/def/tern-cv/2cf3ed29-440e-4a50-9bbc-5aab30df9fcd",
     "inDataset": {
       "@id": "http://example.com/dataset/1"
@@ -128,7 +128,7 @@ This context object will be used for all examples within the Plot Description mo
   "phenomenonTime": {
     "@id": "http://example.com/time/instant/1",
     "@type": "https://w3id.org/tern/ontologies/tern/Instant",
-    "http://www.w3.org/2006/time#inXSDDateTimeStamp": {
+    "inXSDDateTimeStamp": {
       "@value": "2021-10-20T03:51:29+0000",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     }
