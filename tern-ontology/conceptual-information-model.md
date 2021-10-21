@@ -5,6 +5,10 @@ slug: /conceptual-information-model
 
 # Conceptual Information Model
 
+:::warning
+This section is outdated and will be revised with changes.
+:::
+
 ## Abstract
 
 The TERN Ontology is a conceptual information model to represent plot-based ecological surveys. It defines concepts to describe sites, site visits, features of interest, observations, samplings, and samples. Survey collection protocols generally differ between different programs and organisations. To cater for existing and future survey collection protocols, the TERN Ontology ensures data harmonisation is possible at the core conceptual level while also capturing the intricacies of each survey collection protocol using an extensible framework with SKOS controlled vocabularies.
@@ -30,7 +34,3 @@ The TERN Ontology is a set of vocabularies for plot-based ecological surveys bas
 
 The TERN Ontology is an earth-based science information system for plot-based site observations. It supports ecological themes, including vegetation, landform, soil, and more. Both site-based and plotless opportunistic observations are also supported. Controlled vocabularies support the domain-specific aspects of the TERN Ontology. These include things like feature types, observable properties, procedures, core and non-core attributes and units of measure all support the structure. During development, the TERN Ontology was tested against datasets based primarily on the Australian Soil and Land Survey Field Handbook, though any ecological datasets will also work. Ultimately, the TERN Ontology provides a framework for integrating observations and samples from a survey and provides a unified view of the data for cross-jurisdictional applications.
 
-
-:::warning
-This section is incomplete and will be revised.
-:::
