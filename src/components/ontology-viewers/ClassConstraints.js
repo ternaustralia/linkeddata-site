@@ -1,7 +1,7 @@
 import React from 'react'
-import { getFetchOptions } from './utils';
+import { getFetchOptions } from '../../data/utils';
 import useSWR from 'swr';
-import { fetcher } from '../../common/dataFetcher';
+import { fetcher } from '../../data/dataFetcher';
 import IRIField from '../IRIField';
 
 function Cardinality({max, min}) {

@@ -14,7 +14,7 @@ An example of a <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDat
 
 ```json
 {
-    "@id": "http://example.com/dataset/1",
+    "@id": "https://example.com/dataset/1",
     "@type": "https://w3id.org/tern/ontologies/tern/RDFDataset",
     "http://purl.org/dc/terms/title": "Example Dataset 1",
     "http://purl.org/dc/terms/issued": {

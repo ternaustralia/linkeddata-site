@@ -10,10 +10,7 @@ import ClassHierarchyList from './ClassHierarchyList';
 import ScrollToTop from '../ScrollToTop';
 import Select from 'react-select'
 import styles from './viewer.modules.css'
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import useQuery from '../../hooks/useQuery';
 
 const selectOptions = [
   { value: 'hierarchy', label: 'hierarchy' },
@@ -70,7 +67,7 @@ export default function Page({ settings }) {
     return <></>
   }
 
-  return <Layout title="TERN Ontology viewer">
+  return <Layout title={settings.title}>
     <Router>
       <ScrollToTop>
         <PageComponent settings={settings} />

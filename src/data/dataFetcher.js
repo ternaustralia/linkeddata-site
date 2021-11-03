@@ -1,3 +1,6 @@
+import useSWR from "swr"
+import { getFetchOptions } from "./utils"
+
 // const fetcher = (...args) => fetch(...args).then(res=> res.json())
 export const fetcher = async (...args) => {
   const url = args[0]
@@ -18,4 +21,11 @@ export const fetcher = async (...args) => {
   }
 
   return res.json()
+}
+
+export function useSparql(sparqlEndpoint, sparqlQuery) {
+  const fetchOptions = getFetchOptions(sparqlQuery)
+  const { data, error } = useSWR([sparqlEndpoint, JSON.stringify(fetchOptions)], fetcher)
+
+  return { data, error }
 }

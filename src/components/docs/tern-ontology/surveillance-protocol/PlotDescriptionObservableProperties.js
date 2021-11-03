@@ -2,9 +2,9 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 import useSWR from "swr"
-import { fetcher } from "../../../../common/dataFetcher"
+import { fetcher } from "../../../../data/dataFetcher"
 import ExternalLink from "../../../ExternalLink"
-import { getFetchOptions } from "../../../viewers/utils"
+import { getFetchOptions } from "../../../../data/utils"
 
 const sparqlQuery = `
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
