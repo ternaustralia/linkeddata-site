@@ -11,11 +11,15 @@ This section is incomplete and will be revised.
 
 ## Abstract
 
-The TERN Ontology is a conceptual information model to represent plot-based ecological surveys. It defines concepts to describe sites, site visits, features of interest, observations, samplings, and samples. Survey collection protocols generally differ between different programs and organisations. To cater for existing and future survey collection protocols, the TERN Ontology ensures data harmonisation is possible at the core conceptual level while also capturing the intricacies of each survey collection protocol using an extensible framework with SKOS controlled vocabularies.
+The TERN Ontology is a information model to represent plot-based ecological surveys. 
+It includes classes to describe sites, site visits, features of interest, observations, samplings, and samples. 
+Survey collection protocols generally differ between different programs and organisations. 
+The TERN Ontology ensures data harmonisation is possible at the core conceptual level to cater for existing and future survey collection protocols. 
+Intricacies of survey collection protocols are supported through an extensible framework using SKOS controlled vocabularies.
 
-The TERN Ontology enables a standard representation of ecological survey data for data integration and data exchange. Different systems use the TERN Ontology to exchange survey data using standard RDF serialisations as an exchange format. The TERN Ontology is modelled as a SHACL ontology to ensure incoming and outgoing data conforms to the standard.
+The TERN Ontology enables a standard representation of ecological survey data for data integration and data exchange. Different systems can exchange survey data using formats and schemas based on the TERN Ontology, in particular the standard RDF serializations. The TERN Ontology is formalised as a SHACL ontology, which allows RDF data to be tested for conformance.
 
-The TERN Ontology is based on existing RDF standards and promotes Linked Data principles to enable FAIR data. Exchanging survey data between different data sources in an agreed standard will substantially improve the quality of the published data and ensure the data is harmonised and interpreted correctly.
+The TERN Ontology is based on several existing RDF standards, and promotes Linked Data principles to enable FAIR data. Exchanging survey data between different data sources in a standard will substantially improve the quality of the published data and ensure the data is harmonised and interpreted correctly.
 
 ## Status of this document
 
@@ -23,9 +27,12 @@ This document was prepared by TERN Data Services and Analytics as one of the del
 
 ## Introduction
 
-Ecological data are collected by different state/territory governments under different programs including environmental assessments. There is no standard way to share and exchange data between different jurisdictions. Often, data sharing between agencies is a manual process and there is no standard that governs the exchange of survey data. Performing data integration with disparate datasets from different data sources require a massive amount of time and effort for the data integrator. Rather than putting the onus on the data integrator, the TERN Ontology will serve as the data representation for data exchange, thus putting the onus back on the data provider. Data providers can now use the TERN Ontology to exchange data to a data integrator with a much shorter turnaround time to integrate the new data.
+Ecological observations data are collected by all the jurisdictions through various programs, including environmental assessments. There is no standard for sharing and exchanging ecology observations and survey data between jurisdictions. So data sharing typically involves a lot of time and effort in manual processing by the integrator. The TERN Ontology provides a common data representation which allows for much easier integration, putting the onus on the data provider to conform to the standard. 
 
-The TERN Ontology is a set of vocabularies for plot-based ecological surveys based upon the OGC-aligned W3C Semantic Web standards, the Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) ontologies. Simple Knowledge Organisation System (SKOS) controlled vocabularies are also extensively used to define the domain-specific feature types, parameters, methods and units of measure. The recommendation to align the SKOS controlled vocabularies to the Australian Soil and Land Survey Field Handbook and the National Vegetation Information System (NVIS) for Australian ecological data is highly encouraged. The TERN Ontology has gone through many iterations to simplify the core concepts and modelling patterns based on similar or related standards such as Veg-X, ODM2, SoilML, GeoSciML, Darwin Core, Darwin Core Event, and Humboldt Core.
+The TERN Ontology is a set of vocabularies for plot-based ecological surveys based upon the OGC-aligned W3C Semantic Web standards, in particular the Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) ontologies. Domain-specific feature types, parameters, methods and units of measure, are managed separately as controlled vocabularies, and published using Simple Knowledge Organisation System (SKOS) standard. 
+Controlled vocabularies aligned to the Australian Soil and Land Survey Field Handbook and the National Vegetation Information System (NVIS) for Australian ecological data are highly encouraged. 
+
+The TERN Ontology has gone through many iterations to simplify the core concepts and modelling patterns based on similar or related standards including Veg-X, ODM2, SoilML, GeoSciML, Darwin Core, Darwin Core Event, and Humboldt Core.
 
 ## Scope
 
