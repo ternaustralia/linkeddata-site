@@ -94,6 +94,8 @@ export default function ResourceView({ resourceUri, settings }) {
           </ul>
         </div>)}
 
+        {properties.length > 0 ? '' : 'Not found.'}
+
         {rdfTypes.some(c => c.value === 'http://www.w3.org/ns/shacl#NodeShape') ? <Constraints resourceUri={resourceUri} settings={settings} /> : ''}
       </div>
     </>
