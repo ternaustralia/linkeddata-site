@@ -1,8 +1,8 @@
 import useSWR from 'swr';
-import { fetcher } from '../../common/dataFetcher';
-import { getFetchOptions } from './utils';
+import { fetcher } from '../../data/dataFetcher';
+import { getFetchOptions } from '../../data/utils';
 import React from 'react'
-import InternalLink from './InternalLink';
+import InternalLink from '../InternalLink';
 import styles from './viewer.modules.css';
 
 export default function ClassFlatList({ settings }) {

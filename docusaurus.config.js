@@ -100,6 +100,10 @@ const config = {
                 to: '/viewers/tern-org-ontology',
                 label: 'Browse TERN Organisation Ontology by class'
               },
+              {
+                to: '/viewers/dawe-vocabs',
+                label: 'Browse DAWE Controlled Vocabularies'
+              }
             ]
           },
           {

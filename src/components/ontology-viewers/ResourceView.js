@@ -1,6 +1,6 @@
 import useSWR from 'swr'
-import { fetcher } from '../../common/dataFetcher'
-import { getFetchOptions, getRdfsLabel } from './utils'
+import { fetcher } from '../../data/dataFetcher'
+import { getFetchOptions, getRdfsLabel } from '../../data/utils'
 import React from 'react'
 import IRIField from '../IRIField'
 import ClassConstraints from './ClassConstraints'
@@ -38,7 +38,7 @@ export default function ResourceView({ resourceUri, settings }) {
   const sparqlQuery = queries.getResource(resourceUri)
   const fetchOptions = getFetchOptions(sparqlQuery)
   const { data, error } = useSWR(resourceUri ? [endpoint, JSON.stringify(fetchOptions)] : null, fetcher)
-
+  
   if (error) return <div>Failed to load</div>
   if (!data && !resourceUri) return <div>No class selected</div>
   if (!data) return <div>Loading...</div>
