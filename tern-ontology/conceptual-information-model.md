@@ -9,6 +9,10 @@ slug: /conceptual-information-model
 This section is incomplete and will be revised.
 :::
 
+:::info
+If you want to browse the classes, go to [Browse TERN Ontology by class](/viewers/tern-ontology)
+:::
+
 ## Abstract
 
 The TERN Ontology is a information model to represent plot-based ecological surveys. 

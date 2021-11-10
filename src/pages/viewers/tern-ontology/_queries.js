@@ -163,3 +163,13 @@ export function getSuperClasses(resourceUri) {
   }
   `
 }
+
+export function resourceExists(resourceUri) {
+  return `
+ask {
+  graph <${namedGraph}> {
+      <${resourceUri}>  ?p ?o .       
+  }
+}
+`
+}
