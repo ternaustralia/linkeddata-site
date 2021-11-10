@@ -14,7 +14,7 @@ from <http://www.ontotext.com/explicit>
 from <http://linked.data.gov.au/def/test/dawe-cv/>
 where { 
     # Plot Description Observable Properties
-    <http://linked.data.gov.au/def/test/dawe-cv/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312> skos:member ?concept .
+    <https://linked.data.gov.au/def/test/dawe-cv/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312> skos:member ?concept .
     ?concept skos:prefLabel ?_label .
     bind(str(?_label) as ?__label)
 
@@ -59,9 +59,16 @@ export default function PlotDescriptionObservableProperties() {
     fetcher
   );
 
-  if (error) return <div>Failed to load</div>;
+  const failedToLoadMessage = "Failed to load table";
+
+  if (error) return <div>{failedToLoadMessage}</div>;
   if (!data) return <div>Loading...</div>;
-  
+
+  console.log(data.results.bindings.length);
+  if (data.results.bindings.length <= 1) {
+    return <div>{failedToLoadMessage}</div>;
+  }
+
   const concepts = data.results.bindings.map((value) => (
     <tr key={value.concept.value}>
       <td>
