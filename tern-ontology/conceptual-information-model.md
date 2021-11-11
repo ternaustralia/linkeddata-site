@@ -50,10 +50,9 @@ It supports ecological themes, including vegetation, landform, soil, and more.
 Both site-based observations and plotless opportunistic observations are supported. 
 The domain-specific aspects of the TERN Ontology are supported by controlled vocabularies, covering elements like feature types, observable properties, procedures, core and non-core attributes and units of measure. 
 
-_The following isn't 'scope'_
-
 During development, the TERN Ontology was tested against datasets based primarily on the Australian Soil and Land Survey Field Handbook, though any ecological datasets will also work. 
 The TERN Ontology provides a framework for integrating observations and samples from a survey and provides a unified view of the data for cross-jurisdictional applications.
+The primary applications are **data transfer**. 
 
 ## Background
 
@@ -116,9 +115,9 @@ The TERN Ontology has a direct dependency on the following ontologies and RDF vo
 - OWL-Time
 - GeoSPARQL
 
-Most of these dependencies are specified using RDFS and OWL axioms, which enable reasoning and inferencing. 
-In contrast, the formal specification of TERN Ontology is through SHACL shapes, which enables data validation. 
-This is appropriate for TERN ontology which is primarily designed for data transfer and ingestion into a data store.  
+Most of these dependencies are specified using **RDFS and OWL axioms**, which enable reasoning and inferencing. 
+In contrast, the formal specification of TERN Ontology is through **SHACL shapes**, which enables data validation. 
+Shapes are appropriate for TERN ontology becasue the primary application is data transfer and ingestion.  
 
 The TERN Ontology is accessible via its namespace URI at https://w3id.org/tern/ontologies/tern/. The source code and its related content are accessible in the GitHub repository at https://github.com/ternaustralia/ontology_tern.
 
@@ -134,7 +133,8 @@ An observer visting an individual `Site` will make one or more acts of `Observat
 The result of an act of `Observation` is an estimate of the value of a property of a Feature of Interest. 
 The result of an act of `Sampling` is a sample that is representative of the Feature of Interest. 
 
-__Need to add short mention of proximate vs. ultimate FoI__
+A `Sample` may be the **proximate** feature-of-interest of a subsequent Observation. 
+In this case, the original Feature of Interest of the act of Sampling is often the **ultimate** feature-of-interest of the Observation. 
 
 The TERN Ontology requires the _type_ of feature of interest to be specified, e.g. plant individual, plant occurrence, landform, etc. 
 Spatial information is associated with a Feature of Interest using the GeoSPARQL vocabulary.
@@ -165,10 +165,9 @@ Database entry of the recorded data was at 5:15 pm (result time) later that day.
 ## Sampling
 
 The `Sampling` class in the TERN Ontology has minor additions to the standard definition from SOSA. 
-**I think this discussion of Sampler can be dropped here. There are some implications of the cardinality restrictions in a reasoning application, but TERN Ontology is not primarily designed for this, which is why the main formalisation uses SHACL.**
+**I think this discussion of Sampler can be dropped. There are implications of the cardinality restrictions in a reasoning application, but TERN Ontology is not primarily designed for this, which is why the main formalisation uses SHACL.**
 The Semantic Sensor Network Ontology has an axiom that a Sampler (i.e. a sampling instrument or device)is involved in Sampling. 
 This requirement is dropped in the TERN Ontology's version of the Sampling class, as the requirement of a Sampler is very biased towards the use of sensors in a sensor network. 
-**What does it mean 'this requirement is dropped'? The SSN axiom says 'there is a Sampler' but the OWA does not require that it be recorded. Cardinality restrictions do not have to be enforced by SHACL constraints - these are different meta-understandings.**
 In the context of the TERN Ontology, Sampling is an activity that follows a procedure, and the outcome is a physical sample, _also known as a specimen_. **Not really - Specimen is a material thing which has been accessioned into a collection (such as a Herbarium). Not every material sample is a Specimen.**
 The Sampling class records the result time and optionally records the instrument type used during the sampling activity. 
 Elements from the PROV Ontology are used to record the person who performed the sampling (not necessarily the same as the sampler). 
@@ -189,7 +188,6 @@ In SOSA the key characteristic of a `Sample` is the link to the broader Feature 
 In ecology studies, the broader feature of interest may be a site, or an ecosytem, tract, or other landscape or ecology feature. 
 
 In the TERN Ontology, a `Sample` is a material or non-material sample of a Feature of Interest. 
-Material samples which are accessioned into a collection or curated for future study are also known as specimens. 
 Non-material samples are not collected and are simply identified to support observations and samplings.
 
 ### Example
@@ -200,6 +198,7 @@ An example of non-material sample may be describing the landform of a site or id
 
 A `Material Sample` is a physical sample that is collected and retrieved from the field. 
 Further observations and samplings may be performed on it. 
+If a material sample is accessioned into a collection or curated for future study it is also known as a _specimen_. 
 It may be tagged and stored as a specimen with an accession identifier.
 
 ### Example
@@ -211,51 +210,75 @@ It is later sent to the local state/territory herbarium for identification.
 
 ## Site
 
-Sites are the main ultimate **(Oh - I don't think we have mentioned 'ultimate' before ...)** features of interest in the context of plot-based surveys and their activities. Observations and sampling acts made in a site generally represent the overall state of the site. Sites may contain nested sites using the sub-sample relationship, and the usage of controlled vocabularies indicate the site's type. Examples of site types may be plots, transects, and quadrats. Other features identified within a Site are also represented using sub-sample relationships.
+Sites are the main _ultimate_ features of interest in the context of plot-based surveys and their activities. 
+Acts of observations and sampling made in a site are generally undertaken in order to represent the overall state of the site. 
 
-Conceptually, a Site is a type of Sample as it may representative of something larger such as a local government area, state or territory.
+Sites may contain nested 'sites' using the sub-sample relationship. 
+The site-type is indicated using a value from a controlled vocabulary. 
+Common site-types may include `plot`, `transect`, `quadrat`. 
+Other features identified within a Site are also represented using sub-sample relationships.
+
+A Site may itself be a kind of Sample, as it may be deemed to be representative of a
+- fiat area such as a parcel, a local government area, state or territory
+- landscape area such as an ecosystem or biome.
 
 ### Example
 
-The TERN AusPlots program has sites across Australia, and these sites contain transects for their point intercept collection method. Modelling of these transects uses the sub-sample relationship of the Sample class.
+The TERN AusPlots program has sites across Australia, and these sites contain transects for their point intercept collection method. 
+Modelling of these transects uses the sub-sample relationship of the Sample class.
 
 ## Site visit
 
-A Site Visit is a discrete time-bounded activity at a Site, during which Sampling or Observation activities occur. A Site Visit and a Site is a composition relationship, meaning a Site Visit cannot exist without a Site. The Site Visit class enables the modelling of revisits to a Site and provides the ability to describe the site condition in the context of a site visit.
+A Site Visit is a discrete time-bounded activity at a Site, during which Sampling or Observation activities occur. 
+A Site Visit and a Site have a composition relationship, so a Site Visit cannot exist without a Site. 
+The Site Visit class enables the modelling of revisits to a Site and provides the ability to describe collections of acts of observation or sampling, and the site condition in the context of a site visit.
 
 ### Example
 
-AusPlots Rangelands establish permanent sites across Australia. Revisits to these sites allow the AusPlots team to capture the changes in the environment of these sites. Studies on the collected data provide us with an understanding of why and how these changes are occurring.
+AusPlots Rangelands establish permanent sites across Australia. 
+Revisits to these sites allow the AusPlots team to capture the changes in the environment of these sites. 
+Studies on the collected data provide us with an understanding of why and how these changes are occurring.
 
 ## Spatial geometries
 
-Sites, site visits, samplings and observations can use the TERN Location Alignment vocabulary, a minimal ontology to tie together the GeoSPARQL vocabulary and the W3C Basic Geo WGS84 vocabulary. TERN Location Alignment also defines a specialised Point class with properties to express the depth and elevation. LineString and Polygon are also specialised to denote that a WKT literal is required.
+Sites, site visits, samplings and observations can use the TERN Location Alignment vocabulary, which is a minimal ontology to tie together the GeoSPARQL vocabulary and the W3C Basic Geo WGS84 vocabulary. 
+TERN Location Alignment also defines a specialised Point class with properties to express the depth and elevation. 
+LineString and Polygon are also specialised to denote that a WKT literal is required.
 
 <figure>
   <img src="https://w3id.org/tern/static/linkeddata-website/tern-ontology/tern-loc-overview.png" alt="TERN Location Alignment overview" />
   <figcaption style={{textAlign: "center"}}>Figure: TERN Location Alignment vocabulary overview.</figcaption>
 </figure>
 
-Express where observations and samplings took place using the Point class. Use the Polygon class for sites. Use the LineString geometry for things such as sites that are, for example, transects.
+The location where individual observations and samplings took place can be expressed using individuals from the Point class. 
+The extent and shape of a Site can be expressed using an individual Polygon. 
+The shape of a transect can be expressed using a LineString.
 
 ## Non-core attributes
 
-The TERN Ontology captures the minimal amount of information common across different survey datasets. To capture the protocol-specific aspects of a dataset, the TERN Ontology provides a concept of non-core attributes with the Attribute class. Use the Attribute class on any of the core concepts (classes) of the TERN Ontology to express additional information using a key-value pair pattern.
+The TERN Ontology captures some information common across different survey datasets. 
+To capture the protocol-specific aspects of a dataset, the TERN Ontology provides a concept of non-core attributes with the Attribute class. 
+Use the Attribute class on any of the core concepts (classes) of the TERN Ontology to express additional information using a key-value pair pattern.
 
 <figure>
   <img src="https://w3id.org/tern/static/linkeddata-website/tern-ontology/tern-ontology-attribute-class.png" alt="TERN Ontology Attribute class" />
   <figcaption style={{textAlign: "center"}}>Figure: TERN Ontology Attribute class.</figcaption>
 </figure>
 
-### Example
+### Example - not really an example in the way that the previous ones are ... 
 
-The CORVEG database has a site-level attribute named sampling intensity for all sites. This attribute is not an attribute available directly on the TERN Ontology's Site class definition. To capture the sampling intensity, create an instance of the Attribute class and associate it to the site.
+The CORVEG database has a site-level attribute named sampling intensity for all sites. 
+However, this attribute is not available directly on the TERN Ontology's Site class definition. 
+Sampling intensity can be captured by creating an instance of the Attribute class and associating it to the site.
 
-The ontology assumes that all observations Relationships to the site and site visit are optional to support both opportunistic data collection. For example, the species occurrence information can be represented and shared without any relationship with site and site visit.
+The ontology assumes that all observations Relationships to the site and site visit are optional to support both opportunistic data collection. 
+For example, the species occurrence information can be represented and shared without any relationship with site and site visit.
+**not quite following here ... you seem to be petering out**
 
 ## Values and results
 
-The generic Value class is used to capture the values of attributes and results of observations and samplings. The Value class has different specialised classes to capture different value types.
+A generic Value class is used to capture the values of attributes, and the results of observations and samplings. 
+The Value class is specialised to capture different value types.
 
 A Sample is a type of value and is the result of a Sampling activity.
 
