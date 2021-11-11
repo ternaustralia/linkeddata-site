@@ -21,13 +21,18 @@ Survey collection protocols generally differ between different programs and orga
 The TERN Ontology ensures data harmonisation is possible at the core conceptual level to cater for existing and future survey collection protocols. 
 Intricacies of survey collection protocols are supported through an extensible framework using SKOS controlled vocabularies.
 
-The TERN Ontology enables a standard representation of ecological survey data for data integration and data exchange. Different systems can exchange survey data using formats and schemas based on the TERN Ontology, in particular the standard RDF serializations. The TERN Ontology is formalised as a SHACL ontology, which allows RDF data to be tested for conformance.
+The TERN Ontology enables a standard representation of ecological survey data for data integration and data exchange. 
+Different systems can exchange survey data using formats and schemas based on the TERN Ontology, in particular the standard RDF serializations. 
+The TERN Ontology is formalised as a SHACL ontology, which allows RDF data to be tested for conformance.
 
-The TERN Ontology is based on several existing RDF standards, and promotes Linked Data principles to enable FAIR data. Exchanging survey data between different data sources in a standard will substantially improve the quality of the published data and ensure the data is harmonised and interpreted correctly.
+The TERN Ontology is based on several existing RDF standards, and promotes Linked Data principles to enable FAIR data. 
+Exchanging survey data between different data sources in a standard will substantially improve the quality of the published data and ensure the data is harmonised and interpreted correctly.
 
 ## Status of this document
 
-This document was prepared by TERN Data Services and Analytics as one of the deliverables to the service agreement between the Australian Government Department of Agriculture, Water and the Environment (DAWE) and TERN. The contents of this document is a continuation of the previous draft report titled Data Exchange Specifications - a report to the Department of Agriculture, Water and the Environment - draft submitted in January of 2021. This document is published as an online evolving specification instead of the report style in the previous draft.
+This document was prepared by TERN Data Services and Analytics as one of the deliverables to the service agreement between the Australian Government Department of Agriculture, Water and the Environment (DAWE) and TERN. 
+The contents of this document is a continuation of the previous draft report titled Data Exchange Specifications - a report to the Department of Agriculture, Water and the Environment - draft submitted in January of 2021. 
+This document is published as an online evolving specification instead of the report style in the previous draft.
 
 ## Introduction
 
@@ -119,7 +124,8 @@ Most of these dependencies are specified using **RDFS and OWL axioms**, which en
 In contrast, the formal specification of TERN Ontology is through **SHACL shapes**, which enables data validation. 
 Shapes are appropriate for TERN ontology becasue the primary application is data transfer and ingestion.  
 
-The TERN Ontology is accessible via its namespace URI at https://w3id.org/tern/ontologies/tern/. The source code and its related content are accessible in the GitHub repository at https://github.com/ternaustralia/ontology_tern.
+The TERN Ontology is accessible via its namespace URI at https://w3id.org/tern/ontologies/tern/. 
+The source code and its related content are accessible in the GitHub repository at https://github.com/ternaustralia/ontology_tern.
 
 <figure>
   <img src="https://w3id.org/tern/static/linkeddata-website/tern-ontology/tern-ontology-overview.png" alt="TERN Ontology overview" />
@@ -192,7 +198,8 @@ Non-material samples are not collected and are simply identified to support obse
 
 ### Example
 
-An example of non-material sample may be describing the landform of a site or identifying the disturbed portion of the landform. These non-material samples are the features of interest of further observations or sampling activities.
+An example of non-material sample may be describing the landform of a site or identifying the disturbed portion of the landform. 
+These non-material samples are the features of interest of further observations or sampling activities.
 
 ## Material Sample
 
@@ -301,7 +308,9 @@ A summary of Veg-X.
 - Veg-X does not use controlled vocabularies and instead capture observable properties and procedures as attributes directly on the observation entities.
 - Veg-X acknowledges the feature of interest of observation is different depending on its granularity. Individual organism observations are not the same as aggregated organism observations.
 
-The TERN Ontology takes inspiration from how Veg-X models plots, sub-plots and the different observations types at varying granularity levels. Veg-X defines four fixed levels of feature types in the vegetation domain. In contrast, the TERN Ontology manages feature types as an extendable controlled vocabulary and inherently supports different ecological themes such as soil, landform, and more.
+The TERN Ontology takes inspiration from how Veg-X models plots, sub-plots and the different observations types at varying granularity levels. 
+Veg-X defines four fixed levels of feature types in the vegetation domain. 
+In contrast, the TERN Ontology manages feature types as an extendable controlled vocabulary and inherently supports different ecological themes such as soil, landform, and more.
 
 ## References
 
