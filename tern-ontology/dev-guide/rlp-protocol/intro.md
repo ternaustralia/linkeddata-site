@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# TERN Surveillance Protocol
+# DAWE RLP Protocol
 
 :::warning
 This section is incomplete and will be revised.
