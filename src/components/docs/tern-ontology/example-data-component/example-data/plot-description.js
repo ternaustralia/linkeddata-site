@@ -39,7 +39,7 @@ const exampleData = {
       unit: "http://qudt.org/vocab/unit/DEG",
     },
   // aspect angle
-  "http://linked.data.gov.au/def/tern-cv/0a92253d-a07b-4762-b653-4c363650cb44":
+  "https://linked.data.gov.au/def/test/dawe-cv/0e0423c6-0dc3-40aa-9776-410a94299256":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/QuantitativeMeasure",

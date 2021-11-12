@@ -21,14 +21,11 @@ WHERE {
     <${protocolModuleConfig[protocolModule].uri}> skos:member ?concept .
 	graph ?g {
 	    ?concept a ?type .
-        optional { ?concept tern:hasFeatureType ?featureType }
-        optional { ?concept tern:hasCategoricalCollection ?categoricalCollection }
-        optional { ?concept tern:valueType ?valueType }
-        optional { ?concept tern:hasMethod ?method }
-  }
-    
-  service <repository:tern_vocabs_core> {
       ?concept skos:prefLabel ?label .
+      optional { ?concept tern:hasFeatureType ?featureType }
+      optional { ?concept tern:hasCategoricalCollection ?categoricalCollection }
+      optional { ?concept tern:valueType ?valueType }
+      optional { ?concept tern:hasMethod ?method }
   }
 }
 `;
@@ -42,8 +39,13 @@ WHERE {
     exampleData
   );
 
-  if (!examples || examples.length === 0) {
+  if (!examples) {
     return <p>Loading...</p>;
+  }
+  console.log(examples);
+
+  if (examples && examples.length === 0) {
+    return <p>Failed to load data.</p>;
   }
 
   const example = examples.filter(
