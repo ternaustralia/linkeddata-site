@@ -9,10 +9,9 @@ from <http://linked.data.gov.au/def/test/dawe-cv/>
 where { 
     # Plot Description Observable Properties
     <${collectionUri}> skos:member ?concept .
-    service <https://graphdb.tern.org.au/repositories/tern_vocabs_core> {
-        ?concept skos:prefLabel ?_label .
-        bind(str(?_label) as ?__label)
-    }
+    
+    ?concept skos:prefLabel ?_label .
+    bind(str(?_label) as ?__label)
 
     optional { 
         ?concept tern:hasFeatureType ?featureType .
