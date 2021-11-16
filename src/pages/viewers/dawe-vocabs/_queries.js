@@ -1,4 +1,4 @@
-export const baseUri = 'http://linked.data.gov.au/def/test/dawe-cv/'
+export const baseUri = 'https://linked.data.gov.au/def/test/dawe-cv/'
 const namedGraph = baseUri
 
 export function getVocabularies() {
