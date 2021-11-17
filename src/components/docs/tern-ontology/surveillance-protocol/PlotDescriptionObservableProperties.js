@@ -64,7 +64,6 @@ export default function PlotDescriptionObservableProperties() {
   if (error) return <div>{failedToLoadMessage}</div>;
   if (!data) return <div>Loading...</div>;
 
-  console.log(data.results.bindings.length);
   if (data.results.bindings.length <= 1) {
     return <div>{failedToLoadMessage}</div>;
   }

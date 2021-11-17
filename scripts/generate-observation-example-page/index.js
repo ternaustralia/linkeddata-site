@@ -80,10 +80,7 @@ import Example from "../../../../src/components/docs/tern-ontology/example-data-
 
 // convert string to lowercase, replace spaces with dashes and replace parentheses with empty string.
 function slugify(str) {
-  return str
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/\(|\)/g, "");
+  return str.toLowerCase().replace(/\s+/g, "-").replace(/\(|\)/g, "");
 }
 
 // capitalize first letter
