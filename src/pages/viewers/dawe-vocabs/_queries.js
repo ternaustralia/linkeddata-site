@@ -1,33 +1,35 @@
-export const baseUri = 'https://linked.data.gov.au/def/test/dawe-cv/'
-const namedGraph = baseUri
+export const baseUri = "https://linked.data.gov.au/def/test/dawe-cv/";
+const namedGraph = baseUri;
 
 export function getVocabularies() {
   return `
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-select 
-    ?uri 
-    (sample(?_label) as ?label) 
-    (sample(?_description) as ?description) 
-    (sample(?_created) as ?created)
-    (sample(?_modified) as ?modified)
-from <http://www.ontotext.com/explicit>
-from <${namedGraph}>
-where { 
-    values (?vocabularyType) {
-        (skos:ConceptScheme)
-        (skos:Collection)
-    }
-  ?uri a ?vocabularyType ;
-            skos:prefLabel ?_label .
-    
-    optional { ?uri dcterms:description ?_description }
-    optional { ?uri dcterms:created ?_created }
-    optional { ?uri dcterms:modified ?_modified }
-}
-group by ?uri
-order by ?label    
-`
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  PREFIX dcterms: <http://purl.org/dc/terms/>
+  PREFIX reg: <http://purl.org/linked-data/registry/>
+  select 
+  ?uri 
+  (sample(?_label) as ?label) 
+  (sample(?_description) as ?description) 
+  (sample(?_created) as ?created)
+  (sample(?_modified) as ?modified)
+  from <http://www.ontotext.com/explicit>
+  from <${namedGraph}>  
+  where { 
+      ?uri reg:register <https://linked.data.gov.au/def/test/dawe-cv/616c7c18-3309-472d-a38d-8106a1b6ff9b> .
+      values (?vocabularyType) {
+          (skos:ConceptScheme)
+          (skos:Collection)
+      }
+      ?uri a ?vocabularyType ;
+           skos:prefLabel ?_label .
+  
+      optional { ?uri dcterms:description ?_description }
+      optional { ?uri dcterms:created ?_created }
+      optional { ?uri dcterms:modified ?_modified }
+  }
+  group by ?uri
+  order by ?label  
+`;
 }
 
 export function getLabel(resourceUri) {
@@ -38,10 +40,14 @@ select *
 from <http://www.ontotext.com/explicit>
 from <${namedGraph}>
 where {
-    <${resourceUri}> skos:prefLabel ?label .
+  values (?labelPredicate) {
+    (skos:prefLabel)
+    (rdfs:label)
+  }
+  <${resourceUri}> ?labelPredicate ?label .
 }
 limit 1
-`
+`;
 }
 
 export function getResource(resourceUri) {
@@ -55,7 +61,7 @@ where {
     filter(!isBlank(?o))
 }
 order by ?p
-`
+`;
 }
 
 export function resourceExists(resourceUri) {
@@ -65,5 +71,5 @@ ask {
       <${resourceUri}>  ?p ?o .       
   }
 }
-`
+`;
 }

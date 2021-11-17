@@ -30,18 +30,30 @@ function VocabsListPage({ settings }) {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
+  const vocabItems = data.results.bindings
+    .map((item) => {
+      if (item?.uri?.value) {
+        return (
+          <VocabItem
+            key={item.uri.value}
+            uri={item.uri.value}
+            description={item?.description?.value}
+            settings={settings}
+          />
+        );
+      }
+    })
+    .filter((item) => item !== undefined);
+
   return (
     <>
       <h2>{settings.title}</h2>
 
-      {data.results.bindings.map((item) => (
-        <VocabItem
-          key={item.uri.value}
-          uri={item.uri.value}
-          description={item?.description?.value}
-          settings={settings}
-        />
-      ))}
+      {vocabItems.length > 0 ? (
+        vocabItems
+      ) : (
+        <div>Sorry, failed to load data.</div>
+      )}
     </>
   );
 }
