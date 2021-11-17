@@ -15,7 +15,7 @@ TERN (2020): TERN Vocabularies. Terrestrial Ecosystem Research Network (TERN). h
 
 ## Specific Vocabulary: 
 
-Creator (PublicationYear). Collection Name. Version (if available). Publisher. Identifier
+Creator (PublicationYear): Collection Name. Version (if available). Publisher. Identifier
 
 ```
 Parameter Type:
