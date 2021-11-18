@@ -1,3 +1,11 @@
 module.exports = {
-  presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
+  env: {
+    development: {
+      presets: [require.resolve("@docusaurus/core/lib/babel/preset")],
+    },
+    test: {
+      presets: ["@babel/preset-env", "@babel/preset-react"],
+      plugins: ["@babel/plugin-transform-runtime"],
+    },
+  },
 };
