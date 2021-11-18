@@ -1,5 +1,8 @@
 module.exports = {
   env: {
+    production: {
+      presets: [require.resolve("@docusaurus/core/lib/babel/preset")],
+    },
     development: {
       presets: [require.resolve("@docusaurus/core/lib/babel/preset")],
     },
