@@ -1,6 +1,9 @@
 /**
  * Fetch data from https://graphdb.tern.org.au/repositories/dawe_vocabs_core and
  * generate markdown files. Configure the constant variable moduleName.
+ *
+ * TODO: move named graph in sparql query to config.
+ * TODO: Move moduleLookup and all the settings above it to a config.
  */
 
 const fs = require("fs");
@@ -32,6 +35,12 @@ async function main() {
   const ops = data.results.bindings.map((row) => ({
     uri: row.concept.value,
     label: row.label.value,
+    featureType: row.featureType.value,
+    featureTypeLabel: row.featureTypeLabel.value,
+    valueType: row.valueType.value,
+    valueTypeLabel: row.valueTypeLabel.value,
+    categoricalCollection: row?.categoricalCollection?.value,
+    categoricalCollectionLabel: row?.categoricalCollectionLabel?.value,
   }));
 
   const outputTopFolder = `./output`;
@@ -49,11 +58,10 @@ async function main() {
 
   let index = startingIndex;
   for (const op of ops) {
-    const { uri, label } = op;
-    const slug = slugify(label);
+    const slug = slugify(op.label);
     fs.writeFile(
       `${outputFolder}/${slug}.mdx`,
-      template(index, capitalize(label), uri, moduleName),
+      template(index, moduleName, op),
       (err) => {
         if (err) throw err;
         console.log(`${slug}.mdx created in ${outputFolder}`);
@@ -65,16 +73,29 @@ async function main() {
 
 main();
 
-function template(index, label, uri, moduleName) {
+function template(index, moduleName, op) {
+  let categoricalCollection = "";
+  if (
+    op.valueType === "https://w3id.org/tern/ontologies/tern/CategoricalValue" &&
+    op.categoricalCollection &&
+    op.categoricalCollectionLabel
+  ) {
+    categoricalCollection = `- Categorical value collection: [${op.categoricalCollectionLabel}](/viewers/dawe-vocabs?uri=${op.categoricalCollection})`;
+  }
   return `---
 sidebar_position: ${index}
 ---
 
 import Example from "../../../../src/components/docs/tern-ontology/example-data-component";
 
-# ${label}
+# ${capitalize(op.label)}
 
-<Example protocolModule="${moduleName}" observableProperty="${uri}" />
+- [observable property](/viewers/dawe-vocabs?uri=${op.uri}) definition
+- Feature type: [${op.featureTypeLabel}](${op.featureType})
+- Value type: [${op.valueTypeLabel}](${op.valueType})
+${categoricalCollection}
+
+<Example protocolModule="${moduleName}" observableProperty="${op.uri}" />
 `;
 }
 
