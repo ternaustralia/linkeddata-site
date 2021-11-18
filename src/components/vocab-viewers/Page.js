@@ -130,7 +130,13 @@ function ResourcePage({ uri, settings }) {
                   </li>
                 );
               } else {
-                return <li key={value.value}>{value.value}</li>;
+                return (
+                  <li key={value.value}>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: value.value }}
+                    ></div>
+                  </li>
+                );
               }
             })}
           </ul>

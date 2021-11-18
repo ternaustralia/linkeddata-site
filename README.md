@@ -16,6 +16,14 @@ $ npm run start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
+### Running tests
+
+```
+npm test
+```
+
+You can use ES6 module imports in your tests. We have set this up following the unmarked answer from https://stackoverflow.com/questions/35756479/does-jest-support-es6-import-export#answer-59718259.
+
 ### Build
 
 ```

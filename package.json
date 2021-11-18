@@ -11,7 +11,8 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "test": "jest"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.6",
@@ -19,16 +20,17 @@
     "@docusaurus/theme-classic": "2.0.0-beta.6",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
+    "axios": "^0.24.0",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.6.4",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.3.0",
-    "url-loader": "^4.1.1",
+    "react-select": "^5.1.0",
     "swr": "^1.0.1",
-    "react-bootstrap": "^1.6.4",
-    "react-select": "^5.1.0"
+    "url-loader": "^4.1.1"
   },
   "browserslist": {
     "production": [
@@ -41,5 +43,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.3.1",
+    "jest": "^27.3.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    }
   }
 }

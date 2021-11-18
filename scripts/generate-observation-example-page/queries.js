@@ -5,7 +5,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 select ?concept ?featureType (sample(?__label) as ?label) (sample(?_featureTypeLabel) as ?featureTypeLabel) ?valueType (sample(?_valueTypeLabel) as ?valueTypeLabel) ?categoricalCollection (sample(?_categoricalCollectionLabel) as ?categoricalCollectionLabel)
 from <http://www.ontotext.com/explicit>
-from <http://linked.data.gov.au/def/test/dawe-cv/>
+from <https://linked.data.gov.au/def/test/dawe-cv/>
 where { 
     # Plot Description Observable Properties
     <${collectionUri}> skos:member ?concept .
@@ -28,18 +28,23 @@ where {
     }
 
     optional {
-        ?concept tern:hasCategoricalCollection ?categoricalCollection .
-        {
-            service <https://graphdb.tern.org.au/repositories/tern_vocabs_core> {
-                ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
-            }
-        }
-        union {
-            service <https://graphdb.tern.org.au/repositories/ausplots_vocabs_core> {
-                ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
-            }
-        }
-    }
+      ?concept tern:hasCategoricalCollection ?categoricalCollection .
+      optional {
+          {
+              service <https://graphdb.tern.org.au/repositories/tern_vocabs_core> {
+                  ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
+              }
+          }
+          union {
+              service <https://graphdb.tern.org.au/repositories/ausplots_vocabs_core> {
+                  ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
+              }
+          }
+          union {
+              ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
+          }
+      }
+  }
 } 
 group by ?concept ?featureType ?valueType ?categoricalCollection
 order by lcase(?label)

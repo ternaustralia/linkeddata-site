@@ -42,7 +42,6 @@ WHERE {
   if (!examples) {
     return <p>Loading...</p>;
   }
-  console.log(examples);
 
   if (examples && examples.length === 0) {
     return <p>Failed to load data.</p>;

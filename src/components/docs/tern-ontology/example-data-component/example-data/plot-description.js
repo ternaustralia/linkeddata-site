@@ -1,6 +1,35 @@
 const exampleData = {
+  // cover class
+  // TODO: cover class - missing categorical values from API.
+  //
+  // cover
+  "https://linked.data.gov.au/def/test/dawe-cv/60c714fa-4e8d-454d-b4cd-7fe77da7f47e":
+    {
+      "@type": [
+        "https://w3id.org/tern/ontologies/tern/QuantitativeMeasure",
+        "https://w3id.org/tern/ontologies/tern/Value",
+      ],
+      value: {
+        "@value": 2.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // homogeneity measure
+  "https://linked.data.gov.au/def/test/dawe-cv/325d5ff2-8c81-484a-a422-c13ff29666a9":
+    {
+      "@type": [
+        "https://w3id.org/tern/ontologies/tern/QuantitativeMeasure",
+        "https://w3id.org/tern/ontologies/tern/Value",
+      ],
+      value: {
+        "@value": 5.1,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
   // landform pattern
-  "http://linked.data.gov.au/def/tern-cv/78b617e9-cd18-40b7-ad38-efc30579e680":
+  "https://linked.data.gov.au/def/test/dawe-cv/58e4aba5-78c3-4361-b08a-ae39a93c8cb0":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -8,12 +37,12 @@ const exampleData = {
       ],
       value: {
         "@id":
-          "http://linked.data.gov.au/def/tern-cv/e392b1f9-cf6f-4c3e-bf19-8bc04893a1f4",
+          "https://linked.data.gov.au/def/test/dawe-cv/0b764595-db65-5ddc-8591-8d9c653a4a21",
         "@type": "@id",
       },
     },
   // landform element
-  "http://linked.data.gov.au/def/tern-cv/a40230bc-c1e9-4309-b883-c4ead1d143ce":
+  "https://linked.data.gov.au/def/test/dawe-cv/9d4f8a2d-8e77-42dd-857b-0ecbc9c85696":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -21,12 +50,12 @@ const exampleData = {
       ],
       value: {
         "@id":
-          "http://linked.data.gov.au/def/tern-cv/b5670886-70be-481e-806e-44b3c415e593",
+          "https://linked.data.gov.au/def/test/dawe-cv/11ccf134-21ac-5215-b3ee-39b84953837b",
         "@type": "@id",
       },
     },
-  // slope angle
-  "http://linked.data.gov.au/def/tern-cv/2b5ac7b3-b4bf-4a06-97d6-8dee8b32d72d":
+  // slope
+  "https://linked.data.gov.au/def/test/dawe-cv/b036ba09-d061-4a1c-99a8-890efc462a2c":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/QuantitativeMeasure",
@@ -38,7 +67,7 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/DEG",
     },
-  // aspect angle
+  // aspect (degrees)
   "https://linked.data.gov.au/def/test/dawe-cv/0e0423c6-0dc3-40aa-9776-410a94299256":
     {
       "@type": [
@@ -52,7 +81,7 @@ const exampleData = {
       unit: "http://qudt.org/vocab/unit/DEG",
     },
   // surface strew size
-  "http://linked.data.gov.au/def/tern-cv/40d04abb-0a50-43b8-8f19-2e1b5454fb11":
+  "https://linked.data.gov.au/def/test/dawe-cv/3eeef779-d4d9-4019-9543-be0abe54cc5c":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -60,24 +89,12 @@ const exampleData = {
       ],
       value: {
         "@id":
-          "http://linked.data.gov.au/def/ausplots-cv/ec2adb03-9bed-4335-a338-c2faba0dc71c",
+          "https://linked.data.gov.au/def/test/dawe-cv/4147fa32-4fdd-5b84-9c31-0fcadfd6ad93",
         "@type": "@id",
       },
     },
   // surface strew lithology
-  "http://linked.data.gov.au/def/tern-cv/6c2bde95-4b97-4b63-a42b-7a2c253e6e3b":
-    {
-      "@type": [
-        "https://w3id.org/tern/ontologies/tern/Concept",
-        "https://w3id.org/tern/ontologies/tern/Value",
-      ],
-      value: {
-        "@id": "http://todo.placeholder.com",
-        "@type": "@id",
-      },
-    },
-  // dominant outcropt lithology
-  "http://linked.data.gov.au/def/tern-cv/09aae763-babb-4926-b1ed-52630195564d":
+  "https://linked.data.gov.au/def/test/dawe-cv/6ee380ca-e9dc-4a9b-91c3-758b54e751eb":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -85,40 +102,51 @@ const exampleData = {
       ],
       value: {
         "@id":
-          "http://linked.data.gov.au/def/ausplots-cv/80747e69-e276-4867-9459-ca0b76ca8505",
+          "https://linked.data.gov.au/def/test/dawe-cv/0ac1055d-cf12-5575-9a37-b9d380dacd42",
+        "@type": "@id",
+      },
+    },
+  // outcropt lithology
+  "https://linked.data.gov.au/def/test/dawe-cv/5af5cef1-179c-4bae-9037-42196668deff":
+    {
+      "@type": [
+        "https://w3id.org/tern/ontologies/tern/Concept",
+        "https://w3id.org/tern/ontologies/tern/Value",
+      ],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/120314f6-bdfd-5cc1-83e0-dfbc6c600386",
         "@type": "@id",
       },
     },
   // structural formation
-  "http://linked.data.gov.au/def/tern-cv/08dde64e-5f1b-48c3-8ed3-3469780cbf24":
+  "https://linked.data.gov.au/def/test/dawe-cv/103f26cb-0194-45d2-8b1a-e18e1da6df2b":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
       value: {
-        // TODO: change to categorical value from DAWE protocol
         "@id":
-          "http://linked.data.gov.au/def/corveg-cv/2f60a679-0aab-4934-805c-6ec466bfaa36",
+          "https://linked.data.gov.au/def/test/dawe-cv/0e6077ea-8f45-5219-9247-6316c84156bf",
         "@type": "@id",
       },
     },
   // climatic condition
-  "http://linked.data.gov.au/def/tern-cv/c5ca86b0-c503-4590-87fb-0bc8ff9f1632":
+  "https://linked.data.gov.au/def/test/dawe-cv/dee23df7-4445-424f-b361-b2e0182be950":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
       value: {
-        // TODO: change to categorical value from DAWE protocol
         "@id":
-          "https://linked.data.gov.au/def/test/dawe-cv/climatic-condition/wet",
+          "https://linked.data.gov.au/def/test/dawe-cv/7933a4c8-1fd2-51f8-b71e-11d690535808",
         "@type": "@id",
       },
     },
-  // disturbance (event)
-  "http://linked.data.gov.au/def/tern-cv/8e9797d9-d5f5-4c5b-8d0a-388cb3dd6253":
+  // disturbance
+  "https://linked.data.gov.au/def/test/dawe-cv/632e4c3c-0e73-4b3d-b1d6-7b38897da5e8":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -126,12 +154,12 @@ const exampleData = {
       ],
       value: {
         "@id":
-          "http://linked.data.gov.au/def/ausplots-cv/0b22d017-b2a8-4fe7-a4da-0dde18f13e62",
+          "https://linked.data.gov.au/def/test/dawe-cv/2cef9075-c7d6-52d5-9c46-c951c37790ff",
         "@type": "@id",
       },
     },
   // most dominant species
-  "http://linked.data.gov.au/def/tern-cv/ea001a27-3217-45c2-a7b5-96a104986def":
+  "https://linked.data.gov.au/def/test/dawe-cv/671252e3-b306-4436-b24b-7d6e13e9473e":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -143,7 +171,7 @@ const exampleData = {
       },
     },
   // second most dominant species
-  "http://linked.data.gov.au/def/tern-cv/d40b3e6d-db78-4031-b7f3-ed94d538a2af":
+  "https://linked.data.gov.au/def/test/dawe-cv/909557e9-782f-45ea-8e89-8cf17a2c6ca6":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -167,7 +195,7 @@ const exampleData = {
       },
     },
   // growth form
-  "http://linked.data.gov.au/def/tern-cv/f81aa91e-5f57-4e49-bc6e-4d821d1f9de2":
+  "https://linked.data.gov.au/def/test/dawe-cv/dd1769b9-c475-4732-915c-9b890a8d5f65":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
@@ -175,20 +203,33 @@ const exampleData = {
       ],
       value: {
         "@id":
-          "http://linked.data.gov.au/def/tern-cv/d3575da4-c1e3-4d25-af3f-7111c8671411",
+          "https://linked.data.gov.au/def/test/dawe-cv/10f93cb6-c6af-5c70-941b-01bfde3ac873",
         "@type": "@id",
       },
     },
-  // height class
-  "http://linked.data.gov.au/def/tern-cv/ad6feb34-3fa2-4aaa-b111-3db4c648d3a7":
+  // growth stage
+  "https://linked.data.gov.au/def/test/dawe-cv/fcfda2f7-84f0-4c26-9f80-c051d129a094":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
       value: {
-        // TODO: change
-        "@id": "https://linked.data.gov.au/def/test/dawe-cv/height-class/7",
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/2ce92e92-ea69-5f3e-85bf-b3063da0bddd",
+        "@type": "@id",
+      },
+    },
+  // height class
+  "https://linked.data.gov.au/def/test/dawe-cv/242d081b-b3f4-4206-bc39-7aa42e9972ee":
+    {
+      "@type": [
+        "https://w3id.org/tern/ontologies/tern/Concept",
+        "https://w3id.org/tern/ontologies/tern/Value",
+      ],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/35c8d4ba-5474-5a9a-ba66-d5792e7eb907",
       },
     },
   // species cover
@@ -215,15 +256,17 @@ const exampleData = {
         "@id": "https://linked.data.gov.au/def/test/dawe-cv/life-stage/3",
       },
     },
-  "http://linked.data.gov.au/def/tern-cv/2746b234-5740-4696-82e8-9c3813daf0af":
+  // fire history
+  "https://linked.data.gov.au/def/test/dawe-cv/cf1aef8a-a782-4480-9c41-a7f6d170d7fc":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
-      alue: {
+      value: {
         // TODO: change
-        "@id": "https://linked.data.gov.au/def/test/dawe-cv/fire-history/2",
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/79155721-cb28-5e1e-98ba-fcf6a436f339",
       },
     },
   "http://linked.data.gov.au/def/tern-cv/7e13fdc3-8f5e-4438-ad74-b6908e7806da":
@@ -238,15 +281,16 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/M",
     },
-  "http://linked.data.gov.au/def/tern-cv/a117b27e-11b1-4369-9799-360b8d2ecb14":
+  // slope type
+  "https://linked.data.gov.au/def/test/dawe-cv/132a1452-4fd7-473c-956b-3183dd315b67":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
-      alue: {
-        // TODO: change
-        "@id": "https://linked.data.gov.au/def/test/dawe-cv/slope-class/2",
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/0f06cf3a-681c-5e3d-8d60-e2663d2193ed",
       },
     },
 };
