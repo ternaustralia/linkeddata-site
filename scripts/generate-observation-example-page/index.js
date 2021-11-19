@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "cover";
+const moduleName = "floristics";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -24,6 +24,12 @@ const moduleLookup = {
   cover: {
     collectionUri:
       "https://linked.data.gov.au/def/test/dawe-cv/d6321ef2-a967-4a05-8e63-f892723c3473",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  floristics: {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/ea83b861-7592-4378-bfb0-e06c459147ad",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
