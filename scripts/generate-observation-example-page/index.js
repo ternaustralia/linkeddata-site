@@ -11,13 +11,19 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "plot-description";
+const moduleName = "cover";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
   "plot-description": {
     collectionUri:
       "https://linked.data.gov.au/def/test/dawe-cv/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  cover: {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/d6321ef2-a967-4a05-8e63-f892723c3473",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
@@ -97,7 +103,7 @@ import Example from "../../../../src/components/docs/tern-ontology/example-data-
 
 # ${capitalize(op.label)}
 
-- [observable property](/viewers/dawe-vocabs?uri=${op.uri}) definition
+- [Observable property](/viewers/dawe-vocabs?uri=${op.uri}) definition
 - Feature type: [${op.featureTypeLabel}](${op.featureType})
 - Value type: [${op.valueTypeLabel}](${op.valueType})
 ${categoricalCollection}

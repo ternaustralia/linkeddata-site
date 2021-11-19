@@ -76,6 +76,18 @@ function getResultObject(
       };
       resultObject.isResultOf = observationId;
       break;
+    case "https://w3id.org/tern/ontologies/tern/Text":
+      resultObject = {
+        ...resultObject,
+        ...getExampleData(observedPropertyUri, exampleData),
+      };
+      break;
+    case "https://w3id.org/tern/ontologies/tern/Boolean":
+      resultObject = {
+        ...resultObject,
+        ...getExampleData(observedPropertyUri, exampleData),
+      };
+      break;
     default:
       throw Error(`Unexpected value type ${valueType}`);
   }
