@@ -6,6 +6,7 @@ import plotDescExampleData from "./example-data/plot-description";
 import coverExampleData from "./example-data/cover";
 import floristicsExampleData from "./example-data/floristics";
 import opportunisticObservationsExampleData from "./example-data/opportunistic-observations";
+import vegetationMappingExampleData from "./example-data/vegetation-mapping";
 
 const config = {
   "plot-description": {
@@ -23,6 +24,10 @@ const config = {
   "opportunistic-observations": {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/d3f85cc2-f3e8-4900-a2ac-19fc27fd14f9",
     exampleData: opportunisticObservationsExampleData,
+  },
+  "vegetation-mapping": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/2089561b-5b49-472a-812f-3de661505ccb",
+    exampleData: vegetationMappingExampleData,
   },
 };
 

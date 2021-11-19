@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "opportunistic-observations";
+const moduleName = "vegetation-mapping";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -36,6 +36,12 @@ const moduleLookup = {
   "opportunistic-observations": {
     collectionUri:
       "https://linked.data.gov.au/def/test/dawe-cv/d3f85cc2-f3e8-4900-a2ac-19fc27fd14f9",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "vegetation-mapping": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/2089561b-5b49-472a-812f-3de661505ccb",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
