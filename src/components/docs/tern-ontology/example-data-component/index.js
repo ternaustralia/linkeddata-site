@@ -36,7 +36,7 @@ WHERE {
     datasetUri,
     baseObservationUri,
     baseFeatureOfInterestUri,
-    exampleData
+    protocolModuleConfig[protocolModule].exampleData
   );
 
   if (!examples) {

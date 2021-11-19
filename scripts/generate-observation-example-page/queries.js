@@ -7,7 +7,7 @@ select ?concept ?featureType (sample(?__label) as ?label) (sample(?_featureTypeL
 from <http://www.ontotext.com/explicit>
 from <https://linked.data.gov.au/def/test/dawe-cv/>
 where { 
-    # Plot Description Observable Properties
+    # Collection of observable properties.
     <${collectionUri}> skos:member ?concept .
     
     ?concept skos:prefLabel ?_label .

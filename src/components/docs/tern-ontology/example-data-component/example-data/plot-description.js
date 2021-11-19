@@ -1,7 +1,17 @@
 const exampleData = {
   // cover class
-  // TODO: cover class - missing categorical values from API.
-  //
+  "https://linked.data.gov.au/def/test/dawe-cv/f3e6e19b-ba79-4260-b493-8a2561033f9b":
+    {
+      "@type": [
+        "https://w3id.org/tern/ontologies/tern/Concept",
+        "https://w3id.org/tern/ontologies/tern/Value",
+      ],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/13131d7c-55d8-53e8-938c-f40015309534",
+        "@type": "@id",
+      },
+    },
   // cover
   "https://linked.data.gov.au/def/test/dawe-cv/60c714fa-4e8d-454d-b4cd-7fe77da7f47e":
     {
