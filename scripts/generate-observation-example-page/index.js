@@ -10,27 +10,34 @@ const fs = require("fs");
 const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
-// Set for each script run
+// Set the module to generate for each script run
 const moduleName = "plot-description";
-const startingIndex = 2;
-const url = "https://graphdb.tern.org.au/repositories/dawe_vocabs_core";
 
+// Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
-  "plot-description":
-    "https://linked.data.gov.au/def/test/dawe-cv/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312",
+  "plot-description": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
 };
 
 async function main() {
-  const query = getSparqlQuery(moduleLookup[moduleName]);
+  const query = getSparqlQuery(moduleLookup[moduleName].collectionUri);
   const params = new URLSearchParams();
   params.append("query", query);
-  const { data } = await axios.post(url, params, {
-    method: "POST",
-    headers: {
-      accept: "application/sparql-results+json",
-      "content-type": "application/x-www-form-urlencoded",
-    },
-  });
+  const { data } = await axios.post(
+    moduleLookup[moduleName].sparqlEndpoint,
+    params,
+    {
+      method: "POST",
+      headers: {
+        accept: "application/sparql-results+json",
+        "content-type": "application/x-www-form-urlencoded",
+      },
+    }
+  );
 
   const ops = data.results.bindings.map((row) => ({
     uri: row.concept.value,
@@ -56,7 +63,7 @@ async function main() {
     deleteFiles(outputFolder);
   }
 
-  let index = startingIndex;
+  let index = moduleLookup[moduleName].startingIndex;
   for (const op of ops) {
     const slug = slugify(op.label);
     fs.writeFile(
