@@ -5,6 +5,7 @@
 import plotDescExampleData from "./example-data/plot-description";
 import coverExampleData from "./example-data/cover";
 import floristicsExampleData from "./example-data/floristics";
+import opportunisticObservationsExampleData from "./example-data/opportunistic-observations";
 
 const config = {
   "plot-description": {
@@ -18,6 +19,10 @@ const config = {
   floristics: {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/ea83b861-7592-4378-bfb0-e06c459147ad",
     exampleData: floristicsExampleData,
+  },
+  "opportunistic-observations": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/d3f85cc2-f3e8-4900-a2ac-19fc27fd14f9",
+    exampleData: opportunisticObservationsExampleData,
   },
 };
 
