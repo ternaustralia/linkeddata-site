@@ -1,6 +1,5 @@
 import React from "react";
 import CodeBlock from "@theme/CodeBlock";
-import exampleData from "./example-data/plot-description";
 import { useGenerate } from "./generate";
 import protocolModuleConfig from "./protocol-module-config";
 import jsonLdContext from "../json-ld-context";

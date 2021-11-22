@@ -93,7 +93,7 @@ export default function IRIField({ value, settings }) {
 
   if (error) return <ExternalConnegLink href={value} settings={settings} />;
   if (!data) return <div>Loading...</div>;
-  console.log(data);
+
   if (data.success) {
     return (
       <>
