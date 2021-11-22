@@ -10,7 +10,7 @@ import ExternalLink from '../../../src/components/ExternalLink'
 This section is incomplete and will be revised.
 :::
 
-The <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> class provides a way to describe metadata for RDF datasets. It is based on the <ExternalLink href="https://www.w3.org/TR/void/">VoID Vocabulary for describing Linked Datasets</ExternalLink>. The <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> class is useful to describe RDF data dumps and payloads from a source data provider to a target location such as a centralised repository system.
+The <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> class provides a way to describe metadata for RDF datasets. It is based on the <ExternalLink href="https://www.w3.org/TR/void/">VoID Vocabulary for describing Linked Datasets</ExternalLink>. The <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> class is primarily used to describe RDF data dumps and payloads by a source data provider.
 
 An example of a <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> in JSON-LD.
 
