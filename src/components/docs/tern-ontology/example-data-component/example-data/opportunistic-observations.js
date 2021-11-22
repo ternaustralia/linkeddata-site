@@ -13,7 +13,6 @@ const exampleData = {
       },
     },
   // animal behaviour
-  // TODO: Add categorical value here when available
   "https://linked.data.gov.au/def/test/dawe-cv/dfaf2438-6019-4632-85d8-0efc91930768":
     {
       "@type": [
@@ -21,7 +20,8 @@ const exampleData = {
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
       value: {
-        "@id": "todo",
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/c5587248-d025-5def-b1c9-8e115f228d96",
         "@type": "@id",
       },
     },
@@ -116,7 +116,6 @@ const exampleData = {
       },
     },
   // habitat description
-  // TODO: Add categorical value here when available
   "https://linked.data.gov.au/def/test/dawe-cv/aa4c96f6-9ea8-4bd3-8800-0bfddcd8a37c":
     {
       "@type": [
@@ -124,7 +123,8 @@ const exampleData = {
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
       value: {
-        "@id": "todo",
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/c19a0098-1f3f-4bc2-b84d-fdb6d4e24d6f",
         "@type": "@id",
       },
     },
@@ -180,7 +180,6 @@ const exampleData = {
       },
     },
   // vaginal condition
-  // TODO: Add categorical value here when available
   "https://linked.data.gov.au/def/test/dawe-cv/56059af9-44ff-4722-9cfc-6af2c69a5ed5":
     {
       "@type": [
@@ -188,7 +187,8 @@ const exampleData = {
         "https://w3id.org/tern/ontologies/tern/Value",
       ],
       value: {
-        "@id": "todo",
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/9c2af890-3263-5e40-a429-892bc4283b0c",
         "@type": "@id",
       },
     },

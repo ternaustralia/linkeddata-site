@@ -10,17 +10,19 @@ import ExternalLink from '../../../src/components/ExternalLink'
 This section is incomplete and will be revised.
 :::
 
+The <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> class provides a way to describe metadata for RDF datasets. It is based on the <ExternalLink href="https://www.w3.org/TR/void/">VoID Vocabulary for describing Linked Datasets</ExternalLink>. The <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> class is useful to describe RDF data dumps and payloads from a source data provider to a target location such as a centralised repository system.
+
 An example of a <ExternalLink href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</ExternalLink> in JSON-LD.
 
 ```json
 {
-    "@id": "https://example.com/dataset/1",
-    "@type": "https://w3id.org/tern/ontologies/tern/RDFDataset",
-    "http://purl.org/dc/terms/title": "Example Dataset 1",
-    "http://purl.org/dc/terms/issued": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-10-20"
-    },
-    "http://purl.org/dc/terms/description": "Example dataset description."
+  "@id": "https://example.com/dataset/1",
+  "@type": "https://w3id.org/tern/ontologies/tern/RDFDataset",
+  "http://purl.org/dc/terms/title": "Example Dataset 1",
+  "http://purl.org/dc/terms/issued": {
+    "@type": "http://www.w3.org/2001/XMLSchema#date",
+    "@value": "2021-10-20"
+  },
+  "http://purl.org/dc/terms/description": "Example dataset description."
 }
 ```
