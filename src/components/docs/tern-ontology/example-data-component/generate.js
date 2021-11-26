@@ -121,9 +121,7 @@ function generateObservationExample(
     "@id": `${baseFeatureOfInterestUri}/${uuidv4()}`,
     "@type": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest",
     featureType: featureType,
-    inDataset: {
-      "@id": datasetUri,
-    },
+    inDataset: datasetUri,
   };
   example["observedProperty"] = uri;
   example.usedProcedure = method;

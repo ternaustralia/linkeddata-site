@@ -6,6 +6,7 @@ const context = {
     },
     hasFeatureOfInterest: {
       "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "@type": "@id",
     },
     observedProperty: {
       "@id": "http://www.w3.org/ns/sosa/observedProperty",
@@ -17,6 +18,7 @@ const context = {
     },
     hasResult: {
       "@id": "http://www.w3.org/ns/sosa/hasResult",
+      "@type": "@id",
     },
     value: {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
@@ -48,6 +50,44 @@ const context = {
     },
     unit: {
       "@id": "https://w3id.org/tern/ontologies/tern/unit",
+      "@type": "@id",
+    },
+    hasGeometry: {
+      "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
+      "@type": "@id",
+    },
+    label: {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+    },
+    dimension: {
+      "@id": "https://w3id.org/tern/ontologies/tern/dimension",
+    },
+    locationDescription: {
+      "@id": "https://w3id.org/tern/ontologies/tern/locationDescription",
+    },
+    siteDescription: {
+      "@id": "https://w3id.org/tern/ontologies/tern/siteDescription",
+    },
+    polygon: {
+      "@id": "https://w3id.org/tern/ontologies/tern/polygon",
+      "@type": "@id",
+    },
+    type: {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "@id",
+    },
+    asWKT: {
+      "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+    },
+    lat: {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+    },
+    long: {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+    },
+    pointType: {
+      "@id": "https://w3id.org/tern/ontologies/loc/pointType",
       "@type": "@id",
     },
   },
