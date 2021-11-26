@@ -11,10 +11,6 @@ import ExternalLink from '../src/components/ExternalLink'
 This section is in draft. The content and structure of the document may change until it is released.
 :::
 
-:::info
-Some of the following content will be consolidated into this documentation site.
-:::
-
 If you are looking to browse the TERN Ontology by class, then click <ExternalLink href="/viewers/tern-ontology">here</ExternalLink>. To view the source code for the TERN Ontology, then visit the <ExternalLink href="https://github.com/ternaustralia/ontology_tern">TERN Ontology GitHub repository</ExternalLink>. Otherwise, continue through the documentation to get an in-depth background into the TERN Ontology and details on how to apply it in practice with worked examples.
 
 If you have any questions, ideas, or a place to share your work, then please post it in the <ExternalLink href="https://github.com/ternaustralia/ontology_tern/discussions">TERN Ontology GitHub Discussions forum</ExternalLink>.
