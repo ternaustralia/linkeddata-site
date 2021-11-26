@@ -6,8 +6,8 @@ import ExternalLink from '../../../src/components/ExternalLink'
 
 # DAWE RLP Protocol
 
-:::warning
-This section is incomplete and will be revised.
+:::info
+This section is in draft. The content and structure of the document may change until it is released.
 :::
 
 :::warning TODO
