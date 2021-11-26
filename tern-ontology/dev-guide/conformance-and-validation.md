@@ -1,11 +1,11 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Conformance and Validation
 
-:::warning
-This section is incomplete and will be revised.
+:::info
+This section is in draft. The content and structure of the document may change until it is released.
 :::
 
 This section describes how to validate and ensure the data you receive or submit is conforming to the TERN Ontology. 
