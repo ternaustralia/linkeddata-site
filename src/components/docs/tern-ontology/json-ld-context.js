@@ -90,6 +90,17 @@ const context = {
       "@id": "https://w3id.org/tern/ontologies/loc/pointType",
       "@type": "@id",
     },
+    title: {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/2001/XMLSchema#string",
+    },
+    issued: {
+      "@id": "http://purl.org/dc/terms/issued",
+    },
+    description: {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/2001/XMLSchema#string",
+    },
   },
 };
 export default context;
