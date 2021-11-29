@@ -12,7 +12,7 @@ This section is in draft. The content and structure of the document may change u
 
 The Plant Tissue Vouchering Module outlines instructions and procedures in collecting representative material samples of each flora species within a plot, as well as a herbarium voucher specimen for identification. Additional material samples are collected for the dominant perenial species of the plot.
 
-The following examples demonstrate how to capture the field name and growth form as observatioins on the voucher specimen. The replicate value is also captured as an attribute on the voucher specimen.
+The following examples demonstrate how to capture the field name and growth form as observations on the voucher specimen. The replicate value is also captured as an attribute on the voucher specimen.
 
 Example in JSON-LD:
 
