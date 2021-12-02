@@ -221,7 +221,7 @@ Common site-types may include `plot`, `transect`, `quadrat`. TERN manages a list
 Other features and samples defined within a site are connected back to the site through the `is sample of` relationship.
 
 A Site may itself be a kind of Sample, as it may be deemed to be representative of a
-- flat area such as a parcel, a local government area, state or territory
+- fiat area such as a parcel, a local government area, state or territory
 - landscape area such as an ecosystem or biome.
 
 ### Example
