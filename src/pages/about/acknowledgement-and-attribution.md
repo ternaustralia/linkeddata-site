@@ -4,40 +4,40 @@ In compliance with TERN's [Terms of Use](https://www.tern.org.au/terms-of-use) ,
 
 ## TERN Linked Data Services
 ```
-TERN Data Services and Analytics (2019). TERN Linked Data Services. TERN. https://linkeddata.tern.org.au/
+TERN (2020): TERN Linked Data Services. Terrestrial Ecosystem Research Network (TERN). https://linkeddata.tern.org.au/.
 ```
 
 ## TERN Vocabularies
 ```
-TERN Data Services and Analytics (2019). TERN Vocabularies. TERN. http://linked.data.gov.au/def/tern-cv/
+TERN (2020): TERN Vocabularies. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv/.
 ```
 
 
-## Vocabulary Collection: 
+## Specific Vocabulary:
 
-Creator (PublicationYear). Collection Name. Version (if available). Publisher. Identifier
+Creator (PublicationYear): Collection Name. Version (if available). Publisher. Identifier
 
 ```
 Parameter Type:
-TERN Data Services and Analytics (2020). TERN Parameter Type. TERN. http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e
+TERN (2019): TERN Parameter Type Vocabulary. Terrestrial Ecosystem Research Network (TERN).  http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e  
 ```
 
 ```
 Feature Type:
-TERN Data Services and Analytics (2020). TERN Feature Type. TERN. http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d
+TERN (2019): TERN Feature Type Vocabulary. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d
 ```
 
 ```
 Instrument Type:
-TERN Data Services and Analytics (2020). TERN Instrument Type. TERN. http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8
+TERN (2020): TERN Instrument Type Vocabulary. Terrestrial Ecosystem Research Network (TERN).  http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8
 ```
 
 ```
 Method Type:
-TERN Data Services and Analytics (2020). TERN Method Type. TERN. http://linked.data.gov.au/def/tern-cv/2fd44aca-168f-4177-b393-0688ce38102c
+TERN (2020): TERN Method Type Vocabulary. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv/9b6e057f-271b-48f6-8c33-0528bf6b60df
 ```
 
 ```
 Attributes:
-TERN Data Services and Analytics (2020). TERN Attributes. TERN. http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924
+TERN (2020): TERN Attribute Vocabulary. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924
 ```

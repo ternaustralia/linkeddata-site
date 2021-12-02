@@ -5,8 +5,8 @@ slug: /conceptual-information-model
 
 # Conceptual Information Model
 
-:::warning
-This section is incomplete and will be revised.
+:::info
+This section is in draft. The content and structure of the document may change until it is released.
 :::
 
 :::info

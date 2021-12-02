@@ -76,6 +76,24 @@ function getResultObject(
       };
       resultObject.isResultOf = observationId;
       break;
+    case "https://w3id.org/tern/ontologies/tern/Text":
+      resultObject = {
+        ...resultObject,
+        ...getExampleData(observedPropertyUri, exampleData),
+      };
+      break;
+    case "https://w3id.org/tern/ontologies/tern/Boolean":
+      resultObject = {
+        ...resultObject,
+        ...getExampleData(observedPropertyUri, exampleData),
+      };
+      break;
+    case "https://w3id.org/tern/ontologies/tern/Count":
+      resultObject = {
+        ...resultObject,
+        ...getExampleData(observedPropertyUri, exampleData),
+      };
+      break;
     default:
       throw Error(`Unexpected value type ${valueType}`);
   }
@@ -103,9 +121,7 @@ function generateObservationExample(
     "@id": `${baseFeatureOfInterestUri}/${uuidv4()}`,
     "@type": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest",
     featureType: featureType,
-    inDataset: {
-      "@id": datasetUri,
-    },
+    inDataset: datasetUri,
   };
   example["observedProperty"] = uri;
   example.usedProcedure = method;

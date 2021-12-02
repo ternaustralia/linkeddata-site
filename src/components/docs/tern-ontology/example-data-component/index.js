@@ -1,6 +1,5 @@
 import React from "react";
 import CodeBlock from "@theme/CodeBlock";
-import exampleData from "./example-data/plot-description";
 import { useGenerate } from "./generate";
 import protocolModuleConfig from "./protocol-module-config";
 import jsonLdContext from "../json-ld-context";
@@ -36,13 +35,12 @@ WHERE {
     datasetUri,
     baseObservationUri,
     baseFeatureOfInterestUri,
-    exampleData
+    protocolModuleConfig[protocolModule].exampleData
   );
 
   if (!examples) {
     return <p>Loading...</p>;
   }
-  console.log(examples);
 
   if (examples && examples.length === 0) {
     return <p>Failed to load data.</p>;
