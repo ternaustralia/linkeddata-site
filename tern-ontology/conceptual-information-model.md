@@ -56,8 +56,7 @@ Both site-based observations and plotless opportunistic observations are support
 The domain-specific aspects of the TERN Ontology are supported by controlled vocabularies, covering elements like feature types, observable properties, procedures, core and non-core attributes and units of measure. 
 
 During development, the TERN Ontology was tested against datasets based primarily on the Australian Soil and Land Survey Field Handbook, though any ecological datasets will also work. 
-The TERN Ontology provides a framework for integrating observations and samples from a survey and provides a unified view of the data for cross-jurisdictional applications.
-The primary applications are **data transfer**. 
+The TERN Ontology provides a framework for integrating observations and samples from surveys and provides a unified view of the data for cross-jurisdictional applications.
 
 ## Background
 
