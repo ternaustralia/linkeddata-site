@@ -1,5 +1,5 @@
-export const baseUri = 'https://w3id.org/tern/ontologies/org/'
-const namedGraph = baseUri
+export const baseUri = "https://w3id.org/tern/ontologies/org/";
+const namedGraph = baseUri;
 
 export function getDirectSubclasses(resourceUri) {
   return `
@@ -20,7 +20,7 @@ export function getDirectSubclasses(resourceUri) {
     )
   }
   order by ?directChildClass
-  `
+  `;
 }
 
 export function getTopLevelClasses() {
@@ -54,7 +54,7 @@ export function getTopLevelClasses() {
     )
   }
   ORDER BY ?class
-  `
+  `;
 }
 
 export const getClasses = () => {
@@ -72,7 +72,7 @@ export const getClasses = () => {
     filter(strstarts(str(?class), "${baseUri}"))
   }
   order by ?class
-  `
+  `;
 
   return `
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -96,8 +96,8 @@ export const getClasses = () => {
     filter(strstarts(str(?class), "${baseUri}"))
   }
   order by ?class
-  `
-}
+  `;
+};
 
 export function getResource(classUri) {
   return `
@@ -111,7 +111,7 @@ export function getResource(classUri) {
       filter(!isBlank(?o))
   }
   order by ?p
-  `
+  `;
 }
 
 export function getClassConstraints(classUri) {
@@ -132,7 +132,7 @@ export function getClassConstraints(classUri) {
             ?oo ?ppp ?ooo .
         }
     }
-    `
+    `;
 }
 
 export function getLabel(resourceUri) {
@@ -145,7 +145,7 @@ export function getLabel(resourceUri) {
       <${resourceUri}> rdfs:label ?label .
   }
   limit 1
-`
+`;
 }
 
 export function getSuperClasses(resourceUri) {
@@ -161,5 +161,15 @@ export function getSuperClasses(resourceUri) {
       filter(!isBlank(?superclass))
       filter(strstarts(str(?superclass), "${baseUri}"))
   }
-  `
+  `;
+}
+
+export function resourceExists(resourceUri) {
+  return `
+ask {
+  graph <${namedGraph}> {
+      <${resourceUri}>  ?p ?o .       
+  }
+}
+`;
 }
