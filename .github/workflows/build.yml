@@ -2,11 +2,8 @@ name: Build website container image and push to GitHub Container Registry
 
 # Trigger the workflow on git push to master with git tag
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - "refs/tags/*"
+  release:
+    types: [published]
 
 env:
   IMAGE_NAME: ghcr.io/ternaustralia/linkeddata-site
