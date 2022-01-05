@@ -1,4 +1,4 @@
-name: Build NGINX container image
+name: Build website container image and push to GitHub Container Registry
 
 # Trigger the workflow on git push to master with git tag
 on:
