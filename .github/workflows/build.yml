@@ -22,7 +22,7 @@ jobs:
         id: metadata
         uses: docker/metadata-action@v3
         with:
-          images: [$IMAGE_NAME]
+          images: $IMAGE_NAME
           tags: type=semver,pattern={{version}}
 
       - name: Log in to GitHub Container Registry
