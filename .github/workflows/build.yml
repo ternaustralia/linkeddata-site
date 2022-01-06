@@ -28,11 +28,19 @@ jobs:
         with:
           fallback: "0.1.0"
 
-      - name: Get semver from latest tag
+      # - name: Get semver from latest tag
+      #   id: semver
+      #   uses: LykkeBusiness/get-semver-from-tag-action@v1.0.2
+      #   with:
+      #     tag: ${{ steps.latest-tag.outputs.tag }}
+
+      - name: Docker metadata
         id: semver
-        uses: LykkeBusiness/get-semver-from-tag-action@v1.0.2
+        uses: docker/metadata-action@v3
         with:
-          tag: ${{ steps.latest-tag.outputs.tag[0] }}
+          images: ${{ env.IMAGE_NAME }}
+          tags: type=semver,pattern={{version}}
+          value: ${{ steps.latest-tag.outputs.tag }}
 
       - name: Get git commit hash
         id: hash
@@ -52,5 +60,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.semver.outputs.non-prefixed }}-${{ steps.hash.outputs.version }}
+          tags: ${{ steps.semver.outputs.tags }}-${{ steps.hash.outputs.version }}
           labels: ${{ steps.metadata.outputs.labels }}
