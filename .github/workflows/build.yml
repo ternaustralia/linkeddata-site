@@ -8,7 +8,11 @@ env:
   IMAGE_NAME: ghcr.io/ternaustralia/linkeddata-site
 
 jobs:
+  test:
+    uses: ternaustralia/linkeddata-site/.github/workflows/test.yml@master
+
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
