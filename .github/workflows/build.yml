@@ -11,7 +11,7 @@ env:
 jobs:
   test:
     uses: ternaustralia/linkeddata-site/.github/workflows/test.yml@master
-  
+    
   build:
     runs-on: ubuntu-latest
     steps:
@@ -20,14 +20,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      # - name: Get latest tag
+      #   id: latest-tag
+      #   uses: WyriHaximus/github-action-get-previous-tag@v1
+      #   with:
+      #     fallback: "0.1.0"
+
       - name: Get latest tag
         id: latest-tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+        uses: docker/metadata-action@v3
         with:
-          fallback: "0.1.0"
+          images: ${{ env.IMAGE_NAME }}
+          tags: type=semver,pattern={{version}}
 
-      - name: Docker metadata
-        id: metadata
+      - name: Get git commit hash
+        id: hash
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.IMAGE_NAME }}
@@ -44,5 +51,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.latest-tag.outputs.tag}}-${{ steps.metadata.outputs.tags }}
+          tags: ${{ steps.latest-tag.outputs.tags }}-${{ steps.hash.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
