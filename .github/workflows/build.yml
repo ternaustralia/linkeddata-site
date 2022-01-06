@@ -28,19 +28,22 @@ jobs:
         with:
           fallback: "0.1.0"
 
-      # - name: Get semver from latest tag
-      #   id: semver
-      #   uses: LykkeBusiness/get-semver-from-tag-action@v1.0.2
-      #   with:
-      #     tag: ${{ steps.latest-tag.outputs.tag }}
+      - name: Tag starts with v
+        id: tag-starts-with-v
+        if: ${{ startsWith('v', steps.latest-tag.outputs.tag) }}
+        uses: mad9000/actions-find-and-replace-string@2
+        with: 
+          source: ${{ steps.latest-tag.outputs.tag }}
+          find: 'v'
+          replace: ''
 
-      - name: Docker metadata
-        id: semver
-        uses: docker/metadata-action@v3
+      - name: Tag value
+        id: tag-value
+        uses: haya14busa/action-cond@v1
         with:
-          images: ${{ env.IMAGE_NAME }}
-          tags: type=semver,pattern={{version}}
-          value: ${{ steps.latest-tag.outputs.tag }}
+          cond: ${{ startsWith('v', steps.latest-tag.outputs.tag) }}
+          if_true: ${{ steps.tag-starts-with-v.outputs.value }}
+          if_false: ${{ steps.latest-tag.outputs.tag }}
 
       - name: Get git commit hash
         id: hash
@@ -60,5 +63,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.semver.outputs.tags }}-${{ steps.hash.outputs.version }}
+          tags: ${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.version }}
           labels: ${{ steps.metadata.outputs.labels }}
