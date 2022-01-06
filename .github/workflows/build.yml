@@ -46,11 +46,19 @@ jobs:
           if_false: ${{ steps.latest-tag.outputs.tag }}
 
       - name: Get git commit hash
-        id: hash
+        id: commit-hash
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.IMAGE_NAME }}
           tags: type=sha
+
+      - name: Rename git commit hash
+        id: hash
+        uses: mad9000/actions-find-and-replace-string@2
+        with: 
+          source: ${{ steps.commit-hash.outputs.version }}
+          find: 'sha'
+          replace: 'dev'
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v1
