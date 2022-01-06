@@ -32,7 +32,7 @@ jobs:
         id: semver
         uses: LykkeBusiness/get-semver-from-tag-action@v1.0.2
         with:
-          tag: ${{ steps.latest-tag.outputs.tag }}
+          tag: ${{ steps.latest-tag.outputs.tag[0] }}
 
       - name: Get git commit hash
         id: hash

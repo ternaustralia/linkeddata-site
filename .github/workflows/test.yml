@@ -8,6 +8,8 @@ on:
   push:
     branches:
       - "**"
+      # Tests already run on master branch when PR is merged and the "build" workflow is triggered.
+      - "!master"
 
 jobs:
   test:
