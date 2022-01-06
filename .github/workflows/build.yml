@@ -11,13 +11,15 @@ env:
 jobs:
   test:
     uses: ternaustralia/linkeddata-site/.github/workflows/test.yml@master
-    
+
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v2
         with:
+          # Required by WyriHaximus/github-action-get-previous-tag
           fetch-depth: 0
 
       - name: Get latest tag
@@ -26,11 +28,11 @@ jobs:
         with:
           fallback: "0.1.0"
 
-      - name: 'Get semver from latest tag'
+      - name: Get semver from latest tag
         id: semver
-        uses: "WyriHaximus/github-action-next-semvers@v1"
+        uses: LykkeBusiness/get-semver-from-tag-action@v1.0.2
         with:
-          version: ${{ steps.latest-tag.outputs.tag }}
+          tag: ${{ steps.latest-tag.outputs.tag }}
 
       - name: Get git commit hash
         id: hash
@@ -50,5 +52,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.semver.outputs.tag }}-${{ steps.hash.outputs.version }}
+          tags: ${{ steps.semver.outputs.non-prefixed }}-${{ steps.hash.outputs.version }}
           labels: ${{ steps.metadata.outputs.labels }}
