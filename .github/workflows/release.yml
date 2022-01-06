@@ -1,4 +1,4 @@
-name: Build release container image and push to GitHub Container Registry
+name: Build release container image tagged with release version and push to GitHub Container Registry
 
 on:
   release:

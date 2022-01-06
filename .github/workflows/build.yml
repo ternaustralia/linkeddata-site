@@ -1,4 +1,4 @@
-name: Build container image and push to GitHub Container Registry
+name: Build dev container image tagged with latest version and short commit hash
 
 on:
   push:
