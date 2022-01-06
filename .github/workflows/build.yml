@@ -71,5 +71,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.version }}
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.value }}
           labels: ${{ steps.metadata.outputs.labels }}
