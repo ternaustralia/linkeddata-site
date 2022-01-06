@@ -20,18 +20,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - name: Get latest tag
-      #   id: latest-tag
-      #   uses: WyriHaximus/github-action-get-previous-tag@v1
-      #   with:
-      #     fallback: "0.1.0"
-
       - name: Get latest tag
         id: latest-tag
-        uses: docker/metadata-action@v3
+        uses: WyriHaximus/github-action-get-previous-tag@v1
         with:
-          images: ${{ env.IMAGE_NAME }}
-          tags: type=semver,pattern={{version}}
+          fallback: "0.1.0"
 
       - name: Get git commit hash
         id: hash
@@ -51,5 +44,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.latest-tag.outputs.tags }}-${{ steps.hash.outputs.tags }}
+          tags: ${{ steps.latest-tag.outputs.tag }}-${{ steps.hash.outputs.labels["org.opencontainers.image.version"] }}
           labels: ${{ steps.metadata.outputs.labels }}
