@@ -44,5 +44,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.latest-tag.outputs.tag }}-${{ steps.hash.outputs.labels["org.opencontainers.image.version"] }}
+          tags: ${{ steps.latest-tag.outputs.tag }}-${{ steps.hash.outputs.labels.org.opencontainers.image.version }}
           labels: ${{ steps.metadata.outputs.labels }}
