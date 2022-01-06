@@ -30,7 +30,7 @@ jobs:
 
       - name: Tag starts with v
         id: tag-starts-with-v
-        if: ${{ startsWith('v', steps.latest-tag.outputs.tag) }}
+        if: ${{ startsWith(steps.latest-tag.outputs.tag, 'v') }}
         uses: mad9000/actions-find-and-replace-string@2
         with: 
           source: ${{ steps.latest-tag.outputs.tag }}
@@ -41,7 +41,7 @@ jobs:
         id: tag-value
         uses: haya14busa/action-cond@v1
         with:
-          cond: ${{ startsWith('v', steps.latest-tag.outputs.tag) }}
+          cond: ${{ startsWith(steps.latest-tag.outputs.tag, 'v') }}
           if_true: ${{ steps.tag-starts-with-v.outputs.value }}
           if_false: ${{ steps.latest-tag.outputs.tag }}
 
@@ -63,5 +63,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.version }}
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.version }}
           labels: ${{ steps.metadata.outputs.labels }}
