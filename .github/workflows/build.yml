@@ -72,4 +72,6 @@ jobs:
         with:
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.value }}
+          build-args: |
+            REACT_APP_GIT_VERSION=${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.value }}
           labels: ${{ steps.metadata.outputs.labels }}
