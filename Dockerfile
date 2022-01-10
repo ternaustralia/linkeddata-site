@@ -6,11 +6,9 @@ COPY ./ $HOME/src/
 
 WORKDIR $HOME/src/
 
-RUN apk add --update --no-cache python3
+RUN yarn; yarn build
 
-RUN npm install; npm run build
-
-
+# ---
 FROM docker.io/nginx:1.21.5-alpine
 
 COPY --from=builder $HOME/src/build /usr/share/nginx/content
