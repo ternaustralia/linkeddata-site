@@ -6,7 +6,9 @@ COPY ./ $HOME/src/
 
 WORKDIR $HOME/src/
 
-RUN npm ci && npm cache clean --force
+RUN npm ci && \
+    npm cache clean --force && \
+    npm run build
 
 # ---
 FROM docker.io/nginx:1.21.5-alpine
