@@ -1,4 +1,4 @@
-FROM docker.io/node:16.13.1-alpine3.14 AS builder
+FROM docker.io/node:16.13.1 AS builder
 
 ARG REACT_APP_GIT_VERSION
 
@@ -6,7 +6,7 @@ COPY ./ $HOME/src/
 
 WORKDIR $HOME/src/
 
-RUN npm install; npm run build
+RUN npm ci && npm cache clean --force
 
 # ---
 FROM docker.io/nginx:1.21.5-alpine
