@@ -6,6 +6,8 @@ COPY ./ $HOME/src/
 
 WORKDIR $HOME/src/
 
+RUN apk add --update --no-cache python3
+
 RUN npm install; npm run build
 
 
