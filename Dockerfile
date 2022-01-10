@@ -1,5 +1,7 @@
 FROM docker.io/node:16.13.1-alpine3.14 AS builder
 
+ARG REACT_APP_GIT_VERSION
+
 COPY ./ $HOME/src/
 
 WORKDIR $HOME/src/
