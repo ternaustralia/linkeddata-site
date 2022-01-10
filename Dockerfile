@@ -6,7 +6,7 @@ COPY ./ $HOME/src/
 
 WORKDIR $HOME/src/
 
-RUN yarn; yarn build
+RUN npm install; npm run build
 
 # ---
 FROM docker.io/nginx:1.21.5-alpine
