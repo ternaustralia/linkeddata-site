@@ -29,3 +29,37 @@ Hide toggle in small viewports
 .navbarSidebarCloseSvg {
   fill: var(--ifm-color-emphasis-600);
 }
+
+/* .navbar--fixed-top {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+} */
+
+.navbar {
+  /* align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0.5rem 1.0rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; */
+  height: 100px;
+}
+
+.navbar__brand {
+  height: 4.8rem;
+  padding-left: 0.9rem;
+}
+
+.navbar__items--right {
+  font-size: 1.2rem;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-weight: 500;
+  color: #043e4f;
+}
+
+.navbar__brand {
+  color: #043e4f;
+}

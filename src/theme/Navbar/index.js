@@ -153,7 +153,7 @@ function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
     <div className="navbar-sidebar">
       <div className="navbar-sidebar__brand">
         <Logo
-          className="navbar__brand"
+          className={clsx("navbar__brand", styles.navbar__brand)}
           imageClassName="navbar__logo"
           titleClassName="navbar__title"
         />
@@ -228,7 +228,7 @@ function Navbar() {
       <TopBar />
       <nav
         ref={navbarRef}
-        className={clsx("navbar", "navbar--fixed-top", {
+        className={clsx("navbar", "navbar--fixed-top", styles.navbar, {
           "navbar--dark": style === "dark",
           "navbar--primary": style === "primary",
           "navbar-sidebar--show": mobileSidebar.shown,
@@ -251,7 +251,7 @@ function Navbar() {
               </button>
             )}
             <Logo
-              className="navbar__brand"
+              className={clsx("navbar__brand", styles.navbar__brand)}
               imageClassName="navbar__logo"
               titleClassName="navbar__title"
             />
@@ -259,20 +259,25 @@ function Navbar() {
               <NavbarItem {...item} key={i} />
             ))}
           </div>
-          {/* Disable light/dark mode for now until the TERN styles have been updated to support it. */}
-          {/* <div className="navbar__items navbar__items--right">
+          <div
+            className={clsx(
+              "navbar__items navbar__items--right",
+              styles["navbar__items--right"]
+            )}
+          >
             {rightItems.map((item, i) => (
               <NavbarItem {...item} key={i} />
             ))}
-            {!colorModeToggle.disabled && (
+            {/* Disable light/dark mode for now until the TERN styles have been updated to support it. */}
+            {/* {!colorModeToggle.disabled && (
               <Toggle
                 className={styles.toggle}
                 checked={colorModeToggle.isDarkTheme}
                 onChange={colorModeToggle.toggle}
               />
-            )}
+            )} */}
             {!hasSearchNavbarItem && <SearchBar />}
-          </div> */}
+          </div>
         </div>
 
         <div
