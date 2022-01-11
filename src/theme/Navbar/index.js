@@ -26,8 +26,9 @@ import IconMenu from "@theme/IconMenu";
 import IconCloseThin from "@theme/IconCloseThin";
 import styles from "./styles.module.css"; // retrocompatible with v1
 
+import useVersion from "../../hooks/useVersion";
 import "tern-react/dist/index.css";
-import { TopBar } from "tern-react";
+import { TopBar, getTernMenu } from "tern-react";
 
 const DefaultNavItemPosition = "right";
 
@@ -223,9 +224,11 @@ function Navbar() {
   const items = useNavbarItems();
   const hasSearchNavbarItem = items.some((item) => item.type === "search");
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
+  const version = useVersion();
+  const env = version.includes("dev") ? "test": "prod"
   return (
     <>
-      <TopBar />
+      <TopBar menuConfig={getTernMenu({env: env})} />
       <nav
         ref={navbarRef}
         className={clsx("navbar", "navbar--fixed-top", styles.navbar, {
