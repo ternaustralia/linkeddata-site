@@ -37,4 +37,6 @@ jobs:
         with:
           push: true
           tags: ${{ steps.metadata.outputs.tags }}
+          build-args: |
+            REACT_APP_GIT_VERSION=${{ steps.metadata.outputs.version }}
           labels: ${{ steps.metadata.outputs.labels }}
