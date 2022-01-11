@@ -68,13 +68,13 @@ const config = {
         title: "TERN Linked Data Services",
         logo: {
           alt: "TERN logo",
-          src: "https://w3id.org/tern/static/tern-web/img/logo@2x.png",
+          src: "https://w3id.org/tern/static/tern-web/img/logo@3x.png",
         },
         items: [
           {
             type: "dropdown",
             label: "Our work",
-            position: "left",
+            position: "right",
             items: [
               {
                 to: "/our-work",
@@ -94,7 +94,7 @@ const config = {
           {
             type: "dropdown",
             label: "Viewers",
-            position: "left",
+            position: "right",
             items: [
               {
                 to: "/viewers/tern-ontology",
@@ -117,7 +117,7 @@ const config = {
           {
             type: "dropdown",
             label: "About",
-            position: "left",
+            position: "right",
             items: [
               {
                 to: "/about/acknowledgement-and-attribution",
