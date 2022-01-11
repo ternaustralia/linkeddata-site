@@ -253,7 +253,7 @@ function Navbar() {
             <Logo
               className={clsx("navbar__brand", styles.navbar__brand)}
               imageClassName="navbar__logo"
-              titleClassName="navbar__title"
+              titleClassName={clsx("navbar__title h3", styles.navbar__title)}
             />
             {leftItems.map((item, i) => (
               <NavbarItem {...item} key={i} />
