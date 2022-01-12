@@ -6,6 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const package = require("./package.json");
 
+const version = process.env.REACT_APP_GIT_VERSION || package.version;
+const env = version.includes("dev") ? "test" : "prod";
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "TERN Linked Data Services",
@@ -20,7 +23,8 @@ const config = {
   projectName: "linkeddata-site", // Usually your repo name.
 
   customFields: {
-    version: process.env.REACT_APP_GIT_VERSION || package.version,
+    version: version,
+    env: env,
   },
 
   presets: [
@@ -107,6 +111,30 @@ const config = {
               {
                 to: "/viewers/tern-org-ontology",
                 label: "Browse TERN Organisation Ontology by class",
+              },
+              {
+                to:
+                  env === "prod"
+                    ? "https://linkeddata.tern.org.au/viewer/tern"
+                    : "https://linkeddata-test.tern.org.au/viewer/tern",
+                label: "Browse TERN Controlled Vocabularies",
+                target: "_blank",
+              },
+              {
+                to:
+                  env === "prod"
+                    ? "https://linkeddata.tern.org.au/viewer/ausplots"
+                    : "https://linkeddata-test.tern.org.au/viewer/ausplots",
+                label: "Browse AusPlots Controlled Vocabularies",
+                target: "_blank",
+              },
+              {
+                to:
+                  env === "prod"
+                    ? "https://linkeddata.tern.org.au/viewer/corveg"
+                    : "https://linkeddata-test.tern.org.au/viewer/corveg",
+                label: "Browse CORVEG Controlled Vocabularies",
+                target: "_blank",
               },
               {
                 to: "/viewers/dawe-vocabs",
