@@ -215,18 +215,6 @@ function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
   );
 }
 
-function AlertDismissible({version}) {
-  const [show, setShow] = useState(true);
-
-  if (show) {
-    return (
-      <Alert variant="warning" onClose={() => setShow(false)} dismissible>
-        <div>You are viewing a development preview on version {version}.</div>
-      </Alert>
-    );
-  }
-}
-
 function Navbar() {
   const {
     navbar: { hideOnScroll, style },
@@ -243,7 +231,11 @@ function Navbar() {
   return (
     <>
       <TopBar menuConfig={getTernMenu({ env: env })} />
-      <AlertDismissible version={version} />
+      <Alert className="mb-1" variant="warning">
+        <div>
+          You are viewing a development preview of the website on version <em>{version}</em>.
+        </div>
+      </Alert>
       <nav
         ref={navbarRef}
         className={clsx("navbar", "navbar--fixed-top", styles.navbar, {
