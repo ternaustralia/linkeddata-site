@@ -109,6 +109,21 @@ const config = {
                 label: "Browse TERN Organisation Ontology by class",
               },
               {
+                to: "/viewer/tern",
+                label: "Browse TERN Controlled Vocabularies",
+                target: "_blank",
+              },
+              {
+                to: "/viewer/ausplots",
+                label: "Browse AusPlots Controlled Vocabularies",
+                target: "_blank",
+              },
+              {
+                to: "/viewer/corveg",
+                label: "Browse CORVEG Controlled Vocabularies",
+                target: "_blank",
+              },
+              {
                 to: "/viewers/dawe-vocabs",
                 label: "Browse DAWE Controlled Vocabularies",
               },
