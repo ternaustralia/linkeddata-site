@@ -51,6 +51,10 @@ jobs:
         with:
           version: ${{ steps.tag-value.outputs.value }}
 
+      - name: Get git commits since last tag
+        id: commitscount
+        run: echo "::set-output name=value::$(git rev-list `git rev-list --tags --no-walk --max-count=1`..HEAD --count)"
+
       - name: Get git commit hash
         id: commit-hash
         uses: docker/metadata-action@v3
@@ -64,7 +68,7 @@ jobs:
         with: 
           source: ${{ steps.commit-hash.outputs.version }}
           find: 'sha'
-          replace: 'dev'
+          replace: dev-${{ steps.commitscount.outputs.value }}
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v1
