@@ -30,6 +30,7 @@ import useVersion from "../../hooks/useVersion";
 import "tern-react/dist/index.css";
 import { TopBar, getTernMenu } from "tern-react";
 import useEnv from "../../hooks/useEnv";
+import { Alert } from "react-bootstrap";
 
 const DefaultNavItemPosition = "right";
 
@@ -214,6 +215,18 @@ function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
   );
 }
 
+function AlertDismissible({version}) {
+  const [show, setShow] = useState(true);
+
+  if (show) {
+    return (
+      <Alert variant="warning" onClose={() => setShow(false)} dismissible>
+        <div>You are viewing a development preview on version {version}.</div>
+      </Alert>
+    );
+  }
+}
+
 function Navbar() {
   const {
     navbar: { hideOnScroll, style },
@@ -226,9 +239,11 @@ function Navbar() {
   const hasSearchNavbarItem = items.some((item) => item.type === "search");
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
   const env = useEnv();
+  const version = useVersion();
   return (
     <>
-      <TopBar menuConfig={getTernMenu({env: env})} />
+      <TopBar menuConfig={getTernMenu({ env: env })} />
+      <AlertDismissible version={version} />
       <nav
         ref={navbarRef}
         className={clsx("navbar", "navbar--fixed-top", styles.navbar, {
