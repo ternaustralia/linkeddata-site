@@ -154,17 +154,17 @@ function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
     <div className="navbar-sidebar">
       <div className="navbar-sidebar__brand">
         <Logo
-          className={clsx("navbar__brand", styles.navbar__brand)}
+          className={clsx("navbar__brand")}
           imageClassName="navbar__logo"
           titleClassName="navbar__title"
         />
-        {!colorModeToggle.disabled && (
+        {/* {!colorModeToggle.disabled && (
           <Toggle
             className={styles.navbarSidebarToggle}
             checked={colorModeToggle.isDarkTheme}
             onChange={colorModeToggle.toggle}
           />
-        )}
+        )} */}
         <button
           type="button"
           className="clean-btn navbar-sidebar__close"
