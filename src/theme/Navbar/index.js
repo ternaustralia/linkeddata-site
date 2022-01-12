@@ -29,6 +29,7 @@ import styles from "./styles.module.css"; // retrocompatible with v1
 import useVersion from "../../hooks/useVersion";
 import "tern-react/dist/index.css";
 import { TopBar, getTernMenu } from "tern-react";
+import useEnv from "../../hooks/useEnv";
 
 const DefaultNavItemPosition = "right";
 
@@ -224,8 +225,7 @@ function Navbar() {
   const items = useNavbarItems();
   const hasSearchNavbarItem = items.some((item) => item.type === "search");
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
-  const version = useVersion();
-  const env = version.includes("dev") ? "test": "prod"
+  const env = useEnv();
   return (
     <>
       <TopBar menuConfig={getTernMenu({env: env})} />
