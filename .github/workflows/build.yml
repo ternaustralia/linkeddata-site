@@ -45,6 +45,12 @@ jobs:
           if_true: ${{ steps.tag-starts-with-v.outputs.value }}
           if_false: ${{ steps.latest-tag.outputs.tag }}
 
+      - name: Get next semver patch version
+        id: patch
+        uses: "WyriHaximus/github-action-next-semvers@v1"
+        with:
+          version: ${{ steps.tag-value.outputs.value }}
+
       - name: Get git commit hash
         id: commit-hash
         uses: docker/metadata-action@v3
@@ -71,7 +77,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.value }}
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.patch.outputs.patch }}-${{ steps.hash.outputs.value }}
           build-args: |
-            REACT_APP_GIT_VERSION=${{ steps.tag-value.outputs.value }}-${{ steps.hash.outputs.value }}
+            REACT_APP_GIT_VERSION=${{ steps.patch.outputs.patch }}-${{ steps.hash.outputs.value }}
           labels: ${{ steps.metadata.outputs.labels }}
