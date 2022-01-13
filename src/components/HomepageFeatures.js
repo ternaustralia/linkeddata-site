@@ -1,43 +1,47 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
-import mainStyles from '../pages/index.module.css';
-import Link from '@docusaurus/Link';
+import React from "react";
+import clsx from "clsx";
+import styles from "./HomepageFeatures.module.css";
+import mainStyles from "../pages/index.module.css";
+import Link from "@docusaurus/Link";
 
 const FeatureList = [
   {
-    title: 'TERN Ontology',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: "TERN Ontology",
+    Svg: require("../../static/img/undraw_docusaurus_mountain.svg").default,
     // img: require('../../static/img/docusaurus.png'),
-    img: 'https://www.tern.org.au/wp-content/uploads/2019/10/ecosystem@2x.png',
-    to: '/tern-ontology',
+    img: "https://www.tern.org.au/wp-content/uploads/2019/10/ecosystem@2x.png",
+    to: "/tern-ontology",
     description: (
       <>
-        The TERN Ontology is a conceptual information model to represent plot-based ecological surveys.
+        The TERN Ontology is a conceptual information model to represent
+        plot-based ecological surveys.
       </>
     ),
   },
   {
-    title: 'TERN Organisations Ontology',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
-    img: require('../../static/img/org.png').default,
-    to: '/our-work#tern-organisations-ontology',
+    title: "TERN Organisations Ontology",
+    Svg: require("../../static/img/undraw_docusaurus_mountain.svg").default,
+    img: require("../../static/img/org.png").default,
+    to: "/information-models#tern-organisations-ontology",
     description: (
       <>
-        A small profile of schema.org and the W3C Organisations ontology containing several classes to describe people and organisations with additional properties.
+        A small profile of schema.org and the W3C Organisations ontology
+        containing several classes to describe people and organisations with
+        additional properties.
       </>
-    )
+    ),
   },
   {
-    title: 'TERN Location Alignment Ontology',
-    img: 'https://www.tern.org.au/wp-content/uploads/2019/10/landscapes@2x.png',
-    to: '/our-work#tern-location-alignment-ontology',
+    title: "TERN Location Alignment Ontology",
+    img: "https://www.tern.org.au/wp-content/uploads/2019/10/landscapes@2x.png",
+    to: "/information-models#tern-location-alignment-ontology",
     description: (
       <>
-        An alignment of a few widely used ontologies for describing locations, features and geometries.
+        An alignment of a few widely used ontologies for describing locations,
+        features and geometries.
       </>
-    )
-  }
+    ),
+  },
   // {
   //   title: 'Focus on What Matters',
   //   Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
@@ -62,17 +66,21 @@ const FeatureList = [
 
 function Feature({ Svg, to, img, title, description }) {
   return (
-      <div className={clsx('col col--4')}>
-        <div className="text--center">
-          {/* <Svg className={styles.featureSvg} alt={title} /> */}
-          <img src={img} />
-        </div>
-        <div className="text--center padding-horiz--md">
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <div className={mainStyles.buttons}><Link to={to} className="button button--secondary button--lg">View</Link></div>
+    <div className={clsx("col col--4")}>
+      <div className="text--center">
+        {/* <Svg className={styles.featureSvg} alt={title} /> */}
+        <img src={img} />
+      </div>
+      <div className="text--center padding-horiz--md">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <div className={mainStyles.buttons}>
+          <Link to={to} className="button button--secondary button--lg">
+            View
+          </Link>
         </div>
       </div>
+    </div>
   );
 }
 
