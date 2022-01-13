@@ -77,11 +77,11 @@ const config = {
         items: [
           {
             type: "dropdown",
-            label: "Our work",
+            label: "Information models",
             position: "right",
             items: [
               {
-                to: "/our-work",
+                to: "/information-models",
                 label: "Overview",
               },
               {
@@ -93,6 +93,17 @@ const config = {
               //   docId: '/tern-ontology',
               //   label: 'TERN Ontology'
               // }
+            ],
+          },
+          {
+            type: "dropdown",
+            label: "Controlled vocabularies",
+            position: "right",
+            items: [
+              {
+                to: "/controlled-vocabularies",
+                label: "Overview",
+              },
             ],
           },
           {
