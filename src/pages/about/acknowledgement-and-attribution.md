@@ -4,12 +4,17 @@ In compliance with TERN's [Terms of Use](https://www.tern.org.au/terms-of-use) ,
 
 ## TERN Linked Data Services
 ```
-TERN (2020): TERN Linked Data Services. Terrestrial Ecosystem Research Network (TERN). https://linkeddata.tern.org.au/.
+TERN (2020): TERN Linked Data Services. Terrestrial Ecosystem Research Network (TERN). https://linkeddata.tern.org.au.
+```
+
+## TERN Ontology
+```
+TERN (2020): TERN Ontology. Terrestrial Ecosystem Research Network (TERN). https://wi3d.org/tern/ontologies/tern.
 ```
 
 ## TERN Vocabularies
 ```
-TERN (2020): TERN Vocabularies. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv/.
+TERN (2020): TERN Vocabularies. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv.
 ```
 
 
