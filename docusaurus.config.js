@@ -108,27 +108,27 @@ const config = {
           },
           {
             type: "dropdown",
-            label: "Viewers",
+            label: "Browse",
             position: "right",
             items: [
               {
                 to: "/viewers/tern-ontology",
-                label: "Browse TERN Ontology by class",
+                label: "TERN Ontology by class",
               },
               {
                 to: "/viewers/tern-loc-ontology",
-                label: "Browse TERN Location Ontology by class",
+                label: "TERN Location Ontology by class",
               },
               {
                 to: "/viewers/tern-org-ontology",
-                label: "Browse TERN Organisation Ontology by class",
+                label: "TERN Organisation Ontology by class",
               },
               {
                 to:
                   env === "prod"
                     ? "https://linkeddata.tern.org.au/viewer/tern"
                     : "https://linkeddata-test.tern.org.au/viewer/tern",
-                label: "Browse TERN Controlled Vocabularies",
+                label: "TERN Controlled Vocabularies",
                 target: "_blank",
               },
               {
@@ -136,7 +136,7 @@ const config = {
                   env === "prod"
                     ? "https://linkeddata.tern.org.au/viewer/ausplots"
                     : "https://linkeddata-test.tern.org.au/viewer/ausplots",
-                label: "Browse AusPlots Controlled Vocabularies",
+                label: "AusPlots Controlled Vocabularies",
                 target: "_blank",
               },
               {
@@ -144,12 +144,12 @@ const config = {
                   env === "prod"
                     ? "https://linkeddata.tern.org.au/viewer/corveg"
                     : "https://linkeddata-test.tern.org.au/viewer/corveg",
-                label: "Browse CORVEG Controlled Vocabularies",
+                label: "CORVEG Controlled Vocabularies",
                 target: "_blank",
               },
               {
                 to: "/viewers/dawe-vocabs",
-                label: "Browse DAWE Controlled Vocabularies",
+                label: "DAWE Controlled Vocabularies",
               },
             ],
           },
