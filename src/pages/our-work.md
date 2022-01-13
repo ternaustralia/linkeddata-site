@@ -1,10 +1,10 @@
 ---
-title: Information Models
+title: Standards
 ---
 
-# Overview
+# Our Work
 
-This page lists the information models used and published by TERN Linked Data services.
+This page lists the data and information standards used and published by TERN Linked Data services.
 
 
 ## TERN Ontology

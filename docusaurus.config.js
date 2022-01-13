@@ -77,11 +77,11 @@ const config = {
         items: [
           {
             type: "dropdown",
-            label: "Information models",
+            label: "Our work",
             position: "right",
             items: [
               {
-                to: "/information-models",
+                to: "/our-work",
                 label: "Overview",
               },
               {
@@ -97,38 +97,27 @@ const config = {
           },
           {
             type: "dropdown",
-            label: "Controlled vocabularies",
-            position: "right",
-            items: [
-              {
-                to: "/controlled-vocabularies",
-                label: "Overview",
-              },
-            ],
-          },
-          {
-            type: "dropdown",
-            label: "Browse",
+            label: "Viewers",
             position: "right",
             items: [
               {
                 to: "/viewers/tern-ontology",
-                label: "TERN Ontology by class",
+                label: "Browse TERN Ontology by class",
               },
               {
                 to: "/viewers/tern-loc-ontology",
-                label: "TERN Location Ontology by class",
+                label: "Browse TERN Location Ontology by class",
               },
               {
                 to: "/viewers/tern-org-ontology",
-                label: "TERN Organisation Ontology by class",
+                label: "Browse TERN Organisation Ontology by class",
               },
               {
                 to:
                   env === "prod"
                     ? "https://linkeddata.tern.org.au/viewer/tern"
                     : "https://linkeddata-test.tern.org.au/viewer/tern",
-                label: "TERN Controlled Vocabularies",
+                label: "Browse TERN Controlled Vocabularies",
                 target: "_blank",
               },
               {
@@ -136,7 +125,7 @@ const config = {
                   env === "prod"
                     ? "https://linkeddata.tern.org.au/viewer/ausplots"
                     : "https://linkeddata-test.tern.org.au/viewer/ausplots",
-                label: "AusPlots Controlled Vocabularies",
+                label: "Browse AusPlots Controlled Vocabularies",
                 target: "_blank",
               },
               {
@@ -144,12 +133,12 @@ const config = {
                   env === "prod"
                     ? "https://linkeddata.tern.org.au/viewer/corveg"
                     : "https://linkeddata-test.tern.org.au/viewer/corveg",
-                label: "CORVEG Controlled Vocabularies",
+                label: "Browse CORVEG Controlled Vocabularies",
                 target: "_blank",
               },
               {
                 to: "/viewers/dawe-vocabs",
-                label: "DAWE Controlled Vocabularies",
+                label: "Browse DAWE Controlled Vocabularies",
               },
             ],
           },
