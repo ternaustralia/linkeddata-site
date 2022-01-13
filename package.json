@@ -54,11 +54,5 @@
     "@babel/preset-env": "^7.16.4",
     "babel-jest": "^27.3.1",
     "jest": "^27.3.1"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx$": "babel-jest",
-      "^.+\\.js$": "babel-jest"
-    }
   }
 }
