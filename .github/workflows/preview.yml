@@ -1,0 +1,91 @@
+name: 🔂 Surge PR Preview
+
+# This workflow creates a preview build of a PR on surge.sh.
+# It requires a surge.sh token generated from the surge CLI.
+# This workflow is triggered when a PR is opened, updated, reopened, and closed.
+# On PR close, this workflow will run and remove the build from surge.sh.
+
+on:
+  pull_request:
+    # when using teardown: 'true', add default event types + closed event type
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.13.2"
+
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+        with:
+          # Required by WyriHaximus/github-action-get-previous-tag
+          fetch-depth: 0
+
+      - name: Get latest tag
+        id: latest-tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        with:
+          fallback: "0.1.0"
+
+      - name: Tag starts with v
+        id: tag-starts-with-v
+        if: ${{ startsWith(steps.latest-tag.outputs.tag, 'v') }}
+        uses: mad9000/actions-find-and-replace-string@2
+        with:
+          source: ${{ steps.latest-tag.outputs.tag }}
+          find: "v"
+          replace: ""
+
+      - name: Tag value
+        id: tag-value
+        uses: haya14busa/action-cond@v1
+        with:
+          cond: ${{ startsWith(steps.latest-tag.outputs.tag, 'v') }}
+          if_true: ${{ steps.tag-starts-with-v.outputs.value }}
+          if_false: ${{ steps.latest-tag.outputs.tag }}
+
+      - name: Get next semver patch version
+        id: patch
+        uses: WyriHaximus/github-action-next-semvers@v1
+        with:
+          version: ${{ steps.tag-value.outputs.value }}
+
+      - name: Get git commits since last tag
+        id: commitscount
+        run: |
+          echo "::set-output name=value::$(git rev-list `git rev-list --tags --no-walk --max-count=1`..HEAD --count)"
+
+      - name: Get git commit hash, ignore PR merge commits
+        id: commit-hash
+        run: |
+          echo '::echo::on'
+          echo "::set-output name=value::$(git log -1 --pretty=format:%h --no-merges)"
+          echo '::echo::off'
+
+      - name: Rename git commit hash
+        id: hash
+        uses: mad9000/actions-find-and-replace-string@2
+        with:
+          source: ${{ steps.commit-hash.outputs.value }}
+          find: ${{ steps.commit-hash.outputs.value }}
+          replace: dev.${{ steps.commitscount.outputs.value }}.${{ steps.commit-hash.outputs.value }}
+
+      - name: Debug git commit short hash
+        run: |
+          echo $(git log -1 --pretty=format:%h --no-merges)
+          echo $(git log --name-status HEAD^..HEAD)
+
+      - uses: afc163/surge-preview@v1
+        env:
+          REACT_APP_GIT_VERSION: ${{ steps.patch.outputs.patch }}-${{ steps.hash.outputs.value }}
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dist: build
+          teardown: "true"
+          build: |
+            npm ci
+            npm run build
