@@ -13,13 +13,13 @@ const env = version.includes("dev") ? "test" : "prod";
 const config = {
   title: "TERN Linked Data Services",
   tagline:
-    "TERN’s Data Services and Analytics platform uses Linked Data and the Semantic Web to manage datasets derived from its terrestrial ecosystem field observatory.",
+    "TERN uses Linked Data and the Semantic Web to manage datasets derived from its terrestrial ecosystem field observatory.",
   url: "https://linkeddata.tern.org.au",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "https://w3id.org/tern/static/tern-web/img/logo@2x.png",
-  organizationName: "TERN", // Usually your GitHub org/user name.
+  organizationName: "ternaustralia", // Usually your GitHub org/user name.
   projectName: "linkeddata-site", // Usually your repo name.
 
   customFields: {
