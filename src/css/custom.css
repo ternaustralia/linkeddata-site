@@ -31,23 +31,23 @@ a:hover {
   color: #043e4f !important;
 }
 
-.dropdown__link--active {
-  color: #ed694b !important;
+li > .dropdown__link--active {
+  color: #ed694b;
 }
 
 .table-of-contents__link--active {
-  color: #043e4f !important;
+  color: #043e4f;
   font-weight: bold;
 }
 
-.hero__title {
-  color: #043e4f !important;
-  font-family: "Uni Neue", Sans-serif !important;
-  font-weight: 900 !important;
+h1.hero__title {
+  color: #043e4f;
+  font-family: "Uni Neue", Sans-serif;
+  font-weight: 900;
 }
 
-.menu__link--active {
-  color: #ed694b !important;
+a.menu__link--active {
+  color: #ed694b;
 }
 
 h1 {
