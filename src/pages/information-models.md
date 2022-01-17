@@ -6,7 +6,7 @@ import ExternalLink from '../components/ExternalLink'
 
 # Overview
 
-This page lists the information models used and published by TERN Linked Data services.
+This page lists the information models used and published by TERN.
 
 ## TERN Ontology
 
@@ -30,8 +30,6 @@ An alignment of a few widely used ontologies for describing locations, features 
 
 <p><ExternalLink href="https://w3id.org/tern/ontologies/loc/">View more</ExternalLink></p>
 
-## ISO 19115-3:2016 and ISO 19157-2:2016 Profile
+## TERN Metadata Profile of ISO 19115-3:2016 and ISO 19157-2:2016
 
-TERN has developed an ISO 19115-3:2016 and ISO 19157-2:2016 profile and uses it as the primary metadata standard for representing the data collections published on the TERN Data Discovery Portal (TDDP). The profile specifies the required metadata properties to aid data discovery and applies several controlled vocabularies (e.g., topic category, parameter, units, instrument, organization, and person) to standardize the metadata representation. The XML template of the profile is available at https://github.com/ternaustralia/TERN-ISO19115.
-
-<p><ExternalLink href="https://github.com/ternaustralia/TERN-ISO19115">View more</ExternalLink></p>
+TERN has developed an ISO 19115-3:2016 and ISO 19157-2:2016 profile and uses it as the primary metadata standard for representing the data collections published on the TERN Data Discovery Portal (TDDP). The profile specifies the required metadata properties to aid data discovery and applies several controlled vocabularies (e.g., topic category, parameter, units, instrument, organization, and person) to standardize the metadata representation. The XML template of the profile is available at <ExternalLink href="https://github.com/ternaustralia/TERN-ISO19115">https://github.com/ternaustralia/TERN-ISO19115</ExternalLink>.
