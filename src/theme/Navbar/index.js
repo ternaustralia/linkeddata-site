@@ -233,7 +233,8 @@ function Navbar() {
       <TopBar menuConfig={getTernMenu({ env: env })} />
       <Alert className="mb-1" variant="warning">
         <div>
-          You are viewing a development preview of the website on version <em>{version}</em>.
+          You are viewing a development preview of the website on version{" "}
+          <em>{version}</em>.
         </div>
       </Alert>
       <nav
