@@ -23,6 +23,70 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+a:hover {
+  color: #043e4f !important;
+}
+
+.dropdown__link--active {
+  color: #ed694b !important;
+}
+
+.table-of-contents__link--active {
+  color: #043e4f !important;
+  font-weight: bold;
+}
+
+.hero__title {
+  color: #043e4f !important;
+  font-family: "Uni Neue", Sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.menu__link--active {
+  color: #ed694b !important;
+}
+
+h1 {
+  color: #043e4f !important;
+  font-family: "Uni Neue", Sans-serif !important;
+  font-weight: 600 !important;
+}
+
+h2 {
+  color: #043e4f !important;
+  font-family: "Uni Neue", Sans-serif !important;
+  font-weight: 600 !important;
+}
+
+h3 {
+  color: #043e4f !important;
+  font-family: "Uni Neue", Sans-serif !important;
+  font-weight: 600 !important;
+}
+
+h4 {
+  color: #043e4f !important;
+  font-family: "Uni Neue", Sans-serif !important;
+  font-weight: 600 !important;
+}
+
+h5 {
+  color: #043e4f !important;
+  font-family: "Uni Neue", Sans-serif !important;
+  font-weight: 600 !important;
+}
+
+h6 {
+  color: #043e4f !important;
+  font-family: "Uni Neue", Sans-serif !important;
+  font-weight: 600 !important;
+}
+
+body {
+  color: #0f3540 !important;
+  font-family: museo-sans, sans-serif !important;
 }

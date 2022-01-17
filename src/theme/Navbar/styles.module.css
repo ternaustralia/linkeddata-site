@@ -56,12 +56,13 @@ Hide toggle in small viewports
   font-size: 1.2rem;
   padding-left: 24px;
   padding-right: 24px;
-  font-weight: 500;
-  color: #043e4f;
+  font-weight: 500 !important;
+  color: #043e4f !important;
 }
 
 .navbar__title {
   color: #6eb3a6;
   padding-left: 1rem;
   margin-top: 0.8rem;
+  font-weight: 500 !important;
 }
