@@ -60,7 +60,7 @@ Example in JSON-LD:
 }
 ```
 
-_For brevity, the JSON-LD context has been omitted. See the full JSON-LD context at [JSON-LD context](/tern-ontology/dev-guide/json-ld-context)._
+_For brevity, the JSON-LD context has been omitted. See the full JSON-LD context at [JSON-LD context](/information-models/tern-ontology/dev-guide/json-ld-context)._
 
 <details>
     <summary>In Turtle.</summary>
@@ -162,7 +162,7 @@ Example in JSON-LD:
 }
 ```
 
-_For brevity, the JSON-LD context has been omitted. See the full JSON-LD context at [JSON-LD context](/tern-ontology/dev-guide/json-ld-context)._
+_For brevity, the JSON-LD context has been omitted. See the full JSON-LD context at [JSON-LD context](/information-models/tern-ontology/dev-guide/json-ld-context)._
 
 <details>
     <summary>In Turtle.</summary>
