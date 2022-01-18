@@ -1,8 +1,20 @@
-# Website
+# TERN Linked Data Services Website source code.
+
+> Live at https://linkeddata.tern.org.au.
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-The website automatically deploys on new commits to the `master` branch.
+The `master` branch on the remote repository is protected. All modifications must be performed on a separate branch and merged in via GitHub pull requests.
+
+Tests and builds are automatically performed on each pull request "open" and "synchronisation".
+
+Pull requests automatically build and deploy a preview version of the website to surge.sh.
+
+A merge into the `master` branch automatically creates a containerised development version of the website. TERN's Flux will automatically deploy development versions to https://linkeddata-test.tern.org.au.
+
+A production version is automatically triggered when a GitHub release is made. TERN's Flux will automatically deploy production versions to https://linkeddata.tern.org.au.
+
+For more details on how the GitHub Actions workflows are set up, see [.github/workflows](.github/workflows).
 
 ### Installation
 
@@ -13,10 +25,12 @@ $ npm
 ### Local Development
 
 ```
-$ npm run start
+$ npm start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+Note: changes require a refresh of the browser page. This is due to a React package relying on reading Node's `process` global variable, which is not available during hot-reloads.
 
 ### Running tests
 
@@ -34,10 +48,9 @@ $ npm run build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
+It is useful to run this command to check if builds succeed correctly. Docusaurus will also check for broken links referencing within the website as well.
 
-```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
+## Contact
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Edmond Chuc  
+e.chuc@uq.edu.au

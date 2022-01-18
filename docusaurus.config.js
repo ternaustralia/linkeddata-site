@@ -57,9 +57,11 @@ const config = {
       "@docusaurus/plugin-content-docs",
       {
         id: "tern-ontology",
-        path: "tern-ontology",
-        routeBasePath: "tern-ontology",
-        sidebarPath: require.resolve("./sidebarsTernOntology.js"),
+        path: "information-models/tern-ontology",
+        routeBasePath: "information-models/tern-ontology",
+        sidebarPath: require.resolve(
+          "./information-models/tern-ontology/sidebars.js"
+        ),
         // ... other options
       },
     ],
@@ -81,11 +83,11 @@ const config = {
             position: "right",
             items: [
               {
-                to: "/information-models",
+                to: "/information-models/overview",
                 label: "Overview",
               },
               {
-                to: "/tern-ontology",
+                to: "/information-models/tern-ontology",
                 label: "TERN Ontology",
               },
               // {
@@ -101,7 +103,7 @@ const config = {
             position: "right",
             items: [
               {
-                to: "/controlled-vocabularies",
+                to: "/controlled-vocabularies/overview",
                 label: "Overview",
               },
             ],
