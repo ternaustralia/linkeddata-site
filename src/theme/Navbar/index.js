@@ -231,12 +231,12 @@ function Navbar() {
   return (
     <>
       <TopBar menuConfig={getTernMenu({ env: env })} />
-      <Alert className="mb-1" variant="warning">
+      {env === "test" && <Alert className="mb-1" variant="warning">
         <div>
           You are viewing a development preview of the website on version{" "}
           <em>{version}</em>.
         </div>
-      </Alert>
+      </Alert>}
       <nav
         ref={navbarRef}
         className={clsx("navbar", "navbar--fixed-top", styles.navbar, {
