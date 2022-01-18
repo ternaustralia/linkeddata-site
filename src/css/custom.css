@@ -31,6 +31,11 @@ a:hover {
   color: #0f3540 !important;
 }
 
+.pagination-nav__link:hover {
+  transition: cubic-bezier(0.08, 0.52, 0.52, 1);
+  border-color: #0f3540;
+}
+
 li > .dropdown__link--active {
   color: #ed694b;
 }

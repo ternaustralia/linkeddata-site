@@ -7,12 +7,12 @@ import Link from "@docusaurus/Link";
 const FeatureList = [
   {
     title: "Information Models",
-    to: "/information-models",
+    to: "/information-models/overview",
     description: <>The information models used by TERN.</>,
   },
   {
     title: "Controlled Vocabularies",
-    to: "/controlled-vocabularies",
+    to: "/controlled-vocabularies/overview",
     description: <>The controlled vocabularies used by TERN.</>,
   },
   // {
