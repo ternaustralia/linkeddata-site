@@ -30,8 +30,6 @@ $ npm start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-Note: changes require a refresh of the browser page. This is due to a React package relying on reading Node's `process` global variable, which is not available during hot-reloads.
-
 ### Running tests
 
 ```
