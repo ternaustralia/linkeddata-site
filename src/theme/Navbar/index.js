@@ -23,7 +23,7 @@ import { useActivePlugin } from "@theme/hooks/useDocs";
 import NavbarItem from "@theme/NavbarItem";
 import Logo from "@theme/Logo";
 import IconMenu from "@theme/IconMenu";
-import IconCloseThin from "@theme/IconCloseThin";
+import IconCloseThin from "@theme/IconClose";
 import styles from "./styles.module.css"; // retrocompatible with v1
 
 import useVersion from "../../hooks/useVersion";
@@ -263,7 +263,7 @@ function Navbar() {
             )}
             <Logo
               className={clsx("navbar__brand", styles.navbar__brand)}
-              imageClassName="navbar__logo"
+              imageClassName={clsx("navbar__logo", styles.navbar__logo)}
               titleClassName={clsx("navbar__title h3", styles.navbar__title)}
             />
             {leftItems.map((item, i) => (
