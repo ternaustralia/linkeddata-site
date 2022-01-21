@@ -1,6 +1,6 @@
 # Annotating instances with the Attribute class
 
-Instances of a class (also known as individuals in RDF) can be annotated with additional properties with the [tern:Attribute](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Attribute) class.
+Instances of a class (also known as [individuals](http://www.linkeddatatools.com/help/classes) in RDF) can be annotated with additional properties with the [tern:Attribute](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Attribute) class.
 
 This is useful for annotating protocol- and domain-specific information about individuals of the TERN Ontology classes. A few examples are documented below.
 
@@ -63,7 +63,7 @@ See also:
 
 The AusPlots Rangelands survey protocol collects soil bulk density measurements by obtaining undisturbed soil using the "core" method. The sampler, or tool used to collect the soil is a bulk density ring with a specific volume. The soil is also collected at different depths.
 
-The below RDF example showcases how the [tern:Attribute](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Attribute) class is used to capture the soil depth where a sampling event occurred and the volume of the soil ring used to collect the soil sample.
+The below RDF example showcases how the [tern:Attribute](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Attribute) class is used to capture the soil sampling depth of the sampling event and the volume of the soil ring used to collect the soil sample.
 
 ```turtle {11-21,23-33}
 ex:sampling-1 a tern:Sampling ;
@@ -90,7 +90,7 @@ ex:sampling-1 a tern:Sampling ;
     ] ;
     tern:hasAttribute [
         a tern:Attribute ;
-        rdfs:label "depth of the soil ring" ;
+        rdfs:label "soil sampling depth" ;
         tern:attribute <http://linked.data.gov.au/def/tern-cv/c_908a6f69> ;
         tern:hasSimpleValue 0.1 ;
         tern:hasValue [
