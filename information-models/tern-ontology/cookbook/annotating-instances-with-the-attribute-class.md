@@ -1,8 +1,8 @@
 # Annotating instances with the Attribute class
 
-Instances of a class (also known as [individuals](http://www.linkeddatatools.com/help/classes) in RDF) can be annotated with additional properties with the [tern:Attribute](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Attribute) class.
+Instances of a class (also known as [individuals](http://www.linkeddatatools.com/help/classes) in RDF) can be annotated with the [tern:Attribute](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Attribute) class. This annotation pattern is similar to schema.org's use of the [schema:PropertyValue](https://schema.org/PropertyValue) class.
 
-This is useful for annotating protocol- and domain-specific information about individuals of the TERN Ontology classes. A few examples are documented below.
+The [tern:Attribute](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Attribute) class is useful for annotating protocol- and domain-specific information about individuals of the TERN Ontology classes. A few examples are documented below.
 
 ## Examples
 
