@@ -20,7 +20,7 @@ The modelling patterns and practices provided in this cookbook are not definitiv
 
 RDF examples in the cookbook will be in the [RDF Turtle](https://www.w3.org/TR/turtle/) syntax for human readability. The examples will omit prefix declarations for brevity. The examples may also omit required properties required for certain classes. Therefore, the examples may not conform to the TERN Ontology's SHACL shape constraints. Furthermore, the IRIs used in the examples may not be real or may not redirect to something that exists.
 
-Some examples may contain values such as IRIs or literals may be omitted using the `...` placeholder:
+Some examples may contain values such as IRIs or literals and the values may use `...` as a placeholder:
 
 ```
 <thing-1> a owl:Thing ;
