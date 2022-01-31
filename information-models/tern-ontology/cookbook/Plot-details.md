@@ -62,7 +62,7 @@ Spatial accuracy or uncertainty can be captured using the [geo:hasMetricSpatialA
 ## Plot size
 
 :::warning
-The way to capture plot size may change in the future.
+The way to capture plot size may change in the future. See [GitHub Issue #13](https://github.com/ternaustralia/ontology_tern/issues/13).
 :::
 
 The current method of capturing the plot size of a site is to use the [tern:dimension](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/dimension) property.
