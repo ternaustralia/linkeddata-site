@@ -91,6 +91,8 @@ ex:88fd08b6-e443-4648-8bef-0c5ed0496a6d a tern:SiteVisit ;
 
 For more information on the Faealla Darwin Core dataset, see [ALA Faealla Darwin Core dataset](/information-models/tern-ontology/cookbook/worked-examples/ala-faealla-darwin-core-dataset).
 
+---
+
 See also:
 
 - [Annotatin instances with the Attribute class - Adding protocol-specific information to a site and site visit](/information-models/tern-ontology/cookbook/annotating-instances-with-the-attribute-class#adding-protocol-specific-information-to-a-site-and-site-visit)
