@@ -1,4 +1,4 @@
-# Capturing spatial accuracy
+# Spatial accuracy/uncertainty
 
 Use `geo:hasMetricSpatialAccuracy` from [GeoSPARQL 1.1](https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html) to capture the uncertainty of the spatial coordinates.
 
