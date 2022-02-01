@@ -48,8 +48,11 @@ Hide toggle in small viewports
 }
 
 .navbar__brand {
-  height: 4.8rem;
   padding-left: 0.9rem;
+}
+
+.navbar__logo {
+  height: 4.8rem;
 }
 
 .navbar__items--right {

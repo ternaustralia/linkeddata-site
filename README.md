@@ -6,15 +6,22 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 The `master` branch on the remote repository is protected. All modifications must be performed on a separate branch and merged in via GitHub pull requests.
 
-Tests and builds are automatically performed on each pull request "open" and "synchronisation".
+Tests and builds are automatically performed on each pull request event ("open" and "synchronisation").
 
-Pull requests automatically build and deploy a preview version of the website to surge.sh.
+Pull requests automatically build and deploy a preview version of the website to surge.sh. A bot will provide a link in the pull request's comment to the preview version.
 
 A merge into the `master` branch automatically creates a containerised development version of the website. TERN's Flux will automatically deploy development versions to https://linkeddata-test.tern.org.au.
 
 A production version is automatically triggered when a GitHub release is made. TERN's Flux will automatically deploy production versions to https://linkeddata.tern.org.au.
 
 For more details on how the GitHub Actions workflows are set up, see [.github/workflows](.github/workflows).
+
+## Contributing
+
+### Recommended tools for development
+
+- Use Visual Studio Code for editing the source code.
+  - Prettier extension for automatic code formatting.
 
 ### Installation
 
@@ -29,8 +36,6 @@ $ npm start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-Note: changes require a refresh of the browser page. This is due to a React package relying on reading Node's `process` global variable, which is not available during hot-reloads.
 
 ### Running tests
 
