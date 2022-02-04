@@ -1,26 +1,27 @@
-export const baseUri = 'https://w3id.org/tern/ontologies/tern/'
-const namedGraph = baseUri
+export const baseUri = "https://w3id.org/tern/ontologies/tern/";
+const namedGraph = baseUri;
 
 export function getDirectSubclasses(resourceUri) {
   return `
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   PREFIX sh: <http://www.w3.org/ns/shacl#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
   SELECT DISTINCT ?directChildClass ?hasSubclass
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   WHERE {
     ?directChildClass rdfs:subClassOf <${resourceUri}> .
-    ?directChildClass a sh:NodeShape .
+    ?class sh:targetClass ?directChildClass .
     
     BIND(
         EXISTS {
-            ?childClass rdfs:subClassOf ?directChildClass
+            ?childClass rdfs:subClassOf <${resourceUri}>
         }
         as ?hasSubclass
     )
   }
   order by ?directChildClass
-  `
+  `;
 }
 
 export function getTopLevelClasses() {
@@ -32,29 +33,30 @@ export function getTopLevelClasses() {
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   where {
-    ?class a sh:NodeShape .
-    optional {
-        ?class rdfs:subClassOf ?parentClass .
-        FILTER(isIRI(?parentClass))        
-    }
+      ?_class a sh:NodeShape .
+      ?_class sh:targetClass ?class .
+      optional {
+          ?class rdfs:subClassOf ?parentClass .
+          FILTER(isIRI(?parentClass))
+      }
 
-    FILTER(!isBlank(?class))
-    FILTER(STRSTARTS(STR(?class), "${baseUri}"))
+      FILTER(!isBlank(?class))
+      FILTER(STRSTARTS(STR(?class), "${baseUri}"))
 
-    FILTER NOT EXISTS {
-        ?class rdfs:subClassOf ?other .
-        FILTER(STRSTARTS(STR(?other), "${baseUri}"))
-    }
+      FILTER NOT EXISTS {
+          ?class rdfs:subClassOf ?other .
+          FILTER(STRSTARTS(STR(?other), "${baseUri}"))
+      }
 
-    BIND(
-        EXISTS {
-            ?childClass rdfs:subClassOf ?class
-        }
-        as ?hasSubclass
-    )
+      BIND(
+          EXISTS {
+              ?childClass rdfs:subClassOf ?class
+          }
+          as ?hasSubclass
+      )
   }
   ORDER BY ?class
-  `
+  `;
 }
 
 export const getClasses = () => {
@@ -66,13 +68,14 @@ export const getClasses = () => {
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   where {
-    ?class a sh:NodeShape
+    ?_class a sh:NodeShape .
+    ?_class sh:targetClass ?class .
   
     filter(!isBlank(?class))
     filter(strstarts(str(?class), "${baseUri}"))
   }
   order by ?class
-  `
+  `;
 
   return `
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -96,22 +99,32 @@ export const getClasses = () => {
     filter(strstarts(str(?class), "${baseUri}"))
   }
   order by ?class
-  `
-}
+  `;
+};
 
 export function getResource(classUri) {
   return `
   PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+  PREFIX sh: <http://www.w3.org/ns/shacl#>
   select *
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   where {
+    {
       <${classUri}> ?p ?o .
       filter(!isBlank(?p))
       filter(!isBlank(?o))
+    }
+    UNION {
+      ?class sh:targetClass <${classUri}> .
+      ?class ?p ?o .
+      filter(!isBlank(?p))
+      filter(!isBlank(?o))
+      filter(?p != sh:targetClass)
+    }
   }
   order by ?p
-  `
+  `;
 }
 
 export function getClassConstraints(classUri) {
@@ -124,7 +137,8 @@ export function getClassConstraints(classUri) {
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   WHERE { 
-      <${classUri}> sh:property ?id .
+      ?class sh:targetClass <${classUri}> .
+      ?class sh:property ?id .
       ?id ?p ?o .
 
       OPTIONAL { 
@@ -132,7 +146,7 @@ export function getClassConstraints(classUri) {
           ?oo ?ppp ?ooo .
       }
   }
-  `
+  `;
 }
 
 export function getLabel(resourceUri) {
@@ -145,7 +159,7 @@ export function getLabel(resourceUri) {
       <${resourceUri}> rdfs:label ?label .
   }
   limit 1
-`
+`;
 }
 
 export function getSuperClasses(resourceUri) {
@@ -161,7 +175,7 @@ export function getSuperClasses(resourceUri) {
       filter(!isBlank(?superclass))
       filter(strstarts(str(?superclass), "${baseUri}"))
   }
-  `
+  `;
 }
 
 export function resourceExists(resourceUri) {
@@ -171,5 +185,5 @@ ask {
       <${resourceUri}>  ?p ?o .       
   }
 }
-`
+`;
 }
