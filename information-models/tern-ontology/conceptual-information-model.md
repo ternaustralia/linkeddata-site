@@ -128,8 +128,13 @@ The TERN Ontology is accessible via its namespace URI at https://w3id.org/tern/o
 The source code and its related content are accessible in the GitHub repository at https://github.com/ternaustralia/ontology_tern.
 
 <figure>
-  <img src="https://w3id.org/tern/static/linkeddata-website/tern-ontology/tern-ontology-overview.png" alt="TERN Ontology overview" />
-  <figcaption style={{textAlign: "center"}}>Figure: TERN Ontology overview.</figcaption>
+  <img style={{border: "1px solid gray"}} src="https://w3id.org/tern/static/linkeddata-website/tern-ontology/tern-ontology-overview.png" alt="TERN Ontology overview" />
+  <figcaption style={{textAlign: "center"}}>Figure: TERN Ontology overview with class attributes.</figcaption>
+</figure>
+
+<figure>
+  <img style={{border: "1px solid gray"}} src="https://w3id.org/tern/static/linkeddata-website/tern-ontology/tern-ontology-conceptual-simple.png" alt="TERN Ontology overview" />
+  <figcaption style={{textAlign: "center"}}>Figure: TERN Ontology overview without class attributes.</figcaption>
 </figure>
 
 ## Feature of Interest
