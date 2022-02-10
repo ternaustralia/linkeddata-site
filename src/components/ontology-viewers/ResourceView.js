@@ -165,7 +165,7 @@ export default function ResourceView({ resourceUri, settings }) {
 
 function Constraints({ resourceUri, settings }) {
   return (
-    <Table bordered hover>
+    <Table hover>
       <thead>
         <tr>
           <th>Property</th>
