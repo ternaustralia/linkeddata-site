@@ -90,7 +90,7 @@ export default function OverviewTable({ moduleOpCollectionUri }) {
 
   return (
     <>
-      <Table bordered>
+      <Table hover>
         <thead>
           <tr>
             <th>Observable property</th>
