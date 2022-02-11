@@ -21,7 +21,7 @@ A [tern:Sample](/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern
 
 In Darwin Core, the presence or absence of an Occurrence is captured using the property [dwc:occurrenceStatus](http://rs.tdwg.org/dwc/terms/occurrenceStatus). It may be tempting to capture this property as an observation on the sample, but this would be inaccurate. By defining the existence of a sample via a sampling activity, the sample is inherently "present".
 
-The [ALA Faealla Darwin Core dataset](information-models/tern-ontology/cookbook/worked-examples/ala-faealla-darwin-core-dataset) provides a good example of modelling Darwin Core Occurrence with the TERN Ontology.
+The [ALA Faealla Darwin Core dataset](/information-models/tern-ontology/cookbook/worked-examples/ala-faealla-darwin-core-dataset) provides a good example of modelling Darwin Core Occurrence with the TERN Ontology.
 
 ## Observable properties
 
