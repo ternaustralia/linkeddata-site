@@ -74,9 +74,11 @@ export const getClasses = () => {
     ?_class sh:targetClass ?class .
   
     filter(!isBlank(?class))
-    filter(strstarts(str(?class), "${baseUri}"))
+    # filter(strstarts(str(?class), "${baseUri}"))
+
+    ?class rdfs:label ?label .
   }
-  order by ?class
+  ORDER BY ?label
   `;
 
   return `
