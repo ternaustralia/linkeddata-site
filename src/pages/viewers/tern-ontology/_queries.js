@@ -41,7 +41,7 @@ export function getTopLevelClasses() {
       }
 
       FILTER(!isBlank(?class))
-      FILTER(STRSTARTS(STR(?class), "${baseUri}"))
+      # FILTER(STRSTARTS(STR(?class), "${baseUri}"))
 
       FILTER NOT EXISTS {
           ?class rdfs:subClassOf ?other .
@@ -54,8 +54,10 @@ export function getTopLevelClasses() {
           }
           as ?hasSubclass
       )
+
+      ?class rdfs:label ?label .
   }
-  ORDER BY ?class
+  ORDER BY ?label
   `;
 }
 
