@@ -19,7 +19,11 @@ const selectOptions = [
 
 function PageComponent({ settings }) {
   let query = useQuery();
-  const uri = query.get('uri')
+  let uri = query.get('uri')
+  const { hash } = useLocation();
+  if (hash) {
+    uri += hash
+  }
 
   // Reason we serialise fetchOptions is to avoid infinite loop.
   // See https://github.com/vercel/swr/issues/345
