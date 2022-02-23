@@ -108,7 +108,7 @@ export function getResource(classUri) {
   return `
   PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
   PREFIX sh: <http://www.w3.org/ns/shacl#>
-  select *
+  select distinct ?p ?o
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   where {
