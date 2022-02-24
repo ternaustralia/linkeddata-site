@@ -117,7 +117,7 @@ export default function ResourceView({ resourceUri, settings }) {
         >
           View as Turtle
         </span>
-        <ResourceLabel>{label}</ResourceLabel>
+        <ResourceLabel>{label ? label : resourceUri}</ResourceLabel>
         <CodeBlock>{resourceUri}</CodeBlock>
 
         {properties.map((property) => (
