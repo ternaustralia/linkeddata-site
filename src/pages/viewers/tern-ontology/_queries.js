@@ -41,7 +41,7 @@ export function getTopLevelClasses() {
       }
 
       FILTER(!isBlank(?class))
-      FILTER(STRSTARTS(STR(?class), "${baseUri}"))
+      # FILTER(STRSTARTS(STR(?class), "${baseUri}"))
 
       FILTER NOT EXISTS {
           ?class rdfs:subClassOf ?other .
@@ -54,8 +54,10 @@ export function getTopLevelClasses() {
           }
           as ?hasSubclass
       )
+
+      ?class rdfs:label ?label .
   }
-  ORDER BY ?class
+  ORDER BY ?label
   `;
 }
 
@@ -72,9 +74,11 @@ export const getClasses = () => {
     ?_class sh:targetClass ?class .
   
     filter(!isBlank(?class))
-    filter(strstarts(str(?class), "${baseUri}"))
+    # filter(strstarts(str(?class), "${baseUri}"))
+
+    ?class rdfs:label ?label .
   }
-  order by ?class
+  ORDER BY ?label
   `;
 
   return `
@@ -106,7 +110,7 @@ export function getResource(classUri) {
   return `
   PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
   PREFIX sh: <http://www.w3.org/ns/shacl#>
-  select *
+  select distinct ?p ?o
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>
   where {
