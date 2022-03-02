@@ -156,13 +156,23 @@ export function getClassConstraints(classUri) {
 export function getLabel(resourceUri) {
   return `
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-  select *
-  from <http://www.ontotext.com/explicit>
-  from <${namedGraph}>
-  where {
-      <${resourceUri}> rdfs:label ?label .
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  PREFIX sh: <http://www.w3.org/ns/shacl#>
+  SELECT (SAMPLE(?_label) as ?label)
+  FROM <http://www.ontotext.com/explicit>
+  FROM <${namedGraph}>
+  WHERE {
+    {
+      <${resourceUri}> rdfs:label ?_label .
+    }
+    UNION {
+      <${resourceUri}> skos:prefLabel ?_label .
+    }
+    UNION {
+      <${resourceUri}> sh:name ?_label .
+    }
   }
-  limit 1
+  LIMIT 1
 `;
 }
 
