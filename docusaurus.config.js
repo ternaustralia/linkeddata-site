@@ -45,7 +45,11 @@ const config = {
             "https://github.com/ternaustralia/linkeddata-site/edit/master/blog/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [
+            require.resolve("./src/css/custom.css"),
+            // Load tern-react styles.
+            require.resolve("tern-react/dist/index.css"),
+          ],
         },
       }),
     ],
