@@ -27,7 +27,6 @@ import IconCloseThin from "@theme/IconClose";
 import styles from "./styles.module.css"; // retrocompatible with v1
 
 import useVersion from "../../hooks/useVersion";
-import "tern-react/dist/index.css";
 import { TopBar, getTernMenu } from "tern-react";
 import useEnv from "../../hooks/useEnv";
 import { Alert } from "react-bootstrap";

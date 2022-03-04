@@ -14,7 +14,6 @@ import styles from "./styles.module.css";
 import ThemedImage from "@theme/ThemedImage";
 import IconExternalLink from "@theme/IconExternalLink";
 
-import "tern-react/dist/index.css";
 import { Footer as TERNFooter } from "tern-react";
 import useVersion from "../../hooks/useVersion";
 
