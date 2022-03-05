@@ -3,7 +3,7 @@ import { fetcher } from '../../data/dataFetcher';
 import { getFetchOptions } from '../../data/utils';
 import React from 'react'
 import InternalLink from '../InternalLink';
-import styles from './viewer.modules.css';
+import styles from './viewer.module.css';
 
 function HierarchyListItem({ resourceUri, hasSubclass, settings }) {
   const { endpoint, queries } = settings
