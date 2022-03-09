@@ -9,7 +9,7 @@ import ClassFlatList from './ClassFlatList';
 import ClassHierarchyList from './ClassHierarchyList';
 import ScrollToTop from '../ScrollToTop';
 import Select from 'react-select'
-import styles from './viewer.modules.css'
+import styles from './viewer.module.css'
 import useQuery from '../../hooks/useQuery';
 
 const selectOptions = [
