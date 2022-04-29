@@ -1,6 +1,5 @@
 import React from "react";
 import useSWR from "swr";
-import ReactMarkdown from "react-markdown";
 import CodeBlock from "@theme/CodeBlock";
 import { Table } from "react-bootstrap";
 
@@ -9,6 +8,7 @@ import { getFetchOptions, getRdfsLabel } from "../../data/utils";
 import IRIField from "../IRIField";
 import ClassConstraints from "./ClassConstraints";
 import styles from "./viewer.modules.css";
+import { AsciidocContent } from "./AsciidocContent";
 
 function ResourceLabel({ children }) {
   return <h1>{children}</h1>;
@@ -140,7 +140,7 @@ export default function ResourceView({ resourceUri, settings }) {
                 } else {
                   return (
                     <li key={value.value}>
-                      <ReactMarkdown>{value.value}</ReactMarkdown>
+                      <AsciidocContent>{value.value}</AsciidocContent>
                     </li>
                   );
                 }
