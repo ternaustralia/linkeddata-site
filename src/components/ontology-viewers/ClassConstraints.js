@@ -1,10 +1,10 @@
 import React from "react";
 import useSWR from "swr";
-import ReactMarkdown from "react-markdown";
 
 import { getFetchOptions } from "../../data/utils";
 import { fetcher } from "../../data/dataFetcher";
 import IRIField from "../IRIField";
+import { AsciidocContent } from "./AsciidocContent";
 
 function Cardinality({ max, min }) {
   if (max && min && max === min) {
@@ -81,7 +81,7 @@ function ExpectedValues({ values, settings }) {
   }
 
   if (values.length === 1) {
-    return <ReactMarkdown>{values[0]}</ReactMarkdown>;
+    return <AsciidocContent>{values[0]}</AsciidocContent>;
   }
 
   return (
@@ -99,7 +99,7 @@ function Description({ values, settings }) {
   }
 
   if (values.length === 1) {
-    return <ReactMarkdown>{values[0]}</ReactMarkdown>;
+    return <AsciidocContent>{values[0]}</AsciidocContent>;
   }
 
   return (

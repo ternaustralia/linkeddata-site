@@ -29,7 +29,8 @@ export function getTopLevelClasses() {
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   PREFIX owl: <http://www.w3.org/2002/07/owl#>
   PREFIX sh: <http://www.w3.org/ns/shacl#>
-  SELECT distinct ?class ?hasSubclass
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  SELECT DISTINCT ?class ?hasSubclass (SAMPLE(?_label) as ?label)
   FROM <http://www.ontotext.com/explicit>
   FROM <${namedGraph}>
   WHERE {
@@ -55,8 +56,14 @@ export function getTopLevelClasses() {
           as ?hasSubclass
       )
 
-      ?class rdfs:label ?label .
+      {
+        ?class rdfs:label ?_label .
+      }
+      UNION {
+        ?class skos:prefLabel ?_label .
+      }
   }
+  GROUP BY ?class ?hasSubclass
   ORDER BY ?label
   `;
 }
@@ -66,7 +73,8 @@ export const getClasses = () => {
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   PREFIX owl: <http://www.w3.org/2002/07/owl#>
   PREFIX sh: <http://www.w3.org/ns/shacl#>
-  SELECT distinct ?class
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  SELECT DISTINCT ?class (SAMPLE(?_label) as ?label)
   FROM <http://www.ontotext.com/explicit>
   FROM <${namedGraph}>
   WHERE {
@@ -76,8 +84,15 @@ export const getClasses = () => {
     FILTER(!isBlank(?class))
     # FILTER(strstarts(str(?class), "${baseUri}"))
 
-    ?class rdfs:label ?label .
+    {
+      ?class rdfs:label ?_label .  
+    }
+    UNION {
+        ?class skos:prefLabel ?_label .
+    }
+    
   }
+  GROUP BY ?class
   ORDER BY ?label
   `;
 
