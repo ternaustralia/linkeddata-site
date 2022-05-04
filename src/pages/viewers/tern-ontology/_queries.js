@@ -124,6 +124,8 @@ export const getClasses = () => {
 export function getResource(classUri) {
   return `
   PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
   PREFIX sh: <http://www.w3.org/ns/shacl#>
   SELECT distinct ?p ?o
   FROM <http://www.ontotext.com/explicit>
@@ -140,6 +142,8 @@ export function getResource(classUri) {
       filter(!isBlank(?p))
       filter(!isBlank(?o))
       filter(?p != sh:targetClass)
+      filter(?p != rdfs:label)
+      filter(?p != skos:prefLabel)
     }
   }
   ORDER by ?p
