@@ -1,0 +1,24 @@
+---
+sidebar_position: 6
+---
+
+import Example from "../../../../../src/components/docs/tern-ontology/example-data-component";
+
+# Tree alive status
+
+- [Observable property](/viewers/dawe-vocabs?uri=https://linked.data.gov.au/def/test/dawe-cv/e51ced21-4442-465d-8be9-8b5bba76d4d8) definition
+- Feature type: [plant individual](http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270)
+- Value type: [IRI](https://w3id.org/tern/ontologies/tern/IRI)
+- Categorical value collection: [Basal tree statuses](/viewers/dawe-vocabs?uri=https://linked.data.gov.au/def/test/dawe-cv/f06740e7-2857-415a-a6dc-72dbbba7a88c)
+
+```turtle
+<https://example.com/observation/tree-alive-status/073c75ad-834c-4fa6-8c10-d45d50580d07> a tern:Observation ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:IRI, tern:Value ;
+        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/9667b324-6488-5e83-9528-0be628eb8907> ;
+    ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/9667b324-6488-5e83-9528-0be628eb8907> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/e51ced21-4442-465d-8be9-8b5bba76d4d8> ;
+.
+```

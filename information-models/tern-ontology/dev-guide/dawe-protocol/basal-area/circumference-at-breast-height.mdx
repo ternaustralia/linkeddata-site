@@ -1,0 +1,35 @@
+---
+sidebar_position: 3
+---
+
+import Example from "../../../../../src/components/docs/tern-ontology/example-data-component";
+
+# Circumference at breast height
+
+- [Observable property](/viewers/dawe-vocabs?uri=https://linked.data.gov.au/def/test/dawe-cv/2d042596-d49a-4139-92f5-dc0f23737e76) definition
+- Feature type: [plant individual](http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270)
+- Value type: [Float](https://w3id.org/tern/ontologies/tern/Float)
+
+The point of measurement where the circumference was measured is recorded as an attribute.
+
+```turtle
+<https://example.com/observation/circumference-at-breast-height/cf7ed3f4-b672-4269-8351-3aebd223dc40> a tern:Observation ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float, tern:Value ;
+        rdf:value 10.1 ;
+    ] ;
+    sosa:hasSimpleResult 10.1 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/2d042596-d49a-4139-92f5-dc0f23737e76> ;
+    tern:hasAttribute [
+        rdfs:label "point of measurement" ;
+        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/9faeafe6-0d01-41aa-b38b-a6b56eda0dda> ;
+        tern:hasSimpleValue 1.3
+        tern:hasValue [
+            a tern:Value, tern:Float ;
+            rdf:value 1.3 ;
+            tern:unit <http://qudt.org/vocab/unit/M> ;
+        ] ;
+    ] ;
+.
+```
