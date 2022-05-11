@@ -62,6 +62,7 @@ function getResultObject(
   };
   switch (valueType) {
     case "https://w3id.org/tern/ontologies/tern/CategoricalValue":
+    case "https://w3id.org/tern/ontologies/tern/IRI":
       resultObject = {
         ...resultObject,
         ...getExampleData(observedPropertyUri, exampleData),
@@ -70,29 +71,15 @@ function getResultObject(
       resultObject.vocabulary = categoricalCollection;
       break;
     case "https://w3id.org/tern/ontologies/tern/QuantitativeMeasure":
+    case "https://w3id.org/tern/ontologies/tern/Text":
+    case "https://w3id.org/tern/ontologies/tern/Boolean":
+    case "https://w3id.org/tern/ontologies/tern/Integer":
+    case "https://w3id.org/tern/ontologies/tern/Float":
       resultObject = {
         ...resultObject,
         ...getExampleData(observedPropertyUri, exampleData),
       };
       resultObject.isResultOf = observationId;
-      break;
-    case "https://w3id.org/tern/ontologies/tern/Text":
-      resultObject = {
-        ...resultObject,
-        ...getExampleData(observedPropertyUri, exampleData),
-      };
-      break;
-    case "https://w3id.org/tern/ontologies/tern/Boolean":
-      resultObject = {
-        ...resultObject,
-        ...getExampleData(observedPropertyUri, exampleData),
-      };
-      break;
-    case "https://w3id.org/tern/ontologies/tern/Count":
-      resultObject = {
-        ...resultObject,
-        ...getExampleData(observedPropertyUri, exampleData),
-      };
       break;
     default:
       throw Error(`Unexpected value type ${valueType}`);

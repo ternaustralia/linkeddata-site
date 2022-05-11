@@ -1,0 +1,35 @@
+---
+sidebar_position: 4
+---
+
+import Example from "../../../../../src/components/docs/tern-ontology/example-data-component";
+
+# Diameter at breast height (dbh)
+
+- [Observable property](/viewers/dawe-vocabs?uri=https://linked.data.gov.au/def/test/dawe-cv/6e1c8b97-3655-4a22-9647-02f2c756e789) definition
+- Feature type: [plant individual](http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270)
+- Value type: [Float](https://w3id.org/tern/ontologies/tern/Float)
+
+The point of measurement where the diameter was measured is recorded as an attribute.
+
+```turtle
+<https://example.com/observation/diameter-at-breast-height/09d1ee14-402d-4970-a54f-75fa42ad40f7> a tern:Observation ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float, tern:Value ;
+        rdf:value 3.21493 ;
+    ] ;
+    sosa:hasSimpleResult 3.21493 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/6e1c8b97-3655-4a22-9647-02f2c756e789> ;
+    tern:hasAttribute [
+        rdfs:label "point of measurement" ;
+        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/9faeafe6-0d01-41aa-b38b-a6b56eda0dda> ;
+        tern:hasSimpleValue 1.3
+        tern:hasValue [
+            a tern:Value, tern:Float ;
+            rdf:value 1.3 ;
+            tern:unit <http://qudt.org/vocab/unit/M> ;
+        ] ;
+    ] ;
+.
+```

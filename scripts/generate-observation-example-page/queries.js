@@ -23,7 +23,7 @@ where {
     optional {
       ?concept tern:valueType ?valueType .
       service <https://graphdb.tern.org.au/repositories/knowledge_graph_core?context=%3Chttps%3A%2F%2Fw3id.org%2Ftern%2Fontologies%2Ftern%2F%3E&infer=false> {
-        ?valueType rdfs:label ?_valueTypeLabel .
+        ?valueType skos:prefLabel ?_valueTypeLabel .
       }
     }
 

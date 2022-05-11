@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "vegetation-mapping";
+const moduleName = "basal-area";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -42,6 +42,12 @@ const moduleLookup = {
   "vegetation-mapping": {
     collectionUri:
       "https://linked.data.gov.au/def/test/dawe-cv/2089561b-5b49-472a-812f-3de661505ccb",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "basal-area": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/ab7c4569-312c-4450-b413-9b11c4d2577b",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
@@ -107,7 +113,7 @@ main();
 function template(index, moduleName, op) {
   let categoricalCollection = "";
   if (
-    op.valueType === "https://w3id.org/tern/ontologies/tern/CategoricalValue" &&
+    op.valueType === "https://w3id.org/tern/ontologies/tern/CategoricalValue" || op.valueType === "https://w3id.org/tern/ontologies/tern/IRI" &&
     op.categoricalCollection &&
     op.categoricalCollectionLabel
   ) {
