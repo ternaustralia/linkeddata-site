@@ -6,6 +6,8 @@ import Example from "../../../../../src/components/docs/tern-ontology/example-da
 
 # Basal area count
 
+## Full or lite DBH method
+
 - [Observable property](/viewers/dawe-vocabs?uri=https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93) definition
 - Feature type: [plant individual](http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270)
 - Value type: [Integer](https://w3id.org/tern/ontologies/tern/Integer)
@@ -14,10 +16,41 @@ import Example from "../../../../../src/components/docs/tern-ontology/example-da
 <https://example.com/observation/basal-area-count/9af7a090-e94b-45e0-8841-10fd62d5cce3> a tern:Observation ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasResult [
-        a tern:Integer, tern:Value ;
+        a tern:Integer ;
         rdf:value 3 ;
     ] ;
     sosa:hasSimpleResult 3 ;
     sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+.
+```
+
+## Basal wedge method
+
+Capture the basal area factor of the wedge using an attribute on the instrument. This is only applicable if the basal wedge method is used.
+
+```turtle
+<https://example.com/observation/basal-area-count/e6dbf73d-3e6b-4ed2-9e4b-afa521706f0c> a tern:Observation ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 3 ;
+    ] ;
+    sosa:hasSimpleResult 3 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+    sosa:madeBySensor [
+        a tern:Sensor ;
+        rdfs:label "basal wedge" ;
+        ssn:implements <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+        tern:hasAttribute [
+            a tern:Attribute ;
+            rdfs:label "basal area factor" ;
+            tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/d06bf3e4-f59d-47fb-b780-bb089b298d83> ;
+            tern:hasSimpleValue 0.1 ;
+            tern:hasValue [
+                a tern:Float ;
+                rdf:value 0.1 ;
+            ] ;
+        ] ;
+    ] ;
 .
 ```
