@@ -56,7 +56,7 @@ Example data from source:
 .
 ```
 
-If the transects sub-protocol was used, then additional attributes would be made on the sampling activity to denote the transect's name and the closest metre.
+If the transects sub-protocol is used, then additional attributes are defined on the sampling activity to denote the transect's name and the closest metre.
 
 ```turtle
 <https://example.com/sampling/2dd9dab1-9d86-40c2-ac6b-26f8661e184f>
