@@ -8,6 +8,23 @@ During the basal area sweep, a TERN basal wedge is used with a specific basal ar
 
 The relationship `prov:wasInformedBy` is used to illustrate that the basal area count observation is derived from the two basal area sweep hits.
 
+Example data from source:
+
+```json
+{
+  "lut_basal_sweep_sampling_point": "NW",
+  "species": "string",
+  "in_tree": 0,
+  "borderline_tree": 0,
+  "lut_basal_area_factor": "A",
+  "basal_wedge_survey": 0,
+  "created_by": 0,
+  "updated_by": 0
+}
+```
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
 ```turtle
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -17,6 +34,17 @@ The relationship `prov:wasInformedBy` is used to illustrate that the basal area 
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+<https://example.com/sampling/d0085f64-c1fe-41fa-9871-026c9bdbb0fa>
+    a tern:Sampling ;
+    rdfs:label "Sampling activity for the plant population" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult <https://example.com/feature-of-interest/50093186-6954-4770-b3af-a13696c360c8> ;
+.
 
 <https://example.com/feature-of-interest/50093186-6954-4770-b3af-a13696c360c8>
     a tern:Sample ;
@@ -34,7 +62,7 @@ The relationship `prov:wasInformedBy` is used to illustrate that the basal area 
         a time:Instant ;
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
-    sosa:resultTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
     sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
