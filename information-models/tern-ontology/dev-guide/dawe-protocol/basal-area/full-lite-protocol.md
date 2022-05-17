@@ -10,6 +10,38 @@ Depending on the tree trunk type of a tree, additional observations may be requi
 
 If the tree trunk type of a tree is 'multi-stemmed', then additional measurements of the diameter are made for each stem. Each individual stem is a `tern:Sample` where they are related to the tree via a `sosa:isSampleOf` relationship.
 
+Example data from source:
+
+```json
+{
+  "species": "string",
+  "lut_basal_tree_status": "A",
+  "point_of_measurement_metres": 0,
+  "diameter_breast_height_centimetres": 0,
+  "lut_basal_tree_trunk_type": "S",
+  "diameter_breast_height_2_centimetres": 0,
+  "basal_area_dbh_measure_observation_stems": [
+    {
+      "species": "string",
+      "lut_basal_tree_status": "A",
+      "point_of_measurement": 0,
+      "diameter_breast_height": 0,
+      "lut_basal_tree_trunk_type": "S",
+      "diameter_breast_height_2": 0,
+      "basal_area_dbh_measure_observation_tree": 0,
+      "created_by": 0,
+      "updated_by": 0
+    }
+  ],
+  "basal_area_dbh_measure_survey_full": 0,
+  "basal_area_dbh_measure_survey_lite": 0,
+  "created_by": 0,
+  "updated_by": 0
+}
+```
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
 ```turtle
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -19,6 +51,17 @@ If the tree trunk type of a tree is 'multi-stemmed', then additional measurement
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+<https://example.com/sampling/95b62f1e-494e-4e6f-9761-0e19f654fd0c>
+    a tern:Sampling ;
+    rdfs:label "Sampling activity for the plant population" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
+.
 
 <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2>
     a tern:Sample ;
@@ -63,6 +106,17 @@ If the tree trunk type of a tree is 'multi-stemmed', then additional measurement
     ] ;
     sosa:hasSimpleResult "Melaleuca citrolens" ;
     sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+.
+
+<https://example.com/sampling/22248011-8ecb-4d61-a6c3-4982561d63ee>
+    a tern:Sampling ;
+    rdfs:label "Sampling activity for the tree" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/50093186-6954-4770-b3af-a13696c360c8> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult <https://example.com/feature-of-interest/e71916a5-45be-454e-aa41-f3d4bccbd83a> ;
 .
 
 <https://example.com/feature-of-interest/e71916a5-45be-454e-aa41-f3d4bccbd83a>
@@ -131,7 +185,7 @@ If the tree trunk type of a tree is 'multi-stemmed', then additional measurement
         tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/9faeafe6-0d01-41aa-b38b-a6b56eda0dda> ;
         tern:hasSimpleValue 1.3 ;
         tern:hasValue [
-            a tern:Value, tern:Float ;
+            a tern:Float ;
             rdf:value 1.3 ;
             tern:unit <http://qudt.org/vocab/unit/M> ;
         ] ;
