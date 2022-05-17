@@ -79,7 +79,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         a time:Instant ;
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
-    sosa:resultTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
     sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
@@ -134,7 +134,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         a time:Instant ;
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
-    sosa:resultTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
     sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
