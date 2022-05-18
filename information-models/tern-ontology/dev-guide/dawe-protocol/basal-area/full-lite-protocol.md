@@ -112,6 +112,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
 <https://example.com/feature-of-interest/e71916a5-45be-454e-aa41-f3d4bccbd83a>
     a tern:Sample ;
     rdfs:label "tree" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
 .
