@@ -24,6 +24,8 @@ Example data from source:
 }
 ```
 
+The below example is for the 'transects' sub-protocol.
+
 ```turtle
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -36,30 +38,23 @@ Example data from source:
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 
-<https://example.com/sampling/2dd9dab1-9d86-40c2-ac6b-26f8661e184f>
+<https://example.com/sampling/c95f7168-93ac-49d8-b850-db06f2eadd4a>
     a tern:Sampling ;
-    rdfs:label "Sampling activity for the coarse woody debris" ;
+    rdfs:label "Sampling activity for the transect point" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
-    sosa:hasResult <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
-    geo:hasGeometry [
-        a geo:Geometry,
-            wgs:Point ;
-        rdfs:label "spatial point" ;
-        geo:asWKT "POINT(119.064722 -21.450278)" ;
-        wgs:lat -21.450278 ;
-        wgs:long 119.064722 ;
-    ] ;
+    sosa:hasResult <https://example.com/feature-of-interest/a3e3c615-ccb1-43f3-a0ea-cd68d08c454c> ;
 .
-```
 
-If the transects sub-protocol is used, then additional attributes are defined on the sampling activity to denote the transect's name and the closest metre.
-
-```turtle
-<https://example.com/sampling/2dd9dab1-9d86-40c2-ac6b-26f8661e184f>
+<https://example.com/feature-of-interest/a3e3c615-ccb1-43f3-a0ea-cd68d08c454c>
+    a tern:Sample ;
+    rdfs:label "transect point" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/13dec53e-1062-4060-9281-f133c8269afb> ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     tern:hasAttribute [
         a tern:Attribute ;
         rdfs:label "transect name" ;
@@ -71,6 +66,15 @@ If the transects sub-protocol is used, then additional attributes are defined on
         ] ;
     ], [
         a tern:Attribute ;
+        rdfs:label "transect point number" ;
+        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/f3c1916e-a6e1-4b03-9950-f364bcd91507> ;
+        tern:hasSimpleValue "1" ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "1" ;
+        ] ;
+    ], [
+        a tern:Attribute ;
         rdfs:label "closest metre" ;
         tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/61147f22-069f-4195-aba7-d3d971be09be> ;
         tern:hasSimpleValue 0.7 ;
@@ -79,6 +83,29 @@ If the transects sub-protocol is used, then additional attributes are defined on
             rdf:value 0.7 ;
             tern:unit <http://qudt.org/vocab/unit/M> ;
         ] ;
+    ] ;
+.
+```
+
+The below example is for the 'transects' sub-protocol. For the 'plots' sub-protocol, the `sosa:hasFeatureOfInterest` value will be the site (`https://example.com/site/1`) instead of the transect point.
+
+```turtle
+<https://example.com/sampling/2dd9dab1-9d86-40c2-ac6b-26f8661e184f>
+    a tern:Sampling ;
+    rdfs:label "Sampling activity for the coarse woody debris" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/a3e3c615-ccb1-43f3-a0ea-cd68d08c454c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
+    geo:hasGeometry [
+        a geo:Geometry,
+            wgs:Point ;
+        rdfs:label "spatial point" ;
+        geo:asWKT "POINT(119.064722 -21.450278)" ;
+        wgs:lat -21.450278 ;
+        wgs:long 119.064722 ;
     ] ;
 .
 ```
