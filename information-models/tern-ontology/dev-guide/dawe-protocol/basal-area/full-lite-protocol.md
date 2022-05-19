@@ -83,16 +83,6 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
-    tern:hasAttribute [
-        a tern:Attribute ;
-        rdfs:label "basal sweep sampling point - NE" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/7dc0c94d-6bb5-48c7-a4a6-e5fbd87c91e9> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/test/dawe-cv/316798ea-2138-5e1d-ad63-1a40734e8db2> ;
-        tern:hasValue [
-                a tern:IRI ;
-                rdf:value <https://linked.data.gov.au/def/test/dawe-cv/316798ea-2138-5e1d-ad63-1a40734e8db2> ;
-        ] ;
-    ] ;
     sosa:hasMember <https://example.com/observation/field-species-name/8f3b2aab-eda8-47dd-afd1-7f9d23fed33c> ;
 .
 
@@ -112,7 +102,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sampling ;
     rdfs:label "Sampling activity for the tree" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/50093186-6954-4770-b3af-a13696c360c8> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
     sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
@@ -122,6 +112,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
 <https://example.com/feature-of-interest/e71916a5-45be-454e-aa41-f3d4bccbd83a>
     a tern:Sample ;
     rdfs:label "tree" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
 .
