@@ -82,7 +82,8 @@ The example data below are for the activities that occur at a single transect po
     sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasMember <> ;
+    sosa:hasMember <https://example.com/observation/a75d8766-1bab-4b13-b109-7811ab4169cd>,
+        <https://example.com/observation/becf2e14-aadf-4b65-ac64-11607e048e63> ;
 .
 
 <https://example.com/observation/a75d8766-1bab-4b13-b109-7811ab4169cd>
@@ -148,7 +149,15 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
     sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasMember <> ;
+    sosa:hasMember <https://example.com/observation/b25cedc7-0fd4-4285-a046-dec5d51a9290>,
+        <https://example.com/observation/b34739cf-1b69-4a4a-bbf7-86edee8d89bf>,
+        <https://example.com/observation/e57e1f7e-3563-4408-92ba-985bc96b66d1>,
+        <https://example.com/observation/a9a48256-64f5-400a-9b83-f7f6a12e6858>,
+        <https://example.com/observation/9dea396e-47f6-4f64-941d-6439b66d6c1f>,
+        <https://example.com/observation/992dd32c-cfc7-4bc2-8d5d-910f32d1199b>,
+        <https://example.com/observation/080f7ceb-fa62-428b-8ceb-503b8237b032>,
+        <https://example.com/observation/15eaf835-ae7e-4004-900b-3a1d3296bccb>,
+        <https://example.com/observation/5d58f2cf-f829-4591-a3c6-fb758553f4b3> ;
 .
 
 <https://example.com/observation/b25cedc7-0fd4-4285-a046-dec5d51a9290>
@@ -270,7 +279,7 @@ Growth stage for a tree:
 Growth stage for a shrub:
 
 ```turtle
-<https://example.com/observation/db0a7d35-6c44-4173-bb16-4af41e1ffd13>
+<https://example.com/observation/5d58f2cf-f829-4591-a3c6-fb758553f4b3>
     a tern:Observation ;
     rdfs:label "growth stage - shrub" ;
     void:inDataset <https://example.com/dataset/1> ;
