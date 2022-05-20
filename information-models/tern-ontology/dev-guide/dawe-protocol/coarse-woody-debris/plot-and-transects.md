@@ -1,4 +1,4 @@
-# Plots and Transects protocols
+# Plots and Transects Protocols
 
 The following examples are applicable to both the 'plots' and 'transects' sub-protocols of the Coarse Woody Debris module.
 
