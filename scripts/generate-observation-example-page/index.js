@@ -63,6 +63,11 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
+  "plot-soil-description": {
+    collectionUri: "https://linked.data.gov.au/def/test/dawe-cv/5b7addb7-ae3d-47eb-b5d8-f34cc211875a",
+    startingIndex: 3,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  }
 };
 
 async function main() {
