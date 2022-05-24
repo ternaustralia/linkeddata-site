@@ -9,7 +9,8 @@ export function useGenerate(
   datasetUri,
   baseObservationUri,
   baseFeatureOfInterestUri,
-  exampleData
+  exampleData,
+  env
 ) {
   const { data, error } = useSparql(sparqlEndpoint, sparqlQuery);
   if (error) return null;
@@ -24,15 +25,21 @@ export function useGenerate(
   });
   const examples = [];
 
+  const seen = [];
   for (const op of observableProperties) {
+    if (seen.includes(op.uri)) {
+      continue;
+    }
     const example = generateObservationExample(
       op,
       datasetUri,
       baseObservationUri,
       baseFeatureOfInterestUri,
-      exampleData
+      exampleData,
+      env
     );
     examples.push(example);
+    seen.push(op.uri);
   }
 
   return examples;
@@ -92,7 +99,8 @@ function generateObservationExample(
   datasetUri,
   baseObservationUri,
   baseFeatureOfInterestUri,
-  exampleData
+  exampleData,
+  env
 ) {
   const example = {};
 
@@ -136,6 +144,12 @@ function generateObservationExample(
   };
   example.resultTime = currentTime;
   example.inDataset = datasetUri;
+
+  if (env === "test" && !example.hasResult["value"]) {
+    throw new Error(
+      `Example for observable property ${example.observedProperty} has no result value.`
+    );
+  }
 
   return example;
 }
