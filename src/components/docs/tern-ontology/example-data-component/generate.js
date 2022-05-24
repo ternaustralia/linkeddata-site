@@ -23,9 +23,10 @@ export function useGenerate(
       ),
     },
   });
-  const examples = [];
 
+  const examples = [];
   const seen = [];
+  let observablePropertyValues = null;
   for (const op of observableProperties) {
     if (seen.includes(op.uri)) {
       continue;
@@ -40,9 +41,10 @@ export function useGenerate(
     );
     examples.push(example);
     seen.push(op.uri);
+    observablePropertyValues = op;
   }
 
-  return examples;
+  return [examples, observablePropertyValues];
 }
 
 function getExampleData(observedPropertyUri, exampleData) {
@@ -144,12 +146,6 @@ function generateObservationExample(
   };
   example.resultTime = currentTime;
   example.inDataset = datasetUri;
-
-  if (env === "test" && !example.hasResult["value"]) {
-    throw new Error(
-      `Example for observable property ${example.observedProperty} has no result value.`
-    );
-  }
 
   return example;
 }
