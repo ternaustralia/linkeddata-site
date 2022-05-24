@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "plot-soil-description";
+const moduleName = "recruitment-age";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -48,6 +48,18 @@ const moduleLookup = {
   "basal-area": {
     collectionUri:
       "https://linked.data.gov.au/def/test/dawe-cv/ab7c4569-312c-4450-b413-9b11c4d2577b",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "recruitment-age": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/36c493f1-6a2e-4d48-9c3a-df104d98124b",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "recruitment-survivorship": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/6bea1c41-0a98-465a-a146-1d3cfbf6f6fa",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
@@ -118,9 +130,10 @@ main();
 function template(index, moduleName, op) {
   let categoricalCollection = "";
   if (
-    op.valueType === "https://w3id.org/tern/ontologies/tern/CategoricalValue" || op.valueType === "https://w3id.org/tern/ontologies/tern/IRI" &&
-    op.categoricalCollection &&
-    op.categoricalCollectionLabel
+    op.valueType === "https://w3id.org/tern/ontologies/tern/CategoricalValue" ||
+    (op.valueType === "https://w3id.org/tern/ontologies/tern/IRI" &&
+      op.categoricalCollection &&
+      op.categoricalCollectionLabel)
   ) {
     categoricalCollection = `- Categorical value collection: [${op.categoricalCollectionLabel}](/viewers/dawe-vocabs?uri=${op.categoricalCollection})`;
   }
