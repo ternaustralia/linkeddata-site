@@ -6,7 +6,7 @@ const exampleData = {
       "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
       value: {
         "@value": 2,
-        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
       },
     },
   // tree height
@@ -35,7 +35,7 @@ const exampleData = {
     {
       "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
       value: {
-        "@value": 2.1,
+        "@value": 2,
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
       },
     },
