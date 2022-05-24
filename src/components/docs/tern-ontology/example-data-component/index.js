@@ -3,6 +3,7 @@ import CodeBlock from "@theme/CodeBlock";
 import { useGenerate } from "./generate";
 import protocolModuleConfig from "./protocol-module-config";
 import jsonLdContext from "../json-ld-context";
+import useEnv from "../../../../hooks/useEnv";
 
 export default function Component({ protocolModule, observableProperty }) {
   const baseObservationUri = "https://example.com/observation";
@@ -28,6 +29,9 @@ WHERE {
   }
 }
 `;
+
+  const env = useEnv();
+
   const examples = useGenerate(
     observableProperty,
     sparqlQuery,
@@ -35,7 +39,8 @@ WHERE {
     datasetUri,
     baseObservationUri,
     baseFeatureOfInterestUri,
-    protocolModuleConfig[protocolModule].exampleData
+    protocolModuleConfig[protocolModule].exampleData,
+    env
   );
 
   if (!examples) {
