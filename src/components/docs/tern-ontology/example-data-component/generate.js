@@ -166,7 +166,7 @@ function processData(data) {
     const { value: valueTypeValue } = valueType;
     const { value: featureTypeValue } = featureType;
     const { value: categoricalCollectionValue } = categoricalCollection || {
-      value: "https://todo.placeholder.com",
+      value: "https://example.com",
     };
     const { value: methodValue } = method;
     observableProperties.push({
