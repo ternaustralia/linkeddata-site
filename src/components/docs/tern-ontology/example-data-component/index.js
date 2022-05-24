@@ -4,6 +4,7 @@ import { useGenerate } from "./generate";
 import protocolModuleConfig from "./protocol-module-config";
 import jsonLdContext from "../json-ld-context";
 import useEnv from "../../../../hooks/useEnv";
+import { useSparql } from "../../../../data/dataFetcher";
 
 export default function Component({ protocolModule, observableProperty }) {
   const baseObservationUri = "https://example.com/observation";
@@ -32,7 +33,7 @@ WHERE {
 
   const env = useEnv();
 
-  const examples = useGenerate(
+  const generated = useGenerate(
     observableProperty,
     sparqlQuery,
     sparqlEndpoint,
@@ -43,26 +44,80 @@ WHERE {
     env
   );
 
-  if (!examples) {
+  if (generated) {
+    var [examples, observablePropertyValues] = generated;
+  } else {
     return <p>Loading...</p>;
   }
 
-  if (examples && examples.length === 0) {
-    return <p>Failed to load data.</p>;
+  if (Array.isArray(examples)) {
+    const example = examples.filter(
+      (example) => example.observedProperty === observableProperty
+    );
+    const data = jsonLdContext;
+    data["@graph"] = example;
+
+    if (
+      !data["@graph"][0].hasResult.hasOwnProperty("value") &&
+      observablePropertyValues.valueType ===
+        "https://w3id.org/tern/ontologies/tern/IRI"
+    ) {
+      return (
+        <AutoCategoricalValueResult
+          origData={data}
+          sparqlEndpoint={sparqlEndpoint}
+          observablePropertyValues={observablePropertyValues}
+        />
+      );
+    }
+
+    if (
+      !data["@graph"][0].hasResult.hasOwnProperty("value") &&
+      observablePropertyValues.valueType !==
+        "https://w3id.org/tern/ontologies/tern/IRI" &&
+      env === "test"
+    ) {
+      return <p>Failed to render example: No result value</p>;
+    }
+
+    return (
+      <>
+        <CodeBlock className="language-json">
+          {JSON.stringify(data, null, 2)}
+        </CodeBlock>
+      </>
+    );
   }
 
-  const example = examples.filter(
-    (example) => example.observedProperty === observableProperty
-  );
+  return <p>Failed to load data.</p>;
+}
 
-  const data = jsonLdContext;
-  data["@graph"] = example;
+const AutoCategoricalValueResult = ({
+  origData,
+  sparqlEndpoint,
+  observablePropertyValues,
+}) => {
+  const query = `
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT *
+    WHERE {
+      <${observablePropertyValues.categoricalCollection}> skos:member ?member .
+    } LIMIT 1
+  `;
+  const { data, error } = useSparql(sparqlEndpoint, query);
+  if (error) return null;
+  if (!data) return null;
 
+  const categoricalValue = data.results.bindings[0].member;
+  origData["@graph"][0].hasResult["@type"] = [
+    observablePropertyValues.valueType,
+  ];
+  origData["@graph"][0].hasResult.value = { "@id": categoricalValue.value };
   return (
     <>
       <CodeBlock className="language-json">
-        {JSON.stringify(data, null, 2)}
+        {JSON.stringify(origData, null, 2)}
       </CodeBlock>
     </>
   );
-}
+};

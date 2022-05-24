@@ -85,6 +85,61 @@ const exampleData = {
         "@type": "@id",
       },
     },
+  // aspect (degrees)
+  "https://linked.data.gov.au/def/test/dawe-cv/0e0423c6-0dc3-40aa-9776-410a94299256":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 26.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/DEG",
+    },
+  // coarse fragment abundance
+  "https://linked.data.gov.au/def/test/dawe-cv/b3dd4df5-589b-476e-8e9e-0af6a7155759":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/72bdd173-9782-55b7-87f9-f3f46ea77312",
+      },
+    },
+  // component of microrelief
+  "https://linked.data.gov.au/def/test/dawe-cv/7f023c76-32e1-4c08-a52f-b900343b4b92":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/0ae36b0d-bc0e-5963-bb10-4418881946ce",
+      },
+    },
+  // condition of soil surface when dry
+  "https://linked.data.gov.au/def/test/dawe-cv/3a1ccb70-41dc-4f57-a74c-62e05aa02c61":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/01b55547-e78c-5eb0-82a3-ee3c13234f3b",
+      },
+    },
+  // erosion type
+  "https://linked.data.gov.au/def/test/dawe-cv/9fc1503b-e690-41f0-a824-99f0e69699f1":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/526a7fb6-fd26-55d6-bbd3-5f2075f6f495",
+      },
+    },
+  // gully depth
+  "https://linked.data.gov.au/def/test/dawe-cv/4aa9e813-8c4c-4fa6-953b-32c59fdd97be":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+      value: {
+        "@id":
+          "https://linked.data.gov.au/def/test/dawe-cv/1a4c3838-0d31-59eb-be2d-6f713d273091",
+      },
+    },
 };
 
 export default exampleData;
