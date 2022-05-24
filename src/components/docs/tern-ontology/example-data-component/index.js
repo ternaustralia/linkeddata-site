@@ -5,6 +5,7 @@ import protocolModuleConfig from "./protocol-module-config";
 import jsonLdContext from "../json-ld-context";
 import useEnv from "../../../../hooks/useEnv";
 import { useSparql } from "../../../../data/dataFetcher";
+import { uuidv4 } from "./utils";
 
 export default function Component({ protocolModule, observableProperty }) {
   const baseObservationUri = "https://example.com/observation";
@@ -108,7 +109,10 @@ const AutoCategoricalValueResult = ({
   if (error) return null;
   if (!data) return null;
 
-  const categoricalValue = data.results.bindings[0].member;
+  const categoricalValue =
+    data.results.bindings.length > 0
+      ? data.results.bindings[0].member
+      : { value: `https://example.com/${uuidv4()}` };
   origData["@graph"][0].hasResult["@type"] = [
     observablePropertyValues.valueType,
   ];
