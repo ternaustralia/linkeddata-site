@@ -43,6 +43,18 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/5b7addb7-ae3d-47eb-b5d8-f34cc211875a",
     exampleData: exampleData,
   },
+  "soil-pit-characterization": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/760751fb-7a1b-4874-9de6-98127febac58",
+    exampleData: exampleData,
+  },
+  "soil-bulk-density": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/72b5340f-6654-4ee8-81dc-6a492964b20c",
+    exampleData: exampleData,
+  },
+  "soil-subsite-sampling": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/eaf5a55e-e053-4818-a808-4722b1da4d17",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
