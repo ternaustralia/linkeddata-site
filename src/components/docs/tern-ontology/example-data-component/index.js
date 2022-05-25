@@ -33,7 +33,6 @@ WHERE {
 `;
 
   const env = useEnv();
-
   const generated = useGenerate(
     observableProperty,
     sparqlQuery,

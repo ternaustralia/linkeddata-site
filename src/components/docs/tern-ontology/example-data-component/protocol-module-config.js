@@ -7,7 +7,6 @@ import coverExampleData from "./example-data/cover";
 import floristicsExampleData from "./example-data/floristics";
 import opportunisticObservationsExampleData from "./example-data/opportunistic-observations";
 import vegetationMappingExampleData from "./example-data/vegetation-mapping";
-import basalAreaExampleData from "./example-data/basal-area";
 import exampleData from "./example-data";
 
 const config = {
@@ -32,8 +31,8 @@ const config = {
     exampleData: vegetationMappingExampleData,
   },
   "basal-area": {
-    uri: "https://linked.data.gov.au/def/test/dawe-cv/5b7addb7-ae3d-47eb-b5d8-f34cc211875a",
-    exampleData: basalAreaExampleData,
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/ab7c4569-312c-4450-b413-9b11c4d2577b",
+    exampleData: exampleData,
   },
   "recruitment-age": {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/36c493f1-6a2e-4d48-9c3a-df104d98124b",
