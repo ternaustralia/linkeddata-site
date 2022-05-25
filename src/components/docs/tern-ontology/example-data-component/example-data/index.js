@@ -141,6 +141,112 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/PERCENT",
     },
+  // soil horizon depth
+  "https://linked.data.gov.au/def/test/dawe-cv/c0b5ae33-438d-42ca-b78e-e384d139fe27":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 12.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
+  // soil horizon depth - lower
+  "https://linked.data.gov.au/def/test/dawe-cv/66f227c3-6267-4068-9493-dfd909592aaf":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 12.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
+  // soil horizon depth - upper
+  "https://linked.data.gov.au/def/test/dawe-cv/3b693f41-50b2-4469-bdbb-3b5b877fa2a9":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 12.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
+  // soil pH
+  "https://linked.data.gov.au/def/test/dawe-cv/f8993f1e-b4d8-47b8-acdd-a74dd84e845e":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+    },
+  // soil pit depth
+  "https://linked.data.gov.au/def/test/dawe-cv/cc960a7d-33a1-446a-85dc-8d1f8fda9996":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+  // soil sample depth
+  "https://linked.data.gov.au/def/test/dawe-cv/93932e83-41aa-48e6-b05c-ecde9bfcca99":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+  // soil sample depth - lower
+  "https://linked.data.gov.au/def/test/dawe-cv/5040cfbe-eb65-4ce8-899c-f13ab841e7c3":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+  // soil sample depth - upper
+  "https://linked.data.gov.au/def/test/dawe-cv/2729becc-9e41-4303-9311-ec2a506e62e5":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+  // fine earth bulk density
+  "https://linked.data.gov.au/def/test/dawe-cv/460784be-8ad5-4c32-b171-93d69984c0b9":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 2.77,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+    },
+  // gross soil bulk density
+  "https://linked.data.gov.au/def/test/dawe-cv/a344d029-4b47-455e-89d9-a1040877a5ce":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.34,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+    },
+  // soil bulk density
+  "https://linked.data.gov.au/def/test/dawe-cv/ec510708-9ac1-4c8a-bfe2-31ba5bb693da":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 2.44,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+    },
 };
 
 export default exampleData;
