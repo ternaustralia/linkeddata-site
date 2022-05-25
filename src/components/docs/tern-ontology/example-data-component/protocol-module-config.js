@@ -54,6 +54,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/eaf5a55e-e053-4818-a808-4722b1da4d17",
     exampleData: exampleData,
   },
+  "coarse-woody-debris": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/3a17f41f-1cf2-4abb-bde1-3b9a1388051e",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
