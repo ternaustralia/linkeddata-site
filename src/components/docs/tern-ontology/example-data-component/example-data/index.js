@@ -3,7 +3,7 @@ const exampleData = {
   // sapling count
   "https://linked.data.gov.au/def/test/dawe-cv/0f342ac9-800a-4298-a148-ffc953ecd393":
     {
-      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
       value: {
         "@value": 2,
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
@@ -16,6 +16,9 @@ const exampleData = {
       value: {
         "@value": 6.5,
         "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M",
       },
     },
   // diameter at breast height (dbh)
@@ -30,7 +33,7 @@ const exampleData = {
   // seedling count
   "https://linked.data.gov.au/def/test/dawe-cv/b6a5d847-0698-4cce-8a5e-f2719e142208":
     {
-      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
       value: {
         "@value": 2,
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
@@ -91,6 +94,52 @@ const exampleData = {
         "@id":
           "https://linked.data.gov.au/def/test/dawe-cv/1a4c3838-0d31-59eb-be2d-6f713d273091",
       },
+    },
+  // microrelief horizontal interval distance
+  "https://linked.data.gov.au/def/test/dawe-cv/22caefc0-0201-4bf2-a108-ef173d607bf4":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.2,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M",
+      },
+    },
+  // microrelief vertical interval distance
+  "https://linked.data.gov.au/def/test/dawe-cv/2f87b7cc-c029-4784-92cf-c32055b5c9b7":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.2,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M",
+      },
+    },
+  // slope
+  "https://linked.data.gov.au/def/test/dawe-cv/b036ba09-d061-4a1c-99a8-890efc462a2c":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.2,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/DEG",
+      },
+    },
+  // slope percent tangent
+  "https://linked.data.gov.au/def/test/dawe-cv/bc537f95-6721-4a87-bd30-62d6377424ef":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 12.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
     },
 };
 
