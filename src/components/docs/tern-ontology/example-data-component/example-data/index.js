@@ -291,6 +291,81 @@ const exampleData = {
         "@value": "http://qudt.org/vocab/unit/M2-PER-HA",
       },
     },
+  // coarse woody debris count
+  "https://linked.data.gov.au/def/test/dawe-cv/acdb15e0-a034-454e-b0e4-8b7546cbb5c7":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 2,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // coarse woody debris length
+  "https://linked.data.gov.au/def/test/dawe-cv/b15f883b-c2e7-408e-8146-3754bbd5693f":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 0.565,
+        "@type": "http://www.w3.org/2001/XMLSchema#float",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M",
+      },
+    },
+  // coarse woody debris narrowest diameter
+  "https://linked.data.gov.au/def/test/dawe-cv/e73af424-f20d-49b8-81e3-cd30afb5b267":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 12.2,
+        "@type": "http://www.w3.org/2001/XMLSchema#float",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/CentiM",
+      },
+    },
+  // coarse woody debris per hectare
+  "https://linked.data.gov.au/def/test/dawe-cv/74b6493b-8dfe-42f6-acb2-0dda5652cf54":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.34,
+        "@type": "http://www.w3.org/2001/XMLSchema#float",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M2-PER-HA",
+      },
+    },
+  // coarse woody debris percent cover
+  "https://linked.data.gov.au/def/test/dawe-cv/5370f9a5-c347-4442-b144-e486f11191a8":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 12.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // coarse woody debris volume individual
+  "https://linked.data.gov.au/def/test/dawe-cv/9ce420b8-8070-498c-974f-0eee82f23fd2":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.79,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M3",
+    },
+  // coarse woody debris widest diameter
+  "https://linked.data.gov.au/def/test/dawe-cv/ee4d10cb-4245-496c-a72c-0696e2014f90":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 0.89,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
 };
 
 export default exampleData;
