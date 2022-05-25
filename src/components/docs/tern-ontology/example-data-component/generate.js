@@ -27,6 +27,7 @@ export function useGenerate(
   const examples = [];
   const seen = [];
   let observablePropertyValues = null;
+
   for (const op of observableProperties) {
     if (seen.includes(op.uri)) {
       continue;

@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "soil-subsite-sampling";
+const moduleName = "basal-area";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -160,7 +160,7 @@ function template(index, moduleName, op) {
 sidebar_position: ${index}
 ---
 
-import Example from "../../../../../../src/components/docs/tern-ontology/example-data-component";
+import Example from "../../../../../src/components/docs/tern-ontology/example-data-component";
 
 # ${capitalize(op.label)}
 

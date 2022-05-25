@@ -29,6 +29,9 @@ const exampleData = {
         "@value": 6.5,
         "@type": "http://www.w3.org/2001/XMLSchema#double",
       },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M",
+      },
     },
   // seedling count
   "https://linked.data.gov.au/def/test/dawe-cv/b6a5d847-0698-4cce-8a5e-f2719e142208":
@@ -245,6 +248,47 @@ const exampleData = {
       value: {
         "@value": 2.44,
         "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+    },
+  // basal area count
+  "https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 3,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // circumference at breast height
+  "https://linked.data.gov.au/def/test/dawe-cv/2d042596-d49a-4139-92f5-dc0f23737e76":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 0.565,
+        "@type": "http://www.w3.org/2001/XMLSchema#float",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M",
+      },
+    },
+  // field species name
+  "https://linked.data.gov.au/def/test/dawe-cv/63f3f8e8-c204-4c91-8a48-e9f85b33ce06":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Melaleuca citrolens",
+      },
+    },
+  // stand basal area
+  "https://linked.data.gov.au/def/test/dawe-cv/f437f23a-7965-4bae-9dc3-2aead06786ec":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.34,
+        "@type": "http://www.w3.org/2001/XMLSchema#float",
+      },
+      unit: {
+        "@value": "http://qudt.org/vocab/unit/M2-PER-HA",
       },
     },
 };
