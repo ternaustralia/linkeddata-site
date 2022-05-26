@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "vertebrate-identify";
+const moduleName = "vertebrate-bird";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -111,7 +111,7 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  "condition": {
+  condition: {
     collectionUri:
       "https://linked.data.gov.au/def/test/dawe-cv/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
     startingIndex: 2,
