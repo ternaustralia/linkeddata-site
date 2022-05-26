@@ -675,6 +675,62 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/DEG_C",
     },
+  // animal weight - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/d78e0ad6-9ac8-4adc-a796-61ad458726b3":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 11800.99,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/GM",
+    },
+
+  // body length - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/0e9b8207-3282-4b42-b68c-c33951539016":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.38,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+
+  // head length - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/96ccc2b7-7b7f-4e5c-b11f-d5e5c88e245a":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 98.9,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/MilliM",
+    },
+
+  // pouch young number - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/88353d7b-8a2c-4b84-b034-71395f4edb93":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 6,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+
+  // pouch young size - vertebrate-identify
+
+  // tail length - vertebrate-identify
+
+  // testes length - vertebrate-identify
+
+  // testes width - vertebrate-identify
+
+  // vertebrate class - vertebrate-identify
+
+  // number of individuals - vertebrate-active
+
+  // number of individuals - vertebrate-bird
 };
 
 export default exampleData;
