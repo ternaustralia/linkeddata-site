@@ -123,6 +123,48 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
+  "invertebrate-wet-pitfall": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/0fff4578-8fb7-4da1-a197-5078cafb1b25",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "invertebrate-active-sampling": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/2d955edb-ab22-4101-bc72-b5899d901fd7",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "invertebrate-pan-trapping": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/50054098-8127-4e09-b397-9e3c6d074570",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "invertebrate-malaise-trapping": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/553e5dc9-db36-484c-b71c-75a9b76dcca5",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "invertebrate-post-field-guideline": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/656138c9-abc3-44c5-8d69-3522de407dee",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "invertebrate-leaf-litter-extraction": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/b29538e9-1118-45c5-88d5-ba1738b57940",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "invertebrate-light-trapping": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/beacf237-e402-4911-a9e4-89925374df23",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
 };
 
 async function main() {
@@ -196,7 +238,7 @@ function template(index, moduleName, op) {
 sidebar_position: ${index}
 ---
 
-import Example from "../../../../../src/components/docs/tern-ontology/example-data-component";
+import Example from "../../../../../../src/components/docs/tern-ontology/example-data-component";
 
 # ${capitalize(op.label)}
 
