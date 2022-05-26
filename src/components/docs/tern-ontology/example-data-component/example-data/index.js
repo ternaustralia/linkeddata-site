@@ -469,6 +469,15 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/M",
     },
+  // small tree count
+  "https://linked.data.gov.au/def/test/dawe-cv/48370fb2-ab58-4f19-8d99-6d005f61538a":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 2,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
 };
 
 export default exampleData;
