@@ -132,10 +132,11 @@ function generateObservationExample(
     exampleData,
     categoricalCollection
   );
-  const simpleValue = example.hasResult.value?.["@value"]
+  const simpleValue = example.hasResult.value
     ? example.hasResult.value?.["@value"]
     : example.hasResult.value?.["@id"];
   example.hasSimpleResult = simpleValue;
+
   const currentTime = getCurrentTime();
   example.phenomenonTime = {
     "@id": `${observationId}/phenomenonTime`,

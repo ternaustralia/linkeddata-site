@@ -13,24 +13,34 @@ export default function Component({ protocolModule, observableProperty }) {
   const datasetUri = "https://example.com/dataset/1";
   const sparqlEndpoint =
     "https://graphdb.tern.org.au/repositories/dawe_vocabs_core";
-  const sparqlQuery = `
-PREFIX : <http://linked.data.gov.au/def/test/dawe-cv/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 
-SELECT ?label (?concept as ?uri) ?valueType ?featureType ?categoricalCollection ?method
-WHERE {
-    <${protocolModuleConfig[protocolModule].uri}> skos:member ?concept .
-	graph ?g {
-	    ?concept a ?type .
-      ?concept skos:prefLabel ?label .
-      optional { ?concept tern:hasFeatureType ?featureType }
-      optional { ?concept tern:hasCategoricalCollection ?categoricalCollection }
-      optional { ?concept tern:valueType ?valueType }
-      optional { ?concept tern:hasMethod ?method }
+  try {
+    var sparqlQuery = `
+      PREFIX : <http://linked.data.gov.au/def/test/dawe-cv/>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+      PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+      
+      SELECT ?label (?concept as ?uri) ?valueType ?featureType ?categoricalCollection ?method
+      WHERE {
+          <${protocolModuleConfig[protocolModule].uri}> skos:member ?concept .
+        graph ?g {
+            ?concept a ?type .
+            ?concept skos:prefLabel ?label .
+            optional { ?concept tern:hasFeatureType ?featureType }
+            optional { ?concept tern:hasCategoricalCollection ?categoricalCollection }
+            optional { ?concept tern:valueType ?valueType }
+            optional { ?concept tern:hasMethod ?method }
+        }
+      }
+    `;
+  } catch (e) {
+    if (e instanceof TypeError) {
+      throw new Error(
+        `Entry "${protocolModule}" not found in protocol-module-config.js.
+        `
+      );
+    }
   }
-}
-`;
 
   const env = useEnv();
   const generated = useGenerate(
