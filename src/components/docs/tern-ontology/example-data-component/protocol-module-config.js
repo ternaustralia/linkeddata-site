@@ -66,6 +66,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
     exampleData: exampleData,
   },
+  fire: {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/75002e1e-7866-4264-9e20-8569743ea4f5",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
