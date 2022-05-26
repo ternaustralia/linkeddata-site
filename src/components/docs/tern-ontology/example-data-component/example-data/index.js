@@ -525,6 +525,156 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/M",
     },
+  // bare ground percentage
+  "https://linked.data.gov.au/def/test/dawe-cv/9a3e5f88-72e1-43b0-8ba1-6cd63fdee2c5":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 69.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // dominant flora species
+  "https://linked.data.gov.au/def/test/dawe-cv/8e782307-4e4d-4cdf-9b10-8d79794065a4":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Melaleuca citrolens",
+      },
+    },
+  // estimated percent cover
+  "https://linked.data.gov.au/def/test/dawe-cv/a9f6b098-96bf-4faf-a460-2d71213023f6":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 23.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // litter cover percentage
+  "https://linked.data.gov.au/def/test/dawe-cv/e89eccd4-1deb-49cc-9103-272f6628a274":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // plant phenology
+  "https://linked.data.gov.au/def/test/dawe-cv/33c1752f-b5f3-4ac9-9090-e9a4dd3096d1":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "fruiting",
+      },
+    },
+  // substrate cover percentage
+  "https://linked.data.gov.au/def/test/dawe-cv/8993e97e-7639-4e71-bd89-9391321cb84f":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 14.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // pan trap count estimate
+  "https://linked.data.gov.au/def/test/dawe-cv/e4fa718e-76d1-47a2-87c9-b683a3ff3c18":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 2,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // plant species in flower
+  "https://linked.data.gov.au/def/test/dawe-cv/2d95624b-e04e-4826-b97d-b74b90db4d56":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Primula vulgaris",
+      },
+    },
+  // invertebrate - individual life stage count
+  "https://linked.data.gov.au/def/test/dawe-cv/ece0e09e-9e77-499c-b130-27d9c1d855bd":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 9,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // invertebrate - life stage average length
+  "https://linked.data.gov.au/def/test/dawe-cv/f2a11bc9-cc3c-4f8f-8ded-50ab46f73818":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+    },
+  // speciment count
+  "https://linked.data.gov.au/def/test/dawe-cv/50da4103-111d-4876-800f-382d5033f1b4":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 9,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // area of litter sampled
+  "https://linked.data.gov.au/def/test/dawe-cv/87709af7-edbf-43a8-a507-d6e5b6bd1b58":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M2",
+    },
+  // estimate volume of leaf litter
+  "https://linked.data.gov.au/def/test/dawe-cv/4ad7d58a-543b-46b5-83c5-fa87dd8ce1ff":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.07,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M3",
+    },
+  // estimate volume of leaf litter extraction
+  "https://linked.data.gov.au/def/test/dawe-cv/0e2f04c7-a576-4565-8e4f-2d53a5e26ef7":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.27,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M3",
+    },
+  // litter depth
+  "https://linked.data.gov.au/def/test/dawe-cv/94b5aec9-33cd-435e-a861-f10f70a1006c":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 7.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
+  // soil surface temperature
+  "https://linked.data.gov.au/def/test/dawe-cv/375e39af-79d9-4b69-8349-fcc34bf37b68":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 38.9,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/DEG_C",
+    },
 };
 
 export default exampleData;
