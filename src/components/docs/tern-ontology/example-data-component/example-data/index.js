@@ -581,6 +581,23 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/PERCENT",
     },
+  // pan trap count estimate
+  "https://linked.data.gov.au/def/test/dawe-cv/e4fa718e-76d1-47a2-87c9-b683a3ff3c18":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 2,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // plant species in flower
+  "https://linked.data.gov.au/def/test/dawe-cv/2d95624b-e04e-4826-b97d-b74b90db4d56":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Primula vulgaris",
+      },
+    },
 };
 
 export default exampleData;

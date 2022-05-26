@@ -78,6 +78,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/2d955edb-ab22-4101-bc72-b5899d901fd7",
     exampleData: exampleData,
   },
+  "invertebrate-pan-trapping": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/50054098-8127-4e09-b397-9e3c6d074570",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
