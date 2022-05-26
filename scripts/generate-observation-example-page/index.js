@@ -117,6 +117,12 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
+  fire: {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/75002e1e-7866-4264-9e20-8569743ea4f5",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
 };
 
 async function main() {
@@ -190,7 +196,7 @@ function template(index, moduleName, op) {
 sidebar_position: ${index}
 ---
 
-import Example from "../../../../../../src/components/docs/tern-ontology/example-data-component";
+import Example from "../../../../../src/components/docs/tern-ontology/example-data-component";
 
 # ${capitalize(op.label)}
 

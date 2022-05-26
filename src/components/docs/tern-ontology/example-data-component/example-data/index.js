@@ -478,6 +478,53 @@ const exampleData = {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
       },
     },
+  // in canopy sky status
+  "https://linked.data.gov.au/def/test/dawe-cv/1d7a8982-e444-48c4-9dba-ab10427f15fd":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
+      value: {
+        "@value": false,
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+      },
+    },
+  // plant regenerating height
+  "https://linked.data.gov.au/def/test/dawe-cv/936f6c7d-9432-41d2-8214-00ed64e8f0c4":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 16.8,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+  // soil char depth
+  "https://linked.data.gov.au/def/test/dawe-cv/d88be090-97b9-40a1-9251-65f5c945b50e":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/MilliM",
+    },
+  // species intercepted
+  "https://linked.data.gov.au/def/test/dawe-cv/20c219f2-1526-4365-8f77-569cec5f1731":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Melaleuca citrolens",
+      },
+    },
+  // tree trunk char height
+  "https://linked.data.gov.au/def/test/dawe-cv/3a2b344c-07b5-4536-8db3-06b73bc0e263":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 2.38,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
 };
 
 export default exampleData;
