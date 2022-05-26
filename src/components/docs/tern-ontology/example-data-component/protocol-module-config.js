@@ -94,6 +94,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/b29538e9-1118-45c5-88d5-ba1738b57940",
     exampleData: exampleData,
   },
+  "invertebrate-light-trapping": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/beacf237-e402-4911-a9e4-89925374df23",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
