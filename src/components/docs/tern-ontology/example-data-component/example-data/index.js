@@ -366,6 +366,89 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/M",
     },
+  // canopy health
+  "https://linked.data.gov.au/def/test/dawe-cv/d0a31d21-b475-490e-a8d6-fbe374fc7391":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 0.67,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // dieback from disease
+  "https://linked.data.gov.au/def/test/dawe-cv/0685299e-d22a-4efa-a507-a7614e58a500":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
+      value: {
+        "@value": false,
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+      },
+    },
+  // epicormic growth
+  "https://linked.data.gov.au/def/test/dawe-cv/cacfba72-ae93-4f92-9cc3-bf656d7ab5f0":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
+      value: {
+        "@value": false,
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+      },
+    },
+  // galls and lerps
+  "https://linked.data.gov.au/def/test/dawe-cv/28131f08-1ae4-422f-99cb-3b5bafc7761d":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
+      value: {
+        "@value": false,
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+      },
+    },
+  // grazing
+  "https://linked.data.gov.au/def/test/dawe-cv/cd905dda-06df-4f0e-85eb-b50f9ed2af91":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
+      value: {
+        "@value": false,
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+      },
+    },
+  // insect damage
+  "https://linked.data.gov.au/def/test/dawe-cv/33e79578-0946-4f21-9607-ca501e1500c7":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
+      value: {
+        "@value": false,
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+      },
+    },
+  // large tree count
+  "https://linked.data.gov.au/def/test/dawe-cv/1fc43da5-004d-4258-bd33-8ffc9e2e8cba":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 3,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // leaf litter depth
+  "https://linked.data.gov.au/def/test/dawe-cv/f6af2c5e-d193-4337-b845-44550f661854":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/MilliM",
+    },
+  // mistletoe count
+  "https://linked.data.gov.au/def/test/dawe-cv/6a1d703f-6622-4804-8b78-4c2ac93c97ba":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 2,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
 };
 
 export default exampleData;
