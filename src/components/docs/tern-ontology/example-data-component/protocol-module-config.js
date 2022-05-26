@@ -74,6 +74,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/0fff4578-8fb7-4da1-a197-5078cafb1b25",
     exampleData: exampleData,
   },
+  "invertebrate-active-sampling": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/2d955edb-ab22-4101-bc72-b5899d901fd7",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
