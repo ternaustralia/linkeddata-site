@@ -86,6 +86,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/553e5dc9-db36-484c-b71c-75a9b76dcca5",
     exampleData: exampleData,
   },
+  "invertebrate-post-field-guideline": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/656138c9-abc3-44c5-8d69-3522de407dee",
+    exampleData: exampleData,
+  },
 };
 
 export default config;

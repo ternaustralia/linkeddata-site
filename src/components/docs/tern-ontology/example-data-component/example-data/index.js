@@ -598,6 +598,33 @@ const exampleData = {
         "@value": "Primula vulgaris",
       },
     },
+  // invertebrate - individual life stage count
+  "https://linked.data.gov.au/def/test/dawe-cv/ece0e09e-9e77-499c-b130-27d9c1d855bd":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 9,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // invertebrate - life stage average length
+  "https://linked.data.gov.au/def/test/dawe-cv/f2a11bc9-cc3c-4f8f-8ded-50ab46f73818":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+    },
+  // speciment count
+  "https://linked.data.gov.au/def/test/dawe-cv/50da4103-111d-4876-800f-382d5033f1b4":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 9,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
 };
 
 export default exampleData;
