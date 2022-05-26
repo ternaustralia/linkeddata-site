@@ -719,18 +719,67 @@ const exampleData = {
     },
 
   // pouch young size - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/fe18c3aa-7af1-4fe8-bf5f-dcec29a3bea9":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 18.9,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/MilliM",
+    },
 
   // tail length - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/38d1419f-7f3b-4d0e-a2f6-4b152e2d91f7":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
 
   // testes length - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/93486f3f-bef9-42ee-b3b9-eacaaf9324cf":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
 
   // testes width - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/3d011f97-5d22-409c-a382-36b378db8a14":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
 
   // vertebrate class - vertebrate-identify
+  "https://linked.data.gov.au/def/test/dawe-cv/8997be1e-cf91-4ca6-a641-eb57aa10d9e6":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Mammalia (mammals)",
+      },
+    },
 
-  // number of individuals - vertebrate-active
-
-  // number of individuals - vertebrate-bird
+  // number of individuals
+  "https://linked.data.gov.au/def/test/dawe-cv/b2d28629-c986-4c05-9d4a-8b05e99a0a94":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 20,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
 };
 
 export default exampleData;
