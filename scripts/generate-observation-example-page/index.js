@@ -172,7 +172,7 @@ function template(index, moduleName, op) {
 sidebar_position: ${index}
 ---
 
-import Example from "../../../../../src/components/docs/tern-ontology/example-data-component";
+import Example from "../../../../../../src/components/docs/tern-ontology/example-data-component";
 
 # ${capitalize(op.label)}
 

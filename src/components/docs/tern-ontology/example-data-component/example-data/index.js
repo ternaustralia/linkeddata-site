@@ -449,6 +449,26 @@ const exampleData = {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
       },
     },
+  // average canopy width
+  "https://linked.data.gov.au/def/test/dawe-cv/5471254f-01e0-4201-8e15-888bb26b8fa5":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 0.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+  // plant height
+  "https://linked.data.gov.au/def/test/dawe-cv/0e9da717-6c8e-4194-9385-c995d54702e4":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 16.8,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
 };
 
 export default exampleData;
