@@ -525,6 +525,62 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/M",
     },
+  // bare ground percentage
+  "https://linked.data.gov.au/def/test/dawe-cv/9a3e5f88-72e1-43b0-8ba1-6cd63fdee2c5":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 69.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // dominant flora species
+  "https://linked.data.gov.au/def/test/dawe-cv/8e782307-4e4d-4cdf-9b10-8d79794065a4":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Melaleuca citrolens",
+      },
+    },
+  // estimated percent cover
+  "https://linked.data.gov.au/def/test/dawe-cv/a9f6b098-96bf-4faf-a460-2d71213023f6":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 23.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // litter cover percentage
+  "https://linked.data.gov.au/def/test/dawe-cv/e89eccd4-1deb-49cc-9103-272f6628a274":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
+  // plant phenology
+  "https://linked.data.gov.au/def/test/dawe-cv/33c1752f-b5f3-4ac9-9090-e9a4dd3096d1":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "fruiting",
+      },
+    },
+  // substrate cover percentage
+  "https://linked.data.gov.au/def/test/dawe-cv/8993e97e-7639-4e71-bd89-9391321cb84f":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 14.82,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/PERCENT",
+    },
 };
 
 export default exampleData;

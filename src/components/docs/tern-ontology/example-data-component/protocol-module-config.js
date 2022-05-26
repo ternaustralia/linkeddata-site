@@ -70,6 +70,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/75002e1e-7866-4264-9e20-8569743ea4f5",
     exampleData: exampleData,
   },
+  "invertebrate-wet-pitfall": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/0fff4578-8fb7-4da1-a197-5078cafb1b25",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
