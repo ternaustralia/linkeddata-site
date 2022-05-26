@@ -625,6 +625,56 @@ const exampleData = {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
       },
     },
+  // area of litter sampled
+  "https://linked.data.gov.au/def/test/dawe-cv/87709af7-edbf-43a8-a507-d6e5b6bd1b58":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 3.5,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M2",
+    },
+  // estimate volume of leaf litter
+  "https://linked.data.gov.au/def/test/dawe-cv/4ad7d58a-543b-46b5-83c5-fa87dd8ce1ff":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.07,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M3",
+    },
+  // estimate volume of leaf litter extraction
+  "https://linked.data.gov.au/def/test/dawe-cv/0e2f04c7-a576-4565-8e4f-2d53a5e26ef7":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.27,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M3",
+    },
+  // litter depth
+  "https://linked.data.gov.au/def/test/dawe-cv/94b5aec9-33cd-435e-a861-f10f70a1006c":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 7.3,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/CentiM",
+    },
+  // soil surface temperature
+  "https://linked.data.gov.au/def/test/dawe-cv/375e39af-79d9-4b69-8349-fcc34bf37b68":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 38.9,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/DEG_C",
+    },
 };
 
 export default exampleData;

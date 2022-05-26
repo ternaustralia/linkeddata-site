@@ -90,6 +90,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/656138c9-abc3-44c5-8d69-3522de407dee",
     exampleData: exampleData,
   },
+  "invertebrate-leaf-litter-extraction": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/b29538e9-1118-45c5-88d5-ba1738b57940",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
