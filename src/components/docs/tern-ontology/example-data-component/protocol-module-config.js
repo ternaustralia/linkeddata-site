@@ -75,7 +75,7 @@ const config = {
     exampleData: exampleData,
   },
   "vertebrate-bird": {
-    uri: "https://linked.data.gov.au/def/test/dawe-cv/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/d2768d6b-769c-4355-9358-6d2d98de4baf",
     exampleData: exampleData,
   },
   fire: {
