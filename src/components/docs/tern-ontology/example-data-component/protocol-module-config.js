@@ -82,6 +82,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/50054098-8127-4e09-b397-9e3c6d074570",
     exampleData: exampleData,
   },
+  "invertebrate-malaise-trapping": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/553e5dc9-db36-484c-b71c-75a9b76dcca5",
+    exampleData: exampleData,
+  },
 };
 
 export default config;
