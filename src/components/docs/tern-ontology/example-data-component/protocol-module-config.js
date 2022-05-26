@@ -38,6 +38,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/36c493f1-6a2e-4d48-9c3a-df104d98124b",
     exampleData: exampleData,
   },
+  "recruitment-survivorship": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/6bea1c41-0a98-465a-a146-1d3cfbf6f6fa",
+    exampleData: exampleData,
+  },
   "plot-soil-description": {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/5b7addb7-ae3d-47eb-b5d8-f34cc211875a",
     exampleData: exampleData,
