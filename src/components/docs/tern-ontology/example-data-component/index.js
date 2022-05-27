@@ -36,8 +36,7 @@ export default function Component({ protocolModule, observableProperty }) {
   } catch (e) {
     if (e instanceof TypeError) {
       throw new Error(
-        `Entry "${protocolModule}" not found in protocol-module-config.js.
-        `
+        `Entry "${protocolModule}" not found in protocol-module-config.js.`
       );
     }
   }
@@ -66,6 +65,12 @@ export default function Component({ protocolModule, observableProperty }) {
     );
     const data = jsonLdContext;
     data["@graph"] = example;
+
+    if (example.length == 0) {
+      throw new Error(
+        `"${observableProperty}" not found in SKOS collection ${protocolModuleConfig[protocolModule].uri}`
+      );
+    }
 
     if (
       !data["@graph"][0].hasResult.hasOwnProperty("value") &&
