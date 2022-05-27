@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "invertebrate-light-trapping";
+const moduleName = "vertebrate-bird";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -90,6 +90,24 @@ const moduleLookup = {
   "coarse-woody-debris": {
     collectionUri:
       "https://linked.data.gov.au/def/test/dawe-cv/3a17f41f-1cf2-4abb-bde1-3b9a1388051e",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "vertebrate-identify": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/a66e0c78-6f5c-4e24-8223-d03f14891e45",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "vertebrate-active": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/662320e4-4633-4aa3-9c78-4776d22e632e",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "vertebrate-bird": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/d2768d6b-769c-4355-9358-6d2d98de4baf",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },

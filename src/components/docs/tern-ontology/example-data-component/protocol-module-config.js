@@ -66,6 +66,18 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
     exampleData: exampleData,
   },
+  "vertebrate-identify": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/a66e0c78-6f5c-4e24-8223-d03f14891e45",
+    exampleData: exampleData,
+  },
+  "vertebrate-active": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/662320e4-4633-4aa3-9c78-4776d22e632e",
+    exampleData: exampleData,
+  },
+  "vertebrate-bird": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/d2768d6b-769c-4355-9358-6d2d98de4baf",
+    exampleData: exampleData,
+  },
   fire: {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/75002e1e-7866-4264-9e20-8569743ea4f5",
     exampleData: exampleData,
