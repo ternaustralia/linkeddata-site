@@ -98,6 +98,30 @@ const config = {
     uri: "https://linked.data.gov.au/def/test/dawe-cv/beacf237-e402-4911-a9e4-89925374df23",
     exampleData: exampleData,
   },
+  "targeted-survey-ecological-community": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/2e7e218c-c307-4dfa-9560-90d8f03e401e",
+    exampleData: exampleData,
+  },
+  "targeted-survey-general-field-protocol": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/ccaedec9-ffdc-42df-9c9f-7dce8b14fb91",
+    exampleData: exampleData,
+  },
+  "targeted-survey-fauna-protocol-active": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/5a31ad93-8729-435d-b3ba-e361ab70a10c",
+    exampleData: exampleData,
+  },
+  "targeted-survey-fauna-protocol-passive": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/5ed1bd2f-f3f3-4b62-a485-c07ccb454e66",
+    exampleData: exampleData,
+  },
+  "targeted-survey-flora-protocol-population": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/7a3a06af-8c03-414f-9040-fd4bbf691384",
+    exampleData: exampleData,
+  },
+  "targeted-survey-flora-protocol-observation": {
+    uri: "https://linked.data.gov.au/def/test/dawe-cv/9b5e04d5-182c-4644-8bba-4c8f6399b527",
+    exampleData: exampleData,
+  },
 };
 
 export default config;

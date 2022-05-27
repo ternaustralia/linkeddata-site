@@ -675,6 +675,69 @@ const exampleData = {
       },
       unit: "http://qudt.org/vocab/unit/DEG_C",
     },
+  // condition thresholds
+  "https://linked.data.gov.au/def/test/dawe-cv/92d0eaf3-0352-45ba-b173-f82923cdd795":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "5 trees died of beetle pest, condition threshold reached.",
+      },
+    },
+  // species and cover
+  "https://linked.data.gov.au/def/test/dawe-cv/e706382f-3cf5-48ff-bc86-6e8902dc2aaf":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "eucalyptus abdita 49%",
+      },
+    },
+  // weeds
+  "https://linked.data.gov.au/def/test/dawe-cv/cefdf9e3-63cb-42fb-9d9b-790dbdebbe45":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "Lycium ferocissimum",
+      },
+    },
+  // number of individuals
+  "https://linked.data.gov.au/def/test/dawe-cv/b2d28629-c986-4c05-9d4a-8b05e99a0a94":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Integer"],
+      value: {
+        "@value": 2,
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+      },
+    },
+  // fauna length
+  "https://linked.data.gov.au/def/test/dawe-cv/7905c3ec-3901-4fb9-a042-b83066bee975":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 0.45,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
+  // fauna weight
+  "https://linked.data.gov.au/def/test/dawe-cv/375a2c90-71d6-4ff4-99e4-bc033f2bb03c":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 237.4,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/GM",
+    },
+  // plant size - width
+  "https://linked.data.gov.au/def/test/dawe-cv/9a73de99-19c7-438e-829d-c363ac86b570":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+      value: {
+        "@value": 1.23,
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+      },
+      unit: "http://qudt.org/vocab/unit/M",
+    },
 };
 
 export default exampleData;
