@@ -165,6 +165,42 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
+  "targeted-survey-ecological-community": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/2e7e218c-c307-4dfa-9560-90d8f03e401e",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "targeted-survey-general-field-protocol": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/ccaedec9-ffdc-42df-9c9f-7dce8b14fb91",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "targeted-survey-fauna-protocol-active": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/5a31ad93-8729-435d-b3ba-e361ab70a10c",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "targeted-survey-fauna-protocol-passive": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/5ed1bd2f-f3f3-4b62-a485-c07ccb454e66",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "targeted-survey-flora-protocol-population": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/7a3a06af-8c03-414f-9040-fd4bbf691384",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "targeted-survey-flora-protocol-observation": {
+    collectionUri:
+      "https://linked.data.gov.au/def/test/dawe-cv/9b5e04d5-182c-4644-8bba-4c8f6399b527",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
 };
 
 async function main() {
