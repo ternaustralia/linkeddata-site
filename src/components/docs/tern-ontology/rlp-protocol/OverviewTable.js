@@ -30,8 +30,10 @@ where {
 
     optional {
       ?concept tern:valueType ?valueType .
-      service <https://graphdb.tern.org.au/repositories/knowledge_graph_core?context=%3Chttps%3A%2F%2Fw3id.org%2Ftern%2Fontologies%2Ftern%2F%3E&infer=false> {
-        ?valueType rdfs:label ?_valueTypeLabel .
+      optional {
+          service <https://graphdb.tern.org.au/repositories/knowledge_graph_core?context=%3Chttps%3A%2F%2Fw3id.org%2Ftern%2Fontologies%2Ftern%2F%3E&infer=false> {
+          ?valueType rdfs:label ?_valueTypeLabel .
+        }
       }
     }
 
@@ -57,10 +59,14 @@ export default function OverviewTable({ moduleOpCollectionUri }) {
 
   const failedToLoadMessage = "Failed to load overview table";
 
-  if (error) return <div>{failedToLoadMessage}</div>;
+  if (error) {
+    console.error(error);
+    return <div>{failedToLoadMessage}</div>;
+  }
   if (!data) return <div>Loading...</div>;
 
-  if (data.results.bindings.length <= 1) {
+  if (data.results.bindings.length < 1) {
+    console.error("Results returned empty.");
     return <div>{failedToLoadMessage}</div>;
   }
 
@@ -76,7 +82,9 @@ export default function OverviewTable({ moduleOpCollectionUri }) {
       </td>
       <td>
         <ExternalLink href={value?.valueType?.value}>
-          {value?.valueTypeLabel?.value}
+          {value?.valueTypeLabel?.value
+            ? value.valueTypeLabel.value
+            : value.valueType.value.split("/").pop()}
         </ExternalLink>
       </td>
       <td>
