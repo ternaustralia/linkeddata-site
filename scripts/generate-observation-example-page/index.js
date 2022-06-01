@@ -11,7 +11,7 @@ const axios = require("axios").default;
 const { getSparqlQuery } = require("./queries");
 
 // Set the module to generate for each script run
-const moduleName = "targeted-survey-flora-protocol-observation";
+const moduleName = "recruitment-age";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {

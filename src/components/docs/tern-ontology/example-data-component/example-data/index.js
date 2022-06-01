@@ -834,6 +834,16 @@ const exampleData = {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
       },
     },
+
+    // Adequate recruitment
+    "https://linked.data.gov.au/def/test/dawe-cv/0f6d5b8e-4c3c-41b9-a8c0-99039718b59c":
+      {
+        "@type": ["https://w3id.org/tern/ontologies/tern/boolean"],
+        value: {
+          "@value": false,
+          "@type": "http://www.w3.org/2001/XMLSchema#Boolean",
+        },
+      },
 };
 
 export default exampleData;
