@@ -1,7 +1,7 @@
 # Camera Traps Module
 
 :::info
-This section is still in draft and the conceptual modelling for this module may change from now and release.
+This section is still in draft and the conceptual modelling for this module may change from now until release.
 :::
 
 This protocol module provides guidance and decision frameworks on how to deploy camera traps at monitoring sites and how to target specific species of fauna with attractants. This page will detail how the concepts used in the protocol are mapped to [SOSA/SSN](https://www.w3.org/TR/vocab-ssn/) via the TERN Ontology.
