@@ -272,7 +272,7 @@ const exampleData = {
       },
     },
   // field species name
-  "https://linked.data.gov.au/def/test/dawe-cv/63f3f8e8-c204-4c91-8a48-e9f85b33ce06":
+  "https://linked.data.gov.au/def/test/dawe-cv/26f843a5-e1ed-46da-b22b-053e567e3227":
     {
       "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
       value: {
@@ -835,15 +835,47 @@ const exampleData = {
       },
     },
 
-    // Adequate recruitment
-    "https://linked.data.gov.au/def/test/dawe-cv/0f6d5b8e-4c3c-41b9-a8c0-99039718b59c":
-      {
-        "@type": ["https://w3id.org/tern/ontologies/tern/boolean"],
-        value: {
-          "@value": false,
-          "@type": "http://www.w3.org/2001/XMLSchema#Boolean",
-        },
+  // Adequate recruitment
+  "https://linked.data.gov.au/def/test/dawe-cv/0f6d5b8e-4c3c-41b9-a8c0-99039718b59c":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/boolean"],
+      value: {
+        "@value": false,
+        "@type": "http://www.w3.org/2001/XMLSchema#Boolean",
       },
+    },
+  // soil matrix dry color
+  "https://linked.data.gov.au/def/test/dawe-cv/2a5c4ab0-124b-4430-a612-e069173bc82a":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "gray",
+      },
+    },
+  // soil matrix wet color
+  "https://linked.data.gov.au/def/test/dawe-cv/bdc0806b-acdd-402d-a1c1-6b9618f98401":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "gray",
+      },
+    },
+  // body condition
+  "https://linked.data.gov.au/def/test/dawe-cv/a0bf61f1-56fa-4653-8f68-be2f732357c8":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "healthy",
+      },
+    },
+  // signs of pregnancy
+  "https://linked.data.gov.au/def/test/dawe-cv/88472a97-fd55-4382-9d6e-793164c574f1":
+    {
+      "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+      value: {
+        "@value": "pregnant",
+      },
+    },
 };
 
 export default exampleData;
