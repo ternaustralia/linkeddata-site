@@ -155,7 +155,7 @@ const exampleData = {
       },
     },
   // number of individuals
-  "https://linked.data.gov.au/def/test/dawe-cv/00bf74d8-9814-4c09-85ed-2791b94984ec":
+  "https://linked.data.gov.au/def/test/dawe-cv/b2d28629-c986-4c05-9d4a-8b05e99a0a94":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Count",
