@@ -1,5 +1,5 @@
 export const baseUri = "https://linked.data.gov.au/def/test/dawe-cv/";
-const namedGraph = baseUri;
+const namedGraph = "https://linked.data.gov.au/def/nrm";
 
 export function getVocabularies() {
   return `
@@ -15,7 +15,7 @@ export function getVocabularies() {
   from <http://www.ontotext.com/explicit>
   from <${namedGraph}>  
   where { 
-      ?uri reg:register <https://linked.data.gov.au/def/test/dawe-cv/616c7c18-3309-472d-a38d-8106a1b6ff9b> .
+      <https://linked.data.gov.au/def/nrm> dcterms:hasPart ?uri .
       values (?vocabularyType) {
           (skos:ConceptScheme)
           (skos:Collection)
