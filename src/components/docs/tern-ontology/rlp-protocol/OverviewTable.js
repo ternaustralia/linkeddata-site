@@ -14,7 +14,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 select ?concept (sample(?__label) as ?label) ?featureType (sample(?_featureTypeLabel) as ?featureTypeLabel) ?valueType (sample(?_valueTypeLabel) as ?valueTypeLabel) ?categoricalCollection (sample(?_categoricalCollectionLabel) as ?categoricalCollectionLabel)
 from <http://www.ontotext.com/explicit>
-from <https://linked.data.gov.au/def/test/dawe-cv/>
+from <${settings.queries.namedGraph}>
 where { 
     # Plot Description Observable Properties
     <${moduleOpCollectionUri}> skos:member ?concept .

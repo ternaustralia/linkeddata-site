@@ -1,3 +1,5 @@
+import settings from "../../src/pages/viewers/dawe-vocabs/_settings";
+
 function getSparqlQuery(collectionUri) {
   const sparqlQuery = `
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -5,7 +7,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 select ?concept ?featureType (sample(?__label) as ?label) (sample(?_featureTypeLabel) as ?featureTypeLabel) ?valueType (sample(?_valueTypeLabel) as ?valueTypeLabel) ?categoricalCollection (sample(?_categoricalCollectionLabel) as ?categoricalCollectionLabel)
 from <http://www.ontotext.com/explicit>
-from <https://linked.data.gov.au/def/test/dawe-cv/>
+from <${settings.queries.namedGraph}>
 where { 
     # Collection of observable properties.
     <${collectionUri}> skos:member ?concept .
