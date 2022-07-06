@@ -6,7 +6,7 @@ import { getFetchOptions } from "./utils";
 export const fetcher = async (...args) => {
   const url = args[0];
 
-  let fetchOptions = null;
+  let fetchOptions = undefined;
   if (args.length > 1) {
     fetchOptions = JSON.parse(args[1]);
     const params = new URLSearchParams();
