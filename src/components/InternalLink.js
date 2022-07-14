@@ -39,7 +39,15 @@ function LabelByConneg({ href }) {
   return <>{label}</>;
 }
 
-export default function InternalLink({ resourceUri, settings }) {
+export function InternalLink({ uriObject, pageRoute }) {
+  return (
+    <Link to={`${pageRoute}?uri=${uriObject.value}`}>
+      <strong>{uriObject.label}</strong>
+    </Link>
+  );
+}
+
+export default function InternalLinkLegacy({ resourceUri, settings }) {
   const { pageRoute, endpoint } = settings;
   const sparqlQuery = settings.queries.getLabel(resourceUri);
   const fetchOptions = getFetchOptions(sparqlQuery);
