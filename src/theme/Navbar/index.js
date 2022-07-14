@@ -227,15 +227,21 @@ function Navbar() {
   const { leftItems, rightItems } = splitNavItemsByPosition(items);
   const env = useEnv();
   const version = useVersion();
+
+  // TERN's TopBar component only understands 'test' or 'prod'.
+  const ternComponentEnv = env === "prod" ? "prod" : "test";
+
   return (
     <>
-      <TopBar menuConfig={getTernMenu({ env: env })} />
-      {env === "test" && <Alert className="mb-1" variant="warning">
-        <div>
-          You are viewing a development preview of the website on version{" "}
-          <em>{version}</em>.
-        </div>
-      </Alert>}
+      <TopBar menuConfig={getTernMenu({ env: ternComponentEnv })} />
+      {env === "test" && (
+        <Alert className="mb-1" variant="warning">
+          <div>
+            You are viewing a development preview of the website on version{" "}
+            <em>{version}</em>.
+          </div>
+        </Alert>
+      )}
       <nav
         ref={navbarRef}
         className={clsx("navbar", "navbar--fixed-top", styles.navbar, {

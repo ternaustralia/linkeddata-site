@@ -1,18 +1,22 @@
+import React from 'react'
 import CodeBlock from "@theme/CodeBlock";
 import Layout from "@theme/Layout";
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Link, useParams } from "react-router-dom";
-import { useSparql } from "../../data/dataFetcher";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import useSWR from "swr";
+import { getFetcher } from "../../data/dataFetcher";
 import useQuery from "../../hooks/useQuery";
-import InternalLink from "../InternalLink";
-import IRIField from "../IRIField";
+import { useViewerSettings } from "../../hooks/useViewerSettings";
+import ExternalLink from "../ExternalLink";
+import { InternalLink } from "../InternalLink";
 import ScrollToTop from "../ScrollToTop";
 
-function VocabItem({ uri, description, settings }) {
+function VocabItem({ uri, label, description }) {
   return (
-    <div className="card margin-vert--sm">
+    <div className="card margin-vert--md">
       <div className="card__header">
-        <InternalLink resourceUri={uri} settings={settings}></InternalLink>
+        <h5>
+          <Link to={"?uri=" + uri}>{label}</Link>
+        </h5>
       </div>
       <div className="card__body">
         <div>{description}</div>
@@ -21,36 +25,29 @@ function VocabItem({ uri, description, settings }) {
   );
 }
 
-function VocabsListPage({ settings }) {
-  const { data, error } = useSparql(
-    settings.endpoint,
-    settings.queries.getVocabularies()
+function VocabsListPage({ settingsID }) {
+  const settings = useViewerSettings(settingsID);
+  const { data, error } = useSWR(
+    settings.api + "/vocab_viewer/nrm/vocabs",
+    getFetcher
   );
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
-  const vocabItems = data.results.bindings
-    .map((item) => {
-      if (item?.uri?.value) {
-        return (
-          <VocabItem
-            key={item.uri.value}
-            uri={item.uri.value}
-            description={item?.description?.value}
-            settings={settings}
-          />
-        );
-      }
-    })
-    .filter((item) => item !== undefined);
-
   return (
     <>
       <h2>{settings.title}</h2>
 
-      {vocabItems.length > 0 ? (
-        vocabItems
+      {data && data.length > 0 ? (
+        data.map((item) => (
+          <VocabItem
+            key={item.id}
+            uri={item.id}
+            label={item.label}
+            description={item.description}
+          />
+        ))
       ) : (
         <div>Sorry, failed to load data.</div>
       )}
@@ -58,48 +55,38 @@ function VocabsListPage({ settings }) {
   );
 }
 
-function ResourceLabel({ uri, settings }) {
-  const { data, error } = useSparql(
-    settings.endpoint,
-    settings.queries.getLabel(uri)
+function ResourcePage({ uri, settingsID }) {
+  const settings = useViewerSettings(settingsID);
+  const { data, error } = useSWR(
+    settings.api +
+      "/vocab_viewer/nrm/resource?uri=" +
+      uri +
+      "&sparql_endpoint=" +
+      settings.sparqlEndpoint,
+    getFetcher
   );
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
-
-  return <h2>{data.results.bindings[0]?.label?.value}</h2>;
-}
-
-function ResourcePage({ uri, settings }) {
-  const { data, error } = useSparql(
-    settings.endpoint,
-    settings.queries.getResource(uri)
-  );
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
-
-  // TODO: Refactor this property values into its own component.
-  // TODO: Render a different component based on the value.type.
-  //   E.g., IRI, String (lang), Number, Bool, etc.
-  const propertyValues = {};
-  for (const row of data.results.bindings) {
-    const p = row.p.value;
-    const o = row.o;
-    if (propertyValues.hasOwnProperty(row.p.value)) {
-      propertyValues[p].push(o);
-    } else {
-      propertyValues[p] = [o];
+  if (error) {
+    // FIXME: Why do I have to stringify and then parse it to access?
+    let errorObject = JSON.parse(JSON.stringify(error));
+    if (errorObject.status === 404) {
+      return (
+        <>
+          <Link to={`${settings.pageRoute}`}>
+            <button className="button button--secondary margin-bottom--lg">
+              Back to {settings.title}
+            </button>
+          </Link>
+          <h2>Resource not found</h2>
+          <p>
+            Resource with URI <code>{uri}</code> not found.
+          </p>
+        </>
+      );
     }
+    return <div>Failed to load</div>;
   }
-
-  const properties = [];
-  for (const property in propertyValues) {
-    properties.push({
-      property: property,
-      values: propertyValues[property],
-    });
-  }
+  if (!data) return <div>Loading...</div>;
 
   return (
     <>
@@ -109,58 +96,142 @@ function ResourcePage({ uri, settings }) {
         </button>
       </Link>
 
-      <ResourceLabel uri={uri} settings={settings} />
+      <ul className="pills">
+        {data.types.map((type, index) =>
+          index === 0 ? (
+            <a key={type.value} target="_blank" href={type.value}>
+              <li className="badge badge--info margin-right--xs">
+                {type.label}
+              </li>
+            </a>
+          ) : (
+            <a key={type.value} target="_blank" href={type.value}>
+              <li className="badge badge--info margin-horiz--xs">
+                {type.label}
+              </li>
+            </a>
+          )
+        )}
+      </ul>
+
+      <h2>{data.label}</h2>
+      <hr />
 
       <CodeBlock>{uri}</CodeBlock>
-      {properties.map((property) => (
-        <div key={property.property}>
-          <strong>
-            <IRIField value={property.property} settings={settings} />
-          </strong>
-          <ul>
-            {property.values.map((value) => {
-              if (value.type === "uri") {
-                return (
-                  <li key={value.value}>
-                    <IRIField
-                      key={value.value}
-                      value={value.value}
-                      settings={settings}
-                    />
-                  </li>
-                );
-              } else {
-                return (
-                  <li key={value.value}>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: value.value }}
-                    ></div>
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </div>
-      ))}
+
+      {/* <div>
+        <p>SPARQL endpoint: {settings.sparqlEndpoint}</p>
+      </div> */}
+
+      <div>
+        {data.properties.map((property) => {
+          let predicateLink = (
+            <ExternalLink href={property.predicate.value}>
+              {property.predicate.label}
+            </ExternalLink>
+          );
+          if (property.internal) {
+            predicateLink = (
+              <InternalLink
+                uriObject={property.predicate}
+                pageRoute={settings.pageRoute}
+              />
+            );
+          }
+
+          return (
+            <div
+              key={property.predicate.value}
+              className="card margin-vert--md"
+            >
+              <div className="card__header">
+                <h5>{predicateLink}</h5>
+              </div>
+              <div className="margin-left--md">
+                {property.objects.map((object) => {
+                  let objectValue = (
+                    <>{`An error occurred. Unknown object type: '${object.type}' with value ${object.value}`}</>
+                  );
+                  if (object.type === "uri" && object.internal === true) {
+                    objectValue = (
+                      <InternalLink
+                        uriObject={object}
+                        pageRoute={settings.pageRoute}
+                      />
+                    );
+                  } else if (
+                    object.type === "uri" &&
+                    object.internal === false
+                  ) {
+                    objectValue = (
+                      <div>
+                        <ExternalLink href={object.value}>
+                          {object.label}
+                        </ExternalLink>
+                      </div>
+                    );
+                  } else if (object.type === "literal") {
+                    if (
+                      object.datatype &&
+                      object.datatype.value ===
+                        "http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"
+                    ) {
+                      objectValue = (
+                        <div
+                          dangerouslySetInnerHTML={{ __html: object.value }}
+                        ></div>
+                      );
+                    } else if (
+                      object.datatype &&
+                      object.datatype.value ===
+                        "http://www.w3.org/2001/XMLSchema#anyURI"
+                    ) {
+                      objectValue = (
+                        <ExternalLink href={object.value}>
+                          {object.value}
+                        </ExternalLink>
+                      );
+                    } else {
+                      objectValue = <>{object.value}</>;
+                    }
+                  }
+
+                  return (
+                    <div key={object.value} className="card__body">
+                      <div className="card">
+                        <div className="card__body">{objectValue}</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
 
-function PageComponent({ settings }) {
+function PageComponent({ settingsID }) {
   const params = useQuery();
   let uri = params.get("uri");
 
   // Show the vocab list page if the "uri" query parameter is missing.
   // Otherwise show the resource identified by the uri.
-  let page = <VocabsListPage settings={settings} />;
+  let page;
   if (uri) {
-    page = <ResourcePage uri={uri} settings={settings} />;
+    page = <ResourcePage uri={uri} settingsID={settingsID} />;
+  } else {
+    page = <VocabsListPage settingsID={settingsID} />;
   }
 
   return <main className="margin-vert--lg container">{page}</main>;
 }
 
-export default function Page({ settings }) {
+export default function Page({ settingsID }) {
+  const settings = useViewerSettings(settingsID);
+
   if (typeof window === "undefined") {
     return <></>;
   }
@@ -169,7 +240,7 @@ export default function Page({ settings }) {
     <Layout title={settings.title}>
       <Router>
         <ScrollToTop>
-          <PageComponent settings={settings} />
+          <PageComponent settingsID={settingsID} />
         </ScrollToTop>
       </Router>
     </Layout>

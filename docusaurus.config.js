@@ -7,7 +7,15 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const package = require("./package.json");
 
 const version = process.env.REACT_APP_GIT_VERSION || package.version;
-const env = version.includes("dev") ? "test" : "prod";
+
+let env = null;
+if (version.includes("dev")) {
+  env = "test";
+} else if (version.includes("local")) {
+  env = "local";
+} else {
+  env = "prod";
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {

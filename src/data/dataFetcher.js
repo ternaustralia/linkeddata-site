@@ -2,11 +2,13 @@ import useSWR from "swr";
 import axios from "axios";
 import { getFetchOptions } from "./utils";
 
+export const getFetcher = url => axios.get(url).then(res => res.data)
+
 // const fetcher = (...args) => fetch(...args).then(res=> res.json())
 export const fetcher = async (...args) => {
   const url = args[0];
 
-  let fetchOptions = null;
+  let fetchOptions = undefined;
   if (args.length > 1) {
     fetchOptions = JSON.parse(args[1]);
     const params = new URLSearchParams();
