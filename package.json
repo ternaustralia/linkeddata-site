@@ -1,6 +1,6 @@
 {
   "name": "linkeddata",
-  "version": "0.0.0-dev.0",
+  "version": "0.0.0-local.0",
   "private": true,
   "engines": {
     "node": ">=16.13.1"
