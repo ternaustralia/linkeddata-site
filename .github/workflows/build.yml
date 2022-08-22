@@ -96,6 +96,7 @@ jobs:
       - name: Build local container image and push
         uses: docker/build-push-action@v2
         with:
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ steps.patch.outputs.patch }}-${{ steps.local-tag.outputs.value }}
           build-args: |
