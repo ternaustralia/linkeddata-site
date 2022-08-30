@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import CodeBlock from "@theme/CodeBlock";
 import Layout from "@theme/Layout";
 import { BrowserRouter as Router, Link } from "react-router-dom";
@@ -9,6 +9,7 @@ import { useViewerSettings } from "../../hooks/useViewerSettings";
 import ExternalLink from "../ExternalLink";
 import { InternalLink } from "../InternalLink";
 import ScrollToTop from "../ScrollToTop";
+import { Collapse } from "../Collapse";
 
 function VocabItem({ uri, label, description }) {
   return (
@@ -28,7 +29,7 @@ function VocabItem({ uri, label, description }) {
 function VocabsListPage({ settingsID }) {
   const settings = useViewerSettings(settingsID);
   const { data, error } = useSWR(
-    settings.api + "/vocab_viewer/nrm/vocabs",
+    settings.api + "/viewer/entrypoint/nrm",
     getFetcher
   );
 
@@ -59,10 +60,11 @@ function ResourcePage({ uri, settingsID }) {
   const settings = useViewerSettings(settingsID);
   const { data, error } = useSWR(
     settings.api +
-      "/vocab_viewer/nrm/resource?uri=" +
+      "/viewer/resource?uri=" +
       uri +
       "&sparql_endpoint=" +
-      settings.sparqlEndpoint,
+      settings.sparqlEndpoint +
+      "&format=application/json",
     getFetcher
   );
 
@@ -123,8 +125,9 @@ function ResourcePage({ uri, settingsID }) {
         <p>SPARQL endpoint: {settings.sparqlEndpoint}</p>
       </div> */}
 
-      <div>
+      <div className="padding-bottom--sm">
         {data.properties.map((property) => {
+          // FIXME: We are assuming all predicates are an external link here when it may not always be true.
           let predicateLink = (
             <ExternalLink href={property.predicate.value}>
               {property.predicate.label}
@@ -209,6 +212,99 @@ function ResourcePage({ uri, settingsID }) {
           );
         })}
       </div>
+
+      {data.incoming_properties.length > 0 && (
+        <>
+          <hr />
+
+          {/* TODO: Fetch logic needs to be the same as lodview.it - reduce loading times and improve performance */}
+          <Collapse id={uri} label="Incoming relationships">
+            {data.incoming_properties.map((property) => {
+              // FIXME: We are assuming all predicates are an external link here when it may not always be true.
+              let predicateLink = (
+                <ExternalLink href={property.predicate.value}>
+                  {property.predicate.label}
+                </ExternalLink>
+              );
+              if (property.internal) {
+                predicateLink = (
+                  <InternalLink
+                    uriObject={property.predicate}
+                    pageRoute={settings.pageRoute}
+                  />
+                );
+              }
+
+              return (
+                <div key={property.predicate.value} className="card">
+                  <div className="card__header">
+                    <h5>is {predicateLink} of</h5>
+                  </div>
+
+                  <div className="margin-left--md">
+                    {property.subjects.map((object) => {
+                      let objectValue = (
+                        <>{`An error occurred. Unknown object type: '${object.type}' with value ${object.value}`}</>
+                      );
+                      if (object.type === "uri" && object.internal === true) {
+                        objectValue = (
+                          <InternalLink
+                            uriObject={object}
+                            pageRoute={settings.pageRoute}
+                          />
+                        );
+                      } else if (
+                        object.type === "uri" &&
+                        object.internal === false
+                      ) {
+                        objectValue = (
+                          <div>
+                            <ExternalLink href={object.value}>
+                              {object.label}
+                            </ExternalLink>
+                          </div>
+                        );
+                      } else if (object.type === "literal") {
+                        if (
+                          object.datatype &&
+                          object.datatype.value ===
+                            "http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"
+                        ) {
+                          objectValue = (
+                            <div
+                              dangerouslySetInnerHTML={{ __html: object.value }}
+                            ></div>
+                          );
+                        } else if (
+                          object.datatype &&
+                          object.datatype.value ===
+                            "http://www.w3.org/2001/XMLSchema#anyURI"
+                        ) {
+                          objectValue = (
+                            <ExternalLink href={object.value}>
+                              {object.value}
+                            </ExternalLink>
+                          );
+                        } else {
+                          objectValue = <>{object.value}</>;
+                        }
+                      }
+
+                      return (
+                        <div key={object.value} className="card__body">
+                          <div className="card">
+                            <div className="card__body">{objectValue}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </Collapse>
+        </>
+      )}
     </>
   );
 }
