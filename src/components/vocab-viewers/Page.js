@@ -139,6 +139,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
               <InternalLink
                 uriObject={property.predicate}
                 pageRoute={settings.pageRoute}
+                sparqlEndpoint={endpoint}
               />
             );
           }
@@ -161,6 +162,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                       <InternalLink
                         uriObject={object}
                         pageRoute={settings.pageRoute}
+                        sparqlEndpoint={endpoint}
                       />
                     );
                   } else if (
@@ -232,6 +234,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                   <InternalLink
                     uriObject={property.predicate}
                     pageRoute={settings.pageRoute}
+                    sparqlEndpoint={endpoint}
                   />
                 );
               }
@@ -252,6 +255,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                           <InternalLink
                             uriObject={object}
                             pageRoute={settings.pageRoute}
+                            sparqlEndpoint={endpoint}
                           />
                         );
                       } else if (

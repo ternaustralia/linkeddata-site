@@ -8,6 +8,7 @@ export const useViewerSettings = (key) => {
   const localSettings = {
     general: {
       api: baseApi,
+      pageRoute: "/viewers/general",
     },
     nrm: {
       title: "NRM Controlled Vocabularies",

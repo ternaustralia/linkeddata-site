@@ -39,7 +39,15 @@ function LabelByConneg({ href }) {
   return <>{label}</>;
 }
 
-export function InternalLink({ uriObject, pageRoute }) {
+export function InternalLink({ uriObject, pageRoute, sparqlEndpoint = "" }) {
+  if (sparqlEndpoint) {
+    return (
+      <Link to={`${pageRoute}?uri=${uriObject.value}&sparql_endpoint=${sparqlEndpoint}`}>
+        <strong>{uriObject.label}</strong>
+      </Link>
+    );  
+  }
+
   return (
     <Link to={`${pageRoute}?uri=${uriObject.value}`}>
       <strong>{uriObject.label}</strong>

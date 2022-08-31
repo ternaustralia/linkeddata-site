@@ -5,8 +5,9 @@ import ScrollToTop from "../../components/ScrollToTop";
 
 import { ResourcePage } from "../../components/vocab-viewers/Page";
 import useQuery from "../../hooks/useQuery";
+import { useViewerSettings } from "../../hooks/useViewerSettings";
 
-function PageComponent() {
+function PageComponent({ settingsID }) {
   const params = useQuery();
   let uri = params.get("uri");
   let sparqlEndpoint = params.get("sparql_endpoint");
@@ -15,7 +16,7 @@ function PageComponent() {
     let page = (
       <ResourcePage
         uri={uri}
-        settingsID="general"
+        settingsID={settingsID}
         sparqlEndpoint={sparqlEndpoint}
       />
     );
@@ -31,15 +32,18 @@ function PageComponent() {
 }
 
 export default function Page() {
+  let settingsID = "general";
+  const settings = useViewerSettings(settingsID);
+
   if (typeof window === "undefined") {
     return <></>;
   }
 
   return (
-    <Layout title="">
+    <Layout title={settings.title}>
       <Router>
         <ScrollToTop>
-          <PageComponent />
+          <PageComponent settingsID={settingsID} />
         </ScrollToTop>
       </Router>
     </Layout>
