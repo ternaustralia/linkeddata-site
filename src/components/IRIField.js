@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { fetcher, useSparql } from "../data/dataFetcher";
 import ExternalLink from "./ExternalLink";
 import InternalLink from "./InternalLink";
+import { prefixEndpoint } from "../prefixEndpoint";
 
 function getFetchOptions() {
   return {
@@ -60,8 +61,6 @@ export function ExternalConnegLink({ href, settings }) {
 
   return <ExternalLink href={href}>{href}</ExternalLink>;
 }
-
-export const prefixEndpoint = "https://prefix.zazuko.com/api/v1/shrink";
 
 export default function IRIField({ value, settings }) {
   // A little ugly but, check if the URI is from the TERN Ontology namespace
