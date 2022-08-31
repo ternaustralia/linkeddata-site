@@ -56,14 +56,15 @@ function VocabsListPage({ settingsID }) {
   );
 }
 
-function ResourcePage({ uri, settingsID }) {
+export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
   const settings = useViewerSettings(settingsID);
+  let endpoint = sparqlEndpoint || settings.sparqlEndpoint;
   const { data, error } = useSWR(
     settings.api +
       "/viewer/resource?uri=" +
       uri +
       "&sparql_endpoint=" +
-      settings.sparqlEndpoint +
+      endpoint +
       "&format=application/json",
     getFetcher
   );

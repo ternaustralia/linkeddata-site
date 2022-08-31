@@ -3,10 +3,15 @@ import useEnv from "./useEnv";
 export const useViewerSettings = (key) => {
   const env = useEnv();
 
+  const baseApi = "http://localhost:5000/api/v1.0";
+
   const localSettings = {
+    general: {
+      api: baseApi,
+    },
     nrm: {
       title: "NRM Controlled Vocabularies",
-      api: "http://localhost:5000/api/v1.0",
+      api: baseApi,
       pageRoute: "/viewers/dawe-vocabs",
       sparqlEndpoint: "http://graphdb:7200/repositories/dawe_vocabs_core",
     },
