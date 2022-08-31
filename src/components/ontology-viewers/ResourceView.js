@@ -7,7 +7,7 @@ import { fetcher } from "../../data/dataFetcher";
 import { getFetchOptions, getRdfsLabel } from "../../data/utils";
 import IRIField from "../IRIField";
 import ClassConstraints from "./ClassConstraints";
-import styles from "./viewer.modules.css";
+import styles from "./viewer.module.css";
 import { AsciidocContent } from "./AsciidocContent";
 
 function ResourceLabel({ children }) {
