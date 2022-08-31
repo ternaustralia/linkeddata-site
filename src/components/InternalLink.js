@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { fetcher } from "../data/dataFetcher";
 import { getFetchOptions } from "../data/utils";
 import { Link } from "react-router-dom";
+import { useViewerSettings } from "../hooks/useViewerSettings";
 
 function getConnegFetchOptions() {
   return {
@@ -39,17 +40,20 @@ function LabelByConneg({ href }) {
   return <>{label}</>;
 }
 
-export function InternalLink({ uriObject, pageRoute, sparqlEndpoint = "" }) {
-  if (sparqlEndpoint) {
+export function InternalLink({ uriObject, settingsID, sparqlEndpoint }) {
+  const settings = useViewerSettings(settingsID);
+  if (settingsID === "general") {
     return (
-      <Link to={`${pageRoute}?uri=${uriObject.value}&sparql_endpoint=${sparqlEndpoint}`}>
+      <Link
+        to={`${settings.pageRoute}?uri=${uriObject.value}&sparql_endpoint=${sparqlEndpoint}`}
+      >
         <strong>{uriObject.label}</strong>
       </Link>
-    );  
+    );
   }
 
   return (
-    <Link to={`${pageRoute}?uri=${uriObject.value}`}>
+    <Link to={`${settings.pageRoute}?uri=${uriObject.value}`}>
       <strong>{uriObject.label}</strong>
     </Link>
   );

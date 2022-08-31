@@ -138,7 +138,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
             predicateLink = (
               <InternalLink
                 uriObject={property.predicate}
-                pageRoute={settings.pageRoute}
+                settingsID={settingsID}
                 sparqlEndpoint={endpoint}
               />
             );
@@ -161,7 +161,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                     objectValue = (
                       <InternalLink
                         uriObject={object}
-                        pageRoute={settings.pageRoute}
+                        settingsID={settingsID}
                         sparqlEndpoint={endpoint}
                       />
                     );
@@ -233,7 +233,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                 predicateLink = (
                   <InternalLink
                     uriObject={property.predicate}
-                    pageRoute={settings.pageRoute}
+                    settingsID={settingsID}
                     sparqlEndpoint={endpoint}
                   />
                 );
@@ -254,7 +254,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                         objectValue = (
                           <InternalLink
                             uriObject={object}
-                            pageRoute={settings.pageRoute}
+                            settingsID={settingsID}
                             sparqlEndpoint={endpoint}
                           />
                         );
