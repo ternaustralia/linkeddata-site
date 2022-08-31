@@ -93,11 +93,13 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
 
   return (
     <>
-      <Link to={`${settings.pageRoute}`}>
-        <button className="button button--secondary margin-bottom--lg">
-          Back to {settings.title}
-        </button>
-      </Link>
+      {settingsID !== "general" && (
+        <Link to={`${settings.pageRoute}`}>
+          <button className="button button--secondary margin-bottom--lg">
+            Back to {settings.title}
+          </button>
+        </Link>
+      )}
 
       <ul className="pills">
         {data.types.map((type, index) =>
