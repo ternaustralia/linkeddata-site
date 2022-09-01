@@ -12,16 +12,15 @@ Pull requests automatically build and deploy a preview version of the website to
 
 A merge into the `master` branch automatically creates a containerised development version of the website. TERN's Flux will automatically deploy development versions to https://linkeddata-test.tern.org.au.
 
-A production version is automatically triggered when a GitHub release is made. TERN's Flux will automatically deploy production versions to https://linkeddata.tern.org.au.
+A production version is automatically triggered when a GitHub release is made. TERN's [Flux](https://fluxcd.io/) will automatically deploy production versions to https://linkeddata.tern.org.au.
 
 For more details on how the GitHub Actions workflows are set up, see [.github/workflows](.github/workflows).
 
-## Contributing
+## Development
 
 ### Recommended tools for development
 
-- Use Visual Studio Code for editing the source code.
-  - Prettier extension for automatic code formatting.
+Use Visual Studio Code for editing the source code in a development container.
 
 ### Installation
 
