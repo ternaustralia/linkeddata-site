@@ -3,14 +3,14 @@ name: Build dev container image tagged with latest version and short commit hash
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 env:
   IMAGE_NAME: ghcr.io/ternaustralia/linkeddata-site
 
 jobs:
   test:
-    uses: ternaustralia/linkeddata-site/.github/workflows/test.yml@master
+    uses: ternaustralia/linkeddata-site/.github/workflows/test.yml@main
 
   build:
     needs: test

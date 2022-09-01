@@ -4,13 +4,13 @@
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-The `master` branch on the remote repository is protected. All modifications must be performed on a separate branch and merged in via GitHub pull requests.
+The `main` branch on the remote repository is protected. All modifications must be performed on a separate branch and merged in via GitHub pull requests.
 
 Tests and builds are automatically performed on each pull request event ("open" and "synchronisation").
 
 Pull requests automatically build and deploy a preview version of the website to surge.sh. A bot will provide a link in the pull request's comment to the preview version.
 
-A merge into the `master` branch automatically creates a containerised development version of the website. TERN's Flux will automatically deploy development versions to https://linkeddata-test.tern.org.au.
+A merge into the `main` branch automatically creates a containerised development version of the website. TERN's Flux will automatically deploy development versions to https://linkeddata-test.tern.org.au.
 
 A production version is automatically triggered when a GitHub release is made. TERN's [Flux](https://fluxcd.io/) will automatically deploy production versions to https://linkeddata.tern.org.au.
 
