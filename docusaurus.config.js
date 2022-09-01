@@ -44,13 +44,13 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/ternaustralia/linkeddata-site/edit/master/tern-ontology/",
+            "https://github.com/ternaustralia/linkeddata-site/edit/main/tern-ontology/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/ternaustralia/linkeddata-site/edit/master/blog/",
+            "https://github.com/ternaustralia/linkeddata-site/edit/main/blog/",
         },
         theme: {
           customCss: [
