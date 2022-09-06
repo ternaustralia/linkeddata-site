@@ -207,7 +207,7 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                   return (
                     <div key={object.value} className="card__body">
                       <div className="card">
-                        <div className="card__body">{objectValue}</div>
+                        <div className="card__body">{objectValue}{object.datatype ? <sup>^^{object.datatype.value}</sup> : ""}</div>
                       </div>
                     </div>
                   );
