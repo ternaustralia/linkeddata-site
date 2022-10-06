@@ -1,12 +1,12 @@
 # Full and Lite DBH protocol
 
-The below example is applicable to both the Full DBH and Lite DBH protocols. 
+The below example is applicable to both the Full DBH and Lite DBH protocols.
 
 A specific species population is targeted where multiple observations are made on individuals.
 
 The diameter at breast height observation is made at a specific point of measurement on a tree. This point of measurement value is captured as an attribute on the observation.
 
-Depending on the tree trunk type of a tree, additional observations may be required. For example, if the tree trunk type is 'buttress', then an additional diameter measurement is made 50 cm above the top of the buttress. 
+Depending on the tree trunk type of a tree, additional observations may be required. For example, if the tree trunk type is 'buttress', then an additional diameter measurement is made 50 cm above the top of the buttress.
 
 If the tree trunk type of a tree is 'multi-stemmed', then additional measurements of the diameter are made for each stem. Each individual stem is a `tern:Sample` where they are related to the tree via a `sosa:isSampleOf` relationship.
 
@@ -58,7 +58,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
 .
@@ -80,7 +80,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember <https://example.com/observation/field-species-name/8f3b2aab-eda8-47dd-afd1-7f9d23fed33c> ;
@@ -95,7 +95,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value "Melaleuca citrolens" ;
     ] ;
     sosa:hasSimpleResult "Melaleuca citrolens" ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
 .
 
 <https://example.com/sampling/22248011-8ecb-4d61-a6c3-4982561d63ee>
@@ -104,7 +104,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/e71916a5-45be-454e-aa41-f3d4bccbd83a> ;
 .
@@ -126,7 +126,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember <https://example.com/observation/field-species-name/4b62d82a-4aae-45ef-8b0e-24c38b275470>,
@@ -144,20 +144,20 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value "Melaleuca citrolens" ;
     ] ;
     sosa:hasSimpleResult "Melaleuca citrolens" ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
 .
 
 <https://example.com/observation/tree-status/db28a73c-25e5-431b-84a1-f785ed44cf33>
     a tern:Observation ;
     rdfs:label "tree status" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/9667b324-6488-5e83-9528-0be628eb8907> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/9667b324-6488-5e83-9528-0be628eb8907> ;
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "alive" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/9667b324-6488-5e83-9528-0be628eb8907> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/9667b324-6488-5e83-9528-0be628eb8907> ;
     ] ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/e51ced21-4442-465d-8be9-8b5bba76d4d8> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/e51ced21-4442-465d-8be9-8b5bba76d4d8> ;
 .
 
 <https://example.com/observation/dbh/aabb7727-376e-4024-93b8-76ae126385c9>
@@ -170,10 +170,10 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value 4.3 ;
         tern:unit <http://qudt.org/vocab/unit/M> ;
     ] ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/6e1c8b97-3655-4a22-9647-02f2c756e789> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/6e1c8b97-3655-4a22-9647-02f2c756e789> ;
     tern:hasAttribute [
         rdfs:label "point of measurement" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/9faeafe6-0d01-41aa-b38b-a6b56eda0dda> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/9faeafe6-0d01-41aa-b38b-a6b56eda0dda> ;
         tern:hasSimpleValue 1.3 ;
         tern:hasValue [
             a tern:Float ;
@@ -187,13 +187,13 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Observation ;
     rdfs:label "tree trunk type" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/cf394183-2d9f-5c98-b0ef-a2d831061192> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/cf394183-2d9f-5c98-b0ef-a2d831061192> ;
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "smooth" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/cf394183-2d9f-5c98-b0ef-a2d831061192> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/cf394183-2d9f-5c98-b0ef-a2d831061192> ;
     ] ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/3da2a8ca-c0a3-4761-8736-507255eeee68> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/3da2a8ca-c0a3-4761-8736-507255eeee68> ;
 .
 
 ```

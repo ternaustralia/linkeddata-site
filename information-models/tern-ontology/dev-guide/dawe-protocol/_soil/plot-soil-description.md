@@ -42,7 +42,7 @@ Define the 'landform' of the site and make observations to it.
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/7818e122-6354-42e0-aeff-32dbab7baae4> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7818e122-6354-42e0-aeff-32dbab7baae4> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/03203943-47cf-4242-aa34-8a8af01f2d11> ;
 .

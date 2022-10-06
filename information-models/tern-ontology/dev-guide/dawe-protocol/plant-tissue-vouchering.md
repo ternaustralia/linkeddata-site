@@ -18,118 +18,118 @@ Example in JSON-LD:
 
 ```json
 {
-   "@graph":[
-      {
-         "@id":"https://example.com/site/1/flora-species/SAG000408/growth-form",
-         "@type":"https://w3id.org/tern/ontologies/tern/Observation",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Plant tissue voucher SAG000408 growth form",
-         "hasFeatureOfInterest":"https://example.com/site/1/flora-species/SAG000408",
-         "hasResult":"_:nc9e5c390bed841c0a5743397af043312b5",
-         "hasSimpleResult":{
-            "@id":"https://linked.data.gov.au/def/test/dawe-cv/2de905be-b280-54ba-b9a7-7c6f088f301c"
-         },
-         "observedProperty":"https://linked.data.gov.au/def/test/dawe-cv/dd1769b9-c475-4732-915c-9b890a8d5f65",
-         "phenomenonTime":{
-            "@id":"_:nc9e5c390bed841c0a5743397af043312b4"
-         },
-         "resultTime":"2021-11-01T00:00:00+00:00",
-         "usedProcedure":"https://linked.data.gov.au/def/test/dawe-cv/1f2ac884-2177-403a-a6c3-27e109b1fc95",
-         "https://w3id.org/tern/ontologies/tern/hasSiteVisit":{
-            "@id":"https://example.com/site/1/visit/1"
-         }
+  "@graph": [
+    {
+      "@id": "https://example.com/site/1/flora-species/SAG000408/growth-form",
+      "@type": "https://w3id.org/tern/ontologies/tern/Observation",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Plant tissue voucher SAG000408 growth form",
+      "hasFeatureOfInterest": "https://example.com/site/1/flora-species/SAG000408",
+      "hasResult": "_:nc9e5c390bed841c0a5743397af043312b5",
+      "hasSimpleResult": {
+        "@id": "https://linked.data.gov.au/def/nrm/2de905be-b280-54ba-b9a7-7c6f088f301c"
       },
-      {
-         "@id":"_:nc9e5c390bed841c0a5743397af043312b4",
-         "@type":"https://w3id.org/tern/ontologies/tern/Instant",
-         "http://www.w3.org/2006/time#inXSDDateTime":{
-            "@type":"http://www.w3.org/2001/XMLSchema#dateTime",
-            "@value":"2021-11-01T00:00:00+00:00"
-         }
+      "observedProperty": "https://linked.data.gov.au/def/nrm/dd1769b9-c475-4732-915c-9b890a8d5f65",
+      "phenomenonTime": {
+        "@id": "_:nc9e5c390bed841c0a5743397af043312b4"
       },
-      {
-         "@id":"_:nc9e5c390bed841c0a5743397af043312b5",
-         "@type":"https://w3id.org/tern/ontologies/tern/Concept",
-         "value":{
-            "@id":"https://linked.data.gov.au/def/test/dawe-cv/2de905be-b280-54ba-b9a7-7c6f088f301c"
-         },
-         "vocabulary":"https://linked.data.gov.au/def/test/dawe-cv/d0fc07a7-3ec9-45ed-8850-885a32828d3c"
-      },
-      {
-         "@id":"https://example.com/site/1/flora-species/SAG000408/sampling",
-         "@type":"https://w3id.org/tern/ontologies/tern/Sampling",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Plant tissue voucher SAG000408 sampling",
-         "hasFeatureOfInterest":"https://example.com/site/1",
-         "hasResult":"https://example.com/site/1/flora-species/1",
-         "usedProcedure":"https://linked.data.gov.au/def/test/dawe-cv/1f2ac884-2177-403a-a6c3-27e109b1fc95",
-         "https://w3id.org/tern/ontologies/tern/hasSiteVisit":{
-            "@id":"https://example.com/site/1/visit/1"
-         }
-      },
-      {
-         "@id":"https://example.com/site/1/flora-species/SAG000408/replicate",
-         "@type":"https://w3id.org/tern/ontologies/tern/Attribute",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Plant tissue voucher SAG000408 replicate",
-         "https://w3id.org/tern/ontologies/tern/attribute":"replicate",
-         "https://w3id.org/tern/ontologies/tern/hasSimpleValue":1,
-         "https://w3id.org/tern/ontologies/tern/hasValue":{
-            "@id":"_:nc9e5c390bed841c0a5743397af043312b1"
-         },
-         "https://w3id.org/tern/ontologies/tern/isAttributeOf":{
-            "@id":"https://example.com/site/1/flora-species/SAG000408"
-         }
-      },
-      {
-         "@id":"_:nc9e5c390bed841c0a5743397af043312b1",
-         "@type":"https://w3id.org/tern/ontologies/tern/Count",
-         "value":1
-      },
-      {
-         "@id":"https://example.com/site/1/flora-species/SAG000408",
-         "@type":"https://w3id.org/tern/ontologies/tern/MaterialSample",
-         "inDataset":"https://example.com/dataset/1",
-         "http://rs.tdwg.org/dwc/terms/materialSampleID":"SAG000408",
-         "label":"Plant tissue voucher SAG000408",
-         "isResultOf":"https://example.com/site/1/flora-species/1/sampling",
-         "http://www.w3.org/ns/sosa/isSampleOf":{
-            "@id":"https://example.com/site/1"
-         },
-         "featureType":"http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb"
-      },
-      {
-         "@id":"https://example.com/site/1/flora-species/SAG000408/field-name",
-         "@type":"https://w3id.org/tern/ontologies/tern/Observation",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Plant tissue voucher SAG000408 field name",
-         "hasFeatureOfInterest":"https://example.com/site/1/flora-species/SAG000408",
-         "hasResult":"_:nc9e5c390bed841c0a5743397af043312b3",
-         "hasSimpleResult":"Acacia acanthoclada",
-         "observedProperty":"http://linked.data.gov.au/def/tern-cv/04a4c009-2a51-4bdb-96dd-0bfd1bed8826",
-         "phenomenonTime":{
-            "@id":"_:nc9e5c390bed841c0a5743397af043312b2"
-         },
-         "resultTime":"2021-11-01T00:00:00+00:00",
-         "usedProcedure":"https://linked.data.gov.au/def/test/dawe-cv/1f2ac884-2177-403a-a6c3-27e109b1fc95",
-         "https://w3id.org/tern/ontologies/tern/hasSiteVisit":{
-            "@id":"https://example.com/site/1/visit/1"
-         }
-      },
-      {
-         "@id":"_:nc9e5c390bed841c0a5743397af043312b2",
-         "@type":"https://w3id.org/tern/ontologies/tern/Instant",
-         "http://www.w3.org/2006/time#inXSDDateTime":{
-            "@type":"http://www.w3.org/2001/XMLSchema#dateTime",
-            "@value":"2021-11-01T00:00:00+00:00"
-         }
-      },
-      {
-         "@id":"_:nc9e5c390bed841c0a5743397af043312b3",
-         "@type":"https://w3id.org/tern/ontologies/tern/Text",
-         "value":"Acacia acanthoclada"
+      "resultTime": "2021-11-01T00:00:00+00:00",
+      "usedProcedure": "https://linked.data.gov.au/def/nrm/1f2ac884-2177-403a-a6c3-27e109b1fc95",
+      "https://w3id.org/tern/ontologies/tern/hasSiteVisit": {
+        "@id": "https://example.com/site/1/visit/1"
       }
-   ]
+    },
+    {
+      "@id": "_:nc9e5c390bed841c0a5743397af043312b4",
+      "@type": "https://w3id.org/tern/ontologies/tern/Instant",
+      "http://www.w3.org/2006/time#inXSDDateTime": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2021-11-01T00:00:00+00:00"
+      }
+    },
+    {
+      "@id": "_:nc9e5c390bed841c0a5743397af043312b5",
+      "@type": "https://w3id.org/tern/ontologies/tern/Concept",
+      "value": {
+        "@id": "https://linked.data.gov.au/def/nrm/2de905be-b280-54ba-b9a7-7c6f088f301c"
+      },
+      "vocabulary": "https://linked.data.gov.au/def/nrm/d0fc07a7-3ec9-45ed-8850-885a32828d3c"
+    },
+    {
+      "@id": "https://example.com/site/1/flora-species/SAG000408/sampling",
+      "@type": "https://w3id.org/tern/ontologies/tern/Sampling",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Plant tissue voucher SAG000408 sampling",
+      "hasFeatureOfInterest": "https://example.com/site/1",
+      "hasResult": "https://example.com/site/1/flora-species/1",
+      "usedProcedure": "https://linked.data.gov.au/def/nrm/1f2ac884-2177-403a-a6c3-27e109b1fc95",
+      "https://w3id.org/tern/ontologies/tern/hasSiteVisit": {
+        "@id": "https://example.com/site/1/visit/1"
+      }
+    },
+    {
+      "@id": "https://example.com/site/1/flora-species/SAG000408/replicate",
+      "@type": "https://w3id.org/tern/ontologies/tern/Attribute",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Plant tissue voucher SAG000408 replicate",
+      "https://w3id.org/tern/ontologies/tern/attribute": "replicate",
+      "https://w3id.org/tern/ontologies/tern/hasSimpleValue": 1,
+      "https://w3id.org/tern/ontologies/tern/hasValue": {
+        "@id": "_:nc9e5c390bed841c0a5743397af043312b1"
+      },
+      "https://w3id.org/tern/ontologies/tern/isAttributeOf": {
+        "@id": "https://example.com/site/1/flora-species/SAG000408"
+      }
+    },
+    {
+      "@id": "_:nc9e5c390bed841c0a5743397af043312b1",
+      "@type": "https://w3id.org/tern/ontologies/tern/Count",
+      "value": 1
+    },
+    {
+      "@id": "https://example.com/site/1/flora-species/SAG000408",
+      "@type": "https://w3id.org/tern/ontologies/tern/MaterialSample",
+      "inDataset": "https://example.com/dataset/1",
+      "http://rs.tdwg.org/dwc/terms/materialSampleID": "SAG000408",
+      "label": "Plant tissue voucher SAG000408",
+      "isResultOf": "https://example.com/site/1/flora-species/1/sampling",
+      "http://www.w3.org/ns/sosa/isSampleOf": {
+        "@id": "https://example.com/site/1"
+      },
+      "featureType": "http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb"
+    },
+    {
+      "@id": "https://example.com/site/1/flora-species/SAG000408/field-name",
+      "@type": "https://w3id.org/tern/ontologies/tern/Observation",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Plant tissue voucher SAG000408 field name",
+      "hasFeatureOfInterest": "https://example.com/site/1/flora-species/SAG000408",
+      "hasResult": "_:nc9e5c390bed841c0a5743397af043312b3",
+      "hasSimpleResult": "Acacia acanthoclada",
+      "observedProperty": "http://linked.data.gov.au/def/tern-cv/04a4c009-2a51-4bdb-96dd-0bfd1bed8826",
+      "phenomenonTime": {
+        "@id": "_:nc9e5c390bed841c0a5743397af043312b2"
+      },
+      "resultTime": "2021-11-01T00:00:00+00:00",
+      "usedProcedure": "https://linked.data.gov.au/def/nrm/1f2ac884-2177-403a-a6c3-27e109b1fc95",
+      "https://w3id.org/tern/ontologies/tern/hasSiteVisit": {
+        "@id": "https://example.com/site/1/visit/1"
+      }
+    },
+    {
+      "@id": "_:nc9e5c390bed841c0a5743397af043312b2",
+      "@type": "https://w3id.org/tern/ontologies/tern/Instant",
+      "http://www.w3.org/2006/time#inXSDDateTime": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2021-11-01T00:00:00+00:00"
+      }
+    },
+    {
+      "@id": "_:nc9e5c390bed841c0a5743397af043312b3",
+      "@type": "https://w3id.org/tern/ontologies/tern/Text",
+      "value": "Acacia acanthoclada"
+    }
+  ]
 }
 ```
 
@@ -160,7 +160,7 @@ _For brevity, the JSON-LD context has been omitted. See the full JSON-LD context
     rdfs:label "Plant tissue voucher SAG000408 sampling" ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/1f2ac884-2177-403a-a6c3-27e109b1fc95> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1f2ac884-2177-403a-a6c3-27e109b1fc95> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/site/1/flora-species/1> ;
 .
@@ -196,7 +196,7 @@ _For brevity, the JSON-LD context has been omitted. See the full JSON-LD context
         time:inXSDDateTime "2021-11-01T00:00:00Z"^^xsd:dateTime ;
     ] ;
     sosa:resultTime "2021-11-01T00:00:00Z"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/1f2ac884-2177-403a-a6c3-27e109b1fc95> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1f2ac884-2177-403a-a6c3-27e109b1fc95> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasSimpleResult "Acacia acanthoclada" ;
     sosa:hasResult [
@@ -209,19 +209,19 @@ _For brevity, the JSON-LD context has been omitted. See the full JSON-LD context
     rdfs:label "Plant tissue voucher SAG000408 growth form" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1/flora-species/SAG000408> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/dd1769b9-c475-4732-915c-9b890a8d5f65> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/dd1769b9-c475-4732-915c-9b890a8d5f65> ;
     sosa:phenomenonTime [
         a tern:Instant ;
         time:inXSDDateTime "2021-11-01T00:00:00Z"^^xsd:dateTime ;
     ] ;
     sosa:resultTime "2021-11-01T00:00:00Z"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/1f2ac884-2177-403a-a6c3-27e109b1fc95> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1f2ac884-2177-403a-a6c3-27e109b1fc95> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/2de905be-b280-54ba-b9a7-7c6f088f301c> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2de905be-b280-54ba-b9a7-7c6f088f301c> ;
     sosa:hasResult [
         a tern:Concept ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/2de905be-b280-54ba-b9a7-7c6f088f301c> ;
-        tern:vocabulary <https://linked.data.gov.au/def/test/dawe-cv/d0fc07a7-3ec9-45ed-8850-885a32828d3c> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/2de905be-b280-54ba-b9a7-7c6f088f301c> ;
+        tern:vocabulary <https://linked.data.gov.au/def/nrm/d0fc07a7-3ec9-45ed-8850-885a32828d3c> ;
     ] ;
 .
 

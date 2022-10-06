@@ -54,7 +54,7 @@ Example in JSON-LD:
       "hasFeatureOfInterest": "http://sws.geonames.org/2077456/",
       "hasResult": "https://example.com/site/1",
       "resultTime": "2021-11-01T00:00:00+00:00",
-      "usedProcedure": "https://linked.data.gov.au/def/test/dawe-cv/d15d05db-5007-411e-b257-105ef4f76821"
+      "usedProcedure": "https://linked.data.gov.au/def/nrm/d15d05db-5007-411e-b257-105ef4f76821"
     }
   ]
 }
@@ -106,7 +106,7 @@ _For brevity, the JSON-LD context has been omitted. See the full JSON-LD context
     sosa:hasFeatureOfInterest <http://sws.geonames.org/2077456/> ;
     sosa:hasResult <https://example.com/site/1> ;
     sosa:resultTime "2021-11-01T00:00:00Z"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/d15d05db-5007-411e-b257-105ef4f76821> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/d15d05db-5007-411e-b257-105ef4f76821> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 ```

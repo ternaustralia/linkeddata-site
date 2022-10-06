@@ -38,7 +38,7 @@ The example data below are for the activities that occur at a single transect po
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/a3e3c615-ccb1-43f3-a0ea-cd68d08c454c> ;
 .
@@ -52,7 +52,7 @@ The example data below are for the activities that occur at a single transect po
     tern:hasAttribute [
         a tern:Attribute ;
         rdfs:label "transect name" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/9beaf2dc-c53d-4e6e-b699-c1786f04f1f6> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/9beaf2dc-c53d-4e6e-b699-c1786f04f1f6> ;
         tern:hasSimpleValue "N1" ;
         tern:hasValue [
             a tern:Text ;
@@ -61,7 +61,7 @@ The example data below are for the activities that occur at a single transect po
     ], [
         a tern:Attribute ;
         rdfs:label "transect point number" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/f3c1916e-a6e1-4b03-9950-f364bcd91507> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/f3c1916e-a6e1-4b03-9950-f364bcd91507> ;
         tern:hasSimpleValue "1" ;
         tern:hasValue [
             a tern:Text ;
@@ -79,7 +79,7 @@ The example data below are for the activities that occur at a single transect po
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember <https://example.com/observation/a75d8766-1bab-4b13-b109-7811ab4169cd>,
@@ -97,7 +97,7 @@ The example data below are for the activities that occur at a single transect po
         tern:unit <http://qudt.org/vocab/unit/MilliM> ;
     ] ;
     sosa:hasSimpleResult 47.2 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/f6af2c5e-d193-4337-b845-44550f661854> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/f6af2c5e-d193-4337-b845-44550f661854> ;
 .
 
 <https://example.com/observation/becf2e14-aadf-4b65-ac64-11607e048e63>
@@ -111,7 +111,7 @@ The example data below are for the activities that occur at a single transect po
         tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
     ] ;
     sosa:hasSimpleResult 63.3 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/d0a31d21-b475-490e-a8d6-fbe374fc7391> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/d0a31d21-b475-490e-a8d6-fbe374fc7391> ;
 .
 ```
 
@@ -124,7 +124,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/a3e3c615-ccb1-43f3-a0ea-cd68d08c454c> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/2c9f18e8-ac0e-46f2-af03-914fbbad1692> ;
 .
@@ -146,7 +146,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember <https://example.com/observation/b25cedc7-0fd4-4285-a046-dec5d51a9290>,
@@ -169,7 +169,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value "Melaleuca citrolens" ;
     ] ;
     sosa:hasSimpleResult "Melaleuca citrolens" ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
 .
 
 <https://example.com/observation/b34739cf-1b69-4a4a-bbf7-86edee8d89bf>
@@ -181,7 +181,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value false ;
     ] ;
     sosa:hasSimpleResult false ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/cacfba72-ae93-4f92-9cc3-bf656d7ab5f0> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cacfba72-ae93-4f92-9cc3-bf656d7ab5f0> ;
 .
 
 <https://example.com/observation/e57e1f7e-3563-4408-92ba-985bc96b66d1>
@@ -193,7 +193,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value false ;
     ] ;
     sosa:hasSimpleResult false ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/28131f08-1ae4-422f-99cb-3b5bafc7761d> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/28131f08-1ae4-422f-99cb-3b5bafc7761d> ;
 .
 
 <https://example.com/observation/a9a48256-64f5-400a-9b83-f7f6a12e6858>
@@ -205,7 +205,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value false ;
     ] ;
     sosa:hasSimpleResult false ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/28131f08-1ae4-422f-99cb-3b5bafc7761d> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/28131f08-1ae4-422f-99cb-3b5bafc7761d> ;
 .
 
 <https://example.com/observation/9dea396e-47f6-4f64-941d-6439b66d6c1f>
@@ -217,7 +217,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value false ;
     ] ;
     sosa:hasSimpleResult false ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/cd905dda-06df-4f0e-85eb-b50f9ed2af91> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cd905dda-06df-4f0e-85eb-b50f9ed2af91> ;
 .
 
 <https://example.com/observation/992dd32c-cfc7-4bc2-8d5d-910f32d1199b>
@@ -229,7 +229,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value false ;
     ] ;
     sosa:hasSimpleResult false ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/0685299e-d22a-4efa-a507-a7614e58a500> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0685299e-d22a-4efa-a507-a7614e58a500> ;
 .
 
 <https://example.com/observation/080f7ceb-fa62-428b-8ceb-503b8237b032>
@@ -241,7 +241,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value false ;
     ] ;
     sosa:hasSimpleResult false ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/33e79578-0946-4f21-9607-ca501e1500c7> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/33e79578-0946-4f21-9607-ca501e1500c7> ;
 .
 
 <https://example.com/observation/15eaf835-ae7e-4004-900b-3a1d3296bccb>
@@ -253,7 +253,7 @@ Trees or shrubs that intersect with the laser pointer at each transect point bec
         rdf:value 2 ;
     ] ;
     sosa:hasSimpleResult 2 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/6a1d703f-6622-4804-8b78-4c2ac93c97ba> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/6a1d703f-6622-4804-8b78-4c2ac93c97ba> ;
 .
 ```
 
@@ -269,10 +269,10 @@ Growth stage for a tree:
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "recruiting" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/bdbd8d86-72d2-5d71-8d55-df9cd859c270> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/bdbd8d86-72d2-5d71-8d55-df9cd859c270> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/bdbd8d86-72d2-5d71-8d55-df9cd859c270> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/32bcd319-26e5-4b4d-8ea0-9fbaf7cb2064> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/bdbd8d86-72d2-5d71-8d55-df9cd859c270> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/32bcd319-26e5-4b4d-8ea0-9fbaf7cb2064> ;
 .
 ```
 
@@ -286,9 +286,9 @@ Growth stage for a shrub:
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "mature" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/f0f6de97-c586-51a2-ba25-39468ccc1af8> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/f0f6de97-c586-51a2-ba25-39468ccc1af8> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/f0f6de97-c586-51a2-ba25-39468ccc1af8> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/468e4932-c7a7-4fe1-95d3-ba6e6de29bed> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f0f6de97-c586-51a2-ba25-39468ccc1af8> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/468e4932-c7a7-4fe1-95d3-ba6e6de29bed> ;
 .
 ```

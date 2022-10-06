@@ -44,7 +44,7 @@ The below example is for the 'transects' sub-protocol.
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/a3e3c615-ccb1-43f3-a0ea-cd68d08c454c> ;
 .
@@ -58,7 +58,7 @@ The below example is for the 'transects' sub-protocol.
     tern:hasAttribute [
         a tern:Attribute ;
         rdfs:label "transect name" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/9beaf2dc-c53d-4e6e-b699-c1786f04f1f6> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/9beaf2dc-c53d-4e6e-b699-c1786f04f1f6> ;
         tern:hasSimpleValue "N1" ;
         tern:hasValue [
             a tern:Text ;
@@ -67,7 +67,7 @@ The below example is for the 'transects' sub-protocol.
     ], [
         a tern:Attribute ;
         rdfs:label "transect point number" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/f3c1916e-a6e1-4b03-9950-f364bcd91507> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/f3c1916e-a6e1-4b03-9950-f364bcd91507> ;
         tern:hasSimpleValue "1" ;
         tern:hasValue [
             a tern:Text ;
@@ -76,7 +76,7 @@ The below example is for the 'transects' sub-protocol.
     ], [
         a tern:Attribute ;
         rdfs:label "closest metre" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/61147f22-069f-4195-aba7-d3d971be09be> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/61147f22-069f-4195-aba7-d3d971be09be> ;
         tern:hasSimpleValue 0.7 ;
         tern:hasValue [
             a tern:Float ;
@@ -96,7 +96,7 @@ The below example is for the 'transects' sub-protocol. For the 'plots' sub-proto
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/a3e3c615-ccb1-43f3-a0ea-cd68d08c454c> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/e59145ab-7963-4241-82bc-d981c441a2a2> ;
     geo:hasGeometry [
@@ -134,7 +134,7 @@ The observations made on the coarse woody debris.
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/7d50794a-8784-4ab9-99ff-a324bb6e0831> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7d50794a-8784-4ab9-99ff-a324bb6e0831> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember <https://example.com/observation/widest-diameter/dfce14ff-aa54-48eb-a6fb-699b4197e529>,
@@ -153,7 +153,7 @@ The observations made on the coarse woody debris.
         tern:unit <http://qudt.org/vocab/unit/M> ;
     ] ;
     sosa:hasSimpleResult 0.83 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/ee4d10cb-4245-496c-a72c-0696e2014f90> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/ee4d10cb-4245-496c-a72c-0696e2014f90> ;
 .
 
 <https://example.com/observation/narrowest-diameter/419c04bd-b968-4975-8001-92d870aaa173>
@@ -166,7 +166,7 @@ The observations made on the coarse woody debris.
         tern:unit <http://qudt.org/vocab/unit/M> ;
     ] ;
     sosa:hasSimpleResult 0.67 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/e73af424-f20d-49b8-81e3-cd30afb5b267> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/e73af424-f20d-49b8-81e3-cd30afb5b267> ;
 .
 
 <https://example.com/observation/length/c24c657f-0c2c-448d-be53-51108f337336>
@@ -179,7 +179,7 @@ The observations made on the coarse woody debris.
         tern:unit <http://qudt.org/vocab/unit/M> ;
     ] ;
     sosa:hasSimpleResult 4.54 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/b15f883b-c2e7-408e-8146-3754bbd5693f> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/b15f883b-c2e7-408e-8146-3754bbd5693f> ;
 .
 
 <https://example.com/observation/decay-class/49150ce2-fa85-4f0a-a056-70a771908359>
@@ -189,9 +189,9 @@ The observations made on the coarse woody debris.
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "class 2" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/2d462468-ccea-5be9-b8e9-07816fd7de5d> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/2d462468-ccea-5be9-b8e9-07816fd7de5d> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/2d462468-ccea-5be9-b8e9-07816fd7de5d> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/fa986148-e44a-4cd3-8ac3-17748eb013f3> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2d462468-ccea-5be9-b8e9-07816fd7de5d> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/fa986148-e44a-4cd3-8ac3-17748eb013f3> ;
 .
 ```

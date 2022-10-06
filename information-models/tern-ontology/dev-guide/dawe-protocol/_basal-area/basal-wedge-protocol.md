@@ -41,7 +41,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/50093186-6954-4770-b3af-a13696c360c8> ;
 .
@@ -63,17 +63,17 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     tern:hasAttribute [
         a tern:Attribute ;
         rdfs:label "basal sweep sampling point - NE" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/7dc0c94d-6bb5-48c7-a4a6-e5fbd87c91e9> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/test/dawe-cv/316798ea-2138-5e1d-ad63-1a40734e8db2> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/7dc0c94d-6bb5-48c7-a4a6-e5fbd87c91e9> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/316798ea-2138-5e1d-ad63-1a40734e8db2> ;
         tern:hasValue [
                 a tern:IRI ;
-                rdf:value <https://linked.data.gov.au/def/test/dawe-cv/316798ea-2138-5e1d-ad63-1a40734e8db2> ;
+                rdf:value <https://linked.data.gov.au/def/nrm/316798ea-2138-5e1d-ad63-1a40734e8db2> ;
         ] ;
     ] ;
     sosa:hasMember <https://example.com/observation/field-species-name/9af7a090-e94b-45e0-8841-10fd62d5cce3>,
@@ -90,7 +90,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value "Melaleuca citrolens" ;
     ] ;
     sosa:hasSimpleResult "Melaleuca citrolens" ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
 .
 
 <https://example.com/observation/basal-sweep-hit-type/0f19a1be-2c3e-402a-8c37-154ef73f9139>
@@ -100,18 +100,18 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "in" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/57b9fb25-e075-4e18-8c7f-167e09318c94> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/57b9fb25-e075-4e18-8c7f-167e09318c94> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/57b9fb25-e075-4e18-8c7f-167e09318c94> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/43178892-92a6-434f-9895-340700e299e6> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/57b9fb25-e075-4e18-8c7f-167e09318c94> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/43178892-92a6-434f-9895-340700e299e6> ;
     sosa:madeBySensor [
         a tern:Sensor ;
         rdfs:label "basal wedge" ;
-        ssn:implements <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+        ssn:implements <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
         tern:hasAttribute [
             a tern:Attribute ;
             rdfs:label "basal area factor" ;
-            tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/d06bf3e4-f59d-47fb-b780-bb089b298d83> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/d06bf3e4-f59d-47fb-b780-bb089b298d83> ;
             tern:hasSimpleValue 0.1 ;
             tern:hasValue [
                 a tern:Float ;
@@ -128,18 +128,18 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "borderline" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/3e0a5d97-c623-477e-98fe-8fe120907530> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/3e0a5d97-c623-477e-98fe-8fe120907530> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/3e0a5d97-c623-477e-98fe-8fe120907530> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/43178892-92a6-434f-9895-340700e299e6> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/3e0a5d97-c623-477e-98fe-8fe120907530> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/43178892-92a6-434f-9895-340700e299e6> ;
     sosa:madeBySensor [
         a tern:Sensor ;
         rdfs:label "basal wedge" ;
-        ssn:implements <https://linked.data.gov.au/def/test/dawe-cv/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+        ssn:implements <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
         tern:hasAttribute [
             a tern:Attribute ;
             rdfs:label "basal area factor" ;
-            tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/d06bf3e4-f59d-47fb-b780-bb089b298d83> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/d06bf3e4-f59d-47fb-b780-bb089b298d83> ;
             tern:hasSimpleValue 0.1 ;
             tern:hasValue [
                 a tern:Float ;
@@ -159,7 +159,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value 1.5 ;
     ] ;
     sosa:hasSimpleResult 1.5 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
     prov:wasInformedBy <https://example.com/observation/basal-sweep-hit-type/0f19a1be-2c3e-402a-8c37-154ef73f9139>,
         <https://example.com/observation/basal-sweep-hit-type/cb3d1dec-c1b9-4b51-9bc4-7227a66cdba9> ;
 .

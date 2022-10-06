@@ -25,100 +25,100 @@ Example in JSON-LD:
 
 ```json
 {
-   "@graph":[
-      {
-         "@id":"https://example.com/site/1/photopoint-pos-1/sampling",
-         "@type":"https://w3id.org/tern/ontologies/tern/Sampling",
-         "inDataset":"https://example.com/dataset/1",
-         "hasGeometry":"https://example.com/site/1/photopoint-pos-1/sampling/geometry",
-         "label":"Photopoint position 1 establishment",
-         "hasFeatureOfInterest":"https://example.com/site/1",
-         "hasResult":"https://example.com/site/1/photopoint-pos-1",
-         "resultTime":"2021-11-11T00:00:00+00:00",
-         "usedProcedure":"https://linked.data.gov.au/def/test/dawe-cv/05669173-2fe7-4b70-ba67-2e09fbe87de9",
-         "https://w3id.org/tern/ontologies/tern/hasSiteVisit":{
-            "@id":"https://example.com/site/1/visit/1"
-         }
-      },
-      {
-         "@id":"https://example.com/site/1/photopoint-pos-1/image/1/sampling",
-         "@type":"https://w3id.org/tern/ontologies/tern/Sampling",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Photopoint image 1 sampling",
-         "hasFeatureOfInterest":"https://example.com/site/1/photopoint-pos-1",
-         "hasResult":"https://example.com/site/1/photopoint-pos-1/image/1",
-         "http://www.w3.org/ns/sosa/madeBySampler":{
-            "@id":"_:n2c92bf96f8b24199bd594617c57ed1d7b1"
-         },
-         "resultTime":"2021-11-11T00:00:00+00:00",
-         "usedProcedure":"https://linked.data.gov.au/def/test/dawe-cv/05669173-2fe7-4b70-ba67-2e09fbe87de9",
-         "https://w3id.org/tern/ontologies/tern/hasSiteVisit":{
-            "@id":"https://example.com/site/1/visit/1"
-         }
-      },
-      {
-         "@id":"_:n2c92bf96f8b24199bd594617c57ed1d7b1",
-         "@type":"https://w3id.org/tern/ontologies/tern/Sampler",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Canon EOS 550D DSLR cropped sensor camera",
-         "https://w3id.org/tern/ontologies/tern/hasAttribute":{
-            "@id":"_:n2c92bf96f8b24199bd594617c57ed1d7b2"
-         },
-         "https://w3id.org/tern/ontologies/tern/samplerType":{
-            "@id":"http://linked.data.gov.au/def/tern-cv/11e03f36-7ada-4333-88e2-38c9205f2749"
-         }
-      },
-      {
-         "@id":"_:n2c92bf96f8b24199bd594617c57ed1d7b2",
-         "@type":"https://w3id.org/tern/ontologies/tern/Attribute",
-         "inDataset":"https://example.com/dataset/1",
-         "https://w3id.org/tern/ontologies/tern/attribute":"focal length",
-         "https://w3id.org/tern/ontologies/tern/hasSimpleValue":24,
-         "https://w3id.org/tern/ontologies/tern/hasValue":{
-            "@id":"_:n2c92bf96f8b24199bd594617c57ed1d7b3"
-         }
-      },
-      {
-         "@id":"_:n2c92bf96f8b24199bd594617c57ed1d7b3",
-         "@type":"https://w3id.org/tern/ontologies/tern/Integer",
-         "value":24,
-         "unit":"http://qudt.org/vocab/unit/MilliM"
-      },
-      {
-         "@id":"https://example.com/site/1/photopoint-pos-1",
-         "@type":"https://w3id.org/tern/ontologies/tern/Sample",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Photopoint position 1",
-         "isResultOf":"https://example.com/site/1/photopoint-pos-1/sampling",
-         "http://www.w3.org/ns/sosa/isSampleOf":{
-            "@id":"https://example.com/site/1"
-         },
-         "https://w3id.org/tern/ontologies/tern/featureType":"photopoint position"
-      },
-      {
-         "@id":"https://example.com/site/1/photopoint-pos-1/image/1",
-         "@type":"https://w3id.org/tern/ontologies/tern/MaterialSample",
-         "inDataset":"https://example.com/dataset/1",
-         "label":"Photopoint image 1",
-         "isResultOf":"https://example.com/site/1/photopoint-pos-1/image/1/sampling",
-         "http://www.w3.org/ns/sosa/isSampleOf":{
-            "@id":"https://example.com/site/1/photopoint-pos-1"
-         },
-         "https://w3id.org/tern/ontologies/tern/featureType":"photopoint image"
-      },
-      {
-         "@id":"https://example.com/site/1/photopoint-pos-1/sampling/geometry",
-         "@type":"https://w3id.org/tern/ontologies/loc/Point",
-         "inDataset":"https://example.com/dataset/1",
-         "asWKT":"POINT(150.3 -34.0)",
-         "label":"Photopoint position 1 establishment point",
-         "lat":-34,
-         "long":{
-            "@type":"http://www.w3.org/2001/XMLSchema#decimal",
-            "@value":"150.3"
-         }
+  "@graph": [
+    {
+      "@id": "https://example.com/site/1/photopoint-pos-1/sampling",
+      "@type": "https://w3id.org/tern/ontologies/tern/Sampling",
+      "inDataset": "https://example.com/dataset/1",
+      "hasGeometry": "https://example.com/site/1/photopoint-pos-1/sampling/geometry",
+      "label": "Photopoint position 1 establishment",
+      "hasFeatureOfInterest": "https://example.com/site/1",
+      "hasResult": "https://example.com/site/1/photopoint-pos-1",
+      "resultTime": "2021-11-11T00:00:00+00:00",
+      "usedProcedure": "https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9",
+      "https://w3id.org/tern/ontologies/tern/hasSiteVisit": {
+        "@id": "https://example.com/site/1/visit/1"
       }
-   ]
+    },
+    {
+      "@id": "https://example.com/site/1/photopoint-pos-1/image/1/sampling",
+      "@type": "https://w3id.org/tern/ontologies/tern/Sampling",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Photopoint image 1 sampling",
+      "hasFeatureOfInterest": "https://example.com/site/1/photopoint-pos-1",
+      "hasResult": "https://example.com/site/1/photopoint-pos-1/image/1",
+      "http://www.w3.org/ns/sosa/madeBySampler": {
+        "@id": "_:n2c92bf96f8b24199bd594617c57ed1d7b1"
+      },
+      "resultTime": "2021-11-11T00:00:00+00:00",
+      "usedProcedure": "https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9",
+      "https://w3id.org/tern/ontologies/tern/hasSiteVisit": {
+        "@id": "https://example.com/site/1/visit/1"
+      }
+    },
+    {
+      "@id": "_:n2c92bf96f8b24199bd594617c57ed1d7b1",
+      "@type": "https://w3id.org/tern/ontologies/tern/Sampler",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Canon EOS 550D DSLR cropped sensor camera",
+      "https://w3id.org/tern/ontologies/tern/hasAttribute": {
+        "@id": "_:n2c92bf96f8b24199bd594617c57ed1d7b2"
+      },
+      "https://w3id.org/tern/ontologies/tern/samplerType": {
+        "@id": "http://linked.data.gov.au/def/tern-cv/11e03f36-7ada-4333-88e2-38c9205f2749"
+      }
+    },
+    {
+      "@id": "_:n2c92bf96f8b24199bd594617c57ed1d7b2",
+      "@type": "https://w3id.org/tern/ontologies/tern/Attribute",
+      "inDataset": "https://example.com/dataset/1",
+      "https://w3id.org/tern/ontologies/tern/attribute": "focal length",
+      "https://w3id.org/tern/ontologies/tern/hasSimpleValue": 24,
+      "https://w3id.org/tern/ontologies/tern/hasValue": {
+        "@id": "_:n2c92bf96f8b24199bd594617c57ed1d7b3"
+      }
+    },
+    {
+      "@id": "_:n2c92bf96f8b24199bd594617c57ed1d7b3",
+      "@type": "https://w3id.org/tern/ontologies/tern/Integer",
+      "value": 24,
+      "unit": "http://qudt.org/vocab/unit/MilliM"
+    },
+    {
+      "@id": "https://example.com/site/1/photopoint-pos-1",
+      "@type": "https://w3id.org/tern/ontologies/tern/Sample",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Photopoint position 1",
+      "isResultOf": "https://example.com/site/1/photopoint-pos-1/sampling",
+      "http://www.w3.org/ns/sosa/isSampleOf": {
+        "@id": "https://example.com/site/1"
+      },
+      "https://w3id.org/tern/ontologies/tern/featureType": "photopoint position"
+    },
+    {
+      "@id": "https://example.com/site/1/photopoint-pos-1/image/1",
+      "@type": "https://w3id.org/tern/ontologies/tern/MaterialSample",
+      "inDataset": "https://example.com/dataset/1",
+      "label": "Photopoint image 1",
+      "isResultOf": "https://example.com/site/1/photopoint-pos-1/image/1/sampling",
+      "http://www.w3.org/ns/sosa/isSampleOf": {
+        "@id": "https://example.com/site/1/photopoint-pos-1"
+      },
+      "https://w3id.org/tern/ontologies/tern/featureType": "photopoint image"
+    },
+    {
+      "@id": "https://example.com/site/1/photopoint-pos-1/sampling/geometry",
+      "@type": "https://w3id.org/tern/ontologies/loc/Point",
+      "inDataset": "https://example.com/dataset/1",
+      "asWKT": "POINT(150.3 -34.0)",
+      "label": "Photopoint position 1 establishment point",
+      "lat": -34,
+      "long": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "150.3"
+      }
+    }
+  ]
 }
 ```
 
@@ -147,7 +147,7 @@ _For brevity, the JSON-LD context has been omitted. See the full JSON-LD context
     rdfs:label "Photopoint position 1 establishment" ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     sosa:resultTime "2021-11-11T00:00:00Z"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
     geosparql:hasGeometry <https://example.com/site/1/photopoint-pos-1/sampling/geometry> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/site/1/photopoint-pos-1> ;
@@ -174,7 +174,7 @@ _For brevity, the JSON-LD context has been omitted. See the full JSON-LD context
     rdfs:label "Photopoint image 1 sampling" ;
     sosa:hasFeatureOfInterest <https://example.com/site/1/photopoint-pos-1> ;
     sosa:resultTime "2021-11-11T00:00:00Z"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/site/1/photopoint-pos-1/image/1> ;
     void:inDataset <https://example.com/dataset/1> ;

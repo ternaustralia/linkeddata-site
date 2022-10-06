@@ -42,7 +42,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/4cd86020-137e-4394-8359-ffab7f8090aa> ;
 .
@@ -56,7 +56,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
     tern:hasAttribute [
         a tern:Attribute ;
         rdfs:label "transect name" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/9beaf2dc-c53d-4e6e-b699-c1786f04f1f6> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/9beaf2dc-c53d-4e6e-b699-c1786f04f1f6> ;
         tern:hasSimpleValue "N1" ;
         tern:hasValue [
             a tern:Text ;
@@ -65,7 +65,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
     ], [
         a tern:Attribute ;
         rdfs:label "transect point number" ;
-        tern:attribute <https://linked.data.gov.au/def/test/dawe-cv/f3c1916e-a6e1-4b03-9950-f364bcd91507> ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/f3c1916e-a6e1-4b03-9950-f364bcd91507> ;
         tern:hasSimpleValue "1" ;
         tern:hasValue [
             a tern:Text ;
@@ -83,7 +83,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
         time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
     ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember <https://example.com/observation/c2d58d76-9d77-4a70-856f-79e93aa29abc>,
@@ -98,10 +98,10 @@ Below is an encoding of the source data in RDF for the observations made on the 
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "recently burned" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/136448b4-1c18-5e07-8b5f-837624e90907> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/136448b4-1c18-5e07-8b5f-837624e90907> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/136448b4-1c18-5e07-8b5f-837624e90907> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/8eb830f7-a0ec-42d6-8170-dbe2f4d56db2> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/136448b4-1c18-5e07-8b5f-837624e90907> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/8eb830f7-a0ec-42d6-8170-dbe2f4d56db2> ;
 .
 
 <https://example.com/observation/e7e6b4db-f484-4c1c-8ddd-2bc598c9aef0>
@@ -111,10 +111,10 @@ Below is an encoding of the source data in RDF for the observations made on the 
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "black ash" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/ab1c884d-be02-5cba-b873-fc02ab2efc71> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/ab1c884d-be02-5cba-b873-fc02ab2efc71> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/ab1c884d-be02-5cba-b873-fc02ab2efc71> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/56efb36f-d3bc-475d-80d3-990f910f8488> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/ab1c884d-be02-5cba-b873-fc02ab2efc71> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/56efb36f-d3bc-475d-80d3-990f910f8488> ;
 .
 
 <https://example.com/observation/9c2f39be-e718-434b-96d8-e7f403fe9350>
@@ -128,7 +128,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
         tern:unit <http://qudt.org/vocab/unit/MilliM> ;
     ] ;
     sosa:hasSimpleResult 12.1 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/d88be090-97b9-40a1-9251-65f5c945b50e> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/d88be090-97b9-40a1-9251-65f5c945b50e> ;
 .
 ```
 
@@ -141,7 +141,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4cd86020-137e-4394-8359-ffab7f8090aa> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/test/dawe-cv/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     sosa:hasResult <https://example.com/feature-of-interest/bfdc978d-fbee-4b8f-b4a3-1b101bbe116a> ;
 .
@@ -163,7 +163,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
         rdf:value "Melaleuca citrolens" ;
     ] ;
     sosa:hasSimpleResult "Melaleuca citrolens" ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
 .
 
 <https://example.com/observation/ab1f9f7e-8d71-4955-8eb6-734f11d8e907>
@@ -173,10 +173,10 @@ Below is an encoding of the source data in RDF for the observations made on the 
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "basal" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/f6c7fb7c-578d-5191-9041-6ea0975ea757> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/f6c7fb7c-578d-5191-9041-6ea0975ea757> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/f6c7fb7c-578d-5191-9041-6ea0975ea757> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/50239f29-a693-49ef-98e8-4ee11d1758ea> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f6c7fb7c-578d-5191-9041-6ea0975ea757> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/50239f29-a693-49ef-98e8-4ee11d1758ea> ;
 .
 
 <https://example.com/observation/2bab6320-7406-4834-b1e0-b1f7183189a6>
@@ -190,7 +190,7 @@ Below is an encoding of the source data in RDF for the observations made on the 
         tern:unit <http://qudt.org/vocab/unit/M> ;
     ] ;
     sosa:hasSimpleResult 2.3 ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/936f6c7d-9432-41d2-8214-00ed64e8f0c4> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/936f6c7d-9432-41d2-8214-00ed64e8f0c4> ;
 .
 
 <https://example.com/observation/aeb08e12-05f7-4d4c-ae92-9e8f221393c0>
@@ -200,9 +200,9 @@ Below is an encoding of the source data in RDF for the observations made on the 
     sosa:hasResult [
         a tern:IRI ;
         rdfs:label "charred" ;
-        rdf:value <https://linked.data.gov.au/def/test/dawe-cv/7f428b02-abfa-52dc-a702-ca310fd2447d> ;
+        rdf:value <https://linked.data.gov.au/def/nrm/7f428b02-abfa-52dc-a702-ca310fd2447d> ;
     ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/test/dawe-cv/7f428b02-abfa-52dc-a702-ca310fd2447d> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/test/dawe-cv/e9891e08-d5a2-45ba-a644-c3f5bf347918> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7f428b02-abfa-52dc-a702-ca310fd2447d> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/e9891e08-d5a2-45ba-a644-c3f5bf347918> ;
 .
 ```
