@@ -1,4 +1,4 @@
-import * as queries from './_queries'
+import * as queries from './_queries.js'
 
 const settings = {
     title: 'DAWE RLP Controlled Vocabularies',

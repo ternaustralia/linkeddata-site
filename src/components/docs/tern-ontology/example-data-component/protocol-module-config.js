@@ -14,8 +14,8 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312",
     exampleData: plotDescExampleData,
   },
-  cover: {
-    uri: "https://linked.data.gov.au/def/nrm/d6321ef2-a967-4a05-8e63-f892723c3473",
+  "cover-full": {
+    uri: "https://linked.data.gov.au/def/nrm/bc009349-c1d0-4000-a5d0-1b1c18c3ea0e",
     exampleData: coverExampleData,
   },
   floristics: {

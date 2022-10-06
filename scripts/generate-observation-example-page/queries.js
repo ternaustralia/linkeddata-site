@@ -1,4 +1,4 @@
-import settings from "../../src/pages/viewers/dawe-vocabs/_settings";
+import settings from "../../src/pages/viewers/dawe-vocabs/_settings.js";
 
 function getSparqlQuery(collectionUri) {
   const sparqlQuery = `

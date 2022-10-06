@@ -16,7 +16,7 @@ export default function Component({ protocolModule, observableProperty }) {
 
   try {
     var sparqlQuery = `
-      PREFIX : <http://linked.data.gov.au/def/test/dawe-cv/>
+      PREFIX : <http://linked.data.gov.au/def/nrm/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
       
