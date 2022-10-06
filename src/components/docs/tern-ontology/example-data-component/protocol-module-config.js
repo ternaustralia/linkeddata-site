@@ -38,6 +38,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/84b0a152-e6f6-4ea2-b973-04238034bb52",
     exampleData: exampleData,
   },
+  "basal-area-full-dbh": {
+    uri: "https://linked.data.gov.au/def/nrm/37d541e6-756f-4248-88cd-ade4775e3b7b",
+    exampleData: exampleData,
+  },
   "recruitment-age": {
     uri: "https://linked.data.gov.au/def/nrm/36c493f1-6a2e-4d48-9c3a-df104d98124b",
     exampleData: exampleData,

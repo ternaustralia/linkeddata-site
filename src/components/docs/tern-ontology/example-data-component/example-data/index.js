@@ -834,6 +834,22 @@ const exampleData = {
         "https://linked.data.gov.au/def/nrm/e5407dff-766c-5b3f-827a-3b1a4e54f624",
     },
   },
+  // tree trunk type
+  "https://linked.data.gov.au/def/nrm/3da2a8ca-c0a3-4761-8736-507255eeee68": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/fe116024-67ba-5d87-bd04-751bbb2d0b28",
+    },
+  },
+  // plant status
+  "https://linked.data.gov.au/def/nrm/ddd0c631-bfdd-4b0f-88de-a5eb1a0181c6": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8",
+    },
+  },
 };
 
 export default exampleData;

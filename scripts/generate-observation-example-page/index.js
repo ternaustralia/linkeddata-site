@@ -67,7 +67,7 @@ order by lcase(?label)
 }
 
 // Set the module to generate for each script run
-const moduleName = "basal-area-basal-wedge";
+const moduleName = "basal-area-full-dbh";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -110,6 +110,12 @@ const moduleLookup = {
   "basal-area-basal-wedge": {
     collectionUri:
       "https://linked.data.gov.au/def/nrm/84b0a152-e6f6-4ea2-b973-04238034bb52",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "basal-area-full-dbh": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/37d541e6-756f-4248-88cd-ade4775e3b7b",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
