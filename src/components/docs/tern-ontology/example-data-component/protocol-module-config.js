@@ -66,8 +66,8 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/3a17f41f-1cf2-4abb-bde1-3b9a1388051e",
     exampleData: exampleData,
   },
-  condition: {
-    uri: "https://linked.data.gov.au/def/nrm/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
+  "condition-point-intercept": {
+    uri: "https://linked.data.gov.au/def/nrm/81bb6166-e757-4e2d-99ad-bd13b12c3d02",
     exampleData: exampleData,
   },
   "vertebrate-identify": {

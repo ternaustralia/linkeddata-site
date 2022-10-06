@@ -67,7 +67,7 @@ order by lcase(?label)
 }
 
 // Set the module to generate for each script run
-const moduleName = "cover-lite";
+const moduleName = "condition-point-intercept";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -173,9 +173,9 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  condition: {
+  "condition-point-intercept": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
+      "https://linked.data.gov.au/def/nrm/81bb6166-e757-4e2d-99ad-bd13b12c3d02",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },

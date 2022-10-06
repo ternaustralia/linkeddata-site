@@ -371,6 +371,14 @@ const exampleData = {
       "@type": "http://www.w3.org/2001/XMLSchema#boolean",
     },
   },
+  // growth stage
+  "https://linked.data.gov.au/def/nrm/fcfda2f7-84f0-4c26-9f80-c051d129a094": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/1215ec81-a8a8-5100-b846-c50931e6fa27",
+    },
+  },
   // insect damage
   "https://linked.data.gov.au/def/nrm/33e79578-0946-4f21-9607-ca501e1500c7": {
     "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
@@ -784,6 +792,30 @@ const exampleData = {
     "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
     value: {
       "@value": "pregnant",
+    },
+  },
+  // vegetation health
+  "https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/25baf194-afec-5ba4-9708-7d6cfdcc2615",
+    },
+  },
+  // vertebrate pest presence evidence
+  "https://linked.data.gov.au/def/nrm/adc24cd3-b652-4696-bca0-b881b0111cdb": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/ad234f5d-8187-5a39-9c52-e06a81f83098",
+    },
+  },
+  // vertebrate pest type
+  "https://linked.data.gov.au/def/nrm/85d5f75c-776f-44a3-abe6-e71c695f1754": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/e5407dff-766c-5b3f-827a-3b1a4e54f624",
     },
   },
 };
