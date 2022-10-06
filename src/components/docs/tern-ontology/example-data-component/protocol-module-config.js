@@ -26,6 +26,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/669b2433-75d3-4639-a3b0-73cd1f4dbd45",
     exampleData: floristicsExampleData,
   },
+  "floristics-lite": {
+    uri: "https://linked.data.gov.au/def/nrm/44942870-743d-4989-aa40-581bdc84f078",
+    exampleData: floristicsExampleData,
+  },
   "opportunistic-observations": {
     uri: "https://linked.data.gov.au/def/nrm/d3f85cc2-f3e8-4900-a2ac-19fc27fd14f9",
     exampleData: opportunisticObservationsExampleData,

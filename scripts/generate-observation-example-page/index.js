@@ -67,7 +67,7 @@ order by lcase(?label)
 }
 
 // Set the module to generate for each script run
-const moduleName = "floristics-full";
+const moduleName = "floristics-lite";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -92,6 +92,12 @@ const moduleLookup = {
   "floristics-full": {
     collectionUri:
       "https://linked.data.gov.au/def/nrm/669b2433-75d3-4639-a3b0-73cd1f4dbd45",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "floristics-lite": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/44942870-743d-4989-aa40-581bdc84f078",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
