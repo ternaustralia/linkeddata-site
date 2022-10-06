@@ -22,8 +22,8 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/bc9aa42b-f908-4c73-adb2-d1847eee4ea3",
     exampleData: coverExampleData,
   },
-  floristics: {
-    uri: "https://linked.data.gov.au/def/nrm/ea83b861-7592-4378-bfb0-e06c459147ad",
+  "floristics-full": {
+    uri: "https://linked.data.gov.au/def/nrm/669b2433-75d3-4639-a3b0-73cd1f4dbd45",
     exampleData: floristicsExampleData,
   },
   "opportunistic-observations": {
