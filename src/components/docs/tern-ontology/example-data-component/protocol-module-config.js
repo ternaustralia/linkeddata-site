@@ -71,6 +71,10 @@ const config = {
     exampleData: exampleData,
   },
   "condition-vegetation-age-class-structure": {
+    uri: "https://linked.data.gov.au/def/nrm/7746f2f1-e8bf-450d-972a-9c1985714cef",
+    exampleData: exampleData,
+  },
+  "condition-vertebrate-pest-presence": {
     uri: "https://linked.data.gov.au/def/nrm/39b279f5-f026-4fe4-8c01-d1c5d3af6f3c",
     exampleData: exampleData,
   },
