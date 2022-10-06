@@ -330,6 +330,14 @@ const exampleData = {
     },
     unit: "http://qudt.org/vocab/unit/M",
   },
+  // cwd decay class
+  "https://linked.data.gov.au/def/nrm/fa986148-e44a-4cd3-8ac3-17748eb013f3": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/a4a236eb-4474-59f3-b269-29f812d642b4",
+    },
+  },
   // canopy health
   "https://linked.data.gov.au/def/nrm/d0a31d21-b475-490e-a8d6-fbe374fc7391": {
     "@type": ["https://w3id.org/tern/ontologies/tern/Float"],

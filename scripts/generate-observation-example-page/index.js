@@ -67,7 +67,7 @@ order by lcase(?label)
 }
 
 // Set the module to generate for each script run
-const moduleName = "condition-vertebrate-pest-presence";
+const moduleName = "coarse-woody-debris-plot-measures";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -149,9 +149,9 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  "coarse-woody-debris": {
+  "coarse-woody-debris-plot-measures": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/3a17f41f-1cf2-4abb-bde1-3b9a1388051e",
+      "https://linked.data.gov.au/def/nrm/479f0a22-3de2-4db7-87f7-1bcf4db3d180",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },

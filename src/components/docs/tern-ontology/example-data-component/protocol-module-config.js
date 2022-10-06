@@ -62,8 +62,8 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/eaf5a55e-e053-4818-a808-4722b1da4d17",
     exampleData: exampleData,
   },
-  "coarse-woody-debris": {
-    uri: "https://linked.data.gov.au/def/nrm/3a17f41f-1cf2-4abb-bde1-3b9a1388051e",
+  "coarse-woody-debris-plot-measures": {
+    uri: "https://linked.data.gov.au/def/nrm/479f0a22-3de2-4db7-87f7-1bcf4db3d180",
     exampleData: exampleData,
   },
   "condition-point-intercept": {
