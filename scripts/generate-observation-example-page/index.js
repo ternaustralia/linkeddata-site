@@ -6,7 +6,7 @@
  * TODO: Move moduleLookup and all the settings above it to a config.
  */
 
-import * as fs from "fs"
+import * as fs from "fs";
 import axios from "axios";
 
 import settings from "../../src/pages/viewers/dawe-vocabs/_settings.js";
@@ -67,7 +67,7 @@ order by lcase(?label)
 }
 
 // Set the module to generate for each script run
-const moduleName = "coarse-woody-debris-plot-measures";
+const moduleName = "coarse-woody-debris-transect-measures";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -152,6 +152,12 @@ const moduleLookup = {
   "coarse-woody-debris-plot-measures": {
     collectionUri:
       "https://linked.data.gov.au/def/nrm/479f0a22-3de2-4db7-87f7-1bcf4db3d180",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "coarse-woody-debris-transect-measures": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/4b676dc6-4143-46df-911e-47625e9dd896",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
