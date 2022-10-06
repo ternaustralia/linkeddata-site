@@ -67,7 +67,7 @@ order by lcase(?label)
 }
 
 // Set the module to generate for each script run
-const moduleName = "coarse-woody-debris-transect-measures";
+const moduleName = "basal-area-basal-wedge";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -107,9 +107,9 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  "basal-area": {
+  "basal-area-basal-wedge": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/ab7c4569-312c-4450-b413-9b11c4d2577b",
+      "https://linked.data.gov.au/def/nrm/84b0a152-e6f6-4ea2-b973-04238034bb52",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },

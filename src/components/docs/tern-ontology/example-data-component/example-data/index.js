@@ -233,6 +233,14 @@ const exampleData = {
       "@type": "http://www.w3.org/2001/XMLSchema#integer",
     },
   },
+  // basal area sweep hit type
+  "https://linked.data.gov.au/def/nrm/43178892-92a6-434f-9895-340700e299e6": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/3e0a5d97-c623-477e-98fe-8fe120907530",
+    },
+  },
   // circumference at breast height
   "https://linked.data.gov.au/def/nrm/2d042596-d49a-4139-92f5-dc0f23737e76": {
     "@type": ["https://w3id.org/tern/ontologies/tern/Float"],

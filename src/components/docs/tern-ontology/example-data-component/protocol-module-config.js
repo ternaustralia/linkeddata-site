@@ -34,8 +34,8 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/2089561b-5b49-472a-812f-3de661505ccb",
     exampleData: vegetationMappingExampleData,
   },
-  "basal-area": {
-    uri: "https://linked.data.gov.au/def/nrm/ab7c4569-312c-4450-b413-9b11c4d2577b",
+  "basal-area-basal-wedge": {
+    uri: "https://linked.data.gov.au/def/nrm/84b0a152-e6f6-4ea2-b973-04238034bb52",
     exampleData: exampleData,
   },
   "recruitment-age": {
