@@ -67,7 +67,7 @@ order by lcase(?label)
 }
 
 // Set the module to generate for each script run
-const moduleName = "condition-point-intercept";
+const moduleName = "condition-vegetation-age-class-structure";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -176,6 +176,12 @@ const moduleLookup = {
   "condition-point-intercept": {
     collectionUri:
       "https://linked.data.gov.au/def/nrm/81bb6166-e757-4e2d-99ad-bd13b12c3d02",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "condition-vegetation-age-class-structure": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/39b279f5-f026-4fe4-8c01-d1c5d3af6f3c",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },

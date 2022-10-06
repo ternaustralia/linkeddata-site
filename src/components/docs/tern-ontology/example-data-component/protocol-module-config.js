@@ -70,6 +70,10 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/81bb6166-e757-4e2d-99ad-bd13b12c3d02",
     exampleData: exampleData,
   },
+  "condition-vegetation-age-class-structure": {
+    uri: "https://linked.data.gov.au/def/nrm/39b279f5-f026-4fe4-8c01-d1c5d3af6f3c",
+    exampleData: exampleData,
+  },
   "vertebrate-identify": {
     uri: "https://linked.data.gov.au/def/nrm/a66e0c78-6f5c-4e24-8223-d03f14891e45",
     exampleData: exampleData,
