@@ -14,12 +14,20 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312",
     exampleData: plotDescExampleData,
   },
-  cover: {
-    uri: "https://linked.data.gov.au/def/nrm/d6321ef2-a967-4a05-8e63-f892723c3473",
+  "cover-full": {
+    uri: "https://linked.data.gov.au/def/nrm/bc009349-c1d0-4000-a5d0-1b1c18c3ea0e",
     exampleData: coverExampleData,
   },
-  floristics: {
-    uri: "https://linked.data.gov.au/def/nrm/ea83b861-7592-4378-bfb0-e06c459147ad",
+  "cover-lite": {
+    uri: "https://linked.data.gov.au/def/nrm/bc9aa42b-f908-4c73-adb2-d1847eee4ea3",
+    exampleData: coverExampleData,
+  },
+  "floristics-full": {
+    uri: "https://linked.data.gov.au/def/nrm/669b2433-75d3-4639-a3b0-73cd1f4dbd45",
+    exampleData: floristicsExampleData,
+  },
+  "floristics-lite": {
+    uri: "https://linked.data.gov.au/def/nrm/44942870-743d-4989-aa40-581bdc84f078",
     exampleData: floristicsExampleData,
   },
   "opportunistic-observations": {
@@ -30,8 +38,16 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/2089561b-5b49-472a-812f-3de661505ccb",
     exampleData: vegetationMappingExampleData,
   },
-  "basal-area": {
-    uri: "https://linked.data.gov.au/def/nrm/ab7c4569-312c-4450-b413-9b11c4d2577b",
+  "basal-area-basal-wedge": {
+    uri: "https://linked.data.gov.au/def/nrm/84b0a152-e6f6-4ea2-b973-04238034bb52",
+    exampleData: exampleData,
+  },
+  "basal-area-full-dbh": {
+    uri: "https://linked.data.gov.au/def/nrm/37d541e6-756f-4248-88cd-ade4775e3b7b",
+    exampleData: exampleData,
+  },
+  "basal-area-lite-dbh": {
+    uri: "https://linked.data.gov.au/def/nrm/558a43c5-80b4-4aab-bfad-246bd2605d2e",
     exampleData: exampleData,
   },
   "recruitment-age": {
@@ -58,12 +74,24 @@ const config = {
     uri: "https://linked.data.gov.au/def/nrm/eaf5a55e-e053-4818-a808-4722b1da4d17",
     exampleData: exampleData,
   },
-  "coarse-woody-debris": {
-    uri: "https://linked.data.gov.au/def/nrm/3a17f41f-1cf2-4abb-bde1-3b9a1388051e",
+  "coarse-woody-debris-plot-measures": {
+    uri: "https://linked.data.gov.au/def/nrm/479f0a22-3de2-4db7-87f7-1bcf4db3d180",
     exampleData: exampleData,
   },
-  condition: {
-    uri: "https://linked.data.gov.au/def/nrm/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
+  "coarse-woody-debris-transect-measures": {
+    uri: "https://linked.data.gov.au/def/nrm/4b676dc6-4143-46df-911e-47625e9dd896",
+    exampleData: exampleData,
+  },
+  "condition-point-intercept": {
+    uri: "https://linked.data.gov.au/def/nrm/81bb6166-e757-4e2d-99ad-bd13b12c3d02",
+    exampleData: exampleData,
+  },
+  "condition-vegetation-age-class-structure": {
+    uri: "https://linked.data.gov.au/def/nrm/7746f2f1-e8bf-450d-972a-9c1985714cef",
+    exampleData: exampleData,
+  },
+  "condition-vertebrate-pest-presence": {
+    uri: "https://linked.data.gov.au/def/nrm/39b279f5-f026-4fe4-8c01-d1c5d3af6f3c",
     exampleData: exampleData,
   },
   "vertebrate-identify": {

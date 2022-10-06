@@ -233,6 +233,14 @@ const exampleData = {
       "@type": "http://www.w3.org/2001/XMLSchema#integer",
     },
   },
+  // basal area sweep hit type
+  "https://linked.data.gov.au/def/nrm/43178892-92a6-434f-9895-340700e299e6": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/3e0a5d97-c623-477e-98fe-8fe120907530",
+    },
+  },
   // circumference at breast height
   "https://linked.data.gov.au/def/nrm/2d042596-d49a-4139-92f5-dc0f23737e76": {
     "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
@@ -330,6 +338,14 @@ const exampleData = {
     },
     unit: "http://qudt.org/vocab/unit/M",
   },
+  // cwd decay class
+  "https://linked.data.gov.au/def/nrm/fa986148-e44a-4cd3-8ac3-17748eb013f3": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/a4a236eb-4474-59f3-b269-29f812d642b4",
+    },
+  },
   // canopy health
   "https://linked.data.gov.au/def/nrm/d0a31d21-b475-490e-a8d6-fbe374fc7391": {
     "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
@@ -369,6 +385,14 @@ const exampleData = {
     value: {
       "@value": false,
       "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+    },
+  },
+  // growth stage
+  "https://linked.data.gov.au/def/nrm/fcfda2f7-84f0-4c26-9f80-c051d129a094": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/1215ec81-a8a8-5100-b846-c50931e6fa27",
     },
   },
   // insect damage
@@ -784,6 +808,46 @@ const exampleData = {
     "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
     value: {
       "@value": "pregnant",
+    },
+  },
+  // vegetation health
+  "https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/25baf194-afec-5ba4-9708-7d6cfdcc2615",
+    },
+  },
+  // vertebrate pest presence evidence
+  "https://linked.data.gov.au/def/nrm/adc24cd3-b652-4696-bca0-b881b0111cdb": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/ad234f5d-8187-5a39-9c52-e06a81f83098",
+    },
+  },
+  // vertebrate pest type
+  "https://linked.data.gov.au/def/nrm/85d5f75c-776f-44a3-abe6-e71c695f1754": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/e5407dff-766c-5b3f-827a-3b1a4e54f624",
+    },
+  },
+  // tree trunk type
+  "https://linked.data.gov.au/def/nrm/3da2a8ca-c0a3-4761-8736-507255eeee68": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/fe116024-67ba-5d87-bd04-751bbb2d0b28",
+    },
+  },
+  // plant status
+  "https://linked.data.gov.au/def/nrm/ddd0c631-bfdd-4b0f-88de-a5eb1a0181c6": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8",
     },
   },
 };

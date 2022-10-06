@@ -6,12 +6,68 @@
  * TODO: Move moduleLookup and all the settings above it to a config.
  */
 
-const fs = require("fs");
-const axios = require("axios").default;
-const { getSparqlQuery } = require("./queries");
+import * as fs from "fs";
+import axios from "axios";
+
+import settings from "../../src/pages/viewers/dawe-vocabs/_settings.js";
+
+function getSparqlQuery(collectionUri) {
+  const sparqlQuery = `
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+select ?concept ?featureType (sample(?__label) as ?label) (sample(?_featureTypeLabel) as ?featureTypeLabel) ?valueType (sample(?_valueTypeLabel) as ?valueTypeLabel) ?categoricalCollection (sample(?_categoricalCollectionLabel) as ?categoricalCollectionLabel)
+from <http://www.ontotext.com/explicit>
+from <${settings.queries.namedGraph}>
+where { 
+    # Collection of observable properties.
+    <${collectionUri}> skos:member ?concept .
+    
+    ?concept skos:prefLabel ?_label .
+    bind(str(?_label) as ?__label)
+
+    optional { 
+        ?concept tern:hasFeatureType ?featureType .
+        service <https://graphdb.tern.org.au/repositories/tern_vocabs_core> {
+            ?featureType skos:prefLabel ?_featureTypeLabel .
+        }
+    }
+
+    optional {
+      ?concept tern:valueType ?valueType .
+      service <https://graphdb.tern.org.au/repositories/knowledge_graph_core?context=%3Chttps%3A%2F%2Fw3id.org%2Ftern%2Fontologies%2Ftern%2F%3E&infer=false> {
+        ?valueType skos:prefLabel ?_valueTypeLabel .
+      }
+    }
+
+    optional {
+      ?concept tern:hasCategoricalCollection ?categoricalCollection .
+      optional {
+          {
+              service <https://graphdb.tern.org.au/repositories/tern_vocabs_core> {
+                  ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
+              }
+          }
+          union {
+              service <https://graphdb.tern.org.au/repositories/ausplots_vocabs_core> {
+                  ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
+              }
+          }
+          union {
+              ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
+          }
+      }
+  }
+} 
+group by ?concept ?featureType ?valueType ?categoricalCollection
+order by lcase(?label)
+`;
+
+  return sparqlQuery;
+}
 
 // Set the module to generate for each script run
-const moduleName = "recruitment-age";
+const moduleName = "floristics-lite";
 
 // Key-value pair of module name in docs and the module's collection of observable properties.
 const moduleLookup = {
@@ -21,15 +77,27 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  cover: {
+  "cover-full": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/d6321ef2-a967-4a05-8e63-f892723c3473",
+      "https://linked.data.gov.au/def/nrm/bc009349-c1d0-4000-a5d0-1b1c18c3ea0e",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  floristics: {
+  "cover-lite": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/ea83b861-7592-4378-bfb0-e06c459147ad",
+      "https://linked.data.gov.au/def/nrm/bc9aa42b-f908-4c73-adb2-d1847eee4ea3",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "floristics-full": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/669b2433-75d3-4639-a3b0-73cd1f4dbd45",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "floristics-lite": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/44942870-743d-4989-aa40-581bdc84f078",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
@@ -45,9 +113,21 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  "basal-area": {
+  "basal-area-basal-wedge": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/ab7c4569-312c-4450-b413-9b11c4d2577b",
+      "https://linked.data.gov.au/def/nrm/84b0a152-e6f6-4ea2-b973-04238034bb52",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "basal-area-full-dbh": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/37d541e6-756f-4248-88cd-ade4775e3b7b",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "basal-area-lite-dbh": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/558a43c5-80b4-4aab-bfad-246bd2605d2e",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
@@ -87,9 +167,15 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  "coarse-woody-debris": {
+  "coarse-woody-debris-plot-measures": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/3a17f41f-1cf2-4abb-bde1-3b9a1388051e",
+      "https://linked.data.gov.au/def/nrm/479f0a22-3de2-4db7-87f7-1bcf4db3d180",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "coarse-woody-debris-transect-measures": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/4b676dc6-4143-46df-911e-47625e9dd896",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
@@ -111,9 +197,21 @@ const moduleLookup = {
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
-  condition: {
+  "condition-point-intercept": {
     collectionUri:
-      "https://linked.data.gov.au/def/nrm/1d6ca60e-4371-4248-a383-5d4bd4d88c65",
+      "https://linked.data.gov.au/def/nrm/81bb6166-e757-4e2d-99ad-bd13b12c3d02",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "condition-vegetation-age-class-structure": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/39b279f5-f026-4fe4-8c01-d1c5d3af6f3c",
+    startingIndex: 2,
+    sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+  },
+  "condition-vertebrate-pest-presence": {
+    collectionUri:
+      "https://linked.data.gov.au/def/nrm/7746f2f1-e8bf-450d-972a-9c1985714cef",
     startingIndex: 2,
     sparqlEndpoint: "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
   },
