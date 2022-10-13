@@ -454,8 +454,8 @@ const exampleData = {
       "@type": "http://www.w3.org/2001/XMLSchema#integer",
     },
   },
-  // in canopy sky status
-  "https://linked.data.gov.au/def/nrm/1d7a8982-e444-48c4-9dba-ab10427f15fd": {
+  // in-canopy sky
+  "https://linked.data.gov.au/def/nrm/85bdd25a-fa08-49de-9f0b-98895cb79aa6": {
     "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
     value: {
       "@value": false,
