@@ -850,6 +850,17 @@ const exampleData = {
         "https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8",
     },
   },
+  // soil electricity conductivity
+  "https://linked.data.gov.au/def/nrm/22815fee-434e-4e21-b85f-8005a669a865": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+    value: {
+      "@value": 6.5,
+      "@type": "http://www.w3.org/2001/XMLSchema#double",
+    },
+    unit: {
+      "@value": "http://qudt.org/vocab/unit/MilliS-PER-M",
+    },
+  },
 };
 
 export default exampleData;
