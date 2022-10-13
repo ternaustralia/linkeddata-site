@@ -532,9 +532,10 @@ const exampleData = {
   },
   // plant phenology
   "https://linked.data.gov.au/def/nrm/33c1752f-b5f3-4ac9-9090-e9a4dd3096d1": {
-    "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
     value: {
-      "@value": "fruiting",
+      "@id":
+        "https://linked.data.gov.au/def/nrm/89ef338f-7206-515e-8cd7-0d5fd2b78db2",
     },
   },
   // substrate cover percentage
