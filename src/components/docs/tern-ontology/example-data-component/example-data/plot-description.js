@@ -156,7 +156,7 @@ const exampleData = {
     },
   },
   // most dominant species
-  "https://linked.data.gov.au/def/nrm/671252e3-b306-4436-b24b-7d6e13e9473e": {
+  "https://linked.data.gov.au/def/nrm/8e782307-4e4d-4cdf-9b10-8d79794065a4": {
     "@type": [
       "https://w3id.org/tern/ontologies/tern/Concept",
       "https://w3id.org/tern/ontologies/tern/Value",
@@ -178,7 +178,7 @@ const exampleData = {
     },
   },
   // third most dominant species
-  "http://linked.data.gov.au/def/tern-cv/07abcf97-542d-4c2f-9fb1-c7c7508f484c":
+  "https://linked.data.gov.au/def/nrm/fadc6db3-9474-45f5-a052-5b5002580c0a":
     {
       "@type": [
         "https://w3id.org/tern/ontologies/tern/Concept",
