@@ -861,6 +861,14 @@ const exampleData = {
       "@value": "http://qudt.org/vocab/unit/MilliS-PER-M",
     },
   },
+  // age class
+  "https://linked.data.gov.au/def/nrm/59df7c05-1521-4161-86e4-8e6a8feb4002": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/2befa1d5-33f2-5bc1-bc4c-0609b8dad9b9",
+    },
+  },
 };
 
 export default exampleData;
