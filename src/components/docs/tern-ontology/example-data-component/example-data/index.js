@@ -454,8 +454,8 @@ const exampleData = {
       "@type": "http://www.w3.org/2001/XMLSchema#integer",
     },
   },
-  // in canopy sky status
-  "https://linked.data.gov.au/def/nrm/1d7a8982-e444-48c4-9dba-ab10427f15fd": {
+  // in-canopy sky
+  "https://linked.data.gov.au/def/nrm/85bdd25a-fa08-49de-9f0b-98895cb79aa6": {
     "@type": ["https://w3id.org/tern/ontologies/tern/Boolean"],
     value: {
       "@value": false,
@@ -532,9 +532,10 @@ const exampleData = {
   },
   // plant phenology
   "https://linked.data.gov.au/def/nrm/33c1752f-b5f3-4ac9-9090-e9a4dd3096d1": {
-    "@type": ["https://w3id.org/tern/ontologies/tern/Text"],
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
     value: {
-      "@value": "fruiting",
+      "@id":
+        "https://linked.data.gov.au/def/nrm/89ef338f-7206-515e-8cd7-0d5fd2b78db2",
     },
   },
   // substrate cover percentage
@@ -848,6 +849,25 @@ const exampleData = {
     value: {
       "@id":
         "https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8",
+    },
+  },
+  // soil electricity conductivity
+  "https://linked.data.gov.au/def/nrm/22815fee-434e-4e21-b85f-8005a669a865": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/Float"],
+    value: {
+      "@value": 6.5,
+      "@type": "http://www.w3.org/2001/XMLSchema#double",
+    },
+    unit: {
+      "@value": "http://qudt.org/vocab/unit/MilliS-PER-M",
+    },
+  },
+  // age class
+  "https://linked.data.gov.au/def/nrm/59df7c05-1521-4161-86e4-8e6a8feb4002": {
+    "@type": ["https://w3id.org/tern/ontologies/tern/IRI"],
+    value: {
+      "@id":
+        "https://linked.data.gov.au/def/nrm/2befa1d5-33f2-5bc1-bc4c-0609b8dad9b9",
     },
   },
 };
