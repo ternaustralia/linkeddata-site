@@ -18,7 +18,7 @@ If the tree trunk type of a tree is 'multi-stemmed', then additional measurement
 
 ### Diagram
 
-Coloured in yellow are the conditional objects created to cater for trees with the trunk type ellipse or multi-stemmed.
+Coloured in yellow are the conditional objects created to cater for trees with the trunk type buttress, ellipse or multi-stemmed.
 
 ![full-lite-dbh-measure-example](https://w3id.org/tern/static/linkeddata-website/dawe-rlp/basal-area/full-lite-dbh/example.png)
 
