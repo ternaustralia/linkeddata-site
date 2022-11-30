@@ -20,7 +20,7 @@ If the tree trunk type of a tree is 'multi-stemmed', then additional measurement
 
 Coloured in yellow are the conditional objects created to cater for trees with the trunk type buttress, ellipse or multi-stemmed.
 
-![full-lite-dbh-measure-example](https://w3id.org/tern/static/linkeddata-website/dawe-rlp/basal-area/full-lite-dbh/example.png)
+<iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload"></iframe>
 
 ## Survey data
 
