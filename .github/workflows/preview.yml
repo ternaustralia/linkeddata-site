@@ -56,13 +56,13 @@ jobs:
       - name: Get git commits since last tag
         id: commitscount
         run: |
-          echo "::set-output name=value::$(git rev-list `git rev-list --tags --no-walk --max-count=1`..HEAD --count)"
+          echo "name=value::$(git rev-list `git rev-list --tags --no-walk --max-count=1`..HEAD --count)" >> $GITHUB_OUTPUT
 
       - name: Get git commit hash, ignore PR merge commits
         id: commit-hash
         run: |
           echo '::echo::on'
-          echo "::set-output name=value::$(git log -1 --pretty=format:%h --no-merges)"
+          echo "name=value::$(git log -1 --pretty=format:%h --no-merges)" >> $GITHUB_OUTPUT
           echo '::echo::off'
 
       - name: Rename git commit hash
