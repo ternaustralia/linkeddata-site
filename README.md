@@ -56,9 +56,9 @@ It is useful to run this command to check if builds succeed correctly. Docusauru
 
 ### Diagrams
 
-We use [diagrams.net](https://www.diagrams.net/) to draw our diagrams and Google Drive to save the diagrams. 
+We use [diagrams.net](https://www.diagrams.net/) to draw our diagrams and Google Drive to save the diagrams.
 
-The RLP protocol diagrams are saved at this location https://drive.google.com/drive/u/1/folders/1Fh2yoAI_Yvnz8wiuJRqW5_NGU5Uw8llf. 
+The RLP protocol diagrams are saved at this location https://drive.google.com/drive/u/1/folders/1Fh2yoAI_Yvnz8wiuJRqW5_NGU5Uw8llf.
 
 Diagrams are saved in Google Drive and then embedded into linkeddata-site using an iframe. Here are the instructions on adding a diagram to a page.
 
@@ -67,7 +67,11 @@ In diagrams.net, open the diagram that you would like to embed. On the top-left,
 Example:
 
 ```html
-<iframe frameborder="0" style="width:100%;height:593px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload"></iframe>
+<iframe
+  frameborder="0"
+  style="width:100%;height:593px;"
+  src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload"
+></iframe>
 ```
 
 Note that if you're working in an MDX file (files with `.md` extension but are processed using MDX), you will need to convert the attributes to a compatible JSX syntax.
@@ -80,13 +84,15 @@ Example:
 
 Notice the attribute `frameBorder` and the values for `style` are different.
 
-To improve the user-experience for users reading the diagrams, it may be useful to add an additional link after the diagram that takes the user to a new tab that opens the diagram in full screen. To do this, in diagrams.net, go to `File -> Publish -> Link...`. Change the `Edit -> Make a Copy` to `Edit -> Custom...`. Click `Create` and copy the code snippet.
+To improve the user-experience for users reading the diagrams, it may be useful to add an additional link after the diagram that takes the user to a new tab that opens the diagram in full screen. To do this, simply add an `a` element after the iframe element. Set the `a` element's `href` attribute's value to the same value as the `src` of the iframe. Set the `target` attribute of the `a` element with the value `_blank`.
 
 ```html
-<a target="_blank" href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload">View diagram in new tab.</a>
+<a
+  target="_blank"
+  href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload"
+  >View diagram in new tab.</a
+>
 ```
-
-Put the URL into an `a` tag and set the `target` attribute with the value `_blank`.
 
 The end result should look something like this:
 
