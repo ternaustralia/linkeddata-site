@@ -6,15 +6,17 @@ Mentions of observable properties should refer to [full-dbh/overview](/informati
 
 ## Conceptual modelling
 
-A site (aka. plot) is established and a site visit (aka. survey) is carried out to record observations and measurements.
+A site is established and a site visit is carried out to record observations and measurements.
 
-A specific species population is targeted where multiple observations are made on plant individuals.
+A specific plant species is targeted where multiple observations are made on plant individuals.
 
-The diameter at breast height observation is made at a specific point of measurement on a tree. This point of measurement value is captured as an attribute on the observation.
+The diameter at breast height (DBH) observation is made at a specific point of measurement on a tree. This point of measurement value is captured as an attribute on the observation. The plant status and the tree trunk type is also recorded as observations.
 
 Depending on the tree trunk type of a tree, additional observations may be recorded. If the tree trunk type is 'buttress', then an additional diameter measurement is recorded 50 cm above the top of the buttress. If the tree trunk type is 'ellipse', then an additional diameter measurement at a 90 degree angle to the first diameter measurement is recorded.
 
 If the tree trunk type of a tree is 'multi-stemmed', then additional measurements of the diameter are made for each stem. Each individual stem is a `tern:Sample` where they are related to the tree via a `sosa:isSampleOf` relationship.
+
+The DBH measurements are used to derive the basal area for each tree and its stems. Each of the tree and stem basal area measurements are summed up to calculate the total stand basal area in the plant community.
 
 ### Diagram
 
@@ -22,7 +24,7 @@ Coloured in yellow are the conditional objects created to cater for trees with t
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload"></iframe>
 
-<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload">View diagram in new tab.</a>
+<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL&layers=1&nav=1&title=basal-area-full-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ehO_1Lxzj0v6gWat6tq_36QVzOzXC7iL%26export%3Ddownload">View diagram in new tab<svg width="10" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a>
 
 ## Survey data
 
