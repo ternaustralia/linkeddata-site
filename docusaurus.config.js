@@ -163,7 +163,7 @@ const config = {
               },
               {
                 to: "/viewers/dawe-vocabs",
-                label: "DAWE Controlled Vocabularies",
+                label: "NRM Controlled Vocabularies",
               },
             ],
           },
