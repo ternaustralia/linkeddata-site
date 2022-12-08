@@ -1,4 +1,5 @@
 # Basal Wedge protocol mapping
+
 The mapping of the source app data to the TERN Ontology on this page is applicable to the [Basal Wedge](https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f) protocol.
 
 Mentions of observable properties should refer to [basal-wedge/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/basal-area/basal-wedge/overview) for the feature type and value type information.
@@ -115,3 +116,169 @@ This is the basal area factor setting used on the basal wedge. It is recorded as
 #### `created_by` and `updated_by`
 
 If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+<https://example.com/site/1>
+    a tern:Site ;
+    rdfs:label "Site 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/site/1/visit/1>
+    a tern:SiteVisit ;
+    rdfs:label "Site 1 visit 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z" ;
+    tern:hasSite <https://example.com/site/1> ;
+.
+
+<https://example.com/sampling-plant-population/1>
+    a tern:Sampling ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
+    sosa:hasResult <https://example.com/feature-of-interest/2> ;
+
+<https://example.com/observation-collection/1>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on plant population" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f> ;
+    sosa:hasMember <https://example.com/observation/field-species-name/1>,
+        <https://example.com/observation/basal-area-count/1>,
+        <https://example.com/observation/mean-basal-area/1> ;
+.
+
+<https://example.com/feature-of-interest/1>
+    a tern:Sample ;
+    rdfs:label "plant individual tree 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270> ;
+    tern:isSampleOf <https://example.com/feature-of-interest/2> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/2>
+    a tern:Sample ;
+    rdfs:label "plant population 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> ;
+    tern:isSampleOf <https://example.com/feature-of-interest/3> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/3>
+    a tern:Sample ;
+    rdfs:label "plant community 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
+    tern:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/observation/stand-basal-area/1>
+    a tern:Observation ;
+    rdfs:label "stand basal area" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    prov:wasInformedBy <https://example.com/observation/mean-basal-area/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 25.6^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/M2-PER-HA> ;
+    ] ;
+    sosa:hasSimpleResult 25.6^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/f437f23a-7965-4bae-9dc3-2aead06786ec> ;
+.
+
+<https://example.com/observation/field-species-name/1>
+    a tern:Observation ;
+    rdfs:label "field species name" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Text ;
+        rdf:value "Melaleuca citrolens" ;
+    ] ;
+    sosa:hasSimpleResult "Melaleuca citrolens" ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+.
+
+<https://example.com/observation/basal-area-count/1>
+    a tern:Observation ;
+    rdfs:label "basal area count" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    prov:wasInformedBy <https://example.com/observation/basal-area-sweep-hit-type/1> ;
+    sosa:hasSimpleResult 6 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 6 ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/29b37ffc-9a41-44f7-889a-bab63b48fa93> ;
+.
+
+<https://example.com/observation/mean-basal-area/1>
+    a tern:Observation ;
+    rdfs:label "mean basal area" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    prov:wasInformedBy <https://example.com/observation/basal-area-count/1> ;
+    sosa:hasSimpleResult 15.6 ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 15.6 ;
+        tern:unit <http://qudt.org/vocab/unit/M2-PER-HA> ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/a70282a3-c62f-43df-8d9c-34727ae1ee16> ;
+.
+
+<https://example.com/observation/basal-area-sweep-hit-type/1>
+    a tern:Observation ;
+    rdfs:label "basal area sweep hit type" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/3e0a5d97-c623-477e-98fe-8fe120907530> ;
+    sosa:isSampleOf <https://example.com/feature-of-interest/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult [
+        a tern:IRI ;
+        rdfs:label "borderline" ;
+        rdf:value <https://linked.data.gov.au/def/nrm/3e0a5d97-c623-477e-98fe-8fe120907530> ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/43178892-92a6-434f-9895-340700e299e6> ;
+    tern:hasAttribute [
+        rdfs:label "basal area factor (baf)" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/d06bf3e4-f59d-47fb-b780-bb089b298d83> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4a68f312-b4bb-5cce-a4fd-03ca509f84be> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "0.1" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/4a68f312-b4bb-5cce-a4fd-03ca509f84be> ;
+        ] ;
+    ] ;
+.
+
+```
