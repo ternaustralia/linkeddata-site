@@ -1,4 +1,5 @@
 # Basal Wedge protocol mapping
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Basal Wedge](https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f) protocol.
 
 Mentions of observable properties should refer to [basal-wedge/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/basal-area/basal-wedge/overview) for the feature type and value type information.
 
