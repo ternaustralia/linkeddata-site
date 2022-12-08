@@ -179,6 +179,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     rdfs:label "Site 1 visit 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     prov:startedAtTime "2022-11-02T03:16:42.783Z" ;
+    tern:hasSite <https://example.com/site/1> ;
 .
 
 <https://example.com/observation-collection/1>
@@ -203,8 +204,31 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "tree 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270> ;
+    tern:isSampleOf <https://example.com/feature-of-interest/2> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/2>
+    a tern:Sample ;
+    rdfs:label "plant community 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
     tern:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/observation/stand-basal-area/1>
+    a tern:Observation ;
+    rdfs:label "stand basal area" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    prov:wasInformedBy <https://example.com/observation/dbh/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 25.6 ;
+    ] ;
+    sosa:hasSimpleResult 25.6 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/f437f23a-7965-4bae-9dc3-2aead06786ec> ;
 .
 
 <https://example.com/observation/field-species-name/1>
