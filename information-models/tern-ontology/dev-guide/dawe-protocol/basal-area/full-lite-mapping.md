@@ -1,6 +1,6 @@
 # Full and Lite DBH protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to both the Full DBH and Lite DBH protocols.
+The mapping of the source app data to the TERN Ontology on this page is applicable to both the [Full DBH](https://linked.data.gov.au/def/nrm/5a00862b-a885-472e-8bee-561ec502653f) and [Lite DBH](https://linked.data.gov.au/def/nrm/cd83fb3e-d8d3-4502-a618-a0f3f8712b27) protocols.
 
 Mentions of observable properties should refer to [full-dbh/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/basal-area/full-dbh/overview) or [lite-dbh/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/basal-area/lite-dbh/overview) for the feature type and value type information.
 
