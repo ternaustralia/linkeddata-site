@@ -159,6 +159,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasFeatureOfInterest <https://example.com/site/1> ;
     tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
     sosa:hasResult <https://example.com/feature-of-interest/2> ;
+.
 
 <https://example.com/observation-collection/1>
     a tern:ObservationCollection ;
