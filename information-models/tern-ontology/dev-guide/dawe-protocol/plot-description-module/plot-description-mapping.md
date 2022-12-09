@@ -151,26 +151,6 @@ The `plot_physical_state_comments` key maps to the property `rdfs:comment` on th
     rdfs:comment "The weather is sunny."^^xsd:string .
 ```
 
-#### `visit_field_name`
-
-The `visit_field_name` key maps to the observable property `dominant species`, `second dominant species`, and `thrid dominant species` in [Plot Description Observable Properties](https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312), and is linked to `tern:ObservationCollection` by `skos:member`. For each of the three vegetation strata (Upper [U], Mid [M], Ground [G]) nominate in descending order the dominant species (up to 3 species per stratum) for each stratum, where present.
-
-##### Example
-
-```turtle
-<https://example.com/observation/dominant-species/1>
-    a tern:Observation ;
-    rdfs:label "dominant species" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasResult [
-        a tern:Text ;
-        rdf:value "Melaleuca citrolens" ;
-    ] ;
-    sosa:hasSimpleResult "Melaleuca citrolens" ;
-    sosa:observedProperty <https://linked.data.gov.au/def/nrm/8e782307-4e4d-4cdf-9b10-8d79794065a4> ;
-.
-```
-
 #### `created_by` and `updated_by`
 
 If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
@@ -199,7 +179,7 @@ If the keys `created_by` and `updated_by` represent the people or organisations 
 }
 ```
 
-The data are observations recorded during a site visit. The feature of interest for 'slope', 'slope_class', aspect, landform_pattern, landform_element is landform modelled as a `tern:Sample` with the feature type as 'landform'. The feature of interest for outcrop_lithology, surface_strew_lithology, surface_strew_size, disturbance is land surface modelled as a `tern:Sample` with the feature type as 'land surface'.
+The data are observations recorded during a site visit. The feature of interest for 'slope', 'slope_class', 'aspect', 'landform_pattern', 'landform_element' is landform modelled as a `tern:Sample` with the feature type as 'landform'. The feature of interest for 'outcrop_lithology', 'surface_strew_lithology', 'surface_strew_size', 'disturbance' is land surface modelled as a `tern:Sample` with the feature type as 'land surface'.
 
 #### `slpoe`
 
@@ -236,3 +216,55 @@ The `surface_strew_size` key maps to a `tern:Observation` with the observable pr
 #### `disturbance`
 
 The `disturbance` key maps to a `tern:Observation` with the observable property 'disturbance type'.
+
+### Mapping plot location measurements
+
+- [OpenAPI docs for plot visit measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Plot-visit/post%2Fplot-visits)
+
+```json
+{
+  "start_date": "2022-12-09T00:58:25.299Z",
+  "end_date": "2022-12-09T00:58:25.299Z",
+  "plot_location": 0,
+  "climatic_condition": "Wet",
+  "veg_growth_stage": "ER",
+  "fire_history": "UB",
+  "homogeneity_measure": 0,
+  "disturbance": "0",
+  "plot_physical_state_comments": "string",
+  "veg_structural_formation": "CFOR",
+  "visit_field_name": "string",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit. The feature of interest for 'climatic_condition' is climate modelled as a `tern:Sample` with the feature type as 'climate'. The feature of interest for 'veg_growth_stage', 'fire_history', 'homogeneity_measure' is plant community modelled as a `tern:Sample` with the feature type as 'plant community'. The feature of interest for 'disturbance' is land surface modelled as a `tern:Sample` with the feature type as 'land surface'. The feature of interest for 'veg_structural_formation' and 'visit_field_name' is vegetation stratum modelled as a `tern:Sample` with the feature type as 'vegetation stratum'.
+
+#### `climatic_condition`
+
+The `climatic_condition` key maps to a `tern:Observation` with the observable property 'climatic condition'.
+
+#### `veg_growth_stage`
+
+The `veg_growth_stage` key maps to a `tern:Observation` with the observable property 'growth stage'.
+
+#### `fire_history`
+
+The `fire_history` key maps to a `tern:Observation` with the observable property 'fire history'.
+
+#### `homogeneity_measure`
+
+The `homogeneity_measure` key maps to a `tern:Observation` with the observable property 'homogeneity measure'.
+
+#### `disturbance`
+
+The `disturbance` key maps to a `tern:Observation` with the observable property 'disturbance type'.
+
+#### `veg_structural_formation`
+
+The `veg_structural_formation` key maps to a `tern:Observation` with the observable property 'structural formation'.
+
+#### `visit_field_name`
+
+The `visit_field_name` key maps to the observable property `dominant species`, `second dominant species`, and `thrid dominant species` in [Plot Description Observable Properties](https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312), and is linked to `tern:ObservationCollection` by `skos:member`. For each of the three vegetation strata (Upper [U], Mid [M], Ground [G]) nominate in descending order the dominant species (up to 3 species per stratum) for each stratum, where present.
