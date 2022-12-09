@@ -174,3 +174,65 @@ The `visit_field_name` key maps to the observable property `dominant species`, `
 #### `created_by` and `updated_by`
 
 If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Observations data
+
+### Mapping plot location measurements
+
+- [OpenAPI docs for plot location measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Plot-location/post%2Fplot-locations)
+
+```json
+{
+  "plot_label": "string",
+  "slope": 0,
+  "slope_class": "LE",
+  "aspect": 0,
+  "landform_pattern": "FLO",
+  "landform_element": "ALC",
+  "outcrop_lithology": "NA",
+  "surface_strew_lithology": "NA",
+  "surface_strew_size": "0",
+  "disturbance": "0",
+  "comment": "string",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit. The feature of interest for 'slope', 'slope_class', aspect, landform_pattern, landform_element is landform modelled as a `tern:Sample` with the feature type as 'landform'. The feature of interest for outcrop_lithology, surface_strew_lithology, surface_strew_size, disturbance is land surface modelled as a `tern:Sample` with the feature type as 'land surface'.
+
+#### `slpoe`
+
+The `slope` key maps to a `tern:Observation` with the observable property 'slope'.
+
+#### `slpoe_class`
+
+The `slope_class` key maps to a `tern:Observation` with the observable property 'slope class'.
+
+#### `aspect`
+
+The `aspect` key maps to a `tern:Observation` with the observable property 'aspect'.
+
+#### `landform_pattern`
+
+The `landform_pattern` key maps to a `tern:Observation` with the observable property 'landform pattern'.
+
+#### `landform_element`
+
+The `landform_element` key maps to a `tern:Observation` with the observable property 'landform element'.
+
+#### `outcrop_lithology`
+
+The `outcrop_lithology` key maps to a `tern:Observation` with the observable property 'rock outcrop lithology'.
+
+#### `surface_strew_lithology`
+
+The `surface_strew_lithology` key maps to a `tern:Observation` with the observable property 'surface strew lithology'.
+
+#### `surface_strew_size`
+
+The `surface_strew_size` key maps to a `tern:Observation` with the observable property 'surface strew size'.
+
+#### `disturbance`
+
+The `disturbance` key maps to a `tern:Observation` with the observable property 'disturbance type'.
