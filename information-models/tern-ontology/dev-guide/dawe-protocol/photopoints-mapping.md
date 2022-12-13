@@ -17,3 +17,118 @@ The following diagram is showing photopoints. Rectangles coloured in blue show t
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=photopoints-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT%26export%3Ddownload"></iframe>
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=photopoints-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT%26export%3Ddownload">View diagram in new tab.</a>
+
+## Survey data
+
+Example data from source for `Photopoints` protocol surveys:
+
+- [OpenAPI docs for photopoints](https://beta.core-api.paratoo.tern.org.au/documentation#/Photopoints-survey/post%2Fphotopoints-surveys)
+
+Survey data from photopoints:
+
+```json
+{
+  "start_date_time": "2022-12-13T03:31:43.595Z",
+  "end_date_time": "2022-12-13T03:31:43.595Z",
+  "photopoints_protocol_variant": "lite",
+  "surveyId": "string",
+  "plot_visit": 0,
+  "point_1_panorama": [0],
+  "point_2_panorama": [0],
+  "point_3_panorama": [0],
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `start_date_time`
+
+The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `end_date_time`
+
+The `end_date_time` key maps to the property `prov:endedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `photopoints_protocol_variant`
+
+The `photopoints_protocol_variant` is protocol selection in the app, not mapping to TERN Ontology. From the protocol,
+
+> This module covers the procedures and guidelines of three protocols for establishing photopoints within the plot. The three protocols are:
+
+- Full protocol (best practice): DSLR panorama – 360&deg; panorama taken at three photopoints located around the centre of the plot using a DSLR camera or high-end mirrorless camera that allows the user to set specific camera and lens settings, including focal length and aperture.
+- Lite protocol: Compact panorama – 360&deg; panorama taken at three photopoints located around the centre of the plot using a compact camera without the ability to set all the specific camera and lens settings required.
+- Lite protocol: Device panorama – 360&deg; panorama taken at three photopoints located around the centre of the plot using a mobile phone or tablet.
+
+#### `surveyId`
+
+Use this value along with the site ID to generate a site visit URI.
+
+##### Example
+
+```
+https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `point_1_panorama`, `point_2_panorama`, `point_3_panorama`
+
+These 3 keys map to `tern:Sampling` 'photopoints position1,2,3 establishment' and 'taking photos'. The location of each photopoint will be recorded, and maps to the attribute `geo:hasGeometry` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://example.com/site/1/photopoint-pos-1/sampling> a tern:Sampling ;
+    rdfs:label "Photopoint position 1 establishment" ;
+    geosparql:hasGeometry <https://example.com/site/1/photopoint-pos-1/sampling/geometry> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult <https://example.com/site/1/photopoint-pos-1> ;
+.
+
+<https://example.com/site/1/photopoint-pos-1/sampling/geometry> a tern-loc:Point ;
+    rdfs:label "Photopoint position 1 establishment point" ;
+    wgs84:lat -34 ;
+    wgs84:long 150.3 ;
+    geosparql:asWKT "POINT(150.3 -34.0)"^^geosparql:wktLiteral ;
+.
+
+<https://example.com/site/1/photopoint-pos-1> a tern:Sample ;
+    rdfs:label "Photopoint position 1" ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+.
+
+<https://example.com/site/1/photopoint-pos-1/image/1/sampling> a tern:Sampling ;
+    rdfs:label "Photopoint image 1 sampling" ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1/photopoint-pos-1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult <https://example.com/site/1/photopoint-pos-1/image/1> ;
+.
+
+<https://example.com/site/1/photopoint-pos-1/image/1> a tern:MaterialSample ;
+    rdfs:label "Photopoint image 1" ;
+    sosa:isSampleOf <https://example.com/site/1/photopoint-pos-1> ;
+.
+
+```
+
+#### `created_by` and `updated_by`
+
+If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
