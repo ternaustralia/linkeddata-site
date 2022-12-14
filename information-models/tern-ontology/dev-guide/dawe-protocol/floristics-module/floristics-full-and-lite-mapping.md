@@ -120,6 +120,15 @@ The `field_name` key maps to a `tern:Observation` with the observable property '
 
 The `voucher_barcode` key maps to the property `dwc:materialSampleID` in `tern:MaterialSample` class. It is the identifier of specimen collected during `tern:Sampling` 'plant tissue vouchering'.
 
+##### Example
+
+```turtle
+<https://example.com/site/1/plant-tissue-vouchering/specimen/1> a tern:MaterialSample ;
+    rdfs:label "flora vouchering specimen 1" ;
+    dwc:materialSampleID "materialSample1" ;
+.
+```
+
 #### `growth_form_1` & `growth_form_2`
 
 The `growth_form_1` and `growth_form_2` map to a `tern:Observation` with the observable property 'growth form'.
@@ -131,6 +140,15 @@ The `floristics_veg_survey_full` is protocol selection in the app, not mapping t
 #### `photos`
 
 The `photos` key maps to photos(`tern:Sample`) taken during 'taking photos'(`tern:Sampling`) for specimen(`tern:MaterialSample`) and individual(`tern:Sample`). Each photo has the property `dcterms:identifier`.
+
+##### Example
+
+```turtle
+<https://example.com/site/1/image/1> a tern:Sample ;
+    rdfs:label "image 1" ;
+    dcterms:identifier "image1" ;
+.
+```
 
 #### `created_by` and `updated_by`
 
