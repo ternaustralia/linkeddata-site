@@ -10,7 +10,7 @@ Mentions of observable properties should refer to [full-protocol/overview](/info
 
 ## Conceptual modelling
 
-The Plot Description module records data about the site for the following feature types:
+The Floristics module records data about the site for the following feature types:
 
 - plant occurrence
 
