@@ -92,3 +92,76 @@ The `plot_visit` key maps to the `tern:SiteVisit` class.
 #### `created_by` and `updated_by`
 
 If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Observations data
+
+### Mapping Cover poinr intercept point measurements
+
+- [OpenAPI docs for cover poinr intercept point](https://beta.core-api.paratoo.tern.org.au/documentation#/Cover-point-intercept-point/post%2Fcover-point-intercept-points)
+
+```json
+{
+  "point_number": 0,
+  "soils_substrate": "BR",
+  "cover_transect_start_point": "N1",
+  "cover_point_intercept_survey": 0,
+  "species_intercepts": [0],
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `point_number`
+
+The `point_number` key maps to the attribute `point intercept number` in [Cover Attributes](https://linked.data.gov.au/def/nrm/08184439-7631-45b8-b3a1-0ed06d9c5566), and is linked to site by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "point intercept number" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+        tern:hasSimpleValue "12"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "12"^^xsd:string ;
+        ] ;
+    ] ;
+```
+
+#### `soils_substrate`
+
+The `soils_substrate` key maps to a `tern:Observation` with the observable property 'substrate type'.
+
+#### `cover_transect_start_point`
+
+The `cover_transect_start_point` key maps to the property `tern:transectStartPoint` on the `tern:Transect` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/transect/456> a tern:Transect ;
+    tern:transectStartPoint <https://example.com/site/1/geometry/1> .
+
+<https://example.com/site/1/geometry/1> a tern-loc:Point ;
+    rdfs:label "Position 1" ;
+    wgs84:lat -34 ;
+    wgs84:long 150.3 ;
+    geosparql:asWKT "POINT(150.3 -34.0)"^^geosparql:wktLiteral ;
+.
+```
+
+#### `cover_point_intercept_survey`
+
+The `cover_point_intercept_survey` key maps to the `tern:SiteVisit` class.
+
+#### `species_intercepts`
+
+The `species_intercepts` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `created_by` and `updated_by`
+
+If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
