@@ -97,7 +97,7 @@ If the keys `created_by` and `updated_by` represent the people or organisations 
 
 ### Mapping Cover poinr intercept point measurements
 
-- [OpenAPI docs for cover poinr intercept point](https://beta.core-api.paratoo.tern.org.au/documentation#/Cover-point-intercept-point/post%2Fcover-point-intercept-points)
+- [OpenAPI docs for cover point intercept point](https://beta.core-api.paratoo.tern.org.au/documentation#/Cover-point-intercept-point/post%2Fcover-point-intercept-points)
 
 ```json
 {
@@ -161,6 +161,46 @@ The `cover_point_intercept_survey` key maps to the `tern:SiteVisit` class.
 #### `species_intercepts`
 
 The `species_intercepts` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `created_by` and `updated_by`
+
+If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Cover poinr intercept point measurements
+
+- [OpenAPI docs for cover point intercept species intercepts](https://beta.core-api.paratoo.tern.org.au/documentation#/Cover-point-intercept-species-intercept/post%2Fcover-point-intercept-species-intercepts)
+
+```json
+{
+  "height": 0,
+  "senescent": true,
+  "in_canopy_sky": true,
+  "floristics_voucher_full": 0,
+  "floristics_voucher_lite": 0,
+  "fractional_cover": "PV",
+  "growth_form": "V",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `height`
+
+The `height` key maps to a `tern:Observation` with the observable property 'uppermost height'.
+
+#### `in_canopy_sky`
+
+The `in_canopy_sky` key maps to a `tern:Observation` with the observable property 'in-canopy sky'.
+
+#### `floristics_voucher_full` and `floristics_voucher_lite`
+
+These 2 keys are protocol selection in the app, not mapping to TERN Ontology.
+
+#### `growth_form`
+
+The `growth_form` key maps to a `tern:Observation` with the observable property 'growth form'.
 
 #### `created_by` and `updated_by`
 
