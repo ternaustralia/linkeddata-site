@@ -106,3 +106,59 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 ```
 
 The data are observations recorded during a site visit.
+
+#### `lut_condition_species`
+
+The `lut_condition_species` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `lut_condition_vegeatation_health`
+
+The `lut_condition_vegeatation_health` key maps to a `tern:Observation` with the observable property 'vegetation health'.
+
+#### `lut_condition_vertebrate_pest_type`
+
+The `lut_condition_vertebrate_pest_type` key should be deleted because sub module 'Vertebrate pest presence (plot)' has been removed.
+
+#### `leaf_litter_depth_mm`
+
+The `leaf_litter_depth_mm` key maps to a `tern:Observation` with the observable property 'leaf litter depth'.
+
+#### `mistletoe_number`
+
+The `mistletoe_number` key maps to a `tern:Observation` with the observable property 'mistletoe count'.
+
+#### `comment`
+
+The `comment` key maps to the property `rdfs:comment` on the `tern:Observation` class.
+
+##### Example
+
+```turtle
+<https://example.com/observation/vegetation-health/1>
+    a tern:Observation ;
+    rdfs:comment "The measure is confident."^^xsd:string ;
+.
+```
+
+#### `point_number`
+
+The `point_number` key maps to the attribute `point intercept number` in [Condition Attributes](https://linked.data.gov.au/def/nrm/ce3412d6-a99e-482c-9651-5b2b5ac42456), and is linked to site by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "point intercept number" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+        tern:hasSimpleValue "12"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "12"^^xsd:string ;
+        ] ;
+    ] ;
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
