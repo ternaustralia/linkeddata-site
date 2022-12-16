@@ -82,9 +82,9 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 
 The `basal_dbh_instrument` key maps to the property `sosa:madeBySensor` on the `tern:Observation` class instance with the observable property 'diameter at breast height'.
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -132,9 +132,9 @@ The `ba_dbh_measure_obs_stems` are primary keys to observation measurements made
 
 See the [next section on stem measurements](#mapping-full-and-lite-dbh-stem-measurements) for more information.
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-See [#created_by-and-updated_by](#created_by-and-updated_by).
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ### Mapping full and lite DBH stem measurements
 

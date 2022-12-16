@@ -70,9 +70,9 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
 ```
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -113,9 +113,9 @@ This may be a boolean value as to whether the tree is _borderline_ or not. If it
 
 This is the basal area factor setting used on the basal wedge. It is recorded as a `tern:Attribute` of the `tern:Observation` that determines whether a tree is _in_ or _borderline_.
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
