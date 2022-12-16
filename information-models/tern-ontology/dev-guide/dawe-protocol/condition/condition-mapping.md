@@ -84,3 +84,25 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Observations data
+
+### Mapping Condition point intercept measurements
+
+- [OpenAPI docs for condition point intercept](https://beta.core-api.paratoo.tern.org.au/documentation#/Condition-point-intercept/post%2Fcondition-point-intercepts)
+
+```json
+{
+  "lut_condition_species": "foo",
+  "lut_condition_vegeatation_health": "CH",
+  "lut_condition_vertebrate_pest_type": "CAT",
+  "leaf_litter_depth_mm": 0,
+  "mistletoe_number": 0,
+  "comment": "string",
+  "point_number": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
