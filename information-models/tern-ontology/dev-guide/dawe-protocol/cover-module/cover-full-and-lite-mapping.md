@@ -89,9 +89,9 @@ https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
 
 The `plot_visit` key maps to the `tern:SiteVisit` class.
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -162,9 +162,9 @@ The `cover_point_intercept_survey` key maps to the `tern:SiteVisit` class.
 
 The `species_intercepts` key maps to a `tern:Observation` with the observable property 'field species name'.
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ### Mapping Cover poinr intercept point measurements
 
@@ -202,9 +202,9 @@ These 2 keys are protocol selection in the app, not mapping to TERN Ontology.
 
 The `growth_form` key maps to a `tern:Observation` with the observable property 'growth form'.
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
