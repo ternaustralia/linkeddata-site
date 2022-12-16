@@ -250,4 +250,175 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/f6af2c5e-d193-4337-b845-44550f661854> ;
 .
 
+<https://example.com/observation-collection/1>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on plant occurrence" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:hasAttribute [
+        rdfs:label "point intercept number" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+        tern:hasSimpleValue "12"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "12"^^xsd:string ;
+        ] ;
+    ] ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
+    sosa:hasMember <https://example.com/observation/field-species-name/1>,
+        <https://example.com/observation/plant-height/1>,
+        <https://example.com/observation/galls-and-lerps/1>,
+        <https://example.com/observation/mistletoe-count/1>,
+        <https://example.com/observation/epicormic-growth/1>,
+        <https://example.com/observation/grazing/1>,
+        <https://example.com/observation/vegetation-health/1>,
+        <https://example.com/observation/dieback-from-disease/1>,
+        <https://example.com/observation/growth-stage/1>,
+        <https://example.com/observation/canopy-health/1>,
+        <https://example.com/observation/insect-damage/1> ;
+.
+
+<https://example.com/observation/vegetation-health/1>
+    a tern:Observation ;
+    rdfs:label "vegetation health" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    rdfs:comment "The measure is confident."^^xsd:string ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7f563fcb-8f98-5a74-9581-f6ce4ea51d42> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Mistletoe" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/7f563fcb-8f98-5a74-9581-f6ce4ea51d42> ;
+        ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746> ;
+.
+
+<https://example.com/observation/field-species-name/1>
+    a tern:Observation ;
+    rdfs:label "field species name" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult "Pine" ;
+    sosa:hasResult [
+        a tern:Text ;
+        rdf:value "Pine" ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
+.
+
+<https://example.com/observation/growth-stage/1>
+    a tern:Observation ;
+    rdfs:label "growth stage" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:IRI ;
+        rdfs:label "Mature" ;
+        rdf:value <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc> ;
+    ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/fcfda2f7-84f0-4c26-9f80-c051d129a094> ;
+.
+
+<https://example.com/observation/canopy-health/1>
+    a tern:Observation ;
+    rdfs:label "canopy health" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 33.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 33.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/d0a31d21-b475-490e-a8d6-fbe374fc7391> ;
+.
+
+<https://example.com/observation/insect-damage/1>
+    a tern:Observation ;
+    rdfs:label "insect damage" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult True ;
+    sosa:hasResult [
+        a tern:Boolean ;
+        rdf:value Ture ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/33e79578-0946-4f21-9607-ca501e1500c7> ;
+.
+
+<https://example.com/observation/plant-height/1>
+    a tern:Observation ;
+    rdfs:label "plant height" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 3.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/M> ;
+    ] ;
+    sosa:hasSimpleResult 3.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0e9da717-6c8e-4194-9385-c995d54702e4> ;
+.
+
+<https://example.com/observation/dieback-from-disease/1>
+    a tern:Observation ;
+    rdfs:label "dieback from disease" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult False ;
+    sosa:hasResult [
+        a tern:Boolean ;
+        rdf:value False ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0685299e-d22a-4efa-a507-a7614e58a500> ;
+.
+
+<https://example.com/observation/galls-and-lerps/1>
+    a tern:Observation ;
+    rdfs:label "galls and lerps" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult False ;
+    sosa:hasResult [
+        a tern:Boolean ;
+        rdf:value False ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/28131f08-1ae4-422f-99cb-3b5bafc7761d> ;
+.
+
+<https://example.com/observation/epicormic-growth/1>
+    a tern:Observation ;
+    rdfs:label "epicormic growth" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult False ;
+    sosa:hasResult [
+        a tern:Boolean ;
+        rdf:value False ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cacfba72-ae93-4f92-9cc3-bf656d7ab5f0> ;
+.
+
+<https://example.com/observation/grazing/1>
+    a tern:Observation ;
+    rdfs:label "grazing" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult False ;
+    sosa:hasResult [
+        a tern:Boolean ;
+        rdf:value False ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cd905dda-06df-4f0e-85eb-b50f9ed2af91> ;
+.
+
+<https://example.com/observation/mistleloe-count/1>
+    a tern:Observation ;
+    rdfs:label "mistleloe count" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult 3 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 3 ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/6a1d703f-6622-4804-8b78-4c2ac93c97ba> ;
+.
+
 ```
