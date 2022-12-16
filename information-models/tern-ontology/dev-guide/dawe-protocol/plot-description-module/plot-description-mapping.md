@@ -83,9 +83,9 @@ The `comment` key maps to the property `rdfs:comment` on the `tern:SiteVisit` cl
     rdfs:comment "The weather is sunny."^^xsd:string .
 ```
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 2. Survey data from plot visit:
 
@@ -151,9 +151,9 @@ The `plot_physical_state_comments` key maps to the property `rdfs:comment` on th
     rdfs:comment "The weather is sunny."^^xsd:string .
 ```
 
-#### `created_by` and `updated_by`
+#### `createdBy` and `updatedBy`
 
-If the keys `created_by` and `updated_by` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
