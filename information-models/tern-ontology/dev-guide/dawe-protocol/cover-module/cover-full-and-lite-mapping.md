@@ -95,7 +95,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 ## Observations data
 
-### Mapping Cover poinr intercept point measurements
+### Mapping Cover point intercept point measurements
 
 - [OpenAPI docs for cover point intercept point](https://beta.core-api.paratoo.tern.org.au/documentation#/Cover-point-intercept-point/post%2Fcover-point-intercept-points)
 
@@ -166,7 +166,7 @@ The `species_intercepts` key maps to a `tern:Observation` with the observable pr
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-### Mapping Cover poinr intercept point measurements
+### Mapping Cover point intercept point measurements
 
 - [OpenAPI docs for cover point intercept species intercepts](https://beta.core-api.paratoo.tern.org.au/documentation#/Cover-point-intercept-species-intercept/post%2Fcover-point-intercept-species-intercepts)
 
