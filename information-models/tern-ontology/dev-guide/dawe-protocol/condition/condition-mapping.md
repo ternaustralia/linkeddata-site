@@ -162,3 +162,92 @@ The `point_number` key maps to the attribute `point intercept number` in [Condit
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<https://example.com/site/1>
+    a tern:Site ;
+    rdfs:label "Site 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/transect/1>
+    a tern:Transect ;
+    rdfs:label "Transect 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:transectStartPoint <https://example.com/site/1/transect-geometry/1> ;
+    tern:transectDirection "East"^^xsd:string ;
+.
+
+<https://example.com/site/1/transect-geometry/1> a tern-loc:Point ;
+    rdfs:label "Transect start point" ;
+    wgs84:lat -34 ;
+    wgs84:long 150.3 ;
+    geosparql:asWKT "POINT(150.3 -34.0)"^^geosparql:wktLiteral ;
+.
+
+<https://example.com/site/1/visit/1>
+    a tern:SiteVisit ;
+    rdfs:label "Site 1 visit 1" ;
+    dcterms:identifier "site001" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z" ;
+    prov:endedAtTime "2022-11-02T03:18:42.783Z" ;
+    tern:hasSite <https://example.com/site/1> ;
+.
+
+<https://example.com/feature-of-interest/1>
+    a tern:Sample ;
+    rdfs:label "plant occurrence 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
+    tern:isSampleOf <https://example.com/transect/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/2>
+    a tern:Sample ;
+    rdfs:label "plant litter 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e6ed6e58-5916-4d31-9ed5-109ab3436fce> ;
+    tern:isSampleOf <https://example.com/transect/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/observation/leaf-litter-depth/1>
+    a tern:Observation ;
+    rdfs:label "leaf litter depth" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:hasAttribute [
+        rdfs:label "point intercept number" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+        tern:hasSimpleValue "12"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "12"^^xsd:string ;
+        ] ;
+    ] ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 33.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/MilliM> ;
+    ] ;
+    sosa:hasSimpleResult 33.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/f6af2c5e-d193-4337-b845-44550f661854> ;
+.
+
+```
