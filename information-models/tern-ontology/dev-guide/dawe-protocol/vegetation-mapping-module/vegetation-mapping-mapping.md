@@ -421,4 +421,137 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     ] ;
 .
 
+<https://example.com/feature-of-interest/1>
+    a tern:Sample ;
+    rdfs:label "land surface disturbance 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
+    tern:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/2>
+    a tern:Sample ;
+    rdfs:label "plant population 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> ;
+    tern:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/3>
+    a tern:Sample ;
+    rdfs:label "vegetation disturbance 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/d4fc54b1-0ad3-4512-86b7-d42b121ece45> ;
+    tern:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/4>
+    a tern:Sample ;
+    rdfs:label "land surface substrate 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/aef12cd6-3826-4988-a54c-8578d3fb4c8d> ;
+    tern:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/5>
+    a tern:Sample ;
+    rdfs:label "plant community 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
+    tern:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/observation/disturbance-type/1>
+    a tern:Observation ;
+    rdfs:label "disturbance type" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:IRI ;
+        rdfs:label "Complete clearing; pasture; has been cultivated" ;
+        rdf:value <https://linked.data.gov.au/def/nrm/ce421b31-7cbe-55e2-9380-d8985c1817e3> ;
+    ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/ce421b31-7cbe-55e2-9380-d8985c1817e3> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/632e4c3c-0e73-4b3d-b1d6-7b38897da5e8> ;
+.
+
+<https://example.com/observation/fire-history/1>
+    a tern:Observation ;
+    rdfs:label "fire history" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:IRI ;
+        rdfs:label "Unburnt" ;
+        rdf:value <https://linked.data.gov.au/def/nrm/f757667d-3e74-53f6-8b35-08d286d1ed26> ;
+    ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f757667d-3e74-53f6-8b35-08d286d1ed26> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cf1aef8a-a782-4480-9c41-a7f6d170d7fc> ;
+.
+
+<https://example.com/observation-collection/1>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on plant population" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
+    sosa:hasMember <https://example.com/observation/field-species-name/1>,
+        <https://example.com/observation/maximum-height/1>,
+        <https://example.com/observation/dominant-growth-form/1>,
+        <https://example.com/observation/foliage-projective-cover/1> ;
+.
+
+<https://example.com/observation-collection/2>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on land surface substrate" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
+    sosa:hasMember <https://example.com/observation/physical-substrate-cover/1>,
+        <https://example.com/observation/bare-cover-percent/1>,
+        <https://example.com/observation/cryptogam-cover-percent/1>,
+        <https://example.com/observation/litter-cover-percent/1>,
+        <https://example.com/observation/coarse-woody-debris-cover-percent/1>,
+        <https://example.com/observation/unknown-cover-percent/1>,
+        <https://example.com/observation/gravel-cover-percent/1>,
+        <https://example.com/observation/rock-cover-percent/1>,
+        <https://example.com/observation/outcrop-cover-percent/1> ;
+.
+
+<https://example.com/observation-collection/3>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on plant community" ;
+    dcterms:identifier "observationCollection3"^^xsd:string ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/5> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs84:lat -30.920849^^xsd:double ;
+        wgs84:long 152.242400^^xsd:double ;
+    ] ;
+    sosa:hasMember <https://example.com/observation/growth-stage/1>,
+        <https://example.com/observation/homogeneity-measure/1> ;
+.
+
 ```
