@@ -229,3 +229,40 @@ The `vegetation_mapping_species_covers` key maps to a `tern:ObservationCollectio
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Vegetation Mapping species cover measurements
+
+- [OpenAPI docs for vegetation mapping species cover observations](https://beta.core-api.paratoo.tern.org.au/documentation#/Vegetation-mapping-species-cover/post%2Fvegetation-mapping-species-covers)
+
+```json
+{
+  "species_name": "string",
+  "percentage_cover": 0,
+  "growth_form": "V",
+  "height_metres": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit. The feature of interest is plant population with the feature type `plant population`.
+
+#### `species_name`
+
+The `species_name` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `percentage_cover`
+
+The `percentage_cover` key maps to a `tern:Observation` with the observable property 'foliage projective cover'.
+
+#### `growth_form`
+
+The `growth_form` key maps to a `tern:Observation` with the observable property 'dominant growth form'.
+
+#### `height_metres`
+
+The `height_metres` key maps to a `tern:Observation` with the observable property 'maximum height'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
