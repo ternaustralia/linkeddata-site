@@ -661,4 +661,121 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/325d5ff2-8c81-484a-a422-c13ff29666a9> ;
 .
 
+<https://example.com/observation/physical-substrate-cover/1>
+    a tern:Observation ;
+    rdfs:label "physical substrate cover" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cbea81bc-2447-4c78-bab8-54d6637e2178> ;
+.
+
+<https://example.com/observation/bare-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "bare cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/3f03e64f-5f56-48dc-8905-c1bf55beab85> ;
+.
+
+<https://example.com/observation/cryptogam-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "cryptogam cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/d3a83bd2-3d18-4a9a-8afd-d87b621ba9e4> ;
+.
+
+<https://example.com/observation/outcrop-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "outcrop cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/5fa7e967-0a35-4358-a0ca-e3aede246cc9> ;
+.
+
+<https://example.com/observation/litter-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "litter cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/37e674fc-4a9c-4865-86e3-428926093ec9> ;
+.
+
+<https://example.com/observation/rock-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "rock cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/6539982d-2792-461e-82c8-dbe55e985d45> ;
+.
+
+<https://example.com/observation/unknown-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "unknown cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cfb18d54-16ba-48f4-8eef-b5aa3cf7db2f> ;
+.
+
+<https://example.com/observation/coarse-woody-debris-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "coarse woody debris cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/e73e3079-9858-42c6-b418-36326a6d0ddd> ;
+.
+
+<https://example.com/observation/gravel-cover-percent/1>
+    a tern:Observation ;
+    rdfs:label "gravel cover percent" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/6b291f9f-3ab0-47c6-ac28-991d5009de71> ;
+.
+
 ```
