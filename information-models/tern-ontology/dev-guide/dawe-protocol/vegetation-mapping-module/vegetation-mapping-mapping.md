@@ -635,4 +635,30 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/0378976a-0018-4604-826d-1886ca5f38c3> ;
 .
 
+<https://example.com/observation/growth-stage/1>
+    a tern:Observation ;
+    rdfs:label "growth stage" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:IRI ;
+        rdfs:label "Mature" ;
+        rdf:value <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc> ;
+    ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/fcfda2f7-84f0-4c26-9f80-c051d129a094> ;
+.
+
+<https://example.com/observation/homogeneity-measure/1>
+    a tern:Observation ;
+    rdfs:label "homogeneity measure" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 12.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/M> ;
+    ] ;
+    sosa:hasSimpleResult 12.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/325d5ff2-8c81-484a-a422-c13ff29666a9> ;
+.
+
 ```
