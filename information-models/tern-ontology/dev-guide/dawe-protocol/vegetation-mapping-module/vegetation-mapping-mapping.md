@@ -584,4 +584,55 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     tern:featureType <http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
 .
 
+<https://example.com/observation/field-species-name/1>
+    a tern:Observation ;
+    rdfs:label "field species name" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult "Pine" ;
+    sosa:hasResult [
+        a tern:Text ;
+        rdf:value "Pine" ;
+    ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
+.
+
+<https://example.com/observation/dominant-growth-form/1>
+    a tern:Observation ;
+    rdfs:label "dominant growth form" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/d844b23f-3d82-53b0-8d1f-128fc729d3bb> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Ferns" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/d844b23f-3d82-53b0-8d1f-128fc729d3bb> ;
+        ] ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/4a550407-5158-497c-982a-9f1b662b73e9> ;
+.
+
+<https://example.com/observation/maximum-height/1>
+    a tern:Observation ;
+    rdfs:label "maximum height" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/M> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/da5bd3cd-e52c-4cfe-9ab6-ac9474eb94ff> ;
+.
+
+<https://example.com/observation/foliage-projective-cover/1>
+    a tern:Observation ;
+    rdfs:label "foliage projective cover" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value 13.81^^xsd:float ;
+        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
+    ] ;
+    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0378976a-0018-4604-826d-1886ca5f38c3> ;
+.
+
 ```
