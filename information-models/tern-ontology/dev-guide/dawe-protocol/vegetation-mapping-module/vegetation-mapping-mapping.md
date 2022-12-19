@@ -214,19 +214,15 @@ The `vegetation_mapping_substrate_cover` key maps to a `tern:ObservationCollecti
 
 #### `vegetation_mapping_species_covers`
 
-The `vegetation_mapping_species_covers` key maps to a `tern:Observation` with an observable property related to substrate cover, for example, `bare cover percent` and `litter cover percent`.
+The `vegetation_mapping_species_covers` key maps to a `tern:ObservationCollection` with a list of `tern:Observation` on plant population observations, for example, `field species name` and `maximum height`.
 
 ##### Example
 
 ```turtle
-<https://example.com/observation/bare-cover-percent/1>
-    a tern:Observation ;
-    sosa:hasResult [
-        a tern:Float ;
-        rdf:value 33.81^^xsd:float ;
-        tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
-    ] ;
-    sosa:hasSimpleResult 33.81^^xsd:float ;
+<https://example.com/observation-collection/1>
+    a tern:ObservationCollection ;
+    rdfs:label "Collection of observations on plant population."^^xsd:string ;
+    sosa:hasMember <https://example.com/observation/field-species-name/1>, <https://example.com/observation/maximum-height/1> ;
 .
 ```
 
