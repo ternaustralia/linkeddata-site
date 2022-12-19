@@ -266,3 +266,65 @@ The `height_metres` key maps to a `tern:Observation` with the observable propert
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Vegetation Mapping substrate cover measurements
+
+- [OpenAPI docs for vegetation mapping substrate cover observations](https://beta.core-api.paratoo.tern.org.au/documentation#/Vegetation-mapping-substrate-cover/post%2Fvegetation-mapping-substrate-covers)
+
+```json
+{
+  "bare_cover_percent": 0,
+  "cryptogam_cover_percent": 0,
+  "outcrop_cover_percent": 0,
+  "litter_cover_percent": 0,
+  "rock_cover_percent": 0,
+  "coarse_woody_debris_cover_percent": 0,
+  "gravel_cover_percent": 0,
+  "unknown_cover_percent": 0,
+  "vegetation_mapping_observation": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit. The feature of interest is land surface substrate with the feature type `land surface substrate`.
+
+#### `bare_cover_percent`
+
+The `bare_cover_percent` key maps to a `tern:Observation` with the observable property 'bare cover percent'.
+
+#### `cryptogam_cover_percent`
+
+The `cryptogam_cover_percent` key maps to a `tern:Observation` with the observable property 'cryptogam cover percent'.
+
+#### `outcrop_cover_percent`
+
+The `outcrop_cover_percent` key maps to a `tern:Observation` with the observable property 'outcrop cover percent'.
+
+#### `litter_cover_percent`
+
+The `litter_cover_percent` key maps to a `tern:Observation` with the observable property 'litter cover percent'.
+
+#### `rock_cover_percent`
+
+The `rock_cover_percent` key maps to a `tern:Observation` with the observable property 'rock cover percent'.
+
+#### `coarse_woody_debris_cover_percent`
+
+The `coarse_woody_debris_cover_percent` key maps to a `tern:Observation` with the observable property 'coarse woody debris cover percent'.
+
+#### `gravel_cover_percent`
+
+The `gravel_cover_percent` key maps to a `tern:Observation` with the observable property 'gravel cover percent'.
+
+#### `unknown_cover_percent`
+
+The `unknown_cover_percent` key maps to a `tern:Observation` with the observable property 'unknown cover percent'.
+
+#### `vegetation_mapping_observation`
+
+The `vegetation_mapping_observation` key maps to the `tern:Observation` class.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
