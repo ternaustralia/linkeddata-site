@@ -328,3 +328,97 @@ The `vegetation_mapping_observation` key maps to the `tern:Observation` class.
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+<https://example.com/site/1>
+    a tern:Site ;
+    rdfs:label "Site 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    dcterms:identifier "site001"^^xsd:string ;
+    tern:hasAttribute [
+        rdfs:label "plot name" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+        tern:hasSimpleValue "The Jones Stream Study Plot" ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "The Jones Stream Study Plot" ;
+        ] ;
+    ] ;
+.
+
+<https://example.com/site/1/visit/1>
+    a tern:SiteVisit ;
+    rdfs:label "Site 1 visit 1" ;
+    dcterms:identifier "siteVisit001" ;
+    rdfs:comment "The weather is sunny."^^xsd:string ;
+    void:inDataset <https://example.com/dataset/1> ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z" ;
+    prov:endedAtTime "2022-11-02T03:18:42.783Z" ;
+    tern:hasSite <https://example.com/site/1> ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs84:lat -30.920849^^xsd:double ;
+        wgs84:long 152.242400^^xsd:double ;
+    ] ;
+.
+
+<https://example.com/site/1/image/1/sampling> a tern:Sampling ;
+    rdfs:label "taking photos" ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    sosa:resultTime "2022-11-11T00:00:00Z"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasResult <https://example.com/site/1/image/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:madeBySampler [
+        a tern:Sampler ;
+        rdfs:label "Canon EOS 550D DSLR cropped sensor camera" ;
+        tern:samplerType <http://linked.data.gov.au/def/tern-cv/11e03f36-7ada-4333-88e2-38c9205f2749> ;
+        void:inDataset <https://example.com/dataset/1> ;
+        tern:hasAttribute [
+            a tern:Attribute ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute "focal length" ;
+            tern:hasSimpleValue 24 ;
+            tern:hasValue [
+                a tern:Integer ;
+                rdf:value 24 ;
+                tern:unit <http://qudt.org/vocab/unit/MilliM> ;
+            ]
+        ] ;
+    ] ;
+.
+
+<https://example.com/site/1/image/1> a tern:Sample ;
+    rdfs:label "image 1" ;
+    dcterms:identifier "image1" ;
+    sosa:isResultOf <https://example.com/site/1/image/1/sampling> ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType "photos" ;
+    tern:hasAttribute [
+        rdfs:label "photo description" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/edfc908c-f040-495d-9b54-3c0cfe6eb698> ;
+        tern:hasSimpleValue "The photo is kind of blur." ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "The photo is kind of blur." ;
+        ] ;
+    ] ;
+.
+
+```
