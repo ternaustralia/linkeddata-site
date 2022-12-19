@@ -554,4 +554,34 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         <https://example.com/observation/homogeneity-measure/1> ;
 .
 
+<https://example.com/plant-vouchering/1>
+    a tern:Sampling ;
+    void:inDataset <https://example.com/dataset/1> ;
+    rdfs:comment "Photos are taken for this sample" ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
+    sosa:hasResult <https://example.com/site/1/plant-vouchering/specimen/1> ;
+.
+
+<https://example.com/site/1/plant-vouchering/specimen/1> a tern:MaterialSample ;
+    rdfs:label "flora vouchering specimen 1" ;
+    sosa:isResultOf <https://example.com/plant-tissue-vouchering/1> ;
+    dwc:materialSampleID "materialSample1" ;
+    sosa:isSampleOf <https://example.com/feature-of-interest/2> ;
+    tern:hasAttribute [
+        rdfs:label "voucher type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Plant Tissue Voucher" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
+        ] ;
+    ] ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
+.
+
 ```
