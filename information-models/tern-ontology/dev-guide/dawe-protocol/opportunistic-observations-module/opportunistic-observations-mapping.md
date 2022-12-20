@@ -240,3 +240,95 @@ The `observation_notes` key maps to the attribute `observation notes` in [Opport
     ] ;
 .
 ```
+
+#### `veg_growth_form`
+
+The `veg_growth_form` key maps to a `tern:Observation` with the observable property 'growth form'.
+
+#### `voucher_barcode`
+
+The `voucher_barcode` key maps to the property `dwc:materialSampleID` in `tern:MaterialSample` class. It is the identifier of specimen collected during `tern:Sampling`.
+
+##### Example
+
+```turtle
+<https://example.com/site/1/plant-tissue-vouchering/specimen/1> a tern:MaterialSample ;
+    rdfs:label "flora vouchering specimen 1" ;
+    dwc:materialSampleID "materialSample1" ;
+.
+```
+
+#### `voucher_comment`
+
+The `voucher_comment` key maps to the property `rdfs:comment` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://example.com/fauna-vouchering/1>
+    a tern:Sampling ;
+    rdfs:comment "Hair taken."^^xsd:string ;
+.
+```
+
+#### `voucher_type`
+
+The `voucher_type` key maps to the attribute `voucher type` in [Opportunistic Observations Attributes](https://linked.data.gov.au/def/nrm/36bc359e-5748-4f53-b6a1-548663155357), and is linked to samples by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/material-sample/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "voucher type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5b005b04-431e-54b1-a2f1-b9a2f0776079> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Animal tissue (fur/hair)" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/5b005b04-431e-54b1-a2f1-b9a2f0776079> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `voucher_condition`
+
+The `voucher_condition` key maps to the attribute `voucher condition` in [Opportunistic Observations Attributes](https://linked.data.gov.au/def/nrm/36bc359e-5748-4f53-b6a1-548663155357), and is linked to samples by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/material-sample/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "voucher condition" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/010ee3c8-bfbe-47c5-adc8-068ca664173d> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/01a2e203-48ca-5ed0-b166-83a48d8a6d9d> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Decomposed" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/01a2e203-48ca-5ed0-b166-83a48d8a6d9d> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `fauna_behaviour`
+
+The `fauna_behaviour` key maps to a `tern:Observation` with the observable property 'fauna behaviour'.
+
+#### `fauna_age_class`
+
+The `fauna_age_class` key maps to a `tern:Observation` with the observable property 'age class'.
+
+#### `fauna_sex`
+
+The `fauna_sex` key maps to a `tern:Observation` with the observable property 'sex'.
+
+#### `fauna_breeding_code`
+
+The `fauna_breeding_code` key maps to a `tern:Observation` with the observable property 'breeding status'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
