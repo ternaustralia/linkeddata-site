@@ -159,3 +159,84 @@ The `confident` key maps to the attribute `species name confidence` in [Opportun
     ] ;
 .
 ```
+
+#### `identification_source`
+
+The `identification_source` key maps to the attribute `source of identification` in [Opportunistic Observations Attributes](https://linked.data.gov.au/def/nrm/36bc359e-5748-4f53-b6a1-548663155357), and is linked to observations by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/field-species-name/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "source of identification" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/7b970827-ed2e-48d8-9c41-63bb51d01ce1> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/b1bde41c-b656-51c3-9da0-944734a14077> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Field observer" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/b1bde41c-b656-51c3-9da0-944734a14077> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `date_time`
+
+The `date_time` key maps to the property `tern:resultDateTime` on the `tern:Observation` class.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `number_of_individuals`
+
+The `number_of_individuals` key maps to a `tern:Observation` with the observable property 'number of individuals'.
+
+#### `observation_method`
+
+The `observation_method` key maps to attributes `observation method tier 1` and `observation method tier 2` in [Opportunistic Observations Attributes](https://linked.data.gov.au/def/nrm/36bc359e-5748-4f53-b6a1-548663155357), and is linked to observations by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "observation method tier 1" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/6b1b5d93-a0cf-47bc-959d-d9bdb6b8248b> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/25ce7137-31b7-5395-a237-a1ff153ff049> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Heard" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/25ce7137-31b7-5395-a237-a1ff153ff049> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `habitat_description`
+
+The `habitat_description` key maps to a `tern:Observation` with the observable property 'habitat description'.
+
+#### `observation_notes`
+
+The `observation_notes` key maps to the attribute `observation notes` in [Opportunistic Observations Attributes](https://linked.data.gov.au/def/nrm/36bc359e-5748-4f53-b6a1-548663155357), and is linked to observations by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "observation notes" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/dd035eed-24b2-41b5-a3cc-7270c2c590b5> ;
+        tern:hasSimpleValue "Observed on bird groups." ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Observed on bird groups." ;
+        ] ;
+    ] ;
+.
+```
