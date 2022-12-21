@@ -227,7 +227,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     ] ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
-    sosa:hasResult <https://example.com/site/1> ;
+    sosa:hasResult <https://example.com/site/1/plant-tissue-vouchering/specimen/1> ;
 .
 
 <https://example.com/site/1/plant-tissue-vouchering/specimen/1> a tern:MaterialSample ;
