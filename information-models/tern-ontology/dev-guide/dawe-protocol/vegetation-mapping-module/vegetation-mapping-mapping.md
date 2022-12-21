@@ -76,7 +76,7 @@ https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
 
 #### `location`
 
-The `location` key map sto the attribute `geo:hasGeometry` on the `tern:Site` class.
+The `location` key maps to the attribute `geo:hasGeometry` on the `tern:Site` class.
 
 ##### Example
 
@@ -138,7 +138,7 @@ The `observation_id` key maps to the property `dcterms:identifier` on the `tern:
 
 #### `position`
 
-The `position` key map sto the attribute `geo:hasGeometry` on the `tern:Observation` class.
+The `position` key maps to the attribute `geo:hasGeometry` on the `tern:Observation` class.
 
 ##### Example
 
