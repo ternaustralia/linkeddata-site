@@ -31,7 +31,7 @@ jobs:
       - name: Tag starts with v
         id: tag-starts-with-v
         if: ${{ startsWith(steps.latest-tag.outputs.tag, 'v') }}
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@3
         with:
           source: ${{ steps.latest-tag.outputs.tag }}
           find: "v"
@@ -64,7 +64,7 @@ jobs:
 
       - name: Rename git commit hash
         id: hash
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@3
         with:
           source: ${{ steps.commit-hash.outputs.version }}
           find: "sha-"
@@ -93,7 +93,7 @@ jobs:
 
       - name: Rename tag with local
         id: local-tag
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@3
         with:
           source: ${{ steps.hash.outputs.value }}
           find: "dev"
