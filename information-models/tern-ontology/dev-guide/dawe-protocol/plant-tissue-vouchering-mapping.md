@@ -16,9 +16,9 @@ Replicate samples can be collected, and the minimum distance between replicate s
 
 The following diagram is showing plant tissue vouchering
 
-<iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=plant-tissue-vouchering-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1caMM1I8sxMhtruRJJwglWKgnXe1OfLAa%26export%3Ddownload"></iframe>
+<iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1caMM1I8sxMhtruRJJwglWKgnXe1OfLAa&layers=1&nav=1&title=plant-tissue-vouchering-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1caMM1I8sxMhtruRJJwglWKgnXe1OfLAa%26export%3Ddownload"></iframe>
 
-<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=plant-tissue-vouchering-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1caMM1I8sxMhtruRJJwglWKgnXe1OfLAa%26export%3Ddownload">View diagram in new tab.</a>
+<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1caMM1I8sxMhtruRJJwglWKgnXe1OfLAa&layers=1&nav=1&title=plant-tissue-vouchering-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1caMM1I8sxMhtruRJJwglWKgnXe1OfLAa%26export%3Ddownload">View diagram in new tab.</a>
 
 ## Survey data
 
