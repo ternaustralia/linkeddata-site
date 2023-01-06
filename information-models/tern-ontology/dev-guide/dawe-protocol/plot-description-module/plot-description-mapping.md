@@ -217,7 +217,7 @@ The `surface_strew_size` key maps to a `tern:Observation` with the observable pr
 
 The `disturbance` key maps to a `tern:Observation` with the observable property 'disturbance type'.
 
-### Mapping plot location measurements
+### Mapping plot visit measurements
 
 - [OpenAPI docs for plot visit measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Plot-visit/post%2Fplot-visits)
 
