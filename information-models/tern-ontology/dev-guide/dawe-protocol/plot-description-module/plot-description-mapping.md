@@ -20,7 +20,7 @@ The Plot Description module records data about the site for the following featur
 
 These observations are recorded for each site during a site visit.
 
-A NVIS Level 5 description will be automatically generated based on entered vegetation information. The value of `structural formation` aligns with NVIS and is based on `growth form`, `height class`, and `cover`.
+An NVIS Level 5 description will be automatically generated based on the entered vegetation information. The value of `structural formation` aligns with NVIS and is generated from the `growth form`, `height class`, and `cover` values.
 
 The value of `slope class` is automatically generated from a list of 8 values once `slope` is entered – this information can help determine `landform element` (generated based on `slope` (degrees) value).
 
