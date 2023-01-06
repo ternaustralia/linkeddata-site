@@ -22,9 +22,9 @@ As a standard, the plot aligns in a north-south direction with the grid. If nece
 
 The following diagram is showing plot selection
 
-<iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=plot-selection-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D18Yd5ziqqOdqxL0vVZvr7DlVGCxrcVsOd%26export%3Ddownload"></iframe>
+<iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G18Yd5ziqqOdqxL0vVZvr7DlVGCxrcVsOd&layers=1&nav=1&title=plot-selection-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D18Yd5ziqqOdqxL0vVZvr7DlVGCxrcVsOd%26export%3Ddownload"></iframe>
 
-<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=plot-selection-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D18Yd5ziqqOdqxL0vVZvr7DlVGCxrcVsOd%26export%3Ddownload">View diagram in new tab.</a>
+<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G18Yd5ziqqOdqxL0vVZvr7DlVGCxrcVsOd&layers=1&nav=1&title=plot-selection-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D18Yd5ziqqOdqxL0vVZvr7DlVGCxrcVsOd%26export%3Ddownload">View diagram in new tab.</a>
 
 ## Survey data
 
