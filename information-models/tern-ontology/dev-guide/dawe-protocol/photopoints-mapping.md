@@ -14,9 +14,9 @@ This module outlines the steps to take a series of photos of the plot to collect
 
 The following diagram is showing photopoints. Rectangles coloured in blue show the sampling process of establishing three photopoints positions. Rectangles coloured green show the sampling process of taking various photos in each position to make a 360&deg; panorama.
 
-<iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=photopoints-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT%26export%3Ddownload"></iframe>
+<iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT&layers=1&nav=1&title=photopoints-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT%26export%3Ddownload"></iframe>
 
-<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=photopoints-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT%26export%3Ddownload">View diagram in new tab.</a>
+<a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT&layers=1&nav=1&title=photopoints-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1U_YiQdqyehXOGIBQx6YM8j_X_Td9VzcT%26export%3Ddownload">View diagram in new tab.</a>
 
 ## Survey data
 
