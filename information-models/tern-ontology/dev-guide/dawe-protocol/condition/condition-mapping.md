@@ -250,7 +250,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value "33.81"^^xsd:float ;
         tern:unit <http://qudt.org/vocab/unit/MilliM> ;
     ] ;
-    sosa:hasSimpleResult 33.81^^xsd:float ;
+    sosa:hasSimpleResult "33.81"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/f6af2c5e-d193-4337-b845-44550f661854> ;
 .
 
