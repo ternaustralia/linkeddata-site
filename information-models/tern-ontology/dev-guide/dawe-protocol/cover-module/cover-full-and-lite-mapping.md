@@ -257,8 +257,8 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     tern:hasSite <https://example.com/site/1> ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs:lat -34.920849^^xsd:double ;
-        wgs:long 150.242400^^xsd:double ;
+        wgs:lat "-34.920849"^^xsd:double ;
+        wgs:long "150.242400"^^xsd:double ;
     ] ;
 .
 
