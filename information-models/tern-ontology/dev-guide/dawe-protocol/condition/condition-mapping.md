@@ -384,7 +384,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasSimpleResult False ;
     sosa:hasResult [
         a tern:Boolean ;
-        rdf:value False ;
+        rdf:value false ;
     ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/28131f08-1ae4-422f-99cb-3b5bafc7761d> ;
 .
