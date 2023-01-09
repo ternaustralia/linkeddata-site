@@ -553,7 +553,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
         wgs84:lat "-30.920849"^^xsd:double ;
-        wgs84:long 152.242400^^xsd:double ;
+        wgs84:long "152.242400"^^xsd:double ;
     ] ;
     sosa:hasMember <https://example.com/observation/growth-stage/1>,
         <https://example.com/observation/homogeneity-measure/1> ;
