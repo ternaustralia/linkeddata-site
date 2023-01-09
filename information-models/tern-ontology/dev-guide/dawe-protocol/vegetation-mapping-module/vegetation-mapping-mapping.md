@@ -701,7 +701,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value "13.81"^^xsd:float ;
         tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
     ] ;
-    sosa:hasSimpleResult 13.81^^xsd:float ;
+    sosa:hasSimpleResult "13.81"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/d3a83bd2-3d18-4a9a-8afd-d87b621ba9e4> ;
 .
 
