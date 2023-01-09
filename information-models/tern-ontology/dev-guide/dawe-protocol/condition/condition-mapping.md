@@ -247,7 +247,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     ] ;
     sosa:hasResult [
         a tern:Float ;
-        rdf:value 33.81^^xsd:float ;
+        rdf:value "33.81"^^xsd:float ;
         tern:unit <http://qudt.org/vocab/unit/MilliM> ;
     ] ;
     sosa:hasSimpleResult 33.81^^xsd:float ;
