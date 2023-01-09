@@ -763,7 +763,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasResult [
         a tern:Float ;
-        rdf:value 13.81^^xsd:float ;
+        rdf:value "13.81"^^xsd:float ;
         tern:unit <http://qudt.org/vocab/unit/PERCENT> ;
     ] ;
     sosa:hasSimpleResult 13.81^^xsd:float ;
