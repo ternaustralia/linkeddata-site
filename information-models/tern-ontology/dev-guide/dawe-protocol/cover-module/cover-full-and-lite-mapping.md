@@ -237,6 +237,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
     tern:transectStartPoint <https://example.com/site/1/transect-geometry/1> ;
+    tern:transectEndPoint <https://example.com/site/1/transect-geometry/2> ;
     tern:transectDirection "East"^^xsd:string ;
 .
 
@@ -245,6 +246,13 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     wgs84:lat -34 ;
     wgs84:long 150.3 ;
     geosparql:asWKT "POINT(150.3 -34.0)"^^geosparql:wktLiteral ;
+.
+
+<https://example.com/site/1/transect-geometry/2> a tern-loc:Point ;
+    rdfs:label "Transect end point" ;
+    wgs84:lat -34.5 ;
+    wgs84:long 150.8 ;
+    geosparql:asWKT "POINT(150.8 -34.5)"^^geosparql:wktLiteral ;
 .
 
 <https://example.com/site/1/visit/1>
