@@ -361,7 +361,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasSimpleResult true ;
     sosa:hasResult [
         a tern:Boolean ;
-        rdf:value Ture ;
+        rdf:value true ;
     ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/85bdd25a-fa08-49de-9f0b-98895cb79aa6> ;
 .
