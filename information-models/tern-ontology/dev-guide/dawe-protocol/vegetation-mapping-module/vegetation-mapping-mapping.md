@@ -84,7 +84,7 @@ The `location` key maps to the attribute `geo:hasGeometry` on the `tern:Site` cl
 <https://example.com/site/1> a tern:Site ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs:lat -30.920849^^xsd:double ;
+        wgs:lat "-30.920849"^^xsd:double ;
         wgs:long 152.242400^^xsd:double ;
     ] ;
 .
