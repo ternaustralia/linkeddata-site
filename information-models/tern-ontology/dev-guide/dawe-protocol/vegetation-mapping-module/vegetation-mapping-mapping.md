@@ -552,7 +552,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat -30.920849^^xsd:double ;
+        wgs84:lat "-30.920849"^^xsd:double ;
         wgs84:long 152.242400^^xsd:double ;
     ] ;
     sosa:hasMember <https://example.com/observation/growth-stage/1>,
