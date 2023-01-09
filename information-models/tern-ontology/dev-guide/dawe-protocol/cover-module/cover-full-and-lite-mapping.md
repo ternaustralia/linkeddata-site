@@ -375,7 +375,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         rdf:value "3.81"^^xsd:float ;
         tern:unit <http://qudt.org/vocab/unit/M> ;
     ] ;
-    sosa:hasSimpleResult 3.81^^xsd:float ;
+    sosa:hasSimpleResult "3.81"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/823263e6-4bc9-4c98-94de-74a509aef47c> ;
 .
 
