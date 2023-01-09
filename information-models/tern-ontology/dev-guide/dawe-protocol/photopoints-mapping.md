@@ -156,7 +156,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
         wgs84:lat "-30.920849"^^xsd:double ;
-        wgs84:long 152.242400^^xsd:double ;
+        wgs84:long "152.242400"^^xsd:double ;
     ] ;
     tern:hasAttribute [
         rdfs:label "plot name" ;
