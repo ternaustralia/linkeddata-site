@@ -16,7 +16,7 @@ The Floristics module records data about the site for the following feature type
 
 These observations are recorded for each site during a site visit.
 
-Specimens will be collected for each flora species present within the plot, and each specimen has an identifier. If required, photos will be taken of the specimen or an individual, and each photo has an identifier. Record the second `growth form` if there is one for a species.
+Specimens will be collected for each flora species present within the plot, and each specimen will be assigned an identifier. If required, photos will be taken of the specimen or individual, and each photo will be assigned an identifier. Record a second `growth form` if there is one.
 
 ### Diagram
 
