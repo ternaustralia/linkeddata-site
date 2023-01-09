@@ -20,7 +20,7 @@ Specimens will be collected for each flora species present within the plot, and 
 
 ### Diagram
 
-The following diagram show the floristics mapping.
+The following diagram shows the floristics mapping.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1a0ZGzEnetJHZDp6pwqBHzqDNj-9rLURE&layers=1&nav=1&title=floristics-full-and-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1a0ZGzEnetJHZDp6pwqBHzqDNj-9rLURE%26export%3Ddownload"></iframe>
 
