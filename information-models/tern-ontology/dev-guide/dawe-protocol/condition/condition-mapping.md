@@ -381,7 +381,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Observation ;
     rdfs:label "galls and lerps" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasSimpleResult False ;
+    sosa:hasSimpleResult false ;
     sosa:hasResult [
         a tern:Boolean ;
         rdf:value false ;
