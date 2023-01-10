@@ -29,3 +29,41 @@ The following diagram shows the Plot Soil Description protocol mapping. Purple n
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1jQw8u2jj8WCNfghg5XzTlofJieOMHPQy&layers=1&nav=1&title=soil-plot-soil-description-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1jQw8u2jj8WCNfghg5XzTlofJieOMHPQy%26export%3Ddownload"></iframe>
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1jQw8u2jj8WCNfghg5XzTlofJieOMHPQy&layers=1&nav=1&title=soil-plot-soil-description-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1jQw8u2jj8WCNfghg5XzTlofJieOMHPQy%26export%3Ddownload">View diagram in new tab.</a>
+
+## Observations data
+
+### Mapping Plot Soil Description measurements
+
+- [OpenAPI docs for plot soil description](https://beta.core-api.paratoo.tern.org.au/documentation#/Plot-soil-description-survey/post%2Fplot-soil-description-surveys)
+
+```json
+{
+  "start_date_time": "2023-01-10T01:07:56.944Z",
+  "end_date_time": "2023-01-10T01:07:56.944Z",
+  "surveyId": "string",
+  "plot_visit": 0,
+  "slope_percent": 0,
+  "slope_aspect": 0,
+  "evaluation_means": "T",
+  "slope_class": "LE",
+  "morphological_type": "C",
+  "inclination_of_slope_element": "X",
+  "relief": "M",
+  "modal_slope": "LE",
+  "runoff": "0",
+  "permeability": "1",
+  "coarse_frag_abundance": "0",
+  "coarse_frag_size": "1",
+  "coarse_frag_shape": "n/a",
+  "coarse_frag_lithology": "NA",
+  "coarse_frag_strength": "VW",
+  "coarse_frag_alteration": "F",
+  "rock_outcrop_abundance": "0",
+  "rock_outcrop_lithology": "NA",
+  "surface_soil_condition": "C",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
