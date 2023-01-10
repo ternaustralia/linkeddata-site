@@ -111,7 +111,7 @@ The `location` key maps to the attribute `geo:hasGeometry` on the `tern:Observat
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
         wgs:lat "-30.920849"^^xsd:double ;
-        wgs:long 152.242400^^xsd:double ;
+        wgs:long "152.242400"^^xsd:double ;
     ] ;
 .
 ```
@@ -126,8 +126,8 @@ The `plot_location` key map sto the attribute `geo:hasGeometry` on the `tern:Sit
 <https://example.com/site/1> a tern:Site ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs:lat -30.920849^^xsd:double ;
-        wgs:long 152.242400^^xsd:double ;
+        wgs:lat "-30.920849"^^xsd:double ;
+        wgs:long "152.242400"^^xsd:double ;
     ] ;
 .
 ```
@@ -151,10 +151,10 @@ The `confident` key maps to the attribute `species name confidence` in [Opportun
     tern:hasAttribute [
         rdfs:label "species name confidence" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/6f6a3655-4347-4219-bfe1-9e4023d3a80f> ;
-        tern:hasSimpleValue True ;
+        tern:hasSimpleValue true ;
         tern:hasValue [
             a tern:Boolean ;
-            rdf:value True ;
+            rdf:value true ;
         ] ;
     ] ;
 .
@@ -339,7 +339,13 @@ Encoded using the TERN Ontology and related controlled vocabularies.
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix schema: <https://schema.org/> .
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -368,8 +374,8 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     tern:hasSite <https://example.com/site/1> ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat -30.920849^^xsd:double ;
-        wgs84:long 152.242400^^xsd:double ;
+        wgs84:lat "-30.920849"^^xsd:double ;
+        wgs84:long "152.242400"^^xsd:double ;
     ] ;
 .
 
@@ -397,8 +403,8 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat -30.920848^^xsd:double ;
-        wgs84:long 152.242401^^xsd:double ;
+        wgs84:lat "-30.920848"^^xsd:double ;
+        wgs84:long "152.242401"^^xsd:double ;
     ] ;
 .
 
@@ -416,8 +422,8 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     tern:resultDateTime "2022-05-10T06:38:02"^^xsd:dateTime ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat -30.920849^^xsd:double ;
-        wgs84:long 152.242402^^xsd:double ;
+        wgs84:lat "-30.920849"^^xsd:double ;
+        wgs84:long "152.242402"^^xsd:double ;
     ] ;
     prov:wasAssociatedWith [
         a <https://w3id.org/tern/ontologies/org/Person> ;
@@ -482,8 +488,8 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     tern:resultDateTime "2022-05-10T09:38:02"^^xsd:dateTime ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat -30.920850^^xsd:double ;
-        wgs84:long 152.242403^^xsd:double ;
+        wgs84:lat "-30.920850"^^xsd:double ;
+        wgs84:long "152.242403"^^xsd:double ;
     ] ;
     prov:wasAssociatedWith [
         a <https://w3id.org/tern/ontologies/org/Person> ;
@@ -540,8 +546,8 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasResult <https://example.com/site/1/fauna-vouchering/specimen/1> ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat -30.920851^^xsd:double ;
-        wgs84:long 152.242404^^xsd:double ;
+        wgs84:lat "-30.920851"^^xsd:double ;
+        wgs84:long "152.242404"^^xsd:double ;
     ] ;
 .
 
@@ -596,8 +602,8 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasResult <https://example.com/site/1/flora-vouchering/specimen/1> ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat -30.920852^^xsd:double ;
-        wgs84:long 152.242405^^xsd:double ;
+        wgs84:lat "-30.920852"^^xsd:double ;
+        wgs84:long "152.242405"^^xsd:double ;
     ] ;
 .
 
@@ -751,10 +757,10 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         [
             rdfs:label "species name confidence" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/6f6a3655-4347-4219-bfe1-9e4023d3a80f> ;
-            tern:hasSimpleValue True ;
+            tern:hasSimpleValue true ;
             tern:hasValue [
                 a tern:Boolean ;
-                rdf:value True ;
+                rdf:value true ;
             ] ;
         ],
         [
@@ -783,10 +789,10 @@ Encoded using the TERN Ontology and related controlled vocabularies.
         [
             rdfs:label "species name confidence" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/6f6a3655-4347-4219-bfe1-9e4023d3a80f> ;
-            tern:hasSimpleValue True ;
+            tern:hasSimpleValue true ;
             tern:hasValue [
                 a tern:Boolean ;
-                rdf:value True ;
+                rdf:value true ;
             ] ;
         ],
         [
