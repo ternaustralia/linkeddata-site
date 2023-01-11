@@ -67,3 +67,161 @@ The following diagram shows the Plot Soil Description protocol mapping. Purple n
 ```
 
 The data are observations recorded during a site visit.
+
+#### `start_date_time`
+
+The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `end_date_time`
+
+The `end_date_time` key maps to the property `prov:endedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `surveyId`
+
+Use this value along with the site ID to generate a site visit URI.
+
+##### Example
+
+```
+https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `slope_percent`
+
+The `slope_percent` key maps to a `tern:Observation` with the observable property 'slope'.
+
+#### `slope_aspect`
+
+The `slope_aspect` key maps to a `tern:Observation` with the observable property 'aspect'.
+
+#### `evaluation_means`
+
+The `evaluation_means` key maps to the attribute `slope- means of evaluation` in [Soil module - Plot soil description protocol Attributes](https://linked.data.gov.au/def/nrm/16a1a45f-b4a4-4eef-af45-2b72477a4178), and is linked to `tern:Observation` by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "slope- means of evaluation" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/2c26a8c4-757f-4889-a94d-1f9a0a19574a> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/13bbc385-e992-5b63-b860-99310238f15f> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Abney level or clinometer and tape" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/13bbc385-e992-5b63-b860-99310238f15f> ;
+        ] ;
+    ] ;
+```
+
+#### `slope_class`
+
+The `slope_class` key maps to a `tern:Observation` with the observable property 'slope class'.
+
+#### `morphological_type`
+
+The `morphological_type` key maps to a `tern:Observation` with the observable property 'slope morphology type'.
+
+#### `inclination_of_slope_element`
+
+The `inclination_of_slope_element` key maps to a `tern:Observation` with the observable property 'relative inclination of slope elements'.
+
+#### `relief`
+
+The `relief` key maps to a `tern:Observation` with the observable property 'landform relief'.
+
+#### `modal_slope`
+
+The `modal_slope` key maps to a `tern:Observation` with the observable property 'modal slope'.
+
+#### `runoff`
+
+The `runoff` key maps to a `tern:Observation` with the observable property 'soil runoff'.
+
+#### `permeability`
+
+The `permeability` key maps to a `tern:Observation` with the observable property 'soil permeability'.
+
+#### `coarse_frag_abundance`
+
+The `coarse_frag_abundance` key maps to a `tern:Observation` with the observable property 'coarse fragments abundance'.
+
+#### `coarse_frag_size`
+
+The `coarse_frag_size` key maps to a `tern:Observation` with the observable property 'size of coarse fragments'.
+
+#### `coarse_frag_shape`
+
+The `coarse_frag_shape` key maps to a `tern:Observation` with the observable property 'shape of coarse fragments'.
+
+#### `coarse_frag_lithology`
+
+The `coarse_frag_lithology` key maps to a `tern:Observation` with the observable property 'coarse fragments lithology'.
+
+#### `coarse_frag_strength`
+
+The `coarse_frag_strength` key maps to a `tern:Observation` with the observable property 'soil- coarse fragment strength'.
+
+#### `coarse_frag_alteration`
+
+The `coarse_frag_alteration` key maps to a `tern:Observation` with the observable property 'soil- coarse fragment alteration'.
+
+#### `rock_outcrop_abundance`
+
+The `rock_outcrop_abundance` key maps to a `tern:Observation` with the observable property 'rock outcrop abundance'.
+
+#### `rock_outcrop_lithology`
+
+The `rock_outcrop_lithology` key maps to a `tern:Observation` with the observable property 'rock outcrop lithology'.
+
+#### `surface_soil_condition`
+
+The `surface_soil_condition` key maps to a `tern:Observation` with the observable property 'condition of soil surface when dry'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
+```turtle
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix schema: <https://schema.org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+
+```
