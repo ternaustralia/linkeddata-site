@@ -343,6 +343,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     sosa:hasMember <https://example.com/observation/coarse-fragments-abundance/1>,
         <https://example.com/observation/soil-coarse-fragment-strength/1>,
         <https://example.com/observation/size-of-coarse-fragments/1>,
+        <https://example.com/observation/coarse-fragments-lithology/1>,
         <https://example.com/observation/shape-of-coarse-fragments/1>,
         <https://example.com/observation/surface-strew-lithology/1>,
         <https://example.com/observation/soil-coarse-fragment-alteration/1> ;
@@ -570,6 +571,19 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7a8698da-4624-5b9d-83db-8b384a00fb52> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/b3dd4df5-589b-476e-8e9e-0af6a7155759> ;
+.
+
+<https://example.com/observation/coarse-fragments-lithology/1>
+    a tern:Observation ;
+    rdfs:label "coarse fragments lithology" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+        a tern:IRI ;
+        rdfs:label "Adamellite" ;
+        rdf:value <https://linked.data.gov.au/def/nrm/17f2a1b5-8e0a-558e-994e-79f92dd07610> ;
+    ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/17f2a1b5-8e0a-558e-994e-79f92dd07610> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/4062f093-424b-441e-86fc-648d820ae1fb> ;
 .
 
 <https://example.com/observation/soil-coarse-fragment-strength/1>
