@@ -318,3 +318,41 @@ The `segregation_magnetic_attribute` key maps to a `tern:Observation` with the o
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Soil horizon structure measurements
+
+- [OpenAPI docs for soil horizon structure](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-horizon-structure/post%2Fsoil-horizon-structures)
+
+```json
+{
+  "structure_grade": "G",
+  "structure_size": "1",
+  "structure_type": "PL",
+  "structure_compound_pedality": "1",
+  "soil_horizon_observation": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `structure_grade`
+
+The `structure_grade` key maps to a `tern:Observation` with the observable property 'soil structure grade'.
+
+#### `structure_size`
+
+The `structure_size` key maps to a `tern:Observation` with the observable property 'soil structure size'.
+
+#### `structure_type`
+
+The `structure_type` key maps to a `tern:Observation` with the observable property 'soil structure type'.
+
+#### `structure_compound_pedality`
+
+The `structure_compound_pedality` key maps to a `tern:Observation` with the observable property 'soil compound pedality'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
