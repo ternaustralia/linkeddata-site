@@ -222,3 +222,51 @@ The `coarse_frag_alteration` key maps to a `tern:Observation` with the observabl
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Soil horizon mottle measurements
+
+- [OpenAPI docs for soil horizon mottle](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-horizon-mottle/post%2Fsoil-horizon-mottles)
+
+```json
+{
+  "mottle_type": "M",
+  "mottle_abundance": "0",
+  "mottle_size": "1",
+  "mottle_contrast": "F",
+  "mottle_colour": "n/a",
+  "mottle_boundary_distinctness": "S",
+  "soil_horizon_observation": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `mottle_type`
+
+The `mottle_type` key maps to a `tern:Observation` with the observable property 'soil mottle type'.
+
+#### `mottle_abundance`
+
+The `mottle_abundance` key maps to a `tern:Observation` with the observable property 'soil mottle abundance'.
+
+#### `mottle_size`
+
+The `mottle_size` key maps to a `tern:Observation` with the observable property 'soil mottle size'.
+
+#### `mottle_contrast`
+
+The `mottle_contrast` key maps to a `tern:Observation` with the observable property 'soil mottle contrast'.
+
+#### `mottle_colour`
+
+The `mottle_colour` key maps to a `tern:Observation` with the observable property 'soil mottle color'.
+
+#### `mottle_boundary_distinctness`
+
+The `mottle_boundary_distinctness` key maps to a `tern:Observation` with the observable property 'soil mottle boundary distinctness'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
