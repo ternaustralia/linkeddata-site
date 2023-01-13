@@ -356,3 +356,41 @@ The `structure_compound_pedality` key maps to a `tern:Observation` with the obse
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Soil horizon void measurements
+
+- [OpenAPI docs for soil horizon void](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-horizon-void/post%2Fsoil-horizon-voids)
+
+```json
+{
+  "void_crack": "1",
+  "fine_macropore_abundance": "0",
+  "medium_macropore_abundance": "0",
+  "macropore_diameter": "1",
+  "soil_horizon_observation": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `void_crack`
+
+The `void_crack` key maps to a `tern:Observation` with the observable property 'soil voids cracks'.
+
+#### `fine_macropore_abundance`
+
+The `fine_macropore_abundance` key maps to a `tern:Observation` with the observable property 'soil voids fine macropore abundance'.
+
+#### `medium_macropore_abundance`
+
+The `medium_macropore_abundance` key maps to a `tern:Observation` with the observable property 'soil voids coarse macropore abundance'.
+
+#### `macropore_diameter`
+
+The `macropore_diameter` key maps to a `tern:Observation` with the observable property 'mean macropore diameter'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
