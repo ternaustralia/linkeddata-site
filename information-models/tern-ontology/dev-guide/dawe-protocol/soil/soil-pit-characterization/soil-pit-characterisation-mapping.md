@@ -270,3 +270,51 @@ The `mottle_boundary_distinctness` key maps to a `tern:Observation` with the obs
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Soil horizon segregation measurements
+
+- [OpenAPI docs for soil horizon segregation](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-horizon-segregation/post%2Fsoil-horizon-segregations)
+
+```json
+{
+  "segregations_abundance": "0",
+  "segregations_nature": "A",
+  "segregations_form": "n/a",
+  "segregations_size": "n/a",
+  "segregation_strength": "1",
+  "segregation_magnetic_attribute": "N",
+  "soil_horizon_observation": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `segregation_abundance`
+
+The `segregation_abundance` key maps to a `tern:Observation` with the observable property 'soil segregation abundance'.
+
+#### `segregation_nature`
+
+The `segregation_nature` key maps to a `tern:Observation` with the observable property 'soil segregation nature'.
+
+#### `segregation_form`
+
+The `segregation_form` key maps to a `tern:Observation` with the observable property 'soil segregation form'.
+
+#### `segregation_size`
+
+The `segregation_size` key maps to a `tern:Observation` with the observable property 'soil segregation size'.
+
+#### `segregation_strength`
+
+The `segregation_strength` key maps to a `tern:Observation` with the observable property 'soil segregation strength'.
+
+#### `segregation_magnetic_attribute`
+
+The `segregation_magnetic_attribute` key maps to a `tern:Observation` with the observable property 'soil segregation magnetic attributes'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
