@@ -174,3 +174,51 @@ The `effervescence` key maps to a `tern:Observation` with the observable propert
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Soil horizon coarse fragment measurements
+
+- [OpenAPI docs for soil horizon coarse fragment](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-horizon-coarse-fragment/post%2Fsoil-horizon-coarse-fragments)
+
+```json
+{
+  "coarse_frag_abundance": "0",
+  "coarse_frag_size": "1",
+  "coarse_frag_shape": "n/a",
+  "lithology": "NA",
+  "coarse_frag_strength": "VW",
+  "coarse_frag_alteration": "F",
+  "soil_horizon_observation": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `coarse_frag_abundance`
+
+The `coarse_frag_abundance` key maps to a `tern:Observation` with the observable property 'coarse fragments abundance'.
+
+#### `coarse_frag_size`
+
+The `coarse_frag_size` key maps to a `tern:Observation` with the observable property 'coarse fragments size'.
+
+#### `coarse_frag_shape`
+
+The `coarse_frag_shape` key maps to a `tern:Observation` with the observable property 'coarse fragments shape'.
+
+#### `coarse_frag_lithology`
+
+The `coarse_frag_lithology` key maps to a `tern:Observation` with the observable property 'coarse fragments lithology'.
+
+#### `coarse_frag_strength`
+
+The `coarse_frag_strength` key maps to a `tern:Observation` with the observable property 'soil- coarse fragment strength'.
+
+#### `coarse_frag_alteration`
+
+The `coarse_frag_alteration` key maps to a `tern:Observation` with the observable property 'soil- coarse fragment alteration'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
