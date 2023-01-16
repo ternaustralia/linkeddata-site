@@ -182,7 +182,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "plant individual tree 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270> ;
-    tern:isSampleOf <https://example.com/feature-of-interest/2> ;
+    sosa:isSampleOf <https://example.com/feature-of-interest/2> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -190,7 +190,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "plant population 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> ;
-    tern:isSampleOf <https://example.com/feature-of-interest/3> ;
+    sosa:isSampleOf <https://example.com/feature-of-interest/3> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -198,7 +198,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "plant community 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
