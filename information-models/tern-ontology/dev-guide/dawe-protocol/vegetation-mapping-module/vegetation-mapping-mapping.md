@@ -430,7 +430,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "land surface disturbance 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -438,7 +438,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "plant population 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -446,7 +446,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "vegetation disturbance 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/d4fc54b1-0ad3-4512-86b7-d42b121ece45> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -454,7 +454,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "land surface substrate 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/aef12cd6-3826-4988-a54c-8578d3fb4c8d> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -462,7 +462,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "plant community 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
