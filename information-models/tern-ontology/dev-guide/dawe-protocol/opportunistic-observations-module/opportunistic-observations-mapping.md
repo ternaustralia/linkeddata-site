@@ -383,7 +383,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "animal occurrence 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -391,7 +391,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "plant occurrence 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -399,7 +399,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "habitat 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;

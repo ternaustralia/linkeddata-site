@@ -50,7 +50,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "Melaleuca citrolens plant population" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
