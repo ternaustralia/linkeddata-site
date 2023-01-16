@@ -312,7 +312,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "climate 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/6d40d71e-58cd-4f75-8304-40c01fe5f74c> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -320,7 +320,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "vegetation stratum 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/32834f36-a478-45be-97f4-ff2ff51e9f5c> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -328,7 +328,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "plant community 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -336,7 +336,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "land surface 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/8282fb22-4135-415c-8ca2-317860d102fb> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
@@ -344,7 +344,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     a tern:Sample ;
     rdfs:label "landform 1" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/2cf3ed29-440e-4a50-9bbc-5aab30df9fcd> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 
