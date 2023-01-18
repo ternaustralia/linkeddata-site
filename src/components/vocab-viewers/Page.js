@@ -11,6 +11,29 @@ import { InternalLink } from "../InternalLink";
 import ScrollToTop from "../ScrollToTop";
 import { Collapse } from "../Collapse";
 
+function VocabsPageNav({ currentPage, totalPages }) {
+  return (
+    <div className="row">
+      <div className="col col--6">
+        {currentPage != 1 ? (
+          <Link to={"?page=" + (currentPage - 1)}>Previous</Link>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="col col--6">
+        {currentPage != totalPages ? (
+          <Link to={"?page=" + (currentPage + 1)} style={{ float: "right" }}>
+            Next
+          </Link>
+        ) : (
+          ""
+        )}
+      </div>
+    </div>
+  );
+}
+
 function VocabItem({ uri, label, description }) {
   return (
     <div className="card margin-vert--md">
@@ -28,20 +51,35 @@ function VocabItem({ uri, label, description }) {
 
 function VocabsListPage({ settingsID }) {
   const settings = useViewerSettings(settingsID);
+
+  const params = useQuery();
+  let page = params.get("page") || 1;
+  if (typeof page === "string") {
+    page = parseInt(page);
+  }
+
   const { data, error } = useSWR(
-    settings.api + "/viewer/entrypoint/nrm",
+    settings.api + `/viewer/entrypoint/${settingsID}?page=${page}`,
     getFetcher
   );
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
+  const { items, items_count: itemsCount, total_pages: totalPages } = data;
+
   return (
     <>
       <h2>{settings.title}</h2>
 
-      {data && data.length > 0 ? (
-        data.map((item) => (
+      <p>
+        Showing page {page} of {totalPages} ({itemsCount} results).
+      </p>
+
+      <VocabsPageNav currentPage={page} totalPages={totalPages} />
+
+      {items && items.length > 0 ? (
+        items.map((item) => (
           <VocabItem
             key={item.id}
             uri={item.id}
@@ -52,6 +90,8 @@ function VocabsListPage({ settingsID }) {
       ) : (
         <div>Sorry, failed to load data.</div>
       )}
+
+      <VocabsPageNav currentPage={page} totalPages={totalPages} />
     </>
   );
 }
@@ -207,7 +247,14 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                   return (
                     <div key={object.value} className="card__body">
                       <div className="card">
-                        <div className="card__body">{objectValue}{object.datatype ? <sup>^^{object.datatype.value}</sup> : ""}</div>
+                        <div className="card__body">
+                          {objectValue}
+                          {object.datatype ? (
+                            <sup>^^{object.datatype.value}</sup>
+                          ) : (
+                            ""
+                          )}
+                        </div>
                       </div>
                     </div>
                   );
