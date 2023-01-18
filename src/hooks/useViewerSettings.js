@@ -3,7 +3,7 @@ import useEnv from "./useEnv";
 export const useViewerSettings = (key) => {
   const env = useEnv();
 
-  const localApiEndpoint = "http://localhost:5000/api/v1.0";
+  const localApiEndpoint = "http://localhost:5005/api/v1.0";
   const devApiEndpoint = "https://linkeddata-test.tern.org.au/api/v1.0";
   const prodApiEndpoint = "https://linkeddata.tern.org.au/api/v1.0";
 
@@ -16,7 +16,15 @@ export const useViewerSettings = (key) => {
       title: "NRM Controlled Vocabularies",
       api: localApiEndpoint,
       pageRoute: "/viewers/dawe-vocabs",
-      sparqlEndpoint: "http://graphdb:7200/repositories/dawe_vocabs_core",
+      sparqlEndpoint:
+        "https://graphdb.tern.org.au/repositories/dawe_vocabs_core?infer=false",
+    },
+    tern: {
+      title: "TERN Controlled Vocabularies",
+      api: localApiEndpoint,
+      pageRoute: "/viewers/tern-vocabs",
+      sparqlEndpoint:
+        "https://graphdb.tern.org.au/repositories/tern_vocabs_core?infer=false",
     },
   };
 
@@ -32,6 +40,13 @@ export const useViewerSettings = (key) => {
       sparqlEndpoint:
         "https://demo.vocabs.ardc.edu.au/repository/api/sparql/tern-rva_dawe-nrm-controlled-vocabularies_0-0-7",
     },
+    tern: {
+      title: "TERN Controlled Vocabularies",
+      api: devApiEndpoint,
+      pageRoute: "/viewers/tern-vocabs",
+      sparqlEndpoint:
+        "https://graphdb.tern.org.au/repositories/tern_vocabs_core?infer=false",
+    },
   };
 
   const prodSettings = {
@@ -44,7 +59,14 @@ export const useViewerSettings = (key) => {
       api: prodApiEndpoint,
       pageRoute: "/viewers/dawe-vocabs",
       sparqlEndpoint:
-        "https://graphdb.tern.org.au/repositories/dawe_vocabs_core",
+        "https://graphdb.tern.org.au/repositories/dawe_vocabs_core?infer=false",
+    },
+    tern: {
+      title: "TERN Controlled Vocabularies",
+      api: prodApiEndpoint,
+      pageRoute: "/viewers/tern-vocabs",
+      sparqlEndpoint:
+        "https://graphdb.tern.org.au/repositories/tern_vocabs_core?infer=false",
     },
   };
 
