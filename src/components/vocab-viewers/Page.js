@@ -42,9 +42,11 @@ function VocabItem({ uri, label, description }) {
           <Link to={"?uri=" + uri}>{label}</Link>
         </h5>
       </div>
-      <div className="card__body">
-        <div>{description}</div>
-      </div>
+      {description && (
+        <div className="card__body">
+          <div>{description}</div>
+        </div>
+      )}
     </div>
   );
 }
