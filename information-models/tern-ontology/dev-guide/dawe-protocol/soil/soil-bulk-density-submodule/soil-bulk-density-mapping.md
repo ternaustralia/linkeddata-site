@@ -84,3 +84,114 @@ The `plot_visit` key maps to the `tern:SiteVisit` class.
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
+```turtle
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix schema: <https://schema.org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<https://example.com/site/1>
+    a tern:Site ;
+    rdfs:label "Site 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    dcterms:identifier "site001"^^xsd:string ;
+.
+
+<https://example.com/site/1/visit/1>
+    a tern:SiteVisit ;
+    rdfs:label "Site 1 visit 1" ;
+    dcterms:identifier "siteVisit001" ;
+    tern:locationDescription "The weather is sunny."^^xsd:string ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSite <https://example.com/site/1> ;
+    prov:startedAtTime "2022-11-06T03:16:42.783Z" ;
+    prov:endedAtTime "2022-11-06T03:18:42.783Z" ;
+.
+
+<https://example.com/feature-of-interest/1>
+    a tern:Sample ;
+    rdfs:label "soil specimen 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/d738a3f9-9b00-4adf-9dc8-0577269b691d> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/observation-collection/1>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on soil specimen" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-11-05T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-11-05T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/d9e6739a-c2dd-4619-be43-1251449a6436> ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs84:lat "-30.920855"^^xsd:double ;
+        wgs84:long "152.242414"^^xsd:double ;
+    ] ;
+    sosa:hasMember <https://example.com/observation/fine-earth-bulk-density/1> ,
+        <https://example.com/observation/gross-bulk-density/1> ,
+        <https://example.com/observation/soil-bulk-density/1> ;
+.
+
+<https://example.com/observation/fine-earth-bulk-density/1>
+    a tern:Observation ;
+    rdfs:label "fine earth bulk density" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Float ;
+            rdf:value "1.56"^^xsd:float ;
+            tern:unit <http://qudt.org/vocab/unit/GM-PER-CentiM3>
+        ] ;
+    sosa:hasSimpleResult "1.56"^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/460784be-8ad5-4c32-b171-93d69984c0b9> ;
+.
+
+<https://example.com/observation/gross-bulk-density/1>
+    a tern:Observation ;
+    rdfs:label "gross bulk density" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Float ;
+            rdf:value "1.56"^^xsd:float ;
+            tern:unit <http://qudt.org/vocab/unit/GM-PER-CentiM3>
+        ] ;
+    sosa:hasSimpleResult "1.56"^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/a344d029-4b47-455e-89d9-a1040877a5ce> ;
+.
+
+<https://example.com/observation/soil-bulk-density/1>
+    a tern:Observation ;
+    rdfs:label "soil bulk density" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Float ;
+            rdf:value "1.56"^^xsd:float ;
+            tern:unit <http://qudt.org/vocab/unit/GM-PER-CentiM3>
+        ] ;
+    sosa:hasSimpleResult "1.56"^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/ec510708-9ac1-4c8a-bfe2-31ba5bb693da> ;
+.
+
+```
