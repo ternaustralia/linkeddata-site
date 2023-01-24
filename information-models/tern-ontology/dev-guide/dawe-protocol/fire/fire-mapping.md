@@ -78,7 +78,7 @@ The `last_fire` key maps to the date and time of last fire event recorded in dat
 
 #### `last_fire_accuracy_days`
 
-The `last_fire_accuracy_days` key maps to the attribute `time since fire` in [Fire Attributes](https://linked.data.gov.au/def/nrm/e8f2ee06-9943-49a4-b113-064f8e195dca), and is linked to site by `tern:hasAttribute`.
+The `last_fire_accuracy_days` key maps to the attribute `time since fire` in [Fire Attributes](https://linked.data.gov.au/def/nrm/e8f2ee06-9943-49a4-b113-064f8e195dca), and is linked to observations by `tern:hasAttribute`.
 
 ##### Example
 
@@ -95,6 +95,62 @@ The `last_fire_accuracy_days` key maps to the attribute `time since fire` in [Fi
     ] ;
 .
 ```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Observations data
+
+### Mapping fire measurements
+
+- [OpenAPI docs for fire measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Fire-observation/post%2Ffire-observations)
+
+```json
+{
+  "plot_burned_status": "U",
+  "substrate_type": "BR",
+  "cover_point_intercept_point": 0,
+  "soil_char_depth": 0,
+  "soil_char_surface": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `plot_burned_status`
+
+The `plot_burned_status` key maps to a `tern:Observation` with the observable property 'plot burned status'.
+
+#### `substrate_type`
+
+The `substrate_type` key maps to a `tern:Observation` with the observable property 'substrate type'.
+
+#### `cover_point_intercept_point`
+
+The `cover_point_intercept_point` key maps to the attribute `point intercept number` in [Fire Attributes](https://linked.data.gov.au/def/nrm/e8f2ee06-9943-49a4-b113-064f8e195dca), and is linked to observations by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "point intercept number" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+        tern:hasSimpleValue "20" ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "20" ;
+        ] ;
+    ] ;
+.
+```
+
+#### `soil_char_depth`
+
+The `soil_char_depth` key maps to a `tern:Observation` with the observable property 'maximum trunk char height'.
 
 #### `createdBy` and `updatedBy`
 
