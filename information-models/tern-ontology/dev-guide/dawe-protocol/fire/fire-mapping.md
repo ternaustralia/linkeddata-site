@@ -192,3 +192,288 @@ The `plant_alive_status` key maps to a `tern:Observation` with the observable pr
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
+```turtle
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix schema: <https://schema.org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<https://example.com/site/1>
+    a tern:Site ;
+    rdfs:label "Site 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    dcterms:identifier "site001"^^xsd:string ;
+.
+
+<https://example.com/transect/1>
+    a tern:Transect ;
+    rdfs:label "Transect 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    dcterms:identifier "transect001"^^xsd:string ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:transectDirection "West" ;
+    tern:transectStartPoint [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs84:lat "-30.920860"^^xsd:double ;
+        wgs84:long "151.242410"^^xsd:double ;
+    ] ;
+    tern:transectEndPoint [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs84:lat "-30.920861"^^xsd:double ;
+        wgs84:long "151.242410"^^xsd:double ;
+    ] ;
+.
+
+<https://example.com/site/1/visit/1>
+    a tern:SiteVisit ;
+    rdfs:label "Site 1 visit 1" ;
+    dcterms:identifier "siteVisit001" ;
+    tern:locationDescription "The weather is sunny."^^xsd:string ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSite <https://example.com/site/1> ;
+    prov:startedAtTime "2022-12-06T03:16:42.783Z" ;
+.
+
+<https://example.com/feature-of-interest/1>
+    a tern:Sample ;
+    rdfs:label "land surface substrate 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/aef12cd6-3826-4988-a54c-8578d3fb4c8d> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/2>
+    a tern:Sample ;
+    rdfs:label "plant occurrence 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
+    sosa:isSampleOf <https://example.com/transect/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/observation-collection/1>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on land surface substrate" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-12-12T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-12-12T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
+    sosa:hasMember <https://example.com/observation/substrate-type/1>,
+        <https://example.com/observation/fire-substrate-type/1> ;
+    tern:hasAttribute [
+        rdfs:label "point intercept number" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+        tern:hasSimpleValue "20" ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "20" ;
+        ] ;
+    ] ;
+.
+
+<https://example.com/observation-collection/2>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on plant occurrence" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-12-12T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-12-12T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
+    sosa:hasMember <https://example.com/observation/field-species-name/1> ,
+        <https://example.com/observation/growth-form/1> ,
+        <https://example.com/observation/in-canopy-sky/1> ,
+        <https://example.com/observation/maximum-trunk-char-height/1> ,
+        <https://example.com/observation/plant-height/1> ,
+        <https://example.com/observation/plant-regenerating-height/1> ,
+        <https://example.com/observation/plant-status/1> ,
+        <https://example.com/observation/plot-burned-status/1> ,
+        <https://example.com/observation/regeneration-status/1> ;
+    tern:hasAttribute [
+        rdfs:label "point intercept number" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+        tern:hasSimpleValue "20" ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "20" ;
+        ] ;
+    ] ;
+.
+
+<https://example.com/observation/field-species-name/1>
+    a tern:Observation ;
+    rdfs:label "field species name" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Text ;
+            rdf:value "Pines"^^xsd:string
+        ] ;
+    sosa:hasSimpleResult "Pines"^^xsd:string ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
+.
+
+<https://example.com/observation/fire-substrate-type/1>
+    a tern:Observation ;
+    rdfs:label "fire substrate type" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Coarse Woody Debris" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/91ab6f7c-1118-5f30-92ba-af59b5a60021>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/91ab6f7c-1118-5f30-92ba-af59b5a60021> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/56efb36f-d3bc-475d-80d3-990f910f8488> ;
+.
+
+<https://example.com/observation/growth-form/1>
+    a tern:Observation ;
+    rdfs:label "growth form" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Grass-tree" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/062132e9-426e-56c8-9c92-2781692bdd0c>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/062132e9-426e-56c8-9c92-2781692bdd0c> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/dd1769b9-c475-4732-915c-9b890a8d5f65> ;
+.
+
+<https://example.com/observation/in-canopy-sky/1>
+    a tern:Observation ;
+    rdfs:label "in-canopy sky" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Boolean ;
+            rdf:value true
+        ] ;
+    sosa:hasSimpleResult true ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/85bdd25a-fa08-49de-9f0b-98895cb79aa6> ;
+.
+
+<https://example.com/observation/maximum-trunk-char-height/1>
+    a tern:Observation ;
+    rdfs:label "maximum trunk char height" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Float ;
+            rdf:value "9.22"^^xsd:float ;
+            tern:unit <http://qudt.org/vocab/unit/M>
+        ] ;
+    sosa:hasSimpleResult "9.22"^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/3a2b344c-07b5-4536-8db3-06b73bc0e263> ;
+    tern:hasAttribute [
+        rdfs:label "time since fire" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/c079efc5-5e96-4460-9323-e2f5eee7eb8f> ;
+        tern:hasSimpleValue "20"^^xsd:float ;
+        tern:hasValue [
+            a tern:Float ;
+            rdf:value "20"^^xsd:float ;
+        ] ;
+    ] ;
+.
+
+<https://example.com/observation/plant-height/1>
+    a tern:Observation ;
+    rdfs:label "plant height" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Float ;
+            rdf:value "5.22"^^xsd:float ;
+            tern:unit <http://qudt.org/vocab/unit/M>
+        ] ;
+    sosa:hasSimpleResult "5.22"^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0e9da717-6c8e-4194-9385-c995d54702e4> ;
+.
+
+<https://example.com/observation/plant-regenerating-height/1>
+    a tern:Observation ;
+    rdfs:label "plant regenerating height" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Float ;
+            rdf:value "2.22"^^xsd:float ;
+            tern:unit <http://qudt.org/vocab/unit/M>
+        ] ;
+    sosa:hasSimpleResult "2.22"^^xsd:float ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/936f6c7d-9432-41d2-8214-00ed64e8f0c4> ;
+.
+
+<https://example.com/observation/plant-status/1>
+    a tern:Observation ;
+    rdfs:label "plant status" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Alive" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/ddd0c631-bfdd-4b0f-88de-a5eb1a0181c6> ;
+.
+
+<https://example.com/observation/plot-burned-status/1>
+    a tern:Observation ;
+    rdfs:label "plot burned status" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Recently Burnt" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/81a8fa69-2f20-5a28-880d-8401759f9194>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/81a8fa69-2f20-5a28-880d-8401759f9194> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/8eb830f7-a0ec-42d6-8170-dbe2f4d56db2> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+.
+
+<https://example.com/observation/regeneration-status/1>
+    a tern:Observation ;
+    rdfs:label "regeneration status" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Basal" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0163dc19-f4cb-5ded-b750-e44768878d81>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/0163dc19-f4cb-5ded-b750-e44768878d81> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/50239f29-a693-49ef-98e8-4ee11d1758ea> ;
+.
+
+<https://example.com/observation/substrate-type/1>
+    a tern:Observation ;
+    rdfs:label "substrate type" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "White ash" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/31d47552-fd76-53d3-b4d7-a20fa603b11f>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/31d47552-fd76-53d3-b4d7-a20fa603b11f> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/75f55bf0-6972-42ba-ad46-7e24f91e8f6a> ;
+.
+
+```
