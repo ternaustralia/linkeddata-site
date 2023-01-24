@@ -70,3 +70,91 @@ The `sampling_survey_method` key maps to the sampling method used - `Plots' or '
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Observations data
+
+### Mapping coarse woody debris plot measures measurements
+
+- [OpenAPI docs for coarse woody debris plots measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Coarse-woody-debris-observation/post%2Fcoarse-woody-debris-observations)
+
+```json
+{
+  "Location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "transect": {
+    "transect_start_point": "N1",
+    "closest_metre": 0
+  },
+  "widest_diameter_cm": 0,
+  "narrowest_diameter_cm": 0,
+  "length_metres": 0,
+  "decay_class": "1",
+  "coarse_woody_debris_survey": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `location`
+
+The `location` key maps to the attribute `geo:hasGeometry` on the `tern:Observation` class.
+
+##### Example
+
+```turtle
+<https://example.com/observation/1> a tern:Observation ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat "-30.920849"^^xsd:double ;
+        wgs:long "152.242400"^^xsd:double ;
+    ] ;
+.
+```
+
+#### `transect`
+
+The `transect` key maps to the `tern:Transect` class.
+
+#### `transect_start_point`
+
+The `transect_start_point` key maps to the attribute `tern:transectStartPoint` on the `tern:Transect` class.
+
+##### Example
+
+```turtle
+<https://example.com/transect/1> a tern:Transect ;
+    tern:transectStartPoint [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat "-30.920849"^^xsd:double ;
+        wgs:long "152.242400"^^xsd:double ;
+    ] ;
+.
+```
+
+#### `widest_diameter_cm`
+
+The `widest_diameter_cm` key maps to a `tern:Observation` with the observable property 'coarse woody debris widest diameter'.
+
+#### `narrowest_diameter_cm`
+
+The `narrowest_diameter_cm` key maps to a `tern:Observation` with the observable property 'coarse woody debris narrowest diameter'.
+
+#### `length_metres`
+
+The `length_metres` key maps to a `tern:Observation` with the observable property 'coarse woody debris length'.
+
+#### `decay_class`
+
+The `decay_class` key maps to a `tern:Observation` with the observable property 'cwd decay class'.
+
+#### `coarse_woody_debris_survey`
+
+The `coarse_woody_debris_survey` key maps to the `tern:SiteVisit` class.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
