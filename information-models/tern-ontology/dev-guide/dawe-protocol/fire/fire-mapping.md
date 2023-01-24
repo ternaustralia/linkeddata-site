@@ -155,3 +155,40 @@ The `soil_char_depth` key maps to a `tern:Observation` with the observable prope
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping fire species intercept measurements
+
+- [OpenAPI docs for fire species-intercept measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Fire-species-intercept/post%2Ffire-species-intercepts)
+
+```json
+{
+  "species_intercept": 0,
+  "regeneration_status": "B",
+  "regenerating_height": 0,
+  "plant_alive_status": "D",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `species_intercept`
+
+The `species_intercept` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `regeneration_status`
+
+The `regeneration_status` key maps to a `tern:Observation` with the observable property 'regeneration status'.
+
+#### `regeneration_height`
+
+The `regeneration_height` key maps to a `tern:Observation` with the observable property 'plant regenerating height'.
+
+#### `plant_alive_status`
+
+The `plant_alive_status` key maps to a `tern:Observation` with the observable property 'plant status'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
