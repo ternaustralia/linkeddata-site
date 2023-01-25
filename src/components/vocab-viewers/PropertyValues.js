@@ -16,7 +16,7 @@ export function PropertyValues({
 }) {
   const settings = useViewerSettings(settingsID);
 
-  const pageSize = 5;
+  const pageSize = 50;
 
   let url = `${settings.api}/viewer/predicate-values?uri=${encodeURIComponent(
     uri
