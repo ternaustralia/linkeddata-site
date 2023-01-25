@@ -6,18 +6,29 @@ import { useViewerSettings } from "../../hooks/useViewerSettings";
 import ExternalLink from "../ExternalLink";
 import { InternalLink } from "../InternalLink";
 
-export function PropertyValues({ uri, predicate, sparqlEndpoint, settingsID }) {
+export function PropertyValues({
+  uri,
+  predicate,
+  sparqlEndpoint,
+  profile,
+  propertiesRequireProfile,
+  settingsID,
+}) {
   const settings = useViewerSettings(settingsID);
 
-  const pageSize = 50;
+  const pageSize = 5;
 
-  const url = `${settings.api}/viewer/predicate-values?uri=${encodeURIComponent(
+  let url = `${settings.api}/viewer/predicate-values?uri=${encodeURIComponent(
     uri
   )}&predicate=${encodeURIComponent(
     predicate
   )}&sparql_endpoint=${encodeURIComponent(
     sparqlEndpoint
-  )}&page_size=${pageSize}`;
+  )} &page_size=${pageSize}`;
+
+  if (propertiesRequireProfile.includes(predicate)) {
+    url += `&profile=${profile}`;
+  }
 
   const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
     (index) => url + `&page=${index + 1}`,
@@ -31,7 +42,7 @@ export function PropertyValues({ uri, predicate, sparqlEndpoint, settingsID }) {
     (size > 0 && data && typeof data[size - 1] === "undefined");
   const isEmpty = data?.[0]?.length === 0;
   const isReachingEnd =
-    isEmpty || (data && data[data.length - 1]?.count < size * pageSize);
+    isEmpty || (data && data[data.length - 1]?.count <= size * pageSize);
   const isRefreshing = isValidating && data && data.length === size;
 
   const totalCount = objectValues[0]?.count || 0;
@@ -92,14 +103,12 @@ export function PropertyValues({ uri, predicate, sparqlEndpoint, settingsID }) {
         })
       )}
 
-      {isLoadingInitialData ? (
-        "Loading"
-      ) : isReachingEnd ? (
+      {isReachingEnd ? (
         ""
       ) : (
         <>
           <button
-            className="button button--secondary margin-bottom--md margin-left--md margin-top--md"
+            className="button button--secondary margin-left--md margin-top--md"
             disabled={isLoadingMore || isReachingEnd}
             onClick={() => setSize(size + 1)}
           >
@@ -109,9 +118,14 @@ export function PropertyValues({ uri, predicate, sparqlEndpoint, settingsID }) {
               ? "No more data"
               : "Load more"}
           </button>
-          <p className="margin-left--md">
-            Showing {size * pageSize} of {totalCount}
-          </p>
+          <div className="margin-top--md margin-bottom--md"></div>
+          {isLoadingInitialData ? (
+            ""
+          ) : (
+            <p className="margin-left--md">
+              Showing {size * pageSize} of {totalCount}
+            </p>
+          )}
         </>
       )}
     </>

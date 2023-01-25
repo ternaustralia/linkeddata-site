@@ -44,6 +44,9 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
   }
   if (!data) return <div>Loading...</div>;
 
+  const { profile, properties_require_profile: propertiesRequireProfile } =
+    data;
+
   return (
     <>
       {settingsID !== "general" && (
@@ -103,6 +106,8 @@ export function ResourcePage({ uri, settingsID, sparqlEndpoint = "" }) {
                   uri={uri}
                   predicate={property.value}
                   sparqlEndpoint={endpoint}
+                  profile={profile}
+                  propertiesRequireProfile={propertiesRequireProfile}
                   settingsID={settingsID}
                 />
               </div>
