@@ -24,7 +24,7 @@ export function PropertyValues({
     predicate
   )}&sparql_endpoint=${encodeURIComponent(
     sparqlEndpoint
-  )} &page_size=${pageSize}`;
+  )}&page_size=${pageSize}`;
 
   if (propertiesRequireProfile.includes(predicate)) {
     url += `&profile=${profile}`;
