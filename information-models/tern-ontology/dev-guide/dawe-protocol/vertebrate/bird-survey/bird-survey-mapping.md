@@ -150,3 +150,121 @@ The `plot_layout` key maps to the `tern:Site` class.
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Observations data
+
+### Mapping bird survey measurements
+
+- [OpenAPI docs for bird survey measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Bird-survey-observation/post%2Fbird-survey-observations)
+
+```json
+{
+  "bird_survey": 0,
+  "species": "string",
+  "count": 0,
+  "observation_type": "S",
+  "activity_type": "FO",
+  "sex": "M",
+  "observation_location_type": "WS",
+  "breeding_type": "NO",
+  "fauna_maturity": "U",
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `bird_survey`
+
+The `bird_survey` key maps to the `tern:SiteVisit` class.
+
+#### `species`
+
+The `species` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `count`
+
+The `count` key maps to a `tern:Observation` with the observable property 'number of individuals'.
+
+#### `observation_type`
+
+The `observation_type` key maps to the attribute `bird observation type` in [Bird survey Attributes](https://linked.data.gov.au/def/nrm/7717e0ae-aea0-434d-892f-45bc3a40e0b4), and is linked to observation collection by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/site/observationCollection/1> a tern:ObservationCollection ;
+    tern:hasAttribute [
+        rdfs:label "bird observation type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/a73875fe-0fbb-4055-905b-eb0ee0f0660f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Heard" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `activity_type`
+
+The `activity_type` key maps to a `tern:Observation` with the observable property 'bird activity type'.
+
+#### `sex`
+
+The `sex` key maps to a `tern:Observation` with the observable property 'sex'.
+
+#### `observation_location_type`
+
+The `observation_location_type` key maps to the attribute `observation location type` in [Bird survey Attributes](https://linked.data.gov.au/def/nrm/7717e0ae-aea0-434d-892f-45bc3a40e0b4), and is linked to observation collection by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/site/observationCollection/1> a tern:ObservationCollection ;
+    tern:hasAttribute [
+        rdfs:label "observation location type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/61b06e07-39c4-44d8-bb45-fe6a6740fe51> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Outside Survey - Same Habitat" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `breeding_type`
+
+The `breeding_type` key maps to a `tern:Observation` with the observable property 'bird breeding activity'.
+
+#### `fauna_maturity`
+
+The `fauna_maturity` key maps to a `tern:Observation` with the observable property 'maturity'.
+
+#### `location`
+
+The `location` key maps to the attribute `geo:hasGeometry` on the `tern:ObservationCollection` class.
+
+##### Example
+
+```turtle
+<https://example.com/observationCollection/1> a tern:ObservationCollection ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat "-30.920849"^^xsd:double ;
+        wgs:long "152.242400"^^xsd:double ;
+    ] ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
