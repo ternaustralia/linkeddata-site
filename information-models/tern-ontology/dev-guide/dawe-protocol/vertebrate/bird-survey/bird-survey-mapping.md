@@ -75,19 +75,20 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 
 #### `survey_type`
 
-The `survey_type` key maps to the attribute `bird survey type` in [Bird survey Attributes](https://linked.data.gov.au/def/nrm/7717e0ae-aea0-434d-892f-45bc3a40e0b4), and is linked to observations by `tern:hasAttribute`.
+The `survey_type` key maps to the attribute `bird survey area search boundary` in [Bird survey Attributes](https://linked.data.gov.au/def/nrm/7717e0ae-aea0-434d-892f-45bc3a40e0b4), and is linked to site visit by `tern:hasAttribute`.
 
 ##### Example
 
 ```turtle
-<https://example.com/observation/1> a tern:Observation ;
+<https://example.com/site/visit/1> a tern:SiteVisit ;
     tern:hasAttribute [
-        rdfs:label "bird survey type" ;
-        tern:attribute <https://linked.data.gov.au/def/nrm/c079efc5-5e96-4460-9323-e2f5eee7eb8f> ;
-        tern:hasSimpleValue "20"^^xsd:float ;
+        rdfs:label "bird survey area search boundary" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/3ae7ffd2-748c-4551-be3b-b71cae26f980> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/dc6cae53-5838-5d03-8332-a463bdecbcb3> ;
         tern:hasValue [
-            a tern:Float ;
-            rdf:value "20"^^xsd:float ;
+            a tern:IRI ;
+            rdfs:label "20 minute, 2ha" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/dc6cae53-5838-5d03-8332-a463bdecbcb3> ;
         ] ;
     ] ;
 .
@@ -189,7 +190,7 @@ The `species` key maps to a `tern:Observation` with the observable property 'fie
 
 #### `count`
 
-The `count` key maps to a `tern:Observation` with the observable property 'number of individuals'.
+The `count` key maps to a `tern:Observation` with the observable property 'number of observers'.
 
 #### `observation_type`
 
@@ -268,3 +269,342 @@ The `location` key maps to the attribute `geo:hasGeometry` on the `tern:Observat
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+Encoded using the TERN Ontology and related controlled vocabularies.
+
+```turtle
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix schema: <https://schema.org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<https://example.com/site/1>
+    a tern:Site ;
+    rdfs:label "Site 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    dcterms:identifier "site001"^^xsd:string ;
+    tern:hasAttribute [
+        rdfs:label "plot name" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+        tern:hasSimpleValue "The Jones Stream Study Plot" ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "The Jones Stream Study Plot" ;
+        ] ;
+    ] ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs84:lat "-32.920849"^^xsd:double ;
+        wgs84:long "152.242400"^^xsd:double ;
+    ] ;
+.
+
+<https://example.com/site/1/visit/1>
+    a tern:SiteVisit ;
+    rdfs:label "Site 1 visit 1" ;
+    dcterms:identifier "siteVisit001" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    prov:startedAtTime "2022-12-02T03:16:42.783Z" ;
+    prov:endedAtTime "2022-12-02T03:18:42.783Z" ;
+    tern:hasSite <https://example.com/site/1> ;
+    tern:hasAttribute
+      [
+          rdfs:label "bird survey area search boundary" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/3ae7ffd2-748c-4551-be3b-b71cae26f980> ;
+          tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/dc6cae53-5838-5d03-8332-a463bdecbcb3> ;
+          tern:hasValue [
+              a tern:IRI ;
+              rdfs:label "20 minute, 2ha" ;
+              rdf:value <https://linked.data.gov.au/def/nrm/dc6cae53-5838-5d03-8332-a463bdecbcb3> ;
+          ] ;
+      ],
+      [
+          rdfs:label "survey notes" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/97387d96-e90c-4cf8-9268-7ed59c95738c> ;
+          tern:hasSimpleValue "The weather is sunny." ;
+          tern:hasValue [
+              a tern:Text ;
+              rdf:value "The weather is sunny." ;
+          ] ;
+      ],
+      [
+          rdfs:label "playback used" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/60cd3fa2-ba03-4212-922d-8b0dc04e7176> ;
+          tern:hasSimpleValue true ;
+          tern:hasValue [
+              a tern:Boolean ;
+              rdf:value true ;
+          ] ;
+      ] ;
+.
+
+<https://example.com/feature-of-interest/1>
+    a tern:Sample ;
+    rdfs:label "bird population 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/62a51999-f3ca-41d2-8576-3a053dd116a6> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/feature-of-interest/2>
+    a tern:Sample ;
+    rdfs:label "climate 1" ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/6d40d71e-58cd-4f75-8304-40c01fe5f74c> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    void:inDataset <https://example.com/dataset/1> ;
+.
+
+<https://example.com/observation-collection/1>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on bird population" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-12-02T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-12-02T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
+    sosa:hasMember <https://example.com/observation/bird-activity-type/1> ,
+        <https://example.com/observation/bird-breeding-activity/1> ,
+        <https://example.com/observation/field-species-name/1> ,
+        <https://example.com/observation/maturity/1> ,
+        <https://example.com/observation/number-of-individuals/1> ,
+        <https://example.com/observation/sex/1> ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs84:lat "-32.920850"^^xsd:double ;
+        wgs84:long "152.242400"^^xsd:double ;
+    ] ;
+    tern:hasAttribute
+      [
+          rdfs:label "bird observation type" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/a73875fe-0fbb-4055-905b-eb0ee0f0660f> ;
+          tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7> ;
+          tern:hasValue [
+              a tern:IRI ;
+              rdfs:label "Heard" ;
+              rdf:value <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7> ;
+          ] ;
+      ],
+      [
+          rdfs:label "number of observers" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/687b7f67-9fbc-4135-845b-4fb5b8786f0d> ;
+          tern:hasSimpleValue "2"^^xsd:integer ;
+          tern:hasValue [
+              a tern:Integer ;
+              rdf:value "2"^^xsd:integer ;
+          ] ;
+      ],
+      [
+          rdfs:label "observation location type" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/61b06e07-39c4-44d8-bb45-fe6a6740fe51> ;
+          tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+          tern:hasValue [
+              a tern:IRI ;
+              rdfs:label "Outside Survey - Same Habitat" ;
+              rdf:value <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+          ] ;
+      ],
+      [
+          rdfs:label "observation notes" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/dd035eed-24b2-41b5-a3cc-7270c2c590b5> ;
+          tern:hasSimpleValue "Playback is used." ;
+          tern:hasValue [
+              a tern:Text ;
+              rdf:value "Playback is used." ;
+          ] ;
+      ] ;
+.
+
+<https://example.com/observation-collection/2>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on climate" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2022-12-02T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+    ] ;
+    tern:resultDateTime "2022-12-02T05:38:02"^^xsd:dateTime ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
+    sosa:hasMember <https://example.com/observation/weather-site-cloud-cover/1> ,
+        <https://example.com/observation/weather-site-precipitation/1> ,
+        <https://example.com/observation/weather-site-temperature/1> ,
+        <https://example.com/observation/weather-site-wind/1> ;
+    tern:hasAttribute
+      [
+          rdfs:label "number of observers" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/687b7f67-9fbc-4135-845b-4fb5b8786f0d> ;
+          tern:hasSimpleValue "2"^^xsd:integer ;
+          tern:hasValue [
+              a tern:Integer ;
+              rdf:value "2"^^xsd:integer ;
+          ] ;
+      ],
+      [
+          rdfs:label "observation location type" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/61b06e07-39c4-44d8-bb45-fe6a6740fe51> ;
+          tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+          tern:hasValue [
+              a tern:IRI ;
+              rdfs:label "Outside Survey - Same Habitat" ;
+              rdf:value <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+          ] ;
+      ],
+      [
+          rdfs:label "observation notes" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/dd035eed-24b2-41b5-a3cc-7270c2c590b5> ;
+          tern:hasSimpleValue "The weather is sunny." ;
+          tern:hasValue [
+              a tern:Text ;
+              rdf:value "The weather is sunny." ;
+          ] ;
+      ] ;
+.
+
+<https://example.com/observation/bird-activity-type/1>
+    a tern:Observation ;
+    rdfs:label "bird activity type" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Resting on shrub" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/05a3f8b0-f080-5bd0-9ce9-df511af371dc>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/05a3f8b0-f080-5bd0-9ce9-df511af371dc> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/045fa754-487a-4346-8128-403c646a903b> ;
+.
+
+<https://example.com/observation/bird-breeding-activity/1>
+    a tern:Observation ;
+    rdfs:label "bird breeding activity" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "None" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/21c04c4f-f74e-5e2a-b604-b630420f3306>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/21c04c4f-f74e-5e2a-b604-b630420f3306> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/72cca5e4-2dc6-4a96-92e3-6f1e844b243c> ;
+.
+
+<https://example.com/observation/field-species-name/1>
+    a tern:Observation ;
+    rdfs:label "field species name" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Text ;
+            rdf:value "Mallard"^^xsd:string
+        ] ;
+    sosa:hasSimpleResult "Mallard"^^xsd:string ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
+.
+
+<https://example.com/observation/maturity/1>
+    a tern:Observation ;
+    rdfs:label "maturity" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Juvenile" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/008ada05-a2d9-5472-93ec-fda0b3ca3bb2>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/008ada05-a2d9-5472-93ec-fda0b3ca3bb2> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0bc0fae9-6243-4d9f-a547-ef4c36244b5d> ;
+.
+
+<https://example.com/observation/number-of-individuals/1>
+    a tern:Observation ;
+    rdfs:label "number of individuals" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Integer ;
+            rdf:value 2
+        ] ;
+    sosa:hasSimpleResult 2 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/b2d28629-c986-4c05-9d4a-8b05e99a0a94> ;
+.
+
+<https://example.com/observation/sex/1>
+    a tern:Observation ;
+    rdfs:label "sex" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "NA" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/40b39732-e10b-4c4e-968b-3404663a094d> ;
+.
+
+<https://example.com/observation/weather-site-cloud-cover/1>
+    a tern:Observation ;
+    rdfs:label "weather- site cloud cover" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Partly Cloudy" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/111a2971-f7c3-4d9d-b079-d9afa0bcc8b0> ;
+.
+
+<https://example.com/observation/weather-site-precipitation/1>
+    a tern:Observation ;
+    rdfs:label "weather- site precipitation" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "None observed" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/b7e7f67b-d983-4167-baca-57cab6dd89a2> ;
+.
+
+<https://example.com/observation/weather-site-temperature/1>
+    a tern:Observation ;
+    rdfs:label "weather- site temperature" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Hot" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/a30248c3-33ce-4ffe-8130-7b03aa4e5322> ;
+.
+
+<https://example.com/observation/weather-site-wind/1>
+    a tern:Observation ;
+    rdfs:label "weather-site wind" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:IRI ;
+            rdfs:label "Strong gale" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/e8f03cc8-33a3-4c2f-9a0d-95a40c34523d> ;
+.
+
+```
