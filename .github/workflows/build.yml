@@ -104,6 +104,7 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
+          provenance: false
           tags: ${{ env.IMAGE_NAME }}:${{ steps.patch.outputs.patch }}-${{ steps.local-tag.outputs.value }}
           build-args: |
             REACT_APP_GIT_VERSION=${{ steps.patch.outputs.patch }}-${{ steps.local-tag.outputs.value }}
