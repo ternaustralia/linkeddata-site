@@ -10,99 +10,102 @@ This section is in draft. The content and structure of the document may change u
 :::
 
 :::info
-If you want to browse the classes, go to [Browse TERN Ontology by class](/viewers/tern-ontology)
+If you want to browse the classes, see [Browse TERN Ontology by class](/viewers/tern-ontology)
+:::
+
+:::info
+If you want to view the specification document generated from the TERN Ontology SHACL shapes, see the [TERN Ontology Specification](https://ternaustralia.github.io/ontology_tern/)
 :::
 
 ## Abstract
 
-The TERN Ontology is a information model to represent plot-based ecological surveys. 
-It includes classes to describe sites, site visits, features of interest, observations, samplings, and samples. 
-Survey collection protocols generally differ between different programs and organisations. 
-The TERN Ontology ensures data harmonisation is possible at the core conceptual level to cater for existing and future survey collection protocols. 
+The TERN Ontology is a information model to represent plot-based ecological surveys.
+It includes classes to describe sites, site visits, features of interest, observations, samplings, and samples.
+Survey collection protocols generally differ between different programs and organisations, and integrating data collected from these entities is a difficult and time-consuming task.
+The TERN Ontology ensures data harmonisation is possible at the core conceptual level to cater for existing and future survey collection protocols.
 Intricacies of survey collection protocols are supported through an extensible framework using SKOS controlled vocabularies.
 
-The TERN Ontology enables a standard representation of ecological survey data for data integration and data exchange. 
-Different systems can exchange survey data using formats and schemas based on the TERN Ontology, in particular the standard RDF serializations. 
+The TERN Ontology enables a standard representation of ecological survey data for data integration and data exchange.
+Different systems can utilise the classes and properties from the TERN Ontology and exchange survey data using different RDF serializations such as RDF Turtle and JSON-LD.
 The TERN Ontology is formalised as a SHACL ontology, which allows RDF data to be tested for conformance.
 
-The TERN Ontology is based on several existing RDF standards, and promotes Linked Data principles to enable FAIR data. 
+The TERN Ontology is based on several existing RDF standards, and promotes Linked Data principles to enable FAIR data.
 Exchanging survey data between different data sources in a standard will substantially improve the quality of the published data and ensure the data is harmonised and interpreted correctly.
 
 ## Status of this document
 
-This document was prepared by TERN Data Services and Analytics as one of the deliverables to the service agreement between the Australian Government Department of Agriculture, Water and the Environment (DAWE) and TERN. 
-The contents of this document is a continuation of the previous draft report titled Data Exchange Specifications - a report to the Department of Agriculture, Water and the Environment - draft submitted in January of 2021. 
+This document was prepared by TERN Data Services and Analytics as one of the deliverables to the service agreement between the Australian Government Department of Agriculture, Water and the Environment (DAWE) and TERN.
+The contents of this document is a continuation of the previous draft report titled Data Exchange Specifications - a report to the Department of Agriculture, Water and the Environment - draft submitted in January of 2021.
 This document is published as an online evolving specification instead of the report style in the previous draft.
 
 ## Introduction
 
-Ecological observations data are collected by all the jurisdictions through various programs, including environmental assessments. 
-There is currently no standard for sharing and exchanging ecology observations and survey data between jurisdictions, so data sharing typically involves time and effort for manual processing by the integrator. 
-The TERN Ontology provides a common data representation which can accommodate all the observational data collected by the data providers. 
-Products that conform to a standard are much more easily integrated. 
-However, use of a standard representation for transfer puts the onus on the data provider to conform to the standard. 
+Ecological observations data are collected by all the jurisdictions through various programs, including environmental assessments.
+There is currently no standard for sharing and exchanging ecology observations and survey data between jurisdictions, so data sharing typically involves time and effort for manual processing by the integrator.
+The TERN Ontology provides a common data representation which can accommodate all the observational data collected by the data providers.
+Products that conform to a standard are much more easily integrated.
+However, use of a standard representation for transfer puts the onus on the data provider to conform to the standard.
 
-The TERN Ontology is a set of vocabularies for plot-based ecological surveys based upon the OGC-aligned W3C Semantic Web standards, in particular the Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) ontologies. 
-Domain-specific feature types, parameters, methods and units of measure, are managed separately as controlled vocabularies, and published using the Simple Knowledge Organisation System (SKOS) standard. 
-Controlled vocabularies aligned to the Australian Soil and Land Survey Field Handbook and the National Vegetation Information System (NVIS) for Australian ecological data are highly encouraged, since this allows data integration at a deeper level. 
+The TERN Ontology is a set of vocabularies for plot-based ecological surveys based upon the OGC-aligned W3C Semantic Web standards, in particular the Semantic Sensor Network (SSN) and Sensor, Observation, Sample, and Actuator (SOSA) ontologies.
+Domain-specific feature types, parameters, methods and units of measure, are managed separately as controlled vocabularies, and published using the Simple Knowledge Organisation System (SKOS) standard.
+Controlled vocabularies aligned to the Australian Soil and Land Survey Field Handbook and the National Vegetation Information System (NVIS) for Australian ecological data are highly encouraged, since this allows data integration at a deeper level.
 
 The TERN Ontology has gone through a number of iterations to simplify the core concepts and modelling patterns based on similar or related standards including Veg-X, ODM2, SoilML, GeoSciML, Darwin Core, Darwin Core Event, and Humboldt Core.
 
 ## Scope
 
-The TERN Ontology is an earth-based science information system for plot-based site observations. 
-It supports ecological themes, including vegetation, landform, soil, and more. 
-Both site-based observations and plotless opportunistic observations are supported. 
-The domain-specific aspects of the TERN Ontology are supported by controlled vocabularies, covering elements like feature types, observable properties, procedures, core and non-core attributes and units of measure. 
+The TERN Ontology is an earth-based science information system for plot-based site observations.
+It supports ecological themes, including vegetation, landform, soil, and more.
+Both site-based observations and plotless opportunistic observations are supported.
+The domain-specific aspects of the TERN Ontology are supported by controlled vocabularies, covering elements like feature types, observable properties, procedures, core and non-core attributes and units of measure.
 
-During development, the TERN Ontology was tested against datasets based primarily on the Australian Soil and Land Survey Field Handbook, though any ecological datasets will also work. 
-The TERN Ontology provides a framework for integrating observations and samples from surveys and provides a unified view of the data for cross-jurisdictional applications.
+During development, the TERN Ontology was tested against datasets based primarily on the Australian Soil and Land Survey Field Handbook, though any ecological datasets will also work.
+The TERN Ontology provides a framework for integrating observations and samples from field surveys and provides a unified view of the data for cross-jurisdictional applications.
 
 ## Background
 
-Several initiatives in Australia have worked on data standards for plot-based ecology. 
+Several initiatives in Australia have worked on data standards for plot-based ecology.
 
-A working group for developing a national **information model and data exchange protocol for vegetation site data** was established in February 2016 by the Australian Government Department of the Environment's Essential Environmental Measures (EEM) program, with representatives from TERN, ALA, CSIRO and all state and territory governments. 
-This predated the publication of the SSN/SOSA Ontology, which is the W3C RDF implementation of O&M. 
-The working group produced an initial UML model with a conversion to an OWL ontology following the rules provided by ISO 19150-2:2015. 
-Serialisation examples for GML and RDF were both provided as examples. 
+A working group for developing a national **information model and data exchange protocol for vegetation site data** was established in February 2016 by the Australian Government Department of the Environment's Essential Environmental Measures (EEM) program, with representatives from TERN, ALA, CSIRO and all state and territory governments.
+This predated the publication of the SSN/SOSA Ontology, which is the W3C RDF implementation of O&M.
+The working group produced an initial UML model with a conversion to an OWL ontology following the rules provided by ISO 19150-2:2015.
+Serialisation examples for GML and RDF were both provided as examples.
 Unfortunately, the working group stopped in December 2017 when the EEM program ended.
 
-In 2019, TERN started a project to develop a standard to represent and exchange any data collected in an ecology survey, in collaboration with Simon Cox from CSIRO Environmental informatics group. 
+In 2019, TERN started a project to develop a standard to represent and exchange any data collected in an ecology survey, in collaboration with Simon Cox from CSIRO Environmental informatics group.
 The initial model named **TERN-Plot** was an OWL ontology, based on SSN/SOSA, to represent plot-based survey data.
-Its purpose was to replace the information model used by the Australian Ecological Knowledge and Observation System (AEKOS) and align with international standards such as O&M and SSN/SOSA for observation data. 
+Its purpose was to replace the information model used by the Australian Ecological Knowledge and Observation System (AEKOS) and align with international standards such as O&M and SSN/SOSA for observation data.
 Initial ontology development used the Queensland Government's CORVEG database and TERN's AusPlots Rangelands database as test datasets for data integration.
 
 The **TERN Ontology** is an evolution of TERN-Plot. Both the TERN-Plot and the TERN Ontology can be used for integrating survey data, but there are a few key differences in the modeling style, as follows.
 
 ### 1. Controlled vocabularies instead of sub-classes
 
-TERN-Plot is a feature-based model with detailed modelling of domain-specific features-of-interest. Most of these specialize the SOSA `Sample` class, by adding specific class properties (attributes). This approach follows modelling patterns used in other Observations and Measurements extensions such as GeoSciML and SoilML. 
+TERN-Plot is a feature-based model with detailed modelling of domain-specific features-of-interest. Most of these specialize the SOSA `Sample` class, by adding specific class properties (attributes). This approach follows modelling patterns used in other Observations and Measurements extensions such as GeoSciML and SoilML.
 
-In contrast, the TERN Ontology uses SKOS controlled vocabularies to specify feature types. 
+In contrast, the TERN Ontology uses SKOS controlled vocabularies to specify feature types.
 
 The TERN Ontology provides a notion of core and non-core attributes where the former are direct properties on the class while the latter uses the [qualified relations pattern](https://patterns.dataincubator.org/book/qualified-relation.html) to capture additional information of an instance of some class. The non-core attributes are represented using SKOS controlled vocabularies in a similar fashion to observable properties for observations. This modelling pattern is similar to how schema.org uses [schema:PropertyValue](https://schema.org/PropertyValue).
 
 ### 2. Only physical specimens are 'samples'
 
-TERN-Plot specialised the SOSA `Sample` class for sites, vegetation strata, taxa, taxa in a stratum, organism occurrences, etc. It was quickly realised that specialised classes such as **taxa in a stratum** would result in a long class hierarchy of endless permutations. This would reduce adoption and introduce complexities in the core model. 
+TERN-Plot specialised the SOSA `Sample` class for sites, vegetation strata, taxa, taxa in a stratum, organism occurrences, etc. It was quickly realised that specialised classes such as **taxa in a stratum** would result in a long class hierarchy of endless permutations. This would reduce adoption and introduce complexities in the core model.
 
 In the TERN Ontology, only a few specialisations are made. `Site`, `Quadrat`, `Transect` and `MaterialSample`.
-
 
 <figure>
   <img src="https://w3id.org/tern/static/linkeddata-website/tern-ontology/tern-plot-sample-specialisations.png" alt="TERN-Plot sample specialisation classes" />
   <figcaption style={{textAlign: "center"}}>Figure: TERN-Plot’s specialisation of Sample classes.</figcaption>
 </figure>
 
-The above figure shows different classes and relationships for TERN-Plot ontology. 
+The above figure shows different classes and relationships for TERN-Plot ontology.
 
-From the start of the TERN-Plot's development to the current TERN Ontology, many people and organisations contributed to the design and discussions of the conceptual information model. 
+From the start of the TERN-Plot's development to the current TERN Ontology, many people and organisations contributed to the design and discussions of the conceptual information model.
 Please see the Acknowledgements section for more details.
 
 ## Conceptual information model
 
-TERN Ontology defines a set of classes and properties which form a vocabulary for representing plot-based ecological surveys. 
+TERN Ontology defines a set of classes and properties which form a vocabulary for representing plot-based ecological surveys.
 These classes inform data providers of the structure and relationships of the data store.
 
 The TERN Ontology has a direct dependency on the following ontologies and RDF vocabularies:
@@ -120,11 +123,11 @@ The TERN Ontology has a direct dependency on the following ontologies and RDF vo
 - OWL-Time - https://www.w3.org/TR/owl-time/
 - GeoSPARQL - https://www.ogc.org/standards/geosparql
 
-Most of these dependencies are specified using **RDFS and OWL axioms**, which enable reasoning and inferencing. 
-In contrast, the formal specification of TERN Ontology is through **SHACL shapes**, which enables data validation. 
-Shapes are appropriate for TERN ontology becasue the primary application is data transfer and ingestion.  
+Most of these dependencies are specified using **RDFS and OWL axioms**, which enable reasoning and inferencing.
+In contrast, the formal specification of TERN Ontology is through **SHACL shapes**, which enables data validation.
+Shapes are appropriate for TERN ontology becasue the primary application is data transfer and ingestion.
 
-The TERN Ontology is accessible via its namespace URI at https://w3id.org/tern/ontologies/tern/. 
+The TERN Ontology is accessible via its namespace URI at https://w3id.org/tern/ontologies/tern/.
 The source code and its related content are accessible in the GitHub repository at https://github.com/ternaustralia/ontology_tern.
 
 <figure>
@@ -139,45 +142,45 @@ The source code and its related content are accessible in the GitHub repository 
 
 ## Feature of Interest
 
-A `Feature of Interest` is a domain-related entity that is of interest to observers. 
-An observer visting an individual `Site` will make one or more acts of `Observation` or `Sampling` related to one or more individual `Features of Interest` found at the site. 
-The result of an act of `Observation` is an estimate of the value of a property of a Feature of Interest. 
-The result of an act of `Sampling` is a sample that is representative of the Feature of Interest. 
+A `Feature of Interest` is a domain-related entity that is of interest to observers.
+An observer visting an individual `Site` will make one or more acts of `Observation` or `Sampling` related to one or more individual `Features of Interest` found at the site.
+The result of an act of `Observation` is an estimate of the value of a property of a Feature of Interest.
+The result of an act of `Sampling` is a sample that is representative of the Feature of Interest.
 
-A `Sample` may be the **proximate** feature-of-interest of a subsequent Observation. 
-In this case, the original Feature of Interest of the act of Sampling is often the **ultimate** feature-of-interest of the Observation. 
+A `Sample` may be the **proximate** feature-of-interest of a subsequent Observation.
+In this case, the original Feature of Interest of the act of Sampling is often the **ultimate** feature-of-interest of the Observation.
 
 The TERN Ontology requires the _type_ of feature of interest to be specified, e.g. [plant individual](http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270), [plant occurrence](http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611), [landform](http://linked.data.gov.au/def/tern-cv/2cf3ed29-440e-4a50-9bbc-5aab30df9fcd), etc. TERN manages a set of [feature types as a SKOS controlled vocabulary](http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d).
 
-Spatial information is associated with a Feature of Interest using the GeoSPARQL vocabulary. 
+Spatial information is associated with a Feature of Interest using the GeoSPARQL vocabulary.
 
 ### Example
 
-A site, tree, plant, leaf, specimen (soil or vegetation), and land surface are all examples of types of features of interest indicated through the `feature type` property. 
+A site, tree, plant, leaf, specimen (soil or vegetation), and land surface are all examples of types of features of interest indicated through the `feature type` property.
 The feature type can be very broad (vegetation) or very specific (leaf).
 
 ## Observations
 
-The `Observation` class in the TERN Ontology is based on the OWL implementation of the OGC's Observations and Measurements model in the SOSA module of the W3C Semantic Sensor Network Ontology. 
-In the context of the TERN Ontology, an act of observation occurs within a visit to a sampling plot, or in a 'plot-less' opportunistic manner (i.e. without a relationship to an identified site or site visit). 
-An act of observation involves a sensor or observer implementing a protocol or procedure to estimate the value of a property or characteristic of a feature of interest. 
-The result of the observation is a qualitative or quantitative value. 
+The `Observation` class in the TERN Ontology is based on the OWL implementation of the OGC's Observations and Measurements model in the SOSA module of the W3C Semantic Sensor Network Ontology.
+In the context of the TERN Ontology, an act of observation occurs within a visit to a sampling plot, or in a 'plot-less' opportunistic manner (i.e. without a relationship to an identified site or site visit).
+An act of observation involves a sensor or observer implementing a protocol or procedure to estimate the value of a property or characteristic of a feature of interest.
+The result of the observation is a qualitative or quantitative value.
 
-An individual Observation encodes the result time and the phenomenon time using predicates from SOSA and spatial information such as points and polygons using the GeoSPARQL vocabulary. 
+An individual Observation encodes the result time and the phenomenon time using predicates from SOSA and spatial information such as points and polygons using the GeoSPARQL vocabulary.
 Elements from the PROV Ontology are used to record the person who performed the observation, i.e. operated the sensor or observer.
 
 As well as the standard `FeatureOfInterest`, a TERN Observation has contextual relationships to the site hosting the feature, and the site-visit when the observation occurred.
 
 ### Example
 
-Bob (observer) uses a laser rangefinder (procedure) to measure the height (property) of a tree. 
-The result is 15 metres (quantitative result value) recorded at 12:24 pm (phenomenon time). 
+Bob (observer) uses a laser rangefinder (procedure) to measure the height (property) of a tree.
+The result is 15 metres (quantitative result value) recorded at 12:24 pm (phenomenon time).
 Database entry of the recorded data was at 5:15 pm (result time) later that day.
 
 ## Sampling
 
 The `Sampling` class is an activity where the result is a `Sample`. `Samples` can be the `FeatureOfInterest` of further `Observations` and `Samplings`. If a sampling involves the usage of an instrument, then this instrument is represented as a `Sampler` through the `made by sampler` relationship.
-Elements from the PROV Ontology are used to record the person who performed the sampling (not necessarily the same as the sampler). 
+Elements from the PROV Ontology are used to record the person who performed the sampling (not necessarily the same as the sampler).
 GeoSPARQL is used to record location information of the act of sampling.
 
 Occurrences are recorded through acts of `Sampling`.  
@@ -189,67 +192,86 @@ A sampling that is not related to a site visit may be inferred to have been perf
 
 Bob (person who performed the sampling act) collected soil (sample) from a soil pit (a feature of interest) at 12:28 pm (result time) with a core ring (sampler) at 10 cm intervals (procedure).
 
-## Sample
+## Intervention
 
-In SOSA the key characteristic of a `Sample` is the link to the broader Feature of Interest with the `isSampleOf` relationship. 
+The `Intervention` class carries out a procedure to perform changes to the properties of a `FeatureOfInterest`.
+Interventions are usually a management process to maintain, restore or improve an ecosystem.
 
-In the TERN Ontology, a `Sample` is a material or non-material sample of a Feature of Interest. 
-Non-material samples are not collected and are simply identified to support observations and samplings. In ecology studies, non-material samples may be a site, or an ecosytem, tract, or other landscape or ecology feature. 
+Some examples of interventions are controlled burns, breeding programs, weed and debris removal and installation of new structures.
+
+In most cases, the different metadata elements of an intervention activity are recorded as attributes directly on the intervention instance.
+Elements from the PROV Ontology are used to record the person who performed the sampling (not necessarily the same as the sampler).
+GeoSPARQL is used to record location information of the act of sampling.
+
+This class is still under development in collaboration with interested parties in Australia to align its use as a subclass of [`sosa:Actuation`](https://www.w3.org/TR/vocab-ssn/#SOSAActuation).
 
 ### Example
 
-An example of non-material sample may be describing the landform of a site or identifying the disturbed portion of the landform. 
+See [TERN Ontology Specification - Intervention example](https://ternaustralia.github.io/ontology_tern/#ternintervention_example) for an example on how the `Intervention` class is used in the DCCEEW RLP field survey protocols.
+See the [ANSIS model](https://github.com/ANZSoilData/def-au-domain/blob/main/doc/sosa.md) on how `sosa:Actuation` is used as a super class to model treatments.
+
+## Sample
+
+In SOSA the key characteristic of a `Sample` is the link to the broader Feature of Interest with the `isSampleOf` relationship.
+
+In the TERN Ontology, a `Sample` is a material or non-material sample of a Feature of Interest.
+Non-material samples are not collected and are simply identified to support observations and samplings. In ecology studies, non-material samples may be a site, or an ecosytem, tract, or other landscape or ecology feature.
+
+### Example
+
+An example of non-material sample may be describing the landform of a site or identifying the disturbed portion of the landform.
 These non-material samples are the features of interest of further observations or sampling activities.
 
 ## Material Sample
 
-A `Material Sample` is a physical sample that is collected and retrieved from the field. 
-Further observations and samplings may be performed on it. 
-If a material sample is accessioned into a collection or curated for future study it is also known as a _specimen_. 
+A `Material Sample` is a physical sample that is collected and retrieved from the field.
+Further observations and samplings may be performed on it.
+If a material sample is accessioned into a collection or curated for future study it is also known as a _specimen_.
 It may be tagged and stored as a specimen with an accession identifier.
 
 ### Example
 
 A soil sample is collected from the field and taken back to the lab to be processed to produce an oven dried sample.
 
-A plant specimen is collected from the field and stored. 
+A plant specimen is collected from the field and stored.
 It is later sent to the local state/territory herbarium for identification.
 
 ## Site
 
-Sites are usually the main _ultimate_ features of interest in the context of plot-based surveys and their activities. 
-Acts of observations and sampling made in a site are generally undertaken in order to represent the overall state of the site. 
+Sites are usually the main _ultimate_ features of interest in the context of plot-based surveys and their activities.
+Acts of observations and sampling made in a site are generally undertaken in order to represent the overall state of the site.
 
-Sites may contain nested 'sites' using the sub-sample relationship. 
-The site-type is indicated using a value from a controlled vocabulary. 
+Sites may contain nested 'sites' using the sub-sample relationship.
+The site-type is indicated using a value from a controlled vocabulary.
 Common site-types may include `plot`, `transect`, `quadrat`. TERN manages a list of [site types](http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159) as a SKOS controlled vocabulary.
 Other features and samples defined within a site are connected back to the site through the `is sample of` relationship.
 
 A Site may itself be a kind of Sample, as it may be deemed to be representative of a
+
 - fiat area such as a parcel, a local government area, state or territory
 - landscape area such as an ecosystem or biome.
 
 ### Example
 
-The TERN AusPlots program has sites across Australia, and these sites contain transects for their point intercept collection method. 
+The TERN AusPlots program has sites across Australia, and these sites contain transects for their point intercept collection method.
 Modelling of these transects uses the `is sample of` relationship to connect the transect back to the site.
 
 ## Site visit
 
-A Site Visit is a discrete time-bounded activity at a Site, during which Sampling or Observation activities occur. 
-A Site Visit and a Site have a composition relationship, so a Site Visit cannot exist without a Site. 
+A Site Visit is a discrete time-bounded activity at a Site, during which Sampling or Observation activities occur.
+A Site Visit and a Site have a composition relationship, so a Site Visit cannot exist without a Site.
 The Site Visit class enables the modelling of revisits to a Site and provides the ability to describe collections of acts of observation or sampling, and the site condition in the context of a site visit.
 
 ### Example
 
-AusPlots Rangelands establish permanent sites across Australia. 
-Revisits to these sites allow the AusPlots team to capture the changes in the environment of these sites. 
+AusPlots Rangelands establish permanent sites across Australia.
+Revisits to these sites allow the AusPlots team to capture the changes in the environment of these sites.
 Studies on the collected data provide us with an understanding of why and how these changes are occurring.
 
 ## Spatial geometries
 
 Sites, site visits, samplings and observations can use the TERN Location Alignment vocabulary, which is a minimal ontology to tie together the GeoSPARQL vocabulary and the W3C Basic Geo WGS84 vocabulary. See https://w3id.org/tern/ontologies/loc.
-TERN Location Alignment also defines a specialised [Point](https://w3id.org/tern/ontologies/loc/Point) class with properties to express the depth and elevation. 
+TERN Location Alignment also defines a specialised [Point](https://w3id.org/tern/ontologies/loc/Point) class with properties to express the depth and elevation.
 [LineString](https://w3id.org/tern/ontologies/loc/LineString) and [Polygon](https://w3id.org/tern/ontologies/loc/Polygon) are also specialised to denote that a WKT literal is required.
 
 <figure>
@@ -257,14 +279,14 @@ TERN Location Alignment also defines a specialised [Point](https://w3id.org/tern
   <figcaption style={{textAlign: "center"}}>Figure: TERN Location Alignment vocabulary overview.</figcaption>
 </figure>
 
-The location where individual observations and samplings took place can be expressed using individuals from the Point class. 
-The extent and shape of a Site can be expressed using an individual Polygon. 
+The location where individual observations and samplings took place can be expressed using individuals from the Point class.
+The extent and shape of a Site can be expressed using an individual Polygon.
 The shape of a transect can be expressed using a LineString.
 
 ## Non-core attributes
 
-The TERN Ontology captures some information common across different survey datasets. 
-To capture the protocol-specific aspects of a dataset, the TERN Ontology provides a concept of non-core attributes with the `Attribute` class. 
+The TERN Ontology captures some information common across different survey datasets.
+To capture the protocol-specific aspects of a dataset, the TERN Ontology provides a concept of non-core attributes with the `Attribute` class.
 Use the `Attribute` class on any of the core concepts (classes) of the TERN Ontology to express additional information using a property-value pair pattern.
 
 <figure>
@@ -275,13 +297,12 @@ Use the `Attribute` class on any of the core concepts (classes) of the TERN Onto
 ### Example
 
 The CORVEG database' sites have an attribute named `sampling intensity`.
-However, this attribute is not available directly on the TERN Ontology's `Site` class definition. 
+However, this attribute is not available directly on the TERN Ontology's `Site` class definition.
 To capture this CORVEG-specific site information, an instance of the `Attribute` class can be used where the `attribute` property points to a controlled vocabulary term `sampling intensity` and `has value` captures the value.
-
 
 ## Values and results
 
-A generic Value class is used to capture the values of attributes, and the results of observations and samplings. 
+A generic Value class is used to capture the values of attributes, and the results of observations and samplings.
 The Value class is specialised to capture different value types.
 
 A Sample is a type of value and is the result of a Sampling activity.
@@ -305,8 +326,8 @@ A summary of Veg-X.
 - Veg-X does not use controlled vocabularies and instead capture observable properties and procedures as attributes directly on the observation entities.
 - Veg-X acknowledges the feature of interest of observation is different depending on its granularity. Individual organism observations are not the same as aggregated organism observations.
 
-The TERN Ontology takes inspiration from how Veg-X models plots, sub-plots and the different observations types at varying granularity levels. 
-Veg-X defines four fixed levels of feature types in the vegetation domain. 
+The TERN Ontology takes inspiration from how Veg-X models plots, sub-plots and the different observations types at varying granularity levels.
+Veg-X defines four fixed levels of feature types in the vegetation domain.
 In contrast, the TERN Ontology manages feature types as an extendable controlled vocabulary and inherently supports different ecological themes such as soil, landform, and more.
 
 ## References
@@ -323,10 +344,22 @@ Box P. & Lemon D. (2018) Essential Environmental Measures Program Evaluation Rep
 
 - https://publications.csiro.au/rpr/download?pid=csiro:EP185016&dsid=DS2
 
-Wiser, S.K., Spencer, N., De Cáceres, M., Kleikamp, M., Boyle, B. and Peet, R.K. (2011), Veg-X – an exchange standard for plot-based vegetation data. Journal of Vegetation Science, 22: 598-609. https://doi.org/10.1111/j.1654-1103.2010.01245.x
+Wiser, S.K., Spencer, N., De Cáceres, M., Kleikamp, M., Boyle, B. and Peet, R.K. (2011), Veg-X – an exchange standard for plot-based vegetation data. Journal of Vegetation Science, 22: 598-609.
 
-De Caceres, M. (2018) The Veg-X exchange standard - IAVS Ecoinformatics Working Group. https://miquelcaceres.github.io/VegX/articles/VegXStandard.html
+- https://doi.org/10.1111/j.1654-1103.2010.01245.x
 
-Sampling features classified by shape. https://confluence.csiro.au/display/seegrid/Observations+and+Sampling#ObservationsandSampling-Samplingfeaturesclassifiedbyshape
+De Caceres, M. (2018) The Veg-X exchange standard - IAVS Ecoinformatics Working Group.
 
-SoilML information model - https://www.clw.csiro.au/aclep/InfoModels/index.htm
+- https://miquelcaceres.github.io/VegX/articles/VegXStandard.html
+
+Sampling features classified by shape.
+
+- https://confluence.csiro.au/display/seegrid/Observations+and+Sampling#ObservationsandSampling-Samplingfeaturesclassifiedbyshape
+
+SoilML information model
+
+- https://www.clw.csiro.au/aclep/InfoModels/index.htm
+
+ANSIS model for soil surveys and observations
+
+- https://github.com/ANZSoilData/def-au-domain
