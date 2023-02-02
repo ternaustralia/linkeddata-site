@@ -21,7 +21,7 @@ This protocol is to record survey type, survey effort and any observations of ta
 
 ### Diagram
 
-The following diagram shows the Fauna - active protocol mapping.
+The following diagram shows the Fauna - active protocol mapping. Blue nodes are things related to the sampling 'taking photos'. Green nodes are things related to the sampling 'fauna vouchering'. Red nodes are things related to the sampling 'habitat sampling'. Purple nodes are things related to the animal population feature type.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1_GlyBqLbj6O2sOpVJWZ2I1a6z6ICRCYm&layers=1&nav=1&title=targeted-survey-fauna-active-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1_GlyBqLbj6O2sOpVJWZ2I1a6z6ICRCYm%26export%3Ddownload"></iframe>
 
