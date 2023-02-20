@@ -41,6 +41,7 @@ PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX unit: <http://qudt.org/vocab/unit/>
 
 <https://example.com/ObservationCollection/observations-on-animal-individual>
     a tern:ObservationCollection ;
@@ -100,10 +101,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "trap notes" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/51d7e58a-e122-4f30-a313-228ec612d033> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Bait is oats."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Bait is oats."^^xsd:string
                 ]
         ] ,
         [
@@ -161,10 +162,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "recapture temporary texta mark colour" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/bfab8eb0-d652-47c3-b178-736323e0f896> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "White."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "White."^^xsd:string
                 ]
         ] ,
         [
@@ -251,7 +252,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasResult [
             a tern:Float ;
             rdf:value "2.22"^^xsd:float ;
-            tern:unit "values_tbd"
+            tern:unit unit:GM
         ] ;
     sosa:hasSimpleResult "2.22"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/d78e0ad6-9ac8-4adc-a796-61ad458726b3> ;
@@ -263,9 +264,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasResult [
             a tern:Text ;
-            rdf:value "The value is from observations."^^xsd:string
+            rdf:value "Good."^^xsd:string
         ] ;
-    sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
+    sosa:hasSimpleResult "Good."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/a0bf61f1-56fa-4653-8f68-be2f732357c8> ;
 .
 
@@ -276,7 +277,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasResult [
             a tern:Float ;
             rdf:value "2.22"^^xsd:float ;
-            tern:unit "values_tbd"
+            tern:unit unit:M
         ] ;
     sosa:hasSimpleResult "2.22"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/0e9b8207-3282-4b42-b68c-c33951539016> ;
@@ -288,9 +289,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasResult [
             a tern:Text ;
-            rdf:value "The value is from observations."^^xsd:string
+            rdf:value "Reptile."^^xsd:string
         ] ;
-    sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
+    sosa:hasSimpleResult "Reptile."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
 .
 
@@ -301,7 +302,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasResult [
             a tern:Float ;
             rdf:value "2.22"^^xsd:float ;
-            tern:unit "values_tbd"
+            tern:unit unit:MilliM
         ] ;
     sosa:hasSimpleResult "2.22"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/96ccc2b7-7b7f-4e5c-b11f-d5e5c88e245a> ;
@@ -352,7 +353,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasResult [
             a tern:Float ;
             rdf:value "2.22"^^xsd:float ;
-            tern:unit "values_tbd"
+            tern:unit unit:MilliM
         ] ;
     sosa:hasSimpleResult "2.22"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/fe18c3aa-7af1-4fe8-bf5f-dcec29a3bea9> ;
@@ -377,9 +378,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasResult [
             a tern:Text ;
-            rdf:value "The value is from observations."^^xsd:string
+            rdf:value "Pregnant."^^xsd:string
         ] ;
-    sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
+    sosa:hasSimpleResult "Pregnant."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/88472a97-fd55-4382-9d6e-793164c574f1> ;
 .
 
@@ -390,7 +391,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasResult [
             a tern:Float ;
             rdf:value "2.22"^^xsd:float ;
-            tern:unit "values_tbd"
+            tern:unit unit:MilliM
         ] ;
     sosa:hasSimpleResult "2.22"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/38d1419f-7f3b-4d0e-a2f6-4b152e2d91f7> ;
@@ -416,7 +417,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasResult [
             a tern:Float ;
             rdf:value "2.22"^^xsd:float ;
-            tern:unit "values_tbd"
+            tern:unit unit:MilliM
         ] ;
     sosa:hasSimpleResult "2.22"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/93486f3f-bef9-42ee-b3b9-eacaaf9324cf> ;
@@ -429,7 +430,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasResult [
             a tern:Float ;
             rdf:value "2.22"^^xsd:float ;
-            tern:unit "values_tbd"
+            tern:unit unit:MilliM
         ] ;
     sosa:hasSimpleResult "2.22"^^xsd:float ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/3d011f97-5d22-409c-a382-36b378db8a14> ;
@@ -441,9 +442,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasResult [
             a tern:Text ;
-            rdf:value "The value is from observations."^^xsd:string
+            rdf:value "Bird."^^xsd:string
         ] ;
-    sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
+    sosa:hasSimpleResult "Bird."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/8997be1e-cf91-4ca6-a641-eb57aa10d9e6> ;
 .
 
@@ -456,10 +457,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "plot name" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Oak Ridge South."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Oak Ridge South."^^xsd:string
                 ]
         ] ;
 .
