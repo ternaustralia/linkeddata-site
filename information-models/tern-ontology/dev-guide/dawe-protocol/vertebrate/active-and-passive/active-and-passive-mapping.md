@@ -74,10 +74,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "observation notes" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/dd035eed-24b2-41b5-a3cc-7270c2c590b5> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "The are both males and females."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "The are both males and females."^^xsd:string
                 ]
         ] ;
     tern:hasSiteVisit <https://example.com/SiteVisit/site-visit> ;
@@ -213,9 +213,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasResult [
             a tern:Text ;
-            rdf:value "The value is from observations."^^xsd:string
+            rdf:value "Snake."^^xsd:string
         ] ;
-    sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
+    sosa:hasSimpleResult "Snake."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
     tern:hasAttribute
         [
@@ -422,10 +422,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "survey duration" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/e06e4787-8bd3-4ee5-acb2-1457b1fa71ad> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "60 minutes."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "60 minutes."^^xsd:string
                 ]
         ] ;
     tern:hasSite <https://example.com/Site/site> ;
