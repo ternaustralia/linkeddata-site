@@ -402,20 +402,20 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "equipment used" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/de6821ec-e2aa-4b12-8c8e-57251bec1b9d> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Camera traps are used."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Camera traps are used."^^xsd:string
                 ]
         ] ,
         [
             rdfs:label "methods description" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/79709363-0f11-4f26-a3ad-f758daf37fa6> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "The method is active search."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "The method is active search."^^xsd:string
                 ]
         ] ,
         [
