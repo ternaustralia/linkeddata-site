@@ -65,7 +65,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4bfc4796-a02f-461f-b17d-383aad328e61> ;
     tern:hasAttribute
-        _:ne00f3f34015441d5bc5ae10bcecf8e70b4 ,
+        [
+            rdfs:label "target species" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
+            tern:hasSimpleValue "Laughing Kookaburra."^^xsd:string ;
+            tern:hasValue [
+                    a tern:Text ;
+                    rdf:value "Laughing Kookaburra."^^xsd:string
+            ] ;
+        ] ,
         [
             rdfs:label "observation method" ;
             void:inDataset <https://example.com/dataset/1> ;
@@ -75,16 +84,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     a tern:IRI ;
                     rdfs:label "OB" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/03f54727-57c0-593f-849c-f56319c5660e>
-                ]
+            ] ;
         ] ,
         [
             rdfs:label "behaviour observation" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/d07b87f0-72f0-4476-99a6-85d9a385f1a7> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Birds are flying."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Birds are flying."^^xsd:string
                 ]
         ] ;
     tern:hasSiteVisit <https://example.com/SiteVisit/site-visit> ;
@@ -119,7 +128,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasFeatureOfInterest <https://example.com/Site/survey-area> ;
     sosa:hasResult <https://example.com/Sample/habitat> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4bfc4796-a02f-461f-b17d-383aad328e61> ;
-    tern:hasAttribute _:ne00f3f34015441d5bc5ae10bcecf8e70b4 ;
+    tern:hasAttribute [
+            rdfs:label "target species" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
+            tern:hasSimpleValue "Laughing Kookaburra."^^xsd:string ;
+            tern:hasValue [
+                    a tern:Text ;
+                    rdf:value "Laughing Kookaburra."^^xsd:string
+            ] ;
+        ] ;
     tern:resultDateTime "2022-05-10T08:38:02"^^xsd:dateTime ;
 .
 
@@ -183,10 +201,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "observation photo description" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/0782780b-b137-480f-97b1-32af49d1bb5f> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Photo is labelled."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Photo is labelled."^^xsd:string
                 ]
         ] ;
 .
@@ -246,19 +264,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "survey area" ;
     void:inDataset <https://example.com/dataset/1> ;
 .
-
-_:ne00f3f34015441d5bc5ae10bcecf8e70b20
-    a tern:Text ;
-    rdf:value "The value is from survey."^^xsd:string ;
-.
-
-_:ne00f3f34015441d5bc5ae10bcecf8e70b4
-    rdfs:label "target species" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
-    tern:hasSimpleValue "The value is from survey."^^xsd:string ;
-    tern:hasValue _:ne00f3f34015441d5bc5ae10bcecf8e70b20 ;
-.
-
 
 ```
