@@ -67,10 +67,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "target habitats" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/ae2c88be-63d5-44d3-95ac-54b14c4a4b28> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "These habitats are ideal for survey."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "These habitats are ideal for survey."^^xsd:string
                 ]
         ] ;
     tern:hasSiteVisit <https://example.com/SiteVisit/site-visit> ;
@@ -160,30 +160,30 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "survey objectives" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/6546ac62-85a4-4d00-a72e-79bbd03d13ac> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Set up the survey area."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Set up the survey area."^^xsd:string
                 ]
         ] ,
         [
             rdfs:label "survey design and justification" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/d1d58bb4-6da2-4ab7-b9c8-999330fc8a9b> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Designed by experienced observers."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Designed by experienced observers."^^xsd:string
                 ]
         ] ,
         [
             rdfs:label "survey observers and experience" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/e3ff756d-7363-4bd1-8d8f-fd95cd941d97> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasSimpleValue "Experienced."^^xsd:string ;
             tern:hasValue [
                     a tern:Text ;
-                    rdf:value "The value is from survey."^^xsd:string
+                    rdf:value "Experienced."^^xsd:string
                 ]
         ] ;
     tern:hasSite <https://example.com/Site/survey-area> ;
