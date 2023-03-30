@@ -96,12 +96,12 @@ The `survey_type` key maps to the attribute `bird survey area search boundary` i
 
 #### `playback_used`
 
-The `playback_used` key maps to the attribute `playback used` in [Bird survey Attributes](https://linked.data.gov.au/def/nrm/7717e0ae-aea0-434d-892f-45bc3a40e0b4), and is linked to site visit by `tern:hasAttribute`.
+The `playback_used` key maps to the attribute `playback used` in [Bird survey Attributes](https://linked.data.gov.au/def/nrm/7717e0ae-aea0-434d-892f-45bc3a40e0b4), and is linked to observations by `tern:hasAttribute`.
 
 ##### Example
 
 ```turtle
-<https://example.com/site/visit/1> a tern:SiteVisit ;
+<https://example.com/bird-activity-type/1> a tern:Observation ;
     tern:hasAttribute [
         rdfs:label "playback used" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/60cd3fa2-ba03-4212-922d-8b0dc04e7176> ;
@@ -340,16 +340,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
               a tern:Text ;
               rdf:value "The weather is sunny." ;
           ] ;
-      ],
-      [
-          rdfs:label "playback used" ;
-          tern:attribute <https://linked.data.gov.au/def/nrm/60cd3fa2-ba03-4212-922d-8b0dc04e7176> ;
-          tern:hasSimpleValue true ;
-          tern:hasValue [
-              a tern:Boolean ;
-              rdf:value true ;
-          ] ;
-      ] ;
+      ]
 .
 
 <https://example.com/feature-of-interest/1>
@@ -428,6 +419,15 @@ Encoded using the TERN Ontology and related controlled vocabularies.
           tern:hasValue [
               a tern:Text ;
               rdf:value "Playback is used." ;
+          ] ;
+      ] ,
+      [
+          rdfs:label "playback used" ;
+          tern:attribute <https://linked.data.gov.au/def/nrm/60cd3fa2-ba03-4212-922d-8b0dc04e7176> ;
+          tern:hasSimpleValue true ;
+          tern:hasValue [
+              a tern:Boolean ;
+              rdf:value true ;
           ] ;
       ] ;
 .
