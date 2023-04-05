@@ -27,6 +27,251 @@ The following diagram shows the Recruitment module - Age class protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1G5QIopmhPyT_dYqFvwm0Xfhe6TE679BO&layers=1&nav=1&title=recruitment-age-class-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1G5QIopmhPyT_dYqFvwm0Xfhe6TE679BO%26export%3Ddownload">View diagram in new tab.</a>
 
+## Survey data
+
+Example data from source for `Recruitment module - Age class` protocol surveys:
+
+- [OpenAPI docs for recruitment field survey](https://beta.core-api.paratoo.tern.org.au/documentation#/Recruitment-field-survey/post%2Frecruitment-field-surveys)
+
+```json
+{
+  "surveyId": "string",
+  "startdate": "2023-04-04T06:02:09.407Z",
+  "enddate": "2023-04-04T06:02:09.407Z",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `surveyId`
+
+Use this value along with the site ID to generate a site visit URI.
+
+##### Example
+
+```
+https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
+```
+
+#### `startdate`
+
+The `startdate` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `enddate`
+
+The `enddate` key maps to the property `prov:endedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Observations data
+
+### Mapping Recruitment growth stage measurements
+
+- [OpenAPI docs for recruitment growth stage measurements](https://beta.core-api.paratoo.tern.org.au/documentation#/Recruitment-growth-stage/post%2Frecruitment-growth-stages)
+
+```json
+{
+  "veg_growth_stage": "ER",
+  "recruitment_life_stage": "Seedling",
+  "adequate": true,
+  "voucher_full": 0,
+  "voucher_lite": 0,
+  "recruitment_field_survey": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `veg_growth_stage`
+
+The `veg_growth_stage` key maps to a `tern:Observation` with the observable property 'growth stage'.
+
+#### `recruitment_life_stage`
+
+The `recruitment_life_stage` key maps to a `tern:Observation` with the observable property 'life stage'.
+
+#### `adequate`
+
+The `adequate` key maps to a `tern:Observation` with the observable property 'adequate recruitment'.
+
+#### `voucher_full` and `voucher_lite`
+
+These two keys map to a `tern:Method` used during the site visit, either [Plant Tissue Vouchering - Full protocol](https://linked.data.gov.au/def/nrm/eea8280c-6ec7-48c9-9b9e-2418731ff005) or [Plant Tissue Vouchering - Lite protocol](https://linked.data.gov.au/def/nrm/c20d9a04-702d-429a-ab5f-d7424cd2990d).
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Recruitment sapling and seedling count measurements
+
+- [OpenAPI docs for recruitment sapling and seedling count](https://beta.core-api.paratoo.tern.org.au/documentation#/Recruitment-sapling-and-seedling-count/post%2Frecruitment-sapling-and-seedling-counts)
+
+```json
+{
+  "transect": "1",
+  "voucher_full": 0,
+  "voucher_lite": 0,
+  "seedling_count": 0,
+  "sapling_count": 0,
+  "juvenile_count": 0,
+  "recruit_survey": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `transect`
+
+The `transect` key maps to the property `dcterms:identifier` in `tern:Transect` class. It is the identifier of the transect during site visits.
+
+##### Example
+
+```turtle
+<https://example.com/site/1/transect/1> a tern:Transect ;
+    dcterms:identifier "transect1" ;
+.
+```
+
+#### `voucher_full` and `voucher_lite`
+
+These two keys map to a `tern:Method` used during the site visit, either [Plant Tissue Vouchering - Full protocol](https://linked.data.gov.au/def/nrm/eea8280c-6ec7-48c9-9b9e-2418731ff005) or [Plant Tissue Vouchering - Lite protocol](https://linked.data.gov.au/def/nrm/c20d9a04-702d-429a-ab5f-d7424cd2990d).
+
+#### `seedling_count`
+
+The `seedling_count` key maps to a `tern:Observation` with the observable property 'seedling count'.
+
+#### `sapling_count`
+
+The `sapling_count` key maps to a `tern:Observation` with the observable property 'sapling count'.
+
+#### `juvenile_count`
+
+The `juvenile_count` key maps to a `tern:Observation` with the observable property 'juvenile count'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+### Mapping Recruitment small tree survey
+
+- [OpenAPI docs for recruitment small tree survey](https://beta.core-api.paratoo.tern.org.au/documentation#/Recruitment-small-tree-survey/post%2Frecruitment-small-tree-surveys)
+
+```json
+{
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "recruitment_tree_status": "Alive",
+  "recruitment_life_stage": "Seedling",
+  "dbh_measurement": 0,
+  "pom_measurement": 0,
+  "tree_height": 0,
+  "voucher_full": 0,
+  "voucher_lite": 0,
+  "transect": "1",
+  "recruit_survey": 0,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data are observations recorded during a site visit.
+
+#### `location`
+
+The `location` key maps to the property `geo:hasGeometry` on the `tern:Site` class.
+
+##### Example
+
+```turtle
+<https://example.com/site/1> a tern:Site ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `recruitment_tree_status`
+
+The `recruitment_tree_status` key maps to a `tern:Observation` with the observable property 'plant status'.
+
+#### `recruitment_life_stage`
+
+The `recruitment_life_stage` key maps to a `tern:Observation` with the observable property 'life stage'.
+
+#### `dbh_measurement`
+
+The `dbh_measurement` key maps to a `tern:Observation` with the observable property 'diameter at breast height (dbh)'.
+
+#### `pom_measurement`
+
+The `pom_measurement` key maps to the attribute `point of measurement` in [Recruitment module - Age class protocol Attributes](https://linked.data.gov.au/def/nrm/15f69532-0fe8-498f-b667-cf130c84475b), and is linked to observations by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/dbh-measurement/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "point of measurement" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/9faeafe6-0d01-41aa-b38b-a6b56eda0dda> ;
+        tern:hasSimpleValue "1.3"^^xsd:float ;
+        tern:hasValue [
+            a tern:Float ;
+            rdf:value "1.3"^^xsd:float ;
+        ] ;
+    ] ;
+.
+```
+
+#### `tree_height`
+
+The `tree_height` key maps to a `tern:Observation` with the observable property 'plant height'.
+
+#### `voucher_full` and `voucher_lite`
+
+These two keys map to a `tern:Method` used during the site visit, either [Plant Tissue Vouchering - Full protocol](https://linked.data.gov.au/def/nrm/eea8280c-6ec7-48c9-9b9e-2418731ff005) or [Plant Tissue Vouchering - Lite protocol](https://linked.data.gov.au/def/nrm/c20d9a04-702d-429a-ab5f-d7424cd2990d).
+
+#### `transect`
+
+The `transect` key maps to the property `dcterms:identifier` in `tern:Transect` class. It is the identifier of the transect during site visits.
+
+##### Example
+
+```turtle
+<https://example.com/site/1/transect/1> a tern:Transect ;
+    dcterms:identifier "transect1" ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
