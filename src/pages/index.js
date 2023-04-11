@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -6,8 +6,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
-
-function gtag() { dataLayer.push(arguments); };
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -30,8 +28,11 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  gtag('js', new Date());
-  gtag('config', siteConfig.customFields.ga4TagCode);
+  useEffect(() => {
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', siteConfig.customFields.ga4TagCode);
+  }, []);
   return (
     <Layout
       title={`${siteConfig.title}`}
