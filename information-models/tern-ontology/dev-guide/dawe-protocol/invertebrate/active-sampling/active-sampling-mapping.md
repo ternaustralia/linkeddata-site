@@ -27,6 +27,371 @@ The following diagram shows the Active search (hand collecting) protocol mapping
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1af0JdQrhRLNvHBKzMH-rvugtKCvN5K4R&layers=1&nav=1&title=invertebrate-fauna-active-sampling-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1af0JdQrhRLNvHBKzMH-rvugtKCvN5K4R%26export%3Ddownload">View diagram in new tab.</a>
 
+## Survey data
+
+Example data from source for `Active search (hand collecting) protocol` protocol surveys:
+
+1. Survey data from active search:
+
+- [OpenAPI docs for invertebrate active search](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search/post%2Finvertebrate-active-searches)
+
+```json
+{
+  "surveyId": "string",
+  "plot_visit": 0,
+  "search_method": "DAS",
+  "observers": "string",
+  "number_of_observers": 0,
+  "search_time": 0,
+  "weather": {
+    "precipitation": "NO",
+    "precipitation_duration": "I",
+    "wind_description": "C",
+    "cloud_cover": "SU",
+    "temperature": 0
+  },
+  "start_time": "2023-04-11T01:00:17.903Z",
+  "end_time": "2023-04-11T01:00:17.904Z",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `surveyId`
+
+Use this value along with the site ID to generate a site visit URI.
+
+##### Example
+
+```
+https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `search_method`
+
+The `search_method` key maps to the attribute `search method` in [Invertebrate fauna module - active sampling protocol Attributes](https://linked.data.gov.au/def/nrm/8128a20c-e8c7-45ba-9d8d-4d3347a6c34f), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/active-search-sampling/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "search method" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/b534763f-6645-41df-bd21-9a09e907b833> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/2c803444-74a3-55ad-b452-d43a4ef5923b> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Breaking CWD" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/2c803444-74a3-55ad-b452-d43a4ef5923b> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `observers`
+
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:Sampling` class.
+
+##### Example
+
+```
+<https://example.com/active-search-sampling/1> a tern:Sampling ;
+    prov:wasAssociatedWith "Paul Green" .
+```
+
+#### `search_time`
+
+The `search_time` key maps to the property `prov:startedAtTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/active-sampling-sampling/456> a tern:Sampling ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `precipitation`
+
+The `precipitation` key maps to a `tern:Observation` with the observable property 'weather- site precipitation'.
+
+#### `precipitation_duration`
+
+The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'weather- duration of precipitation'.
+
+#### `wind_description`
+
+The `wind_description` key maps to a `tern:Observation` with the observable property 'weather-site wind'.
+
+#### `cloud_cover`
+
+The `cloud_cover` key maps to a `tern:Observation` with the observable property 'weather- site cloud cover'.
+
+#### `temperature`
+
+The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
+
+#### `start_time`
+
+The `start_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `end_time`
+
+The `end_time` key maps to the property `prov:endedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    prov:endedAtTime "2022-11-02T08:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+2. Survey data from active search apparatus:
+
+- [OpenAPI docs for invertebrate active search apparatus](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search-apparatus/post%2Finvertebrate-active-search-apparatuses)
+
+```json
+{
+  "equipment": "SN",
+  "photo": 0,
+  "description": "string",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `equipment`
+
+The `equipment` key maps to the attribute `capture equipment used` in [Invertebrate fauna module - active sampling protocol Attributes](https://linked.data.gov.au/def/nrm/8128a20c-e8c7-45ba-9d8d-4d3347a6c34f), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/active-search-sampling/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "capture equipment used" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/cc3fe6fd-64cd-44a5-ba22-ec0115d6f648> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/6fe403bc-2b69-5893-b334-542ed689a0ca> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Aerial Net" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/6fe403bc-2b69-5893-b334-542ed689a0ca> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `photo`
+
+The `photo` key maps to the `tern:Sample` class.
+
+#### `description`
+
+The `description` key maps to the attribute `equipment description` in [Invertebrate fauna module - active sampling protocol Attributes](https://linked.data.gov.au/def/nrm/8128a20c-e8c7-45ba-9d8d-4d3347a6c34f), and is linked to photos by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/photo/1> a tern:Sample ;
+    tern:hasAttribute [
+        rdfs:label "equipment description" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1d5c78e5-76ef-4ac5-b1f0-b92d7978a979> ;
+        tern:hasSimpleValue "Aerial Net used"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Aerial Net used"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+3. Survey data from active search photo:
+
+- [OpenAPI docs for invertebrate active search photo](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search-photo/post%2Finvertebrate-active-search-photos)
+
+```json
+{
+  "photo": 0,
+  "description": "string",
+  "lat": 0,
+  "lng": 0,
+  "location_id": "string",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `photo`
+
+The `photo` key maps to the property `dcterms:identifier` on the `tern:Sample` class.
+
+##### Example
+
+```
+<https://example.com/photo/1> a tern:Sample ;
+    dcterms:identifier "photo001" .
+```
+
+#### `description`
+
+The `description` key maps to the attribute `field photo description` in [Invertebrate fauna module - active sampling protocol Attributes](https://linked.data.gov.au/def/nrm/8128a20c-e8c7-45ba-9d8d-4d3347a6c34f), and is linked to photos by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/photo/1> a tern:Sample ;
+    tern:hasAttribute [
+        rdfs:label "field photo description" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/d0a6c08c-bde2-4cf3-8e4d-8193f80551a8> ;
+        tern:hasSimpleValue "Equipment included"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Equipment included"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `lat`, `lng`, `location_id`
+
+These keys map to the attribute `geo:hasGeometry` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://example.com/taking-photos/1> a tern:Sampling ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+4. Survey data from active search sample:
+
+- [OpenAPI docs for invertebrate active search sample](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search-sample/post%2Finvertebrate-active-search-samples)
+
+```json
+{
+  "barcode": "string",
+  "preservation_type": "DS",
+  "sample_photo": 0,
+  "photo_description": "string",
+  "comment": "string",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `barcode`
+
+The `barcode` key maps to the property `dwc:materialSampleID` on the `tern:MaterialSample` class.
+
+##### Example
+
+```
+<https://example.com/fauna-sample/1> a tern:MaterialSample ;
+    dwc:materialSampleID "materialSample001" .
+```
+
+#### `preservation_type`
+
+The `preservation_type` key maps to the attribute `preservation type` in [Invertebrate fauna module - active sampling protocol Attributes](https://linked.data.gov.au/def/nrm/8128a20c-e8c7-45ba-9d8d-4d3347a6c34f), and is linked to material sample by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/fauna-sample/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "preservation type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/0f16c593-df2d-462f-ab01-87b4bc0a223f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8cd2bd57-f4f0-570c-a388-68fa108bb0a1> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Dried and stored" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/8cd2bd57-f4f0-570c-a388-68fa108bb0a1> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `sample_photo`
+
+The `sample_photo` key maps to the property `dcterms:identifier` on the `tern:Sample` class.
+
+##### Example
+
+```
+<https://example.com/photo/1> a tern:Sample ;
+    dcterms:identifier "photo001" .
+```
+
+#### `photo_description`
+
+The `photo_description` key maps to the attribute `photo description` in [Invertebrate fauna module - active sampling protocol Attributes](https://linked.data.gov.au/def/nrm/8128a20c-e8c7-45ba-9d8d-4d3347a6c34f), and is linked to photos by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/photo/1> a tern:Sample ;
+    tern:hasAttribute [
+        rdfs:label "photo description" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/edfc908c-f040-495d-9b54-3c0cfe6eb698> ;
+        tern:hasSimpleValue "Equipment included"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Equipment included"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `comment`
+
+The `comment` key maps to the property `rdfs:comment` on the `tern:MaterialSample` class.
+
+##### Example
+
+```
+<https://example.com/fauna-sample/1> a tern:MaterialSample ;
+    rdfs:comment "Preservation used" .
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
