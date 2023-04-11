@@ -26,6 +26,434 @@ The following diagram shows the Malaise trapping protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1BSFAClQ4b9gLg6fAm9B1mBd4cwGjdD5A&layers=1&nav=1&title=invertebrate-fauna-malaise-trapping-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1BSFAClQ4b9gLg6fAm9B1mBd4cwGjdD5A%26export%3Ddownload">View diagram in new tab.</a>
 
+1. Survey data from invertebrate malaise samples:
+
+- [OpenAPI docs for invertebrate malaise samples](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-malaise-sample/post%2Finvertebrate-malaise-samples)
+
+```json
+{
+  "sample_collection_date": "2023-04-11T03:59:03.820Z",
+  "voucher_type": "LP",
+  "trap_preservative": "DS",
+  "undiluted_preservative": true,
+  "preservative_concentration": 100,
+  "replace_collection_bottle": true,
+  "empty_filter_weight": 0,
+  "filter_weight_with_sample": 0,
+  "sample_biomass": 0,
+  "weather": {
+    "precipitation": "NO",
+    "precipitation_duration": "I",
+    "wind_description": "C",
+    "cloud_cover": "SU",
+    "temperature": 0
+  },
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `sample_collection_date`
+
+The `sample_collection_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/fauna-vouchering-and-trap-removal/456> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `voucher_type`
+
+The `voucher_type` key maps to the attribute `voucher collection type` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/fauna-voucher-specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "voucher collection type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/504237df-028c-4e4d-8e01-b5c44f7d8d50> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/32639aa6-c07b-5de0-95d9-4ea7d3792c06> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Liquid Preservation" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/32639aa6-c07b-5de0-95d9-4ea7d3792c06> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `trap_preservative` and `undiluted_preservative`
+
+These 2 keys map to the attribute `trap preservative type` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/fauna-voucher-specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "trap preservative type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1ab7fdbb-e597-4aa6-bf55-fb5cb5f7c394> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Undiluted propylene glycol" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `replace_collection_bottle`
+
+The `replace_collection_bottle` key maps to the attribute `replace collection bottle` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/fauna-voucher-specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "replace collection bottle" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/2ba9aa0e-3eb5-4f33-9ff5-4191b0a6b6c2> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `precipitation`
+
+The `precipitation` key maps to a `tern:Observation` with the observable property 'weather- site precipitation'.
+
+#### `precipitation_duration`
+
+The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'weather- duration of precipitation'.
+
+#### `wind_description`
+
+The `wind_description` key maps to a `tern:Observation` with the observable property 'weather-site wind'.
+
+#### `cloud_cover`
+
+The `cloud_cover` key maps to a `tern:Observation` with the observable property 'weather- site cloud cover'.
+
+#### `temperature`
+
+The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+2. Survey data from invertebrate malaise trap:
+
+- [OpenAPI docs for invertebrate malaise trap](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-malaise-trap/post%2Finvertebrate-malaise-traps)
+
+```json
+{
+  "malaise-trapping": 0,
+  "trapId": "string",
+  "start_date": "2023-04-11T04:00:55.661Z",
+  "direction": "S",
+  "moth_excluder": true,
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "trap_photo": [
+    {
+      "photo": 0,
+      "direction": "S",
+      "description": "string"
+    }
+  ],
+  "habitat_description": "string",
+  "weather": {
+    "precipitation": "NO",
+    "precipitation_duration": "I",
+    "wind_description": "C",
+    "cloud_cover": "SU",
+    "temperature": 0
+  },
+  "comment": "string",
+  "duration": 0,
+  "end_date": "2023-04-11T04:00:55.661Z",
+  "barcode": "string",
+  "sample_photo": [
+    {
+      "media": 0,
+      "comment": "string"
+    }
+  ],
+  "samples": [0],
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `malaise-trapping`
+
+The `malaise-trapping` key maps to the `tern:SiteVisit` class.
+
+#### `trapId`
+
+The `trapId` key maps to the property `dcterms:identifier` on the `tern:Sampler` class.
+
+##### Example
+
+```
+<https://example.com/trap/1> a tern:Sampler ;
+    dcterms:identifier "trap001" .
+```
+
+#### `start_date`
+
+The `start_date` key maps to the property `prov:startedAtTime` on the `tern:Deployment` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/trap-set-up/456> a tern:Deployment ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `direction`
+
+The `direction` key maps to the attribute `malaise trap head direction` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "malaise trap head direction" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/372832bd-9030-477f-b48b-83853c2d43d3> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/39fd9d7b-61d7-5ba6-b7b2-1031d82f738f> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "South" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/39fd9d7b-61d7-5ba6-b7b2-1031d82f738f> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `moth_excluder`
+
+The `moth_excluder` key maps to the attribute `moth excluder use` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "moth excluder use" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1b734b70-6060-4e75-8760-1969b38b164d> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `location`
+
+The `location` key maps to the attribute `geo:hasGeometry` on the `tern:Deployment` class.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `photo` in `trap_photo`
+
+The `photo` key maps to the property `dcterms:identifier` on the `tern:Sample` class.
+
+##### Example
+
+```
+<https://example.com/photo/1> a tern:Sample ;
+    dcterms:identifier "photo001" .
+```
+
+#### `direction` in `trap_photo`
+
+The `direction` key maps to the attribute `photo direction` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to sample by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/photo/1> a tern:Sample ;
+    tern:hasAttribute [
+        rdfs:label "photo direction" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/92650dea-b8f2-4e48-bb20-95ca9aa80308> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "East" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `description` in `trap_photo`
+
+The `description` key maps to the attribute `photo description` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to sample by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/photo/1> a tern:Sample ;
+    tern:hasAttribute [
+        rdfs:label "photo description" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/edfc908c-f040-495d-9b54-3c0cfe6eb698> ;
+        tern:hasSimpleValue "Direction is east."^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Direction is east."^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `habitat_description`
+
+The `habitat_description` key maps to a `tern:Observation` with the observable property 'habitat description'.
+
+#### `precipitation`
+
+The `precipitation` key maps to a `tern:Observation` with the observable property 'weather- site precipitation'.
+
+#### `precipitation_duration`
+
+The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'weather- duration of precipitation'.
+
+#### `wind_description`
+
+The `wind_description` key maps to a `tern:Observation` with the observable property 'weather-site wind'.
+
+#### `cloud_cover`
+
+The `cloud_cover` key maps to a `tern:Observation` with the observable property 'weather- site cloud cover'.
+
+#### `temperature`
+
+The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
+
+#### `comment`
+
+The `comment` key maps to the attribute `malaise trap comments` in [Invertebrate fauna module - Malaise trapping protocol Attributes](https://linked.data.gov.au/def/nrm/dac32537-fa2a-4a58-a1f8-70715e7e4eb4), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "malaise trap comments" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/d507600b-066e-4f0b-9afe-23c1fa0b384a> ;
+        tern:hasSimpleValue "Set up in the morning."^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Set up in the morning."^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `end_date`
+
+The `end_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/fauna-vouchering-and-trap-removal/456> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `duration`
+
+The `duration` can be calculated by values of `start_date` and `end_date`.
+
+#### `barcode`
+
+The `barcode` key maps to the property `dcterms:identifier` on the `tern:Sampler` class.
+
+##### Example
+
+```
+<https://example.com/trap/1> a tern:Sampler ;
+    dcterms:identifier "trap001" .
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+3. Survey data from invertebrate malaise trapping:
+
+- [OpenAPI docs for invertebrate malaise trapping](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-malaise-trapping/post%2Finvertebrate-malaise-trappings)
+
+```json
+{
+  "surveyId": "string",
+  "plot_visit": 0,
+  "observers": "string",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `surveyId`
+
+Use this value along with the site ID to generate a site visit URI.
+
+##### Example
+
+```
+https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `observers`
+
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:Sampling` class.
+
+##### Example
+
+```
+<https://example.com/fauna-vouchering-and-trap-removal/1> a tern:Sampling ;
+    prov:wasAssociatedWith "Paul Green" .
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
