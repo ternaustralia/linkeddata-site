@@ -7,7 +7,6 @@ import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
 
-window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); };
 
 function HomepageHeader() {
