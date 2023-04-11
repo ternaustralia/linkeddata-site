@@ -7,7 +7,7 @@ import ViewerPage from '../../../components/vocab-viewers/Page';
 function gtag() { dataLayer.push(arguments); };
 
 export default function Page() {
-  gtag('event', 'viewer', { 'cv': 'dawe2' });
+  gtag('event', 'viewer', { 'cv': 'dawe' });
   return (
     <ViewerPage settingsID="nrm" />
   )
