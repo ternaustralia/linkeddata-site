@@ -3,8 +3,12 @@ import React from 'react'
 import settings from './_settings'
 import ViewerPage from '../../../components/vocab-viewers/Page'
 
-export default function Page() {
 
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); };
+
+export default function Page() {
+  gtag('event', 'viewer', { 'cv': 'dawe' });
   return (
     <ViewerPage settingsID="nrm" />
   )

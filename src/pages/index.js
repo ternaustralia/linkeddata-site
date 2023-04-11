@@ -6,8 +6,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
+
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); };
+
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--secondary', styles.heroBanner)}>
       <div className="container">
@@ -26,7 +30,9 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
+  gtag('js', new Date());
+  gtag('config', siteConfig.customFields.ga4TagCode);
   return (
     <Layout
       title={`${siteConfig.title}`}
