@@ -9,12 +9,16 @@ const package = require("./package.json");
 const version = process.env.REACT_APP_GIT_VERSION || package.version;
 
 let env = null;
+let ga4TagCode = null;
 if (version.includes("dev")) {
   env = "test";
+  ga4TagCode = "G-SV1R8XF9RD";
 } else if (version.includes("local")) {
   env = "local";
+  ga4TagCode = "G-SV1R8XF9RD";
 } else {
   env = "prod";
+  ga4TagCode = "G-9ZSB7J0E6H";
 }
 
 /** @type {import('@docusaurus/types').Config} */
@@ -30,9 +34,18 @@ const config = {
   organizationName: "ternaustralia", // Usually your GitHub org/user name.
   projectName: "linkeddata-site", // Usually your repo name.
 
+  scripts: [
+    {
+      src:
+        `https://www.googletagmanager.com/gtag/js?id=${ga4TagCode}`,
+      async: true,
+    },
+  ],
+
   customFields: {
     version: version,
     env: env,
+    ga4TagCode: ga4TagCode,
   },
 
   presets: [
