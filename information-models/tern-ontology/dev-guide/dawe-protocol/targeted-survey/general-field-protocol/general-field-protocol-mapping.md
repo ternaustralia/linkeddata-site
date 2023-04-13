@@ -22,6 +22,127 @@ The following diagram shows the General field survey details protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1e7Wtip-yW2pQNelOaW6oDbmP9TI5l6A3&layers=1&nav=1&title=targeted-survey-general-field-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1e7Wtip-yW2pQNelOaW6oDbmP9TI5l6A3%26export%3Ddownload">View diagram in new tab.</a>
 
+### Survey data from targeted survey - General field survey details protocol:
+
+The following is dummy data:
+
+```json
+{
+  "start_date": "2023-04-11T06:03:58.525Z",
+  "target_habitats": "string",
+  "experience": "string",
+  "lat": 0,
+  "lng": 0,
+  "plot_visit": 0,
+  "weather": {
+    "precipitation": "NO",
+    "precipitation_duration": "I",
+    "wind_description": "C",
+    "cloud_cover": "SU",
+    "temperature": 0
+  },
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `start_date`
+
+The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `target_habitats`
+
+The `target_habitats` key maps to the attribute `target habitats` in [Targeted survey module - General field protocol Attributes](https://linked.data.gov.au/def/nrm/5711a30b-d89f-4984-b488-af9943658f7a), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/create-survey-area/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "target habitats" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/ae2c88be-63d5-44d3-95ac-54b14c4a4b28> ;
+        tern:hasSimpleValue "There are 2 snakes."^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "There are 2 snakes."^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `experience`
+
+The `experience` key maps to the attribute `survey observers and experience` in [Targeted survey module - General field protocol Attributes](https://linked.data.gov.au/def/nrm/5711a30b-d89f-4984-b488-af9943658f7a), and is linked to site visit by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/site/visit/1> a tern:SiteVisit ;
+    tern:hasAttribute [
+        rdfs:label "survey observers and experience" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/e3ff756d-7363-4bd1-8d8f-fd95cd941d97> ;
+        tern:hasSimpleValue "Experienced"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Experienced"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `lat`, `lng`
+
+These 2 keys map to the attribute `geo:hasGeometry` on the `tern:Site` class.
+
+##### Example
+
+```turtle
+<https://example.com/site/1> a tern:Site ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `precipitation`
+
+The `precipitation` key maps to a `tern:Observation` with the observable property 'weather- site precipitation'.
+
+#### `precipitation_duration`
+
+The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'weather- duration of precipitation'.
+
+#### `wind_description`
+
+The `wind_description` key maps to a `tern:Observation` with the observable property 'weather-site wind'.
+
+#### `cloud_cover`
+
+The `cloud_cover` key maps to a `tern:Observation` with the observable property 'weather- site cloud cover'.
+
+#### `temperature`
+
+The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
