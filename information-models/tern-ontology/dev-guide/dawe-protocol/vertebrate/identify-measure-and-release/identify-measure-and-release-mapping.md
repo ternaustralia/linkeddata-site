@@ -24,6 +24,342 @@ The following diagram shows the Identify, measure and release protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1fXuswH2XmunmjAsCLLM2hH7_qHUl2-sP&layers=1&nav=1&title=vertebrate-fauna-identify-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1fXuswH2XmunmjAsCLLM2hH7_qHUl2-sP%26export%3Ddownload">View diagram in new tab.</a>
 
+1. Survey data from vertebrate identify, measure and release protocol:
+
+The following is dummy data:
+
+```json
+{
+  "start_date": "2023-04-11T06:03:58.525Z",
+  "lat": 0,
+  "lng": 0,
+  "plot_visit": 0,
+  "observers": "Paul Green",
+  "photo": [0],
+  "samples": {
+    "sample_id": "materialSample001",
+    "mark_colour": "Black",
+    "capture_status": "Fresh (estimate 24 houts - <48 hours)",
+    "collection_date": "2023-04-11T06:03:58.525Z"
+  },
+  "trapID": "trap001",
+  "type": "Elliot Trap",
+  "elliot_false_trigger": true,
+  "cage_false_trigger": false,
+  "damaged": false,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `start_date`
+
+The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `lat`, `lng`
+
+These 2 keys map to the attribute `geo:hasGeometry` on the `tern:Site` class.
+
+##### Example
+
+```turtle
+<https://example.com/site/1> a tern:Site ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `observers`
+
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:Sampling` class.
+
+##### Example
+
+```
+<https://example.com/checking-traps/1> a tern:Sampling ;
+    prov:wasAssociatedWith "Paul Green" .
+```
+
+#### `photo`
+
+The `photo` key maps to the `tern:Sample` class.
+
+#### `sample_id`
+
+The `sample_id` key maps to the property `dwc:materialSampleID` on the `tern:MaterialSample` class.
+
+##### Example
+
+```
+<https://example.com/fauna-voucher-specimen/1> a tern:MaterialSample ;
+    dwc:materialSampleID "materialSample001" .
+```
+
+#### `mark_colour`
+
+The `mark_colour` key maps to the attribute `recapture temporary texta mark colour` in [Vertebrate fauna module - identify, measure and release protocol Attributes](https://linked.data.gov.au/def/nrm/54fd720c-456f-4173-b4c0-610f3c97760b), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/record-captures/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "recapture temporary texta mark colour" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/bfab8eb0-d652-47c3-b178-736323e0f896> ;
+        tern:hasSimpleValue "Black"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Black"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `capture_status`
+
+The `capture_status` key maps to the attribute `vertebrate capture status` in [Vertebrate fauna module - identify, measure and release protocol Attributes](https://linked.data.gov.au/def/nrm/54fd720c-456f-4173-b4c0-610f3c97760b), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/record-captures/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "vertebrate capture status" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/ec1b061e-a737-4596-b675-c074ed320ac6> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `collection_date`
+
+The `collection_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/record-captures> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `trapID`
+
+The `trapID` key maps to the property `dcterms:identifier` on the `tern:Sampler` class.
+
+##### Example
+
+```
+<https://example.com/trap/1> a tern:Sampler ;
+    dcterms:identifier "trap001" .
+```
+
+#### `type`
+
+The `type` key maps to the attribute `trap type` in [Vertebrate fauna module - identify, measure and release protocol Attributes](https://linked.data.gov.au/def/nrm/54fd720c-456f-4173-b4c0-610f3c97760b), and is linked to sampler by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/traps/1> a tern:Sampler ;
+    tern:hasAttribute [
+        rdfs:label "trap type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/fabf23b1-3828-4448-93f5-67a1b6fbdd5f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/be7f9b1a-a08e-5196-9762-1ddd335ac027> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Elliot Trap" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/be7f9b1a-a08e-5196-9762-1ddd335ac027> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `elliot_false_trigger`
+
+The `elliot_false_trigger` key maps to the attribute `elliot trap false trigger` in [Vertebrate fauna module - identify, measure and release protocol Attributes](https://linked.data.gov.au/def/nrm/54fd720c-456f-4173-b4c0-610f3c97760b), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/checking-traps/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "elliot trap false trigger" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/f575f6e9-a327-4581-a71f-b7150a687292> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `cage_false_trigger`
+
+The `cage_false_trigger` key maps to the attribute `cage trap false trigger` in [Vertebrate fauna module - identify, measure and release protocol Attributes](https://linked.data.gov.au/def/nrm/54fd720c-456f-4173-b4c0-610f3c97760b), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/checking-traps/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "cage trap false trigger" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/6be5f9e9-97c1-49ea-9388-119058244314> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `damaged`
+
+The `damaged` key maps to the attribute `trap disturbed/damaged` in [Vertebrate fauna module - identify, measure and release protocol Attributes](https://linked.data.gov.au/def/nrm/54fd720c-456f-4173-b4c0-610f3c97760b), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/checking-traps/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "trap disturbed/damaged" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/b176932e-bd52-4f33-96db-ba17b311512f> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+2. Observation data from vertebrate identify, measure and release protocol:
+
+The following is dummy data:
+
+```json
+{
+  "age": "Adult",
+  "weight": 100,
+  "body_condition": "Good",
+  "body_length": 50,
+  "species_name": "Snake",
+  "head_length": 10,
+  "testes_position": "Abdominal",
+  "pouch_development": "Haired",
+  "pouch_number": 2,
+  "pouch_size": 100,
+  "sex": "male",
+  "pregnancy_sign": "No",
+  "tail_length": 5,
+  "teat_status": "Button",
+  "testes_length": 5,
+  "testes_width": 5,
+  "vertebrate": "vertebrate",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `age`
+
+The `age` key maps to a `tern:Observation` with the observable property 'age class'.
+
+#### `weight`
+
+The `weight` key maps to a `tern:Observation` with the observable property 'animal weight'.
+
+#### `body_condition`
+
+The `body_condition` key maps to a `tern:Observation` with the observable property 'body condition'.
+
+#### `body_length`
+
+The `body_length` key maps to a `tern:Observation` with the observable property 'body length'.
+
+#### `species_name`
+
+The `species_name` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `head_length`
+
+The `head_length` key maps to a `tern:Observation` with the observable property 'head length'.
+
+#### `testes_position`
+
+The `testes_position` key maps to a `tern:Observation` with the observable property 'position of testes'.
+
+#### `pouch_development`
+
+The `pouch_development` key maps to a `tern:Observation` with the observable property 'pouch young development class'.
+
+#### `pouch_number`
+
+The `pouch_number` key maps to a `tern:Observation` with the observable property 'pouch young number'.
+
+#### `pouch_size`
+
+The `pouch_size` key maps to a `tern:Observation` with the observable property 'pouch young size'.
+
+#### `sex`
+
+The `sex` key maps to a `tern:Observation` with the observable property 'sex'.
+
+#### `pregnancy_sign`
+
+The `pregnancy_sign` key maps to a `tern:Observation` with the observable property 'signs of pregnancy'.
+
+#### `tail_length`
+
+The `tail_length` key maps to a `tern:Observation` with the observable property 'tail length'.
+
+#### `teat_status`
+
+The `teat_status` key maps to a `tern:Observation` with the observable property 'teat status'.
+
+#### `testes_length`
+
+The `testes_length` key maps to a `tern:Observation` with the observable property 'testes length'.
+
+#### `testes_width`
+
+The `testes_width` key maps to a `tern:Observation` with the observable property 'testes width'.
+
+#### `vertebrate`
+
+The `vertebrate` key maps to a `tern:Observation` with the observable property 'vertebrate class'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
@@ -83,7 +419,7 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             a <https://w3id.org/tern/ontologies/org/Person> ;
             schema:name "Paul Green"
         ] ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/traps> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sampler/traps> ;
     sosa:hasResult <https://example.com/Sample/animal-individual> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
     tern:hasAttribute
@@ -200,8 +536,8 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     tern:featureType "photos" ;
 .
 
-<https://example.com/Sample/traps>
-    a tern:Sample ;
+<https://example.com/Sampler/traps>
+    a tern:Sampler ;
     rdfs:label "traps" ;
     dcterms:identifier "sample-traps-001" ;
     void:inDataset <https://example.com/dataset/1> ;
