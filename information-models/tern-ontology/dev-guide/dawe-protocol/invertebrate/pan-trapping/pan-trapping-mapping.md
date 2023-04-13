@@ -27,6 +27,606 @@ The following diagram shows the Pan trapping protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1EJExnBy_Mk1kqjmEqQxU26yok1EZrs_d&layers=1&nav=1&title=invertebrate-fauna-pan-trapping-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1EJExnBy_Mk1kqjmEqQxU26yok1EZrs_d%26export%3Ddownload">View diagram in new tab.</a>
 
+1. Survey data from invertebrate pan trap:
+
+- [OpenAPI docs for invertebrate pan trap](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-pan-trap/post%2Finvertebrate-pan-traps)
+
+```json
+{
+  "barcode": "string",
+  "start_date": "2023-04-11T06:03:58.525Z",
+  "proposed_duration": 0,
+  "end_date": "2023-04-11T06:03:58.525Z",
+  "duration": 0,
+  "lat": 0,
+  "lng": 0,
+  "trapId": "string",
+  "trap_photo": [0],
+  "inside_pan_colour": "W",
+  "outside_pan_colour": "W",
+  "pan_diameter": 0,
+  "pan_depth": 0,
+  "pan_capacity": 0,
+  "pan_placement": "OG",
+  "pan_height_above_ground": 0,
+  "liquid_type": "WDS",
+  "liquid_amount(estimated)": 0,
+  "stakes_used": true,
+  "trap_not_found": true,
+  "trap_evaporated": true,
+  "rain_impacted": true,
+  "trap_upended": true,
+  "trap_damaged": true,
+  "no_catch": true,
+  "samples": {
+    "media": [
+      {
+        "media": "string or id",
+        "comment": "string"
+      }
+    ],
+    "preservation_type": "DS",
+    "collection_date": [
+      {
+        "collection_date": "2023-04-11T06:03:58.525Z"
+      }
+    ]
+  },
+  "dominant_species_in_flower": [
+    {
+      "species_name": "string"
+    }
+  ],
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `barcode`
+
+The `barcode` key maps to the property `dcterms:identifier` on the `tern:Sampler` class.
+
+##### Example
+
+```
+<https://example.com/pan-trap/1> a tern:Sampler ;
+    dcterms:identifier "trap001" .
+```
+
+#### `start_date`
+
+The `start_date` key maps to the property `prov:startedAtTime` on the `tern:Deployment` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/trap-set-up/456> a tern:Deployment ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `proposed_duration`
+
+The `proposed_duration` key maps to the attribute `proposed pan trapping duration` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "proposed pan trapping duration" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/51abbe2c-0108-4def-95ec-39d574593a52> ;
+        tern:hasSimpleValue "2h"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "2h"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `end_date`
+
+The `end_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/sample-collection-and-trap-removal/456> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `duration`
+
+The `duration` can be calculated by values of `start_date` and `end_date`.
+
+#### `lat`, `lng`
+
+These 2 keys map to the attribute `geo:hasGeometry` on the `tern:Deployment` class.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `trapId`
+
+The `trapId` key maps to the property `dcterms:identifier` on the `tern:Sampler` class.
+
+##### Example
+
+```
+<https://example.com/trap/1> a tern:Sampler ;
+    dcterms:identifier "trap001" .
+```
+
+#### `trap_photo`
+
+The `trap_photo` key maps to the `tern:Sample` class.
+
+#### `inside_pan_colour`
+
+The `inside_pan_colour` key maps to the attribute `pan trap inside colour` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampler by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap/1> a tern:Sampler ;
+    tern:hasAttribute [
+        rdfs:label "pan trap inside colour" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/4a6ae834-08bf-4f80-b219-fbe9c56e4e1a> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/484ce715-6dbc-500a-919c-6835758a99d8> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Blue" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/484ce715-6dbc-500a-919c-6835758a99d8> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `outside_pan_colour`
+
+The `outside_pan_colour` key maps to the attribute `pan trap outside colour` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampler by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap/1> a tern:Sampler ;
+    tern:hasAttribute [
+        rdfs:label "pan trap outside colour" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/7b3a55fa-7d3e-44f5-9042-897b624c4273> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "White" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `pan_diameter`
+
+The `pan_diameter` key maps to the attribute `pan diameter` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampler by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap/1> a tern:Sampler ;
+    tern:hasAttribute [
+        rdfs:label "pan diameter" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/2b0aac4a-a79a-4ce9-aa34-f8e0cee4770f> ;
+        tern:hasSimpleValue "10"^^xsd:float ;
+        tern:hasValue [
+            a tern:Float ;
+            rdf:value "10"^^xsd:float ;
+            tern:unit unit:CentiM ;
+        ] ;
+    ] ;
+.
+```
+
+#### `pan_capacity`
+
+The `pan_capacity` key maps to the attribute `pan trap capacity` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampler by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap/1> a tern:Sampler ;
+    tern:hasAttribute [
+        rdfs:label "pan trap capacity" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/498a0a7e-9a0f-4ebe-9775-a414caa7a80d> ;
+        tern:hasSimpleValue "100"^^xsd:float ;
+        tern:hasValue [
+            a tern:Float ;
+            rdf:value "100"^^xsd:float ;
+            tern:unit unit:MilliL ;
+        ] ;
+    ] ;
+.
+```
+
+#### `pan_placement`
+
+The `pan_placement` key maps to the attribute `pan placement` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "pan placement" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/b5e04630-0013-4cc2-8515-02fdc1e952fc> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `pan_height_above_ground`
+
+The `pan_height_above_ground` key maps to the attribute `pan height above ground` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "pan height above ground" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/6c5e9c30-6924-468d-be8e-481aa68fa1f6> ;
+        tern:hasSimpleValue "20"^^xsd:float ;
+        tern:hasValue [
+            a tern:Float ;
+            rdf:value "20"^^xsd:float ;
+            tern:unit unit:CentiM ;
+        ] ;
+    ] ;
+.
+```
+
+#### `liquid_type`
+
+The `liquid_type` key maps to the attribute `liquid type` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "liquid type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/d423df1b-aac6-42c2-be3e-43ab27eaf745> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5a25663a-201a-587a-a527-84f9543fadaf> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Undiluted Propylene Glycol" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/5a25663a-201a-587a-a527-84f9543fadaf> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `liquid_amount(estimated)`
+
+The `liquid_amount(estimated)` key maps to the attribute `liquid amount` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "liquid amount" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/e760902f-b01c-4b11-aaab-1f965f292352> ;
+        tern:hasSimpleValue "20"^^xsd:float ;
+        tern:hasValue [
+            a tern:Float ;
+            rdf:value "20"^^xsd:float ;
+            tern:unit unit:MilliL ;
+        ] ;
+    ] ;
+.
+```
+
+#### `stakes_used`
+
+The `stakes_used` key maps to the attribute `stakes used to hold pan` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "stakes used to hold pan" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/309ff0e0-f17b-4c05-8d11-5ca1b700a35c> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `trap_not_found`
+
+The `trap_not_found` key maps to the attribute `pan trap not found` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap not found" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/03da222d-f463-4d4e-a892-fe19b70a9bed> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `trap_evaporated`
+
+The `trap_evaporated` key maps to the attribute `pan trap evaporated` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap evaporated" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/fb2ef80e-52c1-4391-88a4-355857cc5edb> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `rain_impacted`
+
+The `rain_impacted` key maps to the attribute `pan trap rain impacted` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap rain impacted" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/59b22e0b-b01d-4464-840b-37a538dbb272> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `trap_upended`
+
+The `trap_upended` key maps to the attribute `pan trap upended` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap upended" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/2d17cd6e-da13-4544-83a5-0a6900cd1ba1> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `trap_damaged`
+
+The `trap_damaged` key maps to the attribute `pan trap damaged` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap damaged" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/c7f352f9-eeb9-428b-b54a-9e726bee3b4c> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `no_catch`
+
+The `no_catch` key maps to the attribute `pan trap no catch` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap no catch" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/ea52a346-b6d3-41dc-9f0d-d5d74d48fdbd> ;
+        tern:hasSimpleValue "false"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "false"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `comment`
+
+The `comment` key maps to the attribute `pan trap completion comments` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap completion comments" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/a959af6d-890b-4e49-984d-827ac88a38fb> ;
+        tern:hasSimpleValue "Sample collected"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Sample collected"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `preservation_type`
+
+The `preservation_type` key maps to the attribute `pan trap preservation type` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/sample-collection-and-trap-removal/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "pan trap preservation type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/5f261bed-d7d9-413e-8685-68ea548c5c64> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Undiluted propylene glycol" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `collection_date`
+
+The `collection_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/sample-collection-and-trap-removal> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `species_name` in `dominant_species_in_flower`
+
+The `species_name` key maps to a `tern:Observation` with the observable property 'plant species in flower'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+2. Survey data from invertebrate pan trapping:
+
+- [OpenAPI docs for invertebrate pan trapping](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-pan-trapping/post%2Finvertebrate-pan-trappings)
+
+```json
+{
+  "surveyId": "string",
+  "plot_visit": 0,
+  "monitoring_duration": "Short",
+  "repeat_monitoring": true,
+  "observers": "string",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `surveyId`
+
+Use this value along with the site ID to generate a site visit URI.
+
+##### Example
+
+```
+https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `monitoring_duration`
+
+The `monitoring_duration` key maps to the attribute `pan trap monitoring duration` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "pan trap monitoring duration" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/a1556af0-814e-4b1f-b296-9d42a9186dd8> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/fae4684e-be7f-58f3-a099-d916e80d51bb> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Full Duration" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/fae4684e-be7f-58f3-a099-d916e80d51bb> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `repeat_monitoring`
+
+The `repeat_monitoring` key maps to the attribute `pan trap repeat monitoring` in [Invertebrate fauna module - pan trapping protocol Attributes](https://linked.data.gov.au/def/nrm/ef22b1a2-87a9-4ac7-b98a-c4297e12de04), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "pan trap repeat monitoring" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/e8b25478-caba-4ae1-95af-4bb24e9fbb5a> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `observers`
+
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:Deployment` class.
+
+##### Example
+
+```
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    prov:wasAssociatedWith "Paul Green" .
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
