@@ -25,6 +25,336 @@ The following diagram shows the Active and passive searching protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G159WmRp9VIpLMyc9fzxJ5r26jIe8JR5G2&layers=1&nav=1&title=vertebrate-fauna-active-and-passive-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D159WmRp9VIpLMyc9fzxJ5r26jIe8JR5G2%26export%3Ddownload">View diagram in new tab.</a>
 
+1. Survey data from vertebrate active and passive search:
+
+The following is dummy data:
+
+```json
+{
+  "start_date": "2023-04-11T06:03:58.525Z",
+  "end_date": "2023-04-11T06:03:58.525Z",
+  "habitat_description": "string",
+  "duration": 0,
+  "lat": 0,
+  "lng": 0,
+  "plot_visit": 0,
+  "equipment_used": "Camera used",
+  "photo": [0],
+  "samples": {
+    "sample_id": "materialSample001",
+    "voucher_type": "Animal tissue (fur/hair)",
+    "voucher_condition": "Fresh (estimate 24 houts - <48 hours)",
+    "collection_date": "2023-04-11T06:03:58.525Z"
+  },
+  "weather": {
+    "precipitation": "NO",
+    "wind_description": "C",
+    "cloud_cover": "SU",
+    "temperature": 0
+  },
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `start_date`
+
+The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `end_date`
+
+The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
+    prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `habitat_description`
+
+The `habitat_description` key maps to a `tern:Observation` with the observable property 'habitat description'.
+
+#### `duration`
+
+The `duration` key maps to the attribute `survey duration` in [Vertebrate fauna module - Active and passive searching protocol Attributes](https://linked.data.gov.au/def/nrm/ccc2c832-9942-4dd4-816e-d44775836021), and is linked to site visit by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/site/visit/1> a tern:SiteVisit ;
+    tern:hasAttribute [
+        rdfs:label "survey duration" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/e06e4787-8bd3-4ee5-acb2-1457b1fa71ad> ;
+        tern:hasSimpleValue "10 hours"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "10 hours"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `lat`, `lng`
+
+These 2 keys map to the attribute `geo:hasGeometry` on the `tern:Site` class.
+
+##### Example
+
+```turtle
+<https://example.com/site/1> a tern:Site ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `equipment_used`
+
+The `equipment_used` key maps to the attribute `equipment used` in [Vertebrate fauna module - Active and passive searching protocol Attributes](https://linked.data.gov.au/def/nrm/ccc2c832-9942-4dd4-816e-d44775836021), and is linked to site visit by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/site/visit/1> a tern:SiteVisit ;
+    tern:hasAttribute [
+        rdfs:label "equipment used" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/de6821ec-e2aa-4b12-8c8e-57251bec1b9d> ;
+        tern:hasSimpleValue "Camera used"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Camera used"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `photo`
+
+The `photo` key maps to the `tern:Sample` class.
+
+#### `sample_id`
+
+The `sample_id` key maps to the property `dwc:materialSampleID` on the `tern:MaterialSample` class.
+
+##### Example
+
+```
+<https://example.com/fauna-voucher-specimen/1> a tern:MaterialSample ;
+    dwc:materialSampleID "materialSample001" .
+```
+
+#### `voucher_type`
+
+The `voucher_type` key maps to the attribute `voucher type` in [Vertebrate fauna module - Active and passive searching protocol Attributes](https://linked.data.gov.au/def/nrm/ccc2c832-9942-4dd4-816e-d44775836021), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/fauna-voucher-specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "voucher type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5b005b04-431e-54b1-a2f1-b9a2f0776079> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Animal tissue (fur/hair)" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/5b005b04-431e-54b1-a2f1-b9a2f0776079> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `voucher_condition`
+
+The `voucher_condition` key maps to the attribute `voucher condition` in [Vertebrate fauna module - Active and passive searching protocol Attributes](https://linked.data.gov.au/def/nrm/ccc2c832-9942-4dd4-816e-d44775836021), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/fauna-voucher-specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "voucher condition" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/010ee3c8-bfbe-47c5-adc8-068ca664173d> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0acf0ade-05e1-515d-a8c6-ba747e0d4e20> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Fresh (estimate 24 houts - <48 hours)" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0acf0ade-05e1-515d-a8c6-ba747e0d4e20> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `collection_date`
+
+The `collection_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/fauna-vouchering> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `precipitation`
+
+The `precipitation` key maps to a `tern:Observation` with the observable property 'weather- site precipitation'.
+
+#### `wind_description`
+
+The `wind_description` key maps to a `tern:Observation` with the observable property 'weather-site wind'.
+
+#### `cloud_cover`
+
+The `cloud_cover` key maps to a `tern:Observation` with the observable property 'weather- site cloud cover'.
+
+#### `temperature`
+
+The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+2. Observation data from vertebrate active and passive search:
+
+The following is dummy data:
+
+```json
+{
+  "age": "Adult",
+  "fauna_behaviour": "Feeding",
+  "count": 2,
+  "exact_or_estimate": "Exact",
+  "reproductive_status": "Breeding",
+  "sex": "male",
+  "species_name": "Snake",
+  "confident": true,
+  "source_of_identification": "Expert (museum/herbarium)",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `age`
+
+The `age` key maps to a `tern:Observation` with the observable property 'age class'.
+
+#### `fauna_behaviour`
+
+The `fauna_behaviour` key maps to a `tern:Observation` with the observable property 'fauna behaviour'.
+
+#### `count`
+
+The `count` key maps to a `tern:Observation` with the observable property 'number of individuals'.
+
+#### `exact_or_estimate`
+
+The `exact_or_estimate` key maps to the attribute `count exact or estimate` in [Vertebrate fauna module - Active and passive searching protocol Attributes](https://linked.data.gov.au/def/nrm/ccc2c832-9942-4dd4-816e-d44775836021), and is linked to values by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/number-of-individuals/1>
+    a tern:Observation ;
+    rdfs:label "number of individuals" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Integer ;
+            rdf:value 2 ;
+            tern:hasAttribute [
+                    rdfs:label "count exact or estimate" ;
+                    void:inDataset <https://example.com/dataset/1> ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/ca245b0d-b3e2-4dbc-8a72-d8cd1868a1ce> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a> ;
+                    tern:hasValue [
+                            a tern:IRI ;
+                            rdfs:label "Exact" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a>
+                        ]
+                ]
+        ] ;
+    sosa:hasSimpleResult 2 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/b2d28629-c986-4c05-9d4a-8b05e99a0a94> ;
+.
+```
+
+#### `reproductive_status`
+
+The `reproductive_status` key maps to a `tern:Observation` with the observable property 'reproductive status'.
+
+#### `sex`
+
+The `sex` key maps to a `tern:Observation` with the observable property 'sex'.
+
+#### `species_name`
+
+The `species_name` key maps to a `tern:Observation` with the observable property 'field species name'.
+
+#### `confident`
+
+The `confident` key maps to the attribute `is confident` in [Vertebrate fauna module - Active and passive searching protocol Attributes](https://linked.data.gov.au/def/nrm/ccc2c832-9942-4dd4-816e-d44775836021), and is linked to observation by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/field-species-name/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "is confident" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/adb8ec51-3f23-448b-9c80-3e8f2e4bb584> ;
+        tern:hasSimpleValue "true"^^xsd:boolean ;
+        tern:hasValue [
+            a tern:Boolean ;
+            rdf:value "true"^^xsd:boolean ;
+        ] ;
+    ] ;
+.
+```
+
+#### `source_of_identification`
+
+The `source_of_identification` key maps to the attribute `source of identification` in [Vertebrate fauna module - Active and passive searching protocol Attributes](https://linked.data.gov.au/def/nrm/ccc2c832-9942-4dd4-816e-d44775836021), and is linked to observation by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/field-species-name/1> a tern:Observation ;
+    tern:hasAttribute [
+        rdfs:label "source of identification" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/7b970827-ed2e-48d8-9c41-63bb51d01ce1> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0e2ceb33-f68e-51fa-804f-76b564c7bd2e> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Expert (museum/herbarium)" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0e2ceb33-f68e-51fa-804f-76b564c7bd2e> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
