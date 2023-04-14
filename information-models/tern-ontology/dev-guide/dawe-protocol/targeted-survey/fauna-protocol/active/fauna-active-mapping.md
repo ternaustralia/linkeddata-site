@@ -39,14 +39,12 @@ The following is dummy data:
   "plot_visit": 0,
   "observers": "Paul Green",
   "sample_id": "materialSample001",
-  "photo": [0],
+  "collection_date": "2023-04-11T06:03:58.525Z",
   "voucher_type": "skin",
-  "condition_thresholds": "string",
-  "disturbance": "Cultivated; rain fed",
-  "species_and_cover": "20%",
-  "weeds": "weed species",
-  "health": "Healthy",
-  "diagnostic_characteristics": "string",
+  "photo": [0],
+  "habitat_description": "There are two habitats.",
+  "count": 2,
+  "target_species": "snake",
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -67,12 +65,12 @@ The `start_date` key maps to the property `prov:startedAtTime` on the `tern:Site
 
 #### `lat`, `lng`
 
-These 2 keys map to the attribute `geo:hasGeometry` on the `tern:Site` class.
+These 2 keys map to the attribute `geo:hasGeometry` on the `tern:ObservationCollection` or `tern:Sampling` class.
 
 ##### Example
 
 ```turtle
-<https://example.com/site/1> a tern:Site ;
+<https://example.com/fauna-vouchering/1> a tern:Sampling ;
     geo:hasGeometry [
         a <https://w3id.org/tern/ontologies/loc/Point> ;
         wgs:lat -30.920849^^xsd:double ;
@@ -87,7 +85,7 @@ The `plot_visit` key maps to the `tern:SiteVisit` class.
 
 #### `observers`
 
-The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:Observation` class.
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:ObservationCollection` class.
 
 ##### Example
 
@@ -107,13 +105,20 @@ The `sample_id` key maps to the property `dwc:materialSampleID` on the `tern:Mat
     dwc:materialSampleID "materialSample001" .
 ```
 
-#### `photo`
+#### `collection_date`
 
-The `photo` key maps to the `tern:Sample` class.
+The `collection_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/fauna-vouchering/1> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
 
 #### `voucher_type`
 
-The `voucher_type` key maps to the attribute `voucher type` in [Targeted survey module - Fauna - active protocol Attributes](https://linked.data.gov.au/def/nrm/228ecdc5-9982-4049-9c15-db781d7e6e0f), and is linked to specimen by `tern:hasAttribute`.
+The `voucher_type` key maps to the attribute `voucher type` in [Targeted survey module - Fauna - active protocol Attributes](https://linked.data.gov.au/def/nrm/ce60bba4-736f-4ce3-b0ae-61d083d67a05), and is linked to specimen by `tern:hasAttribute`.
 
 ##### Example
 
@@ -132,29 +137,37 @@ The `voucher_type` key maps to the attribute `voucher type` in [Targeted survey 
 .
 ```
 
-#### `condition_thresholds`
+#### `photo`
 
-The `condition_thresholds` key maps to a `tern:Observation` with the observable property 'condition thresholds'.
+The `photo` key maps to the `tern:Sample` class.
 
-#### `disturbance`
+#### `habitat_description`
 
-The `disturbance` key maps to a `tern:Observation` with the observable property 'disturbance type'.
+The `habitat_description` key maps to a `tern:Observation` with the observable property 'habitat description'.
 
-#### `species_and_cover`
+#### `count`
 
-The `species_and_cover` key maps to a `tern:Observation` with the observable property 'species and cover'.
+The `count` key maps to a `tern:Observation` with the observable property 'number of individuals'.
 
-#### `weeds`
+#### `target_species`
 
-The `weeds` key maps to a `tern:Observation` with the observable property 'weeds'.
+The `target_species` key maps to the attribute `target species` in [Targeted survey module - Fauna protocol Attributes](https://linked.data.gov.au/def/nrm/2881bb3f-2c60-42f8-a812-b579f9f7c5e9), and is linked to sampling or observation by `tern:hasAttribute`.
 
-#### `health`
+##### Example
 
-The `health` key maps to a `tern:Observation` with the observable property 'vegetation health'.
-
-#### `diagnostic_characteristics`
-
-The `diagnostic_characteristics` key maps to a `tern:Observation` with the observable property 'diagnostic characteristics'.
+```turtle
+<https://example.com/ObservationCollection/1> a tern:ObservationCollection ;
+    tern:hasAttribute [
+        rdfs:label "target species" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
+        tern:hasSimpleValue "snake"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "snake"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
 
 #### `createdBy` and `updatedBy`
 
