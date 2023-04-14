@@ -27,6 +27,240 @@ The following diagram shows the Fauna - passive protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G192Woh31_wO_Gjs3GclheerlLq3NHKRj1&layers=1&nav=1&title=targeted-survey-fauna-passive-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D192Woh31_wO_Gjs3GclheerlLq3NHKRj1%26export%3Ddownload">View diagram in new tab.</a>
 
+### Survey data from targeted survey - Fauna - passive protocol:
+
+The following is dummy data:
+
+```json
+{
+  "start_date": "2023-04-11T06:03:58.525Z",
+  "lat": 0,
+  "lng": 0,
+  "plot_visit": 0,
+  "observers": "Paul Green",
+  "sample_id": "materialSample001",
+  "voucher_type": "skin",
+  "photo": [0],
+  "target_species": "snake",
+  "battery": "70%",
+  "bait": "fish",
+  "dimentions": "2 meters long and 2.5 meters high",
+  "equipment": "Camera Trap",
+  "microhabitat": "2 microhabitats",
+  "sex": "male",
+  "age": "Adult",
+  "animal_length": 50,
+  "animal_weight": 100,
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `start_date`
+
+The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `lat`, `lng`
+
+These 2 keys map to the attribute `geo:hasGeometry` on the `tern:Deployment` class.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `observers`
+
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:Deployment` or `tern:Sampling` class.
+
+##### Example
+
+```
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    prov:wasAssociatedWith "Paul Green" .
+```
+
+#### `sample_id`
+
+The `sample_id` key maps to the property `dwc:materialSampleID` on the `tern:MaterialSample` class.
+
+##### Example
+
+```
+<https://example.com/fauna-sample/1> a tern:MaterialSample ;
+    dwc:materialSampleID "materialSample001" .
+```
+
+#### `voucher_type`
+
+The `voucher_type` key maps to the attribute `voucher type` in [Targeted survey module - Fauna - passive protocol Attributes](https://linked.data.gov.au/def/nrm/3789322d-6295-4efd-9c94-de60322c0ae1), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "voucher type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/36d484d2-05fb-548f-a939-740e4bf27fae> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Animal tissue (skin)" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/36d484d2-05fb-548f-a939-740e4bf27fae> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `photo`
+
+The `photo` key maps to the `tern:Sample` class.
+
+#### `target_species`
+
+The `target_species` key maps to the attribute `target species` in [Targeted survey module - Fauna protocol Attributes](https://linked.data.gov.au/def/nrm/2881bb3f-2c60-42f8-a812-b579f9f7c5e9), and is linked to observation by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/ObservationCollection/1> a tern:ObservationCollection ;
+    tern:hasAttribute [
+        rdfs:label "target species" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
+        tern:hasSimpleValue "snake"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "snake"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `battery`
+
+The `battery` key maps to the attribute `battery details` in [Targeted survey module - Fauna - passive protocol Attributes](https://linked.data.gov.au/def/nrm/3789322d-6295-4efd-9c94-de60322c0ae1), and is linked to sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/collecting-recordings/1> a tern:Sampling ;
+    tern:hasAttribute [
+        rdfs:label "battery details" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/c91869fd-09bf-4649-86f5-c62478af8287> ;
+        tern:hasSimpleValue "70%"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "70%"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `bait`
+
+The `bait` key maps to the attribute `bait` in [Targeted survey module - Fauna - passive protocol Attributes](https://linked.data.gov.au/def/nrm/3789322d-6295-4efd-9c94-de60322c0ae1), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "bait" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/908502e0-8c35-4ca9-b97a-b852fb85bfb4> ;
+        tern:hasSimpleValue "fish"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "fish"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `dimensions`
+
+The `dimensions` key maps to the attribute `equipment dimensions` in [Targeted survey module - Fauna - passive protocol Attributes](https://linked.data.gov.au/def/nrm/3789322d-6295-4efd-9c94-de60322c0ae1), and is linked to deployment by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap-set-up/1> a tern:Deployment ;
+    tern:hasAttribute [
+        rdfs:label "equipment dimensions" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/5921add6-57e8-4120-8f1a-6852b6854b40> ;
+        tern:hasSimpleValue "2 meters long and 2.5 meters high"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "2 meters long and 2.5 meters high"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `equipment`
+
+The `equipment` key maps to the attribute `equipment type` in [Targeted survey module - Fauna - passive protocol Attributes](https://linked.data.gov.au/def/nrm/3789322d-6295-4efd-9c94-de60322c0ae1), and is linked to sampler by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/trap/1> a tern:Sampler ;
+    tern:hasAttribute [
+        rdfs:label "equipment type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/eb30ef87-1b96-4e16-ba53-494b9fbdd5c2> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/a44098ed-b6a8-5c37-a382-2f8baf86c2d8> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Camera Trap" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/a44098ed-b6a8-5c37-a382-2f8baf86c2d8> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `microhabitat`
+
+The `microhabitat` key maps to a `tern:Observation` with the observable property 'microhabitat'.
+
+#### `sex`
+
+The `sex` key maps to a `tern:Observation` with the observable property 'sex'.
+
+#### `age`
+
+The `age` key maps to a `tern:Observation` with the observable property 'age class'.
+
+#### `animal_length`
+
+The `animal_length` key maps to a `tern:Observation` with the observable property 'fauna length'.
+
+#### `animal_weight`
+
+The `animal_weight` key maps to a `tern:Observation` with the observable property 'animal weight'.
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
