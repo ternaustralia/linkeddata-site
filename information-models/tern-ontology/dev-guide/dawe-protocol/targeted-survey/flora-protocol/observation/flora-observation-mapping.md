@@ -28,6 +28,219 @@ The following diagram shows the Flora - observation protocol mapping. Orange nod
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1hZtM_PIbuSGyFhemdhDqmqzFqU4PxKrC&layers=1&nav=1&title=targeted-survey-flora-observation-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1hZtM_PIbuSGyFhemdhDqmqzFqU4PxKrC%26export%3Ddownload">View diagram in new tab.</a>
 
+### Survey data from targeted survey - Fauna - passive protocol:
+
+The following is dummy data:
+
+```json
+{
+  "start_date": "2023-04-11T06:03:58.525Z",
+  "lat": 0,
+  "lng": 0,
+  "plot_visit": 0,
+  "observers": "Paul Green",
+  "sample_id": "materialSample001",
+  "voucher_type": "skin",
+  "collection_date": "2023-04-11T06:03:58.525Z",
+  "photo": [0],
+  "species": "snake",
+  "habitat": "There are grasses aound.",
+  "dbh": 50,
+  "height": 100,
+  "width": 30,
+  "health": "Grazing",
+  "growth_form": "Fern",
+  "growth_stage": "Recruiting",
+  "life_stage": "Seedling",
+  "count": 2,
+  "exact_or_estimate": "exact",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `start_date`
+
+The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
+    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `lat`, `lng`
+
+These 2 keys map to the attribute `geo:hasGeometry` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://example.com/site/visit/1> a tern:SiteVisit ;
+    geo:hasGeometry [
+        a <https://w3id.org/tern/ontologies/loc/Point> ;
+        wgs:lat -30.920849^^xsd:double ;
+        wgs:long 152.242400^^xsd:double ;
+    ] ;
+.
+```
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
+
+#### `observers`
+
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:ObservationCollection` class.
+
+##### Example
+
+```
+<https://example.com/ObservationCollection/1> a tern:ObservationCollection ;
+    prov:wasAssociatedWith "Paul Green" .
+```
+
+#### `sample_id`
+
+The `sample_id` key maps to the property `dwc:materialSampleID` on the `tern:MaterialSample` class.
+
+##### Example
+
+```
+<https://example.com/fauna-sample/1> a tern:MaterialSample ;
+    dwc:materialSampleID "materialSample001" .
+```
+
+#### `voucher_type`
+
+The `voucher_type` key maps to the attribute `voucher type` in [Targeted survey module - Flora protocol - Observation Attributes](https://linked.data.gov.au/def/nrm/f80e7296-e386-4bb5-b8c3-3cf8823050f5), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "voucher type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Plant Tissue Voucher" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `collection_date`
+
+The `collection_date` key maps to the property `tern:resultDateTime` on the `tern:Sampling` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/plant-vouchering> a tern:Sampling ;
+    tern:resultDateTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
+```
+
+#### `photo`
+
+The `photo` key maps to the `tern:Sample` class.
+
+#### `species`
+
+The `species` key maps to the attribute `target species` in [Targeted survey module - Flora protocol Attributes](https://linked.data.gov.au/def/nrm/2a8b14a7-6685-4103-8078-2f82acb74be8), and is linked to observation or sampling by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/ObservationCollection/1> a tern:ObservationCollection ;
+    tern:hasAttribute [
+        rdfs:label "target species" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
+        tern:hasSimpleValue "Pine"^^xsd:string ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "Pine"^^xsd:string ;
+        ] ;
+    ] ;
+.
+```
+
+#### `habitat`
+
+The `habitat` key maps to a `tern:Observation` with the observable property 'habitat description'.
+
+#### `dbh`
+
+The `dbh` key maps to a `tern:Observation` with the observable property 'diameter at breast height (dbh)'.
+
+#### `height`
+
+The `height` key maps to a `tern:Observation` with the observable property 'plant height'.
+
+#### `width`
+
+The `width` key maps to a `tern:Observation` with the observable property 'plant size- width'.
+
+#### `health`
+
+The `health` key maps to a `tern:Observation` with the observable property 'vegetation health'.
+
+#### `growth_form`
+
+The `growth_form` key maps to a `tern:Observation` with the observable property 'growth form'.
+
+#### `growth_stage`
+
+The `growth_stage` key maps to a `tern:Observation` with the observable property 'growth stage'.
+
+#### `life_stage`
+
+The `life_stage` key maps to a `tern:Observation` with the observable property 'life stage'.
+
+#### `count`
+
+The `count` key maps to a `tern:Observation` with the observable property 'number of individuals'.
+
+#### `exact_or_estimate`
+
+The `exact_or_estimate` key maps to the attribute `count exact or estimate` in [Targeted survey module - Flora protocol - Observation Attributes](https://linked.data.gov.au/def/nrm/f80e7296-e386-4bb5-b8c3-3cf8823050f5), and is linked to observation values by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/number-of-individuals/1>
+    a tern:Observation ;
+    rdfs:label "number of individuals" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Integer ;
+            rdf:value 2 ;
+            tern:hasAttribute [
+                    rdfs:label "count exact or estimate" ;
+                    void:inDataset <https://example.com/dataset/1> ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/ca245b0d-b3e2-4dbc-8a72-d8cd1868a1ce> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a> ;
+                    tern:hasValue [
+                            a tern:IRI ;
+                            rdfs:label "Exact" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a>
+                        ]
+                ]
+        ] ;
+    sosa:hasSimpleResult 2 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/b2d28629-c986-4c05-9d4a-8b05e99a0a94> ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
