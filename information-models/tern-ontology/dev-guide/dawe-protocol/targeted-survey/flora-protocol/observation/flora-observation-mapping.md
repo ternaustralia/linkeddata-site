@@ -28,7 +28,7 @@ The following diagram shows the Flora - observation protocol mapping. Orange nod
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1hZtM_PIbuSGyFhemdhDqmqzFqU4PxKrC&layers=1&nav=1&title=targeted-survey-flora-observation-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1hZtM_PIbuSGyFhemdhDqmqzFqU4PxKrC%26export%3Ddownload">View diagram in new tab.</a>
 
-### Survey data from targeted survey - Fauna - passive protocol:
+### Survey data from targeted survey - Flora observation protocol:
 
 The following is dummy data:
 
