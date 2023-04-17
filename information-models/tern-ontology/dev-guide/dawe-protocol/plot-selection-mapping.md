@@ -212,135 +212,195 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ssn: <http://www.w3.org/ns/ssn/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.com/site/1>
-    a tern:Site ;
-    rdfs:label "Site 1" ;
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
+.
+
+<https://example.com/plot-labelling/1>
+    a tern:Sampling ;
     void:inDataset <https://example.com/dataset/1> ;
-    tern:dimension "100m"^^xsd:string ;
     geo:hasGeometry [
-        a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs:lat -30.920849^^xsd:double ;
-        wgs:long 152.242400^^xsd:double ;
-    ] ;
-    tern:hasAttribute <https://example.com/survey-data/plot-name/1> , <https://example.com/survey-data/replicate-number/1> , <https://example.com/survey-data/control-plot/1> , <https://example.com/survey-data/impact-plot/1> , <https://example.com/survey-data/plot-orientation/1> , <https://example.com/survey-data/permanent-plot/1> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
+            wgs:lat -3.092085e+01 ;
+            wgs:long 1.522424e+02
+        ] ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    sosa:hasResult <https://example.com/iron-dropper/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/d15d05db-5007-411e-b257-105ef4f76821> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/survey-data/plot-name/1>
-    a tern:Attribute ;
-    rdfs:label "plot name" ;
-    tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
-    tern:hasSimpleValue "The Jones Stream Study Plot" ;
-    tern:hasValue [
-        a tern:Text ;
-        rdf:value "The Jones Stream Study Plot" ;
-    ] ;
+<https://example.com/plot-selection/1>
+    a tern:Sampling ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    sosa:hasResult <https://example.com/site/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/d15d05db-5007-411e-b257-105ef4f76821> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/survey-data/replicate-number/1>
-    a tern:Attribute ;
-    rdfs:label "replicate number" ;
-    tern:attribute <https://linked.data.gov.au/def/nrm/81cc5c4b-179b-4483-861a-65008517bd32> ;
-    tern:hasSimpleValue 3 ;
-    tern:hasValue [
-        a tern:Integer ;
-        rdf:value 3 ;
-    ] ;
+<https://example.com/AustraliaLand/1>
+    a tern:FeatureOfInterest ;
+    rdfs:label "Australia Land" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <https://example.com/noncreated-feature-type/Australia-Land/1> ;
+.
+
+<https://example.com/Equipments/1>
+    a tern:FeatureOfInterest ;
+    rdfs:label "Equipments" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <https://example.com/noncreated-feature-type/equipment/1> ;
+.
+
+<https://example.com/iron-dropper/1>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ,
+        tern:Value ;
+    rdfs:label "iron dropper 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Equipments/1> ;
+    tern:featureType <https://example.com/noncreated-feature-type/iron-dropper/1> ;
 .
 
 <https://example.com/survey-data/control-plot/1>
     a tern:Attribute ;
     rdfs:label "control plot" ;
+    void:inDataset <https://example.com/dataset/1> ;
     tern:attribute <https://linked.data.gov.au/def/nrm/43772009-8897-4883-8e96-3a892fdd614b> ;
-    tern:hasSimpleValue False^^xsd:boolean ;
+    tern:hasSimpleValue false ;
     tern:hasValue [
-        a tern:Boolean ;
-        rdf:value False^^xsd:boolean ;
-    ] ;
+            a
+                tern:Boolean ,
+                tern:Value ;
+            rdf:value false
+        ] ;
 .
 
 <https://example.com/survey-data/impact-plot/1>
     a tern:Attribute ;
     rdfs:label "impact plot" ;
+    void:inDataset <https://example.com/dataset/1> ;
     tern:attribute <https://linked.data.gov.au/def/nrm/8e4baa4a-510a-46c9-9374-49466f3e8866> ;
-    tern:hasSimpleValue True^^xsd:boolean ;
+    tern:hasSimpleValue true ;
     tern:hasValue [
-        a tern:Boolean ;
-        rdf:value True^^xsd:boolean ;
-    ] ;
-.
-
-<https://example.com/survey-data/plot-orientation/1>
-    a tern:Attribute ;
-    rdfs:label "plot orientation" ;
-    tern:attribute <https://linked.data.gov.au/def/nrm/638aae02-cfe8-472d-ae9d-252fe73cb7c4> ;
-    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
-    tern:hasValue [
-        a tern:IRI ;
-        rdfs:label "East" ;
-        rdf:value <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
-    ] ;
+            a
+                tern:Boolean ,
+                tern:Value ;
+            rdf:value true
+        ] ;
 .
 
 <https://example.com/survey-data/permanent-plot/1>
     a tern:Attribute ;
     rdfs:label "permanent plot" ;
+    void:inDataset <https://example.com/dataset/1> ;
     tern:attribute <https://linnked.data.gov.au/def/test/dawe-cv/0994a5bb-5f3f-482f-bac2-d5687c031ff3> ;
-    tern:hasSimpleValue True^^xsd:boolean ;
+    tern:hasSimpleValue true ;
     tern:hasValue [
-        a tern:Boolean ;
-        rdf:value True^^xsd:boolean ;
-    ] ;
+            a
+                tern:Boolean ,
+                tern:Value ;
+            rdf:value true
+        ] ;
+.
+
+<https://example.com/survey-data/plot-name/1>
+    a tern:Attribute ;
+    rdfs:label "plot name" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+    tern:hasSimpleValue "The Jones Stream Study Plot" ;
+    tern:hasValue [
+            a
+                tern:Text ,
+                tern:Value ;
+            rdf:value "The Jones Stream Study Plot"
+        ] ;
+.
+
+<https://example.com/survey-data/plot-orientation/1>
+    a tern:Attribute ;
+    rdfs:label "plot orientation" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:attribute <https://linked.data.gov.au/def/nrm/638aae02-cfe8-472d-ae9d-252fe73cb7c4> ;
+    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
+    tern:hasValue [
+            a
+                tern:IRI ,
+                tern:Value ;
+            rdfs:label "East" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935>
+        ] ;
+.
+
+<https://example.com/survey-data/replicate-number/1>
+    a tern:Attribute ;
+    rdfs:label "replicate number" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:attribute <https://linked.data.gov.au/def/nrm/81cc5c4b-179b-4483-861a-65008517bd32> ;
+    tern:hasSimpleValue 3 ;
+    tern:hasValue [
+            a
+                tern:Integer ,
+                tern:Value ;
+            rdf:value 3
+        ] ;
 .
 
 <https://example.com/site/1/visit/1>
     a tern:SiteVisit ;
     rdfs:label "Site 1 visit 1" ;
     void:inDataset <https://example.com/dataset/1> ;
-    prov:startedAtTime "2022-11-02T03:16:42.783Z" ;
+    prov:startedAtTime "2022-11-02T03:16:42.783000+00:00"^^xsd:dateTime ;
     tern:hasSite <https://example.com/site/1> ;
 .
 
-<https://example.com/plot-selection/1>
-    a tern:Sampling ;
+<https://example.com/site/1>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ,
+        tern:Site ;
+    rdfs:label "Site 1" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/d15d05db-5007-411e-b257-105ef4f76821> ;
-    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
-    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
-    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
-    sosa:hasResult <https://example.com/site/1> ;
-.
-
-<https://example.com/plot-labelling/1>
-    a tern:Sampling ;
-    void:inDataset <https://example.com/dataset/1> ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/d15d05db-5007-411e-b257-105ef4f76821> ;
-    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
-    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     geo:hasGeometry [
-        a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs:lat -30.920855^^xsd:double ;
-        wgs:long 152.242400^^xsd:double ;
-    ] ;
-    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
-    sosa:hasResult <https://example.com/iron-dropper/1> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
+            wgs:lat -3.092085e+01 ;
+            wgs:long 1.522424e+02
+        ] ;
+    sosa:isSampleOf <https://example.com/AustraliaLand/1> ;
+    tern:dimension "100m"^^xsd:string ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+    tern:hasAttribute
+        <https://example.com/survey-data/control-plot/1> ,
+        <https://example.com/survey-data/impact-plot/1> ,
+        <https://example.com/survey-data/permanent-plot/1> ,
+        <https://example.com/survey-data/plot-name/1> ,
+        <https://example.com/survey-data/plot-orientation/1> ,
+        <https://example.com/survey-data/replicate-number/1> ;
 .
 
-<https://example.com/iron-dropper/1>
-    a tern:Sample ;
-    rdfs:label "iron dropper 1" ;
-    void:inDataset <https://example.com/dataset/1> ;
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 
 ```
