@@ -156,6 +156,10 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 Refer to the tree measurements mapping [#mapping-full-and-lite-dbh-tree-measurements](#mapping-full-and-lite-dbh-tree-measurements) on how each keys with the same name in stems are mapped.
 
+## Validation with SHACL
+The data should conform to both the TERN Ontology and protocol specific SHACL shapes. The introduction to TERN Ontology SHACL shapes and example usage are presented in [Conformance and Validation](/information-models/tern-ontology/dev-guide/conformance-and-validation).
+
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
