@@ -164,32 +164,77 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ssn: <http://www.w3.org/ns/ssn/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
+.
 
-<https://example.com/site/1>
-    a tern:Site ;
-    rdfs:label "Site 1" ;
+<https://example.com/example-observation-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs:lat -3.092085e+01 ;
+    wgs:long 1.522424e+02 ;
+.
+
+<https://example.com/plant-tissue-vouchering/1>
+    a tern:Sampling ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasResult <https://example.com/site/1/plant-tissue-vouchering/specimen/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/35175f0d-bdd7-4e32-908f-17f7239e78fa> ;
     tern:hasAttribute [
-        rdfs:label "plot name" ;
-        tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
-        tern:hasSimpleValue "The Jones Stream Study Plot" ;
-        tern:hasValue [
-            a tern:Text ;
-            rdf:value "The Jones Stream Study Plot" ;
+            rdfs:label "minimum distance between replicates" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/3b2aa21d-c60f-45c5-9447-ff8a799a513e> ;
+            tern:hasSimpleValue 3.5e+00 ;
+            tern:hasValue [
+                    a
+                        tern:Float ,
+                        tern:Value ;
+                    rdf:value 3.5e+00 ;
+                    tern:unit <http://qudt.org/vocab/unit/M>
+                ]
         ] ;
-    ] ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
+.
+
+<https://example.com/site/1/plant-tissue-vouchering/specimen/1>
+    a
+        tern:MaterialSample ,
+        tern:Sample ,
+        tern:Value ;
+    rdfs:label "flora vouchering specimen 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    dwc:materialSampleID "materialSample1" ;
+    sosa:isResultOf <https://example.com/plant-tissue-vouchering/1> ;
+    sosa:isSampleOf <https://example.com/feature-of-interest/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
+    tern:hasAttribute [
+            rdfs:label "replicate number" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/81cc5c4b-179b-4483-861a-65008517bd32> ;
+            tern:hasSimpleValue 2 ;
+            tern:hasValue [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 2
+                ]
+        ] ;
 .
 
 <https://example.com/site/1/visit/1>
@@ -197,55 +242,43 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     rdfs:label "Site 1 visit 1" ;
     dcterms:identifier "site001" ;
     void:inDataset <https://example.com/dataset/1> ;
-    prov:startedAtTime "2022-11-02T03:16:42.783Z" ;
-    prov:endedAtTime "2022-11-02T03:18:42.783Z" ;
+    prov:endedAtTime "2022-11-02T03:18:42.783000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2022-11-02T03:16:42.783000+00:00"^^xsd:dateTime ;
     tern:hasSite <https://example.com/site/1> ;
 .
 
 <https://example.com/feature-of-interest/1>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "plant occurrence 1" ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
+    void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
 .
 
-<https://example.com/plant-tissue-vouchering/1>
-    a tern:Sampling ;
+<https://example.com/site/1>
+    a
+        tern:FeatureOfInterest ,
+        tern:Site ;
+    rdfs:label "Site 1" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/35175f0d-bdd7-4e32-908f-17f7239e78fa> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
     tern:hasAttribute [
-        rdfs:label "minimum distance between replicates" ;
-        tern:attribute <https://linked.data.gov.au/def/nrm/3b2aa21d-c60f-45c5-9447-ff8a799a513e> ;
-        tern:hasSimpleValue 3.5 ;
-        tern:hasValue [
-            a tern:Float ;
-            rdf:value 3.5^^xsd:float ;
-            tern:unit <http://qudt.org/vocab/unit/M> ;
+            rdfs:label "plot name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+            tern:hasSimpleValue "The Jones Stream Study Plot" ;
+            tern:hasValue [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "The Jones Stream Study Plot"
+                ]
         ] ;
-    ] ;
-    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
-    tern:resultDateTime "2022-12-07T05:38:02"^^xsd:dateTime ;
-    sosa:hasResult <https://example.com/site/1/plant-tissue-vouchering/specimen/1> ;
 .
 
-<https://example.com/site/1/plant-tissue-vouchering/specimen/1> a tern:MaterialSample ;
-    rdfs:label "flora vouchering specimen 1" ;
-    sosa:isResultOf <https://example.com/plant-tissue-vouchering/1> ;
-    dwc:materialSampleID "materialSample1" ;
-    sosa:isSampleOf <https://example.com/feature-of-interest/1> ;
-    tern:hasAttribute [
-        rdfs:label "replicate number" ;
-        tern:attribute <https://linked.data.gov.au/def/nrm/81cc5c4b-179b-4483-861a-65008517bd32> ;
-        tern:hasSimpleValue 2 ;
-        tern:hasValue [
-            a tern:Integer ;
-            rdf:value 2 ;
-        ] ;
-    ] ;
-    void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 
 ```
