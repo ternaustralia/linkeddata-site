@@ -136,37 +136,97 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
-@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
-@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
-@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX tern-loc: <https://w3id.org/tern/ontologies/loc/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.com/site/1>
-    a tern:Site ;
-    rdfs:label "Site 1" ;
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
+.
+
+<https://example.com/camera/1>
+    a tern:Sampler ;
+    rdfs:label "Canon EOS 550D DSLR cropped sensor camera" ;
     void:inDataset <https://example.com/dataset/1> ;
-    geo:hasGeometry [
-        a <https://w3id.org/tern/ontologies/loc/Point> ;
-        wgs84:lat "-30.920849"^^xsd:double ;
-        wgs84:long "152.242400"^^xsd:double ;
-    ] ;
+    ssn:implements <https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
     tern:hasAttribute [
-        rdfs:label "plot name" ;
-        tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
-        tern:hasSimpleValue "The Jones Stream Study Plot" ;
-        tern:hasValue [
-            a tern:Text ;
-            rdf:value "The Jones Stream Study Plot" ;
+            a tern:Attribute ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://example.com/non-created-attribtue/focal-length/1> ;
+            tern:hasSimpleValue 24 ;
+            tern:hasValue [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 24 ;
+                    tern:unit <http://qudt.org/vocab/unit/MilliM>
+                ]
         ] ;
-    ] ;
+    tern:samplerType <http://linked.data.gov.au/def/tern-cv/11e03f36-7ada-4333-88e2-38c9205f2749> ;
+.
+
+<https://example.com/site/1/photopoint-pos-1/image/1>
+    a
+        tern:MaterialSample ,
+        tern:Sample ;
+    rdfs:label "Photopoint image 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isResultOf <https://example.com/site/1/photopoint-pos-1/image/1/sampling> ;
+    sosa:isSampleOf <https://example.com/site/1/photopoint-pos-1> ;
+    tern:featureType "photopoint image" ;
+.
+
+<https://example.com/site/1/photopoint-pos-1/image/1/sampling>
+    a tern:Sampling ;
+    rdfs:label "Photopoint image 1 sampling" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    geosparql:hasGeometry [
+            a
+                geosparql:Geometry ,
+                tern-loc:Point ;
+            wgs84:lat -3.092085e+01 ;
+            wgs84:long 1.522424e+02
+        ] ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1/photopoint-pos-1> ;
+    sosa:hasResult <https://example.com/site/1/photopoint-pos-1/image/1> ;
+    sosa:madeBySampler <https://example.com/camera/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2021-11-11T00:00:00+00:00"^^xsd:dateTime ;
+.
+
+<https://example.com/site/1/photopoint-pos-1/sampling>
+    a tern:Sampling ;
+    rdfs:label "Photopoint position 1 establishment" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    geosparql:hasGeometry <https://example.com/site/1/photopoint-pos-1/sampling/geometry> ;
+    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    sosa:hasResult <https://example.com/site/1/photopoint-pos-1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2021-11-11T00:00:00+00:00"^^xsd:dateTime ;
+.
+
+<https://example.com/site/1/photopoint-pos-1/sampling/geometry>
+    a
+        geosparql:Geometry ,
+        tern-loc:Point ;
+    rdfs:label "Photopoint position 1 establishment point" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    geosparql:asWKT "POINT(150.3 -34.0)"^^geosparql:wktLiteral ;
+    wgs84:lat -34 ;
+    wgs84:long 150.3 ;
 .
 
 <https://example.com/site/1/visit/1>
@@ -174,70 +234,50 @@ Encoded using the TERN Ontology and related controlled vocabularies.
     rdfs:label "Site 1 visit 1" ;
     dcterms:identifier "site001" ;
     void:inDataset <https://example.com/dataset/1> ;
-    prov:startedAtTime "2022-11-02T03:16:42.783Z" ;
-    prov:endedAtTime "2022-11-02T03:18:42.783Z" ;
+    prov:endedAtTime "2022-11-02T03:18:42.783000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2022-11-02T03:16:42.783000+00:00"^^xsd:dateTime ;
     tern:hasSite <https://example.com/site/1> ;
 .
 
-<https://example.com/site/1/photopoint-pos-1/sampling> a tern:Sampling ;
-    rdfs:label "Photopoint position 1 establishment" ;
-    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
-    sosa:resultTime "2021-11-11T00:00:00Z"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
-    geosparql:hasGeometry <https://example.com/site/1/photopoint-pos-1/sampling/geometry> ;
-    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
-    sosa:hasResult <https://example.com/site/1/photopoint-pos-1> ;
+<https://example.com/site/1>
+    a
+        tern:FeatureOfInterest ,
+        tern:Site ;
+    rdfs:label "Site 1" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geosparql:hasGeometry [
+            a
+                geosparql:Geometry ,
+                tern-loc:Point ;
+            wgs84:lat -3.092085e+01 ;
+            wgs84:long 1.522424e+02
+        ] ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+    tern:hasAttribute [
+            rdfs:label "plot name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+            tern:hasSimpleValue "The Jones Stream Study Plot" ;
+            tern:hasValue [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "The Jones Stream Study Plot"
+                ]
+        ] ;
 .
 
-<https://example.com/site/1/photopoint-pos-1/sampling/geometry> a tern-loc:Point ;
-    rdfs:label "Photopoint position 1 establishment point" ;
-    wgs84:lat -34 ;
-    wgs84:long 150.3 ;
-    geosparql:asWKT "POINT(150.3 -34.0)"^^geosparql:wktLiteral ;
-    void:inDataset <https://example.com/dataset/1> ;
-.
-
-<https://example.com/site/1/photopoint-pos-1> a tern:Sample ;
+<https://example.com/site/1/photopoint-pos-1>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "Photopoint position 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
     sosa:isResultOf <https://example.com/site/1/photopoint-pos-1/sampling> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType "photopoint position" ;
+    tern:featureType <https://example.com/non-created-feature-type/photopoint-position/1> ;
 .
 
-<https://example.com/site/1/photopoint-pos-1/image/1/sampling> a tern:Sampling ;
-    rdfs:label "Photopoint image 1 sampling" ;
-    sosa:hasFeatureOfInterest <https://example.com/site/1/photopoint-pos-1> ;
-    sosa:resultTime "2021-11-11T00:00:00Z"^^xsd:dateTime ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/05669173-2fe7-4b70-ba67-2e09fbe87de9> ;
-    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
-    sosa:hasResult <https://example.com/site/1/photopoint-pos-1/image/1> ;
-    void:inDataset <https://example.com/dataset/1> ;
-    sosa:madeBySampler [
-        a tern:Sampler ;
-        rdfs:label "Canon EOS 550D DSLR cropped sensor camera" ;
-        tern:samplerType <http://linked.data.gov.au/def/tern-cv/11e03f36-7ada-4333-88e2-38c9205f2749> ;
-        void:inDataset <https://example.com/dataset/1> ;
-        tern:hasAttribute [
-            a tern:Attribute ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute "focal length" ;
-            tern:hasSimpleValue 24 ;
-            tern:hasValue [
-                a tern:Integer ;
-                rdf:value 24 ;
-                tern:unit <http://qudt.org/vocab/unit/MilliM> ;
-            ]
-        ] ;
-    ] ;
-.
-
-<https://example.com/site/1/photopoint-pos-1/image/1> a tern:MaterialSample ;
-    rdfs:label "Photopoint image 1" ;
-    sosa:isResultOf <https://example.com/site/1/photopoint-pos-1/image/1/sampling> ;
-    sosa:isSampleOf <https://example.com/site/1/photopoint-pos-1> ;
-    void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType "photopoint image" ;
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 ```
