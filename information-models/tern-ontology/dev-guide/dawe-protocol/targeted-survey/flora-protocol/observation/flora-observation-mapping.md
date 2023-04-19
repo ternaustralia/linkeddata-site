@@ -246,6 +246,7 @@ Encoded using the TERN Ontology and related controlled vocabularies.
 ```turtle
 
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -253,9 +254,10 @@ PREFIX schema: <https://schema.org/>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
-PREFIX void: <http://rdfs.org/ns/void#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/ObservationCollection/observations-on-plant-individual>
     a tern:ObservationCollection ;
@@ -282,19 +284,23 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/dd035eed-24b2-41b5-a3cc-7270c2c590b5> ;
             tern:hasSimpleValue "On a single plant."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
-                    rdf:value "On a single plant."^^xsd:string ;
-            ] ;
-        ],
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "On a single plant."^^xsd:string
+                ]
+        ] ,
         [
             rdfs:label "target species" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
             tern:hasSimpleValue "Oak."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
-                    rdf:value "Oak."^^xsd:string ;
-            ] ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "Oak."^^xsd:string
+                ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
@@ -326,19 +332,23 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/dd035eed-24b2-41b5-a3cc-7270c2c590b5> ;
             tern:hasSimpleValue "On group of plants."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
-                    rdf:value "On group of plants."^^xsd:string ;
-            ] ;
-        ],
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "On group of plants."^^xsd:string
+                ]
+        ] ,
         [
             rdfs:label "target species" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
             tern:hasSimpleValue "Oak."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
-                    rdf:value "Oak."^^xsd:string ;
-            ] ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "Oak."^^xsd:string
+                ]
         ] ;
     tern:resultDateTime "2022-05-10T08:38:02"^^xsd:dateTime ;
 .
@@ -347,25 +357,30 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     a tern:Sampling ;
     rdfs:label "habitat sampling" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Site/survey-area> ;
     sosa:hasResult <https://example.com/Sample/habitat> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
     tern:hasAttribute [
-        rdfs:label "target species" ;
-        void:inDataset <https://example.com/dataset/1> ;
-        tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
-        tern:hasSimpleValue "Oak."^^xsd:string ;
-        tern:hasValue [
-                a tern:Text ;
-                rdf:value "Oak."^^xsd:string ;
+            rdfs:label "target species" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
+            tern:hasSimpleValue "Oak."^^xsd:string ;
+            tern:hasValue [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "Oak."^^xsd:string
+                ]
         ] ;
-    ] ;
+    tern:resultDateTime "2022-05-10T06:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/Sampling/plant-vouchering>
     a tern:Sampling ;
     rdfs:label "plant vouchering" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/plant-individual> ;
     sosa:hasResult <https://example.com/MaterialSample/flora-voucher-specimen> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
@@ -376,36 +391,37 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     a tern:Sampling ;
     rdfs:label "taking photos" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasFeatureOfInterest
-        <https://example.com/Sample/habitat> ,
-        <https://example.com/Sample/plant-individual> ,
-        <https://example.com/Sample/plant-population> ;
+    geo:hasGeometry <https://example.com/example-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Site/survey-area> ;
     sosa:hasResult <https://example.com/Sample/photos> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T06:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/habitat-description/1>
     a tern:Observation ;
     rdfs:label "habitat description" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/habitat> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Isolated clump of tussock grasses" ;
             rdf:value <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/aa4c96f6-9ea8-4bd3-8800-0bfddcd8a37c> ;
-    sosa:phenomenonTime [
-            a time:Instant ;
-            time:inXSDDateTimeStamp "2022-05-11T06:38:02.032000+00:00"^^xsd:dateTimeStamp
-        ] ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
     tern:resultDateTime "2022-05-10T07:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/MaterialSample/flora-voucher-specimen>
-    a tern:MaterialSample ;
+    a
+        tern:MaterialSample ,
+        tern:Sample ;
     rdfs:label "flora voucher specimen" ;
     void:inDataset <https://example.com/dataset/1> ;
     rdfs:comment "Photo is taken." ;
@@ -417,7 +433,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Plant Tissue Voucher" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d>
                 ]
@@ -425,18 +443,23 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
 .
 
 <https://example.com/Sample/photos>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "photos" ;
     dcterms:identifier "sample-photos-001" ;
     void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType "photos" ;
+    sosa:isSampleOf <https://example.com/Site/survey-area> ;
+    tern:featureType <https://example.com/non-created-feature-type/photos/1> ;
     tern:hasAttribute [
             rdfs:label "observation photo description" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/0782780b-b137-480f-97b1-32af49d1bb5f> ;
             tern:hasSimpleValue "For group of plants."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "For group of plants."^^xsd:string
                 ]
         ] ;
@@ -446,60 +469,92 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     a tern:Observation ;
     rdfs:label "diameter at breast height (dbh)" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-individual> ;
     sosa:hasResult [
-            a tern:Float ;
-            rdf:value "2.22"^^xsd:float ;
+            a
+                tern:Float ,
+                tern:Value ;
+            rdf:value 2.22e+00 ;
             tern:unit unit:M
         ] ;
-    sosa:hasSimpleResult "2.22"^^xsd:float ;
+    sosa:hasSimpleResult 2.22e+00 ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/6e1c8b97-3655-4a22-9647-02f2c756e789> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/growth-form/1>
     a tern:Observation ;
     rdfs:label "growth form" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-population> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Grass-tree" ;
             rdf:value <https://linked.data.gov.au/def/nrm/062132e9-426e-56c8-9c92-2781692bdd0c>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/062132e9-426e-56c8-9c92-2781692bdd0c> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/dd1769b9-c475-4732-915c-9b890a8d5f65> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/growth-stage/1>
     a tern:Observation ;
     rdfs:label "growth stage" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-population> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Dead" ;
             rdf:value <https://linked.data.gov.au/def/nrm/1215ec81-a8a8-5100-b846-c50931e6fa27>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1215ec81-a8a8-5100-b846-c50931e6fa27> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/fcfda2f7-84f0-4c26-9f80-c051d129a094> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/life-stage/1>
     a tern:Observation ;
     rdfs:label "life stage" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-population> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Immature Fruit" ;
             rdf:value <https://linked.data.gov.au/def/nrm/1dc72c77-4a4b-5cac-adbf-11f5704e3827>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1dc72c77-4a4b-5cac-adbf-11f5704e3827> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/ce3fd96d-e68d-4b14-b3fd-27690c566440> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/number-of-individuals/1>
     a tern:Observation ;
     rdfs:label "number of individuals" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-population> ;
     sosa:hasResult [
-            a tern:Integer ;
+            a
+                tern:Integer ,
+                tern:Value ;
             rdf:value 2 ;
             tern:hasAttribute [
                     rdfs:label "count exact or estimate" ;
@@ -507,7 +562,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
                     tern:attribute <https://linked.data.gov.au/def/nrm/ca245b0d-b3e2-4dbc-8a72-d8cd1868a1ce> ;
                     tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a> ;
                     tern:hasValue [
-                            a tern:IRI ;
+                            a
+                                tern:IRI ,
+                                tern:Value ;
                             rdfs:label "Exact" ;
                             rdf:value <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a>
                         ]
@@ -515,75 +572,133 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
         ] ;
     sosa:hasSimpleResult 2 ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/b2d28629-c986-4c05-9d4a-8b05e99a0a94> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/plant-height/1>
     a tern:Observation ;
     rdfs:label "plant height" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-individual> ;
     sosa:hasResult [
-            a tern:Float ;
-            rdf:value "2.22"^^xsd:float ;
+            a
+                tern:Float ,
+                tern:Value ;
+            rdf:value 2.22e+00 ;
             tern:unit unit:M
         ] ;
-    sosa:hasSimpleResult "2.22"^^xsd:float ;
+    sosa:hasSimpleResult 2.22e+00 ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/0e9da717-6c8e-4194-9385-c995d54702e4> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/plant-size-width/1>
     a tern:Observation ;
     rdfs:label "plant size- width" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-individual> ;
     sosa:hasResult [
-            a tern:Float ;
-            rdf:value "2.22"^^xsd:float ;
+            a
+                tern:Float ,
+                tern:Value ;
+            rdf:value 2.22e+00 ;
             tern:unit unit:M
         ] ;
-    sosa:hasSimpleResult "2.22"^^xsd:float ;
+    sosa:hasSimpleResult 2.22e+00 ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/9a73de99-19c7-438e-829d-c363ac86b570> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/vegetation-health/1>
     a tern:Observation ;
     rdfs:label "vegetation health" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-population> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Grazing" ;
             rdf:value <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/015efdae-93af-48c5-9564-0cde72593d59> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/Sample/habitat>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "habitat" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/survey-area> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
 .
 
+<https://example.com/example-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs84:lat -3.092085e+01 ;
+    wgs84:long 1.522424e+02 ;
+.
+
+<https://example.com/Site/survey-area>
+    a
+        tern:FeatureOfInterest ,
+        tern:Site ;
+    rdfs:label "survey area" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+.
+
+<https://example.com/Sample/plant-individual>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "plant individual" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Sample/plant-population> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270> ;
+.
+
 <https://example.com/Sample/plant-population>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "plant population" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/survey-area> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> ;
 .
 
-<https://example.com/Site/survey-area>
-    a tern:Site ;
-    rdfs:label "survey area" ;
-    void:inDataset <https://example.com/dataset/1> ;
+<https://example.com/example-observation-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs84:lat -3.092085e+01 ;
+    wgs84:long 1.522424e+02 ;
 .
 
-<https://example.com/Sample/plant-individual>
-    a tern:Sample ;
-    rdfs:label "plant individual" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    sosa:isSampleOf <https://example.com/Sample/plant-population> ;
-    tern:featureType "plant individual" ;
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
+.
+
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 
 ```
