@@ -275,25 +275,24 @@ PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX ssn: <http://www.w3.org/ns/ssn/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX unit: <http://qudt.org/vocab/unit/>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX unit: <http://qudt.org/vocab/unit/>
 
 <https://example.com/Deployment/traps-equipment-set-up>
     a tern:Deployment ;
     rdfs:label "traps equipment set up" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
-            a <https://w3id.org/tern/ontologies/loc/Point> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
             wgs84:lat "-31.920860" ;
             wgs84:long "151.242410"
         ] ;
     rdfs:comment "Photo is taken." ;
-    prov:wasAssociatedWith [
-            a <https://w3id.org/tern/ontologies/org/Person> ;
-            schema:name "Paul Green"
-        ] ;
+    prov:wasAssociatedWith <https://example.com/agent/1> ;
     ssn:deployedOnPlatform <https://example.com/Site/survey-area> ;
     ssn:deployedSystem <https://example.com/Sampler/traps-equipment> ;
     tern:hasAttribute
@@ -303,7 +302,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/908502e0-8c35-4ca9-b97a-b852fb85bfb4> ;
             tern:hasSimpleValue "Butter."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Butter."^^xsd:string
                 ]
         ] ,
@@ -313,7 +314,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/5921add6-57e8-4120-8f1a-6852b6854b40> ;
             tern:hasSimpleValue 2 ;
             tern:hasValue [
-                    a tern:Integer ;
+                    a
+                        tern:Integer ,
+                        tern:Value ;
                     rdf:value 2
                 ]
         ] ;
@@ -342,7 +345,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/dd035eed-24b2-41b5-a3cc-7270c2c590b5> ;
             tern:hasSimpleValue "Both males and females."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Both males and females."^^xsd:string
                 ]
         ] ,
@@ -352,7 +357,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
             tern:hasSimpleValue "Snake."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Snake."^^xsd:string
                 ]
         ] ,
@@ -362,7 +369,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/0852cb79-0d48-460e-902a-e368758563d6> ;
             tern:hasSimpleValue "Trap."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Trap."^^xsd:string
                 ]
         ] ;
@@ -374,10 +383,8 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     a tern:Sampling ;
     rdfs:label "checking traps and equipment" ;
     void:inDataset <https://example.com/dataset/1> ;
-    prov:wasAssociatedWith [
-            a <https://w3id.org/tern/ontologies/org/Person> ;
-            schema:name "Paul Green"
-        ] ;
+    geo:hasGeometry <https://example.com/example-location/1> ;
+    prov:wasAssociatedWith <https://example.com/agent/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Site/survey-area> ;
     sosa:hasResult <https://example.com/Sampler/traps-equipment> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
@@ -388,6 +395,7 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     a tern:Sampling ;
     rdfs:label "collecting recordings" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sampler/traps-equipment> ;
     sosa:hasResult <https://example.com/Sample/sd-card> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
@@ -398,7 +406,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/d749942f-299d-4673-b32b-58d29d78eaf9> ;
             tern:hasSimpleValue "The recording is 3 days."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "The recording is 3 days."^^xsd:string
                 ]
         ] ,
@@ -408,25 +418,31 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/c91869fd-09bf-4649-86f5-c62478af8287> ;
             tern:hasSimpleValue "The battery is dead."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "The battery is dead."^^xsd:string
                 ]
         ] ;
+    tern:resultDateTime "2022-05-10T10:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/Sampling/taking-photos>
     a tern:Sampling ;
     rdfs:label "taking photos" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sampler/traps-equipment> ;
     sosa:hasResult <https://example.com/Sample/photos> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
+    tern:resultDateTime "2022-05-10T10:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/Sampling/voucher-specimen-sampling>
     a tern:Sampling ;
     rdfs:label "voucher specimen sampling" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-location/1> ;
     rdfs:comment "Photo is taken." ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasResult <https://example.com/MaterialSample/voucher-specimen> ;
@@ -438,24 +454,26 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     a tern:Observation ;
     rdfs:label "microhabitat" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sampler/traps-equipment> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Rock" ;
             rdf:value <https://linked.data.gov.au/def/nrm/04e42790-e9d5-569d-b716-cf00760b652b>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/04e42790-e9d5-569d-b716-cf00760b652b> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/6ca76175-3404-41d4-8ca7-2ade3947f00e> ;
-    sosa:phenomenonTime [
-            a time:Instant ;
-            time:inXSDDateTimeStamp "2022-05-11T06:38:02.032000+00:00"^^xsd:dateTimeStamp
-        ] ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
     tern:resultDateTime "2022-05-10T08:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/MaterialSample/voucher-specimen>
-    a tern:MaterialSample ;
+    a
+        tern:MaterialSample ,
+        tern:Sample ;
     rdfs:label "voucher specimen" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Sample/fauna> ;
@@ -465,7 +483,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Plant Tissue Voucher" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d>
                 ]
@@ -473,19 +493,25 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
 .
 
 <https://example.com/Sample/photos>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "photos" ;
     dcterms:identifier "sample-photos-001" ;
     void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType "photos" ;
+    sosa:isSampleOf <https://example.com/Sampler/traps-equipment> ;
+    tern:featureType <https://example.com/non-created-feature-type/photos/1> ;
 .
 
 <https://example.com/Sample/sd-card>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "sd card" ;
     dcterms:identifier "sample-sd-card-001" ;
     void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType "sd card" ;
+    sosa:isSampleOf <https://example.com/Sampler/traps-equipment> ;
+    tern:featureType <https://example.com/non-created-feature-type/sd-card/1> ;
 .
 
 <https://example.com/SiteVisit/site-visit>
@@ -500,7 +526,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/fdaf6f56-def5-43bf-9f38-80e4d196446d> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3b930857-8564-5148-a219-2b89e7a5a011> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Birds" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/3b930857-8564-5148-a219-2b89e7a5a011>
                 ]
@@ -511,7 +539,9 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
             tern:attribute <https://linked.data.gov.au/def/nrm/97387d96-e90c-4cf8-9268-7ed59c95738c> ;
             tern:hasSimpleValue "Using passive search."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Using passive search."^^xsd:string
                 ]
         ] ;
@@ -522,56 +552,124 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
     a tern:Observation ;
     rdfs:label "age class" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Adult" ;
             rdf:value <https://linked.data.gov.au/def/nrm/2befa1d5-33f2-5bc1-bc4c-0609b8dad9b9>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2befa1d5-33f2-5bc1-bc4c-0609b8dad9b9> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/59df7c05-1521-4161-86e4-8e6a8feb4002> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/fauna-length/1>
     a tern:Observation ;
     rdfs:label "fauna length" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasResult [
-            a tern:Float ;
-            rdf:value "2.22"^^xsd:float ;
+            a
+                tern:Float ,
+                tern:Value ;
+            rdf:value 2.22e+00 ;
             tern:unit unit:M
         ] ;
-    sosa:hasSimpleResult "2.22"^^xsd:float ;
+    sosa:hasSimpleResult 2.22e+00 ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/7905c3ec-3901-4fb9-a042-b83066bee975> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/fauna-weight/1>
     a tern:Observation ;
     rdfs:label "fauna weight" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasResult [
-            a tern:Float ;
-            rdf:value "2.22"^^xsd:float ;
+            a
+                tern:Float ,
+                tern:Value ;
+            rdf:value 2.22e+00 ;
             tern:unit unit:GM
         ] ;
-    sosa:hasSimpleResult "2.22"^^xsd:float ;
+    sosa:hasSimpleResult 2.22e+00 ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/375a2c90-71d6-4ff4-99e4-bc033f2bb03c> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/sex/1>
     a tern:Observation ;
     rdfs:label "sex" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "NA" ;
             rdf:value <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/40b39732-e10b-4c4e-968b-3404663a094d> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+.
+
+<https://example.com/agent/1>
+    a
+        prov:Agent ,
+        <https://w3id.org/tern/ontologies/org/Person> ;
+    schema:name "Paul Green" ;
+.
+
+<https://example.com/example-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs84:lat -3.092085e+01 ;
+    wgs84:long 1.522424e+02 ;
+.
+
+<https://example.com/Site/survey-area>
+    a
+        tern:FeatureOfInterest ,
+        tern:Platform ,
+        tern:Site ;
+    rdfs:label "survey area" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+.
+
+<https://example.com/example-observation-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs84:lat -3.092085e+01 ;
+    wgs84:long 1.522424e+02 ;
+.
+
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
 .
 
 <https://example.com/Sample/fauna>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "fauna" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/survey-area> ;
@@ -581,30 +679,32 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
 <https://example.com/Sampler/traps-equipment>
     a
         tern:FeatureOfInterest ,
-        tern:Sampler ;
+        tern:Sample ,
+        tern:Sampler ,
+        tern:System ;
     rdfs:label "traps equipment" ;
     dcterms:identifier "sampler-traps-equipment-001" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/survey-area> ;
     ssn:implements <https://linked.data.gov.au/def/nrm/4741800d-1b44-4805-a849-4436c80ff911> ;
-    tern:featureType "traps equipment" ;
+    tern:featureType <https://example.com/non-created-feature-type/equipment/1> ;
     tern:hasAttribute [
             rdfs:label "equipment type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/eb30ef87-1b96-4e16-ba53-494b9fbdd5c2> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0fc2eb92-b53d-5a27-8ef2-932dc835579f> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Pan Trap" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/0fc2eb92-b53d-5a27-8ef2-932dc835579f>
                 ]
         ] ;
 .
 
-<https://example.com/Site/survey-area>
-    a tern:Site ;
-    rdfs:label "survey area" ;
-    void:inDataset <https://example.com/dataset/1> ;
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 
 ```
