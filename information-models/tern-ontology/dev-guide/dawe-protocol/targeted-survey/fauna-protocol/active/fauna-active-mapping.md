@@ -195,7 +195,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "observations on fauna" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
-            a <https://w3id.org/tern/ontologies/loc/Point> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
             wgs84:lat "-31.920860" ;
             wgs84:long "151.242410"
         ] ;
@@ -205,10 +207,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasMember <https://example.com/observation/number-of-individuals/1> ;
-    sosa:phenomenonTime [
-            a time:Instant ;
-            time:inXSDDateTimeStamp "2022-05-10T06:38:02.032000+00:00"^^xsd:dateTimeStamp
-        ] ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4bfc4796-a02f-461f-b17d-383aad328e61> ;
     tern:hasAttribute
         [
@@ -217,9 +216,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
             tern:hasSimpleValue "Laughing Kookaburra."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Laughing Kookaburra."^^xsd:string
-            ] ;
+                ]
         ] ,
         [
             rdfs:label "observation method" ;
@@ -227,10 +228,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/a5611033-d558-46c4-94b6-cd36885aa7f1> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/03f54727-57c0-593f-849c-f56319c5660e> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "OB" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/03f54727-57c0-593f-849c-f56319c5660e>
-            ] ;
+                ]
         ] ,
         [
             rdfs:label "behaviour observation" ;
@@ -238,7 +241,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/d07b87f0-72f0-4476-99a6-85d9a385f1a7> ;
             tern:hasSimpleValue "Birds are flying."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Birds are flying."^^xsd:string
                 ]
         ] ;
@@ -251,7 +256,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "fauna vouchering" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
-            a <https://w3id.org/tern/ontologies/loc/Point> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
             wgs84:lat "-31.920860" ;
             wgs84:long "151.242410"
         ] ;
@@ -267,7 +274,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "habitat sampling" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
-            a <https://w3id.org/tern/ontologies/loc/Point> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
             wgs84:lat "-31.920860" ;
             wgs84:long "151.242410"
         ] ;
@@ -280,9 +289,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/93fa405c-9e63-4857-a55d-e93d866545a6> ;
             tern:hasSimpleValue "Laughing Kookaburra."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Laughing Kookaburra."^^xsd:string
-            ] ;
+                ]
         ] ;
     tern:resultDateTime "2022-05-10T08:38:02"^^xsd:dateTime ;
 .
@@ -291,35 +302,43 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a tern:Sampling ;
     rdfs:label "taking photos" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasFeatureOfInterest
-        <https://example.com/Sample/fauna> ,
-        <https://example.com/Sample/habitat> ;
+    geo:hasGeometry [
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
+            wgs84:lat "-31.920860" ;
+            wgs84:long "151.242410"
+        ] ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasResult <https://example.com/Sample/photos> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4bfc4796-a02f-461f-b17d-383aad328e61> ;
+    tern:resultDateTime "2022-05-10T08:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/habitat-description/1>
     a tern:Observation ;
     rdfs:label "habitat description" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/habitat> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Isolated clump of tussock grasses" ;
             rdf:value <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/aa4c96f6-9ea8-4bd3-8800-0bfddcd8a37c> ;
-    sosa:phenomenonTime [
-            a time:Instant ;
-            time:inXSDDateTimeStamp "2022-05-11T06:38:02.032000+00:00"^^xsd:dateTimeStamp
-        ] ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4bfc4796-a02f-461f-b17d-383aad328e61> ;
     tern:resultDateTime "2022-05-10T09:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/MaterialSample/fauna-voucher-specimen>
-    a tern:MaterialSample ;
+    a
+        tern:MaterialSample ,
+        tern:Sample ;
     rdfs:label "fauna voucher specimen" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Sample/fauna> ;
@@ -330,7 +349,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Plant Tissue Voucher" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d>
                 ]
@@ -338,18 +359,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 
 <https://example.com/Sample/photos>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "photos" ;
     dcterms:identifier "sample-photos-001" ;
     void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType "photos" ;
+    sosa:isSampleOf <https://example.com/Site/survey-area> ;
+    tern:featureType <https://example.com/non-created-feature-type/photos/1> ;
     tern:hasAttribute [
             rdfs:label "observation photo description" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/0782780b-b137-480f-97b1-32af49d1bb5f> ;
             tern:hasSimpleValue "Photo is labelled."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Photo is labelled."^^xsd:string
                 ]
         ] ;
@@ -367,7 +393,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/fdaf6f56-def5-43bf-9f38-80e4d196446d> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3b930857-8564-5148-a219-2b89e7a5a011> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Birds" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/3b930857-8564-5148-a219-2b89e7a5a011>
                 ]
@@ -379,16 +407,48 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a tern:Observation ;
     rdfs:label "number of individuals" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/fauna> ;
     sosa:hasResult [
-            a tern:Integer ;
+            a
+                tern:Integer ,
+                tern:Value ;
             rdf:value 2
         ] ;
     sosa:hasSimpleResult 2 ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/b2d28629-c986-4c05-9d4a-8b05e99a0a94> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4bfc4796-a02f-461f-b17d-383aad328e61> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+.
+
+<https://example.com/example-observation-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs84:lat -3.092085e+01 ;
+    wgs84:long 1.522424e+02 ;
+.
+
+<https://example.com/Sample/habitat>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "habitat" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Site/survey-area> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
+.
+
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
 .
 
 <https://example.com/Sample/fauna>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "fauna" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf
@@ -397,18 +457,17 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:featureType <http://linked.data.gov.au/def/tern-cv/8a68b4a9-167b-40f0-9222-293a2d20ffee> ;
 .
 
-<https://example.com/Sample/habitat>
-    a tern:Sample ;
-    rdfs:label "habitat" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    sosa:isSampleOf <https://example.com/Site/survey-area> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
-.
-
 <https://example.com/Site/survey-area>
-    a tern:Site ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Site ;
     rdfs:label "survey area" ;
     void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+.
+
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 
 ```
