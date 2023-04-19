@@ -182,6 +182,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a tern:Sampling ;
     rdfs:label "creating the survey area" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry [
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
+            wgs84:lat "-31.920860" ;
+            wgs84:long "151.242410"
+        ] ;
+    sosa:hasFeatureOfInterest <https://example.com/AustralianLand> ;
     sosa:hasResult <https://example.com/Site/survey-area> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
     tern:hasAttribute [
@@ -190,7 +198,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/ae2c88be-63d5-44d3-95ac-54b14c4a4b28> ;
             tern:hasSimpleValue "These habitats are ideal for survey."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "These habitats are ideal for survey."^^xsd:string
                 ]
         ] ;
@@ -198,77 +208,111 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T07:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/Sample/climate>
-    a tern:Sample ;
-    rdfs:label "climate" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    sosa:isSampleOf <https://example.com/Site/survey-area> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/6d40d71e-58cd-4f75-8304-40c01fe5f74c> ;
-.
-
 <https://example.com/observation/weather-duration-of-precipitation/1>
     a tern:Observation ;
     rdfs:label "weather- duration of precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Continuous" ;
             rdf:value <https://linked.data.gov.au/def/nrm/043224b6-b49b-519c-b1cf-687fd889398f>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/043224b6-b49b-519c-b1cf-687fd889398f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/25d4c7b7-4cdf-4b69-8774-064055c74e23> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/weather-site-cloud-cover/1>
     a tern:Observation ;
     rdfs:label "weather- site cloud cover" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Partly Cloudy" ;
             rdf:value <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/111a2971-f7c3-4d9d-b079-d9afa0bcc8b0> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/weather-site-precipitation/1>
     a tern:Observation ;
     rdfs:label "weather- site precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "None observed" ;
             rdf:value <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/b7e7f67b-d983-4167-baca-57cab6dd89a2> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/weather-site-temperature/1>
     a tern:Observation ;
     rdfs:label "weather- site temperature" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Hot" ;
             rdf:value <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/a30248c3-33ce-4ffe-8130-7b03aa4e5322> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/weather-site-wind/1>
     a tern:Observation ;
     rdfs:label "weather-site wind" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Strong gale" ;
             rdf:value <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/e8f03cc8-33a3-4c2f-9a0d-95a40c34523d> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+.
+
+<https://example.com/AustralianLand>
+    a tern:FeatureOfInterest ;
+    rdfs:label "Australian Land" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
 .
 
 <https://example.com/SiteVisit/site-visit>
@@ -278,12 +322,26 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     prov:startedAtTime "2022-05-10T05:38:02"^^xsd:dateTime ;
     tern:hasAttribute
         [
+            rdfs:label "survey observers and experience" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/e3ff756d-7363-4bd1-8d8f-fd95cd941d97> ;
+            tern:hasSimpleValue "Experienced."^^xsd:string ;
+            tern:hasValue [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "Experienced."^^xsd:string
+                ]
+        ] ,
+        [
             rdfs:label "survey objectives" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/6546ac62-85a4-4d00-a72e-79bbd03d13ac> ;
             tern:hasSimpleValue "Set up the survey area."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Set up the survey area."^^xsd:string
                 ]
         ] ,
@@ -293,32 +351,58 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/d1d58bb4-6da2-4ab7-b9c8-999330fc8a9b> ;
             tern:hasSimpleValue "Designed by experienced observers."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "Designed by experienced observers."^^xsd:string
-                ]
-        ] ,
-        [
-            rdfs:label "survey observers and experience" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/e3ff756d-7363-4bd1-8d8f-fd95cd941d97> ;
-            tern:hasSimpleValue "Experienced."^^xsd:string ;
-            tern:hasValue [
-                    a tern:Text ;
-                    rdf:value "Experienced."^^xsd:string
                 ]
         ] ;
     tern:hasSite <https://example.com/Site/survey-area> ;
 .
 
 <https://example.com/Site/survey-area>
-    a tern:Site ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ,
+        tern:Site ;
     rdfs:label "survey area" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
-            a <https://w3id.org/tern/ontologies/loc/Point> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
             wgs84:lat "-31.920860" ;
             wgs84:long "151.242410"
         ] ;
+    sosa:isSampleOf <https://example.com/AustralianLand> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+.
+
+<https://example.com/example-observation-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs84:lat -3.092085e+01 ;
+    wgs84:long 1.522424e+02 ;
+.
+
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
+.
+
+<https://example.com/Sample/climate>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "climate" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Site/survey-area> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/6d40d71e-58cd-4f75-8304-40c01fe5f74c> ;
+.
+
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 
 ```
