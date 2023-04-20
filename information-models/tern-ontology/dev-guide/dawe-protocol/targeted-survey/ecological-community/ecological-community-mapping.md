@@ -205,9 +205,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a tern:Sampling ;
     rdfs:label "locating ecological community" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
     sosa:hasResult <https://example.com/Sample/plant-community> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/Sampling/plant-vouchering>
@@ -217,6 +219,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult <https://example.com/MaterialSample/flora-voucher-specimen> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/Sampling/taking-photos>
@@ -226,10 +229,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult <https://example.com/Sample/photos> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/MaterialSample/flora-voucher-specimen>
-    a tern:MaterialSample ;
+    a
+        tern:MaterialSample ,
+        tern:Sample ;
     rdfs:label "flora voucher specimen" ;
     void:inDataset <https://example.com/dataset/1> ;
     rdfs:comment "Photo is taken." ;
@@ -241,7 +247,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Plant Tissue Voucher" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d>
                 ]
@@ -249,18 +257,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 
 <https://example.com/Sample/photos>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "photos" ;
     dcterms:identifier "sample-photos-001" ;
     void:inDataset <https://example.com/dataset/1> ;
-    tern:featureType "photos" ;
+    sosa:isSampleOf <https://example.com/Sample/plant-community> ;
+    tern:featureType <https://example.com/non-created-feature-type/photos/1> ;
     tern:hasAttribute [
             rdfs:label "photo description" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/edfc908c-f040-495d-9b54-3c0cfe6eb698> ;
             tern:hasSimpleValue "The value is from survey."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "The value is from survey."^^xsd:string
                 ]
         ] ;
@@ -271,10 +284,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "site visit" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
-            a <https://w3id.org/tern/ontologies/loc/Point> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
             wgs84:lat "-31.920860" ;
             wgs84:long "151.242410"
         ] ;
+    prov:startedAtTime "2022-05-10T03:38:02"^^xsd:dateTime ;
     tern:hasSite <https://example.com/Site/site> ;
 .
 
@@ -282,88 +298,150 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a tern:Observation ;
     rdfs:label "condition thresholds" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult [
-            a tern:Text ;
+            a
+                tern:Text ,
+                tern:Value ;
             rdf:value "The value is from observations."^^xsd:string
         ] ;
     sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/92d0eaf3-0352-45ba-b173-f82923cdd795> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/diagnostic-characteristics/1>
     a tern:Observation ;
     rdfs:label "diagnostic characteristics" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult [
-            a tern:Text ;
+            a
+                tern:Text ,
+                tern:Value ;
             rdf:value "The value is from observations."^^xsd:string
         ] ;
     sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/f6990e14-842c-4eee-bd3d-77dfe8cfede4> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/disturbance-type/1>
     a tern:Observation ;
     rdfs:label "disturbance type" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Not Collected" ;
             rdf:value <https://linked.data.gov.au/def/nrm/059b347f-58c9-59a9-bd75-9305d7e1211d>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/059b347f-58c9-59a9-bd75-9305d7e1211d> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/632e4c3c-0e73-4b3d-b1d6-7b38897da5e8> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/species-and-cover/1>
     a tern:Observation ;
     rdfs:label "species and cover" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult [
-            a tern:Text ;
+            a
+                tern:Text ,
+                tern:Value ;
             rdf:value "The value is from observations."^^xsd:string
         ] ;
     sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/e706382f-3cf5-48ff-bc86-6e8902dc2aaf> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/vegetation-health/1>
     a tern:Observation ;
     rdfs:label "vegetation health" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult [
-            a tern:IRI ;
+            a
+                tern:IRI ,
+                tern:Value ;
             rdfs:label "Grazing" ;
             rdf:value <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/weeds/1>
     a tern:Observation ;
     rdfs:label "weeds" ;
     void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
     sosa:hasResult [
-            a tern:Text ;
+            a
+                tern:Text ,
+                tern:Value ;
             rdf:value "The value is from observations."^^xsd:string
         ] ;
     sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/cefdf9e3-63cb-42fb-9d9b-790dbdebbe45> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
 <https://example.com/Site/site>
-    a tern:Site ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Site ;
     rdfs:label "site" ;
     void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+.
+
+<https://example.com/example-phenomenon-time/1>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp ;
+.
+
+<https://example.com/example-observation-location/1>
+    a
+        geo:Geometry ,
+        <https://w3id.org/tern/ontologies/loc/Point> ;
+    wgs84:lat -3.092085e+01 ;
+    wgs84:long 1.522424e+02 ;
 .
 
 <https://example.com/Sample/plant-community>
-    a tern:Sample ;
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
     rdfs:label "plant community" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
-            a <https://w3id.org/tern/ontologies/loc/Point> ;
+            a
+                geo:Geometry ,
+                <https://w3id.org/tern/ontologies/loc/Point> ;
             wgs84:lat "-31.920860" ;
             wgs84:long "151.242410"
         ] ;
@@ -376,7 +454,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/c66b7850-8db7-408b-9819-eaef6ca37114> ;
             tern:hasSimpleValue "The value is from survey."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "The value is from survey."^^xsd:string
                 ]
         ] ,
@@ -386,7 +466,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/00ce1921-fedc-40c2-a24e-294937bffa5b> ;
             tern:hasSimpleValue "The value is from survey."^^xsd:string ;
             tern:hasValue [
-                    a tern:Text ;
+                    a
+                        tern:Text ,
+                        tern:Value ;
                     rdf:value "The value is from survey."^^xsd:string
                 ]
         ] ,
@@ -396,11 +478,17 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             tern:attribute <https://linked.data.gov.au/def/nrm/401f1d32-68c0-49da-9755-dfb5d1ede660> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/092efe20-9aaa-5c76-af9e-defd84207318> ;
             tern:hasValue [
-                    a tern:IRI ;
+                    a
+                        tern:IRI ,
+                        tern:Value ;
                     rdfs:label "Tasmanian Forests and Woodlands dominated by black gum or Brookers gum (Eucalyptus ovata / E. brookeriana)" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/092efe20-9aaa-5c76-af9e-defd84207318>
                 ]
         ] ;
+.
+
+<https://example.com/dataset/1>
+    a tern:RDFDataset ;
 .
 
 ```
