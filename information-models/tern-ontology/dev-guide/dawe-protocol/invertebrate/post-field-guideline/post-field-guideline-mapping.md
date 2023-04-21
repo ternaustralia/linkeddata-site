@@ -24,6 +24,145 @@ The following diagram shows the Post-field guidelines protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1-_-iFYlAofbcbQNWfHXvrHoc2grUnqXI&layers=1&nav=1&title=invertebrate-fauna-post-field-guidelines-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1-_-iFYlAofbcbQNWfHXvrHoc2grUnqXI%26export%3Ddownload">View diagram in new tab.</a>
 
+## Survey data from invertebrate post field guidelines:
+
+The following dummy data:
+
+```json
+{
+  "trap_photo": [0],
+  "samples": {
+    "sample_id": "string",
+    "preservation_type": "DS"
+  },
+  "observation_time": "2023-04-11T06:03:58.525Z",
+  "observers": "Paul Green",
+  "group": "string",
+  "life_stage": "string",
+  "life_stage_count": "string",
+  "average_length": "string",
+  "count": 2,
+  "exact_or_estimate": "Exact",
+  "createdBy": 0,
+  "updatedBy": 0
+}
+```
+
+The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `trap_photo`
+
+The `trap_photo` key maps to the `tern:Sample` class.
+
+#### `sample_id`
+
+The `sample_id` key maps to the property `dwc:materialSampleID` on the `tern:MaterialSample` class.
+
+##### Example
+
+```
+<https://example.com/animal-specimen/1> a tern:MaterialSample ;
+    dwc:materialSampleID "specimen001" .
+```
+
+#### `preservation_type`
+
+The `preservation_type` key maps to the attribute `trap preservative type` in [Invertebrate fauna module - post-field guideline protocol Attributes](https://linked.data.gov.au/def/nrm/9d643bf1-67b0-4f7d-9e74-c2dba44678dd), and is linked to specimen by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/animal-specimen/1> a tern:MaterialSample ;
+    tern:hasAttribute [
+        rdfs:label "trap preservative type" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/1ab7fdbb-e597-4aa6-bf55-fb5cb5f7c394> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        tern:hasValue [
+            a tern:IRI ;
+            rdfs:label "Undiluted propylene glycol" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        ] ;
+    ] ;
+.
+```
+
+#### `observation_time`
+
+The `observation_time` key maps to the property `tern:resultDateTime` on the `tern:Observation` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/invertebrate-group/1> a tern:Observation ;
+    tern:resultDateTime "2023-04-11T06:03:58.525Z"^^xsd:dateTime .
+```
+
+#### `observers`
+
+The `observers` key maps to the property `prov:wasAssociatedWith` on the `tern:Observation` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/invertebrate-group/1> a tern:Observation ;
+    prov:wasAssociatedWith "Paul Green" .
+```
+
+#### `group`
+
+The `group` key maps to a `tern:Observation` with the observable property 'invertebrate group'.
+
+#### `life_stage`
+
+The `life_stage` key maps to a `tern:Observation` with the observable property 'invertebrate life stage'.
+
+#### `life_stage_count`
+
+The `life_stage_count` key maps to a `tern:Observation` with the observable property 'invertebrate- individual life stage count'.
+
+#### `average_length`
+
+The `average_length` key maps to a `tern:Observation` with the observable property 'invertebrate- life stage average length'.
+
+#### `count`
+
+The `count` key maps to a `tern:Observation` with the observable property 'specimen count'.
+
+#### `exact_or_estimate`
+
+The `exact_or_estimate` key maps to the attribute `count exact or estimate` in [Invertebrate fauna module - post-field guideline protocol Attributes](https://linked.data.gov.au/def/nrm/9d643bf1-67b0-4f7d-9e74-c2dba44678dd), and is linked to values by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/observation/specimen-count/1>
+    a tern:Observation ;
+    rdfs:label "specimen count" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasResult [
+            a tern:Integer ;
+            rdf:value 2 ;
+            tern:hasAttribute [
+                    rdfs:label "count exact or estimate" ;
+                    void:inDataset <https://example.com/dataset/1> ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/ca245b0d-b3e2-4dbc-8a72-d8cd1868a1ce> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a> ;
+                    tern:hasValue [
+                            a tern:IRI ;
+                            rdfs:label "Exact" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a>
+                        ]
+                ]
+        ] ;
+    sosa:hasSimpleResult 2 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/50da4103-111d-4876-800f-382d5033f1b4> ;
+.
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
