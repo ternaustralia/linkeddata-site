@@ -269,6 +269,71 @@ The `veg_structural_formation` key maps to a `tern:Observation` with the observa
 
 The `visit_field_name` key maps to the observable property `dominant species`, `second dominant species`, and `thrid dominant species` in [Plot Description Observable Properties](https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312), and is linked to `tern:ObservationCollection` by `skos:member`. For each of the three vegetation strata (Upper [U], Mid [M], Ground [G]) nominate in descending order the dominant species (up to 3 species per stratum) for each stratum, where present.
 
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Validation with SHACL
+
+The data should conform to both the TERN Ontology and protocol specific SHACL shapes. The introduction to TERN Ontology SHACL shapes and example usage is presented in [Conformance and Validation](/information-models/tern-ontology/dev-guide/conformance-and-validation).
+
+The specification requirements of observations in `Plot Description protocol` are in [Plot Description Module Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#plot_description_module_conformance_class_requirements).
+
+Validator is [Plot description protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/plot-description-protocol-shapes/shapes.ttl).
+
+The following are examples of validating data at the project, protocol, and observation levels:
+
+### Example usage with PySHACL - project level
+
+Save the [DCCEEW RLP shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/shapes.ttl) in a file named `dcceew-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for all DCCEEW protocols**, run the following command to validate the data:
+
+```bash
+pyshacl -s dcceew-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - protocol level
+
+Save the [Plot description shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/plot-description-protocol-shapes/shapes.ttl) in a file named `plot-description-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Plot Description protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s plot-description-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - observation level
+
+Save the [aspect shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/plot-description-protocol-shapes/aspect/shapes.ttl) in a file named `aspect-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for aspect in Plot description protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s aspect-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
