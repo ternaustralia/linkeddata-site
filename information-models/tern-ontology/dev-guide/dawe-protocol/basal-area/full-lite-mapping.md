@@ -162,16 +162,18 @@ The data should conform to both the TERN Ontology and protocol specific SHACL sh
 
 The specification requirements of observations in `Basal area full and lite protocol` are in [Basal Area - Full DBH measures protocol Conformance Class Requirements](https://ternaustralia-dawe-rlp-spec-preview-pr-59.surge.sh/#basal_area_full_dbh_measures_protocol_conformance_class_requirements) and [Basal Area - Lite DBH measures protocol Conformance Class Requirements](https://ternaustralia-dawe-rlp-spec-preview-pr-59.surge.sh/#basal_area_lite_dbh_measures_protocol_conformance_class_requirements). 
 
-Validators are in [Basal area full dbh measures protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/tree/add-shacl-basal-area/shapes/basal-area/basal-area-full-dbh-measures-protocol-shapes) and [Basal area lite dbh measures protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/tree/add-shacl-basal-area/shapes/basal-area/basal-area-lite-dbh-measures-protocol-shapes), where the validator of each observation is listed.
+Validators are [Basal area full dbh measures protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/basal-area/basal-area-full-dbh-measures-protocol-shapes/shapes.ttl) and [Basal area lite dbh measures protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/basal-area/basal-area-lite-dbh-measures-protocol-shapes/shapes.ttl).
 
-### Example usage for `DBH` measure with PySHACL
+The following are examples of validating data at the project, protocol, sub-protocol, and observation levels:
 
-Save the [DBH shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/add-shacl-basal-area/shapes/basal-area/basal-area-lite-dbh-measures-protocol-shapes/diameter-at-breast-height-dbh/shapes.ttl) in a file named `dbh-shapes.ttl` in the Turtle RDF format.
+### Example usage with PySHACL - project level
 
-Assuming you have a file named `data.ttl` in the Turtle RDF format, run the following command to validate the data:
+Save the [DCCEEW RLP shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/shapes.ttl) in a file named `dcceew-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for all DCCEEW protocols**, run the following command to validate the data:
 
 ```bash
-pyshacl -s dbh-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+pyshacl -s dcceew-shapes.ttl -m -i rdfs -a -j -f human data.ttl
 ```
 
 If there are no violations, then you should see some output similar to the following:
@@ -181,7 +183,56 @@ Validation Report
 Conforms: True
 ```
 
-Please note that the above example only validates DBH observations in the `data.ttl` file. If you require validation for all observations, it is necessary to store SHACL shapes for each observation in a single file and then execute the validation command. Alternatively, it is possible to execute validators individually in order to validate each observation separately.
+### Example usage with PySHACL - protocol level
+
+Save the [Basal Area shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/basal-area/shapes.ttl) in a file named `basal-area-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Basal Area protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s basal-area-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - sub protocol level
+
+Save the [Basal Area Full DBH shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/basal-area/basal-area-full-dbh-measures-protocol-shapes/shapes.ttl) in a file named `basal-area-full-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Basal Area - Full DBH protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s basal-area-full-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - observation level
+
+Save the [plant status shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/basal-area/basal-area-full-dbh-measures-protocol-shapes/plant-status/shapes.ttl) in a file named `plant-status-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for plant status in Basal Area - Full DBH protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s plant-status-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
