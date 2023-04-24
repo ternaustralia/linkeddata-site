@@ -206,6 +206,84 @@ The `growth_form` key maps to a `tern:Observation` with the observable property 
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
+## Validation with SHACL
+
+The data should conform to both the TERN Ontology and protocol specific SHACL shapes. The introduction to TERN Ontology SHACL shapes and example usage is presented in [Conformance and Validation](/information-models/tern-ontology/dev-guide/conformance-and-validation).
+
+The specification requirements of observations in `Cover full and lite protocol` are in [Cover - Full protocol Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#cover_full_protocol_conformance_class_requirements) and [Cover - Lite protocol Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#cover_lite_protocol_conformance_class_requirements).
+
+Validators are in [Cover - Full protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/cover/cover-full-protocol-shapes/shapes.ttl) and [Cover - Lite protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/cover/cover-lite-protocol-shapes/shapes.ttl).
+
+The following are examples of validating data at the project, protocol, sub-protocol, and observation levels:
+
+### Example usage with PySHACL - project level
+
+Save the [DCCEEW RLP shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/shapes.ttl) in a file named `dcceew-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for all DCCEEW protocols**, run the following command to validate the data:
+
+```bash
+pyshacl -s dcceew-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - protocol level
+
+Save the [Cover shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/cover/shapes.ttl) in a file named `cover-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Cover protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s cover-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - sub protocol level
+
+Save the [Cover - Full protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/cover/cover-full-protocol-shapes/shapes.ttl) in a file named `cover-full-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Cover - Full protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s cover-full-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - observation level
+
+Save the [growth form shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/cover/cover-full-protocol-shapes/growth-form/shapes.ttl) in a file named `growth-form-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for growth form in Cover - Full protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s growth-form-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
