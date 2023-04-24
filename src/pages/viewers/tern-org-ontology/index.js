@@ -3,10 +3,9 @@ import ViewerPage from '../../../components/ontology-viewers/Page';
 import settings from './_settings';
 
 
-function gtag() { dataLayer.push(arguments); };
-
 export default function Page() {
   useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('event', 'viewer', { 'cv': 'tern-org-ontology' });
   }, []);
