@@ -159,6 +159,84 @@ The `coarse_woody_debris_survey` key maps to the `tern:SiteVisit` class.
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
+## Validation with SHACL
+
+The data should conform to both the TERN Ontology and protocol specific SHACL shapes. The introduction to TERN Ontology SHACL shapes and example usage is presented in [Conformance and Validation](/information-models/tern-ontology/dev-guide/conformance-and-validation).
+
+The specification requirements of observations in `Coarse Woody Debris - Plots protocol` are in [Coarse Woody Debris - Plot measures protocol Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#coarse_woody_debris_plot_measures_protocol_conformance_class_requirements).
+
+Validator is [Coarse Woody Debris - Plots protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/coarse-woody-debris/coarse-woody-debris-plot-measures-protocol-shapes/shapes.ttl).
+
+The following are examples of validating data at the project, protocol, sub-protocol, and observation levels:
+
+### Example usage with PySHACL - project level
+
+Save the [DCCEEW RLP shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/shapes.ttl) in a file named `dcceew-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for all DCCEEW protocols**, run the following command to validate the data:
+
+```bash
+pyshacl -s dcceew-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - protocol level
+
+Save the [Coarse Woody Debris shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/coarse-woody-debris/shapes.ttl) in a file named `cwd-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Coarse Woody Debris protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s cwd-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - sub protocol level
+
+Save the [Coarse Woody Debris - Plots protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/coarse-woody-debris/coarse-woody-debris-plot-measures-protocol-shapes/shapes.ttl) in a file named `cwd-plots-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Coarse Woody Debris - Plots protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s cwd-plots-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - observation level
+
+Save the [cwd decay class shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/coarse-woody-debris/coarse-woody-debris-plot-measures-protocol-shapes/cwd-decay-class/shapes.ttl) in a file named `cwd-decay-class-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for CWD decay class in Coarse Woody Debris - Plots protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s cwd-decay-class-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
