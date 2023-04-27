@@ -355,6 +355,84 @@ The `source_of_identification` key maps to the attribute `source of identificati
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
+## Validation with SHACL
+
+The data should conform to both the TERN Ontology and protocol specific SHACL shapes. The introduction to TERN Ontology SHACL shapes and example usage is presented in [Conformance and Validation](/information-models/tern-ontology/dev-guide/conformance-and-validation).
+
+The specification requirements of observations in `Vertebrate Fauna - Active and passive searching protocol` are in [Vertebrate Fauna - Active and passive searching protocol Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#vertebrate_fauna_active_and_passive_searching_protocol_conformance_class_requirements).
+
+Validator is [Vertebrate Fauna - Active and passive searching protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/vertebrate-fauna/vertebrate-fauna-active-and-passive-searching-protocol-shapes/shapes.ttl).
+
+The following are examples of validating data at the project, protocol, sub-protocol, and observation levels:
+
+### Example usage with PySHACL - project level
+
+Save the [DCCEEW RLP shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/shapes.ttl) in a file named `dcceew-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for all DCCEEW protocols**, run the following command to validate the data:
+
+```bash
+pyshacl -s dcceew-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - protocol level
+
+Save the [Vertebrate fauna shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/vertebrate-fauna/shapes.ttl) in a file named `vertebrate-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Vertebrate fauna protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s vertebrate-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - sub protocol level
+
+Save the [Vertebrate Fauna - Active and passive searching protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/vertebrate-fauna/vertebrate-fauna-active-and-passive-searching-protocol-shapes/shapes.ttl) in a file named `vertebrate-active-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Vertebrate fauna - Active and passive searching protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s vertebrate-active-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - observation level
+
+Save the [sex shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/vertebrate-fauna/vertebrate-fauna-active-and-passive-searching-protocol-shapes/sex/shapes.ttl) in a file named `sex-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for sex in Vertebrate fauna - Acitive and passive searching protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s sex-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
