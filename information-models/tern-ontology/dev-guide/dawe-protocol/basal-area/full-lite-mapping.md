@@ -160,7 +160,7 @@ Refer to the tree measurements mapping [#mapping-full-and-lite-dbh-tree-measurem
 
 The data should conform to both the TERN Ontology and protocol specific SHACL shapes. The introduction to TERN Ontology SHACL shapes and example usage is presented in [Conformance and Validation](/information-models/tern-ontology/dev-guide/conformance-and-validation). 
 
-The specification requirements of observations in `Basal area full and lite protocol` are in [Basal Area - Full DBH measures protocol Conformance Class Requirements](https://ternaustralia-dawe-rlp-spec-preview-pr-59.surge.sh/#basal_area_full_dbh_measures_protocol_conformance_class_requirements) and [Basal Area - Lite DBH measures protocol Conformance Class Requirements](https://ternaustralia-dawe-rlp-spec-preview-pr-59.surge.sh/#basal_area_lite_dbh_measures_protocol_conformance_class_requirements). 
+The specification requirements of observations in `Basal area full and lite protocol` are in [Basal Area - Full DBH measures protocol Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#basal_area_full_dbh_measures_protocol_conformance_class_requirements) and [Basal Area - Lite DBH measures protocol Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#basal_area_lite_dbh_measures_protocol_conformance_class_requirements). 
 
 Validators are [Basal area full dbh measures protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/basal-area/basal-area-full-dbh-measures-protocol-shapes/shapes.ttl) and [Basal area lite dbh measures protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/basal-area/basal-area-lite-dbh-measures-protocol-shapes/shapes.ttl).
 
