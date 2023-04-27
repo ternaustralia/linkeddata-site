@@ -241,6 +241,101 @@ The `exact_or_estimate` key maps to the attribute `count exact or estimate` in [
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
+## Validation with SHACL
+
+The data should conform to both the TERN Ontology and protocol specific SHACL shapes. The introduction to TERN Ontology SHACL shapes and example usage is presented in [Conformance and Validation](/information-models/tern-ontology/dev-guide/conformance-and-validation).
+
+The specification requirements of observations in `Targeted survey - flora observation protocol` are in [Targeted Survey - Flora Observation protocol Conformance Class Requirements](https://ternaustralia.github.io/dawe-rlp-spec/#targeted_survey_flora_observation_protocol_conformance_class_requirements).
+
+Validator is [Targeted survey - flora observation protocol shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/targeted-survey/targeted-survey-flora/targeted-survey-flora-observation-protocol-shapes/shapes.ttl).
+
+The following are examples of validating data at the project, protocol, sub-protocol, and observation levels:
+
+### Example usage with PySHACL - project level
+
+Save the [DCCEEW RLP shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/shapes.ttl) in a file named `dcceew-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for all DCCEEW protocols**, run the following command to validate the data:
+
+```bash
+pyshacl -s dcceew-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - protocol level
+
+Save the [Targeted survey shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/targeted-survey/shapes.ttl) in a file named `targeted-survey-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Targeted survey protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s targeted-survey-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - sub protocol level
+
+Save the [Targeted survey - flora shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/targeted-survey/targeted-survey-flora/shapes.ttl) in a file named `targeted-survey-flora-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Targeted survey - flora protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s targeted-survey-flora-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - sub protocol of sub protocol level
+
+Save the [Targeted survey - flora observation shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/targeted-survey/targeted-survey-flora/targeted-survey-flora-observation-protocol-shapes/shapes.ttl) in a file named `targeted-survey-flora-observation-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for Targeted survey - flora observation protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s targeted-survey-flora-observation-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
+### Example usage with PySHACL - observation level
+
+Save the [life stage shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/targeted-survey/targeted-survey-flora/targeted-survey-flora-observation-protocol-shapes/life-stage/shapes.ttl) in a file named `life-stage-shapes.ttl` in the Turtle RDF format.
+
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for life stage in Targeted survey - flora observation protocol**, run the following command to validate the data:
+
+```bash
+pyshacl -s life-stage-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+```
+
+If there are no violations, then you should see some output similar to the following:
+
+```
+Validation Report
+Conforms: True
+```
+
 Encoded using the TERN Ontology and related controlled vocabularies.
 
 ```turtle
