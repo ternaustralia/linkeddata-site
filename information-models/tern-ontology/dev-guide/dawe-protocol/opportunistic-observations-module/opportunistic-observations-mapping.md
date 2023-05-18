@@ -16,9 +16,7 @@ The Opportunistic Observations module records data about the site for the follow
 - plant occurrence
 - animal occurrence
 
-These observations are recorded for each site during a site visit.
-
-Opportunistic observations are unplanned (no defined survey effort) and made while undertaking other activities, at any stage of a project. Observations often occur while travelling between plots and while undertaking other modules.
+Opportunistic observations are unplanned (no defined survey effort) and made while undertaking other activities, at any stage of a project. Observations often occur while traveling between plots and while undertaking other modules.
 
 `voucher condition` is only recorded for fauna specimens.
 
@@ -393,6 +391,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
