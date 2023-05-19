@@ -20,11 +20,11 @@ The Vegetation Mapping module records data about the site for the following feat
 
 These observations are recorded for each site during a site visit.
 
-This module provides a standardised approach to vegetation classification, which can be used to inform downstream vegetation mapping, reporting and analysis.
+This module provides a standardized approach to vegetation classification, which can be used to inform downstream vegetation mapping, reporting and analysis.
 
 ### Diagram
 
-The following diagram show the Vgetation Mapping protocol mapping. The blue nodes are things related to 'land surface disturbance' feature type. Light green nodes are things related to 'plant population' feature type and greens nodes are 'plant vouchering' sampling on 'plant population'. Orange nodes are things related to 'vegetation disturbance' feature type. Yellow nodes are things related to 'land surface substrate' feature type. Pink nodes are things related to 'plant community' feature type. Purple nodes are 'taking photos' sampling on any materials from site.
+The following diagram show the Vegetation Mapping protocol mapping. The blue nodes are things related to 'land surface disturbance' feature type. Light green nodes are things related to 'plant population' feature type and greens nodes are 'plant vouchering' sampling on 'plant population'. Orange nodes are things related to 'vegetation disturbance' feature type. Yellow nodes are things related to 'land surface substrate' feature type. Pink nodes are things related to 'plant community' feature type. Purple nodes are 'taking photos' sampling on any materials from site.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G16CzfsvBI087OVKooSSVyb02kfKo4hlf3&layers=1&nav=1&title=vegetation-mapping-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D16CzfsvBI087OVKooSSVyb02kfKo4hlf3%26export%3Ddownload"></iframe>
 
@@ -92,7 +92,7 @@ The `location` key maps to the attribute `geo:hasGeometry` on the `tern:Site` cl
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -228,7 +228,7 @@ The `vegetation_mapping_species_covers` key maps to a `tern:ObservationCollectio
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ### Mapping Vegetation Mapping species cover measurements
 
@@ -265,7 +265,7 @@ The `height_metres` key maps to a `tern:Observation` with the observable propert
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ### Mapping Vegetation Mapping substrate cover measurements
 
@@ -327,7 +327,7 @@ The `vegetation_mapping_observation` key maps to the `tern:Observation` class.
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
