@@ -32,8 +32,6 @@ Example data from source for `Coarse Woody Debris - Plots measures` protocol sur
 
 ```json
 {
-  "start_date": "2023-01-24T06:13:59.936Z",
-  "surveyId": "string",
   "sampling_survey_method": "P50",
   "createdBy": 0,
   "updatedBy": 0
@@ -42,7 +40,7 @@ Example data from source for `Coarse Woody Debris - Plots measures` protocol sur
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `start_date`
+<!-- #### `start_date`
 
 The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -61,7 +59,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `sampling_survey_method`
 
@@ -69,7 +67,7 @@ The `sampling_survey_method` key maps to the sampling method used - `Plots' or '
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -157,7 +155,7 @@ The `coarse_woody_debris_survey` key maps to the `tern:SiteVisit` class.
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
@@ -236,6 +234,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
