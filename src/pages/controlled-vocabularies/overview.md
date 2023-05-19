@@ -20,6 +20,6 @@ The AusPlots controlled vocabularies is the extraction and transformation of the
 
 The CORVEG controlled vocabularies is the extraction and transformation of the controlled vocabularies from the CORVEG dataset. Browse <ExternalLink href="https://linkeddata.tern.org.au/viewer/corveg">here</ExternalLink>.
 
-## DAWE survey protocols controlled vocabularies
+## NRM survey protocols controlled vocabularies
 
-The DAWE survey protocols controlled vocabularies support the Regional Land Survey program of DAWE. Browse [here](/viewers/dawe-vocabs).
+The NRM survey protocols controlled vocabularies support the Regional Land Survey program of DCCEEW. Browse [here](/viewers/dawe-vocabs).
