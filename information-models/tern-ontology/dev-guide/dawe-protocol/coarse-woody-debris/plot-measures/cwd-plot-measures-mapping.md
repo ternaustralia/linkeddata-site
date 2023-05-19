@@ -33,12 +33,17 @@ Example data from source for `Coarse Woody Debris - Plots measures` protocol sur
 ```json
 {
   "sampling_survey_method": "P50",
+  "plot_visit": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
 ```
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
 
 <!-- #### `start_date`
 
