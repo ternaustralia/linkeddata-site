@@ -35,8 +35,6 @@ Example data from source for `Fire` protocol surveys:
 
 ```json
 {
-  "surveyId": "string",
-  "start_date": "2023-01-24T00:19:39.024Z",
   "plot_visit": 0,
   "last_fire": "2023-01-24T00:19:39.024Z",
   "last_fire_accuracy_days": 0,
@@ -47,7 +45,7 @@ Example data from source for `Fire` protocol surveys:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -55,9 +53,9 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
-#### `start_date`
+<!-- #### `start_date`
 
 The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -66,7 +64,7 @@ The `start_date` key maps to the property `prov:startedAtTime` on the `tern:Site
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `plot_visit`
 
@@ -253,6 +251,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
