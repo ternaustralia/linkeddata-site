@@ -18,8 +18,6 @@ The Vegetation Mapping module records data about the site for the following feat
 - land surface substrate
 - plant community
 
-These observations are recorded for each site during a site visit.
-
 This module provides a standardized approach to vegetation classification, which can be used to inform downstream vegetation mapping, reporting and analysis.
 
 ### Diagram
@@ -40,8 +38,6 @@ Survey data from Vegetation Mapping:
 
 ```json
 {
-  "start_date_time": "2022-12-19T03:07:13.104Z",
-  "surveyId": "string",
   "location": {
     "lat": 0,
     "lng": 0
@@ -53,7 +49,7 @@ Survey data from Vegetation Mapping:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `start_date_time`
+<!-- #### `start_date_time`
 
 The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -62,9 +58,9 @@ The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -72,7 +68,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `location`
 
@@ -112,7 +108,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
   "disturbance": "0",
   "fire_history": "UB",
   "comment": "string",
-  "vegetation_mapping_survey": 0,
   "homogeneity_measure_metres": 0,
   "vegetation_mapping_substrate_cover": 0,
   "vegetation_mapping_species_covers": [0],
@@ -190,9 +185,9 @@ The `comment` key maps to the property `rdfs:comment` on the `tern:Observation` 
 .
 ```
 
-#### `vegetation_mapping_survey`
+<!-- #### `vegetation_mapping_survey`
 
-The `vegetation_mapping_survey` key maps to the `tern:SiteVisit` class.
+The `vegetation_mapping_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `homogeneity_measure_metres`
 
@@ -245,7 +240,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 }
 ```
 
-The data are observations recorded during a site visit. The feature of interest is plant population with the feature type `plant population`.
+The feature of interest is plant population with the feature type `plant population`.
 
 #### `species_name`
 
@@ -281,13 +276,12 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
   "coarse_woody_debris_cover_percent": 0,
   "gravel_cover_percent": 0,
   "unknown_cover_percent": 0,
-  "vegetation_mapping_observation": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
 ```
 
-The data are observations recorded during a site visit. The feature of interest is land surface substrate with the feature type `land surface substrate`.
+The feature of interest is land surface substrate with the feature type `land surface substrate`.
 
 #### `bare_cover_percent`
 
@@ -321,9 +315,9 @@ The `gravel_cover_percent` key maps to a `tern:Observation` with the observable 
 
 The `unknown_cover_percent` key maps to a `tern:Observation` with the observable property 'unknown cover percent'.
 
-#### `vegetation_mapping_observation`
+<!-- #### `vegetation_mapping_observation`
 
-The `vegetation_mapping_observation` key maps to the `tern:Observation` class.
+The `vegetation_mapping_observation` key maps to the `tern:Observation` class. -->
 
 #### `createdBy` and `updatedBy`
 
@@ -389,6 +383,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
