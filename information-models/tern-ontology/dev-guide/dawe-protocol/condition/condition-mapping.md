@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Condition Point Intercept protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Condition point intercept protocol](https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Condition point intercept protocol](https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6) protocol in module [Condition](https://linked.data.gov.au/def/nrm/16a20c3f-e95d-4919-b2d1-a25c7a275109).
 
 Mentions of observable properties should refer to [point-intercept/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/condition/point-intercept/overview) for the feature type and value type information.
 
@@ -29,7 +29,7 @@ The following diagram show the Condition point-intercept mapping. The orange nod
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1AZ_g1o36UI0PmGDd4dF9-hQ9MjaUEGg1&layers=1&nav=1&title=condition-point-intercept-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1AZ_g1o36UI0PmGDd4dF9-hQ9MjaUEGg1%26export%3Ddownload">View diagram in new tab.</a>
 
-## Survey data
+<!-- ## Survey data
 
 Example data from source for `Condition point intercept` protocol surveys:
 
@@ -83,7 +83,7 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`. -->
 
 ## Observations data
 
@@ -94,8 +94,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 ```json
 {
   "lut_condition_species": "foo",
-  "lut_condition_vegeatation_health": "CH",
-  "lut_condition_vertebrate_pest_type": "CAT",
+  "lut_condition_vegetation_health": "CH",
   "leaf_litter_depth_mm": 0,
   "mistletoe_number": 0,
   "comment": "string",
@@ -111,13 +110,13 @@ The data are observations recorded during a site visit.
 
 The `lut_condition_species` key maps to a `tern:Observation` with the observable property 'field species name'.
 
-#### `lut_condition_vegeatation_health`
+#### `lut_condition_vegetation_health`
 
-The `lut_condition_vegeatation_health` key maps to a `tern:Observation` with the observable property 'vegetation health'.
+The `lut_condition_vegetation_health` key maps to a `tern:Observation` with the observable property 'vegetation health'.
 
-#### `lut_condition_vertebrate_pest_type`
+<!-- #### `lut_condition_vertebrate_pest_type`
 
-The `lut_condition_vertebrate_pest_type` key should be deleted because sub module 'Vertebrate pest presence (plot)' has been removed.
+The `lut_condition_vertebrate_pest_type` key should be deleted because sub module 'Vertebrate pest presence (plot)' has been removed. -->
 
 #### `leaf_litter_depth_mm`
 
@@ -161,7 +160,7 @@ The `point_number` key maps to the attribute `point intercept number` in [Condit
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
@@ -241,6 +240,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
