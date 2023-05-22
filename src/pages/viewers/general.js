@@ -1,9 +1,9 @@
 import Layout from "@theme/Layout";
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import ScrollToTop from "../../components/ScrollToTop";
 
-import { ResourcePage } from "../../components/vocab-viewers/Page";
+import ScrollToTop from "../../components/ScrollToTop";
+import { ResourcePage } from "../../components/vocab-viewers/ResourcePage";
 import useQuery from "../../hooks/useQuery";
 import { useViewerSettings } from "../../hooks/useViewerSettings";
 
