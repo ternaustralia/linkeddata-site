@@ -14,12 +14,12 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: "16.13.2"
 
       - name: Checkout the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # Required by WyriHaximus/github-action-get-previous-tag
           fetch-depth: 0
@@ -33,7 +33,7 @@ jobs:
       - name: Tag starts with v
         id: tag-starts-with-v
         if: ${{ startsWith(steps.latest-tag.outputs.tag, 'v') }}
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@3
         with:
           source: ${{ steps.latest-tag.outputs.tag }}
           find: "v"
@@ -56,18 +56,18 @@ jobs:
       - name: Get git commits since last tag
         id: commitscount
         run: |
-          echo "::set-output name=value::$(git rev-list `git rev-list --tags --no-walk --max-count=1`..HEAD --count)"
+          echo "value=$(git rev-list `git rev-list --tags --no-walk --max-count=1`..HEAD --count)" >> $GITHUB_OUTPUT
 
       - name: Get git commit hash, ignore PR merge commits
         id: commit-hash
         run: |
           echo '::echo::on'
-          echo "::set-output name=value::$(git log -1 --pretty=format:%h --no-merges)"
+          echo "value=$(git log -1 --pretty=format:%h --no-merges)" >> $GITHUB_OUTPUT
           echo '::echo::off'
 
       - name: Rename git commit hash
         id: hash
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@3
         with:
           source: ${{ steps.commit-hash.outputs.value }}
           find: ${{ steps.commit-hash.outputs.value }}
