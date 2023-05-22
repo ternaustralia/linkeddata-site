@@ -85,6 +85,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
     "in_tree": 0,
     "borderline_tree": 0,
     "lut_basal_area_factor": "A",
+    "plot_visit": 0,
     "createdBy": 0,
     "updatedBy": 0
 }
@@ -109,6 +110,10 @@ This may be a boolean value as to whether the tree is _borderline_ or not. If it
 #### `lut_basal_area_factor`
 
 This is the basal area factor setting used on the basal wedge. It is recorded as a `tern:Attribute` of the `tern:Observation` that determines whether a tree is _in_ or _borderline_.
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
 
 #### `createdBy` and `updatedBy`
 

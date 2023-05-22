@@ -36,6 +36,7 @@ Example data from source for full and lite DBH protocol surveys:
 ```json
 {
   "basal_dbh_instrument": "DIA",
+  "plot_visit": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -78,6 +79,10 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 #### `basal_dbh_instrument`
 
 The `basal_dbh_instrument` key maps to the property `sosa:madeBySensor` on the `tern:Observation` class instance with the observable property 'diameter at breast height'.
+
+#### `plot_visit`
+
+The `plot_visit` key maps to the `tern:SiteVisit` class.
 
 #### `createdBy` and `updatedBy`
 
