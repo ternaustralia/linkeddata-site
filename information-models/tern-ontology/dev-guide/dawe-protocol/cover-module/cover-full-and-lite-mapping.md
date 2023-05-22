@@ -37,10 +37,7 @@ Survey data from Cover point intercept:
 
 ```json
 {
-  "start_date_time": "2022-12-15T05:45:24.392Z",
-  "end_date_time": "2022-12-15T05:45:24.392Z",
   "protocol_variant": "lite",
-  "surveyId": "string",
   "plot_visit": 0,
   "createdBy": 0,
   "updatedBy": 0
@@ -49,7 +46,7 @@ Survey data from Cover point intercept:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `start_date_time`
+<!-- #### `start_date_time`
 
 The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -69,13 +66,13 @@ The `end_date_time` key maps to the property `prov:endedAtTime` on the `tern:Sit
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `protocol_variant`
 
-The `protocol_variant` key is protocol selection in the app, not mapping to TERN Ontology.
+The `protocol_variant` key is protocol selection in the app, in TERN Ontology, it maps to the value(`tern:Method` or `tern:MethodCollection`) of property `sosa:usedProcedure`.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -83,7 +80,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `plot_visit`
 
@@ -91,7 +88,7 @@ The `plot_visit` key maps to the `tern:SiteVisit` class.
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -104,7 +101,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
   "point_number": 0,
   "soils_substrate": "BR",
   "cover_transect_start_point": "N1",
-  "cover_point_intercept_survey": 0,
   "species_intercepts": [0],
   "createdBy": 0,
   "updatedBy": 0
@@ -154,9 +150,9 @@ The `cover_transect_start_point` key maps to the property `tern:transectStartPoi
 .
 ```
 
-#### `cover_point_intercept_survey`
+<!-- #### `cover_point_intercept_survey`
 
-The `cover_point_intercept_survey` key maps to the `tern:SiteVisit` class.
+The `cover_point_intercept_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `species_intercepts`
 
@@ -164,20 +160,18 @@ The `species_intercepts` key maps to a `tern:Observation` with the observable pr
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-### Mapping Cover point intercept point measurements
+### Mapping Cover point intercept - species intercepts measurements
 
 - [OpenAPI docs for cover point intercept species intercepts](https://beta.core-api.paratoo.tern.org.au/documentation#/Cover-point-intercept-species-intercept/post%2Fcover-point-intercept-species-intercepts)
 
 ```json
 {
   "height": 0,
-  "senescent": true,
   "in_canopy_sky": true,
   "floristics_voucher_full": 0,
   "floristics_voucher_lite": 0,
-  "fractional_cover": "PV",
   "growth_form": "V",
   "createdBy": 0,
   "updatedBy": 0
@@ -196,7 +190,7 @@ The `in_canopy_sky` key maps to a `tern:Observation` with the observable propert
 
 #### `floristics_voucher_full` and `floristics_voucher_lite`
 
-These 2 keys are protocol selection in the app, not mapping to TERN Ontology.
+These 2 keys are protocol selection in the app, in TERN Ontology, they map to the value(`tern:Method` or `tern:MethodCollection`) of property `sosa:usedProcedure`.
 
 #### `growth_form`
 
@@ -204,7 +198,7 @@ The `growth_form` key maps to a `tern:Observation` with the observable property 
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
@@ -283,6 +277,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
