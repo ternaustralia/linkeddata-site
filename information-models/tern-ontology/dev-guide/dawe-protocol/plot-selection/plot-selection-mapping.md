@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # Plot Selection protocol mapping
@@ -12,7 +12,7 @@ The Plot selection and layout module outlines the steps to:
 
 - Stratify the project area and identify key areas of interest and potential plot locations based on a desktop assessment of environmental, scientific, historical, and logistical information.
 
-- Finalise plot selection and plot layout in the field based on the results of the desktop stratification process combined with an on-ground assessment of the project area.
+- Finalize plot selection and plot layout in the field based on the results of the desktop stratification process combined with an on-ground assessment of the project area.
 
 If the plot is permanently labelled (`permanent plot` is `True`) with the `plot name`, record the `plot label location` (which iron dropper).
 
@@ -207,7 +207,9 @@ The `orientation` key maps to the attribute `plot orientation` in [Plot Selectio
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
