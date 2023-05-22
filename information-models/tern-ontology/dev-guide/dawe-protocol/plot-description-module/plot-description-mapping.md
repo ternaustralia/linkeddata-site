@@ -39,7 +39,7 @@ Example data from source for `Plot Description` protocol surveys:
 - [OpenAPI docs for plot location](https://beta.core-api.paratoo.tern.org.au/documentation#/Plot-location/post%2Fplot-locations)
 - [OpenAPI docs for plot visit](https://beta.core-api.paratoo.tern.org.au/documentation#/Plot-visit/post%2Fplot-visits)
 
-1. Survey data from plot location:
+### Survey data from plot location:
 
 ```json
 {
@@ -74,7 +74,7 @@ The `plot_label` key maps to the attribute `plot name` in [Plot Description Attr
 
 #### `comment`
 
-The `comment` key maps to the property `rdfs:comment` on the `tern:SiteVisit` class.
+The `comment` key maps to the property `rdfs:comment` on the `tern:SiteVisit` or `tern:Observation` class.
 
 ##### Example
 
@@ -85,9 +85,9 @@ The `comment` key maps to the property `rdfs:comment` on the `tern:SiteVisit` cl
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-2. Survey data from plot visit:
+### Survey data from plot visit:
 
 ```json
 {
@@ -153,7 +153,7 @@ The `plot_physical_state_comments` key maps to the property `rdfs:comment` on th
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -181,11 +181,31 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 The data are observations recorded during a site visit. The feature of interest for 'slope', 'slope_class', 'aspect', 'landform_pattern', 'landform_element' is landform modelled as a `tern:Sample` with the feature type as 'landform'. The feature of interest for 'outcrop_lithology', 'surface_strew_lithology', 'surface_strew_size', 'disturbance' is land surface modelled as a `tern:Sample` with the feature type as 'land surface'.
 
-#### `slpoe`
+#### `plot_label`
+
+The `plot_label` key maps to the attribute `plot name` in [Plot Description Attributes](https://linked.data.gov.au/def/nrm/0183ecf9-7e7a-4481-ba43-a926dfc638f9), and is linked to site by `tern:hasAttribute`.
+
+##### Example
+
+```turtle
+<https://example.com/site/1> a tern:Site ;
+    tern:hasAttribute [
+        rdfs:label "plot name" ;
+        tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+        tern:hasSimpleValue "The Jones Stream Study Plot" ;
+        tern:hasValue [
+            a tern:Text ;
+            rdf:value "The Jones Stream Study Plot" ;
+        ] ;
+    ] ;
+.
+```
+
+#### `slope`
 
 The `slope` key maps to a `tern:Observation` with the observable property 'slope'.
 
-#### `slpoe_class`
+#### `slope_class`
 
 The `slope_class` key maps to a `tern:Observation` with the observable property 'slope class'.
 
@@ -216,6 +236,21 @@ The `surface_strew_size` key maps to a `tern:Observation` with the observable pr
 #### `disturbance`
 
 The `disturbance` key maps to a `tern:Observation` with the observable property 'disturbance type'.
+
+#### `comment`
+
+The `comment` key maps to the property `rdfs:comment` on the `tern:ObservationCollection` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456/observationCollection/789> a tern:ObservationCollection ;
+    rdfs:comment "It has observations for landform."^^xsd:string .
+```
+
+#### `createdBy` and `updatedBy`
+
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ### Mapping plot visit measurements
 
@@ -261,17 +296,28 @@ The `homogeneity_measure` key maps to a `tern:Observation` with the observable p
 
 The `disturbance` key maps to a `tern:Observation` with the observable property 'disturbance type'.
 
+#### `plot_physical_state_comments`
+
+The `plot_physical_state_comments` key maps to the property `rdfs:comment` on the `tern:SiteVisit` class.
+
+##### Example
+
+```turtle
+<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
+    rdfs:comment "It has observations for plant."^^xsd:string .
+```
+
 #### `veg_structural_formation`
 
 The `veg_structural_formation` key maps to a `tern:Observation` with the observable property 'structural formation'.
 
 #### `visit_field_name`
 
-The `visit_field_name` key maps to the observable property `dominant species`, `second dominant species`, and `thrid dominant species` in [Plot Description Observable Properties](https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312), and is linked to `tern:ObservationCollection` by `skos:member`. For each of the three vegetation strata (Upper [U], Mid [M], Ground [G]) nominate in descending order the dominant species (up to 3 species per stratum) for each stratum, where present.
+The `visit_field_name` key maps to the observable property `dominant species`, `second dominant species`, and `third dominant species` in [Plot Description Observable Properties](https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312), and is linked to `tern:ObservationCollection` by `skos:member`. For each of the three vegetation strata (Upper [U], Mid [M], Ground [G]) nominate in descending order the dominant species (up to 3 species per stratum) for each stratum, where present.
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
@@ -333,6 +379,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
