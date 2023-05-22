@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # Plant Tissue Vouchering protocol mapping
@@ -40,7 +40,6 @@ Example data from source for `Plant tissue vouchering` protocol surveys:
       "genetic_voucher_barcode": "string"
     }
   ],
-  "survey": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -50,10 +49,7 @@ Example data from source for `Plant tissue vouchering` protocol surveys:
 
 ```json
 {
-  "start_date_time": "2022-12-15T01:57:56.192Z",
-  "end_date_time": "2022-12-15T01:57:56.192Z",
   "protocol_variant": "lite",
-  "surveyId": "string",
   "plot_visit": 0,
   "createdBy": 0,
   "updatedBy": 0
@@ -64,7 +60,7 @@ The data recorded as surveys in the data collection app are mapped directly to s
 
 #### `floristics_voucher_full`, `floristics_voucher_lite`, `protocol_variant`
 
-Theses three keys are protocol selection in the app, not mapping to TERN Ontology.
+Theses three keys are protocol selection in the app, in TERN Ontology, they map to the value(`tern:Method` or `tern:MethodCollection`) of the property `sosa:usedProcedure`.
 
 #### `min_distance_between_replicates`
 
@@ -121,11 +117,11 @@ The `genetic_voucher_barcode` key maps to the property `dwc:materialSampleID` in
 .
 ```
 
-#### `survey`, `plot_visit`
+#### `plot_visit`
 
-They both map to the `tern:SiteVisit` class.
+Th `plot_visit` key maps to the `tern:SiteVisit` class.
 
-#### `start_date_time`
+<!-- #### `start_date_time`
 
 The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -155,11 +151,13 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
