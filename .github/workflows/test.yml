@@ -1,7 +1,7 @@
 name: Run tests
 
 on:
-  # Make workflow callable from other workflows. 
+  # Make workflow callable from other workflows.
   # See https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#creating-a-reusable-workflow
   workflow_call:
 
@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
