@@ -37,9 +37,6 @@ Survey data from floristics:
 
 ```json
 {
-  "surveyId": "string",
-  "start_date_time": "2022-12-13T08:12:53.326Z",
-  "end_date_time": "2022-12-13T08:12:53.326Z",
   "plot_visit": 0,
   "createdBy": 0,
   "updatedBy": 0
@@ -48,7 +45,7 @@ Survey data from floristics:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -78,7 +75,7 @@ The `end_date_time` key maps to the property `prov:endedAtTime` on the `tern:Sit
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `plot_visit`
 
@@ -86,7 +83,7 @@ The `plot_visit` key maps to the `tern:SiteVisit` class.
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -135,7 +132,7 @@ The `growth_form_1` and `growth_form_2` map to a `tern:Observation` with the obs
 
 #### `floristics_veg_survey_full`
 
-The `floristics_veg_survey_full` is protocol selection in the app, not mapping to TERN Ontology.
+The `floristics_veg_survey_full` is protocol selection in the app, in TERN Ontology, it maps to the value(`tern:Method` or `tern:MethodCollection`) of the property `sosa:usedProcedure`.
 
 #### `photos`
 
@@ -152,7 +149,7 @@ The `photos` key maps to photos(`tern:Sample`) taken during 'taking photos'(`ter
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
@@ -231,6 +228,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
