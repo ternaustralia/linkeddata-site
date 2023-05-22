@@ -15,7 +15,9 @@ where {
     bind(str(?_label) as ?__label)
 
     optional { 
-        ?concept tern:hasFeatureType ?featureType .
+      ?metadata <urn:property:featureType> ?featureType ;
+      <urn:property:observableProperty> ?concept ;
+      <urn:property:observablePropertiesCollection> <${moduleOpCollectionUri}> .
         service <https://graphdb.tern.org.au/repositories/tern_vocabs_core> {
             ?featureType skos:prefLabel ?_featureTypeLabel .
         }
@@ -31,7 +33,7 @@ where {
     }
 
     optional {
-        ?concept tern:hasCategoricalCollection ?categoricalCollection .
+        ?concept tern:hasCategoricalValuesCollection ?categoricalCollection .
         ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
     }
 } 
