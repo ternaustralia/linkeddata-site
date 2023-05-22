@@ -1,6 +1,6 @@
 # Full and Lite DBH protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to both the [Full DBH](https://linked.data.gov.au/def/nrm/5a00862b-a885-472e-8bee-561ec502653f) and [Lite DBH](https://linked.data.gov.au/def/nrm/cd83fb3e-d8d3-4502-a618-a0f3f8712b27) protocols.
+The mapping of the source app data to the TERN Ontology on this page is applicable to both the [Full DBH](https://linked.data.gov.au/def/nrm/5a00862b-a885-472e-8bee-561ec502653f) and [Lite DBH](https://linked.data.gov.au/def/nrm/cd83fb3e-d8d3-4502-a618-a0f3f8712b27) protocols in [Basal Area](https://linked.data.gov.au/def/nrm/f7e0d965-ae73-434e-8599-634598e506b5) module.
 
 Mentions of observable properties should refer to [full-dbh/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/basal-area/full-dbh/overview) or [lite-dbh/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/basal-area/lite-dbh/overview) for the feature type and value type information.
 
@@ -36,9 +36,6 @@ Example data from source for full and lite DBH protocol surveys:
 ```json
 {
   "basal_dbh_instrument": "DIA",
-  "surveyId": "string",
-  "start_date": "2022-11-02T03:16:42.783Z",
-  "end_date": "2022-11-02T03:16:42.783Z",
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -46,7 +43,7 @@ Example data from source for full and lite DBH protocol surveys:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -76,7 +73,7 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `basal_dbh_instrument`
 
@@ -84,7 +81,7 @@ The `basal_dbh_instrument` key maps to the property `sosa:madeBySensor` on the `
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Observations data
 
@@ -134,7 +131,7 @@ See the [next section on stem measurements](#mapping-full-and-lite-dbh-stem-meas
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ### Mapping full and lite DBH stem measurements
 
@@ -233,6 +230,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 

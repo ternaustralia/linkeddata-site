@@ -1,14 +1,14 @@
 # Basal Wedge protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Basal Wedge](https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Basal Wedge](https://linked.data.gov.au/def/nrm/a7d605e0-7d90-473e-aac0-21cdf380576f) protocol in [Basal Area](https://linked.data.gov.au/def/nrm/f7e0d965-ae73-434e-8599-634598e506b5) module.
 
 Mentions of observable properties should refer to [basal-wedge/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/basal-area/basal-wedge/overview) for the feature type and value type information.
 
 ## Conceptual modelling
 
-During a site visit to a site, the basal area is derived from a number of different observations carried out using the basal wedge method. Firstly, the target species for a population is selected. At a specific location within the site, a basal area sweep is performed using a basal wedge set at a specific _basal area factor_. Each tree may be a categorised as a _hit_ or a _borderline_. If the tree is not a hit, then it is ignored. The trees that were hits and borderlines are tallied up using a point system to calculate the basal area count.
+During a site visit to a site, the basal area is derived from a number of different observations carried out using the basal wedge method. Firstly, the target species for a population is selected. At a specific location within the site, a basal area sweep is performed using a basal wedge set at a specific _basal area factor_. Each tree may be a categorized as a _hit_ or a _borderline_. If the tree is not a hit, then it is ignored. The trees that were hits and borderlines are tallied up using a point system to calculate the basal area count.
 
-To calculate the basal area of a site, the basal wedge method is used. The first step is to select the target species for the population. At a specific location within the site, a basal area sweep is performed using a basal wedge set at a specific basal area factor. During the sweep, each tree is categorised as a hit, a borderline, or is ignored. The trees that are hits or borderlines are tallied using a point system to calculate the basal area count.
+To calculate the basal area of a site, the basal wedge method is used. The first step is to select the target species for the population. At a specific location within the site, a basal area sweep is performed using a basal wedge set at a specific basal area factor. During the sweep, each tree is categorized as a hit, a borderline, or is ignored. The trees that are hits or borderlines are tallied using a point system to calculate the basal area count.
 
 The basal area count is used to calculate the mean basal area for each targeted species population. The stand basal area is calculated by summing up the mean basal area for each species population.
 
@@ -20,7 +20,7 @@ The diagram is colour-coded for legibility. The green nodes are samples/features
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G17qmHvsAapJ0sYxM5GbT7WXHB2GtzsXT5&layers=1&nav=1&title=basal-area-basal-wedge-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D17qmHvsAapJ0sYxM5GbT7WXHB2GtzsXT5%26export%3Ddownload">View diagram in new tab<svg width="10" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a>
 
-## Survey data
+<!-- ## Survey data
 
 - [OpenAPI docs for Basal Wedge survey](https://core.vocabs.paratoo.tern.org.au/documentation#/Basal-wedge-survey/post%2Fbasal-wedge-surveys)
 
@@ -72,7 +72,7 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`. -->
 
 ## Observations data
 
@@ -80,16 +80,13 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 ```json
 {
-  "data": {
     "lut_basal_sweep_sampling_point": "NW",
     "species": "string",
     "in_tree": 0,
     "borderline_tree": 0,
     "lut_basal_area_factor": "A",
-    "basal_wedge_survey": 0,
     "createdBy": 0,
     "updatedBy": 0
-  }
 }
 ```
 
@@ -99,7 +96,7 @@ Each site has 9 sampling points for basal area using the basal wedge protocol. T
 
 #### `species`
 
-This is the targeted species recorded as a `tern:Observation` on the plant population.
+This is the targeted species recorded as a `tern:Observation` on the plant population, and the observable property is `field species name`.
 
 #### `in_tree`
 
@@ -115,7 +112,7 @@ This is the basal area factor setting used on the basal wedge. It is recorded as
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
@@ -194,6 +191,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
