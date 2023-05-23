@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Plot Soil Description protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Plot soil description protocol](https://linked.data.gov.au/def/nrm/7818e122-6354-42e0-aeff-32dbab7baae4) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Plot soil description protocol](https://linked.data.gov.au/def/nrm/7818e122-6354-42e0-aeff-32dbab7baae4) protocol in [Soil](https://linked.data.gov.au/def/nrm/6fd9d31f-9a77-4fc1-9eee-23ea8af32b95) module.
 
 Mentions of observable properties should refer to [overview](/information-models/tern-ontology/dev-guide/dawe-protocol/soil/plot-soil-description/overview) for the feature type and value type information.
 
@@ -38,9 +38,6 @@ The following diagram shows the Plot Soil Description protocol mapping. Purple n
 
 ```json
 {
-  "start_date_time": "2023-01-10T01:07:56.944Z",
-  "end_date_time": "2023-01-10T01:07:56.944Z",
-  "surveyId": "string",
   "plot_visit": 0,
   "slope_percent": 0,
   "slope_aspect": 0,
@@ -68,7 +65,7 @@ The following diagram shows the Plot Soil Description protocol mapping. Purple n
 
 The data are observations recorded during a site visit.
 
-#### `start_date_time`
+<!-- #### `start_date_time`
 
 The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -98,7 +95,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `plot_visit`
 
@@ -198,7 +195,7 @@ The `surface_soil_condition` key maps to a `tern:Observation` with the observabl
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
 ## Validation with SHACL
 
@@ -277,6 +274,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
@@ -1360,7 +1359,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             wgs:long 1.512424e+02 ;
             tern-loc:pointType "south west" ;
             tern:hasAttribute [
-                    rdfs:label "plot sw corner dsecription" ;
+                    rdfs:label "plot sw corner description" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/65ffa9ec-e16e-42d9-9fb1-e7d869f2f01f> ;
                     tern:hasSimpleValue "There are some trees."^^xsd:string ;
                     tern:hasValue [
