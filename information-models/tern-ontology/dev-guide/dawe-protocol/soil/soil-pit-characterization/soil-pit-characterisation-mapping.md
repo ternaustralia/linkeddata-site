@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Soil pit characterisation protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Soil pit characterisation protocol](https://linked.data.gov.au/def/nrm/8f00b7c6-34b4-4203-8dcc-4be47f21d7db) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Soil pit characterisation protocol](https://linked.data.gov.au/def/nrm/8f00b7c6-34b4-4203-8dcc-4be47f21d7db) protocol in [Soil](https://linked.data.gov.au/def/nrm/6fd9d31f-9a77-4fc1-9eee-23ea8af32b95) module.
 
 Mentions of observable properties should refer to [overview](/information-models/tern-ontology/dev-guide/dawe-protocol/soil/soil-pit-characterization/overview) for the feature type and value type information.
 
@@ -37,7 +37,6 @@ The following diagram shows the Soil pit characterisation protocol mapping.
 
 ```json
 {
-  "soil_pit_characterisation_survey": 0,
   "horizon_detail": "O",
   "horizon_suffix": "b",
   "upper_depth": 0,
@@ -71,9 +70,9 @@ The following diagram shows the Soil pit characterisation protocol mapping.
 
 The data are observations recorded during a site visit.
 
-#### `soil_pit_characterisation_survey`
+<!-- #### `soil_pit_characterisation_survey`
 
-The `soil_pit_characterisation_survey` key maps to the `tern:SiteVisit` class.
+The `soil_pit_characterisation_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `horizon_detail`
 
@@ -187,7 +186,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
   "lithology": "NA",
   "coarse_frag_strength": "VW",
   "coarse_frag_alteration": "F",
-  "soil_horizon_observation": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -235,7 +233,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
   "mottle_contrast": "F",
   "mottle_colour": "n/a",
   "mottle_boundary_distinctness": "S",
-  "soil_horizon_observation": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -283,7 +280,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
   "segregations_size": "n/a",
   "segregation_strength": "1",
   "segregation_magnetic_attribute": "N",
-  "soil_horizon_observation": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -329,7 +325,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
   "structure_size": "1",
   "structure_type": "PL",
   "structure_compound_pedality": "1",
-  "soil_horizon_observation": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -367,7 +362,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
   "fine_macropore_abundance": "0",
   "medium_macropore_abundance": "0",
   "macropore_diameter": "1",
-  "soil_horizon_observation": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -472,6 +466,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
