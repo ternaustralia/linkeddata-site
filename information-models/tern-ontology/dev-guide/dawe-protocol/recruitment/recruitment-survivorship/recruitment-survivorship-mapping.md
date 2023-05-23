@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Recruitment module - Survivorship protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Recruitment module - Survivorship protocol](https://linked.data.gov.au/def/nrm/f470e27d-20ed-46dc-b64a-d67b39a9dffc) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Recruitment module - Survivorship protocol](https://linked.data.gov.au/def/nrm/f470e27d-20ed-46dc-b64a-d67b39a9dffc) protocol in [Recruitment](https://linked.data.gov.au/def/nrm/4f0f0ca4-d8f7-472d-9203-f46a565ad970) module.
 
 Mentions of observable properties should refer to [recruitment-survivorship/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/recruitment/recruitment-survivorship/overview) for the feature type and value type information.
 
@@ -37,9 +37,6 @@ Example data from source for `Recruitment - survivorship` protocol surveys:
 
 ```json
 {
-  "surveyId": "string",
-  "start_date": "2023-03-13T07:38:15.420Z",
-  "end_date": "2023-03-13T07:38:15.420Z",
   "plot_visit": 0,
   "visit_type": true,
   "study_area_type": "Belt transect",
@@ -62,7 +59,6 @@ Example data from source for `Recruitment - survivorship` protocol surveys:
   "visit_type": true,
   "species": "string",
   "comments": "string",
-  "survivorship_survey": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -70,7 +66,7 @@ Example data from source for `Recruitment - survivorship` protocol surveys:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -100,7 +96,7 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `plot_visit`
 
@@ -171,9 +167,9 @@ The `comments` key maps to the attribute `recruitment comments` in [Recruitment 
 .
 ```
 
-#### `survivorship_survey`
+<!-- #### `survivorship_survey`
 
-The `survivorship_survey` key maps to the `tern:SiteVisit` class.
+The `survivorship_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `createdBy` and `updatedBy`
 
@@ -202,7 +198,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
   "dbh_measurement": 0,
   "photo": 0,
   "comments": "string",
-  "survivor_survey": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -304,9 +299,9 @@ The `comments` key maps to the attribute `recruitment comments` in [Recruitment 
 .
 ```
 
-#### `survivorship_survey`
+<!-- #### `survivorship_survey`
 
-The `survivorship_survey` key maps to the `tern:SiteVisit` class.
+The `survivorship_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `createdBy` and `updatedBy`
 
@@ -389,6 +384,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 

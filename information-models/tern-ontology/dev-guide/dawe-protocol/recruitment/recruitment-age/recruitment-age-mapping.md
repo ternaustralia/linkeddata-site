@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Recruitment module - Age class protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Recruitment module - Age class protocol](https://linked.data.gov.au/def/nrm/c93922b2-3b0e-4ee1-b1ef-c9719d039f5f) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Recruitment module - Age class protocol](https://linked.data.gov.au/def/nrm/c93922b2-3b0e-4ee1-b1ef-c9719d039f5f) protocol in [Recruitment](https://linked.data.gov.au/def/nrm/4f0f0ca4-d8f7-472d-9203-f46a565ad970) module.
 
 Mentions of observable properties should refer to [recruitment-age/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/recruitment/recruitment-age/overview) for the feature type and value type information.
 
@@ -27,7 +27,7 @@ The following diagram shows the Recruitment module - Age class protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1G5QIopmhPyT_dYqFvwm0Xfhe6TE679BO&layers=1&nav=1&title=recruitment-age-class-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1G5QIopmhPyT_dYqFvwm0Xfhe6TE679BO%26export%3Ddownload">View diagram in new tab.</a>
 
-## Survey data
+<!-- ## Survey data
 
 Example data from source for `Recruitment module - Age class` protocol surveys:
 
@@ -79,7 +79,7 @@ The `enddate` key maps to the property `prov:endedAtTime` on the `tern:SiteVisit
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`. -->
 
 ## Observations data
 
@@ -94,7 +94,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
   "adequate": true,
   "voucher_full": 0,
   "voucher_lite": 0,
-  "recruitment_field_survey": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -134,7 +133,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
   "seedling_count": 0,
   "sapling_count": 0,
   "juvenile_count": 0,
-  "recruit_survey": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -192,7 +190,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
   "voucher_full": 0,
   "voucher_lite": 0,
   "transect": "1",
-  "recruit_survey": 0,
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -349,6 +346,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
