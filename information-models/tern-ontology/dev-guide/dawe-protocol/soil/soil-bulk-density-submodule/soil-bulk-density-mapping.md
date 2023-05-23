@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Soil Bulk Density mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Soil bulk density protocol](https://linked.data.gov.au/def/nrm/d9e6739a-c2dd-4619-be43-1251449a6436) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Soil bulk density protocol](https://linked.data.gov.au/def/nrm/d9e6739a-c2dd-4619-be43-1251449a6436) protocol in [Soil](https://linked.data.gov.au/def/nrm/6fd9d31f-9a77-4fc1-9eee-23ea8af32b95) module.
 
 Mentions of observable properties should refer to [overview](/information-models/tern-ontology/dev-guide/dawe-protocol/soil/soil-bulk-density-submodule/overview) for the feature type and value type information.
 
@@ -34,9 +34,6 @@ Example data from source for `Soil bulk density` protocol surveys:
 
 ```json
 {
-  "surveyId": "string",
-  "start_date_time": "2023-01-24T00:12:29.945Z",
-  "end_date_time": "2023-01-24T00:12:29.945Z",
   "plot_visit": 0,
   "createdBy": 0,
   "updatedBy": 0
@@ -45,7 +42,7 @@ Example data from source for `Soil bulk density` protocol surveys:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -75,7 +72,7 @@ The `end_date_time` key maps to the property `prov:endedAtTime` on the `tern:Sit
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `plot_visit`
 
@@ -89,13 +86,13 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 ### Mapping Soil bulk density measurements
 
-- [OpenAPI docs for soil bulk density](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-bulk-density-survey/post%2Fsoil-bulk-density-surveys)
+The following is dummy data:
 
 ```json
 {
-  "surveyId": "string",
-  "start_date_time": "2023-01-13T06:30:21.614Z",
-  "end_date_time": "2023-01-13T06:30:21.614Z",
+  "fine_earth_bulk_density": "string",
+  "gross_bulk_density": "string",
+  "soil_bulk_density": "string",
   "plot_visit": 0,
   "createdBy": 0,
   "updatedBy": 0
@@ -104,37 +101,17 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 The data are observations recorded during a site visit.
 
-#### `surveyId`
+#### `fine_earth_bulk_density`
 
-Use this value along with the site ID to generate a site visit URI.
+The `fine_earth_bulk_density` key maps to a `tern:Observation` with the observable property 'fine earth bulk density'.
 
-##### Example
+#### `gross_bulk_density`
 
-```
-https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+The `gross_bulk_density` key maps to a `tern:Observation` with the observable property 'gross bulk density'.
 
-#### `start_date_time`
+#### `soil_bulk_density`
 
-The `start_date_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
-
-##### Example
-
-```turtle
-<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
-    prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
-
-#### `end_date_time`
-
-The `end_date_time` key maps to the property `prov:endedAtTime` on the `tern:SiteVisit` class.
-
-##### Example
-
-```turtle
-<https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
-    prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+The `soil_bulk_density` key maps to a `tern:Observation` with the observable property 'soil bulk density'.
 
 #### `plot_visit`
 
@@ -221,6 +198,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
