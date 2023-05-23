@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Soil Sub-site Samples protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Soil sub-site samples protocol](https://linked.data.gov.au/def/nrm/e3ad3e5b-7c1c-4b59-bdb1-297f707d2ca3) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Soil sub-site samples protocol](https://linked.data.gov.au/def/nrm/e3ad3e5b-7c1c-4b59-bdb1-297f707d2ca3) protocol in [Soil](https://linked.data.gov.au/def/nrm/6fd9d31f-9a77-4fc1-9eee-23ea8af32b95) module.
 
 Mentions of observable properties should refer to [overview](/information-models/tern-ontology/dev-guide/dawe-protocol/soil/soil-subsite-sampling/overview) for the feature type and value type information.
 
@@ -17,9 +17,9 @@ The Soil sub-site samples module records data about the site for the following f
 
 These observations are recorded for each site during a site visit.
 
-If a depth of 30 cm cannot be achieved after three attempts, record what digging was Stopped by and sample down to the depth achieved.
+If a depth of 30 cm cannot be achieved after three attempts, record what digging was stopped by and sample down to the depth achieved.
 
-Record if the horizon is ‘Typical’ or ‘Atypical’ of the 1 m+ soil pit observations. If it is atypical, record Atypicality comments.
+Record if the horizon is ‘Typical’ or ‘Atypical’ of the 1 m+ soil pit observations. If it is atypical, record atypicality comments.
 
 ### Diagram
 
@@ -37,8 +37,6 @@ The following diagram shows the Soil sub-site samples protocol mapping.
 
 ```json
 {
-  "start_date": "2023-01-13T07:33:12.271Z",
-  "end_date": "2023-01-13T07:33:12.271Z",
   "microhabitat_photo": [0],
   "soil_pit_depth": 0,
   "digging_stopped_by": "N/A",
@@ -51,7 +49,7 @@ The following diagram shows the Soil sub-site samples protocol mapping.
 
 The data are observations recorded during a site visit.
 
-#### `start_date`
+<!-- #### `start_date`
 
 The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -71,7 +69,7 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `microhabitat_photo` and `soil_pit_photo`
 
@@ -110,9 +108,9 @@ The `digging_stopped_by` key maps to the attribute `digging stopped by` in [Soil
     ] ;
 ```
 
-### `soil_horizon_observations`
+#### `soil_horizon_observations`
 
-#### The `soil_horizon_observations` key maps to the soil horizon observations in [OpenAPI docs for Soil pit characterisation](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-horizon-observation/post%2Fsoil-horizon-observations)
+The `soil_horizon_observations` key maps to the soil horizon observations in [OpenAPI docs for Soil pit characterisation](https://beta.core-api.paratoo.tern.org.au/documentation#/Soil-horizon-observation/post%2Fsoil-horizon-observations)
 
 #### `createdBy` and `updatedBy`
 
@@ -195,6 +193,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
