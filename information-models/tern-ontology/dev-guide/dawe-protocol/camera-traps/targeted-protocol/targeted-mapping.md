@@ -22,7 +22,7 @@ The following diagram shows the Camera Traps - Targeted protocol mapping. Blue n
 
 Example data from source for `Camera traps` protocol surveys:
 
-1. Survey data from camera trap deployment point:
+### Survey data from camera trap deployment point:
 
 - [OpenAPI docs for camera trap deployment point](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-deployment-point/post%2Fcamera-trap-deployment-points)
 
@@ -504,7 +504,7 @@ The `deployment_notes` key maps to the attribute `deployment motes` in [Camera t
 
 If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-2. Survey data from camera trap feature:
+### Survey data from camera trap feature:
 
 - [OpenAPI docs for camera trap feature](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-feature/post%2Fcamera-trap-features)
 
@@ -572,7 +572,7 @@ The `feature_photo` key maps to the `tern:Sample` class.
 
 If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-3. Survey data from camera trap information:
+### Survey data from camera trap information:
 
 - [OpenAPI docs for camera trap information](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-information/post%2Fcamera-trap-informations)
 
@@ -719,7 +719,7 @@ The `camera_trigger_speed` key maps to the attribute `trigger speed` in [Camera 
 
 If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-4. Survey data from camera trap reequipping point:
+### Survey data from camera trap reequipping point:
 
 - [OpenAPI docs for camera trap reequipping point](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-reequipping-point/post%2Fcamera-trap-reequipping-points)
 
@@ -1041,7 +1041,7 @@ The `reequipping_notes` key maps to the attribute `redeployment motes` in [Camer
 
 If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-5. Survey data from camera trap retrieval point:
+### Survey data from camera trap retrieval point:
 
 - [OpenAPI docs for camera trap retrieval point](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-retrieval-point/post%2Fcamera-trap-retrieval-points)
 
@@ -1174,7 +1174,7 @@ The `retrieval_notes` key maps to the attribute `recovery motes` in [Camera trap
 
 If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-6. Survey data from camera trap setting:
+### Survey data from camera trap setting:
 
 - [OpenAPI docs for camera trap setting](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-setting/post%2Fcamera-trap-settings)
 
@@ -1428,7 +1428,7 @@ The `user_label` key maps to the attribute `camera settings- user label` in [Cam
 
 If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-7. Survey data from camera trap survey:
+### Survey data from camera trap survey:
 
 - [OpenAPI docs for camera trap survey](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-survey/post%2Fcamera-trap-surveys)
 
@@ -1563,6 +1563,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
