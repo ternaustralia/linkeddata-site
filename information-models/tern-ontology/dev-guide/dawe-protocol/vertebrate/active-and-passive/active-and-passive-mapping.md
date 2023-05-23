@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Active and passive searching protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Active and passive searching protocol](https://linked.data.gov.au/def/nrm/37ed2dbb-b990-430c-9010-d0452588cf24) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Active and passive searching protocol](https://linked.data.gov.au/def/nrm/37ed2dbb-b990-430c-9010-d0452588cf24) protocol in [Vertebrate Fauna](https://linked.data.gov.au/def/nrm/0771a99f-27f4-4ff7-bf6d-aa70fe22ae51) module.
 
 Mentions of observable properties should refer to [active-and-passive/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/vertebrate/active-and-passive/overview) for the feature type and value type information.
 
@@ -25,14 +25,12 @@ The following diagram shows the Active and passive searching protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G159WmRp9VIpLMyc9fzxJ5r26jIe8JR5G2&layers=1&nav=1&title=vertebrate-fauna-active-and-passive-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D159WmRp9VIpLMyc9fzxJ5r26jIe8JR5G2%26export%3Ddownload">View diagram in new tab.</a>
 
-1. Survey data from vertebrate active and passive search:
+## Survey data
 
 The following is dummy data:
 
 ```json
 {
-  "start_date": "2023-04-11T06:03:58.525Z",
-  "end_date": "2023-04-11T06:03:58.525Z",
   "habitat_description": "string",
   "duration": 0,
   "lat": 0,
@@ -43,7 +41,7 @@ The following is dummy data:
   "samples": {
     "sample_id": "materialSample001",
     "voucher_type": "Animal tissue (fur/hair)",
-    "voucher_condition": "Fresh (estimate 24 houts - <48 hours)",
+    "voucher_condition": "Fresh (estimate 24 hours - <48 hours)",
     "collection_date": "2023-04-11T06:03:58.525Z"
   },
   "weather": {
@@ -59,7 +57,7 @@ The following is dummy data:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `start_date`
+<!-- #### `start_date`
 
 The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -79,7 +77,7 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `habitat_description`
 
@@ -195,7 +193,7 @@ The `voucher_condition` key maps to the attribute `voucher condition` in [Verteb
         tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0acf0ade-05e1-515d-a8c6-ba747e0d4e20> ;
         tern:hasValue [
             a tern:IRI ;
-            rdfs:label "Fresh (estimate 24 houts - <48 hours)" ;
+            rdfs:label "Fresh (estimate 24 hours - <48 hours)" ;
             rdf:value <https://linked.data.gov.au/def/nrm/0acf0ade-05e1-515d-a8c6-ba747e0d4e20> ;
         ] ;
     ] ;
@@ -233,7 +231,7 @@ The `temperature` key maps to a `tern:Observation` with the observable property 
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-2. Observation data from vertebrate active and passive search:
+## Observation data
 
 The following is dummy data:
 
@@ -420,7 +418,7 @@ Conforms: True
 
 Save the [sex shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/vertebrate-fauna/vertebrate-fauna-active-and-passive-searching-protocol-shapes/sex/shapes.ttl) in a file named `sex-shapes.ttl` in the Turtle RDF format.
 
-Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for sex in Vertebrate fauna - Acitive and passive searching protocol**, run the following command to validate the data:
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for sex in Vertebrate fauna - Active and passive searching protocol**, run the following command to validate the data:
 
 ```bash
 pyshacl -s sex-shapes.ttl -m -i rdfs -a -j -f human data.ttl
@@ -432,6 +430,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
@@ -612,7 +612,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     a
                         tern:IRI ,
                         tern:Value ;
-                    rdfs:label "Fresh (estimate 24 houts - <48 hours)" ;
+                    rdfs:label "Fresh (estimate 24 hours - <48 hours)" ;
                     rdf:value <https://linked.data.gov.au/def/nrm/0acf0ade-05e1-515d-a8c6-ba747e0d4e20>
                 ]
         ] ;
