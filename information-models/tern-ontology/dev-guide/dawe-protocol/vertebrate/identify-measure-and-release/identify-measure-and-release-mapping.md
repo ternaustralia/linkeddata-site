@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Identify, measure and release protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Identify, measure and release protocol](https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Identify, measure and release protocol](https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63) protocol in [Vertebrate Fauna](https://linked.data.gov.au/def/nrm/0771a99f-27f4-4ff7-bf6d-aa70fe22ae51) module.
 
 Mentions of observable properties should refer to [identify-measure-and-release/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/vertebrate/identify-measure-and-release/overview) for the feature type and value type information.
 
@@ -24,13 +24,12 @@ The following diagram shows the Identify, measure and release protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1fXuswH2XmunmjAsCLLM2hH7_qHUl2-sP&layers=1&nav=1&title=vertebrate-fauna-identify-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1fXuswH2XmunmjAsCLLM2hH7_qHUl2-sP%26export%3Ddownload">View diagram in new tab.</a>
 
-1. Survey data from vertebrate identify, measure and release protocol:
+## Survey data
 
 The following is dummy data:
 
 ```json
 {
-  "start_date": "2023-04-11T06:03:58.525Z",
   "lat": 0,
   "lng": 0,
   "plot_visit": 0,
@@ -39,7 +38,7 @@ The following is dummy data:
   "samples": {
     "sample_id": "materialSample001",
     "mark_colour": "Black",
-    "capture_status": "Fresh (estimate 24 houts - <48 hours)",
+    "capture_status": "Fresh (estimate 24 hours - <48 hours)",
     "collection_date": "2023-04-11T06:03:58.525Z"
   },
   "trapID": "trap001",
@@ -54,7 +53,7 @@ The following is dummy data:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `start_date`
+<!-- #### `start_date`
 
 The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -63,7 +62,7 @@ The `start_date` key maps to the property `prov:startedAtTime` on the `tern:Site
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
     prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `lat`, `lng`
 
@@ -258,7 +257,7 @@ The `damaged` key maps to the attribute `trap disturbed/damaged` in [Vertebrate 
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-2. Observation data from vertebrate identify, measure and release protocol:
+## Observation data
 
 The following is dummy data:
 
@@ -437,6 +436,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
