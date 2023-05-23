@@ -33,7 +33,7 @@ where {
     }
 
     optional {
-        ?concept tern:hasCategoricalCollection ?categoricalCollection .
+        ?concept tern:hasCategoricalValuesCollection ?categoricalCollection .
         ?categoricalCollection skos:prefLabel ?_categoricalCollectionLabel .
     }
 } 
