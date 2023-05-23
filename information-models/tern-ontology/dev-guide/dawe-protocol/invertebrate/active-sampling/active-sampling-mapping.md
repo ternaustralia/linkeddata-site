@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Active search (hand collecting) protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Active search (hand collecting) protocol](https://linked.data.gov.au/def/nrm/e76e99ef-de1d-4387-9b2e-3455b9f9ff78) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Active search (hand collecting) protocol](https://linked.data.gov.au/def/nrm/e76e99ef-de1d-4387-9b2e-3455b9f9ff78) protocol in [Invertebrate Fauna](https://linked.data.gov.au/def/nrm/0ad98270-707f-4a78-acd1-666faa2c124e) module.
 
 Mentions of observable properties should refer to [active-sampling/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/invertebrate/active-sampling/overview) for the feature type and value type information.
 
@@ -31,13 +31,12 @@ The following diagram shows the Active search (hand collecting) protocol mapping
 
 Example data from source for `Active search (hand collecting) protocol` protocol surveys:
 
-1. Survey data from active search:
+### Survey data from active search
 
 - [OpenAPI docs for invertebrate active search](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search/post%2Finvertebrate-active-searches)
 
 ```json
 {
-  "surveyId": "string",
   "plot_visit": 0,
   "search_method": "DAS",
   "observers": "string",
@@ -50,8 +49,6 @@ Example data from source for `Active search (hand collecting) protocol` protocol
     "cloud_cover": "SU",
     "temperature": 0
   },
-  "start_time": "2023-04-11T01:00:17.903Z",
-  "end_time": "2023-04-11T01:00:17.904Z",
   "createdBy": 0,
   "updatedBy": 0
 }
@@ -59,7 +56,7 @@ Example data from source for `Active search (hand collecting) protocol` protocol
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -67,7 +64,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `plot_visit`
 
@@ -136,7 +133,7 @@ The `cloud_cover` key maps to a `tern:Observation` with the observable property 
 
 The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
 
-#### `start_time`
+<!-- #### `start_time`
 
 The `start_time` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -156,13 +153,13 @@ The `end_time` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456> a tern:SiteVisit ;
     prov:endedAtTime "2022-11-02T08:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `createdBy` and `updatedBy`
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-2. Survey data from active search apparatus:
+### Survey data from active search apparatus
 
 - [OpenAPI docs for invertebrate active search apparatus](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search-apparatus/post%2Finvertebrate-active-search-apparatuses)
 
@@ -227,7 +224,7 @@ The `description` key maps to the attribute `equipment description` in [Inverteb
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-3. Survey data from active search photo:
+### Survey data from active search photo
 
 - [OpenAPI docs for invertebrate active search photo](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search-photo/post%2Finvertebrate-active-search-photos)
 
@@ -296,7 +293,7 @@ These keys map to the attribute `geo:hasGeometry` on the `tern:Sampling` class.
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-4. Survey data from active search sample:
+### Survey data from active search sample
 
 - [OpenAPI docs for invertebrate active search sample](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-active-search-sample/post%2Finvertebrate-active-search-samples)
 
@@ -469,6 +466,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
