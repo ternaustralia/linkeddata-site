@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Malaise trapping protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Malaise trapping protocol](https://linked.data.gov.au/def/nrm/4a2c4309-da43-4ad4-b1eb-637d2e70580d) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Malaise trapping protocol](https://linked.data.gov.au/def/nrm/4a2c4309-da43-4ad4-b1eb-637d2e70580d) protocol in [Invertebrate Fauna](https://linked.data.gov.au/def/nrm/0ad98270-707f-4a78-acd1-666faa2c124e) module.
 
 Mentions of observable properties should refer to [malaise-trapping/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/invertebrate/malaise-trapping/overview) for the feature type and value type information.
 
@@ -26,7 +26,9 @@ The following diagram shows the Malaise trapping protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1BSFAClQ4b9gLg6fAm9B1mBd4cwGjdD5A&layers=1&nav=1&title=invertebrate-fauna-malaise-trapping-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1BSFAClQ4b9gLg6fAm9B1mBd4cwGjdD5A%26export%3Ddownload">View diagram in new tab.</a>
 
-1. Survey data from invertebrate malaise samples:
+## Survey data
+
+### Survey data from invertebrate malaise samples
 
 - [OpenAPI docs for invertebrate malaise samples](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-malaise-sample/post%2Finvertebrate-malaise-samples)
 
@@ -152,13 +154,12 @@ The `temperature` key maps to a `tern:Observation` with the observable property 
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-2. Survey data from invertebrate malaise trap:
+### Survey data from invertebrate malaise trap
 
 - [OpenAPI docs for invertebrate malaise trap](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-malaise-trap/post%2Finvertebrate-malaise-traps)
 
 ```json
 {
-  "malaise-trapping": 0,
   "trapId": "string",
   "start_date": "2023-04-11T04:00:55.661Z",
   "direction": "S",
@@ -200,9 +201,9 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `malaise-trapping`
+<!-- #### `malaise-trapping`
 
-The `malaise-trapping` key maps to the `tern:SiteVisit` class.
+The `malaise-trapping` key maps to the `tern:SiteVisit` class. -->
 
 #### `trapId`
 
@@ -409,13 +410,12 @@ The `barcode` key maps to the property `dcterms:identifier` on the `tern:Sampler
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-3. Survey data from invertebrate malaise trapping:
+### Survey data from invertebrate malaise trapping
 
 - [OpenAPI docs for invertebrate malaise trapping](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-malaise-trapping/post%2Finvertebrate-malaise-trappings)
 
 ```json
 {
-  "surveyId": "string",
   "plot_visit": 0,
   "observers": "string",
   "createdBy": 0,
@@ -425,7 +425,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -433,7 +433,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `plot_visit`
 
@@ -531,6 +531,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
