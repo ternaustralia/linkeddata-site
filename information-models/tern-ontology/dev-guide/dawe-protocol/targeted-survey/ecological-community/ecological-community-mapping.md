@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Targeted survey - Ecological community protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Ecological community protocol](https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Ecological community protocol](https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c) protocol in [Targeted survey](https://linked.data.gov.au/def/nrm/420ce0a7-9364-4bf4-861c-ef5f710e31b9) module.
 
 Mentions of observable properties should refer to [ecological-community/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/targeted-survey/ecological-community/overview) for the feature type and value type information.
 
@@ -26,13 +26,12 @@ The following diagram shows the Ecological community protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1S4ZAr-swzWcHRc9-KQuOwQdHZCe82Xd8&layers=1&nav=1&title=targeted-survey-ecological-community-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1S4ZAr-swzWcHRc9-KQuOwQdHZCe82Xd8%26export%3Ddownload">View diagram in new tab.</a>
 
-### Survey data from targeted survey - Ecological community protocol:
+## Survey data and Observation data
 
 The following is dummy data:
 
 ```json
 {
-  "start_date": "2023-04-11T06:03:58.525Z",
   "lat": 0,
   "lng": 0,
   "plot_visit": 0,
@@ -53,7 +52,7 @@ The following is dummy data:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `start_date`
+<!-- #### `start_date`
 
 The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -62,7 +61,7 @@ The `start_date` key maps to the property `prov:startedAtTime` on the `tern:Site
 ```turtle
 <https://linked.data.gov.au/dataset/nrm/site/visit/1> a tern:SiteVisit ;
     prov:startedAtTime "2022-11-02T03:16:42.783Z"^^xsd:dateTime .
-```
+``` -->
 
 #### `lat`, `lng`
 
@@ -236,6 +235,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
