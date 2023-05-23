@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Pan trapping protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Pan trapping protocol](https://linked.data.gov.au/def/nrm/666e5aa5-e545-4637-bc52-a296d647b303) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Pan trapping protocol](https://linked.data.gov.au/def/nrm/666e5aa5-e545-4637-bc52-a296d647b303) protocol in [Invertebrate Fauna](https://linked.data.gov.au/def/nrm/0ad98270-707f-4a78-acd1-666faa2c124e) module.
 
 Mentions of observable properties should refer to [pan-trapping/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/invertebrate/pan-trapping/overview) for the feature type and value type information.
 
@@ -17,7 +17,7 @@ The Pan trapping protocol records data about the site for the following feature 
 
 These observations are recorded for each site during a site visit.
 
-The method involves the use of small coloured bowls or ‘pans’ which are either filled with water and a small amount of dishwashing liquid for rapid sampling over one day, or undiluted propylene glycol for sampling over a longer duration.
+The method involves the use of small coloured bowls or ‘pans’ which are either filled with water and a small amount of dish washing liquid for rapid sampling over one day, or undiluted propylene glycol for sampling over a longer duration.
 
 ### Diagram
 
@@ -27,7 +27,9 @@ The following diagram shows the Pan trapping protocol mapping.
 
 <a href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1EJExnBy_Mk1kqjmEqQxU26yok1EZrs_d&layers=1&nav=1&title=invertebrate-fauna-pan-trapping-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1EJExnBy_Mk1kqjmEqQxU26yok1EZrs_d%26export%3Ddownload">View diagram in new tab.</a>
 
-1. Survey data from invertebrate pan trap:
+## Survey data
+
+### Survey data from invertebrate pan trap
 
 - [OpenAPI docs for invertebrate pan trap](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-pan-trap/post%2Finvertebrate-pan-traps)
 
@@ -539,13 +541,12 @@ The `species_name` key maps to a `tern:Observation` with the observable property
 
 If the keys `createdBy` and `updatedBy` represent the people or organisations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-2. Survey data from invertebrate pan trapping:
+### Survey data from invertebrate pan trapping
 
 - [OpenAPI docs for invertebrate pan trapping](https://dev.core-api.paratoo.tern.org.au/documentation#/Invertebrate-pan-trapping/post%2Finvertebrate-pan-trappings)
 
 ```json
 {
-  "surveyId": "string",
   "plot_visit": 0,
   "monitoring_duration": "Short",
   "repeat_monitoring": true,
@@ -557,7 +558,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organisations th
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -565,7 +566,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `plot_visit`
 
@@ -690,12 +691,12 @@ Conforms: True
 
 ### Example usage with PySHACL - observation level
 
-Save the [cloud cover shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/invertebrate-fauna/invertebrate-fauna-pan-trapping-protocol-shapes/weather-site-cloud-cover/shapes.ttl) in a file named `cloud-cover-shapes.ttl` in the Turtle RDF format.
+Save the [plant species in flower shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/invertebrate-fauna/invertebrate-fauna-pan-trapping-protocol-shapes/plant-species-in-flower/shapes.ttl) in a file named `plant-species-shapes.ttl` in the Turtle RDF format.
 
-Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for cloud cover in Invertebrate fauna - Pan trapping protocol**, run the following command to validate the data:
+Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for plant species in flower in Invertebrate fauna - Pan trapping protocol**, run the following command to validate the data:
 
 ```bash
-pyshacl -s cloud-cover-shapes.ttl -m -i rdfs -a -j -f human data.ttl
+pyshacl -s plant-species-shapes.ttl -m -i rdfs -a -j -f human data.ttl
 ```
 
 If there are no violations, then you should see some output similar to the following:
@@ -704,6 +705,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
