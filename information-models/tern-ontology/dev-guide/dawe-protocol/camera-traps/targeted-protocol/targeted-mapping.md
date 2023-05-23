@@ -4,9 +4,16 @@ sidebar_position: 2
 
 # Camera Traps - Targeted protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Targeted protocol](https://linked.data.gov.au/def/nrm/cb497bbc-75dc-450d-b020-5bc3c54d5586) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Targeted protocol](https://linked.data.gov.au/def/nrm/cb497bbc-75dc-450d-b020-5bc3c54d5586) protocol in [Camera traps](https://linked.data.gov.au/def/nrm/f0123418-c565-45a6-be01-c5c332c727e5) module.
 
 ## Conceptual modelling
+
+The Camera traps - Targeted protocol records data about the site for the following feature types:
+
+- site
+- habitat
+
+These observations are recorded for each site during a site visit.
 
 The Targeted protocol includes the procedures and guidelines for the deployment, recovery and redeployment of camera traps at features of interest within the project area, including identifying features of interest, micrositing the exact camera trap point locations to optimize fauna detections, installing bait stations, and recording all associated data (e.g. camera trap make, model and settings, camera trap placement and orientation, focal point, target species if applicable, bait station details, deployment period) in a standardized manner directly into the App.
 
@@ -29,7 +36,6 @@ Example data from source for `Camera traps` protocol surveys:
 ```json
 {
   "data": {
-    "camera_trap_survey": 0,
     "distance_to_closest_point": 0,
     "transect_number": "string",
     "fauna_plot": 0,
@@ -93,9 +99,9 @@ Example data from source for `Camera traps` protocol surveys:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `camera_trap_survey`
+<!-- #### `camera_trap_survey`
 
-The `camera_trap_survey` key maps to the `tern:SiteVisit` class.
+The `camera_trap_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `transect_number`
 
@@ -725,7 +731,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 
 ```json
 {
-  "camera_trap_survey": 0,
   "point_id": "string",
   "operational_status": "Operational",
   "number_of_images": 0,
@@ -761,9 +766,9 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `camera_trap_survey`
+<!-- #### `camera_trap_survey`
 
-The `camera_trap_survey` key maps to the `tern:SiteVisit` class.
+The `camera_trap_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `point_id`
 
@@ -1047,7 +1052,6 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 
 ```json
 {
-  "camera_trap_survey": 0,
   "point_id": "string",
   "operational_status": "Operational",
   "number_of_images": 0,
@@ -1061,9 +1065,9 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `camera_trap_survey`
+<!-- #### `camera_trap_survey`
 
-The `camera_trap_survey` key maps to the `tern:SiteVisit` class.
+The `camera_trap_survey` key maps to the `tern:SiteVisit` class. -->
 
 #### `point_id`
 
@@ -1428,7 +1432,7 @@ The `user_label` key maps to the attribute `camera settings- user label` in [Cam
 
 If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
 
-### Survey data from camera trap survey:
+<!-- ### Survey data from camera trap survey:
 
 - [OpenAPI docs for camera trap survey](https://dev.core-api.paratoo.tern.org.au/documentation#/Camera-trap-survey/post%2Fcamera-trap-surveys)
 
@@ -1484,7 +1488,7 @@ The `end_date` key maps to the property `prov:endedAtTime` on the `tern:SiteVisi
 
 #### `createdBy` and `updatedBy`
 
-If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`.
+If the keys `createdBy` and `updatedBy` represent the people or organizations that carried out the surveys, then they can be mapped to the `prov:qualifiedAssociation` of a `tern:Observation` or `tern:SiteVisit` along with their role in the activity. If the role of the agent is not required, then a direct association can be recorded using the property `prov:wasAssociatedWith` on the `tern:Observation` or `tern:SiteVisit`. -->
 
 ## Validation with SHACL
 
