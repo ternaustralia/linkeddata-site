@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Vertebrate Fauna - Bird Survey protocol mapping
 
-The mapping of the source app data to the TERN Ontology on this page is applicable to the [Bird survey protocol](https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382) protocol.
+The mapping of the source app data to the TERN Ontology on this page is applicable to the [Bird survey protocol](https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382) protocol in [Vertebrate Fauna](https://linked.data.gov.au/def/nrm/0771a99f-27f4-4ff7-bf6d-aa70fe22ae51) module.
 
 Mentions of observable properties should refer to [bird-survey/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/vertebrate/bird-survey/overview) for the feature type and value type information.
 
@@ -33,11 +33,7 @@ Example data from source for `Bird survey` protocol surveys:
 
 ```json
 {
-  "start_date": "2023-01-24T08:32:55.588Z",
-  "end_date": "2023-01-24T08:32:55.589Z",
-  "survey_type": "202",
   "playback_used": true,
-  "surveyId": "string",
   "plot_visit": 0,
   "location": {
     "lat": 0,
@@ -51,7 +47,7 @@ Example data from source for `Bird survey` protocol surveys:
 
 The data recorded as surveys in the data collection app are mapped directly to site visits in the TERN Ontology.
 
-#### `start_date`
+<!-- #### `start_date`
 
 The `start_date` key maps to the property `prov:startedAtTime` on the `tern:SiteVisit` class.
 
@@ -92,7 +88,7 @@ The `survey_type` key maps to the attribute `bird survey area search boundary` i
         ] ;
     ] ;
 .
-```
+``` -->
 
 #### `playback_used`
 
@@ -114,7 +110,7 @@ The `playback_used` key maps to the attribute `playback used` in [Bird survey At
 .
 ```
 
-#### `surveyId`
+<!-- #### `surveyId`
 
 Use this value along with the site ID to generate a site visit URI.
 
@@ -122,7 +118,7 @@ Use this value along with the site ID to generate a site visit URI.
 
 ```
 https://linked.data.gov.au/dataset/nrm/site/123/site-visit/456
-```
+``` -->
 
 #### `plot_visit`
 
@@ -347,6 +343,8 @@ If there are no violations, then you should see some output similar to the follo
 Validation Report
 Conforms: True
 ```
+
+## Example data
 
 Encoded using the TERN Ontology and related controlled vocabularies.
 
