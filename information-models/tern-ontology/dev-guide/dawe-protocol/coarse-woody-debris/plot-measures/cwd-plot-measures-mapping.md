@@ -537,9 +537,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Class 4" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/93a9ea83-e535-5bf6-82da-3a730ad83d4c>
+            rdf:value <https://linked.data.gov.au/def/nrm/af9c9009-9b9d-5624-85a3-7bb9390d68ea>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/93a9ea83-e535-5bf6-82da-3a730ad83d4c> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/af9c9009-9b9d-5624-85a3-7bb9390d68ea> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/fa986148-e44a-4cd3-8ac3-17748eb013f3> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7d50794a-8784-4ab9-99ff-a324bb6e0831> ;
