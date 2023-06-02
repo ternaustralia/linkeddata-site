@@ -298,9 +298,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Continuous" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/043224b6-b49b-519c-b1cf-687fd889398f>
+            rdf:value <https://linked.data.gov.au/def/nrm/d7f71bef-4a91-598b-b141-f44115ad402e>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/043224b6-b49b-519c-b1cf-687fd889398f> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/d7f71bef-4a91-598b-b141-f44115ad402e> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/25d4c7b7-4cdf-4b69-8774-064055c74e23> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
@@ -318,9 +318,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Partly Cloudy" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973>
+            rdf:value <https://linked.data.gov.au/def/nrm/7773b3e9-83e7-5057-b7d6-6a025e0b6a2b>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7773b3e9-83e7-5057-b7d6-6a025e0b6a2b> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/111a2971-f7c3-4d9d-b079-d9afa0bcc8b0> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
@@ -338,9 +338,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "None observed" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d>
+            rdf:value <https://linked.data.gov.au/def/nrm/507fab84-10d1-5153-ab14-9f6a28ce9cbc>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/507fab84-10d1-5153-ab14-9f6a28ce9cbc> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/b7e7f67b-d983-4167-baca-57cab6dd89a2> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
@@ -358,9 +358,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Hot" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb>
+            rdf:value <https://linked.data.gov.au/def/nrm/bfee24b3-f82c-5ae0-b6b4-642b697f0bc8>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/bfee24b3-f82c-5ae0-b6b4-642b697f0bc8> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/a30248c3-33ce-4ffe-8130-7b03aa4e5322> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
@@ -378,9 +378,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Strong gale" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a>
+            rdf:value <https://linked.data.gov.au/def/nrm/786f0acf-ea07-5c51-a173-f456f541e28d>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/786f0acf-ea07-5c51-a173-f456f541e28d> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/e8f03cc8-33a3-4c2f-9a0d-95a40c34523d> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/33544e85-741a-4646-ba32-c820486f0a33> ;
