@@ -364,10 +364,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Coarse Woody Debris" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/91ab6f7c-1118-5f30-92ba-af59b5a60021>
+            rdfs:label "White ash" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/67f0e621-e61d-55a6-9963-e0becc048aaa>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/91ab6f7c-1118-5f30-92ba-af59b5a60021> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/67f0e621-e61d-55a6-9963-e0becc048aaa> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/56efb36f-d3bc-475d-80d3-990f910f8488> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
@@ -385,9 +385,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Grass-tree" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/062132e9-426e-56c8-9c92-2781692bdd0c>
+            rdf:value <https://linked.data.gov.au/def/nrm/1be47880-4ee6-5df9-8eda-551c58078771>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/062132e9-426e-56c8-9c92-2781692bdd0c> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1be47880-4ee6-5df9-8eda-551c58078771> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/dd1769b9-c475-4732-915c-9b890a8d5f65> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
@@ -494,10 +494,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Alive" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8>
+            rdfs:label "Dead" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/2fd1ed97-3e7b-59a0-8d93-9be76f276071>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2fd1ed97-3e7b-59a0-8d93-9be76f276071> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/ddd0c631-bfdd-4b0f-88de-a5eb1a0181c6> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
@@ -514,10 +514,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Recently Burnt" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/81a8fa69-2f20-5a28-880d-8401759f9194>
+            rdfs:label "Past Burnt" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/7d7c2dd4-4a7e-549f-a12a-7846d65aafcf>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/81a8fa69-2f20-5a28-880d-8401759f9194> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7d7c2dd4-4a7e-549f-a12a-7846d65aafcf> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/8eb830f7-a0ec-42d6-8170-dbe2f4d56db2> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
@@ -536,9 +536,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Basal" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/0163dc19-f4cb-5ded-b750-e44768878d81>
+            rdf:value <https://linked.data.gov.au/def/nrm/ef12561d-a8d7-5dde-9779-6e02610f2070>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/0163dc19-f4cb-5ded-b750-e44768878d81> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/ef12561d-a8d7-5dde-9779-6e02610f2070> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/50239f29-a693-49ef-98e8-4ee11d1758ea> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
@@ -555,10 +555,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "White ash" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/31d47552-fd76-53d3-b4d7-a20fa603b11f>
+            rdfs:label "Not Collected" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/31d47552-fd76-53d3-b4d7-a20fa603b11f> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/75f55bf0-6972-42ba-ad46-7e24f91e8f6a> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/91a54c7c-48ff-402d-a761-ed4fd4ad4a4b> ;
