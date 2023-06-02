@@ -195,11 +195,11 @@ The `orientation` key maps to the attribute `plot orientation` in [Plot Selectio
     tern:hasAttribute [
         rdfs:label "plot orientation" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/638aae02-cfe8-472d-ae9d-252fe73cb7c4> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "East" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         ] ;
     ] ;
 .
@@ -343,13 +343,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "plot orientation" ;
     void:inDataset <https://example.com/dataset/1> ;
     tern:attribute <https://linked.data.gov.au/def/nrm/638aae02-cfe8-472d-ae9d-252fe73cb7c4> ;
-    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935> ;
+    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
     tern:hasValue [
             a
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "East" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/7dc6f7da-2913-5088-9d12-17bc3a289935>
+            rdf:value <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f>
         ] ;
 .
 
