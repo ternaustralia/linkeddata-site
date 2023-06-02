@@ -487,9 +487,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Dry" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1050727c-1d88-5639-8b69-60c8c69994b9>
+            rdf:value <https://linked.data.gov.au/def/nrm/84b551fd-c4f0-5d63-a160-9c6668d4b1de>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1050727c-1d88-5639-8b69-60c8c69994b9> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/84b551fd-c4f0-5d63-a160-9c6668d4b1de> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/dee23df7-4445-424f-b361-b2e0182be950> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -539,22 +539,22 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "bc" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/05d80e80-003c-5791-bf43-4b52086f990b>
+            rdf:value <https://linked.data.gov.au/def/nrm/4ea8adb8-00df-51fe-b0d6-245fde6c9efb>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/05d80e80-003c-5791-bf43-4b52086f990b> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/4ea8adb8-00df-51fe-b0d6-245fde6c9efb> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/f3e6e19b-ba79-4260-b493-8a2561033f9b> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
     tern:hasAttribute [
             rdfs:label "stratum type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5871b3a2-b475-4432-9f15-65424f21a878> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Upper" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1>
+                    rdf:value <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
@@ -570,10 +570,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Complete clearing; pasture; has been cultivated" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/ce421b31-7cbe-55e2-9380-d8985c1817e3>
+            rdfs:label "Not Collected" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/ce421b31-7cbe-55e2-9380-d8985c1817e3> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/632e4c3c-0e73-4b3d-b1d6-7b38897da5e8> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -599,13 +599,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:hasAttribute [
             rdfs:label "stratum type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5871b3a2-b475-4432-9f15-65424f21a878> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Upper" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1>
+                    rdf:value <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
@@ -621,10 +621,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Unburnt" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/f757667d-3e74-53f6-8b35-08d286d1ed26>
+            rdfs:label "Past burn" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/b537013e-17bb-5c0c-aa7b-279bcd0e52df>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f757667d-3e74-53f6-8b35-08d286d1ed26> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/b537013e-17bb-5c0c-aa7b-279bcd0e52df> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/cf1aef8a-a782-4480-9c41-a7f6d170d7fc> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -641,10 +641,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Mature" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc>
+            rdfs:label "Dead" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/2fd1ed97-3e7b-59a0-8d93-9be76f276071>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2fd1ed97-3e7b-59a0-8d93-9be76f276071> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/fcfda2f7-84f0-4c26-9f80-c051d129a094> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -681,10 +681,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Beach" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/7987ec07-7798-58e6-ba90-d1eef7ccca57>
+            rdfs:label "Prior stream" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/e705f231-3807-5f0b-9afd-59a1c9093a36>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7987ec07-7798-58e6-ba90-d1eef7ccca57> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/e705f231-3807-5f0b-9afd-59a1c9093a36> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/9d4f8a2d-8e77-42dd-857b-0ecbc9c85696> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -701,10 +701,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Hills" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/f19b8f62-9cc0-5c39-af77-3d198e05844c>
+            rdfs:label "Not Collected" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f19b8f62-9cc0-5c39-af77-3d198e05844c> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/58e4aba5-78c3-4361-b08a-ae39a93c8cb0> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -721,10 +721,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Coal" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/cb2c5f31-9531-563a-95a1-5f60385f061f>
+            rdfs:label "Not Collected" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/cb2c5f31-9531-563a-95a1-5f60385f061f> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/5af5cef1-179c-4bae-9037-42196668deff> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -750,13 +750,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:hasAttribute [
             rdfs:label "stratum type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5871b3a2-b475-4432-9f15-65424f21a878> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Upper" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1>
+                    rdf:value <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
@@ -773,10 +773,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Steep" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/c7a54110-88db-5334-8ff4-cd3ef319ba79>
+            rdfs:label "Moderately inclined" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/43c0c157-aa65-5101-a0e9-f12e47e91cc1>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/c7a54110-88db-5334-8ff4-cd3ef319ba79> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/43c0c157-aa65-5101-a0e9-f12e47e91cc1> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/132a1452-4fd7-473c-956b-3183dd315b67> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -797,10 +797,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Bryophtyes" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/77732130-2460-5829-b51f-3d777c3ca3a8>
+            rdfs:label "Hummock grassland" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/b77c7b89-0dd2-52cb-9eb3-7319d4465cfe>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/77732130-2460-5829-b51f-3d777c3ca3a8> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/b77c7b89-0dd2-52cb-9eb3-7319d4465cfe> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/103f26cb-0194-45d2-8b1a-e18e1da6df2b> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -817,10 +817,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Clay" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/58168015-2625-534a-a70b-e7fba1c07369>
+            rdfs:label "Not Collected" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/58168015-2625-534a-a70b-e7fba1c07369> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/6ee380ca-e9dc-4a9b-91c3-758b54e751eb> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -837,10 +837,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Boulder (250mm +)" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/abea0b0e-333b-574c-87db-cbf59ae11a20>
+            rdfs:label "Not Collected" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/abea0b0e-333b-574c-87db-cbf59ae11a20> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/3eeef779-d4d9-4019-9543-be0abe54cc5c> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
@@ -866,13 +866,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:hasAttribute [
             rdfs:label "stratum type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5871b3a2-b475-4432-9f15-65424f21a878> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Upper" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1>
+                    rdf:value <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
@@ -888,23 +888,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Fern" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/5b669769-cfda-5e2f-a311-acc06cd1ff02>
+            rdfs:label "Grass-tree" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/1be47880-4ee6-5df9-8eda-551c58078771>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/5b669769-cfda-5e2f-a311-acc06cd1ff02> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1be47880-4ee6-5df9-8eda-551c58078771> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/dd1769b9-c475-4732-915c-9b890a8d5f65> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
     tern:hasAttribute [
             rdfs:label "stratum type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5871b3a2-b475-4432-9f15-65424f21a878> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Upper" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1>
+                    rdf:value <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
@@ -920,23 +920,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "5" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1e5241d5-b717-5908-a26d-297ef3c636d8>
+            rdfs:label "9" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/b756dcb0-3600-525d-bacb-285c0f1a07e2>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1e5241d5-b717-5908-a26d-297ef3c636d8> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/b756dcb0-3600-525d-bacb-285c0f1a07e2> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/242d081b-b3f4-4206-bc39-7aa42e9972ee> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
     tern:hasAttribute [
             rdfs:label "stratum type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5871b3a2-b475-4432-9f15-65424f21a878> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Upper" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1>
+                    rdf:value <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
@@ -982,13 +982,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:hasAttribute [
             rdfs:label "stratum type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5871b3a2-b475-4432-9f15-65424f21a878> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Upper" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/523c2f7a-1679-5576-bda0-a1985bac99b1>
+                    rdf:value <https://linked.data.gov.au/def/nrm/ea960328-db99-51fd-843c-61c6c5b6117b>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
