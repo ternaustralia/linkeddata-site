@@ -126,11 +126,11 @@ The `voucher_type` key maps to the attribute `voucher type` in [Targeted survey 
     tern:hasAttribute [
         rdfs:label "voucher type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/36d484d2-05fb-548f-a939-740e4bf27fae> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0be3f40a-ff52-55e9-9131-defdfbd88a52> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Animal tissue (skin)" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/36d484d2-05fb-548f-a939-740e4bf27fae> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0be3f40a-ff52-55e9-9131-defdfbd88a52> ;
         ] ;
     ] ;
 .
@@ -322,13 +322,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "observation method" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/a5611033-d558-46c4-94b6-cd36885aa7f1> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/03f54727-57c0-593f-849c-f56319c5660e> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e8006b91-390c-557b-8945-93db9aff0b89> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "OB" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/03f54727-57c0-593f-849c-f56319c5660e>
+                    rdf:value <https://linked.data.gov.au/def/nrm/e8006b91-390c-557b-8945-93db9aff0b89>
                 ]
         ] ,
         [
@@ -422,9 +422,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Isolated clump of tussock grasses" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092>
+            rdf:value <https://linked.data.gov.au/def/nrm/f51c20dd-6026-5b24-9f5f-a705b8d88a95>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f51c20dd-6026-5b24-9f5f-a705b8d88a95> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/aa4c96f6-9ea8-4bd3-8800-0bfddcd8a37c> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4bfc4796-a02f-461f-b17d-383aad328e61> ;
@@ -443,13 +443,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "voucher type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8b794be8-3b58-558b-a483-121f73cc56b4> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Plant Tissue Voucher" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d>
+                    rdf:value <https://linked.data.gov.au/def/nrm/8b794be8-3b58-558b-a483-121f73cc56b4>
                 ]
         ] ;
 .
@@ -487,13 +487,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "fauna survey type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/fdaf6f56-def5-43bf-9f38-80e4d196446d> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3b930857-8564-5148-a219-2b89e7a5a011> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/f4800a80-c8cf-534a-8d66-77c2e5c10960> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Birds" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/3b930857-8564-5148-a219-2b89e7a5a011>
+                    rdf:value <https://linked.data.gov.au/def/nrm/f4800a80-c8cf-534a-8d66-77c2e5c10960>
                 ]
         ] ;
     tern:hasSite <https://example.com/Site/survey-area> ;
