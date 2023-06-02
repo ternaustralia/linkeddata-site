@@ -120,11 +120,11 @@ The `voucher_type` key maps to the attribute `voucher type` in [Targeted survey 
     tern:hasAttribute [
         rdfs:label "voucher type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/36d484d2-05fb-548f-a939-740e4bf27fae> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0be3f40a-ff52-55e9-9131-defdfbd88a52> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Animal tissue (skin)" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/36d484d2-05fb-548f-a939-740e4bf27fae> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0be3f40a-ff52-55e9-9131-defdfbd88a52> ;
         ] ;
     ] ;
 .
@@ -324,13 +324,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "voucher type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/07216660-5082-428e-9f78-f1139d5c2b1f> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8b794be8-3b58-558b-a483-121f73cc56b4> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Plant Tissue Voucher" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/318227b7-6ab5-507a-86d9-3ff8030dfb5d>
+                    rdf:value <https://linked.data.gov.au/def/nrm/8b794be8-3b58-558b-a483-121f73cc56b4>
                 ]
         ] ;
 .
@@ -422,9 +422,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Not Collected" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/059b347f-58c9-59a9-bd75-9305d7e1211d>
+            rdf:value <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/059b347f-58c9-59a9-bd75-9305d7e1211d> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/94ee6b46-e2f1-5101-8666-3cbcd8697f0f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/632e4c3c-0e73-4b3d-b1d6-7b38897da5e8> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
@@ -461,9 +461,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Grazing" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682>
+            rdf:value <https://linked.data.gov.au/def/nrm/7f0f52d9-0a40-5e53-a8fa-b007050342e8>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7f0f52d9-0a40-5e53-a8fa-b007050342e8> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4da8c123-b886-4881-91b3-1ff6a9b30e3c> ;
@@ -555,13 +555,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "target community" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/401f1d32-68c0-49da-9755-dfb5d1ede660> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/092efe20-9aaa-5c76-af9e-defd84207318> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/c9c37377-a478-5e6e-8220-7f1f28b15eb6> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Tasmanian Forests and Woodlands dominated by black gum or Brookers gum (Eucalyptus ovata / E. brookeriana)" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/092efe20-9aaa-5c76-af9e-defd84207318>
+                    rdf:value <https://linked.data.gov.au/def/nrm/c9c37377-a478-5e6e-8220-7f1f28b15eb6>
                 ]
         ] ;
 .
