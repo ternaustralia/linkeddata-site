@@ -383,9 +383,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Fern" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/5b669769-cfda-5e2f-a311-acc06cd1ff02>
+            rdf:value <https://linked.data.gov.au/def/nrm/860d33aa-2b8b-51c4-aa39-641ef684a4c7>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/5b669769-cfda-5e2f-a311-acc06cd1ff02> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/860d33aa-2b8b-51c4-aa39-641ef684a4c7> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/dd1769b9-c475-4732-915c-9b890a8d5f65> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/c3403517-fcc6-4389-9c09-f1e1ee8b0f3b> ;
@@ -422,9 +422,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Bare" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/856056f9-0588-5e50-9b6e-966beb136bf6>
+            rdf:value <https://linked.data.gov.au/def/nrm/08f21bd5-b4f1-5cc1-9c16-50e7b1676f5b>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/856056f9-0588-5e50-9b6e-966beb136bf6> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/08f21bd5-b4f1-5cc1-9c16-50e7b1676f5b> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/75f55bf0-6972-42ba-ad46-7e24f91e8f6a> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/c3403517-fcc6-4389-9c09-f1e1ee8b0f3b> ;
