@@ -465,9 +465,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Mature" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc>
+            rdf:value <https://linked.data.gov.au/def/nrm/c16081f8-1965-59bb-9861-bb00c2e5f535>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/5bce18a8-4e8c-574f-881b-625bd9240cbc> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/c16081f8-1965-59bb-9861-bb00c2e5f535> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/fcfda2f7-84f0-4c26-9f80-c051d129a094> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
@@ -544,9 +544,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Mistletoe" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/7f563fcb-8f98-5a74-9581-f6ce4ea51d42>
+            rdf:value <https://linked.data.gov.au/def/nrm/9caf5893-d507-5942-92d5-4baa54bdf5db>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7f563fcb-8f98-5a74-9581-f6ce4ea51d42> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/9caf5893-d507-5942-92d5-4baa54bdf5db> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/bfcca277-85a8-476a-aeb1-315775bcd5f6> ;
