@@ -290,13 +290,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:hasAttribute [
             rdfs:label "basal area factor (baf)" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/d06bf3e4-f59d-47fb-b780-bb089b298d83> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4a68f312-b4bb-5cce-a4fd-03ca509f84be> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/03b66c9d-74a0-5e3e-ae01-95fe5456c75b> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "0.1" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/4a68f312-b4bb-5cce-a4fd-03ca509f84be>
+                    rdf:value <https://linked.data.gov.au/def/nrm/03b66c9d-74a0-5e3e-ae01-95fe5456c75b>
                 ]
         ] ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;

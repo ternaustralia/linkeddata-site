@@ -346,9 +346,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Alive" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8>
+            rdf:value <https://linked.data.gov.au/def/nrm/00e4dd62-fabe-5fb4-83b1-e2cf93e6a792>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/00e4dd62-fabe-5fb4-83b1-e2cf93e6a792> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/ddd0c631-bfdd-4b0f-88de-a5eb1a0181c6> ;
     sosa:phenomenonTime [
             a time:Instant ;
@@ -375,9 +375,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "smooth" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/cf394183-2d9f-5c98-b0ef-a2d831061192>
+            rdf:value <https://linked.data.gov.au/def/nrm/cb313f06-9af9-563d-b2f2-64bc02eb0f8f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/cf394183-2d9f-5c98-b0ef-a2d831061192> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/cb313f06-9af9-563d-b2f2-64bc02eb0f8f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/3da2a8ca-c0a3-4761-8736-507255eeee68> ;
     sosa:phenomenonTime [
             a time:Instant ;
