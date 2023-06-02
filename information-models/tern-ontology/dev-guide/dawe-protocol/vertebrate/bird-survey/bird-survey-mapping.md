@@ -199,11 +199,11 @@ The `observation_type` key maps to the attribute `bird observation type` in [Bir
     tern:hasAttribute [
         rdfs:label "bird observation type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/a73875fe-0fbb-4055-905b-eb0ee0f0660f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ffb1c491-bbb1-5823-ac03-0543f9a9627a> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Heard" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/ffb1c491-bbb1-5823-ac03-0543f9a9627a> ;
         ] ;
     ] ;
 .
@@ -228,11 +228,11 @@ The `observation_location_type` key maps to the attribute `observation location 
     tern:hasAttribute [
         rdfs:label "observation location type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/61b06e07-39c4-44d8-bb45-fe6a6740fe51> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/af32eb38-5a65-5736-9e62-e47c85bdecef> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Outside Survey - Same Habitat" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/af32eb38-5a65-5736-9e62-e47c85bdecef> ;
         ] ;
     ] ;
 .
@@ -389,15 +389,38 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
     tern:hasAttribute
         [
-            rdfs:label "observation location type" ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/61b06e07-39c4-44d8-bb45-fe6a6740fe51> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+            rdfs:label "bird observation type" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/a73875fe-0fbb-4055-905b-eb0ee0f0660f> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ffb1c491-bbb1-5823-ac03-0543f9a9627a> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
-                    rdfs:label "Outside Survey - Same Habitat" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10>
+                    rdfs:label "Heard" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/ffb1c491-bbb1-5823-ac03-0543f9a9627a>
+                ]
+        ] ,
+        [
+            rdfs:label "number of observers" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/687b7f67-9fbc-4135-845b-4fb5b8786f0d> ;
+            tern:hasSimpleValue 2 ;
+            tern:hasValue [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 2
+                ]
+        ] ,
+        [
+            rdfs:label "observation location type" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/61b06e07-39c4-44d8-bb45-fe6a6740fe51> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8cf3f3eb-a056-52df-9367-92196de1f2f1> ;
+            tern:hasValue [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "Outside survey - Different Habitat" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/8cf3f3eb-a056-52df-9367-92196de1f2f1>
                 ]
         ] ,
         [
@@ -420,29 +443,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                         tern:Boolean ,
                         tern:Value ;
                     rdf:value true
-                ]
-        ] ,
-        [
-            rdfs:label "bird observation type" ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/a73875fe-0fbb-4055-905b-eb0ee0f0660f> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7> ;
-            tern:hasValue [
-                    a
-                        tern:IRI ,
-                        tern:Value ;
-                    rdfs:label "Heard" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/9ef13c2a-e71b-58bb-bb9b-011b04f440d7>
-                ]
-        ] ,
-        [
-            rdfs:label "number of observers" ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/687b7f67-9fbc-4135-845b-4fb5b8786f0d> ;
-            tern:hasSimpleValue 2 ;
-            tern:hasValue [
-                    a
-                        tern:Integer ,
-                        tern:Value ;
-                    rdf:value 2
                 ]
         ] ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
@@ -479,13 +479,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             rdfs:label "observation location type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/61b06e07-39c4-44d8-bb45-fe6a6740fe51> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8cf3f3eb-a056-52df-9367-92196de1f2f1> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
-                    rdfs:label "Outside Survey - Same Habitat" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/f6fa312b-a938-585c-a0ba-bdf0bb407d10>
+                    rdfs:label "Outside survey - Different Habitat" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/8cf3f3eb-a056-52df-9367-92196de1f2f1>
                 ]
         ] ,
         [
@@ -514,9 +514,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Resting on shrub" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/05a3f8b0-f080-5bd0-9ce9-df511af371dc>
+            rdf:value <https://linked.data.gov.au/def/nrm/bc097808-d785-5269-a642-c7ac57d53dd5>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/05a3f8b0-f080-5bd0-9ce9-df511af371dc> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/bc097808-d785-5269-a642-c7ac57d53dd5> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/045fa754-487a-4346-8128-403c646a903b> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -533,10 +533,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "None" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/21c04c4f-f74e-5e2a-b604-b630420f3306>
+            rdfs:label "Unknown" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/21c04c4f-f74e-5e2a-b604-b630420f3306> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/72cca5e4-2dc6-4a96-92e3-6f1e844b243c> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -573,9 +573,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Juvenile" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/008ada05-a2d9-5472-93ec-fda0b3ca3bb2>
+            rdf:value <https://linked.data.gov.au/def/nrm/6de1f874-fdcb-520a-9ff8-481a7968e76c>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/008ada05-a2d9-5472-93ec-fda0b3ca3bb2> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/6de1f874-fdcb-520a-9ff8-481a7968e76c> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/0bc0fae9-6243-4d9f-a547-ef4c36244b5d> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -611,10 +611,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "NA" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0>
+            rdfs:label "Unknown" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/40b39732-e10b-4c4e-968b-3404663a094d> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -632,9 +632,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Partly Cloudy" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973>
+            rdf:value <https://linked.data.gov.au/def/nrm/7773b3e9-83e7-5057-b7d6-6a025e0b6a2b>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1fe9c3c7-c3aa-5378-80f4-871b04bc7973> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7773b3e9-83e7-5057-b7d6-6a025e0b6a2b> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/111a2971-f7c3-4d9d-b079-d9afa0bcc8b0> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -652,9 +652,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "None observed" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d>
+            rdf:value <https://linked.data.gov.au/def/nrm/507fab84-10d1-5153-ab14-9f6a28ce9cbc>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/155cb54c-14b9-5c7b-a87d-217f3b21728d> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/507fab84-10d1-5153-ab14-9f6a28ce9cbc> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/b7e7f67b-d983-4167-baca-57cab6dd89a2> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -672,9 +672,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Hot" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb>
+            rdf:value <https://linked.data.gov.au/def/nrm/bfee24b3-f82c-5ae0-b6b4-642b697f0bc8>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/0077545f-6f5f-5927-a199-c32aa4f7b5cb> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/bfee24b3-f82c-5ae0-b6b4-642b697f0bc8> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/a30248c3-33ce-4ffe-8130-7b03aa4e5322> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -692,9 +692,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Strong gale" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a>
+            rdf:value <https://linked.data.gov.au/def/nrm/786f0acf-ea07-5c51-a173-f456f541e28d>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1e01961c-4b0c-58a5-89b9-65b23541404a> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/786f0acf-ea07-5c51-a173-f456f541e28d> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/e8f03cc8-33a3-4c2f-9a0d-95a40c34523d> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
@@ -712,13 +712,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             rdfs:label "bird survey area search boundary" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/3ae7ffd2-748c-4551-be3b-b71cae26f980> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/dc6cae53-5838-5d03-8332-a463bdecbcb3> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ede4dc92-4734-5bc3-9ac1-f892db4f1470> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
-                    rdfs:label "20 minute, 2ha" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/dc6cae53-5838-5d03-8332-a463bdecbcb3>
+                    rdfs:label "500m area search" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/ede4dc92-4734-5bc3-9ac1-f892db4f1470>
                 ]
         ] ,
         [
