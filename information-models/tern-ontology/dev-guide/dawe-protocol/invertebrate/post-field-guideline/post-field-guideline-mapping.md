@@ -76,11 +76,11 @@ The `preservation_type` key maps to the attribute `trap preservative type` in [I
     tern:hasAttribute [
         rdfs:label "trap preservative type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/1ab7fdbb-e597-4aa6-bf55-fb5cb5f7c394> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Undiluted propylene glycol" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af> ;
         ] ;
     ] ;
 .
@@ -146,11 +146,11 @@ The `exact_or_estimate` key maps to the attribute `count exact or estimate` in [
                     rdfs:label "count exact or estimate" ;
                     void:inDataset <https://example.com/dataset/1> ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/ca245b0d-b3e2-4dbc-8a72-d8cd1868a1ce> ;
-                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8c1c83f2-66b1-5651-ba3c-adbbf3806433> ;
                     tern:hasValue [
                             a tern:IRI ;
                             rdfs:label "Exact" ;
-                            rdf:value <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a>
+                            rdf:value <https://linked.data.gov.au/def/nrm/8c1c83f2-66b1-5651-ba3c-adbbf3806433>
                         ]
                 ]
         ] ;
@@ -348,9 +348,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "IS" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/05165e20-e55d-5f01-8424-06e7687e5c42>
+            rdf:value <https://linked.data.gov.au/def/nrm/d063a084-a879-5483-a686-00c7fdc653f0>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/05165e20-e55d-5f01-8424-06e7687e5c42> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/d063a084-a879-5483-a686-00c7fdc653f0> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/31347751-82bd-4be8-bbae-ff0d80e319b5> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/79296cab-a02f-420d-b260-17c0e8691499> ;
@@ -406,10 +406,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Pupa" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/140b32fb-df93-552b-ad1f-ce682349c55b>
+            rdfs:label "Unknown" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/140b32fb-df93-552b-ad1f-ce682349c55b> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/1f3ac845-902a-435d-a404-4b6b3ed02764> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/79296cab-a02f-420d-b260-17c0e8691499> ;
@@ -431,13 +431,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     rdfs:label "count exact or estimate" ;
                     void:inDataset <https://example.com/dataset/1> ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/ca245b0d-b3e2-4dbc-8a72-d8cd1868a1ce> ;
-                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/68c919a7-5759-5169-92dd-a99b6b7be407> ;
                     tern:hasValue [
                             a
                                 tern:IRI ,
                                 tern:Value ;
-                            rdfs:label "Exact" ;
-                            rdf:value <https://linked.data.gov.au/def/nrm/e00fa8eb-1f72-58c5-9f2d-6e5301319d5a>
+                            rdfs:label "Estimate" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/68c919a7-5759-5169-92dd-a99b6b7be407>
                         ]
                 ]
         ] ;
@@ -475,13 +475,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "trap preservative type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/1ab7fdbb-e597-4aa6-bf55-fb5cb5f7c394> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/01409859-285c-5402-9ee6-713bc7964167> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0b9d4aa5-a3cf-5b6f-accf-60458395b585> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Pressed and dried" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/01409859-285c-5402-9ee6-713bc7964167>
+                    rdf:value <https://linked.data.gov.au/def/nrm/0b9d4aa5-a3cf-5b6f-accf-60458395b585>
                 ]
         ] ;
 .
