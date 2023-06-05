@@ -134,11 +134,11 @@ The `point_id` key maps to the attribute `camera trap point` in [Camera traps mo
     tern:hasAttribute [
         rdfs:label "camera trap point" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/0b1cc26f-ea77-4fd9-9c0e-f2c0069af83f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/1eca71a8-23c7-56b2-9d55-72619fb29628> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "East" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1eca71a8-23c7-56b2-9d55-72619fb29628> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         ] ;
     ] ;
 .
@@ -155,11 +155,11 @@ The `camera_trap_mount` key maps to the attribute `camera trap mount` in [Camera
     tern:hasAttribute [
         rdfs:label "camera trap mount" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/295206ed-7d52-4fac-8e2c-b08f512c76a5> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/bf41b5f9-4b99-5a63-b9d8-635aec0d2385> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/62dcac55-f4c8-5214-aaba-82dc969aea00> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Star dropper" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/bf41b5f9-4b99-5a63-b9d8-635aec0d2385> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/62dcac55-f4c8-5214-aaba-82dc969aea00> ;
         ] ;
     ] ;
 .
@@ -254,11 +254,11 @@ The `camera_lure_type` key maps to the attribute `lure type` in [Camera traps mo
     tern:hasAttribute [
         rdfs:label "lure type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/0ab6903f-2ebd-4236-812b-48ba6ad871fc> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/b5625aa3-9768-5610-80d3-c14d1095d040> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e32e84b0-5148-5192-a6c3-13971cf31537> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Auditory" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/b5625aa3-9768-5610-80d3-c14d1095d040> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/e32e84b0-5148-5192-a6c3-13971cf31537> ;
         ] ;
     ] ;
 .
@@ -275,11 +275,11 @@ The `camera_lure_variety` key maps to the attribute `lure variety` in [Camera tr
     tern:hasAttribute [
         rdfs:label "lure type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/64250214-f6e9-4634-a9f8-c460005a108f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/585bb013-c4a9-50a9-b1e6-3fa6913446d2> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9241f408-ec6a-5e84-a619-0495c2b7a16b> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Meat" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/585bb013-c4a9-50a9-b1e6-3fa6913446d2> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9241f408-ec6a-5e84-a619-0495c2b7a16b> ;
         ] ;
     ] ;
 .
@@ -781,11 +781,11 @@ The `point_id` key maps to the attribute `camera trap point` in [Camera traps mo
     tern:hasAttribute [
         rdfs:label "camera trap point" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/0b1cc26f-ea77-4fd9-9c0e-f2c0069af83f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/1eca71a8-23c7-56b2-9d55-72619fb29628> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "East" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1eca71a8-23c7-56b2-9d55-72619fb29628> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         ] ;
     ] ;
 .
@@ -802,11 +802,11 @@ The `operational_status` key maps to the attribute `operational status` in [Came
     tern:hasAttribute [
         rdfs:label "operational status" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/c38c49eb-74f4-41a7-96a7-bb34722121cd> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3fc4c897-f811-5488-b49e-82ffd2b37eae> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ca8e760a-c587-5864-9bb6-b2c110ddb178> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Operational" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/3fc4c897-f811-5488-b49e-82ffd2b37eae> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/ca8e760a-c587-5864-9bb6-b2c110ddb178> ;
         ] ;
     ] ;
 .
@@ -949,11 +949,11 @@ The `camera_trap_mount` key maps to the attribute `camera trap mount` in [Camera
     tern:hasAttribute [
         rdfs:label "camera trap mount" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/295206ed-7d52-4fac-8e2c-b08f512c76a5> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/bf41b5f9-4b99-5a63-b9d8-635aec0d2385> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/62dcac55-f4c8-5214-aaba-82dc969aea00> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Star dropper" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/bf41b5f9-4b99-5a63-b9d8-635aec0d2385> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/62dcac55-f4c8-5214-aaba-82dc969aea00> ;
         ] ;
     ] ;
 .
@@ -991,11 +991,11 @@ The `camera_lure_type` key maps to the attribute `lure type` in [Camera traps mo
     tern:hasAttribute [
         rdfs:label "lure type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/0ab6903f-2ebd-4236-812b-48ba6ad871fc> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/b5625aa3-9768-5610-80d3-c14d1095d040> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/e32e84b0-5148-5192-a6c3-13971cf31537> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Auditory" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/b5625aa3-9768-5610-80d3-c14d1095d040> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/e32e84b0-5148-5192-a6c3-13971cf31537> ;
         ] ;
     ] ;
 .
@@ -1012,11 +1012,11 @@ The `camera_lure_variety` key maps to the attribute `lure variety` in [Camera tr
     tern:hasAttribute [
         rdfs:label "lure type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/64250214-f6e9-4634-a9f8-c460005a108f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/585bb013-c4a9-50a9-b1e6-3fa6913446d2> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9241f408-ec6a-5e84-a619-0495c2b7a16b> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Meat" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/585bb013-c4a9-50a9-b1e6-3fa6913446d2> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9241f408-ec6a-5e84-a619-0495c2b7a16b> ;
         ] ;
     ] ;
 .
@@ -1080,11 +1080,11 @@ The `point_id` key maps to the attribute `camera trap point` in [Camera traps mo
     tern:hasAttribute [
         rdfs:label "camera trap point" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/0b1cc26f-ea77-4fd9-9c0e-f2c0069af83f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/1eca71a8-23c7-56b2-9d55-72619fb29628> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "East" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1eca71a8-23c7-56b2-9d55-72619fb29628> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/0cad1fc8-0741-5dc8-90f5-7a4c6c7fba5f> ;
         ] ;
     ] ;
 .
@@ -1101,11 +1101,11 @@ The `operational_status` key maps to the attribute `operational status` in [Came
     tern:hasAttribute [
         rdfs:label "operational status" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/c38c49eb-74f4-41a7-96a7-bb34722121cd> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3fc4c897-f811-5488-b49e-82ffd2b37eae> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ca8e760a-c587-5864-9bb6-b2c110ddb178> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Operational" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/3fc4c897-f811-5488-b49e-82ffd2b37eae> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/ca8e760a-c587-5864-9bb6-b2c110ddb178> ;
         ] ;
     ] ;
 .
@@ -1222,11 +1222,11 @@ The `camera_media_type` key maps to the attribute `media type` in [Camera traps 
     tern:hasAttribute [
         rdfs:label "media type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/133ff279-17d9-47ca-9a18-b8835338a10a> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8bb39343-4461-55ed-b652-534484ac7f2c> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/1bd869ac-a542-5707-a24b-725952225989> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Image" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/8bb39343-4461-55ed-b652-534484ac7f2c> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/1bd869ac-a542-5707-a24b-725952225989> ;
         ] ;
     ] ;
 .
@@ -1263,11 +1263,11 @@ The `sensor_sensitivity` key maps to the attribute `camera settings- sensor sens
     tern:hasAttribute [
         rdfs:label "camera settings- sensor sensitivity" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/35f2c7a1-135b-41da-8902-a2cb7cad0b17> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/cfce9f40-5090-5828-800e-3def3b850c12> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/2acae838-85f3-5a46-a4f6-fae56c973a35> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Low" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/cfce9f40-5090-5828-800e-3def3b850c12> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/2acae838-85f3-5a46-a4f6-fae56c973a35> ;
         ] ;
     ] ;
 .
@@ -1295,11 +1295,11 @@ The `unit_of_temperature` key maps to the attribute `camera settings- unit of te
     tern:hasAttribute [
         rdfs:label "camera settings- unit of temperature" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/9a3f4a8e-5600-4698-a30b-6708c7e27ade> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9ddc3a8d-eaa8-520f-9267-6298e03b3335> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/715878f8-7ab9-5090-973e-2a9050a4ad8f> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Celcius" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/9ddc3a8d-eaa8-520f-9267-6298e03b3335> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/715878f8-7ab9-5090-973e-2a9050a4ad8f> ;
         ] ;
     ] ;
 .
@@ -1316,11 +1316,11 @@ The `battery_type` key maps to the attribute `camera settings- battery type` in 
     tern:hasAttribute [
         rdfs:label "camera settings- battery type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/644f7e74-fbe1-48f7-9ae8-712b4ec67685> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/c5385732-2f61-52a7-8bd4-712b13553e16> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9471a608-59b8-5d9f-a284-019883fde0c9> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "NiMH" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/c5385732-2f61-52a7-8bd4-712b13553e16> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9471a608-59b8-5d9f-a284-019883fde0c9> ;
         ] ;
     ] ;
 .
@@ -1357,11 +1357,11 @@ The `image_interval` key maps to the attribute `camera settings- picture interva
     tern:hasAttribute [
         rdfs:label "camera settings- picture interval" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/51eef4d3-1a0b-4f72-8af3-b639289ee6c0> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/fa1cc557-7e0b-5e18-86f0-18d19fef6f6c> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9e2ef017-5e60-53b8-8ae6-51d2d79e1bbe> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Time lapse frequency" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/fa1cc557-7e0b-5e18-86f0-18d19fef6f6c> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9e2ef017-5e60-53b8-8ae6-51d2d79e1bbe> ;
         ] ;
     ] ;
 .
@@ -1398,11 +1398,11 @@ The `night_mode_shutter_speed` key maps to the attribute `camera settings- night
     tern:hasAttribute [
         rdfs:label "camera settings- night mode" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/7a3c7440-70a8-4442-83ef-9be484c96be4> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/94f6f1b9-e04a-5533-9dbc-fb249afbc962> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/6a9ce6bb-0d26-59fd-a43d-efad96e4df8f> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Fast shutter" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/94f6f1b9-e04a-5533-9dbc-fb249afbc962> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/6a9ce6bb-0d26-59fd-a43d-efad96e4df8f> ;
         ] ;
     ] ;
 .
@@ -1633,6 +1633,118 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ssn:deployedSystem <https://example.com/Sampler/camera-traps> ;
     tern:hasAttribute
         [
+            rdfs:label "redeployment notes" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8d5dcb31-661c-42d1-83c8-afbca2a7afed> ;
+            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasValue [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "The value is from survey."^^xsd:string
+                ]
+        ] ,
+        [
+            rdfs:label "camera trap direction" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/62db1bc1-3be4-48e9-be1c-bb7f051c4df0> ;
+            tern:hasSimpleValue 2 ;
+            tern:hasValue [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 2
+                ]
+        ] ,
+        [
+            rdfs:label "media type" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/133ff279-17d9-47ca-9a18-b8835338a10a> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7e5763da-716a-5221-b21c-7ae6555ab3a3> ;
+            tern:hasValue [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "Burst" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/7e5763da-716a-5221-b21c-7ae6555ab3a3>
+                ]
+        ] ,
+        [
+            rdfs:label "number of images" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/4cba50f1-ad45-41d4-924c-c7efb9801248> ;
+            tern:hasSimpleValue 2 ;
+            tern:hasValue [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 2
+                ]
+        ] ,
+        [
+            rdfs:label "recovery notes" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/b400ec81-0c8e-4f8a-bbcc-62f9b991cbb8> ;
+            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
+            tern:hasValue [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "The value is from survey."^^xsd:string
+                ]
+        ] ,
+        [
+            rdfs:label "operational status" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/c38c49eb-74f4-41a7-96a7-bb34722121cd> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/ca8e760a-c587-5864-9bb6-b2c110ddb178> ;
+            tern:hasValue [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "Operational" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/ca8e760a-c587-5864-9bb6-b2c110ddb178>
+                ]
+        ] ,
+        [
+            rdfs:label "number of camera traps deployed" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/f61a6869-1358-4afb-bcab-779837b682c6> ;
+            tern:hasSimpleValue 2 ;
+            tern:hasValue [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 2
+                ]
+        ] ,
+        [
+            rdfs:label "distance to bait station" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/654888b4-8f97-4420-8b42-ba7df2c743f6> ;
+            tern:hasSimpleValue 2.22e+00 ;
+            tern:hasValue [
+                    a
+                        tern:Float ,
+                        tern:Value ;
+                    rdf:value 2.22e+00 ;
+                    tern:unit unit:M
+                ]
+        ] ,
+        [
+            rdfs:label "camera trap mount" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/295206ed-7d52-4fac-8e2c-b08f512c76a5> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/a96d7507-e823-5f3a-a26b-62313538e0bb> ;
+            tern:hasValue [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "Other" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/a96d7507-e823-5f3a-a26b-62313538e0bb>
+                ]
+        ] ,
+        [
             rdfs:label "additional equipment" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/0a6b69d9-5c8f-47c3-a85a-c92ae51ddc47> ;
@@ -1681,118 +1793,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     rdf:value 2.22e+00 ;
                     tern:unit unit:CentiM
                 ]
-        ] ,
-        [
-            rdfs:label "redeployment notes" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/8d5dcb31-661c-42d1-83c8-afbca2a7afed> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
-            tern:hasValue [
-                    a
-                        tern:Text ,
-                        tern:Value ;
-                    rdf:value "The value is from survey."^^xsd:string
-                ]
-        ] ,
-        [
-            rdfs:label "camera trap direction" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/62db1bc1-3be4-48e9-be1c-bb7f051c4df0> ;
-            tern:hasSimpleValue 2 ;
-            tern:hasValue [
-                    a
-                        tern:Integer ,
-                        tern:Value ;
-                    rdf:value 2
-                ]
-        ] ,
-        [
-            rdfs:label "media type" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/133ff279-17d9-47ca-9a18-b8835338a10a> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/2eebe2f3-ad3e-562a-b0cf-975a338b8de2> ;
-            tern:hasValue [
-                    a
-                        tern:IRI ,
-                        tern:Value ;
-                    rdfs:label "Burst" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/2eebe2f3-ad3e-562a-b0cf-975a338b8de2>
-                ]
-        ] ,
-        [
-            rdfs:label "number of images" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/4cba50f1-ad45-41d4-924c-c7efb9801248> ;
-            tern:hasSimpleValue 2 ;
-            tern:hasValue [
-                    a
-                        tern:Integer ,
-                        tern:Value ;
-                    rdf:value 2
-                ]
-        ] ,
-        [
-            rdfs:label "recovery notes" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/b400ec81-0c8e-4f8a-bbcc-62f9b991cbb8> ;
-            tern:hasSimpleValue "The value is from survey."^^xsd:string ;
-            tern:hasValue [
-                    a
-                        tern:Text ,
-                        tern:Value ;
-                    rdf:value "The value is from survey."^^xsd:string
-                ]
-        ] ,
-        [
-            rdfs:label "operational status" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/c38c49eb-74f4-41a7-96a7-bb34722121cd> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3fc4c897-f811-5488-b49e-82ffd2b37eae> ;
-            tern:hasValue [
-                    a
-                        tern:IRI ,
-                        tern:Value ;
-                    rdfs:label "Operational" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/3fc4c897-f811-5488-b49e-82ffd2b37eae>
-                ]
-        ] ,
-        [
-            rdfs:label "number of camera traps deployed" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/f61a6869-1358-4afb-bcab-779837b682c6> ;
-            tern:hasSimpleValue 2 ;
-            tern:hasValue [
-                    a
-                        tern:Integer ,
-                        tern:Value ;
-                    rdf:value 2
-                ]
-        ] ,
-        [
-            rdfs:label "distance to bait station" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/654888b4-8f97-4420-8b42-ba7df2c743f6> ;
-            tern:hasSimpleValue 2.22e+00 ;
-            tern:hasValue [
-                    a
-                        tern:Float ,
-                        tern:Value ;
-                    rdf:value 2.22e+00 ;
-                    tern:unit unit:M
-                ]
-        ] ,
-        [
-            rdfs:label "camera trap mount" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/295206ed-7d52-4fac-8e2c-b08f512c76a5> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/46dc31c7-4888-5697-95ea-356ae5b00ad8> ;
-            tern:hasValue [
-                    a
-                        tern:IRI ,
-                        tern:Value ;
-                    rdfs:label "Tripod" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/46dc31c7-4888-5697-95ea-356ae5b00ad8>
-                ]
         ] ;
 .
 
@@ -1807,26 +1807,26 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "lure variety" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/64250214-f6e9-4634-a9f8-c460005a108f> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/02105caa-6c01-546b-8d15-06710ff04a53> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3579e880-3b7a-50dc-b00e-fa4b45730ce4> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Standard small mammal bait mix" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/02105caa-6c01-546b-8d15-06710ff04a53>
+                    rdf:value <https://linked.data.gov.au/def/nrm/3579e880-3b7a-50dc-b00e-fa4b45730ce4>
                 ]
         ] ,
         [
             rdfs:label "lure type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/0ab6903f-2ebd-4236-812b-48ba6ad871fc> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8cf79ae3-98a7-5fbc-9cda-f94ce010cab3> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/bd880d99-b3e1-5706-bb6e-6b57a196336d> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Visual" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/8cf79ae3-98a7-5fbc-9cda-f94ce010cab3>
+                    rdf:value <https://linked.data.gov.au/def/nrm/bd880d99-b3e1-5706-bb6e-6b57a196336d>
                 ]
         ] ,
         [
@@ -1911,9 +1911,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Isolated clump of tussock grasses" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092>
+            rdf:value <https://linked.data.gov.au/def/nrm/f51c20dd-6026-5b24-9f5f-a705b8d88a95>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/01a85e08-b223-50e9-92d2-98d8b71d6092> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f51c20dd-6026-5b24-9f5f-a705b8d88a95> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/aa4c96f6-9ea8-4bd3-8800-0bfddcd8a37c> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/cb497bbc-75dc-450d-b020-5bc3c54d5586> ;
