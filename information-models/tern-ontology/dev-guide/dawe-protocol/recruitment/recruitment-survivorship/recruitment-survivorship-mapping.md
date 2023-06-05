@@ -133,11 +133,11 @@ The `study_area_type` key maps to the attribute `study area type` in [Recruitmen
     tern:hasAttribute [
         rdfs:label "study area type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/9805d35e-2844-4e2a-bc59-e6560cc4efb5> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/501885ea-655a-5b86-b148-e4c51625526c> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/50f41ddc-3307-56d0-862d-f97420132a71> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Plot" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/501885ea-655a-5b86-b148-e4c51625526c> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/50f41ddc-3307-56d0-862d-f97420132a71> ;
         ] ;
     ] ;
 .
@@ -559,10 +559,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Immature Fruit" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1dc72c77-4a4b-5cac-adbf-11f5704e3827>
+            rdfs:label "Flowering" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9a4421e0-c308-5e44-b778-24f2688ec1ea>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1dc72c77-4a4b-5cac-adbf-11f5704e3827> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/9a4421e0-c308-5e44-b778-24f2688ec1ea> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/ce3fd96d-e68d-4b14-b3fd-27690c566440> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/f470e27d-20ed-46dc-b64a-d67b39a9dffc> ;
@@ -618,10 +618,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Alive" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8>
+            rdfs:label "Dead" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/2fd1ed97-3e7b-59a0-8d93-9be76f276071>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/1a57c444-66a7-5746-bebc-2be757ee54c8> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2fd1ed97-3e7b-59a0-8d93-9be76f276071> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/ddd0c631-bfdd-4b0f-88de-a5eb1a0181c6> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/f470e27d-20ed-46dc-b64a-d67b39a9dffc> ;
@@ -639,9 +639,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Grazing" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682>
+            rdf:value <https://linked.data.gov.au/def/nrm/7f0f52d9-0a40-5e53-a8fa-b007050342e8>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/118698b1-44f4-5159-a32a-79f7fd335682> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7f0f52d9-0a40-5e53-a8fa-b007050342e8> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/7d4eaa80-0f2a-4828-886e-34cd5a4e2746> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/f470e27d-20ed-46dc-b64a-d67b39a9dffc> ;
