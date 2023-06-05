@@ -185,11 +185,11 @@ The `inside_pan_colour` key maps to the attribute `pan trap inside colour` in [I
     tern:hasAttribute [
         rdfs:label "pan trap inside colour" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/4a6ae834-08bf-4f80-b219-fbe9c56e4e1a> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/484ce715-6dbc-500a-919c-6835758a99d8> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/dc9540f6-9933-51bf-9d19-347656e32236> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Blue" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/484ce715-6dbc-500a-919c-6835758a99d8> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/dc9540f6-9933-51bf-9d19-347656e32236> ;
         ] ;
     ] ;
 .
@@ -206,11 +206,11 @@ The `outside_pan_colour` key maps to the attribute `pan trap outside colour` in 
     tern:hasAttribute [
         rdfs:label "pan trap outside colour" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/7b3a55fa-7d3e-44f5-9042-897b624c4273> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4a97644d-9c42-5e78-a586-eea5bf16fdad> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "White" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/4a97644d-9c42-5e78-a586-eea5bf16fdad> ;
         ] ;
     ] ;
 .
@@ -310,11 +310,11 @@ The `liquid_type` key maps to the attribute `liquid type` in [Invertebrate fauna
     tern:hasAttribute [
         rdfs:label "liquid type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/d423df1b-aac6-42c2-be3e-43ab27eaf745> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5a25663a-201a-587a-a527-84f9543fadaf> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Undiluted Propylene Glycol" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/5a25663a-201a-587a-a527-84f9543fadaf> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af> ;
         ] ;
     ] ;
 .
@@ -512,11 +512,11 @@ The `preservation_type` key maps to the attribute `pan trap preservation type` i
     tern:hasAttribute [
         rdfs:label "pan trap preservation type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/5f261bed-d7d9-413e-8685-68ea548c5c64> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Undiluted propylene glycol" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/9bedf3eb-b24f-57bd-9ebd-57112f9a05df> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af> ;
         ] ;
     ] ;
 .
@@ -583,11 +583,11 @@ The `monitoring_duration` key maps to the attribute `pan trap monitoring duratio
     tern:hasAttribute [
         rdfs:label "pan trap monitoring duration" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/a1556af0-814e-4b1f-b296-9d42a9186dd8> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/fae4684e-be7f-58f3-a099-d916e80d51bb> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/d674b843-5c2c-5e16-b9dc-c46bfd8bf76b> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Full Duration" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/fae4684e-be7f-58f3-a099-d916e80d51bb> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/d674b843-5c2c-5e16-b9dc-c46bfd8bf76b> ;
         ] ;
     ] ;
 .
@@ -745,6 +745,18 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ssn:deployedSystem <https://example.com/Sampler/pan-traps> ;
     tern:hasAttribute
         [
+            rdfs:label "pan placement" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/b5e04630-0013-4cc2-8515-02fdc1e952fc> ;
+            tern:hasSimpleValue true ;
+            tern:hasValue [
+                    a
+                        tern:Boolean ,
+                        tern:Value ;
+                    rdf:value true
+                ]
+        ] ,
+        [
             rdfs:label "pan trap comments" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/41881d6e-2e4c-45c6-8f9c-f8c0d82ce0b6> ;
@@ -785,13 +797,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "liquid type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/d423df1b-aac6-42c2-be3e-43ab27eaf745> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5a25663a-201a-587a-a527-84f9543fadaf> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
-                    rdfs:label "Undiluted Propylene Glycol" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/5a25663a-201a-587a-a527-84f9543fadaf>
+                    rdfs:label "Undiluted propylene glycol" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/3b89ecaf-3ceb-510c-83c6-11242a89c8af>
                 ]
         ] ,
         [
@@ -823,31 +835,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "pan trap monitoring duration" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/a1556af0-814e-4b1f-b296-9d42a9186dd8> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7b77b36b-2661-5c37-80c7-5618abf9682d> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/46bc78d4-672d-555d-b024-b87175cb81d6> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Lite Duration" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/7b77b36b-2661-5c37-80c7-5618abf9682d>
+                    rdf:value <https://linked.data.gov.au/def/nrm/46bc78d4-672d-555d-b024-b87175cb81d6>
                 ]
         ] ,
         [
             rdfs:label "pan trap repeat monitoring" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/e8b25478-caba-4ae1-95af-4bb24e9fbb5a> ;
-            tern:hasSimpleValue true ;
-            tern:hasValue [
-                    a
-                        tern:Boolean ,
-                        tern:Value ;
-                    rdf:value true
-                ]
-        ] ,
-        [
-            rdfs:label "pan placement" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/b5e04630-0013-4cc2-8515-02fdc1e952fc> ;
             tern:hasSimpleValue true ;
             tern:hasValue [
                     a
@@ -969,13 +969,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "pan trap preservation type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/5f261bed-d7d9-413e-8685-68ea548c5c64> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/01409859-285c-5402-9ee6-713bc7964167> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/0b9d4aa5-a3cf-5b6f-accf-60458395b585> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Pressed and dried" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/01409859-285c-5402-9ee6-713bc7964167>
+                    rdf:value <https://linked.data.gov.au/def/nrm/0b9d4aa5-a3cf-5b6f-accf-60458395b585>
                 ]
         ] ;
     tern:resultDateTime "2022-05-10T06:38:02"^^xsd:dateTime ;
@@ -1057,13 +1057,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "photo direction" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/92650dea-b8f2-4e48-bb20-95ca9aa80308> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/18d6d662-5fbf-5848-8f5a-69523188c769> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/13fc6fb2-3e65-5776-8eed-25735fcfdde0> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
-                    rdfs:label "South East" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/18d6d662-5fbf-5848-8f5a-69523188c769>
+                    rdfs:label "North" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/13fc6fb2-3e65-5776-8eed-25735fcfdde0>
                 ]
         ] ;
 .
@@ -1127,26 +1127,26 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "pan trap inside colour" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/4a6ae834-08bf-4f80-b219-fbe9c56e4e1a> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4a97644d-9c42-5e78-a586-eea5bf16fdad> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "White" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90>
+                    rdf:value <https://linked.data.gov.au/def/nrm/4a97644d-9c42-5e78-a586-eea5bf16fdad>
                 ]
         ] ,
         [
             rdfs:label "pan trap outside colour" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/7b3a55fa-7d3e-44f5-9042-897b624c4273> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4a97644d-9c42-5e78-a586-eea5bf16fdad> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "White" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/06495910-6429-5403-adb6-b5fbecf9ca90>
+                    rdf:value <https://linked.data.gov.au/def/nrm/4a97644d-9c42-5e78-a586-eea5bf16fdad>
                 ]
         ] ,
         [
