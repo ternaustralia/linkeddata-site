@@ -183,11 +183,11 @@ The `type` key maps to the attribute `trap type` in [Vertebrate fauna module - i
     tern:hasAttribute [
         rdfs:label "trap type" ;
         tern:attribute <https://linked.data.gov.au/def/nrm/fabf23b1-3828-4448-93f5-67a1b6fbdd5f> ;
-        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/be7f9b1a-a08e-5196-9762-1ddd335ac027> ;
+        tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/db143883-a342-51c2-8d7d-66a03a305392> ;
         tern:hasValue [
             a tern:IRI ;
             rdfs:label "Elliot Trap" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/be7f9b1a-a08e-5196-9762-1ddd335ac027> ;
+            rdf:value <https://linked.data.gov.au/def/nrm/db143883-a342-51c2-8d7d-66a03a305392> ;
         ] ;
     ] ;
 .
@@ -502,43 +502,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
     tern:hasAttribute
         [
-            rdfs:label "trap notes" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/51d7e58a-e122-4f30-a313-228ec612d033> ;
-            tern:hasSimpleValue "Bait is oats."^^xsd:string ;
-            tern:hasValue [
-                    a
-                        tern:Text ,
-                        tern:Value ;
-                    rdf:value "Bait is oats."^^xsd:string
-                ]
-        ] ,
-        [
-            rdfs:label "trap disturbed/damaged" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/b176932e-bd52-4f33-96db-ba17b311512f> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/3e8e9118-750e-5895-8f61-37920e134afe> ;
-            tern:hasValue [
-                    a
-                        tern:IRI ,
-                        tern:Value ;
-                    rdfs:label "Disturbed" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/3e8e9118-750e-5895-8f61-37920e134afe>
-                ]
-        ] ,
-        [
-            rdfs:label "elliot trap false trigger" ;
-            void:inDataset <https://example.com/dataset/1> ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/f575f6e9-a327-4581-a71f-b7150a687292> ;
-            tern:hasSimpleValue true ;
-            tern:hasValue [
-                    a
-                        tern:Boolean ,
-                        tern:Value ;
-                    rdf:value true
-                ]
-        ] ,
-        [
             rdfs:label "cage trap false trigger" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/6be5f9e9-97c1-49ea-9388-119058244314> ;
@@ -554,6 +517,43 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "trap left" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/d758f5c6-b224-45fa-a7e6-fc418fd4333c> ;
+            tern:hasSimpleValue true ;
+            tern:hasValue [
+                    a
+                        tern:Boolean ,
+                        tern:Value ;
+                    rdf:value true
+                ]
+        ] ,
+        [
+            rdfs:label "trap notes" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/51d7e58a-e122-4f30-a313-228ec612d033> ;
+            tern:hasSimpleValue "Bait is oats."^^xsd:string ;
+            tern:hasValue [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "Bait is oats."^^xsd:string
+                ]
+        ] ,
+        [
+            rdfs:label "trap disturbed/damaged" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/b176932e-bd52-4f33-96db-ba17b311512f> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/b2952fd3-5aec-55a8-b4fa-f89720774245> ;
+            tern:hasValue [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "Disturbed" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/b2952fd3-5aec-55a8-b4fa-f89720774245>
+                ]
+        ] ,
+        [
+            rdfs:label "elliot trap false trigger" ;
+            void:inDataset <https://example.com/dataset/1> ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/f575f6e9-a327-4581-a71f-b7150a687292> ;
             tern:hasSimpleValue true ;
             tern:hasValue [
                     a
@@ -652,13 +652,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             rdfs:label "trap type" ;
             void:inDataset <https://example.com/dataset/1> ;
             tern:attribute <https://linked.data.gov.au/def/nrm/fabf23b1-3828-4448-93f5-67a1b6fbdd5f> ;
-            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/6826f1d9-4874-564d-b04e-46627860f05e> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/8f6764de-0f3e-5f6f-b86e-e5e9f6053e24> ;
             tern:hasValue [
                     a
                         tern:IRI ,
                         tern:Value ;
                     rdfs:label "Cage Trap" ;
-                    rdf:value <https://linked.data.gov.au/def/nrm/6826f1d9-4874-564d-b04e-46627860f05e>
+                    rdf:value <https://linked.data.gov.au/def/nrm/8f6764de-0f3e-5f6f-b86e-e5e9f6053e24>
                 ]
         ] ;
 .
@@ -681,10 +681,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Adult" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/2befa1d5-33f2-5bc1-bc4c-0609b8dad9b9>
+            rdfs:label "Juvenile" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/6de1f874-fdcb-520a-9ff8-481a7968e76c>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2befa1d5-33f2-5bc1-bc4c-0609b8dad9b9> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/6de1f874-fdcb-520a-9ff8-481a7968e76c> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/59df7c05-1521-4161-86e4-8e6a8feb4002> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
@@ -799,10 +799,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "Abdominal" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/525b4983-85c3-5d24-8509-e62651c663db>
+            rdfs:label "Scrotal" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/47e71470-3a77-5c15-9d54-b9a6fff840e9>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/525b4983-85c3-5d24-8509-e62651c663db> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/47e71470-3a77-5c15-9d54-b9a6fff840e9> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/0c87c594-0002-479f-8a4b-6f63743065b8> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
@@ -820,9 +820,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Haired" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/7cf0bda6-8e32-570f-86ae-70e5625b3bea>
+            rdf:value <https://linked.data.gov.au/def/nrm/e5c7ad9f-3c57-51d3-87f9-7713f9217474>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/7cf0bda6-8e32-570f-86ae-70e5625b3bea> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/e5c7ad9f-3c57-51d3-87f9-7713f9217474> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/c3b58f60-7166-4855-bb3a-2d8553903a99> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
@@ -878,10 +878,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a
                 tern:IRI ,
                 tern:Value ;
-            rdfs:label "NA" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0>
+            rdfs:label "Unknown" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/2aa05451-2566-5148-b727-276e38e326a0> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/40b39732-e10b-4c4e-968b-3404663a094d> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
@@ -938,9 +938,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 tern:IRI ,
                 tern:Value ;
             rdfs:label "Distended" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/0a36dfcf-fd79-572f-8dae-3b212b15f87d>
+            rdf:value <https://linked.data.gov.au/def/nrm/36024777-d9d8-5ec9-9ee2-c91af3a56279>
         ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/0a36dfcf-fd79-572f-8dae-3b212b15f87d> ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/36024777-d9d8-5ec9-9ee2-c91af3a56279> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/2ad2e5ec-ec5c-4541-a98c-85278e93ad67> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
