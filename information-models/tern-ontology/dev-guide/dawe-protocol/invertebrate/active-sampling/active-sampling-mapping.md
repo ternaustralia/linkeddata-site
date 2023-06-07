@@ -495,6 +495,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/cloud-cover/1> ,
         <https://example.com/observation/precipitation/1> ,
         <https://example.com/observation/air-temperature/1> ,
+        <https://example.com/observation/precipitation-duration/1> ,
         <https://example.com/observation/wind-description/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
@@ -713,6 +714,26 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/e76e99ef-de1d-4387-9b2e-3455b9f9ff78> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+.
+
+<https://example.com/observation/precipitation-duration/1>
+    a tern:Observation ;
+    rdfs:label "precipitation duration" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry <https://example.com/example-observation-location/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasResult [
+            a
+                tern:IRI ,
+                tern:Value ;
+            rdfs:label "Continuous" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/d7f71bef-4a91-598b-b141-f44115ad402e>
+        ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/d7f71bef-4a91-598b-b141-f44115ad402e> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/25d4c7b7-4cdf-4b69-8774-064055c74e23> ;
+    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/e76e99ef-de1d-4387-9b2e-3455b9f9ff78> ;
+    tern:resultDateTime "2022-05-10T05:38:09"^^xsd:dateTime ;
 .
 
 <https://example.com/observation/precipitation/1>
