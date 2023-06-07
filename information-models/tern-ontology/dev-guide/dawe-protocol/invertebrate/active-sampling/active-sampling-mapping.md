@@ -115,23 +115,23 @@ The `search_time` key maps to the property `prov:startedAtTime` on the `tern:Sam
 
 #### `precipitation`
 
-The `precipitation` key maps to a `tern:Observation` with the observable property 'weather- site precipitation'.
+The `precipitation` key maps to a `tern:Observation` with the observable property 'precipitation'.
 
 #### `precipitation_duration`
 
-The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'weather- duration of precipitation'.
+The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'precipitation duration'.
 
 #### `wind_description`
 
-The `wind_description` key maps to a `tern:Observation` with the observable property 'weather-site wind'.
+The `wind_description` key maps to a `tern:Observation` with the observable property 'wind description'.
 
 #### `cloud_cover`
 
-The `cloud_cover` key maps to a `tern:Observation` with the observable property 'weather- site cloud cover'.
+The `cloud_cover` key maps to a `tern:Observation` with the observable property 'cloud cover'.
 
 #### `temperature`
 
-The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
+The `temperature` key maps to a `tern:Observation` with the observable property 'air temperature'.
 
 <!-- #### `start_time`
 
@@ -452,7 +452,7 @@ Conforms: True
 
 ### Example usage with PySHACL - observation level
 
-Save the [cloud cover shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/invertebrate-fauna/invertebrate-fauna-active-sampling-protocol-shapes/weather-site-cloud-cover/shapes.ttl) in a file named `cloud-cover-shapes.ttl` in the Turtle RDF format.
+Save the [cloud cover shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/invertebrate-fauna/invertebrate-fauna-active-sampling-protocol-shapes/cloud-cover/shapes.ttl) in a file named `cloud-cover-shapes.ttl` in the Turtle RDF format.
 
 Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for cloud cover in Invertebrate fauna - Active search protocol**, run the following command to validate the data:
 
@@ -492,10 +492,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "observations on climate" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember
-        <https://example.com/observation/weather-site-cloud-cover/1> ,
-        <https://example.com/observation/weather-site-precipitation/1> ,
-        <https://example.com/observation/weather-site-temperature/1> ,
-        <https://example.com/observation/weather-site-wind/1> ;
+        <https://example.com/observation/cloud-cover/1> ,
+        <https://example.com/observation/precipitation/1> ,
+        <https://example.com/observation/air-temperature/1> ,
+        <https://example.com/observation/wind-description/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-05-10T06:38:02.032000+00:00"^^xsd:dateTimeStamp
@@ -695,9 +695,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     schema:name "Paul Green" ;
 .
 
-<https://example.com/observation/weather-site-cloud-cover/1>
+<https://example.com/observation/cloud-cover/1>
     a tern:Observation ;
-    rdfs:label "weather- site cloud cover" ;
+    rdfs:label "cloud cover" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
@@ -715,9 +715,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-precipitation/1>
+<https://example.com/observation/precipitation/1>
     a tern:Observation ;
-    rdfs:label "weather- site precipitation" ;
+    rdfs:label "precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
@@ -735,9 +735,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-temperature/1>
+<https://example.com/observation/air-temperature/1>
     a tern:Observation ;
-    rdfs:label "weather- site temperature" ;
+    rdfs:label "air temperature" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
@@ -755,9 +755,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-wind/1>
+<https://example.com/observation/wind-description/1>
     a tern:Observation ;
-    rdfs:label "weather-site wind" ;
+    rdfs:label "wind description" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
