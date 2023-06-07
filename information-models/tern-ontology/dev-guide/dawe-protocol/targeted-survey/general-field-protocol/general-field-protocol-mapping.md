@@ -120,23 +120,23 @@ The `plot_visit` key maps to the `tern:SiteVisit` class.
 
 #### `precipitation`
 
-The `precipitation` key maps to a `tern:Observation` with the observable property 'weather- site precipitation'.
+The `precipitation` key maps to a `tern:Observation` with the observable property 'precipitation'.
 
 #### `precipitation_duration`
 
-The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'weather- duration of precipitation'.
+The `precipitation_duration` key maps to a `tern:Observation` with the observable property 'precipitation duration'.
 
 #### `wind_description`
 
-The `wind_description` key maps to a `tern:Observation` with the observable property 'weather-site wind'.
+The `wind_description` key maps to a `tern:Observation` with the observable property 'wind description'.
 
 #### `cloud_cover`
 
-The `cloud_cover` key maps to a `tern:Observation` with the observable property 'weather- site cloud cover'.
+The `cloud_cover` key maps to a `tern:Observation` with the observable property 'cloud cover'.
 
 #### `temperature`
 
-The `temperature` key maps to a `tern:Observation` with the observable property 'weather- site temperature'.
+The `temperature` key maps to a `tern:Observation` with the observable property 'air temperature'.
 
 #### `createdBy` and `updatedBy`
 
@@ -205,7 +205,7 @@ Conforms: True
 
 ### Example usage with PySHACL - observation level
 
-Save the [cloud cover shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/targeted-survey/targeted-survey-general-field-protocol-shapes/weather-site-cloud-cover/shapes.ttl) in a file named `cloud-cover-shapes.ttl` in the Turtle RDF format.
+Save the [cloud cover shapes](https://github.com/ternaustralia/dawe-rlp-spec/blob/main/shapes/targeted-survey/targeted-survey-general-field-protocol-shapes/cloud-cover/shapes.ttl) in a file named `cloud-cover-shapes.ttl` in the Turtle RDF format.
 
 Assuming you have a file named `data.ttl` in the Turtle RDF format and **it has observations for cloud cover in Targeted survey - general field protocol**, run the following command to validate the data:
 
@@ -243,11 +243,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
     sosa:hasMember
-        <https://example.com/observation/weather-duration-of-precipitation/1> ,
-        <https://example.com/observation/weather-site-cloud-cover/1> ,
-        <https://example.com/observation/weather-site-precipitation/1> ,
-        <https://example.com/observation/weather-site-temperature/1> ,
-        <https://example.com/observation/weather-site-wind/1> ;
+        <https://example.com/observation/precipitation-duration/1> ,
+        <https://example.com/observation/cloud-cover/1> ,
+        <https://example.com/observation/precipitation/1> ,
+        <https://example.com/observation/air-temperature/1> ,
+        <https://example.com/observation/wind-description/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-05-10T06:38:02.032000+00:00"^^xsd:dateTimeStamp
@@ -287,9 +287,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T07:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-duration-of-precipitation/1>
+<https://example.com/observation/precipitation-duration/1>
     a tern:Observation ;
-    rdfs:label "weather- duration of precipitation" ;
+    rdfs:label "precipitation duration" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
@@ -307,9 +307,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-cloud-cover/1>
+<https://example.com/observation/cloud-cover/1>
     a tern:Observation ;
-    rdfs:label "weather- site cloud cover" ;
+    rdfs:label "cloud cover" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
@@ -327,9 +327,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-precipitation/1>
+<https://example.com/observation/precipitation/1>
     a tern:Observation ;
-    rdfs:label "weather- site precipitation" ;
+    rdfs:label "precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
@@ -347,9 +347,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-temperature/1>
+<https://example.com/observation/air-temperature/1>
     a tern:Observation ;
-    rdfs:label "weather- site temperature" ;
+    rdfs:label "air temperature" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
@@ -367,9 +367,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-wind/1>
+<https://example.com/observation/wind-description/1>
     a tern:Observation ;
-    rdfs:label "weather-site wind" ;
+    rdfs:label "wind description" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
