@@ -17,7 +17,7 @@ The Recruitment module - Age class protocol records data about the site for the 
 
 These observations are recorded for each site during a site visit.
 
-This protocol consists of 3 sub-protocols to undertake (1) growth stage and life-stage surveys at the plot level, (2) seedling and sapling counts within belt transects and (3) small trees surveys within belt transects.
+This protocol consists of 3 sub-protocols to undertake (1) growth stage and life-stage surveys at the plot level, (2) seedling and sapling counts within belt transects and (3) small trees surveys within belt transects. Observable properties `life stage` and `field species name` are recorded for both plant species and an individual tree, so they have 2 feature types - `plant population` and `plant individual`.
 
 ### Diagram
 
