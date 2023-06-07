@@ -455,10 +455,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
     sosa:hasMember
-        <https://example.com/observation/weather-site-cloud-cover/1> ,
-        <https://example.com/observation/weather-site-precipitation/1> ,
-        <https://example.com/observation/weather-site-temperature/1> ,
-        <https://example.com/observation/weather-site-wind/1> ;
+        <https://example.com/observation/cloud-cover/1> ,
+        <https://example.com/observation/precipitation/1> ,
+        <https://example.com/observation/air-temperature/1> ,
+        <https://example.com/observation/wind-description/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-12-02T05:38:02.032000+00:00"^^xsd:dateTimeStamp
@@ -621,9 +621,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-cloud-cover/1>
+<https://example.com/observation/cloud-cover/1>
     a tern:Observation ;
-    rdfs:label "weather- site cloud cover" ;
+    rdfs:label "cloud cover" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -641,9 +641,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-precipitation/1>
+<https://example.com/observation/precipitation/1>
     a tern:Observation ;
-    rdfs:label "weather- site precipitation" ;
+    rdfs:label "precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -661,9 +661,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-temperature/1>
+<https://example.com/observation/air-temperature/1>
     a tern:Observation ;
-    rdfs:label "weather- site temperature" ;
+    rdfs:label "air temperature" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -681,9 +681,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/weather-site-wind/1>
+<https://example.com/observation/wind-description/1>
     a tern:Observation ;
-    rdfs:label "weather-site wind" ;
+    rdfs:label "wind description" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
