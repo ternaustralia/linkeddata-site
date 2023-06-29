@@ -176,7 +176,7 @@ const config = {
               },
               {
                 to: "/viewers/dawe-vocabs",
-                label: "NRM Controlled Vocabularies",
+                label: "Ecological Monitoring System - Australia Controlled Vocabularies",
               },
             ],
           },

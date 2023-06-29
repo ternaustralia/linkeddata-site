@@ -34,8 +34,8 @@ Exchanging survey data between different data sources in a standard will substan
 
 ## Status of this document
 
-This document was prepared by TERN Data Services and Analytics as one of the deliverables to the service agreement between the Australian Government Department of Agriculture, Water and the Environment (DAWE) and TERN.
-The contents of this document is a continuation of the previous draft report titled Data Exchange Specifications - a report to the Department of Agriculture, Water and the Environment - draft submitted in January of 2021.
+This document was prepared by TERN Data Services and Analytics as one of the deliverables to the service agreement between the Australian Government Department of Climate Change, Energy, the Environment and Water (DCCEEW) and TERN.
+The contents of this document is a continuation of the previous draft report titled Data Exchange Specifications - a report to the Department of Climate Change, Energy, the Environment and Water - draft submitted in January of 2021.
 This document is published as an online evolving specification instead of the report style in the previous draft.
 
 ## Introduction
