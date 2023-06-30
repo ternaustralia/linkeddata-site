@@ -10,7 +10,7 @@ Mentions of observable properties should refer to [cwd-plots/overview](/informat
 
 ## Conceptual modelling
 
-The Plots measures module records data about the site for the feature type 'coarse woody debris'.
+The Plots measures module records data about the site for the feature type 'dead wood' and 'stand dead wood'.
 
 These observations are recorded for each site during a site visit.
 
@@ -277,17 +277,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation-collection/1>
     a tern:ObservationCollection ;
-    rdfs:label "observations on coarse woody debris" ;
+    rdfs:label "observations on dead wood" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
     sosa:hasMember
         <https://example.com/observation/coarse-woody-debris-length/1> ,
         <https://example.com/observation/coarse-woody-debris-narrowest-diameter/1> ,
-        <https://example.com/observation/coarse-woody-debris-per-hectare-(cwd-volume-per-hectare)/1> ,
         <https://example.com/observation/coarse-woody-debris-volume-individual-(cwd-volume)/1> ,
         <https://example.com/observation/coarse-woody-debris-widest-diameter/1> ,
-        <https://example.com/observation/cwd-abundance-per-hectare/1> ,
-        <https://example.com/observation/cwd-cover-percent/1> ,
         <https://example.com/observation/cwd-decay-class/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
@@ -305,6 +302,24 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     rdf:value "20"
                 ]
         ] ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-12-10T05:38:02"^^xsd:dateTime ;
+.
+
+<https://example.com/observation-collection/2>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on dead woods on site" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:hasMember
+        <https://example.com/observation/coarse-woody-debris-per-hectare-(cwd-volume-per-hectare)/1> ,
+        <https://example.com/observation/cwd-abundance-per-hectare/1> ,
+        <https://example.com/observation/cwd-cover-percent/1> ;
+    sosa:phenomenonTime [
+            a time:Instant ;
+            time:inXSDDateTimeStamp "2022-12-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+        ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7d50794a-8784-4ab9-99ff-a324bb6e0831> ;
     tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     tern:resultDateTime "2022-12-10T05:38:02"^^xsd:dateTime ;
 .
@@ -376,7 +391,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "coarse woody debris per hectare (cwd volume per hectare)" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -388,17 +403,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/74b6493b-8dfe-42f6-acb2-0dda5652cf54> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7d50794a-8784-4ab9-99ff-a324bb6e0831> ;
-    tern:hasAttribute [
-            rdfs:label "point intercept number" ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
-            tern:hasSimpleValue "20" ;
-            tern:hasValue [
-                    a
-                        tern:Text ,
-                        tern:Value ;
-                    rdf:value "20"
-                ]
-        ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
@@ -469,7 +473,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "coarse woody debris abundance per hectare" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -481,17 +485,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/6cabde11-a74f-408e-84fb-c320f6c72034> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7d50794a-8784-4ab9-99ff-a324bb6e0831> ;
-    tern:hasAttribute [
-            rdfs:label "point intercept number" ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
-            tern:hasSimpleValue "20" ;
-            tern:hasValue [
-                    a
-                        tern:Text ,
-                        tern:Value ;
-                    rdf:value "20"
-                ]
-        ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
@@ -500,7 +493,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "coarse woody debris cover percent" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -512,17 +505,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/e73e3079-9858-42c6-b418-36326a6d0ddd> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7d50794a-8784-4ab9-99ff-a324bb6e0831> ;
-    tern:hasAttribute [
-            rdfs:label "point intercept number" ;
-            tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
-            tern:hasSimpleValue "20" ;
-            tern:hasValue [
-                    a
-                        tern:Text ,
-                        tern:Value ;
-                    rdf:value "20"
-                ]
-        ] ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
@@ -602,10 +584,20 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "coarse woody debris 1" ;
+    rdfs:label "dead wood 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/c001183f-c6b5-4162-8de9-0c7ed0eb3bfe> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/a8b1a7fb-b479-48ff-b706-b3cc4691710b> ;
+.
+
+<https://example.com/feature-of-interest/2>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "dead woods on site" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/0e354d29-e23f-4ba7-84d6-9b58ca289782> ;
 .
 
 <https://example.com/dataset/1>
