@@ -14,6 +14,8 @@ The Fire module records data about the site for the following feature types:
 
 - plant occurrence
 - land surface substrate
+- plant community
+- disturbance
 
 These observations are recorded for each site during a site visit.
 
@@ -21,7 +23,7 @@ Lay out the N2/S2, N4/S4, E2/W2 and E4/W4 transects before doing survey.
 
 ### Diagram
 
-The following diagram is colour-coded to show the related things by feature type. The blue nodes are things related to the land surface substrate feature type and the green nodes are things related to the plant occurrence feature type.
+The following diagram is colour-coded to show the related things by feature type.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1pkFUIXIC3u1qEEmX40KGcSczRTqM7o9M&layers=1&nav=1&title=fire-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1pkFUIXIC3u1qEEmX40KGcSczRTqM7o9M%26export%3Ddownload"></iframe>
 
@@ -309,7 +311,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/field-species-name/1> ,
         <https://example.com/observation/growth-form/1> ,
         <https://example.com/observation/in-canopy-sky/1> ,
-        <https://example.com/observation/maximum-trunk-char-height/1> ,
         <https://example.com/observation/plant-height/1> ,
         <https://example.com/observation/plant-regenerating-height/1> ,
         <https://example.com/observation/plant-status/1> ,
@@ -418,7 +419,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "maximum trunk char height" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -509,7 +510,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "plot burned status" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/site/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -644,6 +645,26 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/transect/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
+.
+
+<https://example.com/feature-of-interest/3>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "plant community 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
+.
+
+<https://example.com/feature-of-interest/4>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "plot disturbance 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
 .
 
 <https://example.com/example-observation-location/1>
