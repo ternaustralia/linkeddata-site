@@ -13,7 +13,7 @@ Mentions of observable properties should refer to [point-intercept/overview](/in
 The Condition point intercept module records data about the site for the following feature types:
 
 - plant occurrence
-- plant litter
+- land surface substrate
 
 These observations are recorded for each site during a site visit.
 
@@ -23,7 +23,7 @@ Condition point-intercept is used to collect the condition point-intercept measu
 
 ### Diagram
 
-The following diagram show the Condition point-intercept mapping. The orange nodes are things related to the plant occurrence feature type and the yellow nodes are things related to the plant litter feature type.
+The following diagram show the Condition point-intercept mapping. The orange nodes are things related to the plant occurrence feature type and the yellow nodes are things related to the land surface substrate feature type.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1AZ_g1o36UI0PmGDd4dF9-hQ9MjaUEGg1&layers=1&nav=1&title=condition-point-intercept-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1AZ_g1o36UI0PmGDd4dF9-hQ9MjaUEGg1%26export%3Ddownload"></iframe>
 
@@ -336,7 +336,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "plant litter 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/transect/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/e6ed6e58-5916-4d31-9ed5-109ab3436fce> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/aef12cd6-3826-4988-a54c-8578d3fb4c8d> ;
 .
 
 <https://example.com/observation/canopy-health/1>
