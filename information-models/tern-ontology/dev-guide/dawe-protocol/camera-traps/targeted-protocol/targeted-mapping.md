@@ -10,7 +10,6 @@ The mapping of the source app data to the TERN Ontology on this page is applicab
 
 The Camera traps - Targeted protocol records data about the site for the following feature types:
 
-- site
 - habitat
 
 These observations are recorded for each site during a site visit.
@@ -1915,25 +1914,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ;
     sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f51c20dd-6026-5b24-9f5f-a705b8d88a95> ;
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/aa4c96f6-9ea8-4bd3-8800-0bfddcd8a37c> ;
-    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/cb497bbc-75dc-450d-b020-5bc3c54d5586> ;
-    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-.
-
-<https://example.com/observation/redeployment-observations/1>
-    a tern:Observation ;
-    rdfs:label "redeployment observations" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sampler/camera-traps> ;
-    sosa:hasResult [
-            a
-                tern:Text ,
-                tern:Value ;
-            rdf:value "The value is from observations."^^xsd:string
-        ] ;
-    sosa:hasSimpleResult "The value is from observations."^^xsd:string ;
-    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0adc5740-7e20-4509-949c-12ae72500951> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/cb497bbc-75dc-450d-b020-5bc3c54d5586> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
