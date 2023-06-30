@@ -13,7 +13,7 @@ Mentions of observable properties should refer to [full-protocol/overview](/info
 The Cover module records data about the site for the following feature types:
 
 - plant occurrence
-- land surface
+- land surface substrate
 
 These observations are recorded for each site during a site visit.
 
@@ -21,7 +21,7 @@ The Cover module involves the collection of quantitative, accurate and repeatabl
 
 ### Diagram
 
-The following diagram show the Cover mapping. The orange nodes are things related to the plant occurrence feature type and the yellow nodes are things related to the land surface feature type.
+The following diagram show the Cover mapping. The orange nodes are things related to the plant occurrence feature type and the yellow nodes are things related to the land surface substrate feature type.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1bl7zq2xWibhnyqvAFFham3fIvyv23lpV&layers=1&nav=1&title=cover-full-and-lite-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1bl7zq2xWibhnyqvAFFham3fIvyv23lpV%26export%3Ddownload"></iframe>
 
@@ -329,7 +329,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation-collection/2>
     a tern:ObservationCollection ;
-    rdfs:label "observations on land surface" ;
+    rdfs:label "observations on land surface substrate" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
     sosa:hasMember <https://example.com/observation/substrate-type/1> ;
@@ -488,10 +488,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "land surface 1" ;
+    rdfs:label "land surface substrate 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/8282fb22-4135-415c-8ca2-317860d102fb> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/aef12cd6-3826-4988-a54c-8578d3fb4c8d> ;
 .
 
 <https://example.com/site/1/visit/1>
