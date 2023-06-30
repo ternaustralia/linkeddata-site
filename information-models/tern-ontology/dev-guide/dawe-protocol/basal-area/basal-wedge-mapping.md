@@ -326,10 +326,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "plant individual tree 1" ;
+    rdfs:label "plant occurrence tree 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/feature-of-interest/2> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
 .
 
 <https://example.com/feature-of-interest/3>
