@@ -8,7 +8,7 @@ Mentions of observable properties should refer to [full-dbh/overview](/informati
 
 A site is established and a site visit is carried out to record observations and measurements.
 
-A specific plant species is targeted where multiple observations are made on plant individuals.
+A specific plant species is targeted where multiple observations are made on plant occurrences.
 
 The diameter at breast height (DBH) observation is made at a specific point of measurement on a tree. This point of measurement value is captured as an attribute on the observation. The plant status and the tree trunk type is also recorded as observations.
 
@@ -112,7 +112,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 
 The data are observations recorded during a site visit. Since majority of the properties on these observations share the same values (feature of interest, site visit, result and phenomenon time) they can be recorded as observation members of an observation collection.
 
-The feature of interest for all the observations is a single tree modelled as a `tern:Sample` with the feature type as 'plant individual'.
+The feature of interest for all the observations is a single tree modelled as a `tern:Sample` with the feature type as 'plant occurrence'.
 
 #### `species`
 
@@ -462,7 +462,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "tree 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/feature-of-interest/2> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/60d7edf8-98c6-43e9-841c-e176c334d270> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
 .
 
 <https://example.com/dataset/1>
