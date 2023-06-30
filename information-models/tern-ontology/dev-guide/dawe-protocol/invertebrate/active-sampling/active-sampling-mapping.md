@@ -12,7 +12,7 @@ Mentions of observable properties should refer to [active-sampling/overview](/in
 
 The Active search (hand collecting) protocol records data about the site for the following feature types:
 
-- climate
+- weather
 - habitat
 
 These observations are recorded for each site during a site visit.
@@ -487,10 +487,11 @@ PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://example.com/ObservationCollection/observations-on-climate>
+<https://example.com/ObservationCollection/observations-on-weather>
     a tern:ObservationCollection ;
-    rdfs:label "observations on climate" ;
+    rdfs:label "observations on weather" ;
     void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasMember
         <https://example.com/observation/cloud-cover/1> ,
         <https://example.com/observation/precipitation/1> ,
@@ -827,6 +828,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcterms:identifier "site-site-001" ;
     void:inDataset <https://example.com/dataset/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+.
+
+<https://example.com/feature-of-interest/weather>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "weather" ;
+    sosa:isSampleOf <https://example.com/Site/site> ;
+    void:inDataset <https://example.com/dataset/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e196c39e-959f-4dd4-8816-d0a58b7cc630> ;
 .
 
 <https://example.com/dataset/1>
