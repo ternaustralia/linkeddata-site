@@ -12,7 +12,7 @@ Mentions of observable properties should refer to [malaise-trapping/overview](/i
 
 The Malaise trapping protocol records data about the site for the following feature types:
 
-- climate
+- weather
 
 These observations are recorded for each site during a site visit.
 
@@ -607,9 +607,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ;
 .
 
-<https://example.com/ObservationCollection/observations-on-climate>
+<https://example.com/ObservationCollection/observations-on-weather>
     a tern:ObservationCollection ;
-    rdfs:label "observations on climate" ;
+    rdfs:label "observations on weather" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasMember
         <https://example.com/observation/cloud-cover/1> ,
@@ -621,6 +621,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-05-10T06:38:02.032000+00:00"^^xsd:dateTimeStamp
         ] ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/4a2c4309-da43-4ad4-b1eb-637d2e70580d> ;
     tern:hasSiteVisit <https://example.com/SiteVisit/site-visit> ;
 .
@@ -774,7 +775,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "cloud cover" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -794,7 +795,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "precipitation duration" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -814,7 +815,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -834,7 +835,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "air temperature" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -854,7 +855,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "wind description" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -877,6 +878,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/site> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;
+.
+
+<https://example.com/feature-of-interest/weather>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "weather" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Site/site> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e196c39e-959f-4dd4-8816-d0a58b7cc630> ;
 .
 
 <https://example.com/Sample/habitat>
