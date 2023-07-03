@@ -15,6 +15,7 @@ The Opportunistic Observations module records data about the site for the follow
 - habitat
 - plant occurrence
 - animal occurrence
+- plant community
 
 Opportunistic observations are unplanned (no defined survey effort) and made while undertaking other activities, at any stage of a project. Observations often occur while traveling between plots and while undertaking other modules.
 
@@ -22,7 +23,7 @@ Opportunistic observations are unplanned (no defined survey effort) and made whi
 
 ### Diagram
 
-The following diagram show the Opportunistic Observations protocol mapping. The blue nodes are related to 'habitat sampling' on site. Light green nodes are things related to 'animal occurrence' feature type and green nodes are 'fauna vouchering' sampling on 'animal occurrence'. Light purple nodes are things related to 'plant occurrence' feature type and purple nodes are 'plant vouchering' sampling on 'plant occurrence'. Yellow nodes are 'taking representative media' sampling on observations. Orange nodes are things related to both 'animal occurrence' and 'plant occurrence' feature types.
+The following diagram show the Opportunistic Observations protocol mapping. 
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1rf2awb20JcQlGEdC2oKoT-5mMK89QFXm&layers=1&nav=1&title=opportunistic-observations-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1rf2awb20JcQlGEdC2oKoT-5mMK89QFXm%26export%3Ddownload"></iframe>
 
@@ -419,7 +420,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "microhabitat tier 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -439,7 +440,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "microhabitat tier 2" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -1069,7 +1070,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "vegetation type" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -1294,6 +1295,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/2361dea8-598c-4b6f-a641-2b98ff199e9e> ;
+.
+
+<https://example.com/feature-of-interest/4>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "plant community 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
 .
 
 <https://example.com/example-phenomenon-time/1>
