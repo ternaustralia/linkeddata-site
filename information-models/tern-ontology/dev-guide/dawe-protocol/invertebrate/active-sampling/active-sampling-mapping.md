@@ -702,7 +702,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "cloud cover" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -722,7 +722,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "precipitation duration" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -742,7 +742,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -762,7 +762,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "air temperature" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -782,7 +782,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "wind description" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Site/site> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
