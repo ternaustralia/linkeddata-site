@@ -12,8 +12,8 @@ Mentions of observable properties should refer to [pan-trapping/overview](/infor
 
 The Pan trapping protocol records data about the site for the following feature types:
 
-- plant community
-- animal specimen
+- plant occurrence
+- animal community
 
 These observations are recorded for each site during a site visit.
 
@@ -1016,7 +1016,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "plant species in flower" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-occurrence> ;
     sosa:hasResult [
             a
                 tern:Text ,
@@ -1068,14 +1068,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ;
 .
 
-<https://example.com/Sample/plant-community>
+<https://example.com/Sample/plant-occurrence>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "plant community" ;
+    rdfs:label "plant occurrence" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Transect/transect> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
 .
 
 <https://example.com/SiteVisit/site-visit>
@@ -1185,7 +1185,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     dwc:materialSampleID "materialsample-invertebrate-animals-001" ;
     sosa:isSampleOf <https://example.com/Transect/transect> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/cff98a66-48bb-4654-ad6d-a5f36079efae> ;
 .
 
 <https://example.com/Site/site>
