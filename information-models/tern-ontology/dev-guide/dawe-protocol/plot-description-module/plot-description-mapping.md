@@ -12,11 +12,13 @@ Mentions of observable properties should refer to [plot-description/overview](/i
 
 The Plot Description module records data about the site for the following feature types:
 
-- climate
+- weather
 - landform
 - land surface
 - plant community
 - vegetation stratum
+- plant occurrence
+- disturbance
 
 These observations are recorded for each site during a site visit.
 
@@ -26,7 +28,7 @@ The `slope` value is used to automatically calculate the `slope class` and help 
 
 ### Diagram
 
-The following diagram is colour-coded to show the related things by feature type. The orange nodes are things related to the landform feature type and the yellow nodes are things related to the land surface feature type. Blue is for the climate feature type and green is for the vegetation stratum feature type. Lastly, purple is for the plant community feature type.
+The following diagram is colour-coded to show the related things by feature type. 
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1AHov37L7NVuER801aSH_L8Um2IGzsKVq&layers=1&nav=1&title=plot-description-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1AHov37L7NVuER801aSH_L8Um2IGzsKVq%26export%3Ddownload"></iframe>
 
@@ -179,7 +181,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 }
 ```
 
-The data are observations recorded during a site visit. The feature of interest for 'slope', 'slope_class', 'aspect', 'landform_pattern', 'landform_element' is landform modelled as a `tern:Sample` with the feature type as 'landform'. The feature of interest for 'outcrop_lithology', 'surface_strew_lithology', 'surface_strew_size', 'disturbance' is land surface modelled as a `tern:Sample` with the feature type as 'land surface'.
+The data are observations recorded during a site visit. 
 
 #### `plot_label`
 
@@ -274,7 +276,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 }
 ```
 
-The data are observations recorded during a site visit. The feature of interest for 'climatic_condition' is climate modelled as a `tern:Sample` with the feature type as 'climate'. The feature of interest for 'veg_growth_stage', 'fire_history', 'homogeneity_measure' is plant community modelled as a `tern:Sample` with the feature type as 'plant community'. The feature of interest for 'disturbance' is land surface modelled as a `tern:Sample` with the feature type as 'land surface'. The feature of interest for 'veg_structural_formation' and 'visit_field_name' is vegetation stratum modelled as a `tern:Sample` with the feature type as 'vegetation stratum'.
+The data are observations recorded during a site visit. 
 
 #### `climatic_condition`
 
@@ -402,11 +404,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/5> ;
     sosa:hasMember
-        <https://example.com/observation/aspect/1> ,
         <https://example.com/observation/landform-element/1> ,
-        <https://example.com/observation/landform-pattern/1> ,
-        <https://example.com/observation/slope-class/1> ,
-        <https://example.com/observation/slope/1> ;
+        <https://example.com/observation/landform-pattern/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
@@ -422,10 +421,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasMember
-        <https://example.com/observation/disturbance-type/1> ,
         <https://example.com/observation/rock-outcrop-lithology/1> ,
         <https://example.com/observation/surface-strew-lithology/1> ,
-        <https://example.com/observation/surface-strew-size/1> ;
+        <https://example.com/observation/surface-strew-size/1> ,
+        <https://example.com/observation/slope-class/1> ,
+        <https://example.com/observation/slope/1> ,
+        <https://example.com/observation/aspect/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
@@ -464,9 +465,25 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
     sosa:hasMember
-        <https://example.com/observation/fire-history/1> ,
         <https://example.com/observation/growth-stage/1> ,
-        <https://example.com/observation/homogeneity-measure/1> ;
+        <https://example.com/observation/structural-formation/1> ;
+    sosa:phenomenonTime [
+            a time:Instant ;
+            time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+        ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+.
+
+<https://example.com/observation-collection/5>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on disturbance" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/6> ;
+    sosa:hasMember
+        <https://example.com/observation/fire-history/1> ,
+        <https://example.com/observation/disturbance-type/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
@@ -501,10 +518,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "climate 1" ;
+    rdfs:label "weather 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/6d40d71e-58cd-4f75-8304-40c01fe5f74c> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e196c39e-959f-4dd4-8816-d0a58b7cc630> ;
 .
 
 <https://example.com/observation/aspect/1>
@@ -512,7 +529,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "aspect" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/5> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -565,7 +582,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "disturbance type" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/6> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -656,7 +673,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "homogeneity measure" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/7> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -768,7 +785,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     prov:wasInformedBy <https://example.com/observation/slope/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/5> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -792,7 +809,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/cover/1> ,
         <https://example.com/observation/growth-form/1> ,
         <https://example.com/observation/height-class/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -947,7 +964,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "slope" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/5> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -1060,6 +1077,26 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/32834f36-a478-45be-97f4-ff2ff51e9f5c> ;
+.
+
+<https://example.com/feature-of-interest/6>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "disturbance 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
+.
+
+<https://example.com/feature-of-interest/7>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "plant occurrence 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> ;
 .
 
 <https://example.com/example-observation-location/1>
