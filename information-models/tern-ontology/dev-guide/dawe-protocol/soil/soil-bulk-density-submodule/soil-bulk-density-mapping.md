@@ -12,7 +12,7 @@ Mentions of observable properties should refer to [overview](/information-models
 
 The Soil bulk density module records data about the site for the following feature types:
 
-- soil specimen
+- soil sample
 
 These observations are recorded for each site during a site visit.
 
@@ -220,7 +220,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation-collection/1>
     a tern:ObservationCollection ;
-    rdfs:label "observations on soil specimen" ;
+    rdfs:label "observations on soil sample" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
             a
@@ -341,10 +341,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "soil specimen 1" ;
+    rdfs:label "soil sample 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/d738a3f9-9b00-4adf-9dc8-0577269b691d> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/06461021-a6c2-4175-9651-23653c2b9116> ;
 .
 
 <https://example.com/dataset/1>
