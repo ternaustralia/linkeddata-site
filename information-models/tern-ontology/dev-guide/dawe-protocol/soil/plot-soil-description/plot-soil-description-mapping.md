@@ -15,8 +15,8 @@ The Plot soil description module records data about the site for the following f
 - landform
 - land surface
 - land surface substrate
-- land surface disturbance
-- soil profile
+- disturbance
+- soil
 
 These observations are recorded for each site during a site visit.
 
@@ -24,7 +24,7 @@ This module describes important aspects of the soil surface within the plot in a
 
 ### Diagram
 
-The following diagram shows the Plot Soil Description protocol mapping. Purple nodes are things related to 'land surface' feature type. Yellow nodes are things related to 'landform' feature type. Orange nodes are things related to 'land surface substrate' feature type. Green nodes are things related to 'soil profile' feature type. Blue nodes are things related to 'land surface disturbance' feature type.
+The following diagram shows the Plot Soil Description protocol mapping. 
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1jQw8u2jj8WCNfghg5XzTlofJieOMHPQy&layers=1&nav=1&title=soil-plot-soil-description-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1jQw8u2jj8WCNfghg5XzTlofJieOMHPQy%26export%3Ddownload"></iframe>
 
@@ -301,7 +301,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
     sosa:hasMember
-        <https://example.com/observation/aspect/1> ,
         <https://example.com/observation/landform-element/1> ,
         <https://example.com/observation/landform-pattern/1> ,
         <https://example.com/observation/landform-relief/1> ,
@@ -344,7 +343,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation-collection/3>
     a tern:ObservationCollection ;
-    rdfs:label "observations on soil profile" ;
+    rdfs:label "observations on soil" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
     sosa:hasMember
@@ -361,7 +360,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation-collection/4>
     a tern:ObservationCollection ;
-    rdfs:label "observations on land surface disturbance" ;
+    rdfs:label "observations on disturbance" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasMember
@@ -396,6 +395,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/component-of-microrelief/1> ,
         <https://example.com/observation/condition-of-soil-surface-when-dry/1> ,
         <https://example.com/observation/microrelief-biotic-agent/1> ,
+        <https://example.com/observation/aspect/1> ,
         <https://example.com/observation/microrelief-horizontal-interval-distance/1> ,
         <https://example.com/observation/microrelief-vertical-interval-distance/1> ,
         <https://example.com/observation/rock-outcrop-abundance/1> ,
@@ -426,7 +426,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "aspect" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/5> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -1319,10 +1319,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "soil profile 1" ;
+    rdfs:label "soil 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/80c39b95-0912-4267-bb66-2fa081683723> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/98e8d72d-f361-41ed-af9d-6e7f90c1dfce> ;
 .
 
 <https://example.com/site/1/visit/1>
@@ -1407,7 +1407,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "land surface disturbance 1" ;
+    rdfs:label "disturbance 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
