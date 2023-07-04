@@ -540,8 +540,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/asc-great-group/1> ,
         <https://example.com/observation/asc-order/1> ,
         <https://example.com/observation/asc-subgroup/1> ,
-        <https://example.com/observation/asc-suborder/1> ,
-        <https://example.com/observation/soil-pit-depth/1> ;
+        <https://example.com/observation/asc-suborder/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
             time:inXSDDateTimeStamp "2022-11-05T05:38:02.032000+00:00"^^xsd:dateTimeStamp
@@ -564,7 +563,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/horizon-boundary-distinctness/1> ,
         <https://example.com/observation/horizon-boundary-shape/1> ,
         <https://example.com/observation/mean-macropore-diameter/1> ,
-        <https://example.com/observation/r-horizon-depth/1> ,
         <https://example.com/observation/soil-coarse-fragment-alteration/1> ,
         <https://example.com/observation/soil-coarse-fragment-strength/1> ,
         <https://example.com/observation/soil-compound-pedality/1> ,
@@ -620,6 +618,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-11-05T05:38:02"^^xsd:dateTime ;
 .
 
+<https://example.com/observation-collection/3>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on soil profile" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
+    sosa:hasMember
+        <https://example.com/observation/soil-pit-depth/1> ,
+        <https://example.com/observation/r-horizon-depth/1> ;
+    sosa:phenomenonTime [
+            a time:Instant ;
+            time:inXSDDateTimeStamp "2022-11-05T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+        ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/8f00b7c6-34b4-4203-8dcc-4be47f21d7db> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-11-05T05:38:02"^^xsd:dateTime ;
+.
+
 <https://example.com/soil-sample-collection/1>
     a tern:Sampling ;
     void:inDataset <https://example.com/dataset/1> ;
@@ -639,7 +654,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation/asc-family/1>
     a tern:Observation ;
-    rdfs:label "asc family" ;
+    rdfs:label "Australian Soil Classification - family" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -672,7 +687,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation/asc-great-group/1>
     a tern:Observation ;
-    rdfs:label "asc great group" ;
+    rdfs:label "Australian Soil Classification - great group" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -705,7 +720,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation/asc-order/1>
     a tern:Observation ;
-    rdfs:label "australian soil classification- order" ;
+    rdfs:label "australian soil classification - order" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -738,7 +753,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation/asc-subgroup/1>
     a tern:Observation ;
-    rdfs:label "asc subgroup" ;
+    rdfs:label "Australian Soil Classification - subgroup" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -771,7 +786,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation/asc-suborder/1>
     a tern:Observation ;
-    rdfs:label "asc suborder" ;
+    rdfs:label "Australian Soil Classification - suborder" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
@@ -947,7 +962,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "r horizon depth" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -1565,7 +1580,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "soil pit depth" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -1984,10 +1999,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "soil subsite 1" ;
+    rdfs:label "soil sample 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/b9a72809-6d53-4dad-bac6-bfe4dc76be31> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/06461021-a6c2-4175-9651-23653c2b9116> ;
 .
 
 <https://example.com/feature-of-interest/1>
@@ -1998,6 +2013,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/feature-of-interest/2> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/de1e18e4-6cfd-4c78-b389-a5b1dd04b899> ;
+.
+
+<https://example.com/feature-of-interest/3>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "soil profile 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/80c39b95-0912-4267-bb66-2fa081683723> ;
 .
 
 <https://example.com/example-observation-location/1>
