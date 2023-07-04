@@ -240,7 +240,7 @@ The `label` key maps to the property `dcterms:identifier` on the `tern:Sample` c
 
 #### `tree_status`
 
-The `tree_status` key maps to a `tern:Observation` with the observable property 'plant status'.
+The `tree_status` key maps to a `tern:Observation` with the observable property 'plant mortality'.
 
 #### `veg_growth_stage`
 
@@ -423,7 +423,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/life-stage/1> ,
         <https://example.com/observation/plant-height/1> ,
         <https://example.com/observation/plant-missing-status/1> ,
-        <https://example.com/observation/plant-status/1> ,
+        <https://example.com/observation/plant-mortality/1> ,
         <https://example.com/observation/vegetation-health/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
@@ -608,9 +608,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/plant-status/1>
+<https://example.com/observation/plant-mortality/1>
     a tern:Observation ;
-    rdfs:label "plant status" ;
+    rdfs:label "plant mortality" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
     sosa:hasFeatureOfInterest <https://example.com/Sample/plant-individual> ;
