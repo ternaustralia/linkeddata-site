@@ -13,6 +13,7 @@ Mentions of observable properties should refer to [active-and-passive/overview](
 The Active and passive searching protocol records data about the site for the following feature types:
 
 - animal population
+- animal specimen
 - weather
 
 These observations are recorded for each site during a site visit.
