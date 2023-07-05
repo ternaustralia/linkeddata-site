@@ -13,6 +13,7 @@ Mentions of observable properties should refer to [identify-measure-and-release/
 The Identify, measure and release protocol records data about the site for the following feature types:
 
 - animal individual
+- animal population
 
 These observations are recorded for each site during a site visit.
 
@@ -473,7 +474,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/head-length/1> ,
         <https://example.com/observation/position-of-testes/1> ,
         <https://example.com/observation/pouch-young-development-class/1> ,
-        <https://example.com/observation/pouch-young-number/1> ,
         <https://example.com/observation/pouch-young-size/1> ,
         <https://example.com/observation/sex/1> ,
         <https://example.com/observation/signs-of-pregnancy/1> ,
@@ -834,7 +834,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "pouch young number" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/animal-individual> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/animal-population> ;
     sosa:hasResult [
             a
                 tern:Integer ,
@@ -845,6 +845,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/88353d7b-8a2c-4b84-b034-71395f4edb93> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/7942c1d3-8cfc-4d74-931d-850cacfa5a63> ;
+    tern:hasSiteVisit <https://example.com/SiteVisit/site-visit> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
@@ -1068,6 +1069,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/site> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7> ;
+.
+
+<https://example.com/Sample/animal-population>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "animal population" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Site/site> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/8a68b4a9-167b-40f0-9222-293a2d20ffee> ;
 .
 
 <https://example.com/dataset/1>
