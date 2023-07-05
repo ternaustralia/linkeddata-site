@@ -13,6 +13,7 @@ Mentions of observable properties should refer to [ecological-community/overview
 The Ecological community protocol records data about the site for the feature type:
 
 - plant community
+- disturbance
 
 These observations are recorded for each site during a site visit.
 
@@ -267,7 +268,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasMember
         <https://example.com/observation/condition-thresholds/1> ,
         <https://example.com/observation/diagnostic-characteristics/1> ,
-        <https://example.com/observation/disturbance-type/1> ,
         <https://example.com/observation/species-and-cover/1> ,
         <https://example.com/observation/vegetation-health/1> ,
         <https://example.com/observation/weeds/1> ;
@@ -416,7 +416,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "disturbance type" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/plant-community> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    tern:hasSiteVisit <https://example.com/SiteVisit/site-visit> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -496,6 +497,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "site" ;
     void:inDataset <https://example.com/dataset/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/e1c7c434-1321-4601-9079-e837b7ffc293> ;
+.
+
+<https://example.com/feature-of-interest/1>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "disturbance 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Site/site> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
 .
 
 <https://example.com/example-phenomenon-time/1>
