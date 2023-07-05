@@ -12,9 +12,9 @@ Mentions of observable properties should refer to [overview](/information-models
 
 The Vegetation Mapping module records data about the site for the following feature types:
 
-- land surface disturbance
+- disturbance
 - plant population
-- vegetation disturbance
+- stand dead wood
 - land surface substrate
 - plant community
 
@@ -22,7 +22,7 @@ This module provides a standardized approach to vegetation classification, which
 
 ### Diagram
 
-The following diagram show the Vegetation Mapping protocol mapping. The blue nodes are things related to 'land surface disturbance' feature type. Light green nodes are things related to 'plant population' feature type and greens nodes are 'plant vouchering' sampling on 'plant population'. Orange nodes are things related to 'vegetation disturbance' feature type. Yellow nodes are things related to 'land surface substrate' feature type. Pink nodes are things related to 'plant community' feature type. Purple nodes are 'taking photos' sampling on any materials from site.
+The following diagram shows the Vegetation Mapping protocol mapping.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G16CzfsvBI087OVKooSSVyb02kfKo4hlf3&layers=1&nav=1&title=vegetation-mapping-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D16CzfsvBI087OVKooSSVyb02kfKo4hlf3%26export%3Ddownload"></iframe>
 
@@ -430,7 +430,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
     sosa:hasMember
         <https://example.com/observation/bare-cover-percent/1> ,
-        <https://example.com/observation/coarse-woody-debris-cover-percent/1> ,
         <https://example.com/observation/cryptogam-cover-percent/1> ,
         <https://example.com/observation/gravel-cover-percent/1> ,
         <https://example.com/observation/litter-cover-percent/1> ,
@@ -472,6 +471,31 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
+<https://example.com/observation-collection/4>
+    a tern:ObservationCollection ;
+    rdfs:label "observations on disturbance" ;
+    dcterms:identifier "observationCollection3"^^xsd:string ;
+    void:inDataset <https://example.com/dataset/1> ;
+    geo:hasGeometry [
+            a
+                geo:Geometry ,
+                tern-loc:Point ;
+            wgs:lat -3.092085e+01 ;
+            wgs:long 1.522424e+02
+        ] ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasMember
+        <https://example.com/observation/disturbance-type/1> ,
+        <https://example.com/observation/fire-history/1> ;
+    sosa:phenomenonTime [
+            a time:Instant ;
+            time:inXSDDateTimeStamp "2022-05-10T05:38:02.032000+00:00"^^xsd:dateTimeStamp
+        ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
+    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
+.
+
 <https://example.com/observation/disturbance-type/1>
     a tern:Observation ;
     rdfs:label "disturbance type" ;
@@ -498,7 +522,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "fire history" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -541,20 +565,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "land surface disturbance 1" ;
+    rdfs:label "disturbance 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
-.
-
-<https://example.com/feature-of-interest/3>
-    a
-        tern:FeatureOfInterest ,
-        tern:Sample ;
-    rdfs:label "vegetation disturbance 1" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/d4fc54b1-0ad3-4512-86b7-d42b121ece45> ;
 .
 
 <https://example.com/observation/bare-cover-percent/1>
@@ -582,7 +596,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "coarse woody debris cover percent" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/4> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/6> ;
     sosa:hasResult [
             a
                 tern:Float ,
@@ -594,6 +608,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/e73e3079-9858-42c6-b418-36326a6d0ddd> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
@@ -998,6 +1013,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/aef12cd6-3826-4988-a54c-8578d3fb4c8d> ;
+.
+
+<https://example.com/feature-of-interest/6>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "coarse woody debris 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/0e354d29-e23f-4ba7-84d6-9b58ca289782> ;
 .
 
 <https://example.com/example-phenomenon-time/1>
