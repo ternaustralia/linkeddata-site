@@ -13,7 +13,7 @@ Mentions of observable properties should refer to [active-and-passive/overview](
 The Active and passive searching protocol records data about the site for the following feature types:
 
 - animal population
-- climate
+- weather
 
 These observations are recorded for each site during a site visit.
 
@@ -459,7 +459,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/fauna-behaviour/1> ,
         <https://example.com/observation/field-species-name/1> ,
         <https://example.com/observation/number-of-individuals/1> ,
-        <https://example.com/observation/reproductive-status/1> ,
         <https://example.com/observation/sex/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
@@ -496,11 +495,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T07:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/ObservationCollection/observations-on-climate>
+<https://example.com/ObservationCollection/observations-on-weather>
     a tern:ObservationCollection ;
-    rdfs:label "observations on climate" ;
+    rdfs:label "observations on weather" ;
     void:inDataset <https://example.com/dataset/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/weather> ;
     sosa:hasMember
         <https://example.com/observation/cloud-cover/1> ,
         <https://example.com/observation/precipitation/1> ,
@@ -746,26 +745,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
-<https://example.com/observation/reproductive-status/1>
-    a tern:Observation ;
-    rdfs:label "reproductive status" ;
-    void:inDataset <https://example.com/dataset/1> ;
-    geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/animal-population> ;
-    sosa:hasResult [
-            a
-                tern:IRI ,
-                tern:Value ;
-            rdfs:label "Unknown" ;
-            rdf:value <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f>
-        ] ;
-    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f> ;
-    sosa:observedProperty <https://linked.data.gov.au/def/nrm/e8659dca-7861-407f-b405-55576ddcc276> ;
-    sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
-    sosa:usedProcedure <https://linked.data.gov.au/def/nrm/37ed2dbb-b990-430c-9010-d0452588cf24> ;
-    tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
-.
-
 <https://example.com/observation/sex/1>
     a tern:Observation ;
     rdfs:label "sex" ;
@@ -791,7 +770,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "cloud cover" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -811,7 +790,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "precipitation" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -831,7 +810,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "air temperature" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -851,7 +830,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "wind description" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sample/climate> ;
+    sosa:hasFeatureOfInterest <https://example.com/Sample/weather> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -934,14 +913,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     tern:hasSite <https://example.com/Site/site> ;
 .
 
-<https://example.com/Sample/climate>
+<https://example.com/Sample/weather>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "climate" ;
+    rdfs:label "weather" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/site> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/6d40d71e-58cd-4f75-8304-40c01fe5f74c> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e196c39e-959f-4dd4-8816-d0a58b7cc630> ;
 .
 
 <https://example.com/Site/site>
