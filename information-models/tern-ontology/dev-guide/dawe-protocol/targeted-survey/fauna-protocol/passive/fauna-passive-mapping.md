@@ -14,6 +14,7 @@ The Fauna - passive protocol records data about the site for the feature type:
 
 - traps / equipment
 - animal individual
+- habitat
 
 These observations are recorded for each site during a site visit.
 
@@ -551,7 +552,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "microhabitat" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/Sampler/traps-equipment> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/habitat> ;
+    tern:hasSiteVisit <https://example.com/SiteVisit/site-visit> ;
     sosa:hasResult [
             a
                 tern:IRI ,
@@ -770,6 +772,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/Site/survey-area> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7> ;
+.
+
+<https://example.com/feature-of-interest/habitat>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "microhabitat" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/Site/survey-area> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2090cfd9-8b6b-497b-9512-497456a18b99> ;
 .
 
 <https://example.com/Sampler/traps-equipment>
