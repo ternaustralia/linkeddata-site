@@ -13,13 +13,14 @@ Mentions of observable properties should refer to [bird-survey/overview](/inform
 The Bird survey records data about the site for the following feature types:
 
 - bird population
-- climate
+- bird occurrence
+- weather
 
 These observations are recorded for each site during a site visit.
 
 ### Diagram
 
-The following diagram is colour-coded to show the related things by feature type. The blue nodes are things related to the bird population feature type and the green nodes are things related to the climate feature type.
+The following diagram is color-coded to show the related things by feature type. 
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1qR61EM74943f1HAO6BIc6-YsD_GreZM5&layers=1&nav=1&title=vertebrate-fauna-bird-survey-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1qR61EM74943f1HAO6BIc6-YsD_GreZM5%26export%3Ddownload"></iframe>
 
@@ -365,7 +366,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation-collection/1>
     a tern:ObservationCollection ;
-    rdfs:label "observations on bird population" ;
+    rdfs:label "observations on bird occurrence" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry [
             a
@@ -380,7 +381,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         <https://example.com/observation/bird-breeding-activity/1> ,
         <https://example.com/observation/field-species-name/1> ,
         <https://example.com/observation/maturity/1> ,
-        <https://example.com/observation/number-of-individuals/1> ,
         <https://example.com/observation/sex/1> ;
     sosa:phenomenonTime [
             a time:Instant ;
@@ -451,7 +451,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://example.com/observation-collection/2>
     a tern:ObservationCollection ;
-    rdfs:label "observations on climate" ;
+    rdfs:label "observations on weather" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/2> ;
     sosa:hasMember
@@ -587,7 +587,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "number of individuals" ;
     void:inDataset <https://example.com/dataset/1> ;
     geo:hasGeometry <https://example.com/example-observation-location/1> ;
-    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/1> ;
+    sosa:hasFeatureOfInterest <https://example.com/feature-of-interest/3> ;
     sosa:hasResult [
             a
                 tern:Integer ,
@@ -598,6 +598,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:observedProperty <https://linked.data.gov.au/def/nrm/b2d28629-c986-4c05-9d4a-8b05e99a0a94> ;
     sosa:phenomenonTime <https://example.com/example-phenomenon-time/1> ;
     sosa:usedProcedure <https://linked.data.gov.au/def/nrm/98db8232-2c51-4907-99a7-0ccb8b825382> ;
+    tern:hasSiteVisit <https://example.com/site/1/visit/1> ;
     tern:resultDateTime "2022-05-10T05:38:02"^^xsd:dateTime ;
 .
 
@@ -767,13 +768,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
-    rdfs:label "climate 1" ;
+    rdfs:label "weather 1" ;
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/6d40d71e-58cd-4f75-8304-40c01fe5f74c> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/e196c39e-959f-4dd4-8816-d0a58b7cc630> ;
 .
 
-<https://example.com/feature-of-interest/1>
+<https://example.com/feature-of-interest/3>
     a
         tern:FeatureOfInterest ,
         tern:Sample ;
@@ -781,6 +782,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://example.com/dataset/1> ;
     sosa:isSampleOf <https://example.com/site/1> ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/62a51999-f3ca-41d2-8576-3a053dd116a6> ;
+.
+
+<https://example.com/feature-of-interest/1>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "bird occurrence 1" ;
+    void:inDataset <https://example.com/dataset/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/0c30e871-63ae-4f84-a37c-ef6e7ce02928> ;
 .
 
 <https://example.com/example-observation-location/1>
