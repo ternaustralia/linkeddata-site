@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-import ExternalLink from '../../../../src/components/ExternalLink';
+import ExternalLink from '../../../../../src/components/ExternalLink';
 
 # Plot Selection Module
 
