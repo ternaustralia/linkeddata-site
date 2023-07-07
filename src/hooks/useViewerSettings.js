@@ -13,7 +13,7 @@ export const useViewerSettings = (key) => {
       pageRoute: "/viewers/general",
     },
     nrm: {
-      title: "NRM Controlled Vocabularies",
+      title: "Ecological Monitoring System - Australia Controlled Vocabularies",
       api: localApiEndpoint,
       pageRoute: "/viewers/dawe-vocabs",
       sparqlEndpoint:
@@ -34,7 +34,7 @@ export const useViewerSettings = (key) => {
       pageRoute: "/viewers/general",
     },
     nrm: {
-      title: "NRM Controlled Vocabularies",
+      title: "Ecological Monitoring System - Australia Controlled Vocabularies",
       api: devApiEndpoint,
       pageRoute: "/viewers/dawe-vocabs",
       sparqlEndpoint:
@@ -55,7 +55,7 @@ export const useViewerSettings = (key) => {
       pageRoute: "/viewers/general",
     },
     nrm: {
-      title: "NRM Controlled Vocabularies",
+      title: "Ecological Monitoring System - Australia Controlled Vocabularies",
       api: prodApiEndpoint,
       pageRoute: "/viewers/dawe-vocabs",
       sparqlEndpoint:

@@ -117,7 +117,7 @@ The coarse woody debris encoded as RDF Turtle.
     a tern:Sample ;
     rdfs:label "A piece of coarse woody debris" ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/c001183f-c6b5-4162-8de9-0c7ed0eb3bfe> ;
-    tern:isSampleOf <https://example.com/site/1> ;
+    sosa:isSampleOf <https://example.com/site/1> ;
     void:inDataset <https://example.com/dataset/1> ;
 .
 ```
