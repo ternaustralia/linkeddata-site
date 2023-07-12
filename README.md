@@ -25,7 +25,7 @@ Use Visual Studio Code for editing the source code in a development container.
 ### Installation
 
 ```
-$ npm
+$ npm install
 ```
 
 ### Local Development
@@ -102,5 +102,5 @@ The end result should look something like this:
 
 ## Contact
 
-Edmond Chuc  
-e.chuc@uq.edu.au
+TERN 
+esupport@tern.org.au
