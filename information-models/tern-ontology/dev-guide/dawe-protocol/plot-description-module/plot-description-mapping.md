@@ -6,7 +6,7 @@ sidebar_position: 2
 
 The mapping of the source app data to the TERN Ontology on this page is applicable to the [Plot Description](https://linked.data.gov.au/def/nrm/1ff9e97c-3bdd-44c9-bdd3-401fa31c0b32) protocol.
 
-Mentions of observable properties should refer to [plot-description/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/plot-description-module/overview) for the feature type and value type information.
+Mentions of observable properties should refer to [enhanced-protocol/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/plot-description-module/enhanced-protocol/overview) and [standard-protocol/overview](/information-models/tern-ontology/dev-guide/dawe-protocol/plot-description-module/standard-protocol/overview) for the feature type and value type information.
 
 ## Conceptual modelling
 
@@ -28,7 +28,7 @@ The `slope` value is used to automatically calculate the `slope class` and help 
 
 ### Diagram
 
-The following diagram is colour-coded to show the related things by feature type. 
+The following diagram is colour-coded to show the related things by feature type.
 
 <iframe frameBorder="0" style={{width:"100%",height:"593px"}} src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=https%3A%2F%2Fapp.diagrams.net%2F%23G1AHov37L7NVuER801aSH_L8Um2IGzsKVq&layers=1&nav=1&title=plot-description-example#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1AHov37L7NVuER801aSH_L8Um2IGzsKVq%26export%3Ddownload"></iframe>
 
@@ -181,7 +181,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 }
 ```
 
-The data are observations recorded during a site visit. 
+The data are observations recorded during a site visit.
 
 #### `plot_label`
 
@@ -276,7 +276,7 @@ If the keys `createdBy` and `updatedBy` represent the people or organizations th
 }
 ```
 
-The data are observations recorded during a site visit. 
+The data are observations recorded during a site visit.
 
 #### `climatic_condition`
 
