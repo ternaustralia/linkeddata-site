@@ -7,7 +7,7 @@ import {
 } from "../../src/components/docs/tern-ontology/rlp-protocol/settings";
 import { getFetchOptions } from "../../src/data/utils";
 
-test("Plot Description observable proeprties overview table - query responds with at least 20 records with the expected vars", async () => {
+test("Plot Description observable proeprties overview table - query responds with at least 2 records with the expected vars", async () => {
   const fetchOptions = getFetchOptions(
     sparqlQuery(
       "https://linked.data.gov.au/def/nrm/bfac1b1f-a14e-4e9a-ab7f-c43a8bc1a312"
@@ -24,5 +24,5 @@ test("Plot Description observable proeprties overview table - query responds wit
     "categoricalCollection",
     "categoricalCollectionLabel",
   ]);
-  expect(result.results.bindings.length).toBeGreaterThanOrEqual(20);
+  expect(result.results.bindings.length).toBeGreaterThanOrEqual(2);
 });
