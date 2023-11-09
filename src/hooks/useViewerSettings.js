@@ -3,7 +3,7 @@ import useEnv from "./useEnv";
 export const useViewerSettings = (key) => {
   const env = useEnv();
 
-  const localApiEndpoint = "http://localhost:5005/api/v2.0";
+  const localApiEndpoint = "http://localhost:5000/api/v2.0";
   const devApiEndpoint = "https://linkeddata-test.tern.org.au/api/v2.0";
   const prodApiEndpoint = "https://linkeddata.tern.org.au/api/v2.0";
 
