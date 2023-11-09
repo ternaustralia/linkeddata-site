@@ -17,7 +17,7 @@ export const useViewerSettings = (key) => {
       api: localApiEndpoint,
       pageRoute: "/viewers/dawe-vocabs",
       sparqlEndpoint:
-        "https://graphdb.tern.org.au/repositories/dawe_vocabs_core?infer=false",
+        "http://host.docker.internal:7200/repositories/dawe_vocabs_core?infer=false",
     },
     tern: {
       title: "TERN Controlled Vocabularies",
